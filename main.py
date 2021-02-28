@@ -5,6 +5,7 @@ import requests
 import telegram
 import traceback
 import uuid
+from japronto import Application
 from telegram.ext import CommandHandler, RegexHandler, Updater
 
 
@@ -88,7 +89,7 @@ def check_chegg_link(update, context):
         if not formatted_html or i == 2:
             return False
         order_id = str(uuid.uuid4())
-        with open("html/" + order_id + ".html", "w+", encoding="utf-8") as html:
+        with open("/home/autobuy/html/" + order_id + ".html", "w+", encoding="utf-8") as html:
             html.write(formatted_html)
         context.bot.send_message(chat_id=update.effective_chat.id, text="Deducted 1 credit, new balance: " + str(credit_avl) + "\n\nView here: https://pleaseunlock.it/q/" + order_id)
         return
@@ -352,6 +353,17 @@ def refresh_sesh():
     return response.json()
 
 
+def serve_static(request):
+    try:
+        q_id = request.match_dict["q_id"]
+        if ".." in q_id or "/" in q_id:
+            return request.Response(headers={"Location": "https://pleaseunlock.it"}, code=302)
+        with open('/home/autobuy/html/' + q_id + '.html', 'r', encoding="utf-8") as html:
+            return request.Response(text=html.read(), mime_type="text/html")
+    except Exception:
+        return request.Response(headers={"Location": "https://pleaseunlock.it"}, code=302)
+
+
 def tele_credits(update, context):
     username = update.message.from_user.username
     credit_avl = users.get(username)
@@ -443,3 +455,6 @@ dispatcher.add_handler(venmo_handler)
 dispatcher.add_handler(order_handler)
 dispatcher.add_handler(chegg_link_handler)
 updater.start_polling()
+app = Application()
+app.router.add_route('/q/{q_id}', serve_static)
+app.run(debug=True, host='127.0.0.1', port=8423)
