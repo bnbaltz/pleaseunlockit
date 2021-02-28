@@ -105,7 +105,7 @@ def check_chegg_link(update, context):
         order_id = str(uuid.uuid4())
         with open("/home/autobuy/html/" + order_id + ".html", "w+", encoding="utf-8") as html:
             html.write(formatted_html)
-        context.bot.send_message(chat_id=update.effective_chat.id, text="Deducted 1 credit, new balance: " + str(credit_avl) + "\n\nView here: https://pleaseunlock.it/q/" + order_id)
+        context.bot.send_message(chat_id=update.effective_chat.id, text="View here: https://pleaseunlock.it/q/" + order_id)
         return
 
 
@@ -177,6 +177,7 @@ def check_venmo_payment(_id, amount):
 
 def get_question(_id):
     already_found = questions.get(_id)
+    refresh_globals()
     if not already_found:
         headers = {
             "Accept": "application/vnd.chegg-odin.v1+json",
@@ -337,6 +338,7 @@ def get_question(_id):
 def refresh_globals():
     global access_token
     global refresh_token
+    chegg_data._loaddb()
     access_token = chegg_data.get("access_token")
     refresh_token = chegg_data.get("refresh_token")
 
