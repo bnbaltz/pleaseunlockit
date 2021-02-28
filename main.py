@@ -5,6 +5,7 @@ import requests
 import telegram
 import traceback
 import uuid
+from datetime import datetime, timedelta
 from japronto import Application
 from telegram.ext import CommandHandler, RegexHandler, Updater
 
@@ -386,7 +387,6 @@ def tele_chegg(update, context):
 
 def tele_orders(update, context):
     order = update.message.text.replace('/', '').replace('o', '-')
-    print(order)
     order_data = orders.get(order)
     if not order_data:
         context.bot.send_message(chat_id=update.effective_chat.id, text="Please contact @pixxllated, order not found!")
@@ -398,18 +398,26 @@ def tele_orders(update, context):
                 if resp:
                     data["status"] = "paid"
                     username = update.message.from_user.username
-                    credit_avl = users.get(username)
-                    if not credit_avl:
-                        credit_avl = 0
+                    user_data = users.get(username)
+                    if not user_data:
+                        user_data = {
+                            "subscribed": False,
+                            "subscription_date": "",
+                            "credits": 0
+                        }
                     else:
-                        credit_avl = int(credit_avl)
-                    credit_avl += int(data["amt"])
-                    users.set(username, str(credit_avl))
+                        user_data = eval(user_data)
+                    if data["type"] == "sub":
+                        user_data["subscribed"] = True
+                        user_data["subscription_date"] = (datetime.now() + timedelta(days=30)).strftime('%m/%d/%Y')
+                    else:
+                        user_data["credits"] += int(data["amt"])
+                    users.set(username, str(user_data))
                     orders.set(order, str(data))
                     print("paid added credits")
                 else:
                     print("not paid")
-            context.bot.send_message(chat_id=update.effective_chat.id, text="Payment: " + data["type"] + "\nCredits: " + str(data["amt"]) + "\nStatus: " + data["status"])
+            context.bot.send_message(chat_id=update.effective_chat.id, text="Payment: " + data["payment"] + "\nType: " + str(data["type"]) + "\nStatus: " + data["status"])
         except Exception:
             print(traceback.format_exc())
             context.bot.send_message(chat_id=update.effective_chat.id, text="Please contact @pixxllated, getting order data failed!")
@@ -423,18 +431,24 @@ def tele_start(update, context):
 
 
 def tele_venmo(update, context):
-    try:
-        amount = int(context.args[0])
-    except Exception:
-        context.bot.send_message(chat_id=update.effective_chat.id, text="Invalid number of credits!")
-        return
-    order_id = str(random.randint(100,999)) + "-" + str(random.randint(100,999)) + "-" + str(random.randint(100,999))
     data = {
-        "type": "venmo",
-        "amt": amount,
-        "price": (amount * 0.2) - (int((amount / 25)) * 2.0),
+        "payment": "venmo",
+        "type": "",
         "status": "unpaid"
     }
+    try:
+        amount = int(context.args[0])
+        data["type"] = "credit"
+        data["amt"] = amount
+        data["price"] = (amount * 0.2) - (int((amount / 25)) * 2.0)
+    except Exception:
+        if "sub" == context.args[0]:
+            data["type"] = "sub"
+            data["price"] = 5.0
+        else:
+            context.bot.send_message(chat_id=update.effective_chat.id, text="Invalid argument!\nCredit example: /venmo 50\nSubscription example: /venmo sub")
+            return
+    order_id = str(random.randint(100,999)) + "-" + str(random.randint(100,999)) + "-" + str(random.randint(100,999))
     orders.set(order_id, str(data))
     context.bot.send_message(chat_id=update.effective_chat.id, text="Venmo $" + str(data["price"]) + " to @pleaseunlockit and set the note to " + order_id + ".\n\n Use /" + order_id.replace("-", "o") + " to check the status of your order.")
     
