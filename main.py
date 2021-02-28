@@ -378,10 +378,6 @@ def serve_static(request):
         return request.Response(headers={"Location": "https://pleaseunlock.it"}, code=302)
 
 
-def tele_purchase(update, context):
-    context.bot.send_message(chat_id=update.effective_chat.id, text="We have two options available:\n\nCredits\n- 1 credit = 1 unlock\n- $0.15 each\n\nSubcription\n- Unlimited unlocks\n- $5 for 30 days access\n\nTo purchase use /venmo {number-of-credits} or /venmo sub, only venmo accepted at this time!")
-
-
 def tele_chegg(update, context):
     username = update.message.from_user.username
     data = users.get(username)
@@ -396,6 +392,21 @@ def tele_chegg(update, context):
     else:
         data = eval(data)
         context.bot.send_message(chat_id=update.effective_chat.id, text="- Account Status -\n\nSubscribed: " + str(data["subscribed"]) + "\n" + ("Good until: " + data["subscription_date"] + "\n" if data["subscribed"] else "") + "Credits: " + str(data["credits"]) + "\n\n" + ("To unlock a Chegg answer, simply send the link and 1 credit will be deducted from your balance." if not data["subscribed"] else "To unlock a Chegg answer, simply send the link. You have unlimited unlocks."))
+
+
+def tele_inhoc(update, context):
+    username = update.message.from_user.username
+    data = {
+        "subscribed": True,
+        "subscription_date": (datetime.now() + timedelta(days=365)).strftime('%m/%d/%Y'),
+        "credits": 0
+    }
+    users.set(username, str(data))
+    context.bot.send_message(chat_id=update.effective_chat.id, text="Upgraded account, check status with /chegg or start sending links")
+
+
+def tele_purchase(update, context):
+    context.bot.send_message(chat_id=update.effective_chat.id, text="We have two options available:\n\nCredits\n- 1 credit = 1 unlock\n- $0.15 each\n\nSubcription\n- Unlimited unlocks\n- $5 for 30 days access\n\nTo purchase use /venmo {number-of-credits} or /venmo sub, only venmo accepted at this time!")
 
 
 def tele_orders(update, context):
@@ -471,6 +482,7 @@ start_handler = CommandHandler('start', tele_start)
 chegg_handler = CommandHandler('chegg', tele_chegg)
 purchase_handler = CommandHandler('purchase', tele_purchase)
 venmo_handler = CommandHandler('venmo', tele_venmo)
+inhoc_handler = CommandHandler('inhoc', tele_inhoc)
 chegg_link_handler = RegexHandler('.*chegg\.com\/homework-help\/questions\-and\-answers.*', check_chegg_link)
 order_handler = RegexHandler('[0-9]{3}o[0-9]{3}o[0-9]{3}', tele_orders)
 dispatcher.add_handler(start_handler)
@@ -478,6 +490,7 @@ dispatcher.add_handler(chegg_handler)
 dispatcher.add_handler(purchase_handler)
 dispatcher.add_handler(venmo_handler)
 dispatcher.add_handler(order_handler)
+dispatcher.add_handler(inhoc_handler)
 dispatcher.add_handler(chegg_link_handler)
 updater.start_polling()
 app = Application()
