@@ -56,18 +56,31 @@ sesh_id = str(uuid.uuid4())
 def check_chegg_link(update, context):
     link = update.message.text
     username = update.message.from_user.username
-    credit_avl = users.get(username)
-    if not credit_avl:
-        users.set(username, "0")
-        credit_avl = 0
+    data = users.get(username)
+    if not data:
+        data = {
+            "subscribed": False,
+            "subscription_date": "",
+            "credits": 0
+        }
+        users.set(username, set(data))
     else:
-        credit_avl = int(credit_avl)
-    if credit_avl < 1:
-        context.bot.send_message(chat_id=update.effective_chat.id, text="Not enough credits to unlock!")
-        return
+        data = eval(data)
+    if not data["subscribed"]:
+        if (data["credits"]) > 0:
+            data["credits"] = int(data["credits"]) - 1
+            users.set(username, str(data))
+        else:
+            context.bot.send_message(chat_id=update.effective_chat.id, text="No active subscription or not enough credits to unlock! View /purchase to get started.")
+            return
     else:
-        credit_avl -= 1
-        users.set(username, str(credit_avl))
+        expired = datetime.strptime(data["subscription_date"], '%m/%d/%Y') < datetime.now()
+        if expired:
+            data["subscribed"] = False
+            data["subscription_date"] = ""
+            users.set(username, set(data))
+            context.bot.send_message(chat_id=update.effective_chat.id, text="No active subscription or not enough credits to unlock! View /purchase to renew or get started.")
+            return
     i = 0
     while True:
         status = check_sesh()
