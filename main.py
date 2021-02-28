@@ -364,29 +364,24 @@ def serve_static(request):
         return request.Response(headers={"Location": "https://pleaseunlock.it"}, code=302)
 
 
-def tele_credits(update, context):
-    username = update.message.from_user.username
-    credit_avl = users.get(username)
-    if not credit_avl:
-        users.set(username, "0")
-        credit_avl = 0
-    else:
-        credit_avl = int(credit_avl)
-    context.bot.send_message(chat_id=update.effective_chat.id, text="You have " + str(credit_avl) + " credits available.\n$1 for 5 credits, every 25 credits recieve $2.00 off.\nSimply use /{payment-type} {number-of-credits}\n\nPayment types: \n    /venmo\n\nExample: \n    /venmo 50")
+def tele_purchase(update, context):
+    context.bot.send_message(chat_id=update.effective_chat.id, text="We have two options available:\n\nCredits\n- 1 credit = 1 unlock\n- $0.15 each\n\nSubcription\n- Unlimited unlocks\n- $5 for 30 days access\n\nTo purchase use /venmo {number-of-credits} or /venmo sub, only venmo accepted at this time!")
 
 
 def tele_chegg(update, context):
     username = update.message.from_user.username
-    credit_avl = users.get(username)
-    if not credit_avl:
-        users.set(username, "0")
-        credit_avl = 0
+    data = users.get(username)
+    if not data:
+        data = {
+            "subscribed": False,
+            "subscription_date": "",
+            "credits": 0
+        }
+        users.set(username, set(data))
+        context.bot.send_message(chat_id=update.effective_chat.id, text="- Account Status -\n\nSubscribed: " + str(data["subscribed"]) + "\nCredits: " + str(data["credits"]) + "\n\nTo purchase a subscription or credits use /purchase")
     else:
-        credit_avl = int(credit_avl)
-        if credit_avl > 0:
-            context.bot.send_message(chat_id=update.effective_chat.id, text="You have " + str(credit_avl) + " credits available. To unlock a Chegg answer, simply send the link and 1 credit will be deducted from your balance.")
-        else:
-            context.bot.send_message(chat_id=update.effective_chat.id, text="You have 0 credits,\n to purchase use /credits")
+        data = eval(data)
+        context.bot.send_message(chat_id=update.effective_chat.id, text="- Account Status -\n\nSubscribed: " + str(data["subscribed"]) + "\n" + ("Good until: " + data["subscription_date"] + "\n" if data["subscribed"] else "") + "Credits: " + str(data["credits"]) + "\n\n" + ("To unlock a Chegg answer, simply send the link and 1 credit will be deducted from your balance." if not data["subscribed"] else "To unlock a Chegg answer, simply send the link. You have unlimited unlocks."))
 
 
 def tele_orders(update, context):
@@ -421,7 +416,10 @@ def tele_orders(update, context):
 
 
 def tele_start(update, context):
-    context.bot.send_message(chat_id=update.effective_chat.id, text="Welcome to PleaseUnlockIt Homework Bot. Use /chegg or /credits to get started!")
+    if not update.message.from_user.username:
+        context.bot.send_message(chat_id=update.effective_chat.id, text="You must set a username to use this bot! Settings > Edit > Username")
+    else:
+        context.bot.send_message(chat_id=update.effective_chat.id, text="Welcome to PleaseUnlockIt Homework Bot. Use /chegg to get started!")
 
 
 def tele_venmo(update, context):
@@ -444,13 +442,13 @@ def tele_venmo(update, context):
 
 start_handler = CommandHandler('start', tele_start)
 chegg_handler = CommandHandler('chegg', tele_chegg)
-credit_handler = CommandHandler('credits', tele_credits)
+purchase_handler = CommandHandler('purchase', tele_purchase)
 venmo_handler = CommandHandler('venmo', tele_venmo)
 chegg_link_handler = RegexHandler('.*chegg\.com\/homework-help\/questions\-and\-answers.*', check_chegg_link)
 order_handler = RegexHandler('[0-9]{3}o[0-9]{3}o[0-9]{3}', tele_orders)
 dispatcher.add_handler(start_handler)
 dispatcher.add_handler(chegg_handler)
-dispatcher.add_handler(credit_handler)
+dispatcher.add_handler(purchase_handler)
 dispatcher.add_handler(venmo_handler)
 dispatcher.add_handler(order_handler)
 dispatcher.add_handler(chegg_link_handler)
