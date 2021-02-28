@@ -63,7 +63,7 @@ def check_chegg_link(update, context):
             "subscription_date": "",
             "credits": 0
         }
-        users.set(username, set(data))
+        users.set(username, str(data))
     else:
         data = eval(data)
     if not data["subscribed"]:
@@ -78,7 +78,7 @@ def check_chegg_link(update, context):
         if expired:
             data["subscribed"] = False
             data["subscription_date"] = ""
-            users.set(username, set(data))
+            users.set(username, str(data))
             context.bot.send_message(chat_id=update.effective_chat.id, text="No active subscription or not enough credits to unlock! View /purchase to renew or get started.")
             return
     i = 0
@@ -391,7 +391,7 @@ def tele_chegg(update, context):
             "subscription_date": "",
             "credits": 0
         }
-        users.set(username, set(data))
+        users.set(username, str(data))
         context.bot.send_message(chat_id=update.effective_chat.id, text="- Account Status -\n\nSubscribed: " + str(data["subscribed"]) + "\nCredits: " + str(data["credits"]) + "\n\nTo purchase a subscription or credits use /purchase")
     else:
         data = eval(data)
