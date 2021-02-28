@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+
+        <link rel="stylesheet" href="css/morris.css">
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="css/icons.css" rel="stylesheet" type="text/css">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div id="mobile-question-style" style="font-family: 'Helvetica Neue',Helvetica,Arial; color:#333333;"><div><br><img src="https://media.cheggcdn.com/media%2Fcd6%2Fcd600063-943d-45a3-a168-a9592a2b5fcb%2Fimage.png" alt="case study
+Building Better Batteries
+Everyone wants to have the latest technological gadget. Thats why iPods, digital camera"></div><div><img src="https://media.cheggcdn.com/media%2Fe66%2Fe664a813-f788-404b-a409-40bf9b7496a9%2Fimage.png" alt="BetterBatterles (1).pdf+
+BLİldingBetter Batteries%20(1).pdf
+case closed
+Building Better Batteries
+Refer to the chapter-openin"></div><div><img src="https://media.cheggcdn.com/media%2Fe2e%2Fe2e60b8c-53f9-475f-997a-450e36b881af%2Fimage.png"></div></div>
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>1)</p>
+<p>The histogram is obtained in excel to see the shape of the
+distribution by following steps,</p>
+<p>From the data values of battery lifetimes,</p>
+<table cellspacing="0">
+<tbody>
+<tr>
+<td>Maximum</td>
+<td>17.98</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>15.46</td>
+</tr>
+</tbody>
+</table>
+<p>Step 1: Make a column bin in excel with width 0.25.</p>
+<table cellspacing="0">
+<tbody>
+<tr>
+<td>Bin</td>
+</tr>
+<tr>
+<td>15.5</td>
+</tr>
+<tr>
+<td>15.75</td>
+</tr>
+<tr>
+<td>16</td>
+</tr>
+<tr>
+<td>16.25</td>
+</tr>
+<tr>
+<td>16.5</td>
+</tr>
+<tr>
+<td>16.75</td>
+</tr>
+<tr>
+<td>17</td>
+</tr>
+<tr>
+<td>17.25</td>
+</tr>
+<tr>
+<td>17.5</td>
+</tr>
+<tr>
+<td>17.75</td>
+</tr>
+<tr>
+<td>18</td>
+</tr>
+</tbody>
+</table>
+<p>Step 2: DATA &gt; Data Analysis &gt; Histogram &gt; OK. The
+screenshot is shown below,</p>
+<p><img alt="T
+PAGE LAYOUT
+FORMULAS
+DATA
+REVIEW
+VIEW
+neera
+ZA
+Data Analysis
+?
+х
+OK
+Cancel
+Data Analysis
+Analysis Tools
+Correlation
+Covaria" src="https://media.cheggcdn.com/media%2F377%2F377d2ec0-3740-4285-9aed-0d49caa38930%2FphpLJITvT.png"></p>
+<p>Step 3: Insert Input Range: Sample battery lifetimes column, Bin
+Range: bin column then OK. The screenshot is shown below,</p>
+<p><img alt="D
+E
+Maximum
+Minimum
+17.98
+15.46
+Bin
+1_1
+15.5
+15.75
+?
+Х
+OK
+SA$1:$A$51
+Mil
+A
+B
+1 Battery lifetimes
+2
+16.73
+3
+15.6
+4
+16.31
+5
+17." src="https://media.cheggcdn.com/media%2F67f%2F67faeddd-d0e7-467d-9fb3-315c91ddbfc9%2FphpKp2mVl.png"></p>
+<p>The frequency is obtained</p>
+<table cellspacing="0">
+<tbody>
+<tr>
+<td><em>Bin</em></td>
+<td><em>Frequency</em></td>
+</tr>
+<tr>
+<td>15.5</td>
+<td>1</td>
+</tr>
+<tr>
+<td>15.75</td>
+<td>6</td>
+</tr>
+<tr>
+<td>16</td>
+<td>2</td>
+</tr>
+<tr>
+<td>16.25</td>
+<td>3</td>
+</tr>
+<tr>
+<td>16.5</td>
+<td>6</td>
+</tr>
+<tr>
+<td>16.75</td>
+<td>10</td>
+</tr>
+<tr>
+<td>17</td>
+<td>5</td>
+</tr>
+<tr>
+<td>17.25</td>
+<td>3</td>
+</tr>
+<tr>
+<td>17.5</td>
+<td>7</td>
+</tr>
+<tr>
+<td>17.75</td>
+<td>5</td>
+</tr>
+<tr>
+<td>18</td>
+<td>2</td>
+</tr>
+<tr>
+<td>More</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Step 4: Select bin and Frequency column then INSERT &gt;
+Recommended Charts &gt; Clustered column. The screenshot is shown
+below,</p>
+<p><img alt="Frequency
+12
+10
+8
+6
+4
+N
+0
+15.5 15.75
+16
+16.25 16.5 16.75
+17
+17.25 17.5 17.75
+18
+More
+" src="https://media.cheggcdn.com/media%2F516%2F51678c64-a485-47d3-a6d8-6df01ed0ad6c%2FphpfTYph6.png"></p>
+<p>From the histogram we can see that data values are roughly
+normally distributed</p>
+<p>2)</p>
+<p>The shape of the samples is normal</p>
+<table cellspacing="0">
+<tbody>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Excel function</td>
+</tr>
+<tr>
+<td>Mean</td>
+<td>16.7176</td>
+<td>=AVERAGE()</td>
+</tr>
+<tr>
+<td>Std. dev</td>
+<td>0.664234</td>
+<td>=STDEV()</td>
+</tr>
+</tbody>
+</table>
+<p>3)</p>
+<p>The required probability,</p>
+<p><img alt="PX < 16.718)
+" src="https://latex.codecogs.com/gif.latex?P%28X%5Cleq%2016.718%29"></p>
+<p>is obtained by converting normal distribution to standard normal
+distribution and then probability is obtained from standard normal
+distribution table,</p>
+<p><img alt="P(X < 16.718) ~ PG
+<
+16.718 – 17
+0.8
+50
+-) = P(Z < -2.49)
+" src="https://latex.codecogs.com/gif.latex?P%28X%5Cleq%2016.718%29%5CRightarrow%20P%28%5Cfrac%7BX-%5Cmu%7D%7B%5Cfrac%7Bs%7D%7B%5Csqrt%7Bn%7D%7D%7D%5Cleq%20%5Cfrac%7B16.718-17%7D%7B%5Cfrac%7B0.8%7D%7B%5Csqrt%7B50%7D%7D%7D%29%3DP%28Z%5Cleq%20-2.49%29"></p>
+<p>From the standard normal distribution table (In excel use
+function =NORM.DIST(-2.49,0,1,TRUE))</p>
+<p><img alt="P(Z < -2.49) = 0.006
+" src="https://latex.codecogs.com/gif.latex?P%28Z%5Cleq%20-2.49%29%3D0.006"></p>
+<p>The probability value is too small which means there are very
+less number of battery life times below 16.718 hence we can say the
+process is working properly.</p>
+<p>4)</p>
+<p>The samples are normally distributed with,</p>
+<p><img alt="mean, Hp = p=0.27
+" src="https://latex.codecogs.com/gif.latex?%5Ctext%7Bmean%2C%20%7D%5Cmu_%7B%5Cwidehat%7Bp%7D%7D%3Dp%3D0.27"></p>
+<p><img alt="and standard deviation, oś= V
+pi-p)
+=
+0.27(1 – 0.27)
+= 0.06278
+50
+n
+" src="https://latex.codecogs.com/gif.latex?%5Ctext%7Band%20standard%20deviation%2C%20%7D%5Csigma_%7B%5Cwidehat%7Bp%7D%7D%3D%5Csqrt%7B%5Cfrac%7Bp%28i-p%29%7D%7Bn%7D%7D%3D%5Csqrt%7B%5Cfrac%7B0.27%281-0.27%29%7D%7B50%7D%7D%3D0.06278"></p>
+<p>5)</p>
+<p><img alt="P(p-μ > 0.32-0.27 0,0628 P(p > 0.32) ) = P(Z > 0.64) 0.26" src="https://latex.codecogs.com/gif.latex?P%28%5Cwidehat%7Bp%7D%5Cgeq%200.32%29%5CRightarrow%20P%28%5Cfrac%7B%5Cwidehat%7Bp%7D-%5Cmu%7D%7Bs%7D%5Cgeq%20%5Cfrac%7B0.32-0.27%7D%7B0.0628%7D%29%3DP%28Z%5Cgeq%200.64%29%3D0.26"></p>
+<p>i hope it helps..</p>
+<p>If you have any doubts please comment and please don't
+dislike.</p>
+<p>PLEASE GIVE ME A LIKE. ITS VERY IMPORTANT FOR ME</p>
+<p>&nbsp;</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+
+            <!-- jQuery  -->
+            <script src="css/jquery.min.js"></script>
+            <script src="css/bootstrap.bundle.min.js"></script>
+
+            <!-- App js -->
+        </div>
+
+    </body>
+    </html>
+    
