@@ -467,6 +467,11 @@ def tele_venmo(update, context):
         "status": "unpaid"
     }
     try:
+        context.args[0]
+    except Exception:
+        context.bot.send_message(chat_id=update.effective_chat.id, text="Invalid argument!\nCredit example: /venmo 50\nSubscription example: /venmo sub")
+        return
+    try:
         amount = int(context.args[0])
         data["type"] = "credit"
         data["amt"] = amount

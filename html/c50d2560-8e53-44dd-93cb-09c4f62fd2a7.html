@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <html>
+ <head></head>
+ <body>
+  <p>&nbsp;</p> 
+  <p><strong>The Problem</strong></p> 
+  <p>When working with digital images, there are many simple, but powerful algorithms we can use to extract properties of those images. One such operation is hole counting.&nbsp;</p> 
+  <p><strong>Some Background on Hole Counting&nbsp;</strong></p> 
+  <p>(from Shapiro and Stockman's 2001&nbsp;<em>Computer Vision</em>)&nbsp;</p> 
+  <p>In the late 1970s an engineer in Milwaukee implemented a machine vision system that successfully counted the number of bolt holes in crossbars made for truck companies. The truck companies demanded that every crossbar be inspected before being shipped to them, because a missing bolt hole on a partly assembled truck was a very costly defect. Either the assembly line would have to be stopped while the needed hole was drilled, or worse, a worker might ignore placing a required bolt in order to keep the production line running. To create a digital image of the truck crossbar, lights were placed beneath the existing transfer line and a digital camera above it. When a crossbar came into the field of view, an image was taken. Dark pixels inside the shadow of the crossbar were represented as 1s indicating steel, and pixels in the bright holes were represented as 0s, indicating that the hole was drilled. The number of holes can be computed as the number of external corners minus the number of internal corners all divided by four.&nbsp;</p> 
+  <p>An&nbsp;<em>external corner&nbsp;</em>is just a 2 x 2 set of neighboring pixels containing exactly 3 ones, while an&nbsp;<em>internal corner&nbsp;</em>is a 2 x 2 set of neighboring pixels containing exactly 3 zeros.&nbsp;</p> 
+  <p><strong>Hole Counting Practice&nbsp;</strong></p> 
+  <p>To visualize a binary (black and white) image, we will assume that 0s are black (the “holes”) and 1s are white (the “steel”). Here is a simple 6 x 6 set of pixels forming an image.</p> 
+  <p><img alt="T 1 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 " src="//d2vlcm61l7u1fs.cloudfront.net/media%2Fa30%2Fa30f31ea-05af-4706-821a-6a8a5cda1dff%2Fphp78GacI.png" style="height:216px;width:200px;" /></p> 
+  <p>Fill in the blank cells with “e” or “i” if they are external or internal corners, and calculate the number of holes using the formula. The solution is on the following page.</p> 
+  <p>Here are the correctly-filled-in cells:</p> 
+  <p><img alt="" src="//d2vlcm61l7u1fs.cloudfront.net/media%2F38c%2F38cbbce5-03bf-42b6-a1e5-db532cee0bfe%2Fphpagh9Q5.png" style="height:150px;width:250px;" /></p> 
+  <p>Calculate the number of holes using the formula described in the background:&nbsp;</p> 
+  <pre>
+  #holes = (#e - #i) / 4
+  #holes = (9 – 1) / 4
+  #holes = 2
+</pre> 
+  <p><strong>A Note&nbsp;</strong></p> 
+  <p>The hole counting algorithm will not work for all arrangements of binary pixels. Can you think of examples in which the hole counting algorithm would fail?&nbsp;</p> 
+  <p>Your program will only be tested on cases where this simple algorithm produces the correct hole count.&nbsp;</p> 
+  <p><strong>Your Tasks&nbsp;</strong></p> 
+  <p>Complete the Project 6 by writing code for the following functions. Details of type for the functions can be found in functions.h (provided for you, see details below):&nbsp;</p> 
+  <p>readImage – Reads in lines of 0s and 1s and returns a binary multidimensional vector.&nbsp;</p> 
+  <p>Inputs: Two integers – the number of columns and the number of rows, respectively.&nbsp;</p> 
+  <p>Output: The image stored in a two-dimensional vector of ints.&nbsp;</p> 
+  <p>printImage – Outputs the binary image of the multidimensional vector returned by readImage. For formatting, see the output files.&nbsp;</p> 
+  <p>Input: Two dimensional vector of ints.&nbsp;</p> 
+  <p>Output: Nothing (void). Should print to terminal.&nbsp;</p> 
+  <p>countHoles – Returns the number of holes in the multidimensional vector returned by&nbsp;</p> 
+  <p>readImage.&nbsp;</p> 
+  <p>Inputs: The two dimensional vector of ints (the image).&nbsp;</p> 
+  <p>Outputs: The number of holes as an int.&nbsp;</p> 
+  <p><strong>Test Cases&nbsp;</strong></p> 
+  <p>• 6 test cases&nbsp;</p> 
+  <p><strong>Assignment Notes&nbsp;</strong></p> 
+  <p>1. You are given the following files:&nbsp;</p> 
+  <p>main.cpp – This file includes the main function where the test cases will be run.&nbsp;</p> 
+  <p><strong>Do not modify&nbsp;</strong>this file.&nbsp;</p> 
+  <p>functions.h – This file is the header file for your functions.cpp file.&nbsp;<strong>Do not&nbsp;</strong></p> 
+  <p><strong>modify&nbsp;</strong>this file.&nbsp;</p> 
+  <p>input#.txt – These four text files will be used to run the test cases.</p> 
+  <p>d. correct_output_#.txt – These text files will be used to grade your output based on the corresponding input files. Be sure that your output matches these text files exactly to get credit for the test cases.&nbsp;</p> 
+  <p>You will write only functions.cpp and compile that file using functions.h and main.cpp in the same directory (as you have done in the lab). You are only turning in functions.cpp for the project.&nbsp;</p> 
+  <p>Comparing outputs: You can use redirected output to compare the output of your program to the correct output. Use redirected output and the “diff” command in the Unix terminal to accomplish this:&nbsp;</p> 
+  <p>Run your executable on the desired input file. Let’s assume you’re testing input1.txt, the first test case. Redirect the output using the following line when in your directory: ./a.out &lt; input1.txt &gt; output1.txt&nbsp;</p> 
+  <p>Now your output is in the file output1.txt. Compare output1.txt to correct_output1.txt using the following line: diff output1.txt correct_output1.txt&nbsp;</p> 
+  <p>If the two files match, nothing will be output to the terminal. Otherwise, “diff “will print the two outputs.&nbsp;</p> 
+  <p>&nbsp;</p> 
+  <p><strong>main.cpp:</strong></p> 
+  <pre>
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using std::cout;using std::cin;using std::endl;
+using std::vector;
+
+#include &quot;functions.h&quot;
+
+int main() {
+        
+        int x_dim, y_dim, test_case;
+        
+        cin &gt;&gt; test_case;
+        
+        // read in number of columns as x_dim
+        cin &gt;&gt; x_dim;
+        
+        // read in number of rows as y_dim
+        cin &gt;&gt; y_dim;
+        
+        vector&lt;vector&lt;int&gt;&gt; image = readImage(x_dim, y_dim);
+        
+        switch (test_case){
+
+          case 1 : {
+                printImage(image);
+                break;
+          } // of case 1
+
+          case 2 : {
+                printImage(image);
+                break;
+          } // of case 2
+
+          case 3 : {
+                printImage(image);
+                cout &lt;&lt; &quot;Hole count: &quot; &lt;&lt; countHoles(image) &lt;&lt; endl;
+                break;
+          } // of case 3   
+
+          case 4 : {
+                cout &lt;&lt; &quot;Hole count: &quot; &lt;&lt; countHoles(image) &lt;&lt; endl;
+                break;
+          } // of case 4
+
+          case 5 : {
+                cout &lt;&lt; &quot;Hole count: &quot; &lt;&lt; countHoles(image) &lt;&lt; endl;
+                break;
+          } // of case 5
+          
+          case 6 : {
+                cout &lt;&lt; &quot;Hole count: &quot; &lt;&lt; countHoles(image) &lt;&lt; endl;
+                break;
+          } // of case 6
+                
+          } // of switch
+
+} // of main
+</pre> 
+  <p>&nbsp;</p> 
+  <p><strong>functions.h :</strong></p> 
+  <p>&nbsp;</p> 
+  <pre>
+#ifndef FUNCTIONS_H
+#define FUNCTIONS_H
+
+#include&lt;vector&gt;
+using std::vector;
+
+vector&lt;vector&lt;int&gt;&gt; readImage(int, int);
+
+void printImage(vector&lt;vector&lt;int&gt;&gt;);
+
+int countHoles(vector&lt;vector&lt;int&gt;&gt;);
+
+#endif  /* FUNCTIONS_H */
+</pre> 
+  <p>&nbsp;</p> 
+  <p>Finally, save your function.cpp for completion.</p> 
+  <p>input1:</p> 
+  <pre>
+1
+10 1
+1 0 0 1 1 1 1 0 1 1
+</pre> 
+  <p>output1:</p> 
+  <pre>
+1001111011
+</pre> 
+  <p>input2:</p> 
+  <pre>
+3
+10 10
+1 1 1 1 1 1 1 1 1 1
+1 1 0 0 1 1 1 1 1 1
+1 1 1 0 1 1 1 1 1 1
+1 0 1 1 1 1 1 1 1 1
+1 1 1 1 0 1 1 1 1 1
+1 1 1 0 0 1 1 0 0 1
+1 1 0 0 0 1 1 1 1 1
+1 1 1 0 1 1 1 1 1 1
+1 0 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1
+</pre> 
+  <p>output2:</p> 
+  <pre>
+1111111111
+1100111111
+1110111111
+1011111111
+1111011111
+1110011001
+1100011111
+1110111111
+1011111111
+1111111111
+Hole count: 5
+</pre> 
+  <p>input3:</p> 
+  <pre>
+6
+45 60
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 0 1 1 1 1 1 0 0 0 0 0 1 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 0 1 1 1 1 1 1 1 1 0 0 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1
+1 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1
+1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+</pre> 
+  <p>output3:</p> 
+  <pre>
+Hole count: 16
+</pre>
+ </body>
+</html>
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <html>
+ <head></head> 
+ <body> 
+  <p><em><strong>PROGRAM CODE:</strong></em></p> 
+  <p><em><strong>functions.cpp</strong></em></p> 
+  <p>/*</p> 
+  <p>&nbsp;* functions.cpp</p> 
+  <p>&nbsp;*</p> 
+  <p>&nbsp;*&nbsp; Created on: 11-Mar-2017</p> 
+  <p>&nbsp;*&nbsp; &nbsp; &nbsp; Author: kasturi</p> 
+  <p>&nbsp;*/</p> 
+  <p>&nbsp;</p> 
+  <p>#include &lt;iostream&gt;</p> 
+  <p>#include &lt;vector&gt;</p> 
+  <p>#include &lt;fstream&gt;</p> 
+  <p>#include &lt;sstream&gt;</p> 
+  <p>using namespace std;</p> 
+  <p>&nbsp;</p> 
+  <p>vector&lt;vector&lt;int&gt; &gt; readImage(int x, int y)</p> 
+  <p>{</p> 
+  <p>&nbsp;&nbsp; &nbsp;string filename;</p> 
+  <p>&nbsp;&nbsp; &nbsp;cout&lt;&lt;"Enter the text file name: ";</p> 
+  <p>&nbsp;&nbsp; &nbsp;cin&gt;&gt;filename;</p> 
+  <p>&nbsp;&nbsp; &nbsp;ifstream in(filename);</p> 
+  <p>&nbsp;&nbsp; &nbsp;vector&lt;vector&lt;int&gt; &gt; imageValues;</p> 
+  <p>&nbsp;&nbsp; &nbsp;string line;</p> 
+  <p>&nbsp;&nbsp; &nbsp;int i = 0;</p> 
+  <p>&nbsp;&nbsp; &nbsp;while(getline(in, line) &amp;&amp; i&lt;y)</p> 
+  <p>&nbsp;&nbsp; &nbsp;{</p> 
+  <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;istringstream iss(line);</p> 
+  <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;int j=0, val;</p> 
+  <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;vector&lt;int&gt; rows;</p> 
+  <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;while(j&lt;x)</p> 
+  <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{</p> 
+  <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;iss&gt;&gt;val;</p> 
+  <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;rows.push_back(val);</p> 
+  <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;j++;</p> 
+  <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//cout&lt;&lt;val;</p> 
+  <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}</p> 
+  <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;imageValues.push_back(rows);</p> 
+  <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;i++;</p> 
+  <p>&nbsp;&nbsp; &nbsp;}</p> 
+  <p>&nbsp;&nbsp; &nbsp;in.close();</p> 
+  <p>&nbsp;&nbsp; &nbsp;return imageValues;</p> 
+  <p>}</p> 
+  <p>&nbsp;</p> 
+  <p>void printImage(vector&lt;vector&lt;int&gt; &gt; imageValues)</p> 
+  <p>{</p> 
+  <p>&nbsp;&nbsp; &nbsp;string filename;</p> 
+  <p>&nbsp;&nbsp; &nbsp;cout&lt;&lt;"Enter the output file name: ";</p> 
+  <p>&nbsp;&nbsp; &nbsp;cin&gt;&gt;filename;</p> 
+  <p>&nbsp;&nbsp; &nbsp;ofstream out(filename);</p> 
+  <p>&nbsp;&nbsp; &nbsp;int x = imageValues.size();</p> 
+  <p>&nbsp;&nbsp; &nbsp;int y = imageValues[0].size();</p> 
+  <p>&nbsp;&nbsp; &nbsp;for(int i=0; i&lt;x; i++ )</p> 
+  <p>&nbsp;&nbsp; &nbsp;{</p> 
+  <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;for(int j=0; j&lt;y; j++)</p> 
+  <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{</p> 
+  <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;out&lt;&lt;imageValues[i][j]&lt;&lt;" ";</p> 
+  <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}</p> 
+  <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;out&lt;&lt;endl;</p> 
+  <p>&nbsp;&nbsp; &nbsp;}</p> 
+  <p>&nbsp;&nbsp; &nbsp;out.close();</p> 
+  <p>}</p> 
+  <p>&nbsp;</p> 
+  <p>int countHoles(vector&lt;vector&lt;int&gt; &gt; imageValues)</p> 
+  <p>{</p> 
+  <p>&nbsp;&nbsp; &nbsp;int count = 0;</p> 
+  <p>&nbsp;&nbsp; &nbsp;int x=imageValues.size();</p> 
+  <p>&nbsp;&nbsp; &nbsp;int y = imageValues[0].size();</p> 
+  <p>&nbsp;&nbsp; &nbsp;int numberOfe = 0, numberOfi = 0;</p> 
+  <p>&nbsp;&nbsp; &nbsp;for(int i=0; i&lt;x-1; i++ )</p> 
+  <p>&nbsp;&nbsp; &nbsp;{</p> 
+  <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;for(int j=0; j&lt;y-1; j++)</p> 
+  <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{</p> 
+  <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;int sum = imageValues[i][j] + imageValues[i+1][j] + imageValues[i][j+1] + imageValues[i+1][j+1];</p> 
+  <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(sum == 3)</p> 
+  <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;numberOfe++;</p> 
+  <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;else if(sum == 1)</p> 
+  <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;numberOfi++;</p> 
+  <p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}</p> 
+  <p>&nbsp;&nbsp; &nbsp;}</p> 
+  <p>&nbsp;&nbsp; &nbsp;count = (numberOfe-numberOfi)/4;</p> 
+  <p>&nbsp;&nbsp; &nbsp;return count;</p> 
+  <p>}</p> 
+  <p>INPUT Files:</p> 
+  <p><em><strong>input1.txt</strong></em><em><strong><img alt="旦console
+Dfunctions.h
+e functions.cpp
+emain.cpp
+|目input1.txtX.E output!.txt
+input2.txt
+1100 1 1 11011
+" src="//d2vlcm61l7u1fs.cloudfront.net/media%2F6b9%2F6b9ef97d-aa1a-4db7-8120-8b0ca20ce015%2FphpHr0uWV.png" style="height:80px;width:766px;"></strong></em></p> 
+  <p><em><strong>input2.txt&nbsp;</strong></em><em><strong><img alt="貝console Dfunctions.h e functions.cpp emain.cpp E)input 1.txt Boutput1.txt input2.txtX
+6111 0 01 100 1
+" src="//d2vlcm61l7u1fs.cloudfront.net/media%2Feff%2Feffac592-6cf2-456e-9f33-c0e0e681c5ce%2FphpQqtedI.png" style="height:209px;width:776px;"></strong></em></p> 
+  <p><em><strong>input3.txt</strong></em></p> 
+  <p><em><strong><img alt="貝console Dfunctions.h efunctions.cpp emain.cpp input 1.txt El output 1 .txt input2.txt input3.txt >
+2
+" src="//d2vlcm61l7u1fs.cloudfront.net/media%2Fa57%2Fa57e2593-bbf2-445a-b720-103aac69a9ab%2Fphp0kZiVD.png" style="height:558px;width:927px;"></strong></em></p> 
+  <p><em><strong>OUTPUT:</strong></em></p> 
+  <p><em><strong>Run#1:</strong></em></p> 
+  <p><em><strong><img alt="貝console × | functions.h [g functions.cpp c) main.cpp E) input!.txt Boutput1.txt Einput2.txt
+<terminated> (exit value: 0) Sam" src="//d2vlcm61l7u1fs.cloudfront.net/media%2Fc8e%2Fc8ea9e8f-d03a-4352-9973-aa66992e7564%2FphpHK7So9.png" style="height:194px;width:862px;"></strong></em></p> 
+  <p><em><strong>OUTPUT FILE:</strong></em></p> 
+  <p><img alt="貝console Dfunctions.h efunctions.cpp input1.txt output 1.txt input2.txt E input3.txt |目。utput2.txtX
+61 1 1 001100 1
+" src="//d2vlcm61l7u1fs.cloudfront.net/media%2F418%2F41848453-cce7-4b91-8d88-4c763765f9a1%2Fphpah3rJh.png" style="height:215px;width:858px;"></p> 
+  <p><em><strong>Run #2:</strong></em></p> 
+  <p><img alt="貝console
+-le functions-cpp
+emain.cpp input 1.txt El output 1.txt input2.txt
+output1.txt input2.txt
+functions·h
+くterminated> (" src="//d2vlcm61l7u1fs.cloudfront.net/media%2F731%2F7318a4a3-9306-411d-b70d-86744ca3e7fa%2FphpTU9YKG.png" style="height:162px;width:800px;"></p> 
+  <p>&nbsp;</p>  
+ </body>
+</html>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    
