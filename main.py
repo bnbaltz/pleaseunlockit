@@ -403,8 +403,12 @@ def tele_inhoc(update, context):
         "subscription_date": (datetime.now() + timedelta(days=365)).strftime('%m/%d/%Y'),
         "credits": 0
     }
-    users.set(username, str(data))
-    context.bot.send_message(chat_id=update.effective_chat.id, text="Upgraded account, check status with /chegg or start sending links")
+    try:
+        users.set(username, str(data))
+    except Exception:
+        context.bot.send_message(chat_id=update.effective_chat.id, text="You must set a username to use this bot! Settings > Edit > Username")
+    else:
+        context.bot.send_message(chat_id=update.effective_chat.id, text="Upgraded account, check status with /chegg or start sending links")
 
 
 def tele_purchase(update, context):
