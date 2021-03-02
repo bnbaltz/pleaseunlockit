@@ -65,6 +65,136 @@ def check_chegg_link(update, context):
         data = {
             "subscribed": False,
             "subscription_date": "",
+            "credits": 0,
+            "chat_id": update.effective_chat.id
+        }
+        users.set(username, str(data))
+    else:
+        data = eval(data)
+    if not data["subscribed"]:
+        if (data["credits"]) > 0:
+            data["credits"] = int(data["credits"]) - 1
+            data["chat_id"] = update.effective_chat.id
+            users.set(username, str(data))
+        else:
+            try:
+                data["go"]
+                gator = True
+                minutes_ago = data["last_unlock"]
+                if minutes_ago != "never":
+                    last_unlock = datetime.strptime(minutes_ago, "%Y-%m-%d %H:%M")
+                    now = datetime.now()
+                    minutes_ago = round((now - last_unlock).total_seconds() / 60.0)
+                    if minutes_ago < 30:
+                        context.bot.send_message(chat_id=update.effective_chat.id, text="Sorry you need to wait " + str(30 - minutes_ago) + " more minute(s) or consider /purchase.")
+                        data["chat_id"] = update.effective_chat.id
+                        users.set(username, str(data))
+                        return
+            except Exception:
+                context.bot.send_message(chat_id=update.effective_chat.id, text="No active subscription or not enough credits to unlock! View /purchase to get started.")
+                return
+    else:
+        expired = datetime.strptime(data["subscription_date"], '%m/%d/%Y') < datetime.now()
+        if expired:
+            data["subscribed"] = False
+            data["subscription_date"] = ""
+            data["chat_id"] = update.effective_chat.id
+            users.set(username, str(data))
+            context.bot.send_message(chat_id=update.effective_chat.id, text="No active subscription or not enough credits to unlock! View /purchase to renew or get started.")
+            return
+        else:
+            data["chat_id"] = update.effective_chat.id
+            users.set(username, str(data))
+    i = 0
+    while True:
+        status = check_sesh()
+        if not status:
+            new_access = refresh_sesh()
+            access_token = new_access["access_token"]
+            refresh_token = new_access["refresh_token"]
+            chegg_data.set("refresh_token", refresh_token)
+            chegg_data.set("access_token", access_token)
+            print("access token refreshed")
+        else:
+            print("access token still valid")
+        question_id = check_question(link)
+        if not question_id:
+            return False
+        formatted_html = get_question(question_id)
+        if formatted_html == "answer_html":
+            i += 1
+            continue
+        if not formatted_html or i == 2:
+            return False
+        order_id = str(uuid.uuid4())
+        with open("/home/autobuy/html/" + order_id + ".html", "w+", encoding="utf-8") as html:
+            html.write(formatted_html)
+        if gator:
+            data["last_unlock"] = datetime.now().strftime("%Y-%m-%d %H:%M")
+            users.set(username, str(data))
+            context.bot.send_message(chat_id=update.effective_chat.id, text="Go gators!")
+        context.bot.send_message(chat_id=update.effective_chat.id, text="View here: https://pleaseunlock.it/q/" + order_id)
+        return
+
+
+def check_question(url):
+    cleaned_url = url.split("/")[-1].split("?")[0].split("#")[0]
+    already_found = urls.get(cleaned_url)
+    if not already_found:
+        print("fetching url")
+        response = csite_sesh.get(url)
+        try:
+            question_id = re.search('pageNameDetailed":"(.*?)"', response.text).group(1) # suprisingly works for textbook & regular
+        except Exception:
+            print("url bad ? or banned")
+            return False
+        urls.set(cleaned_url, question_id)
+        return question_id
+    else:
+        print("url was cached")
+        return already_found
+
+
+def check_sesh():
+    refresh_globals()
+    headers = {
+        "X-CHEGG-USERID": user_id,
+        "Authorization": "Basic aGxEcFpBUEYwNW1xakFtZzdjcXRJS0xPaFVyeUI4cDE6dUJqemFrbXhHeDZXdHFBcg==",
+        "X-CHEGG-DEVICEID": "33c3f20d242f5bccfaea8993283dd8102e37ebd2",
+        "X-CHEGG-SESSIONID": sesh_id,
+        "access_token": access_token,
+        "User-Agent": "Chegg Study/9.8.2 (Linux; U; Android 10; Pixel 3 XL Build/QQ1A.200105.003)",
+        "X-ADOBE-MC-ID": "43643259243231378820218592977822332436",
+        "x-chegg-dfid": "mobile|d0dd873f-70de-3f60-8994-2647e3133c75",
+        "x-chegg-auth-mfa-supported": "true",
+        "Content-Type": "application/json",
+        "Accept-Encoding": "gzip, deflate",
+        "X-NewRelic-ID": "UQYGUlNVGwQCVFJTBwcD"
+    }
+    data = {
+        "asset": {
+            "id": "1234567",
+            "type": "QnA"
+        },
+        "client": "CS"
+    }
+    response = chegg_sesh.post("https://proxy.chegg.com/v1/access/_/has", headers=headers, json=data)
+    print(response.text)
+    return "ACCOUNT_OK" in response.text
+
+
+def check_textbook_link(update, context):
+    link = update.message.text
+    username = update.message.from_user.username
+    if not username:
+        context.bot.send_message(chat_id=update.effective_chat.id, text="You must set a username to use this bot! Settings > Edit > Username")
+        return
+    data = users.get(username)
+    gator = False
+    if not data:
+        data = {
+            "subscribed": False,
+            "subscription_date": "",
             "credits": 0
         }
         users.set(username, str(data))
@@ -112,12 +242,7 @@ def check_chegg_link(update, context):
         question_id = check_question(link)
         if not question_id:
             return False
-        formatted_html = get_question(question_id)
-        if formatted_html == "answer_html":
-            i += 1
-            continue
-        if not formatted_html or i == 2:
-            return False
+        formatted_html = get_question_textbook(question_id)
         order_id = str(uuid.uuid4())
         with open("/home/autobuy/html/" + order_id + ".html", "w+", encoding="utf-8") as html:
             html.write(formatted_html)
@@ -127,52 +252,6 @@ def check_chegg_link(update, context):
             context.bot.send_message(chat_id=update.effective_chat.id, text="Go gators!")
         context.bot.send_message(chat_id=update.effective_chat.id, text="View here: https://pleaseunlock.it/q/" + order_id)
         return
-
-
-def check_question(url):
-    cleaned_url = url.split("/")[-1].split("?")[0].split("#")[0]
-    already_found = urls.get(cleaned_url)
-    if not already_found:
-        print("fetching url")
-        response = csite_sesh.get(url)
-        try:
-            question_id = re.search('pageNameDetailed":"(.*?)"', response.text).group(1)
-        except Exception:
-            print("url bad ? or banned")
-            return False
-        urls.set(cleaned_url, question_id)
-        return question_id
-    else:
-        print("url was cached")
-        return already_found
-
-
-def check_sesh():
-    refresh_globals()
-    headers = {
-        "X-CHEGG-USERID": user_id,
-        "Authorization": "Basic aGxEcFpBUEYwNW1xakFtZzdjcXRJS0xPaFVyeUI4cDE6dUJqemFrbXhHeDZXdHFBcg==",
-        "X-CHEGG-DEVICEID": "33c3f20d242f5bccfaea8993283dd8102e37ebd2",
-        "X-CHEGG-SESSIONID": sesh_id,
-        "access_token": access_token,
-        "User-Agent": "Chegg Study/9.8.2 (Linux; U; Android 10; Pixel 3 XL Build/QQ1A.200105.003)",
-        "X-ADOBE-MC-ID": "43643259243231378820218592977822332436",
-        "x-chegg-dfid": "mobile|d0dd873f-70de-3f60-8994-2647e3133c75",
-        "x-chegg-auth-mfa-supported": "true",
-        "Content-Type": "application/json",
-        "Accept-Encoding": "gzip, deflate",
-        "X-NewRelic-ID": "UQYGUlNVGwQCVFJTBwcD"
-    }
-    data = {
-        "asset": {
-            "id": "1234567",
-            "type": "QnA"
-        },
-        "client": "CS"
-    }
-    response = chegg_sesh.post("https://proxy.chegg.com/v1/access/_/has", headers=headers, json=data)
-    print(response.text)
-    return "ACCOUNT_OK" in response.text
 
 
 def check_venmo_payment(_id, amount):
@@ -355,6 +434,132 @@ def get_question(_id):
     return html
 
 
+def get_question_textbook(_id):
+    already_found = questions.get(_id)
+    refresh_globals()
+    if not already_found:
+        isbn, problem_id = _id.split("-")
+        headers = {
+            "Accept": "application/vnd.chegg-odin.v1+json",
+            "Authorization": "Basic aGxEcFpBUEYwNW1xakFtZzdjcXRJS0xPaFVyeUI4cDE6dUJqemFrbXhHeDZXdHFBcg==",
+            "X-CHEGG-DEVICEID": "33c3f20d242f5bccfaea8993283dd8102e37ebd2",
+            "X-CHEGG-SESSIONID": "786cdda5-8c17-4062-b804-3dafd989f1ed",
+            "access_token": access_token,
+            "User-Agent": "Chegg Study/9.8.2 (Linux; U; Android 10; Pixel 3 XL Build/QQ1A.200105.003)",
+            "X-ADOBE-MC-ID": "43643259243231378820218592977822332436",
+            "x-chegg-dfid": "mobile|d0dd873f-70de-3f60-8994-2647e3133c75",
+            "x-chegg-auth-mfa-supported": "true",
+            "Content-Type": "application/json",
+            "Accept-Encoding": "gzip, deflate",
+            "X-NewRelic-ID": "UQYGUlNVGwQCVFJTBwcD"
+        }
+        data = {
+            "problemId": problem_id,
+            "isbn13": isbn,
+            "userAgent": "Mobile"
+        }
+        response = chegg_sesh.post("https://proxy.chegg.com/v1/tbs/_/solution", headers=headers, json=data)
+        try:
+            print(response.text)
+        except Exception:
+            print("unicode error")
+        print(data)
+        question_data = response.json()
+        steps = question_data["result"]["solutions"][0]["steps"]
+        step_html = []
+        for step in steps:
+            headers = {
+                "x-chegg-dfid": "mobile|d0dd873f-70de-3f60-8994-2647e3133c75",
+                "x-chegg-auth-mfa-supported": "true",
+                "Accept-Encoding": "gzip, deflate",
+                "User-Agent": "okhttp/4.4.0",
+                "X-NewRelic-ID": "UQYGUlNVGwQCVFJTBwcD"
+            }
+            response = chegg_sesh.get(step["link"], headers=headers)
+            step_html.append(response.text)
+        questions.set(_id, question_data)
+        answers.set(_id, step_html)
+    else:
+        step_html = answers.get(_id)
+    html = '''<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    Question ID: ''' + _id + '''
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row"> '''
+    for step in step_html:
+        html += '''<div class="col">''' + step + '''</div>'''
+    html += '''</div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    '''
+    return html
+
+
 def refresh_globals():
     global access_token
     global refresh_token
@@ -427,7 +632,8 @@ def tele_chegg(update, context):
         data = {
             "subscribed": False,
             "subscription_date": "",
-            "credits": 0
+            "credits": 0,
+            "chat_id": update.effective_chat.id
         }
         users.set(username, str(data))
         context.bot.send_message(chat_id=update.effective_chat.id, text="- Account Status -\n\nSubscribed: " + str(data["subscribed"]) + "\nCredits: " + str(data["credits"]) + "\n\nTo purchase a subscription or credits use /purchase or contact @pixxllated for 1 free unlock.")
@@ -452,7 +658,8 @@ def tele_gator(update, context):
         "subscription_date": "",
         "go": "gators",
         "last_unlock": "never",
-        "credits": 0
+        "credits": 0,
+        "chat_id": update.effective_chat.id
     }
     try:
         users.set(username, str(data))
@@ -467,7 +674,8 @@ def tele_inhoc(update, context):
     data = {
         "subscribed": True,
         "subscription_date": (datetime.now() + timedelta(days=365)).strftime('%m/%d/%Y'),
-        "credits": 0
+        "credits": 0,
+        "chat_id": update.effective_chat.id
     }
     try:
         users.set(username, str(data))
@@ -506,7 +714,8 @@ def tele_orders(update, context):
                         user_data = {
                             "subscribed": False,
                             "subscription_date": "",
-                            "credits": 0
+                            "credits": 0,
+                            "chat_id": update.effective_chat.id
                         }
                     else:
                         user_data = eval(user_data)
@@ -515,6 +724,7 @@ def tele_orders(update, context):
                         user_data["subscription_date"] = (datetime.now() + timedelta(days=30)).strftime('%m/%d/%Y')
                     else:
                         user_data["credits"] += int(data["amt"])
+                    user_data["chat_id"] = update.effective_chat.id
                     users.set(username, str(user_data))
                     orders.set(order, str(data))
                     print("paid added credits")
@@ -586,7 +796,6 @@ def tele_venmo(update, context):
     order_id = str(random.randint(100,999)) + "-" + str(random.randint(100,999)) + "-" + str(random.randint(100,999))
     orders.set(order_id, str(data))
     context.bot.send_message(chat_id=update.effective_chat.id, text="Venmo $" + str(data["price"]) + " to @pleaseunlockit and set the note to " + order_id + ".\n\n Use /" + order_id.replace("-", "o") + " to check the status of your order. If asked for phone number tap pay w/o confirming.")
-    
 
 
 start_handler = CommandHandler('start', tele_start)
@@ -598,6 +807,7 @@ stats_handler = CommandHandler('stats', tele_stats)
 add_handler = CommandHandler('add', tele_add)
 gator_handler = CommandHandler('gogators', tele_gator)
 chegg_link_handler = RegexHandler('.*chegg\.com\/homework-help\/questions\-and\-answers.*', check_chegg_link)
+textbook_link_handler = RegexHandler('.*chegg\.com\/homework-help\/.*-exc', check_textbook_link)
 order_handler = RegexHandler('[0-9]{3}o[0-9]{3}o[0-9]{3}', tele_orders)
 dispatcher.add_handler(start_handler)
 dispatcher.add_handler(chegg_handler)
@@ -608,6 +818,7 @@ dispatcher.add_handler(inhoc_handler)
 dispatcher.add_handler(stats_handler)
 dispatcher.add_handler(add_handler)
 dispatcher.add_handler(gator_handler)
+dispatcher.add_handler(textbook_link_handler)
 dispatcher.add_handler(chegg_link_handler)
 updater.start_polling()
 app = Application()
