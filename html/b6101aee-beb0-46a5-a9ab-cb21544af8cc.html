@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>&nbsp;Programming Assignment In this assignment, you will modify
+your Quiz class from the previous assignment.</p>
+<p>You will create a method that asks a quiz question and a method
+that checks the answer, and you will use those methods to ask
+multiple questions. Your program will then report how many
+questions the user got correct.</p>
+<p>This program will be the basis for future Programming
+Assignments in this course.</p>
+<p>These instructions assume that you are using the Eclipse IDE on
+your own computer or you may use a different Java environment as
+long as you can provide Java code and screen shots for your
+assignment submission.</p>
+<p>First open your previous Programming Assignment in Eclipse, with
+the file "Quiz.java" in the editor pane. • Add a static method that
+asks a question until the user provides valid input. • Call the
+method "ask". It should take a String parameter, and it should
+return a String. static String ask(String question) { • Remember
+where method definitions go: inside the class (in this case,
+"Quiz") but outside all other method definitions (like "main"). It
+can go before or after the "main" definition.</p>
+<p>• Ask the user the question repeatedly until the user provides a
+valid answer: "A", "B", "C", "D", or "E". • Ask the question using
+"JOptionPane.showInputDialog".</p>
+<p>• Allow the user to provide a lower-case answer, and convert it
+to upper case. • If the user provides an invalid answer, use
+"JOptionPane.showMessageDialog" to tell them, "Invalid answer.
+Please enter A, B, C, D, or E." Then ask the question again. Repeat
+until the answer is valid.</p>
+<p>• Once the user provides a valid answer, return that answer
+(converted to upper case). • Notice that the method does not check
+whether the answer is correct. It just asks the same question until
+the answer is valid. Try out your new method. • Delete the existing
+loop from your main method, but leave the initialization of the
+question String. • Call the "ask" method with your question String
+as the argument (actual parameter). • Note that you do not have to
+use the String returned by "ask". • Run your program. It should
+keep asking the question until you provide a valid answer. It does
+not yet check the answer. • Try invalid and valid answers. Now add
+a method that asks questions using "ask" and checks answers. • Call
+the method "check". It should take two String parameters. static
+void check(String question, String correctAnswer) { • The method
+definition can go before, after, or between the definitions for
+"ask" and "main", but it must be inside the "Quiz" class and
+outside the other method definitions. • In the "check" method, call
+"ask" to get a valid answer. String answer = ask(question); • If
+the answer is correct, use "JOptionPane.showMessageDialog" to
+report, "Correct!" • If the answer is incorrect, use
+"JOptionPane.showMessageDialog" to report, "Incorrect. The correct
+answer is ." This output should include the actual correct answer.
+Test the "check" method. • Replace the "ask" call in the main
+method with a "check" call. You will need to provide both the
+question String and the answer String as arguments. • Run your
+program. It should keep asking the question until you provide a
+valid answer. Then it should tell you if your answer is correct. •
+Try invalid, incorrect, and correct answers. Add more questions. •
+In the main method, call "check" with at least two more unique quiz
+questions, each with a different correct answer, for a total of at
+least three questions. • You may either declare and initialize new
+local variables or reassign the existing question variable after
+each "check" call. • Run your program. Make sure the responses work
+as expected for all the questions. Finally, add a score for the
+quiz. • Add two static member variables, one for the number of
+questions and one for the number of correct answers. Initialize
+them to zero for good documentation. static int nQuestions = 0;
+static int nCorrect = 0; • Remember where member variables go:
+inside a class definition but outside all method definitions. You
+may declare the variables before, after, or between the existing
+methods. • In the "check" method, increment "nQuestions" each time
+it is called. • Also in the "check" method, increment "nCorrect"
+for each correct answer. • Display the score at the end of the main
+method using "JOptionPane.showMessageDialog". Use the text, "
+correct out of questions", with the appropriate numbers. • Run your
+program. Make sure it displays the right numbers of questions and
+correct answers.</p>
+<p>JAVA HELPER PLEASE ,</p>
+<p>AND THIS IS THE ANSWER FOR THE LAST QUIZ&nbsp;</p>
+<p>import javax.swing.JOptionPane;</p>
+<p>public class Quiz {</p>
+<p>&nbsp;&nbsp; public static void main(String[] args) {<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; String question;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; question = "What was the name of
+Google in late 90s?\n";<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; question+="A. Googol\n";<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; question+="B. Gigablast\n";<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; question+="C. Backrub\n";<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; question+="D. Google\n";<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; while(true) {<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; String answer =
+JOptionPane.showInputDialog(question);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; answer =
+answer.toUpperCase();<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+if(answer.equals("C")) {<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+JOptionPane.showMessageDialog(null,"Correct!");<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; break;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; else
+if(answer.equals("A") || answer.equals("B") || answer.equals("D"))
+{<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+JOptionPane.showMessageDialog(null,"Inorrect.Please try
+Again");<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; else{<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; JOptionPane.showMessageDialog(null,"Invalid
+Answer");<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp; }<br />
+}</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><span style="text-decoration: underline"><strong>Below is the
+Code in Java for the above question:</strong></span></p>
+<p>import javax.swing.JOptionPane;</p>
+<p>public class Quiz {<br>
+&nbsp;&nbsp; &nbsp;//static int variables that counts number of
+question and correct answers.<br>
+&nbsp;&nbsp; &nbsp;static int nQuestions = 0; static int nCorrect =
+0;&nbsp;<br>
+&nbsp; &nbsp;public static void main(String[] args) {<br>
+&nbsp;&nbsp; &nbsp; &nbsp; //question 1.<br>
+&nbsp; &nbsp; &nbsp; &nbsp;String question1;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;question1 = "What was the name of Google
+in late 90s?\n";<br>
+&nbsp; &nbsp; &nbsp; &nbsp;question1+="A. Googol\n";<br>
+&nbsp; &nbsp; &nbsp; &nbsp;question1+="B. Gigablast\n";<br>
+&nbsp; &nbsp; &nbsp; &nbsp;question1+="C. Backrub\n";<br>
+&nbsp; &nbsp; &nbsp; &nbsp;question1+="D. Google\n";<br>
+&nbsp; &nbsp; &nbsp; &nbsp;check(question1,"C");<br>
+&nbsp; &nbsp; &nbsp;//question 2.<br>
+&nbsp; &nbsp; &nbsp; &nbsp;String question2;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;question2 = "\"Do no evil\" is a tagline
+of?\n";<br>
+&nbsp; &nbsp; &nbsp; &nbsp;question2+="A. Yahoo\n";<br>
+&nbsp; &nbsp; &nbsp; &nbsp;question2+="B. Google\n";<br>
+&nbsp; &nbsp; &nbsp; &nbsp;question2+="C. Bing\n";<br>
+&nbsp; &nbsp; &nbsp; &nbsp;question2+="D. Duck Duck Go\n";<br>
+&nbsp; &nbsp; &nbsp; &nbsp;check(question2,"B");<br>
+&nbsp; &nbsp; &nbsp;//question 3.<br>
+&nbsp; &nbsp; &nbsp; &nbsp;String question3;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;question3 = "Which of the following is
+fully Object Oriented Programming Language?\n";<br>
+&nbsp; &nbsp; &nbsp; &nbsp;question3+="A. SmallTalk\n";<br>
+&nbsp; &nbsp; &nbsp; &nbsp;question3+="B. Kotlin\n";<br>
+&nbsp; &nbsp; &nbsp; &nbsp;question3+="C. Java\n";<br>
+&nbsp; &nbsp; &nbsp; &nbsp;question3+="D. F#\n";<br>
+&nbsp; &nbsp; &nbsp; &nbsp;check(question3,"A");<br>
+&nbsp; &nbsp; &nbsp; &nbsp;//prints number of correct answers out
+of number of questions.<br>
+&nbsp; &nbsp; &nbsp;
+&nbsp;JOptionPane.showMessageDialog(null,nCorrect + " correct out
+of " +nQuestions+ " questions");<br>
+&nbsp; &nbsp;}<br>
+&nbsp; &nbsp;//method ask.<br>
+&nbsp; &nbsp;public static String ask(String question) {<br>
+&nbsp;&nbsp; &nbsp; &nbsp; //keep asking if the answer entered is
+Invalid<br>
+&nbsp; &nbsp; &nbsp; &nbsp;while(true) {<br>
+&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; String answer =
+JOptionPane.showInputDialog(question);<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;answer =
+answer.toUpperCase();<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if(!(answer.equals("A") ||
+answer.equals("B") || answer.equals("C") ||
+answer.equals("D"))){<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;JOptionPane.showMessageDialog(null,"Invalid Answer");<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;continue;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return answer; //return
+answer entered by user.<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp;}<br>
+&nbsp; &nbsp;//method check<br>
+&nbsp; &nbsp;static void check(String question, String
+correctAnswer) {<br>
+&nbsp;&nbsp; &nbsp; &nbsp; nQuestions++;//increments the number of
+question.<br>
+&nbsp;&nbsp; &nbsp; &nbsp; String answer = ask(question);//calss
+ask method to ask question.<br>
+&nbsp;&nbsp; &nbsp; &nbsp; if(answer.equals(correctAnswer)) {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;JOptionPane.showMessageDialog(null,"Correct!");<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;nCorrect++;//increments if
+answer is correct.<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp; &nbsp; &nbsp;else {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;JOptionPane.showMessageDialog(null,"Inorrect.Please try
+Again");<br>
+&nbsp; &nbsp; &nbsp; &nbsp;}<br>
+&nbsp; &nbsp;}<br>
+}<br>
+<br>
+<span style="text-decoration: underline"><strong>Refer to the
+screenshot attached below to better understand the code and
+indentation:</strong></span><br>
+<img src="https://media.cheggcdn.com/media/6f3/6f30be9e-4355-4b94-8d35-6cc05e19881a/phpl8l4LU.png" style="height:528px;width:730px;" alt="package chegg:
+import javax.swing.JOptionPane;
+10
+public class Quiz {
+//static int variables that counts number of question a"><br>
+<img src="https://media.cheggcdn.com/media/f6d/f6dc9ee3-d64b-4277-8e69-4c19decb5796/phpPj6PXJ.png" style="height:391px;width:757px;" alt="36
+370
+//method ask.
+public static String ask(String question) {
+//keep asking if the answer entered is Invalid
+while(true) {"><br>
+<span style="text-decoration: underline"><strong>Output:</strong></span><br>
+<img src="https://media.cheggcdn.com/media/8cf/8cf18c6b-6d9c-49a4-8d57-8d68d3356e06/phpNoCgwV.png" style="height:202px;width:304px;" alt="Input
+What was the name of Google in late 90s?
+A. Googol
+B. Gigablast
+C. Backrub
+D. Google
+|
+OK
+Cancel
+">&nbsp;
+&nbsp;<img src="https://media.cheggcdn.com/media/478/478120b7-6107-4a9d-b40d-6448f9c5b194/php7oCUlD.png" style="height:120px;width:263px;" alt="Message
+i
+Invalid Answer
+OK
+"><br>
+<br>
+<img src="https://media.cheggcdn.com/media/11b/11b81282-4a92-46ec-87f8-f6e272382d13/php57VPGM.png" style="height:205px;width:306px;" alt="Input
+What was the name of Google in late 90s?
+A. Googol
+B. Gigablast
+C. Backrub
+D. Google
+OK
+Cancel
+">&nbsp;&nbsp;&nbsp;<img src="https://media.cheggcdn.com/media/e95/e952cafa-177c-4cfb-915e-0dc2e80d670f/php9CFaJ8.png" style="height:123px;width:265px;" alt="Message
+0
+Correct!
+"><br>
+<br>
+<img src="https://media.cheggcdn.com/media/69e/69e04bbd-e554-43a4-aa2d-3dc149aecc10/phpPqS48W.png" style="height:204px;width:295px;" alt="Input
+Do no evil is a tagline of?
+A. Yahoo
+B. Google
+C. Bing
+D. Duck Duck Go
+OK
+Cancel
+">&nbsp;
+&nbsp;<img src="https://media.cheggcdn.com/media/e5e/e5e3b56c-a641-41f0-9858-c5d8988d3e40/phpOnQzAT.png" style="height:124px;width:262px;" alt="Message
+Correct!
+OK
+OK
+"><br>
+<br>
+<img src="https://media.cheggcdn.com/media/6f4/6f4b9a74-579a-4339-9a25-60d129847e49/phpwOUmkq.png" style="height:204px;width:470px;" alt="Input
+Which of the following is fully Object Oriented Programming Language?
+A. SmallTalk
+B. Kotlin
+C. Java
+D. F#
+ОК |
+Cancel
+">&nbsp;<img src="https://media.cheggcdn.com/media/b9b/b9bd9cd0-2f5b-4afb-a69d-179541a28f1d/php2h42Ub.png" style="height:122px;width:264px;" alt="Message
+i
+Inorrect.Please try Again
+OK
+"><br>
+<br>
+<img src="https://media.cheggcdn.com/media/69f/69feb47b-9697-497f-bd91-0a44aae1b0fc/phpbi1cyc.png" style="height:122px;width:265px;" alt="Message
+2 correct out of 3 questions
+"><br>
+<br>
+<span style="text-decoration: underline"><strong>If my answer helps
+you then please Upvote,<br>
+for further queries comment below.</strong></span><br>
+<br>
+<em><strong>Thank You.</strong></em></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

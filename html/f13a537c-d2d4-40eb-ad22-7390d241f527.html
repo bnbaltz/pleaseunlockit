@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p><img alt="Description:
+Given an array A consisting of N elements, find the smallest sum of contiguous elements that is strictly
+greater" src="https://media.cheggcdn.com/media/3b3/3b3793c2-f764-4c56-8549-06a0e9c3f829/phpyNEJlc"></p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>Code for above program :-</p>
+
+<pre>
+<code class="language-python"># reading input
+N = int(input())
+A = list(map(int,input().split()))
+k = int(input())
+# declaring variable to store minimum contigous usm
+min_sum = float('inf')
+# finding sum of contigous array
+for i in range(N):
+    for j in range(N-1,i,-1):
+        s = sum(A[i:j+1])
+        # if sum less than k ignore
+        if s &lt;= k:
+            continue
+        # if sum is greater than k
+        else:
+            # checking that the sum greater than k is less than previous sum
+            if min_sum &gt; s:
+                min_sum = s
+# if minimum sum equals infinite than no solution
+if min_sum == float('inf'):
+    print(-1)
+# otherwise printing the result
+else:
+    print(min_sum)
+
+
+</code></pre>
+
+<p>Screenshot for above code :-</p>
+
+<p><img alt="1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+main.py
+# reading input
+N = int(input())
+A = list(map(int, input().split()))
+k = int(input())
+#" src="https://media.cheggcdn.com/coop/e26/e263783f-ebf6-4823-b6fb-c2552e3c1357/1614551901851_2.png" style="height:909px;width:885px"></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

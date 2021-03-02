@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Table 1)</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td colspan="12" style="height:24px;width:635px;">
+<p style="margin-left:97.9pt;">Data Table 1: Varying the
+Concentration of 1.0 <em>M</em> HCL</p>
+</td>
+</tr>
+<tr>
+<td colspan="12" style="height:24px;width:635px;">
+<p style="margin-left:163.1pt;"><strong>---- C o n c e n t r a t i
+o n s ----</strong></p>
+</td>
+</tr>
+<tr>
+<td style="height:48px;width:37px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:48px;width:41px;">
+<p style="margin-left:10.2pt;"><strong>#</strong></p>
+<p style="margin-left:-.7pt;"><strong>drops</strong></p>
+</td>
+<td style="height:48px;width:43px;">
+<p style="margin-left:10.85pt;"><strong>#</strong></p>
+<p style="margin-left:-.05pt;"><strong>drops</strong></p>
+</td>
+<td style="height:48px;width:58px;">
+<p>&nbsp;</p>
+<p style="margin-left:3.1pt;"><strong># drops</strong></p>
+</td>
+<td style="height:48px;width:49px;">
+<p>&nbsp;</p>
+<p style="margin-left:3.9pt;"><strong>Initial</strong></p>
+</td>
+<td style="height:48px;width:60px;">
+<p>&nbsp;</p>
+<p style="margin-left:8pt;"><strong>Initial</strong></p>
+</td>
+<td style="height:48px;width:49px;">
+<p>&nbsp;</p>
+<p style="margin-left:4.8pt;"><strong>Final</strong></p>
+</td>
+<td style="height:48px;width:56px;">
+<p>&nbsp;</p>
+<p style="margin-left:10.15pt;"><strong>Final</strong></p>
+</td>
+<td colspan="3" style="height:48px;width:163px;">
+<p>&nbsp;</p>
+<p style="margin-left:12.6pt;"><strong>R</strong><strong>eaction
+Time (sec)</strong></p>
+</td>
+<td style="height:48px;width:79px;">
+<p>&nbsp;</p>
+<p style="margin-left:7.5pt;">
+<strong>R</strong><strong>eaction</strong></p>
+</td>
+</tr>
+<tr>
+<td style="height:31px;width:37px;">
+<p style="margin-left:.55pt;">
+<strong>W</strong><strong>ell</strong></p>
+<p style="margin-left:8.75pt;"><strong>#</strong></p>
+</td>
+<td style="height:31px;width:41px;">
+<p style="margin-left:6.95pt;">HCl</p>
+</td>
+<td style="height:31px;width:43px;">
+<p style="margin-left:1pt;">Water</p>
+</td>
+<td style="height:31px;width:58px;">
+<p style="margin-left:2.75pt;">Na2S2O3</p>
+</td>
+<td style="height:31px;width:49px;">
+<p style="margin-left:9.8pt;">HCl</p>
+</td>
+<td style="height:31px;width:60px;">
+<p style="margin-left:3.45pt;">Na2S2O3</p>
+</td>
+<td style="height:31px;width:49px;">
+<p style="margin-left:8.4pt;">HCl</p>
+</td>
+<td style="height:31px;width:56px;">
+<p style="margin-left:3.25pt;">Na2S2O3</p>
+</td>
+<td style="height:31px;width:49px;">
+<p style="margin-left:3.5pt;">Trial 1</p>
+</td>
+<td style="height:31px;width:49px;">
+<p style="margin-left:3.5pt;">Trial 2</p>
+</td>
+<td style="height:31px;width:65px;">
+<p style="margin-left:4.6pt;">Average</p>
+</td>
+<td style="height:31px;width:79px;">
+<p style="margin-left:2.5pt;">Rate (sec-1)</p>
+</td>
+</tr>
+<tr>
+<td style="height:24px;width:37px;">
+<p style="margin-left:8.7pt;"><strong>1</strong></p>
+</td>
+<td style="height:24px;width:41px;">
+<p style="margin-left:9.2pt;">12</p>
+</td>
+<td style="height:24px;width:43px;">
+<p style="margin-left:11pt;">0</p>
+</td>
+<td style="height:24px;width:58px;">
+<p style="margin-left:16.6pt;">8</p>
+</td>
+<td style="height:24px;width:49px;">
+<p style="margin-left:9.95pt;">1M</p>
+</td>
+<td style="height:24px;width:60px;">
+<p style="margin-left:9.5pt;">0.3M</p>
+</td>
+<td style="height:24px;width:49px;">
+<p>0.6M</p>
+</td>
+<td style="height:24px;width:56px;">
+<p>0.12M</p>
+</td>
+<td style="height:24px;width:49px;">
+<p>23.46</p>
+</td>
+<td style="height:24px;width:49px;">
+<p>30.03</p>
+</td>
+<td style="height:24px;width:65px;">
+<p>26.7</p>
+</td>
+<td style="height:24px;width:79px;">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td style="height:24px;width:37px;">
+<p style="margin-left:8.7pt;"><strong>2</strong></p>
+</td>
+<td style="height:24px;width:41px;">
+<p style="margin-left:10.35pt;">6</p>
+</td>
+<td style="height:24px;width:43px;">
+<p style="margin-left:11pt;">6</p>
+</td>
+<td style="height:24px;width:58px;">
+<p style="margin-left:16.6pt;">8</p>
+</td>
+<td style="height:24px;width:49px;">
+<p style="margin-left:5.4pt;">0.5M</p>
+</td>
+<td style="height:24px;width:60px;">
+<p style="margin-left:9.5pt;">0.3M</p>
+</td>
+<td style="height:24px;width:49px;">
+<p>0.15M</p>
+</td>
+<td style="height:24px;width:56px;">
+<p>0.12M</p>
+</td>
+<td style="height:24px;width:49px;">
+<p>41.15</p>
+</td>
+<td style="height:24px;width:49px;">
+<p>31.22</p>
+</td>
+<td style="height:24px;width:65px;">
+<p>36.2</p>
+</td>
+<td style="height:24px;width:79px;">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td style="height:24px;width:37px;">
+<p style="margin-left:8.7pt;"><strong>3</strong></p>
+</td>
+<td style="height:24px;width:41px;">
+<p style="margin-left:10.35pt;">4</p>
+</td>
+<td style="height:24px;width:43px;">
+<p style="margin-left:11pt;">8</p>
+</td>
+<td style="height:24px;width:58px;">
+<p style="margin-left:16.6pt;">8</p>
+</td>
+<td style="height:24px;width:49px;">
+<p style="margin-left:2.35pt;">0.33M</p>
+</td>
+<td style="height:24px;width:60px;">
+<p style="margin-left:9.5pt;">0.3M</p>
+</td>
+<td style="height:24px;width:49px;">
+<p>0.06M</p>
+</td>
+<td style="height:24px;width:56px;">
+<p>0.12M</p>
+</td>
+<td style="height:24px;width:49px;">
+<p>46.12</p>
+</td>
+<td style="height:24px;width:49px;">
+<p>37.12</p>
+</td>
+<td style="height:24px;width:65px;">
+<p>41.6</p>
+</td>
+<td style="height:24px;width:79px;">
+<p>&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Table 2)</p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td colspan="12" style="height:24px;width:635px;">
+<p style="margin-left:88.05pt;">Data Table 2: Varying the
+Concentration of 0.3 <em>M</em> Na2S2O3</p>
+</td>
+</tr>
+<tr>
+<td colspan="12" style="height:24px;width:635px;">
+<p style="margin-left:164.95pt;"><strong>---- C o n c e n t r a t i
+o n s ---</strong></p>
+</td>
+</tr>
+<tr>
+<td style="height:48px;width:37px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:48px;width:41px;">
+<p style="margin-left:10.2pt;"><strong>#</strong></p>
+<p style="margin-left:-.7pt;"><strong>drops</strong></p>
+</td>
+<td style="height:48px;width:43px;">
+<p style="margin-left:10.85pt;"><strong>#</strong></p>
+<p style="margin-left:-.05pt;"><strong>drops</strong></p>
+</td>
+<td style="height:48px;width:58px;">
+<p>&nbsp;</p>
+<p style="margin-left:3.1pt;"><strong># drops</strong></p>
+</td>
+<td style="height:48px;width:49px;">
+<p>&nbsp;</p>
+<p style="margin-left:3.9pt;"><strong>Initial</strong></p>
+</td>
+<td style="height:48px;width:60px;">
+<p>&nbsp;</p>
+<p style="margin-left:8pt;"><strong>Initial</strong></p>
+</td>
+<td style="height:48px;width:45px;">
+<p>&nbsp;</p>
+<p style="margin-left:4.8pt;"><strong>Final</strong></p>
+</td>
+<td style="height:48px;width:59px;">
+<p>&nbsp;</p>
+<p style="margin-left:10.15pt;"><strong>Final</strong></p>
+</td>
+<td colspan="3" style="height:48px;width:163px;">
+<p>&nbsp;</p>
+<p style="margin-left:12.6pt;"><strong>R</strong><strong>eaction
+Time (sec)</strong></p>
+</td>
+<td style="height:48px;width:79px;">
+<p>&nbsp;</p>
+<p style="margin-left:7.45pt;">
+<strong>R</strong><strong>eaction</strong></p>
+</td>
+</tr>
+<tr>
+<td style="height:31px;width:37px;">
+<p style="margin-left:.5pt;">
+<strong>W</strong><strong>ell</strong></p>
+<p style="margin-left:8.75pt;"><strong>#</strong></p>
+</td>
+<td style="height:31px;width:41px;">
+<p style="margin-left:6.95pt;">HCl</p>
+</td>
+<td style="height:31px;width:43px;">
+<p style="margin-left:1.9pt;">water</p>
+</td>
+<td style="height:31px;width:58px;">
+<p style="margin-left:2.75pt;">Na2S2O3</p>
+</td>
+<td style="height:31px;width:49px;">
+<p style="margin-left:9.8pt;">HCl</p>
+</td>
+<td style="height:31px;width:60px;">
+<p style="margin-left:3.45pt;">Na2S2O3</p>
+</td>
+<td style="height:31px;width:45px;">
+<p style="margin-left:8.4pt;">HCl</p>
+</td>
+<td style="height:31px;width:59px;">
+<p style="margin-left:3.25pt;">Na2S2O3</p>
+</td>
+<td style="height:31px;width:49px;">
+<p style="margin-left:3.5pt;">Trial 1</p>
+</td>
+<td style="height:31px;width:49px;">
+<p style="margin-left:3.5pt;">Trial 2</p>
+</td>
+<td style="height:31px;width:65px;">
+<p style="margin-left:4.6pt;">Average</p>
+</td>
+<td style="height:31px;width:79px;">
+<p style="margin-left:2.5pt;">Rate (sec-1)</p>
+</td>
+</tr>
+<tr>
+<td style="height:24px;width:37px;">
+<p style="margin-left:8.7pt;"><strong>1</strong></p>
+</td>
+<td style="height:24px;width:41px;">
+<p style="margin-left:10.35pt;">8</p>
+</td>
+<td style="height:24px;width:43px;">
+<p style="margin-left:11pt;">0</p>
+</td>
+<td style="height:24px;width:58px;">
+<p style="margin-left:13.55pt;">12</p>
+</td>
+<td style="height:24px;width:49px;">
+<p style="margin-left:9.95pt;">1M</p>
+</td>
+<td style="height:24px;width:60px;">
+<p style="margin-left:9.5pt;">0.3M</p>
+</td>
+<td style="height:24px;width:45px;">
+<p>0.4M</p>
+</td>
+<td style="height:24px;width:59px;">
+<p>0.28M</p>
+</td>
+<td style="height:24px;width:49px;">
+<p>31.12</p>
+</td>
+<td style="height:24px;width:49px;">
+<p>25.29</p>
+</td>
+<td style="height:24px;width:65px;">
+<p>43.8</p>
+</td>
+<td style="height:24px;width:79px;">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td style="height:24px;width:37px;">
+<p style="margin-left:8.7pt;"><strong>2</strong></p>
+</td>
+<td style="height:24px;width:41px;">
+<p style="margin-left:10.35pt;">8</p>
+</td>
+<td style="height:24px;width:43px;">
+<p style="margin-left:11pt;">6</p>
+</td>
+<td style="height:24px;width:58px;">
+<p style="margin-left:16.6pt;">6</p>
+</td>
+<td style="height:24px;width:49px;">
+<p style="margin-left:9.95pt;">1M</p>
+</td>
+<td style="height:24px;width:60px;">
+<p style="margin-left:11.6pt;">0.15</p>
+</td>
+<td style="height:24px;width:45px;">
+<p>0.4M</p>
+</td>
+<td style="height:24px;width:59px;">
+<p>0.045M</p>
+</td>
+<td style="height:24px;width:49px;">
+<p>53.24</p>
+</td>
+<td style="height:24px;width:49px;">
+<p>57.47</p>
+</td>
+<td style="height:24px;width:65px;">
+<p>82.0</p>
+</td>
+<td style="height:24px;width:79px;">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td style="height:24px;width:37px;">
+<p style="margin-left:8.7pt;"><strong>3</strong></p>
+</td>
+<td style="height:24px;width:41px;">
+<p style="margin-left:10.35pt;">8</p>
+</td>
+<td style="height:24px;width:43px;">
+<p style="margin-left:11pt;">8</p>
+</td>
+<td style="height:24px;width:58px;">
+<p style="margin-left:16.6pt;">4</p>
+</td>
+<td style="height:24px;width:49px;">
+<p style="margin-left:9.95pt;">1M</p>
+</td>
+<td style="height:24px;width:60px;">
+<p style="margin-left:14.65pt;">0.1</p>
+</td>
+<td style="height:24px;width:45px;">
+<p>0.4M</p>
+</td>
+<td style="height:24px;width:59px;">
+<p>0.02M</p>
+</td>
+<td style="height:24px;width:49px;">
+<p>89.86</p>
+</td>
+<td style="height:24px;width:49px;">
+<p>84.93h</p>
+</td>
+<td style="height:24px;width:65px;">
+<p>129.9</p>
+</td>
+<td style="height:24px;width:79px;">
+<p>&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>A)&nbsp;Calculate the reaction rate by taking the inverse of the
+average reaction time, i.e., 1 divided by the average reaction
+time.</p>
+<p>B) Use table 1 to determine the reaction order for HCl.</p>
+<p>C) Use table 2 to determine the reaction order for Na2S2O3.</p>
+<p>D) Write the rate law for the reaction.</p>
+<p>E) Using the rate law, the rate, and the appropriate
+concentration(s) from one (or more) of your<br />
+experiments calculate k.</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>A) Data 1</p>
+<p>
+s.no&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Rate(s-1)</p>
+<p>
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+0.0375</p>
+<p>
+2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+0.0276</p>
+<p>
+3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+0.0240</p>
+<p>Data 2</p>
+<p>
+s.no&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Rate(s-1)</p>
+<p>
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+0.0228</p>
+<p>
+2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+0.0122</p>
+<p>
+3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+0.0077</p>
+<p>&nbsp;</p>
+<p>B) Rate=k * [HCl]^m [Na2S2O3]^n&nbsp; .......by rate law</p>
+<p>As in table1,[Na2S2O3]=constant</p>
+<p>so Rate=k * [HCl]^m</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Rate1 =k * (1M )^m=&nbsp; 0.0375s-1</p>
+<p>Also&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rate2 =k * (0.5M)^m=
+0.0276s-1</p>
+<p>So taking ratio of rate1/rate2=(1M )^m/ (0.5M)^m=&nbsp; 0.0375/
+0.0276</p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2^m=1.359</p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+m log 2 = log 1.359</p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+m=0.1332/0.3010</p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+m=0.44</p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+or zero order approx</p>
+<p>&nbsp;</p>
+<p>C)</p>
+<p>As in table,[HCl]=constant</p>
+<p>so Rate=k * [Na2S2O3]^n</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Rate1 =k' * (0.3M )^n=&nbsp; 0.0228s-1</p>
+<p>Also&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rate2 =k' * (0.15M)^n=
+0.0122s-1</p>
+<p>So taking ratio of rate1/rate2=(0.3M )^n/ (0.15M)^m=&nbsp;
+0.0228/ 0.0122</p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2^n=1.869</p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+n=log 1.869/log2=0.272/0.3010=0.903 =first order approximately</p>
+<p>D)Rate=k * [HCl]^0 [Na2S2O3]^1</p>
+<p>&nbsp;Rate=k * [Na2S2O3] &nbsp; &nbsp;&nbsp; is the&nbsp; rate
+law</p>
+<p>E) k=Rate/[Na2S2O3]&nbsp;&nbsp;</p>
+<p>taking value from table 2,</p>
+<p>k=0.0228s-1/0.3M=0.076M-1 s-1</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

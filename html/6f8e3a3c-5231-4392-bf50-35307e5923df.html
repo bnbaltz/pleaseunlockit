@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>JAVA CODING<em>&nbsp;based on
+Inheritance:</em>&nbsp;<em>-</em></p>
+<p>Create a class Book with the following members: Accession
+number, Name of the author, Title of the book, Year of Publication,
+Publisher’s Name, Cost of the book and Availability</p>
+<p>Create a class Membership with the following members: Member id,
+Name, Maxbooks Derive a class Library information_system from Book
+and Member. Include the following member functions:<br />
+1. Issue a book after checking member id, book id, Availability of
+the book and Maxbooks available for the member.</p>
+<p>2. Update availability of book and Maxbooks after each
+transaction.</p>
+<p>3. Display a member’s information given member id</p>
+<p><em>Instructions:-</em></p>
+<p><em>● Please write approach with 2-3 sentences</em></p>
+<p><em>● Please add screen shot of output</em></p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <html>
+ <head></head>
+ <body>
+  <p><strong>Solution : it contains 3 java classes as given below. Create Two text files members.txt and books.txt which contain information about members and books as shown here.&nbsp;</strong></p> 
+  <p><strong>Book.java&nbsp;</strong></p> 
+  <p><br> package library_information_system;</p> 
+  <p>import java.io.BufferedReader;<br> import java.io.BufferedWriter;<br> import java.io.File;<br> import java.io.FileReader;<br> import java.io.FileWriter;<br> import java.io.IOException;</p> 
+  <p><br> public class Book {<br> &nbsp; &nbsp; public int accession_number ;<br> &nbsp; &nbsp; public String author_name;<br> &nbsp; &nbsp; public String title;<br> &nbsp; &nbsp; public int year_of_publication;<br> &nbsp; &nbsp; public String publisher_name;<br> &nbsp; &nbsp; public double cost;<br> &nbsp; &nbsp; public boolean availability;<br> &nbsp; &nbsp;&nbsp;<br> &nbsp; &nbsp; public static Book[] fetchAllBooksFromFile(){<br> &nbsp; &nbsp; &nbsp; &nbsp; Book books[] = new Book[10];<br> &nbsp; &nbsp; &nbsp; &nbsp; BufferedReader br = null;<br> &nbsp; &nbsp; &nbsp;&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; try{<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;br = new BufferedReader(new FileReader("books.txt"));<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for(int i =0; i &lt;10; i++){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; String str= br.readLine();<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; String f[]= str.split(" "); &nbsp;&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; books[i] = new Book();<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; books[i].accession_number = Integer.parseInt(f[0]);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; books[i].author_name = f[1];<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; books[i].title = f[2];<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; books[i].year_of_publication = Integer.parseInt(f[3]);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; books[i].publisher_name = f[4];<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; books[i].cost = Double.parseDouble(f[5]);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; books[i].availability = Boolean.parseBoolean(f[6]);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; }&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; catch (IOException ioe)&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; {<br> &nbsp; &nbsp; &nbsp; &nbsp; }&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp;finally&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp; &nbsp; try {<br> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (br != null)<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; br.close();<br> &nbsp;&nbsp; &nbsp; &nbsp; }&nbsp;<br> &nbsp;&nbsp; &nbsp; &nbsp; catch (IOException ioe)&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("Error in closing the BufferedReader");<br> &nbsp;&nbsp; &nbsp; &nbsp; }<br> &nbsp;&nbsp; &nbsp;}<br> &nbsp;<br> &nbsp; &nbsp; &nbsp; return books;&nbsp;<br> &nbsp; &nbsp; }<br> &nbsp; &nbsp;&nbsp;<br> &nbsp; &nbsp; public static void writeAllBooksInFile(Book[] books){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;try {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; File file = new File("books.txt");<br> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;// if file doesnt exists, then create it<br> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;if (!file.exists()) {<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;file.createNewFile();<br> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;}<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FileWriter fw = new FileWriter(file.getAbsoluteFile());<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; try (BufferedWriter bw = new BufferedWriter(fw)) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; String str;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for(int i=0; i&lt;books.length; i++){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; str = &nbsp;books[i].accession_number + " "+books[i].author_name +" "+ books[i].title+" "+books[i].year_of_publication+" "+books[i].publisher_name +" "+ books[i].cost+" "+books[i].availability;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; bw.append(str);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; bw.newLine();<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;} catch (IOException e) {<br> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;e.printStackTrace();<br> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;}<br> &nbsp; &nbsp; }<br> }</p> 
+  <p>&nbsp;</p> 
+  <p><strong>Membership.java :</strong></p> 
+  <p>package library_information_system;</p> 
+  <p>import java.io.BufferedReader;<br> import java.io.BufferedWriter;<br> import java.io.File;<br> import java.io.FileReader;<br> import java.io.FileWriter;<br> import java.io.IOException;</p> 
+  <p>public class Membership {<br> &nbsp; &nbsp; public int memberId;<br> &nbsp; &nbsp; public String name;<br> &nbsp; &nbsp; public int maxbooks;<br> &nbsp; &nbsp;&nbsp;<br> &nbsp; &nbsp;&nbsp;<br> &nbsp; &nbsp; public static Membership[] fetchAllMembersFromFile(){<br> &nbsp; &nbsp; &nbsp; &nbsp; Membership memberships[] = new Membership[10];<br> &nbsp; &nbsp; &nbsp; &nbsp; BufferedReader br = null;<br> &nbsp; &nbsp; &nbsp;&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; try{<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;br = new BufferedReader(new FileReader("members.txt"));<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for(int i =0; i &lt;10; i++){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; String str= br.readLine();<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; String f[]= str.split(" "); &nbsp;&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; memberships[i] = new Membership();<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; memberships[i].memberId = Integer.parseInt(f[0]);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; memberships[i].name = f[1];<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; memberships[i].maxbooks = Integer.parseInt(f[2]);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; }&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; catch (IOException ioe)&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; {<br> &nbsp; &nbsp; &nbsp; &nbsp; }&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp;finally&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp; &nbsp; try {<br> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (br != null)<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; br.close();<br> &nbsp;&nbsp; &nbsp; &nbsp; }&nbsp;<br> &nbsp;&nbsp; &nbsp; &nbsp; catch (IOException ioe)&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("Error in closing the BufferedReader");<br> &nbsp;&nbsp; &nbsp; &nbsp; }<br> &nbsp;&nbsp; &nbsp;}<br> &nbsp;<br> &nbsp; &nbsp; &nbsp; return memberships;&nbsp;<br> &nbsp; &nbsp; }<br> &nbsp; &nbsp;&nbsp;<br> &nbsp; &nbsp;&nbsp;<br> &nbsp; &nbsp; &nbsp;public static void writeAllMembershipsInFile(Membership[] memberships){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;try {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; File file = new File("members.txt");<br> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;// if file doesnt exists, then create it<br> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;if (!file.exists()) {<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;file.createNewFile();<br> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;}<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FileWriter fw = new FileWriter(file.getAbsoluteFile());<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; try (BufferedWriter bw = new BufferedWriter(fw)) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; String str;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for(int i=0; i&lt;memberships.length; i++){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; str = memberships[i].memberId + " "+ memberships[i].name +" "+ memberships[i].maxbooks;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; bw.append(str);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; bw.newLine();<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;} catch (IOException e) {<br> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;e.printStackTrace();<br> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;}<br> &nbsp; &nbsp; }<br> }</p> 
+  <p><strong>Library_Information_System.java&nbsp;</strong></p> 
+  <p>&nbsp;</p> 
+  <p><br> package library_information_system;</p> 
+  <p>import java.util.Scanner;</p> 
+  <p>public class Library_Information_System {<br> &nbsp; &nbsp;&nbsp;<br> &nbsp; &nbsp; public static boolean issueBook(int bookId, int memberId){<br> &nbsp; &nbsp; &nbsp; &nbsp; //get all information of books and members to know if given ids are valid or not&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; Book books[] = Book.fetchAllBooksFromFile();<br> &nbsp; &nbsp; &nbsp; &nbsp; Membership membership[] = Membership.fetchAllMembersFromFile();<br> &nbsp; &nbsp; &nbsp; &nbsp; // find book with given book id&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; Book b = new Book();<br> &nbsp; &nbsp; &nbsp; &nbsp; Membership m = new Membership();<br> &nbsp; &nbsp; &nbsp; &nbsp; boolean flag= false;<br> &nbsp; &nbsp; &nbsp; &nbsp; for(int i=0 ; i&lt;books.length; i++){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(books[i].accession_number == bookId){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; b = books[i];<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; flag = true;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; &nbsp; &nbsp; if(flag == false){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("No book found with given Id");<br> &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; &nbsp; &nbsp; if(b.availability == false){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("Book is unavilable");<br> &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; &nbsp; &nbsp; // find member with given member id.&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; flag = false;<br> &nbsp; &nbsp; &nbsp; &nbsp; for(int i=0; i&lt;membership.length; i++){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(membership[i].memberId == memberId){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; m = membership[i];<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; flag = true;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; &nbsp; &nbsp; if(flag == false){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("No Member found with given Id");<br> &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; &nbsp; &nbsp; if(m.maxbooks &lt;=0){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("Member Can not issue more books");<br> &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; &nbsp; &nbsp; if(b.availability &amp;&amp; m.maxbooks&gt;0){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return true;<br> &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; &nbsp; &nbsp; else {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return false;<br> &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; }<br> &nbsp;<br> &nbsp; &nbsp; public static void updateAvailability(int bookId, int membershipId){<br> &nbsp; &nbsp; &nbsp; &nbsp; //get all information of books and members to know if given ids are valid or not&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; Book books[] = Book.fetchAllBooksFromFile();<br> &nbsp; &nbsp; &nbsp; &nbsp; Membership membership[] = Membership.fetchAllMembersFromFile();<br> &nbsp; &nbsp; &nbsp; &nbsp; // find book with given book id&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; Book b = new Book();<br> &nbsp; &nbsp; &nbsp; &nbsp; Membership m = new Membership();<br> &nbsp; &nbsp; &nbsp; &nbsp; for(int i=0 ; i&lt;books.length; i++){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(books[i].accession_number == bookId){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; b = books[i];<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; b.availability = false;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; &nbsp; &nbsp; //update book list in file&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; Book.writeAllBooksInFile(books);<br> &nbsp; &nbsp; &nbsp; &nbsp; // find member with given member id. and update it&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; for(int i=0; i&lt;membership.length; i++){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(membership[i].memberId == membershipId){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; m = membership[i];<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; m.maxbooks = m.maxbooks -1;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; &nbsp; &nbsp; //update member list in file&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; Membership.writeAllMembershipsInFile(membership);<br> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("Book has been issued ");<br> &nbsp; &nbsp; }<br> &nbsp; &nbsp;&nbsp;<br> &nbsp; &nbsp; public static void getMemberInformation(int membershipid){<br> &nbsp; &nbsp; &nbsp; &nbsp; //get all members&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; Membership membership[] = Membership.fetchAllMembersFromFile();<br> &nbsp; &nbsp; &nbsp; &nbsp; Membership m = new Membership();<br> &nbsp; &nbsp; &nbsp; &nbsp; boolean flag = false;<br> &nbsp; &nbsp; &nbsp; &nbsp; for(int i=0; i&lt;membership.length; i++){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(membership[i].memberId == membershipid){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; m = membership[i];<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; flag = true;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; &nbsp; &nbsp; if(flag == false){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("No Member found with given Id");<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return;<br> &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; &nbsp; &nbsp; else {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("\n--------------------------------\nMember information with id "+ membershipid);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("Member name :"+ m.name);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("Max Books can be issued by member :"+m.maxbooks);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("-------------------------------");<br> &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; }&nbsp;<br> &nbsp; &nbsp;&nbsp;<br> &nbsp; &nbsp; public static void main(String[] args) {<br> &nbsp; &nbsp; &nbsp; &nbsp; boolean flag = true, available ;<br> &nbsp; &nbsp; &nbsp; &nbsp; Scanner sc= new Scanner(System.in);<br> &nbsp; &nbsp; &nbsp; &nbsp; int choice, bookid, memberid;<br> &nbsp; &nbsp; &nbsp; &nbsp; while(flag){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("1. Issue book");<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("2. Disply member's Information");<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("3. Exit");<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("Choose operation :");<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; choice = sc.nextInt();<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; switch(choice){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 1 : System.out.println("Enter Book id :");<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;bookid = sc.nextInt();<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println("Enter Member id :");<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;memberid = sc.nextInt();<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;available = issueBook(bookid, memberid);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if(available){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;updateAvailability(bookid, memberid);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else{<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println("Can not issue book");<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;break;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 2 : System.out.println("Enter member id for information :");<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;memberid = sc.nextInt();<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;getMemberInformation(memberid);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;break;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 3 : flag =false ; break;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; default : System.out.println("Choose correct option "); break;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br> &nbsp; &nbsp; }<br> &nbsp; &nbsp;&nbsp;<br> }</p> 
+  <p><strong>Few random outputs :</strong></p> 
+  <p><img alt="Output- Library_Information_System (run)
+books.txt- Notepad
+1. Iue book
+2. Diaply bar Information
+3. Exi
+Choo e operation :
+F" src="//d2vlcm61l7u1fs.cloudfront.net/media%2Fef1%2Fef1d2f14-578a-4639-a8f3-ff5f2d565b91%2FphpEwSq4e.png" style="height:451px;width:1024px;"></p> 
+  <p>memeber.txt :</p> 
+  <p><br> 1 aaa 2<br> 2 bbb 3<br> 3 ccc 1<br> 4 ddd 3<br> 5 eee 4<br> 6 fff 2<br> 7 ggg 6<br> 8 hhh 3<br> 9 iii 7<br> 10 jjj 0</p> 
+  <p><strong>books.txt:</strong></p> 
+  <p>1 aaa aaa111 2011 aa 111.11 true<br> 2 bbb bbb222 2022 bb 222.22 true<br> 3 ccc ccc333 2033 cc 333.33 false<br> 4 ddd ddd444 2044 dd 444.44 false<br> 5 eee eee555 2055 ee 555.55 true<br> 6 fff fff666 2066 ff 666.66 false<br> 7 ggg ggg777 2077 gg 777.77 false<br> 8 hhh hhh888 2088 hh 888.88 true<br> 9 iii iii999 2099 ii 999.99 false<br> 10 jjj jjj000 2100 jj 1000.0 false</p> 
+  <p>You can have your own data too.&nbsp;</p> 
+  <p>If you have any doubts , you can ask in comment section.&nbsp;</p> 
+ </body>
+</html>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

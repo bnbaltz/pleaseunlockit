@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Create an Arduino program that uses 2 sensors: Button Light
+sensor Every time the button is pressed, the intensity of the light
+changes. Cycle through the following 6 intensities: 0, 51, 102,
+153, 204, 255. Use port D2 for the button and D3 for the light
+sensor.(please attach code and output)</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><strong>Arduino Uno</strong></p>
+
+<p>Atmega328p microcontroller is used in Arduino mega. So Arduino can be considered as a microcontroller based development board. There are 14 digital pins which allows the digital input/output devices to be interfaced with Arduino and 6 analog channels for analog devices such as potentiometer, sensors etc.&nbsp;</p>
+
+<p><strong>Arduino Programming</strong>&nbsp;</p>
+
+<p>The basic arduino program consists of two functions&nbsp;</p>
+
+<p><strong>void setup()</strong></p>
+
+<p>This function is used for the configuration of the modules used for the application. Digital pins , Serial communication modules are configured inside this function. This function will only be executed once.&nbsp;</p>
+
+<p>Syntax-&nbsp;</p>
+
+<p>void setup()</p>
+
+<p>{</p>
+
+<p>Configuration statements&nbsp;</p>
+
+<p>}</p>
+
+<p><strong>void loop()</strong></p>
+
+<p>This function is used for executing the operations to be performed using the controller. As the name suggests, this function will execute till the power down or reset.&nbsp;</p>
+
+<p>Syntax-&nbsp;</p>
+
+<p>void loop()</p>
+
+<p>{</p>
+
+<p>Operations to be performed&nbsp;</p>
+
+<p>}</p>
+
+<p><strong>pinMode()</strong>&nbsp;- This function is used to configure a digital pin as input or output according to the requirement.&nbsp;&nbsp;</p>
+
+<p>Syntax -&nbsp;</p>
+
+<p>pinMode(5,OUTPUT) - This statement configures digital pin 5&nbsp;as output&nbsp;</p>
+
+<p>pinMode(6,INPUT) - This statement configures digital pin 6&nbsp;as input&nbsp; &nbsp;</p>
+
+<p><strong>digitalRead()</strong>&nbsp;- This function read the state of a digital pin. This function will return either 1 or 0 according to the pin state.&nbsp;</p>
+
+<p>Syntax-&nbsp;&nbsp;</p>
+
+<p>digitalWrite(5) - This statement read the state of digital&nbsp;pin 5</p>
+
+<p><strong>analogWrite()</strong></p>
+
+<p>This function is used to generate PWM signal of different duty cycle on PWM pins. PWM pins on Arduino Uno are 3,5,6,9,10 and 11.&nbsp;</p>
+
+<p>Syntax-&nbsp;</p>
+
+<p>analogWrite(pin,value)&nbsp;</p>
+
+<p>pin - PWM pin&nbsp;</p>
+
+<p>value - Value can be in range 0 -255, 0 means 0% duty cycle and 255 means 100% duty cycle.&nbsp;&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>Here the brightness of the Light which is an LED must be controlled by a button. So the LED is connected to PWM pin 3, and analogWrite() function can be used to control the brightness.&nbsp;&nbsp;</p>
+
+<p>Circuit diagram&nbsp;</p>
+
+<p><img alt="DIGITALIPWA
+O UNO
+ARDUINO
+POWER
+ANALOG IN
+TIN
+KER
+CAD
+" src="https://media.cheggcdn.com/coop/286/2869b4d8-99b3-46f3-92ef-a744622bffb3/1614315680021_StunningUusam-Fyyran.png"></p>
+
+<p>&nbsp;</p>
+
+<p>The code will be,&nbsp;</p>
+
+<pre>
+<code>int count=0;                             // Initially count variable is zero
+void setup()
+{
+  pinMode(3, OUTPUT);                    // Configure LED pin as output and Button pin as input 
+  pinMode(2, INPUT);
+  
+}
+
+void loop()
+{
+  if(digitalRead(2)==1 &amp;&amp; count==0)     // If the button is pressed for first time    
+  {
+    while(digitalRead(2)==1);           // Wait till released 
+    analogWrite(3,0);                   // LED will be off since 0 is written 
+    count++;                            // Increment count 
+    
+  }
+  
+  if(digitalRead(2)==1 &amp;&amp; count==1)     // If the button is pressed for second time
+  {
+    while(digitalRead(2)==1);           // Wait till released 
+    analogWrite(3,51);                  // LED will be ON but with less brightness 
+    count++;                            // Increment count 
+  }
+  
+  if(digitalRead(2)==1 &amp;&amp; count==2)     // If the button is pressed for third time
+  { 
+    while(digitalRead(2)==1);           // Wait till released
+    analogWrite(3,102);                 // LED will be ON  with more brightness
+    count++;                            // Increment count 
+  }
+  if(digitalRead(2)==1 &amp;&amp; count==3)     // If the button is pressed for fourth time
+  { 
+    while(digitalRead(2)==1);           // Wait till released  
+    analogWrite(3,153);                 // Increase the brightness 
+    count++;                            // Increment the count 
+  }
+  
+  if(digitalRead(2)==1 &amp;&amp; count==4)     // If the button is pressed for fifth time
+  {
+    while(digitalRead(2)==1);           // Wait till released
+    analogWrite(3,204);                 // Increase the brightness 
+    count++;                            // Increment the count 
+  }
+  
+  if(digitalRead(2)==1 &amp;&amp; count==5)     // If the button is pressed for sixth time
+  { 
+    while(digitalRead(2)==1);           // Wait till released
+    analogWrite(3,255);                 // Maximum brightness 
+    count=0;                            // Initialize count to 0
+  }
+  
+  
+}</code></pre>
+
+<p>&nbsp;</p>
+
+<p>Screen shot,&nbsp;</p>
+
+<p>When button is pressed for first time, (Led off )&nbsp;</p>
+
+<p><img alt="TEXT
+RX-D
+DICITALIPWM-)
+O UNO
+ARDUINO
+POWER
+ANALOG IN
+" src="https://media.cheggcdn.com/coop/a55/a55f2e47-e009-4299-aa62-c5ccb471977d/1614316278436_29.png"></p>
+
+<p>&nbsp;</p>
+
+<p>When button is pressed for sixth time , (LED on with maximum intensity)&nbsp;</p>
+
+<p><img alt="AREF
+7I+XJ
+DICITALIPWA
+RX-
+O UNO
+ON
+ARDUINO
+POWER
+ANALOG IN
+- - - - - - - - - - - - - -
+" src="https://media.cheggcdn.com/coop/da3/da35ac4b-41bf-4e0a-b79e-12ad43d9aa6d/1614316302183_30.png"></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

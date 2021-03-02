@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p><img alt="Description:
+Given an array A of N elements, Find for each element A[i], how many elements A[j] are greater than
+or equal to " src="https://media.cheggcdn.com/media/12c/12c1ee0b-1a3f-4f9e-8bb1-3d8013e9ad15/phpJsztbz" style="height:819px;"></p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>The below snippet solves the above problem. If you like my answer then&nbsp; please upvote I need it. Thank You</p>
+
+<pre>
+<code class="language-cpp">#include&lt;iostream&gt;
+#include&lt;vector&gt;
+using namespace std;
+int main()
+{
+    vector&lt;int&gt; A;
+    vector&lt;int&gt; res;
+    int num,i;
+    cin&gt;&gt;num;                 // Taking size of array as input
+    for(i=0;i&lt;num;i++)        // Taking input for elements of array
+    {
+        int temp;
+        cin&gt;&gt;temp;
+        A.push_back(temp);
+    }
+    res.push_back(0);         // Their is no element before A[0]
+    for(i=1;i&lt;num;i++)
+    {
+        int counter=0;
+        for(int j=0;j&lt;i;j++)   // Checking for all elements before the current index
+        {
+            if(A[j]&gt;=A[i])
+                counter++;     // Increasing counter if any number greater than current number
+        }
+        res.push_back(counter); // Pushing it into the array
+    }
+    for(i=0;i&lt;res.size();i++)
+    {
+        cout&lt;&lt;res[i]&lt;&lt;" ";
+    }
+    return 0;
+}</code></pre>
+
+<p>The output of the above snippet is shown in below image -</p>
+
+<p><img alt="G: New folder (3)\codes\c++\cheg12g.exe
+Х
+15 4 2 5
+0 1 2 1
+Process returned © (@xo)
+Press any key to continue.
+execution ti" src="https://media.cheggcdn.com/coop/6d7/6d7dc993-eccf-474e-9549-736a2907d832/1614541325267_Screenshot357.png" style="height:507px;width:989px"></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

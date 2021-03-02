@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>&nbsp;inheritanceMystery3 :</p>
+<p>Language/Type:&nbsp;Java&nbsp;inheritance&nbsp;polymorphism</p>
+<p>Assume that the following classes have been defined:</p>
+<pre>
+public class George extends Elaine {</pre>
+<pre>
+    public void method1() {</pre>
+<pre>
+        print("George 1 ");</pre>
+<pre>
+    }</pre>
+<pre>
+}</pre>
+<pre>
+​public class Jerry {</pre>
+<pre>
+    public void method1() {</pre>
+<pre>
+        print("Jerry 1 ");</pre>
+<pre>
+    }</pre>
+<pre>
+​</pre>
+<pre>
+    public void method2() {</pre>
+<pre>
+        print("Jerry 2 ");</pre>
+<pre>
+    }</pre>
+<pre>
+​</pre>
+<pre>
+    public String toString() {</pre>
+<pre>
+        return "Jerry";</pre>
+<pre>
+    }</pre>
+<pre>
+}</pre>
+<pre>
+​</pre>
+<pre>
+public class Elaine extends Kramer {</pre>
+<pre>
+    public String toString() {</pre>
+<pre>
+        return "Elaine " + super.toString();</pre>
+<pre>
+   }</pre>
+<pre>
+}</pre>
+<pre>
+​</pre>
+<pre>
+public class Kramer extends Jerry {</pre>
+<pre>
+    public void method1() {</pre>
+<pre>
+        super.method1();</pre>
+<pre>
+        print("Kramer 1 ");</pre>
+<pre>
+    }</pre>
+<pre>
+​</pre>
+<pre>
+    public void method2() {</pre>
+<pre>
+        print("Kramer 2 ");</pre>
+<pre>
+        method1();</pre>
+<pre>
+    }</pre>
+<pre>
+​</pre>
+<pre>
+    public String toString() {</pre>
+<pre>
+        return "Kramer";</pre>
+<pre>
+    }</pre>
+<pre>
+}</pre>
+<p>Given the classes above, what output is produced by the
+following code? (Since the code loops over the elements of an array
+of objects, write the output produced as the loop passes over each
+element of the array separately.)</p>
+<p>&nbsp;</p>
+<pre>
+Jerry[] seinfeld = { new George(), new Kramer(), new Jerry(), new Elaine() };</pre>
+<pre>
+for (int i = 0; i &lt; seinfeld.length; i++) {</pre>
+<pre>
+    seinfeld[i].method1();</pre>
+<pre>
+    println();</pre>
+<pre>
+    seinfeld[i].method2();</pre>
+<pre>
+    println();</pre>
+<pre>
+    println(seinfeld[i]);</pre>
+<pre>
+    println();</pre>
+<pre>
+}</pre>
+<p>&nbsp;Sound F/X</p>
+<table>
+<tbody>
+<tr>
+<td>element 0</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>element 1</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>element 2</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>element 3</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><strong>// Screenshot of the code &amp; output</strong></p>
+<p><img alt="-
+[
+x
+Quick Access
+*
+eclipse-workspace - Assignemnt/src/com/java/Main.java - Eclipse IDE
+File Edit Source Refactor Navigate S" src="https://media.cheggcdn.com/media/252/2522aa24-b9c6-427a-adac-7569b0b5448b/phpEJWDkt.png" style="height:1023px;"></p>
+<p><strong>// Code to copy</strong></p>
+<p><span style="text-decoration: underline"><strong>Jerry.java</strong></span></p>
+<p>public class Jerry {<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp; &nbsp;public void method1() {<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("Jerry 1
+");<br>
+&nbsp;&nbsp; &nbsp;}<br>
+&nbsp;&nbsp; &nbsp;<br>
+&nbsp;&nbsp; &nbsp;public void method2() {<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("Jerry 2
+");<br>
+&nbsp;&nbsp; &nbsp;}<br>
+&nbsp;&nbsp; &nbsp;@Override<br>
+&nbsp;&nbsp; &nbsp;public String toString() {&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return "Jerry";<br>
+&nbsp;&nbsp; &nbsp;}<br>
+&nbsp;&nbsp; &nbsp;<br>
+}</p>
+<p><span style="text-decoration: underline"><strong>Kramer.java</strong></span></p>
+<p>public class Kramer extends Jerry {</p>
+<p>&nbsp;&nbsp; &nbsp;public void methdo1() {<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;super.method1();<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("Kramer 1
+");<br>
+&nbsp;&nbsp; &nbsp;}<br>
+&nbsp;&nbsp; &nbsp;<br>
+&nbsp;&nbsp; &nbsp;public void metheo2() {<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.out.println("Kramer 2
+");<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;methdo1();<br>
+&nbsp;&nbsp; &nbsp;}<br>
+&nbsp;&nbsp; &nbsp;@Override<br>
+&nbsp;&nbsp; &nbsp;public String toString() {&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return "Kramer";<br>
+&nbsp;&nbsp; &nbsp;}&nbsp; &nbsp;&nbsp;<br>
+&nbsp;&nbsp; &nbsp;<br>
+}</p>
+<p><span style="text-decoration: underline"><strong>Elaine.java</strong></span></p>
+<p>public class Elaine extends Kramer{<br>
+&nbsp;&nbsp; &nbsp; @Override<br>
+&nbsp;&nbsp; &nbsp;public String toString() {<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; return "Elaine " +
+super.toString();<br>
+&nbsp;&nbsp; &nbsp;}</p>
+<p>}</p>
+<p><span style="text-decoration: underline"><strong>George.java</strong></span></p>
+<p>public class George extends Elaine {<br>
+&nbsp;&nbsp; &nbsp; public void method1() {<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; System.out.println("George 1
+");<br>
+&nbsp;&nbsp; &nbsp; }<br>
+}<br>
+&nbsp;</p>
+<p><span style="text-decoration: underline"><strong>Main.java</strong></span></p>
+<p>public class Main {</p>
+<p>&nbsp;&nbsp; &nbsp;public static void main(String[] args)
+{<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Jerry[] seinfeld = { new
+George(), new Kramer(), new Jerry(), new Elaine() };<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;for (int i = 0; i &lt;
+seinfeld.length; i++) {<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+&nbsp;seinfeld[i].method1();<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+&nbsp;System.out.println();<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+&nbsp;seinfeld[i].method2();<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+&nbsp;System.out.println();<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+&nbsp;System.out.println(seinfeld[i]);<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+&nbsp;System.out.println();<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br>
+&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+&nbsp;&nbsp; &nbsp;}</p>
+<p>}</p>
+<p><br>
+<span style="text-decoration: underline"><strong>Explanation:</strong></span></p>
+<p>here subclass method1() executed by invoking corresponding
+object and prints and super class method1() if extends if any other
+class , similarly ultimate Super class method1 executed.</p>
+<p>Simple terms method1() of subclass for which object created and
+penultimate class (Jerry) and following it's descendants</p>
+<p><span style="text-decoration: underline"><strong>Element
+0:</strong></span> George, Elain, Kramer, Jerry</p>
+<p><span style="text-decoration: underline"><strong>Element
+1:</strong></span> Kramer, Jerry</p>
+<p><span style="text-decoration: underline"><strong>Element
+2:</strong></span> Jerry</p>
+<p><span style="text-decoration: underline"><strong>Element
+3:</strong></span> Elain, Kramer, Jerry</p>
+<p>&nbsp;</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

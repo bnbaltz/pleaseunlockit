@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Consider an array MARKS[20][5] which stores the marks obtained
+by 20 students in 5 subjects. Write a C program to</p>
+<p style="margin-left:24px;">(a) Find the average marks obtained in
+each subject.</p>
+<p style="margin-left:24px;">(b) Find the average marks obtained by
+every student.</p>
+<p style="margin-left:24px;">(c) Find the number of students who
+have scored below 50 in their average.</p>
+<p style="margin-left:24px;">&nbsp;(d) Display the scores obtained
+by every student.</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><strong>Code:</strong></p>
+
+<pre>
+<code class="language-objectivec">#include &lt;stdio.h&gt;
+
+int main(void) {
+  //declared marks of 5 subject for 20 students    
+  int MARKS[20][5]={{78,67,90,67,78},{78,89,90,80,78},{67,90,89,78,90},{69,40,89,88,67},{78,90,36,34,67},{56,45,89,34,90},{67,78,90,67,56},
+                    {56,89,56,78,90},{67,90,34,23,89},{56,39,37,40,68},{90,99,78,89,67},{67,34,23,78,49},{37,70,34,23,39},{56,49,37,40,68},
+                    {80,99,28,89,67},{47,34,23,78,49},{37,90,84,63,89},{56,99,37,40,98},{90,89,78,89,47},{77,34,93,98,29}};
+  int i,j;
+  float average_sub[5] = {0,0,0,0,0};
+  float average_stu[20];
+  int  count=0;
+
+  //calculate average of each subject of all student
+  for(i=0;i&lt;5;i++){
+    for(j=0;j&lt;20;j++){
+      average_sub[i] += (float)MARKS[j][i];
+    }
+  }
+
+  //print average
+  printf("\nAverage marks obtained in each subject : ");
+  for(i=0;i&lt;5;i++){
+    average_sub[i] /= 20.0;
+
+    printf("\nFor subject %d : %2.2f",i+1,average_sub[i]);
+  }
+
+  //calculate average of each student of all subject
+  for(i=0;i&lt;20;i++){
+    average_stu[i] = 0;
+    for(j=0;j&lt;5;j++){
+      average_stu[i] += (float)MARKS[i][j];
+    }
+  }
+
+  //print average
+  printf("\n\nAverage marks obtained by every student : ");
+  for(i=0;i&lt;20;i++){
+    average_stu[i] /= 5.0;
+
+    if(average_stu[i] &lt; 50)
+      count++;
+
+    printf("\nFor student %d : %2.2f",i+1,average_stu[i]);
+  }
+
+  //print number of student who have below 50 score 
+  printf("\n\nNumber of students who have scored below 50 in their average : %d",count);
+
+  //print score of 20 student 
+  printf("\n\nScore of student : \n");
+  for(i=0;i&lt;20;i++){
+    printf("Student %d : %d %d %d %d %d\n",i+1,MARKS[i][0],MARKS[i][1],MARKS[i][2],MARKS[i][3],MARKS[i][4]);
+  }
+  return 0;
+}</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<p><img src="https://media.cheggcdn.com/coop/5f0/5f09cf8c-8d9b-4eda-99f6-e5dfe8524777/1604748644361_image.png" style="height:1144px;width:698px" alt="Average marks obtained in each subject :
+For subject 1 : 65.45
+For subject 2 : 70.70
+For subject 3 : 60.75
+For subject 4 : 63"></p>
+
+<p><img src="https://media.cheggcdn.com/coop/d95/d9507735-734e-4cb2-ac6e-3be7e14968fc/1604748688455_image.png" style="height:848px;width:1061px" alt="#include <stdio.h>
+int main(void) {
+//declared marks of 5 subject for 20 students
+int MARKS [20][5]={{78,67,90,67,78},{78,89,">.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div id="mobile-question-style" style="font-family: 'Helvetica Neue',Helvetica,Arial; color:#333333;"><div><br><img src="https://media.cheggcdn.com/study/441/441d7705-cda1-4ed0-9bd4-4ee875076397/image" alt="Problem 2
+A father is planning a savings program for his daughter to pay for college. She is 14, she plans to
+enroll at the u"></div><div><img src="https://media.cheggcdn.com/study/b91/b91ff927-d570-4757-8dfb-9ee77a286f83/image" alt="Problem 1
+You started a new job at a supplier of auto repair parts. Your boss, the chief financial officer (CFO),
+has just ha"></div></div>
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>Problem 1</p> <p>1<strong>.Project L NPV</strong></p> <p>Given required discount rate = the WACC = 10%</p> <p><img alt="\frac{80}{1+0.1}\ + \frac{75}{(1+0.1)^{2}}\ +\frac{110}{(1+0.1)^{3}}" src="https://media.cheggcdn.com/media/376/376fea22-ab90-45d6-b5d7-5dacb24ae01f/33ea89d9-d5dc-4047-a436-c8c3a68ecb53.gif"></p> <p>=72.73&nbsp;+ 61.98&nbsp;+ 82.64</p> <p>=217.35</p> <p>NPV = -200+217.35 = 17.35</p> <p>Values given in thousands of dollars</p> <p>so <strong>NPV = $ 17,350</strong></p> <p><strong>Project S NPV</strong></p> <p>Given same discount rate</p> <p><img alt="\frac{140}{1+0.1}\ + \frac{70}{(1+0.1)^{2}}\ +\frac{40}{(1+0.1)^{3}}" src="https://media.cheggcdn.com/media/885/88542f01-faa9-4e1d-a1f2-a6c8f385df2e/d72fb183-5299-45a9-aae4-3c8e92a76c1d.gif"></p> <p>&nbsp;=127.27 + 57.85 + 30.05</p> <p>=215.17</p> <p>NPV = -200 +215.17</p> <p>Values given in thousands of dollars</p> <p>so <strong>NPV = $ 15,170 ,</strong></p> <p>Project L has higher NPV, hence project L should be accepted.</p> <p>2.IRR</p> <p>Internal rate of return is that rate of return at which the NPV of the project becomes 0</p> <p>The project with higher IRR is the better project.</p> <p>To find IRR of project L</p> <p>We have to solve for<em> r </em>such that</p> <p><img alt="-200 \ + \frac{80}{1+ r}\ + \frac{75}{(1+r)^{2}}\ +\frac{110}{(1+r)^{3}}\ = 0" src="https://media.cheggcdn.com/media/c41/c41f346c-11a0-43c2-bd17-3c5c3aba1723/cc020f06-9ae3-43c1-aa83-c57e8d9eb6a8.gif"></p> <p>By trial and error</p> <p>we&nbsp; get<strong>&nbsp;<em>r = 14.60 %</em></strong></p> <p>For project S</p> <p>We have to solve for&nbsp;<em>r</em>&nbsp;such that&nbsp;</p> <p><img alt="-200 \ + \frac{140}{1+ r}\ + \frac{70}{(1+r)^{2}}\ +\frac{40}{(1+r)^{3}}\ = 0" src="https://media.cheggcdn.com/media/150/150f8024-4db8-4cbb-8509-afbb2fe0c940/bfae4634-8a36-430d-b91e-9a9161055c6a.gif"></p> <p>By trial and error&nbsp;</p> <p>we get<strong>&nbsp; r = 15.36 %</strong></p> <p>Hence we should take up project S according to IRR</p> <p>3.NPV profiles</p> <p>The graph of the NPV profiles and the crossover can be seen in the attached image.<img alt="60.00
+55.00
+50.00
+45.00
+40.00
+35.00
+30.00
+25.00
+20.00
+Project L
+Projects
+15.00
+10.00
+5.00
+0.00
+0.5 1 1.5 2 2.5 3 3.5 4 4.5 5 " src="https://media.cheggcdn.com/coop/796/79670d87-23d9-4940-b6d1-687db5a066e4/1613615713318_1IMAGE.jpg" style="height:521px;width:1127px">The cross over happens at&nbsp;</p> <p><strong>Discount rate = 12.27 %</strong></p> <p><strong>NPV = $ 8,500</strong> ( As the values are mentioned in thousands of dollars)</p> <p>4. <strong>MIRR</strong></p> <p>&nbsp;</p> <p>MIRR is that IRR when all the positive cash flows are re invested at the existing rate of interest.</p> <p>In this case we assume the existing rate of interest is same as WACC which is 10 %</p> <p>For project L&nbsp;</p> <p>we find terminal value of incoming cash flows</p> <p><img alt="(80 * 1.1^{2})\ + (75 * 1.1)\ +(110)" src="https://media.cheggcdn.com/media/40e/40ebc595-d4b6-4c6f-8d1a-c1242e085d8d/fb430a48-bc36-4326-bef6-b1395c14cff7.gif"></p> <p>=96.8+82.5+110</p> <p>=289.3</p> <p>MIRR =&nbsp;<img alt="({\frac{Terminal\ cash\ flow}{Outlay}})^{\frac{1}{n}}\ -1" src="https://media.cheggcdn.com/media/4db/4db3caf9-0266-4ed9-8c32-7d6b8664835c/65806536-8bd3-4986-9eac-643929e34fae.gif"></p> <p>Terminal cash flow = 289.3</p> <p>Outlay = 200</p> <p>n=3</p> <p><strong>MIRR = 13.09%</strong></p> <p>&nbsp;</p> <p>For Project S</p> <p><img alt="(140 * 1.1^{2})\ + (70 * 1.1)\ +(40)" src="https://media.cheggcdn.com/media/1cc/1ccb4010-c718-4b5f-ae6e-31889a66a746/68d60822-e620-438a-a8e4-360e439f063c.gif"></p> <p>169.4+77+40</p> <p>=286</p> <p>MIRR =&nbsp;<img alt="({\frac{Terminal\ cash\ flow}{Outlay}})^{\frac{1}{n}}\ -1" src="https://media.cheggcdn.com/media/4db/4db3caf9-0266-4ed9-8c32-7d6b8664835c/65806536-8bd3-4986-9eac-643929e34fae.gif"></p> <p>Terminal cash flow = 286</p> <p>Outlay = 200</p> <p>n=3</p> <p><strong>MIRR = 12.66%</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

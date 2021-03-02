@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>please answer part a,b,c with the explanation&nbsp;</p>
+<p><img alt="(4) Tom owns a small convenience store. He has the habit of keeping track of how long he
+waits for the arrival of the first c" src="https://media.cheggcdn.com/media/083/08379274-b440-4ee3-bbf5-23c273463a5f/phpGlVBca.png" style="height:1024px;width:888px;"></p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>Distribution for waiting here is given as:&nbsp;</p>
+<p><img alt="T \sim exp(1/10)" src=
+https://media.cheggcdn.com/media/cea/cea53bb2-34fc-4f88-bfaf-0103eab22b80/2904670d-fde4-4b03-8953-14c8d93b1dfa.png />as
+mean is reciprocal of parameter for exponential
+distribution.&nbsp;</p>
+<p>a) Probability that the customer would arrive in the first 5
+minutes after he opens the shape is computed here as:&nbsp;</p>
+<p><img alt=
+"P(T &lt; 5) = \int_{0}^{5}0.1e^{-0.1t} =e^{-0.5} = 0.6065" src=
+https://media.cheggcdn.com/media/be0/be0e32e1-a2e2-48ce-9aa5-42c4e3b23c26/72305dc2-e2c7-4e72-804f-e172c214f4fe.png /></p>
+<p>b) The probability that Jan 8 is the 3rd time that he had to
+only wait for less than 5 minutes for the first customer is
+computed here as:&nbsp;</p>
+<p>= Probability that in first 7 days, there are 2 days with T &lt;
+5 * Probability that on 8th day T &lt; 5</p>
+<p>= (7c2)*0.6065<sup>2</sup>(1 -
+0.6065)<sup>7-2</sup>&nbsp;*0.6065 = 0.0442<br />
+<strong>Therefore 0.0442 is the required probability
+here</strong></p>
+<p>c) Given that Ton has been waiting for 10 minutes already,
+probability that the first customer will arrive in the next 5
+minutes after that is computed as:&nbsp;</p>
+<p>= Probability that the next customer arrives in the next 5
+minutes because exponential distribution follows a memoryless
+property, therefore it does not depend on what happened before that
+point</p>
+<p><img alt=
+"P(T &lt; 5) = \int_{0}^{5}0.1e^{-0.1t} =e^{-0.5} = 0.6065" src=
+https://media.cheggcdn.com/media/be0/be0e32e1-a2e2-48ce-9aa5-42c4e3b23c26/72305dc2-e2c7-4e72-804f-e172c214f4fe.png /></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

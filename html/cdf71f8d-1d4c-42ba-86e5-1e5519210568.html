@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p><img alt="1. Title Comment Block
+i. Create your source code file named main.cpp, and at the very top of the source code use three one l" src="https://media.cheggcdn.com/media/f58/f58733f3-5ffd-4219-a60f-edf8a9809036/phpTGWQgE" style="height:631px;width:675px;"><img alt="5. Typical input and output:
+*** TUFFY TITAN HEIGHT CALCULATOR ***
+Enter first name (type xxx when finished): Tuffy Titan
+Ent" src="https://media.cheggcdn.com/media/3d9/3d932d23-4673-4026-b797-189aed93124b/phpR2POLQ" style="height:747px;width:663px;"></p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p style="text-align:justify">Here is the answer for your question in&nbsp;<strong>C++ Programming Language.</strong></p> <p style="text-align:justify"><strong>CODE :&nbsp;</strong></p> <p style="margin-left:40px;text-align:justify">/**<br> &nbsp;&nbsp; &nbsp;Name:<br> &nbsp;&nbsp; &nbsp;Date:<br> &nbsp;&nbsp; &nbsp;Excercise:&nbsp;<br> **/<br> #include&lt;iostream&gt;<br> #include&lt;fstream&gt;<br> #include&lt;iomanip&gt;<br> #include&lt;string&gt;<br> using namespace std;</p> <p style="margin-left:40px;text-align:justify">int main(){<br> &nbsp;&nbsp; &nbsp;//Required variables<br> &nbsp;&nbsp; &nbsp;string name;<br> &nbsp;&nbsp; &nbsp;int feet,inches;<br> &nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;//Required file objects<br> &nbsp;&nbsp; &nbsp;ofstream outFile;<br> &nbsp;&nbsp; &nbsp;ifstream inFile;<br> &nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;//Creates and opens the output file in append mode<br> &nbsp;&nbsp; &nbsp;outFile.open("heights.txt",ios_base::app);&nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;//Prints heading<br> &nbsp;&nbsp; &nbsp;cout &lt;&lt; "*** TUFFY TITAN HEIGHT CALCULATOR ***" &lt;&lt; endl;<br> &nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;//Reads first name<br> &nbsp;&nbsp; &nbsp;cout &lt;&lt; endl &lt;&lt; "Enter first name (type xxx when finished): ";<br> &nbsp;&nbsp; &nbsp;getline(cin,name);<br> &nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;//Loops as long as name is not 'xxx'&nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;while(name.compare("xxx") != 0){<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//Reads feet<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt; endl &lt;&lt; "Enter feet: ";<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cin &gt;&gt; feet;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//Reads inches<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt; endl &lt;&lt; "Enter inches: ";<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cin &gt;&gt; inches;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//Ignores one character at end<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cin.ignore();<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//Writes name, feet and inches to output file each on seperate line<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;outFile &lt;&lt; name &lt;&lt; endl;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;outFile &lt;&lt; feet &lt;&lt; endl;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;outFile &lt;&lt; inches &lt;&lt; endl;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//Reads name again<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt; endl &lt;&lt; "Enter first name (type xxx when finished): ";<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;getline(cin,name);&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;}&nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;//Closes the output file<br> &nbsp;&nbsp; &nbsp;outFile.close();<br> &nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;//Opens the heights.txt file as input file<br> &nbsp;&nbsp; &nbsp;inFile.open("heights.txt");<br> &nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;//Prints header for output<br> &nbsp;&nbsp; &nbsp;cout &lt;&lt; endl &lt;&lt; left &lt;&lt; setw(22) &lt;&lt; "Name " &lt;&lt; " Feet" &lt;&lt; " Inches" &lt;&lt; " Centimeters" &lt;&lt; " Meters" &lt;&lt; endl;<br> &nbsp;&nbsp; &nbsp;cout &lt;&lt; "====================== ==== ====== =========== ======" &lt;&lt; endl;&nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;//Loops till the end of the file is reached<br> &nbsp;&nbsp; &nbsp;//Reads name of every person at the start of the loop<br> &nbsp;&nbsp; &nbsp;while(getline(inFile,name)){<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//Reads feet and inches<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;inFile &gt;&gt; feet &gt;&gt; inches;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//Ignores one character at the end<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;inFile.ignore();<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//Converts height to centimeters<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;double centimeters = (feet*12 + inches)*2.54;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//Converts centimeters to meters<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;double meters = centimeters/100;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//Displays formatted output<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt; left &lt;&lt; setw(21) &lt;&lt; name &lt;&lt; " " &lt;&lt; right &lt;&lt; setw(4) &lt;&lt; feet &lt;&lt; " " &lt;&lt; right &lt;&lt; setw(6) &lt;&lt; inches &lt;&lt; " " &lt;&lt;&nbsp;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; right &lt;&lt; setw(12) &lt;&lt; fixed &lt;&lt; setprecision(1) &lt;&lt; centimeters &lt;&lt; right &lt;&lt; setw(7) &lt;&lt; setprecision(3) &lt;&lt; meters &lt;&lt; endl;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<br> &nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;//closes the input file.<br> &nbsp;&nbsp; &nbsp;inFile.close();<br> &nbsp;&nbsp; &nbsp;return 0;<br> }</p> <p style="text-align:justify"><strong>##########################################################################</strong></p> <p style="text-align:justify"><strong>SCREENSHOTS :&nbsp;</strong></p> <p style="text-align:justify">Please see the screenshots of the code below for the indentations of the code.</p> <p style="text-align:justify"><img src="https://media.cheggcdn.com/coop/573/57325384-773d-4f65-8334-4f4d0ca57b2d/1614074243749_image.png" style="height:578px;width:888px" alt="**
+7
+1 /**
+Name:
+3
+Date:
+4
+Excercise:
+5 */
+6 #include<iostream>
+#include<fstream>
+#include<iomanip>
+9 #include<string>
+10 usi"></p> <p style="text-align:justify"><img src="https://media.cheggcdn.com/coop/487/487d8eb7-b378-4919-a1ec-8a020b5ba49b/1614074259219_image.png" style="height:578px;width:948px" alt="// Loops as long as name is not xxx
+while(name.compare(xxx) != 0){
+//Reads feet
+cout << endl << Enter feet: ;
+cin >> fe"></p> <p style="text-align:justify"><img src="https://media.cheggcdn.com/coop/500/50073b20-2f97-4020-ad12-80496d91e5ed/1614074275451_image.png" style="height:505px;width:1213px" alt="61
+cout << endl « left << setw(22) << Name << Feet <<  Inches <<  Centimeters <<  Meters «endl;
+cout << =========
+=="></p> <p style="text-align:justify"><strong>######################################################################</strong></p> <p style="text-align:justify"><strong>OUTPUT :&nbsp;</strong></p> <p style="text-align:justify"><img src="https://media.cheggcdn.com/coop/add/addf07d3-b4ec-4ad1-9894-1429df42ac8a/1614074398356_image.png" style="height:704px;width:843px" alt="*** TUFFY TITAN HEIGHT CALCULATOR ***
+Enter first name (type xxx when finished): Tuffy Titan
+Enter feet: 7
+Enter inches: 6
+En"></p> <p style="text-align:justify"><img src="https://media.cheggcdn.com/coop/ea3/ea330ab0-a7f4-457a-910c-0e651c714e32/1614074426835_image.png" style="height:454px;width:761px" alt="Enter inches: 5
+Enter first name (type xxx when finished): xxx
+Name
+Tuffy Titan
+Buzz Lightyear
+Donald Duck
+Elsa
+Ariel
+Lilo
+Fe"></p> <p style="text-align:justify"><strong>heights.txt&nbsp;</strong></p> <p style="text-align:justify"><strong><img alt="|heights.txt >
+1 Tuffy Titan
+2 7
+3 6
+4 Buzz Lightyear
+5 0
+11
+7 Donald Duck
+8 3
+90
+10 Elsa
+11 5
+12 7
+13 Ariel
+14 5
+15 4
+16 Lil" src="https://media.cheggcdn.com/coop/638/63815654-484e-4555-83ec-43dc24d3dae2/1614074468571_out1.PNG" style="height:484px;width:530px"></strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

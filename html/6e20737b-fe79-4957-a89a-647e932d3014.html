@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p><strong>5. Real versus nominal GDP</strong></p>
+<p>Consider a simple economy that produces two goods: apples and
+muffins. The following table shows the prices and quantities of the
+goods over a three-year period.</p>
+<table>
+<thead>
+<tr>
+<th rowspan="3">
+<p>Year</p>
+</th>
+<th colspan="2">
+<p>Apples</p>
+</th>
+<th colspan="2">
+<p>Muffins</p>
+</th>
+</tr>
+<tr>
+<th>
+<p>Price</p>
+</th>
+<th>
+<p>Quantity</p>
+</th>
+<th>
+<p>Price</p>
+</th>
+<th>
+<p>Quantity</p>
+</th>
+</tr>
+<tr>
+<th>
+<p>(Dollars per apple)</p>
+</th>
+<th>
+<p>(Number of apples)</p>
+</th>
+<th>
+<p>(Dollars per muffin)</p>
+</th>
+<th>
+<p>(Number of muffins)</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2012</td>
+<td>1</td>
+<td>110</td>
+<td>2</td>
+<td>185</td>
+</tr>
+<tr>
+<td>2013</td>
+<td>2</td>
+<td>155</td>
+<td>4</td>
+<td>200</td>
+</tr>
+<tr>
+<td>2014</td>
+<td>3</td>
+<td>110</td>
+<td>4</td>
+<td>165</td>
+</tr>
+</tbody>
+</table>
+<p>Use the information from the preceding table to fill in the
+following table.</p>
+<table>
+<thead>
+<tr>
+<th rowspan="2">
+<p>Year</p>
+</th>
+<th>
+<p>Nominal GDP</p>
+</th>
+<th>
+<p>Real GDP</p>
+</th>
+<th rowspan="2">
+<p>GDP Deflator</p>
+</th>
+</tr>
+<tr>
+<th>
+<p>(Dollars)</p>
+</th>
+<th>
+<p>(Base year 2012, dollars)</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2012</td>
+<td>
+<p>&nbsp;</p>
+</td>
+<td>
+<p>&nbsp;</p>
+</td>
+<td>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td>2013</td>
+<td>
+<p>&nbsp;</p>
+</td>
+<td>
+<p>&nbsp;</p>
+</td>
+<td>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td>2014</td>
+<td>
+<p>&nbsp;</p>
+</td>
+<td>
+<p>&nbsp;</p>
+</td>
+<td>
+<p>&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>From 2013 to 2014, nominal GDP&nbsp; &nbsp;&nbsp;, and real
+GDP&nbsp; &nbsp;&nbsp;.</p>
+<p>The inflation rate in 2014 was&nbsp; &nbsp;&nbsp;.</p>
+<p>Why is real GDP a more accurate measure of an economy's
+production than nominal GDP?</p>
+<p>Real GDP does not include the value of intermediate goods and
+services, but nominal GDP does.</p>
+<p>Real GDP is not influenced by price changes, but nominal GDP
+is.</p>
+<p>Real GDP includes the value of exports, but nominal GDP does
+not.</p>
+<p>&nbsp;</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><span style=
+"text-decoration: underline"><strong>Solution:-</strong></span></p>
+<p><span style="text-decoration: underline"><strong>2012
+:-</strong></span></p>
+<p>Nominal GDP = Current Year price * Current Quantity<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = 1 * 110 + 2 * 185<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = 110 + 370<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = 480<br />
+Real GDP = Base Year Price * Current Year Quantity<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= 1 * 110 + 2 * 185<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= 110 + 370<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= 480<br />
+GDP Deflator = Nominal GDP / Real GDP * 100<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= 480 / 480 *
+100<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= 100</p>
+<p><span style=
+"text-decoration: underline"><strong>2013:-</strong></span></p>
+<p>Nominal GDP = Current Year price * Current Quantity<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = 2 * 155 + 4 * 200<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = 310 + 800<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = 1,110<br />
+Real GDP = Base Year Price * Current Year Quantity<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= 1 * 155 + 2 * 200<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= 155 + 400<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= 555<br />
+GDP Deflator = Nominal GDP / Real GDP * 100<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= 1,110 / 555 *
+100<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= 200</p>
+<p><span style=
+"text-decoration: underline"><strong>2014:-</strong></span></p>
+<p>Nominal GDP = Current Year price * Current Quantity<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = 3 * 110 + 4 * 165<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = 330 + 660<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = 990<br />
+Real GDP = Base Year Price * Current Year Quantity<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= 1 * 110 + 2 * 165<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= 110 + 330<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= 440<br />
+GDP Deflator = Nominal GDP / Real GDP * 100<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= 990 / 440 *
+100<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= 225</p>
+<p>From 2013 to 2014, Nominal GDP <strong>Decrease</strong> and
+Real GDP <strong>Decrease</strong>.</p>
+<p><br />
+The Inflation rate in 2014 was = 225 - 200 / 200 =
+<strong>12.5</strong></p>
+<p><strong>Answer is option (B).&nbsp;&nbsp;</strong></p>
+<p><strong>Real GDP is not influenced by price changes, but nominal
+GDP is</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp;&nbsp;</strong></p>
+<p>&nbsp;</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

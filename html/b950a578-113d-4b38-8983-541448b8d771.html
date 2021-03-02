@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <html>
+ <head></head> 
+ <body> 
+  <p><img alt="1. Digital sounds can be represented as an array of integer values. For this question, you will write two unrelated
+methods of the Sound class
+A partial declaration of the Sound class is shown below.
+public class Sound
+/**the array of values in this sound; guaranteed not to be null */
+private int[] samples;
+/** Changes those values in this sound that have an amplitude greater than limit.
+* Values greater than limit are changed to limit.
+* Values less than -limit are changed to -limit.
+* @param limit the amplitude limit
+Precondition: limit 2 0
+* return the number of values in this sound that this method changed
+public int limitAmplitude (int limit)
+(/* to be implemented in part (a) */)
+*Removes all silence from the beginning of this sound
+* Silence is represented by a value of (0
+Precondition: samples contains at least one nonzero value
+* Postcondition: the length of samples reflects the removal of starting silence
+public void trimSilenceFromBeginning ()
+(/* to be implemented in part (b) */
+// There may be instance variables, constructors, and methods that are not shown
+" src="https://media.cheggcdn.com/media%2F604%2F604b2abf-9c47-4206-8f3a-ba0c06e1e191%2Fphp7f2eLV.png" style="height:759px;width:1024px;"><img alt="(a) The volume of a sound depends on the amplitude of each value in the sound. The amplitude of a value is its
+absolute value. For example, the amplitude of -2300 is 2300 and the amplitude of 4000 is 4000.
+Write the method limitAmplitude that will change any value that has an amplitude greater than the
+given limit. Values that are greater than limit are replaced with limit, and values that are less than
+-limit are replaced with -1imit. The method returns the total number of values that were changed in
+the array. For example, assume that the array samples has been initialized with the following values.
+40 2532 17 2300 17-4000 20001048 -420 33 1532 2030 3223
+When the statement
+int numChanges - limitAmplitude (2000)
+is executed, the value of numchanges will be 5, and the array samples will contain the following
+values
+2000 17 -2000 -17 -2000 2000 1048 -420 33 15 -32 2000 2000
+Complete method limitAmplitude below.
+/* * Changes those values in this sound that have an amplitude greater than 1imit
+Values greater than limit are changed to limit.
+Values less than -limit are changed to -limit.
+*@param limit the amplitude limit
+Precondition: limit20
+@return the number of values in this sound that this method changed
+*
+public int limitAmplitude (int limit)
+" src="https://media.cheggcdn.com/media%2Fe81%2Fe81b8a59-d66e-426c-a6dc-b2ab4fd87d02%2FphpduxZfN.png" style="height:715px;width:1024px;"><img alt="(b) Recorded sound often begins with silence. Silence in a sound is represented by a value of 0
+Write the method trimSilenceFromBeginning that removes the silence from the beginning of a
+sound. To remove starting silence, a new array of values is created that contains the same values as the
+original samples array in the same order but without the leading zeros. The instance variable samples
+is updated to refer to the new array. For example, suppose the instance variable samples refers to the
+following array
+Index 01 2345 6 78910 11 12 13 14 15
+Value 0
+140
+35 -39
+-7 16 32 37 290
+After trimSilenceFromBeginning has been called, the instance variable samples will refer to
+the following array.
+Index0 1 2 3 45 6 78
+9 10 11
+Value-140-35 -39 0
+-7 16 32 37 290
+Complete method trimSilenceFromBeginning below
+/** Removes all silence from the beginning of this sound
+* Silence is represented by a value of 0
+*Precondition: samples contains at least one nonzero value
+*Postcondition: the length of samples reflects the removal of starting silence
+public void trimSilenceFromBeginning ()
+" src="https://media.cheggcdn.com/media%2F994%2F994f48b9-3fd6-4b14-9d06-c3a31d3909a9%2FphpaiBgSI.png" style="height:703px;width:1024px;"></p> 
+  <p><strong>This skeleton code will be utilized to program out the required methods in Eclipse. It</strong> <strong>comes with a tester class with main in order to test the methods you are required to implement.</strong></p> 
+  <p>import java.util.*;</p> 
+  <p><br> public class Sound {</p> 
+  <p>public static void main(String[] args) {<br> &nbsp;&nbsp;<br> int[] samples1 = new int[]{40, 2532, 17, -2300, -17, -4000, 2000, 1048, -420, 33, 15, -32, 2030, 3223};<br> &nbsp;&nbsp;<br> Sound s1 = new Sound(samples1);<br> System.out.println("The original array is " + Arrays.toString(s1.getSamples() ) );<br> System.out.println( s1.limitAmplitude(2000) + " sounds had to limit amplitude" );<br> System.out.println( "Updated array is " + Arrays.toString( s1.getSamples() ) );<br> &nbsp;&nbsp;<br> System.out.println("");<br> &nbsp;&nbsp;<br> int[] samples2 = new int[]{0, 0, 0 , 0 -14, 0, -35, -39, 0, -7, 16, 32, 37, 29, 0, 0};<br> &nbsp;&nbsp;<br> Sound s2 = new Sound(samples2);<br> System.out.println("Original Array: " + Arrays.toString( s2.getSamples() ) );<br> s2.trimSilenceFromBeginning();<br> System.out.println("Updated Array: " + Arrays.toString( s2.getSamples() ) );<br> &nbsp;&nbsp;<br> &nbsp;&nbsp;<br> }</p> 
+  <p>private int[] samples;<br> &nbsp;&nbsp;<br> public int[] getSamples() {<br> return samples;<br> }<br> &nbsp;&nbsp;<br> public Sound(int[] samples) {<br> this.samples = samples;<br> }<br> &nbsp;&nbsp;<br> <br> public int limitAmplitude(int limit)<br> {<br> &nbsp;&nbsp;<br> &nbsp;&nbsp;<br> &nbsp;&nbsp;<br> }<br> &nbsp;&nbsp;<br> public void trimSilenceFromBeginning()<br> {<br> &nbsp;&nbsp;<br> }</p> 
+  <p>}</p>  
+ </body>
+</html>
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>import java.util.*;</p>
+<p><br />
+public class Sound {</p>
+<p>public static void main(String[] args) {<br />
+&nbsp;&nbsp;<br />
+int[] samples1 = new int[]{40, 2532, 17, -2300, -17, -4000, 2000,
+1048, -420, 33, 15, -32, 2030, 3223};<br />
+&nbsp;&nbsp;<br />
+Sound s1 = new Sound(samples1);<br />
+System.out.println("The original array is " +
+Arrays.toString(s1.getSamples() ) );<br />
+System.out.println( s1.limitAmplitude(2000) + " sounds had to limit
+amplitude" );<br />
+System.out.println( "Updated array is " + Arrays.toString(
+s1.getSamples() ) );<br />
+&nbsp;&nbsp;<br />
+System.out.println("");<br />
+&nbsp;&nbsp;<br />
+int[] samples2 = new int[]{0, 0, 0 , 0 -14, 0, -35, -39, 0, -7, 16,
+32, 37, 29, 0, 0};<br />
+&nbsp;&nbsp;<br />
+Sound s2 = new Sound(samples2);<br />
+System.out.println("Original Array: " + Arrays.toString(
+s2.getSamples() ) );<br />
+s2.trimSilenceFromBeginning();<br />
+System.out.println("Updated Array: " + Arrays.toString(
+s2.getSamples() ) );<br />
+&nbsp;<br />
+&nbsp;&nbsp;<br />
+}</p>
+<p>private int[] samples;<br />
+&nbsp;&nbsp;<br />
+public int[] getSamples() {<br />
+return samples;<br />
+}<br />
+&nbsp;&nbsp;<br />
+public Sound(int[] samples) {<br />
+this.samples = samples;<br />
+}<br />
+&nbsp;&nbsp;</p>
+<p>public int limitAmplitude(int limit)<br />
+{<br />
+&nbsp; int cnt=0;<br />
+&nbsp; for(int i=0;i&lt;samples.length;i++)<br />
+&nbsp;&nbsp; &nbsp;{<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//check the given no is
+greater than limit if yes then set limit value<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(samples[i] &gt;=
+limit)<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;samples[i]
+= limit;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;cnt++;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//assign negative limit value
+to temp variable and check negative limit value<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;int temp= -limit;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(samples[i] &lt;= temp
+)<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;samples[i]
+= temp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;cnt++;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br />
+&nbsp;&nbsp; &nbsp;}<br />
+&nbsp;&nbsp; &nbsp;//return count of total exceed value of
+limit<br />
+&nbsp;&nbsp; &nbsp;return cnt;<br />
+&nbsp;&nbsp;<br />
+}<br />
+&nbsp;&nbsp;<br />
+public void trimSilenceFromBeginning()<br />
+{<br />
+&nbsp;&nbsp; &nbsp;//cnt is use to count the starting zeros of
+array<br />
+&nbsp;&nbsp; &nbsp;int cnt=0;<br />
+&nbsp; for(int i=0;i&lt;samples.length;i++)<br />
+&nbsp;&nbsp; &nbsp;{<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(samples[i]!=0)<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;break;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;else<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;cnt++;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br />
+&nbsp;&nbsp; &nbsp;}<br />
+&nbsp;&nbsp; &nbsp;//when loop break we get the total count of
+starting zeros<br />
+&nbsp;&nbsp; &nbsp;//create new array of total length - count
+size<br />
+&nbsp;&nbsp; &nbsp;int[] temp = new int[samples.length -
+cnt];<br />
+&nbsp;&nbsp; &nbsp;//loop start with cnt and assign value to temp
+array<br />
+&nbsp;&nbsp; &nbsp;for(int
+i=cnt,j=0;i&lt;samples.length;i++,j++)<br />
+&nbsp;&nbsp; &nbsp;{<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;temp[j] = samples[i];<br />
+&nbsp;&nbsp; &nbsp;}<br />
+&nbsp;&nbsp; &nbsp;//then recreate a sample array of size temp and
+assign all value of temp to samples<br />
+&nbsp;&nbsp; &nbsp;samples = new int[temp.length];<br />
+&nbsp;&nbsp; &nbsp;samples = temp;<br />
+}</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>/*</p>
+<p>The original array is [40, 2532, 17, -2300, -17, -4000, 2000,
+1048, -420, 33, 15, -32, 2030, 3223]<br />
+6 sounds had to limit amplitude<br />
+Updated array is [40, 2000, 17, -2000, -17, -2000, 2000, 1048,
+-420, 33, 15, -32, 2000, 2000]</p>
+<p>Original Array: [0, 0, 0, -14, 0, -35, -39, 0, -7, 16, 32, 37,
+29, 0, 0]<br />
+Updated Array: [-14, 0, -35, -39, 0, -7, 16, 32, 37, 29, 0, 0]</p>
+<p>*/</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

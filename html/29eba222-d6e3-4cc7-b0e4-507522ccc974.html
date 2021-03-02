@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <html>
+ <head></head>
+ <body>
+  <p>Please fill out tables 1 and 2. if possible, leave a brief explanation. Thanks</p> 
+  <p>&nbsp;</p> 
+  <p>Following the style of Practice Problem 3.1 (page.182), assume the following values are stored at the indicated memory addresses and registers:</p> 
+  <table border="1"> 
+   <tbody> 
+    <tr> 
+     <th>Address</th> 
+     <th>Value</th> 
+     <th>--</th> 
+     <th>Register</th> 
+     <th>Value</th> 
+    </tr> 
+    <tr> 
+     <td>0x1000</td> 
+     <td>0xAA</td> 
+     <td>--</td> 
+     <td>%rdi</td> 
+     <td>0x1000</td> 
+    </tr> 
+    <tr> 
+     <td>0x1004</td> 
+     <td>0xBB</td> 
+     <td>--</td> 
+     <td>%rsi</td> 
+     <td>0x1</td> 
+    </tr> 
+    <tr> 
+     <td>0x1008</td> 
+     <td>0xCC</td> 
+     <td>--</td> 
+     <td>%rdx</td> 
+     <td>0x2</td> 
+    </tr> 
+    <tr> 
+     <td>0x100C</td> 
+     <td>0xDD</td> 
+     <td>--</td> 
+     <td>%rcx</td> 
+     <td>0x4</td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <p>Fill in the following table showing the values for the indicated operands:</p> 
+  <p>&nbsp;</p> 
+  <table border="1"> 
+   <tbody> 
+    <tr> 
+     <th>Operand</th> 
+     <th>Value</th> 
+    </tr> 
+    <tr> 
+     <td>%rdi</td> 
+     <td>&nbsp;</td> 
+    </tr> 
+    <tr> 
+     <td>0x1004</td> 
+     <td>&nbsp;</td> 
+    </tr> 
+    <tr> 
+     <td>$0x1008</td> 
+     <td>&nbsp;</td> 
+    </tr> 
+    <tr> 
+     <td>(%rdi)</td> 
+     <td>&nbsp;</td> 
+    </tr> 
+    <tr> 
+     <td>4(%rdi)</td> 
+     <td>&nbsp;</td> 
+    </tr> 
+    <tr> 
+     <td>8(%rdi,%rcx)</td> 
+     <td>&nbsp;</td> 
+    </tr> 
+    <tr> 
+     <td>0x1002(%rdx,%rcx)</td> 
+     <td>&nbsp;</td> 
+    </tr> 
+    <tr> 
+     <td>-4(%rdi,%rsi,4)</td> 
+     <td>&nbsp;</td> 
+    </tr> 
+    <tr> 
+     <td>(%rdi,%rdx,4)</td> 
+     <td>&nbsp;</td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <p>&nbsp;</p> 
+  <p>Using the Address and Register table in Problem 1, fill in the table below showing the values for the indicated operands (similar to Practice Problem 3.8 of page 194):</p> 
+  <p>&nbsp;</p> 
+  <table border="1"> 
+   <tbody> 
+    <tr> 
+     <th>Instruction</th> 
+     <th>Destination</th> 
+     <th>Value</th> 
+    </tr> 
+    <tr> 
+     <td>addq (%rdi),%rsi</td> 
+     <td>&nbsp;</td> 
+     <td>&nbsp;</td> 
+    </tr> 
+    <tr> 
+     <td>andq %rsi,%rdi</td> 
+     <td>&nbsp;</td> 
+     <td>&nbsp;</td> 
+    </tr> 
+    <tr> 
+     <td>subq %rsi,(%rdi)</td> 
+     <td>&nbsp;</td> 
+     <td>&nbsp;</td> 
+    </tr> 
+    <tr> 
+     <td>incq %rsi</td> 
+     <td>&nbsp;</td> 
+     <td>&nbsp;</td> 
+    </tr> 
+    <tr> 
+     <td>decq %rdx</td> 
+     <td>&nbsp;</td> 
+     <td>&nbsp;</td> 
+    </tr> 
+    <tr> 
+     <td>xorq (%rdi,%rdx,4),%rcx</td> 
+     <td>&nbsp;</td> 
+     <td>&nbsp;</td> 
+    </tr> 
+    <tr> 
+     <td>orq 0x1002(%rdx,%rcx),%rsi</td> 
+     <td>&nbsp;</td> 
+     <td>&nbsp;</td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <p>&nbsp;</p> 
+  <p><img alt="CS252 Computeir Organization Homework 4 Basic Assembly Instructions Organization Following the style of Practice Problem 3.1 (page.182). assume the following values are stored at the indicated memory addresses and registers: Address ValueRegist Value 1000 %rdi Fill in thc following table showing the valucs for the indicated opcrands: Torne and Valuc rdi x1004 ordi 1%rdi-serv) Dindi .%rsi.4 2. Using the Address and Register table in Problem 1, fill in the table below showing the values for the indicated opcrands (similar to Practice Problem 3.8 of page 194) Instruction Destination Valuc %rdi),%rsi %rsi Ox10X)2(Vordx.rex).arsi 3. For the unknawn assemhly shown below, fill in the missing return statement in the function unknown. unknou ret " src="https://media.cheggcdn.com/media%2Fe33%2Fe333eba5-00e7-49a7-8111-24e7e0aa31d7%2FphpXsnrfu.png" style="height:576px;width:1024px;"></p> 
+ </body>
+</html>
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <html>
+ <head></head>
+ <body>
+  <p><img alt="Table 1 %rdi-refers to the actual value of the register, value-0x1000 0x1004-refers to the value at address Ox 1004, from the first table we can deduce, Value= OxBB $0x1008 - it is the constant value 0x1008, Value-0x1008 (%rdi)-refers to the value stored at the given address, so value at address 0x1000 is value 0 4(%rdi)-refers to value at address rdi + 4, hence the value at address Ox 1004, Value-0 x BB 8(%rdi%rcx)-refers to value at address rdi + 8 + rc. hence the value at address 0x 100C. Value0x DD 0x1002%rdx,%rcx) - refers to the value at address rdx 0x1002 + rcx, hence the value at address 0x1008, Value 0x CC 4%rdi.%rs14)-refers to the value at address (rs! * 4) + rdi-4, hence the value at address 0x 1000, Value- 0x AA (%rdi.%rax.4)-refers to the value at address (rdx * 4) + rd, hence the value at address 0x1008. Value= 0 xCC Now you have all the values for the second table. Just compute the instructions of the assembly language and fill the second table. Destination register is the first argument in each instruction. Hence, for addq(%rdi), %si Destination =%rsi and Value can be calculated accordingly as in this case it adds and puts the value in register %rsi. So it depends on the instruction which is the destination register. incq and decq increment and decrement registers destructively i.e ++a and --a (similar to this) so destination is the only argument they have " src="https://media.cheggcdn.com/media%2F8ff%2F8ff57184-01e0-4622-b9b5-346936111c6a%2FphpB0yfwC.png" style="height:529px;width:655px;"></p> 
+ </body>
+</html>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

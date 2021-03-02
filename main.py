@@ -56,7 +56,11 @@ sesh_id = str(uuid.uuid4())
 def check_chegg_link(update, context):
     link = update.message.text
     username = update.message.from_user.username
+    if not username:
+        context.bot.send_message(chat_id=update.effective_chat.id, text="You must set a username to use this bot! Settings > Edit > Username")
+        return
     data = users.get(username)
+    gator = False
     if not data:
         data = {
             "subscribed": False,
@@ -71,8 +75,20 @@ def check_chegg_link(update, context):
             data["credits"] = int(data["credits"]) - 1
             users.set(username, str(data))
         else:
-            context.bot.send_message(chat_id=update.effective_chat.id, text="No active subscription or not enough credits to unlock! View /purchase to get started.")
-            return
+            try:
+                data["go"]
+                gator = True
+                minutes_ago = data["last_unlock"]
+                if minutes_ago != "never":
+                    last_unlock = datetime.strptime(minutes_ago, "%Y-%m-%d %H:%M")
+                    now = datetime.now()
+                    minutes_ago = round((now - last_unlock).total_seconds() / 60.0)
+                    if minutes_ago < 30:
+                        context.bot.send_message(chat_id=update.effective_chat.id, text="Sorry you need to wait " + str(30 - minutes_ago) + " more minute(s) or consider /purchase.")
+                        return
+            except Exception:
+                context.bot.send_message(chat_id=update.effective_chat.id, text="No active subscription or not enough credits to unlock! View /purchase to get started.")
+                return
     else:
         expired = datetime.strptime(data["subscription_date"], '%m/%d/%Y') < datetime.now()
         if expired:
@@ -105,6 +121,10 @@ def check_chegg_link(update, context):
         order_id = str(uuid.uuid4())
         with open("/home/autobuy/html/" + order_id + ".html", "w+", encoding="utf-8") as html:
             html.write(formatted_html)
+        if gator:
+            data["last_unlock"] = datetime.now().strftime("%Y-%m-%d %H:%M")
+            users.set(username, str(data))
+            context.bot.send_message(chat_id=update.effective_chat.id, text="Go gators!")
         context.bot.send_message(chat_id=update.effective_chat.id, text="View here: https://pleaseunlock.it/q/" + order_id)
         return
 
@@ -380,6 +400,26 @@ def serve_static(request):
         return request.Response(headers={"Location": "https://pleaseunlock.it"}, code=302)
 
 
+def tele_add(update, context):
+    username = context.args[0]
+    data = users.get(username)
+    if not data:
+        data = {
+            "subscribed": False,
+            "subscription_date": "",
+            "credits": 0
+        }
+    else:
+        data = eval(data)
+    type_ = context.args[1]
+    if type_ == "credit":
+        data["credits"] = int(data["credits"]) + int(context.args[2])
+    elif type_ == "sub":
+        data["subscribed"] = True
+        data["subscription_date"] = (datetime.now() + timedelta(days=365)).strftime('%m/%d/%Y')
+    context.bot.send_message(chat_id=update.effective_chat.id, text="Operation success!")
+
+
 def tele_chegg(update, context):
     username = update.message.from_user.username
     data = users.get(username)
@@ -390,10 +430,36 @@ def tele_chegg(update, context):
             "credits": 0
         }
         users.set(username, str(data))
-        context.bot.send_message(chat_id=update.effective_chat.id, text="- Account Status -\n\nSubscribed: " + str(data["subscribed"]) + "\nCredits: " + str(data["credits"]) + "\n\nTo purchase a subscription or credits use /purchase")
+        context.bot.send_message(chat_id=update.effective_chat.id, text="- Account Status -\n\nSubscribed: " + str(data["subscribed"]) + "\nCredits: " + str(data["credits"]) + "\n\nTo purchase a subscription or credits use /purchase or contact @pixxllated for 1 free unlock.")
     else:
         data = eval(data)
-        context.bot.send_message(chat_id=update.effective_chat.id, text="- Account Status -\n\nSubscribed: " + str(data["subscribed"]) + "\n" + ("Good until: " + data["subscription_date"] + "\n" if data["subscribed"] else "") + "Credits: " + str(data["credits"]) + "\n\n" + ("To unlock a Chegg answer, simply send the link and 1 credit will be deducted from your balance." if not data["subscribed"] else "To unlock a Chegg answer, simply send the link. You have unlimited unlocks."))
+        try:
+            data["go"]
+            minutes_ago = data["last_unlock"]
+            if minutes_ago != "never":
+                last_unlock = datetime.strptime(minutes_ago, "%Y-%m-%d %H:%M")
+                now = datetime.now()
+                minutes_ago = round((now - last_unlock).total_seconds() / 60.0)
+            context.bot.send_message(chat_id=update.effective_chat.id, text="- Account Status -\n\nSubscribed: " + str(data["subscribed"]) + "\nLast unlock: " + str(minutes_ago) + (" min ago" if minutes_ago != "never" else "") + "\nCredits: " + str(data["credits"]) + "\n\nTo unlock a Chegg simply send the link, you have one unlock every 30 minutes.")
+        except Exception:
+            context.bot.send_message(chat_id=update.effective_chat.id, text="- Account Status -\n\nSubscribed: " + str(data["subscribed"]) + "\n" + ("Good until: " + data["subscription_date"] + "\n" if data["subscribed"] else "") + "Credits: " + str(data["credits"]) + "\n\n" + ("To unlock a Chegg answer, simply send the link and 1 credit will be deducted from your balance." if not data["subscribed"] else "To unlock a Chegg answer, simply send the link. You have unlimited unlocks."))
+
+
+def tele_gator(update, context):
+    username = update.message.from_user.username
+    data = {
+        "subscribed": False,
+        "subscription_date": "",
+        "go": "gators",
+        "last_unlock": "never",
+        "credits": 0
+    }
+    try:
+        users.set(username, str(data))
+    except Exception:
+        context.bot.send_message(chat_id=update.effective_chat.id, text="You must set a username to use this bot! Settings > Edit > Username")
+    else:
+        context.bot.send_message(chat_id=update.effective_chat.id, text="Chomp chomp...upgraded account! Check status with /chegg or send a link to unlock.")
 
 
 def tele_inhoc(update, context):
@@ -408,11 +474,18 @@ def tele_inhoc(update, context):
     except Exception:
         context.bot.send_message(chat_id=update.effective_chat.id, text="You must set a username to use this bot! Settings > Edit > Username")
     else:
-        context.bot.send_message(chat_id=update.effective_chat.id, text="Upgraded account, check status with /chegg or start sending links")
+        context.bot.send_message(chat_id=update.effective_chat.id, text="Upgraded account, check status with /chegg or start sending links.")
 
 
 def tele_purchase(update, context):
-    context.bot.send_message(chat_id=update.effective_chat.id, text="We have two options available:\n\nCredits\n- 1 credit = 1 unlock\n- $0.15 each\n\nSubcription\n- Unlimited unlocks\n- $5 for 30 days access\n\nTo purchase use /venmo {number-of-credits} or /venmo sub, only venmo accepted at this time!")
+    username = update.message.from_user.username
+    data = eval(users.get(username))
+    try:
+        data["go"]
+    except Exception:
+        context.bot.send_message(chat_id=update.effective_chat.id, text="We have two options available:\n\nCredits\n- 1 credit = 1 unlock\n- $0.15 each\n\nSubcription\n- Unlimited unlocks\n- $5 for 30 days access\n\nTo purchase use /venmo {number-of-credits} or /venmo sub, only venmo accepted at this time!")
+    else:
+        context.bot.send_message(chat_id=update.effective_chat.id, text="We have two options available:\n\nCredits\n- 1 credit = 1 unlock\n- $0.15 each\n\nSubcription\n- Unlimited unlocks\n- $4 for 30 days access\n\nTo purchase use /venmo {number-of-credits} or /venmo sub, only venmo accepted at this time!")
 
 
 def tele_orders(update, context):
@@ -457,10 +530,34 @@ def tele_start(update, context):
     if not update.message.from_user.username:
         context.bot.send_message(chat_id=update.effective_chat.id, text="You must set a username to use this bot! Settings > Edit > Username")
     else:
-        context.bot.send_message(chat_id=update.effective_chat.id, text="Welcome to PleaseUnlockIt Homework Bot. Use /chegg to get started!")
+        context.bot.send_message(chat_id=update.effective_chat.id, text="Welcome to PleaseUnlockIt Homework Bot by @pixxllated. Use /chegg to get started!")
+
+
+def tele_stats(update, context):
+    sub_amt = 0
+    member_amt = 0
+    for user in users.getall():
+        try:
+            data = eval(users[user])
+            if data["subscription_date"].endswith("1") and data["subscribed"]:
+                sub_amt += 1
+            else:
+                member_amt += 1
+        except Exception:
+            pass
+    solved_amt = len(urls.getall())
+    context.bot.send_message(chat_id=update.effective_chat.id, text="Member count: " + str(member_amt) + "\nSubscriber count: " + str(sub_amt) + "\nTotal unlocks: " + str(solved_amt))
 
 
 def tele_venmo(update, context):
+    username = update.message.from_user.username
+    data = eval(users.get(username))
+    try:
+        data["go"]
+    except Exception:
+        gator = False
+    else:
+        gator = True
     data = {
         "payment": "venmo",
         "type": "",
@@ -475,17 +572,20 @@ def tele_venmo(update, context):
         amount = int(context.args[0])
         data["type"] = "credit"
         data["amt"] = amount
-        data["price"] = (amount * 0.2) - (int((amount / 25)) * 2.0)
+        data["price"] = (amount * 0.15) - (int((amount / 25)) * 2.0)
     except Exception:
         if "sub" == context.args[0]:
             data["type"] = "sub"
-            data["price"] = 5.0
+            if not gator:
+                data["price"] = 5.0
+            else:
+                data["price"] = 4.0
         else:
             context.bot.send_message(chat_id=update.effective_chat.id, text="Invalid argument!\nCredit example: /venmo 50\nSubscription example: /venmo sub")
             return
     order_id = str(random.randint(100,999)) + "-" + str(random.randint(100,999)) + "-" + str(random.randint(100,999))
     orders.set(order_id, str(data))
-    context.bot.send_message(chat_id=update.effective_chat.id, text="Venmo $" + str(data["price"]) + " to @pleaseunlockit and set the note to " + order_id + ".\n\n Use /" + order_id.replace("-", "o") + " to check the status of your order.")
+    context.bot.send_message(chat_id=update.effective_chat.id, text="Venmo $" + str(data["price"]) + " to @pleaseunlockit and set the note to " + order_id + ".\n\n Use /" + order_id.replace("-", "o") + " to check the status of your order. If asked for phone number tap pay w/o confirming.")
     
 
 
@@ -494,6 +594,9 @@ chegg_handler = CommandHandler('chegg', tele_chegg)
 purchase_handler = CommandHandler('purchase', tele_purchase)
 venmo_handler = CommandHandler('venmo', tele_venmo)
 inhoc_handler = CommandHandler('inhoc', tele_inhoc)
+stats_handler = CommandHandler('stats', tele_stats)
+add_handler = CommandHandler('add', tele_add)
+gator_handler = CommandHandler('gogators', tele_gator)
 chegg_link_handler = RegexHandler('.*chegg\.com\/homework-help\/questions\-and\-answers.*', check_chegg_link)
 order_handler = RegexHandler('[0-9]{3}o[0-9]{3}o[0-9]{3}', tele_orders)
 dispatcher.add_handler(start_handler)
@@ -502,6 +605,9 @@ dispatcher.add_handler(purchase_handler)
 dispatcher.add_handler(venmo_handler)
 dispatcher.add_handler(order_handler)
 dispatcher.add_handler(inhoc_handler)
+dispatcher.add_handler(stats_handler)
+dispatcher.add_handler(add_handler)
+dispatcher.add_handler(gator_handler)
 dispatcher.add_handler(chegg_link_handler)
 updater.start_polling()
 app = Application()

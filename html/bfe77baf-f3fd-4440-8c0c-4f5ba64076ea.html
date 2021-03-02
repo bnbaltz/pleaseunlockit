@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>R&nbsp;comes with several&nbsp;built-in data sets, which are
+generally used as demo data for playing with R functions.
+<strong>“mtcars”</strong> is a dataset that contains data on Motor
+Trend Car Road Tests. The data was extracted from the 1974
+<em>Motor Trend</em> US magazine, and comprises fuel consumption
+and 10 aspects of automobile design and performance for 32
+automobiles (1973–74 models). It is a data frame with 32
+observations on 11 variables.</p>
+<p>[, 1] &nbsp;&nbsp;&nbsp;&nbsp; mpg &nbsp;&nbsp;&nbsp;&nbsp;
+Miles/(US) gallon</p>
+<p>[, 2] &nbsp;&nbsp;&nbsp;&nbsp; cyl
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Number of cylinders</p>
+<p>[, 3] &nbsp;&nbsp;&nbsp;&nbsp; disp &nbsp;&nbsp;&nbsp;&nbsp;
+Displacement (cu.in.)</p>
+<p>[, 4] &nbsp;&nbsp;&nbsp;&nbsp; hp
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gross horsepower</p>
+<p>[, 5] &nbsp;&nbsp;&nbsp;&nbsp; drat &nbsp;&nbsp;&nbsp;&nbsp;
+Rear axle ratio</p>
+<p>[, 6] &nbsp;&nbsp;&nbsp;&nbsp; wt
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Weight (1000 lbs)</p>
+<p>[, 7] &nbsp;&nbsp;&nbsp;&nbsp; qsec &nbsp;&nbsp;&nbsp; 1/4 mile
+time</p>
+<p>[, 8] &nbsp;&nbsp;&nbsp;&nbsp; vs
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; V/S</p>
+<p>[, 9] &nbsp;&nbsp;&nbsp;&nbsp; am
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Transmission (0 = automatic, 1
+= manual)</p>
+<p>[,10] &nbsp;&nbsp;&nbsp; gear &nbsp;&nbsp;&nbsp;&nbsp; Number of
+forward gears</p>
+<p>[,11] &nbsp;&nbsp;&nbsp; carb &nbsp;&nbsp;&nbsp;&nbsp; Number of
+carburetors</p>
+<p><strong>Questions:</strong></p>
+<ol>
+<li>Draw appropriate charts to summarize the information of the
+following attributes. [Show your code in “R Code” section. Copy and
+paste figures into “Answer” section. Justify your choice of charts
+in a few sentences in “Comments” section. No screenshots of the
+charts are required.] (2 points)
+<ol style="list-style-type:lower-alpha;">
+<li>Displacement (cu.in.)</li>
+<li>Number of forward gears</li>
+</ol>
+</li>
+<li>Calculate the following for the attribute Miles/(US) gallon.
+[Show your code in “R Code” section. Show the answer in “Answer”
+section. Leave “Comments” section blank.] (4 points)
+<ol style="list-style-type:lower-alpha;">
+<li>Mean</li>
+<li>Standard Deviation</li>
+<li>First Quartile</li>
+<li>Third Quartile</li>
+</ol>
+</li>
+<li>If a car is picked randomly, what is the probability that it
+will not have 4 gears? [Leave “R Code” section blank. Show your
+manual calculations and final answer in “Answer” section. Leave
+“Comments” section blank.] (2 points)</li>
+<li>If 6 cars are picked randomly, what is the probability that at
+least one of them will have automatic transmission? [Show your code
+in “R Code” section. Show the answer in “Answer” section. Leave
+“Comments” section blank.] (3 points)</li>
+<li>If it is assumed that the variable Rear axle ratio (drat)
+follows a normal distribution, determine its 60<sup>th</sup>
+percentile. [Show your code in “R Code” section. Show the answer in
+“Answer” section. Leave “Comments” section blank.] (4 points)</li>
+</ol>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>Q1.&nbsp; R-code :&nbsp;</p>
+<p>&gt; x&lt;-mtcars</p>
+<p>&gt; d&lt;-x$disp</p>
+<p>&gt; nf&lt;-x$gear</p>
+<p>&gt; hist(d,main='Histogram of displacement')<br>
+&gt; boxplot(d,main='Boxplot of Displacement')<br>
+&gt; hist(nf,main='No.of Fwd gears')<br>
+&gt; boxplot(nf,main='no.of fwd gears')</p>
+<p><img alt="Histogram of displacement
+Frequency
+0 2 4 6
+100
+300
+500
+d
+" src="https://media.cheggcdn.com/media/568/56804302-4f02-4cc2-a051-fa853424e7dd/php5QyOuV" style="height:309px;width:304px;"><img alt="Boxplot of Displacement
+300
+100
+" src="https://media.cheggcdn.com/media/bf7/bf773eeb-f304-4659-be2b-3e88082c5bae/phpXkg0R4" style="height:309px;width:304px;"></p>
+<p><img alt="No.of Fwd gears
+15
+10
+Frequency
+05
+3.0 3.5 4.0
+4.0 4.5 5.0
+nf
+" src="https://media.cheggcdn.com/media/713/7134ae76-c139-4ece-9e5c-c28fa235ff7d/php7LX9rt" style="height:309px;width:304px;"><img alt="no.of fwd gears
+5.0
+4.0
+3.0
+" src="https://media.cheggcdn.com/media/13a/13a19b4e-2aad-4e42-a1bc-19e191f9e890/phpzMOFiX" style="height:309px;width:304px;"></p>
+<p><img alt="Choice\ of\ chart: \ \ We\ want\ to\ understand\ how\ the\ frequency\ is\\ spread\ across\ various\ displacement\ values. \ So\ histogram\ is\\ correct\ choice, \ and\ also\ boxplot\ provides\ us\ with\ the\ relative\ \\ locations\ of\ various\ quantiles\ over\ the\ range\ of\ values\ of\ attributes\\ hence\ boxplot\ is\ also\ appropriate\ for\ both\ the\ attributes. \\ \\ Q2. \ R-code: \\" src="https://media.cheggcdn.com/media/f05/f05f9024-5152-488e-897e-0008485802ed/8b4c8f29-9e15-43d5-9338-172fd47e0028.gif"></p>
+<p>&gt;x&lt;-mtcars</p>
+<p>&gt; mpg&lt;-x$mpg<br>
+&gt; mean(mpg)<br>
+[1] 20.09062<br>
+&gt; sd(mpg)<br>
+[1] 6.026948<br>
+&gt; summary(mpg)<br>
+&nbsp; &nbsp;Min. 1st Qu. &nbsp;Median &nbsp; &nbsp;Mean 3rd Qu.
+&nbsp; &nbsp;Max.&nbsp;<br>
+&nbsp; 10.40 &nbsp; 15.42 &nbsp; 19.20 &nbsp; 20.09 &nbsp; 22.80
+&nbsp; 33.90&nbsp;</p>
+<p>&nbsp;</p>
+<p><img alt="Using\ above\ R-code, \ \ \\ a. \ mean=20.091 \ \ \ \ b. sd=6.027 \\ c. \ Q1=15.42 \ \ , \ \ \ d. \ Q3=22.8 \\ \\ Q3. \ Using\ the\ &quot;gear&quot;\ variable, \ \ no.of\ observations\ having\ no.of\\ gears\ different\ from\ 4\ is\ = 20 \\ so, \ \ Probty = 20/32 = 0.625 \\ Q4. \ No.of\ cars\ having\ auto\ transm = 19 \\ so, \ probty\ of\ having\ auto\ transm = 19/32 =0.59375 \\ X:no.of\ cars\ with\ auto\ transm\ from\ among\ 6, \\ X\sim Binom(n=6, p =0.59375 ) \\ P(X\ge 1) = 1 - P(X=0) = 1 - (1-0.59375)^{6} = 0.9955 \\ R-code : \\" src="https://media.cheggcdn.com/media/30f/30f19457-296f-421f-82bc-25a369c480ae/1058c086-c25d-4f3a-bc6c-8933d6591e25.gif"></p>
+<p>&gt; am&lt;-x$am<br>
+&gt; sum(am)<br>
+[1] 13<br>
+&gt; 32-13<br>
+[1] 19<br>
+&gt; 19/32<br>
+[1] 0.59375<br>
+&gt; 1-pbinom(0,6,0.59375)<br>
+[1] 0.9955047</p>
+<p>Q5.&nbsp;</p>
+<p>&gt; drat&lt;-x$drat<br>
+&gt; mean(drat)<br>
+[1] 3.596563<br>
+&gt; sd(drat)<br>
+[1] 0.5346787</p>
+<p>&gt; qnorm(0.6,mean=3.596563,sd=0.5346787)<br>
+[1] 3.732022</p>
+<p>&nbsp;</p>
+<p>From above R-code,&nbsp; 60th percentile =&nbsp;
+<strong>3.732&nbsp;</strong></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    
