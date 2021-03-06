@@ -3,6 +3,7 @@ import random
 import re
 import requests
 import telegram
+import time
 import traceback
 import uuid
 from datetime import datetime, timedelta
@@ -38,108 +39,14 @@ if not user_id:
     chegg_data.set("user_id", user_id)
 chegg_sesh = requests.Session()
 ch_sesh = requests.Session()
-ch_sesh.cookies = requests.utils.cookiejar_from_dict({
-    'root_session_id': '3i7b6imf3b4u77togg9an3n333',
-    'visid_incap_987752': '3xsisvwbSbO13TZtgJixjd5Lol4AAAAAQUIPAAAAAACE+aM4s+3VR6Py73Wjt/NW',
-    '_ga': 'GA1.2.410662598.1587694561',
-    '__qca': 'P0-1201088568-1587694561953',
-    '_scid': 'd597db49-db65-492d-b803-ed53223390ab',
-    'G_ENABLED_IDPS': 'google',
-    'has_successfully_logged_in_the_past': '1',
-    'fs_uid': 'rs.fullstory.com#K1C9K#5801996828819456:4754563625664512#4f64d2c6#/1619230823',
-    '_pxvid': 'd59251a1-fb90-11ea-adf3-8b734cd74a10',
-    'ki_u': '43fb787a-dac0-7e82-a5dd-b618',
-    '_mibhv': 'anon-1575062618161-1039038976_6196',
-    'ki_s': '208270%3A0.0.0.0.0%3B208738%3A0.0.0.0.0%3B210456%3A1.0.0.0.2',
-    '_pin_unauth': 'dWlkPVlXWmtNV1l4WXpjdE56azRNeTAwTkRjMUxUa3lOek10TlRsak0yTTRNRGRoTUdJMQ',
-    'ki_r': '',
-    '_derived_epik': 'dj0yJnU9bGlVWkZXdFNWQ3hBVDBRZXd6N185aGtUQTBBbEs3Y3Umbj1FeWY0aDhubUJLdjVwNXlMM2pxTVB3Jm09NyZ0PUFBQUFBRi0wVGVj',
-    'device_view': 'full',
-    '_gcl_au': '1.1.1451615099.1613014062',
-    '__gads': 'ID=ab3538d9f9d1afde-22e0accaabb80026:T=1613014063:RT=1613014063:S=ALNI_MbRCMw26RWbPPNQoG6xHiKbsfAFsQ',
-    'tq771_amazon_bucket': '0',
-    'qualaroo_doc_visited': 'true',
-    'qualaroo_loggedin': 'true',
-    'qualaroo_register_visited': 'false',
-    '__cfduid': 'd17b421d97ec7af10fb25808fc5cce9741613014151',
-    'tq819_amazon_v2_bucket': '2',
-    '_sctr': '1|1614488400000',
-    'incap_ses_1286_987752': 'dor0R9TFukFwCDRqUMrYEeOkPmAAAAAAgT+0l5Kc3iF2WJFU8BGpvQ==',
-    '_gid': 'GA1.2.1685591465.1614718181',
-    'has_called_TBM': '1',
-    'nlbi_987752': 'cHGNRU2nZAh3YVOF5Tz1lQAAAAARqkqG7d2Jl2xbc1I4KjmG',
-    'sc.ASP.NET_SESSIONID': '',
-    'sc.Status': '2',
-    'incap_ses_890_987752': 'LC4wOKuEqmV8iwZ4jOpZDCmlPmAAAAAA63tB2wtZcZgqnpVEYGq8Gw==',
-    'incap_ses_8216_987752': 'MinkRtnIxnHIWVdLlBgFcj6lPmAAAAAAvWZZUSQb/0LzJy/smQpa7A==',
-    'userID': '100000790267562',
-    'ch_logged_in': '1',
-    'userEmail': 'bnbaltz%40gmail.com',
-    'supportEmail': 'bnbaltz%40gmail.com',
-    'incap_ses_486_987752': 'ttAuYdVahlj07qFMxZ6+BiemPmAAAAAABNxsEMsFC0pmTdU9sJs1lQ==',
-    'incap_ses_1348_987752': 'jhqaE1WSJzgcb8tS/A61Ev+nPmAAAAAA3DteaLaM36dOB734auxqoA==',
-    'incap_ses_209_987752': 'PFdec3eqdCAOaCAujITmAiWrPmAAAAAAlocvwUOGX9PwK0ujZ8mVQQ==',
-    'incap_ses_237_987752': 'Y+fhFt6qX2BaeFQ5X/5JA0auPmAAAAAAtYV2Xk/tJ4BI/fg2f5JFBw==',
-    'incap_ses_236_987752': 'khx1XcksKRTQgOiV4HBGA0auPmAAAAAAGfhnCnUcacpgYiT21vp/ww==',
-    'incap_ses_1353_987752': 'ep83P4syE0V+xCFDc9LGEkeuPmAAAAAAbPkAtaWLmQ9jVIyKzwQvJA==',
-    'incap_ses_517_987752': 'LXMyaIfmlFoJvwtQFMEsB0euPmAAAAAArjJ2XKxtK0M6+EBXK1Zkkg==',
-    'incap_ses_7222_987752': 'gY38UdD//Ushn4Rx37I5ZEeuPmAAAAAAE6QQ+/X3tgyf7tnUtb/Oqg==',
-    'incap_ses_620_987752': 'gF8jGwbHC04jZyM4Da+aCEeuPmAAAAAAGHGm4wynnHPxbmFL1oyorg==',
-    'incap_ses_995_987752': 'jjapQOR4fU2uKohJgPPODXa9PmAAAAAAYtzL9Es/M0AW7ek6YUz5Lg==',
-    'PHPSESSID': 'e6313bf9-04f6-408f-87cd-5efc8c89e4da',
-    'remember_me': '100000790267562%7C%7CH2y2H2PssUAL7qPxXYaWOyvJIJDW7H',
-    'incap_ses_988_987752': 'UJyZSa85HxPQ7EIVGhW2DcC+PmAAAAAApiDcZKC7rs8Nib0L2RUI+w==',
-    'incap_ses_1307_987752': '84F+Z/OAzDmcuEpItmUjEsC+PmAAAAAAfJHXcnRuco9UgiwIrXoc6A==',
-    'incap_ses_1181_987752': 'NTs0GIU1Bg9hmWtkhsFjEMC+PmAAAAAAnfcrPvDaaECKa4xB1igYTw==',
-    'incap_ses_1178_987752': 'q9AhQB2VaUzgYVvh4hhZEMC+PmAAAAAA+/j0TkPvNi5RignpQt91yA==',
-    'incap_ses_470_987752': '5R1xTecJ7BAAXxZf1saFBsC+PmAAAAAAAF+oU9n5/710TrMAdXxTWg==',
-    'incap_ses_1344_987752': '6cnwc8cxZQDDIspt/9imEsG+PmAAAAAADEjzDGnLheMcESV2dXHV7A==',
-    'incap_ses_8079_987752': 'SubXKOQypg+z4nsUx18ecMC+PmAAAAAAbxOirCzs4Jm4vRQTGny14Q==',
-    'lux_uid': '161472480127121762',
-    'incap_ses_1373_987752': 'PvCsSSRFWyfViu+9TuANE8G+PmAAAAAAg5mJyq7LNINL+qIMGf2XRQ==',
-    'incap_ses_1180_987752': 'wa8bPxvFIXLCD6ba3TNgEMC+PmAAAAAAgcNL8tHRscHzWQLPQy9cHA==',
-    'incap_ses_1352_987752': 'IWEwapcLu1bqoXGR9ETDEsG+PmAAAAAAupmxL+v0zX+6puWgRAS1YQ==',
-    'incap_ses_1343_987752': 'laZmXwTQhXmFOjDLgEujEsG+PmAAAAAAeQslr7HUrAZp8aKmtkBq0g==',
-    'incap_ses_118_987752': 'sgx4LZmXqmz0X4HNpTijAcG+PmAAAAAAqjBY1k6KWz1QTdC82KhEKQ==',
-    'incap_ses_1213_987752': 'V3BIVKmAOir7jn1dT3HVEMG+PmAAAAAAIbuer5XK6S1YOhw2CBJ1/Q==',
-    'incap_ses_1318_987752': 'rAQhRFnq/GiiTXQOEHpKEsG+PmAAAAAAONuU2RxyrIE7DnASLw0OKA==',
-    'incap_ses_8221_987752': 'd4zkDLVIe2bWbWYmBNwWcsG+PmAAAAAA++vXVJYjZ3hGOCHbm/z4AA==',
-    'outbrain_cid_fetch': 'true',
-    'incap_ses_516_987752': 'Gvk2fFMYzwiBu/T/lzMpB8G+PmAAAAAAi+oQ29ARBRct+OzCIaP+bg==',
-    'incap_ses_1370_987752': '5q0GSwZ7ECX53GN70DcDE8W+PmAAAAAAYTZqnMjkMaopyapaJwXFEQ==',
-    'incap_ses_7226_987752': '786VekwO2QgmyprDwuhHZMW+PmAAAAAAXTY9j0IhpnJb4PD0KapqaQ==',
-    'incap_ses_891_987752': 'Z+F7FKglCWZ0EydwBnhdDMa+PmAAAAAAPRly23qr9xSmulWXhtCMtA==',
-    'incap_ses_989_987752': 'zR82Mcnr5ETp4TJmlqK5Dca+PmAAAAAAMZKuxzkWzMtWJx6VZ94VCA==',
-    'incap_ses_1310_987752': 'OOZ7Qgim2mUbk3l+NA4uEsa+PmAAAAAA9jzWgAUNIDIEEpHlKqmxyA==',
-    'incap_ses_223_987752': 'cbWoEFdANR4m7YTcaEEYA9K+PmAAAAAAhI7LgJskOAkTMsjh7K51yw==',
-    'incap_ses_1374_987752': 'bXeEV7PBmmIfiVpd1G0RE9K+PmAAAAAAqDn2RpOkraCz69XU7xo3LA==',
-    'incap_ses_482_987752': 'wf2CHgtLogZiwM5xyGiwBtK+PmAAAAAAqzoCwdlx0UN9BF8MZn3xEg==',
-    'incap_ses_9219_987752': 'MvfaKpSRPA7vxMGHunfwf9K+PmAAAAAAmW2Ocqm6rxdzx8Gx64eewQ==',
-    'incap_ses_978_987752': 'pfZob+NddRbD/3T9Io6SDdK+PmAAAAAA1nsTFjvoMk98mQr+C2JjMw==',
-    'incap_ses_1182_987752': 'F6KwdSFnJkecV6299E5nENO+PmAAAAAAq70dTFoXM8iwHy21jS0cxw==',
-    'incap_ses_1342_987752': 'pUq+bW4VPEu90g0mAr6fEtO+PmAAAAAAbCI4JEPLlHxtIE83YVIrZQ==',
-    'incap_ses_480_987752': '1JkCDgjcLl7UgaPSz02pBtO+PmAAAAAA4J6g0ZT8gvQpdnwq1nVprA==',
-    'incap_ses_117_987752': '51fZXgauY0EzJM98KaufAda+PmAAAAAAOb2LidbkknYd4xX/lEoujQ==',
-    'incap_ses_993_987752': 'JNWpZiV4knQY/zZQjNjHDda+PmAAAAAA/MpZ/1vIS3xhh1e1DU7F2g==',
-    'incap_ses_1340_987752': 'gcSFMlQ9Zkb8gRfZBKOYEta+PmAAAAAAzdu04DOtFyVTeA5khqu6dg==',
-    'qualaroo_doc_unlocked': 'false',
-    'incap_ses_980_987752': 'CnUaX2FYJxDfuwb2FqmZDdq+PmAAAAAA139dIj3JaFX2GtW/93fdtg==',
-    'incap_ses_991_987752': '6UdDGuwlLBp9q6uyjL3ADdu+PmAAAAAA9wgAcmnSNM0JQaz+YHacOg==',
-    'incap_ses_623_987752': '1lsBMiImgGgXsoCBfVelCNu+PmAAAAAAoThLHSkw3ekhaGzwwskDDw==',
-    '_gat': '1',
-    'incap_ses_515_987752': 'y/TbDWxn+R/ocvtcGaYlBy+/PmAAAAAAZ9bBtvqnAEycmbvb8yseDQ==',
-    'recently_viewed_docs': '10711040%2C17354188%2C69755589%2C',
-    'has_seen_mcq': 'yes',
-    'incap_ses_986_987752': 'ukBdAtlwjEt5ObaDE/quDTa/PmAAAAAAN0udXXDHeVolzjzIWLN+cg==',
-    'last_viewed_question': '28330709',
-    'ki_t': '1587695722015%3B1614718200408%3B1614724932670%3B14%3B101',
-    '_px3': '90d71f49fb1e6f47540883aac8fe1db5abcf6e71641d249c5c5f24dd704fa6c1:34z4+0R1P3EO6cc3MKFg2IEOQ8htNQ1om+pRTlbrhb0WnRJwtFxublmpA8YbFmLlsWIqWoW7n7fz2vQauqx9fg==:1000:6zaJbaRZDKmwJ7pTGAIg+OYa03vAThwz/r1RYuO1nSczxShySd6AhjtLSCqJ8r6t9Qrm5owIb/g+5BFksNhe0pRYcdsHqO8ZkK+1fIVUcSXCjF/AI+hwCsdou/egXikg7YjNTfgw5qTRo0C6bdWFMQxmebaHxceulNF6KKBBOlk=',
-    'amplitude_id_ee857825ebc317614f56e416919c1844coursehero.com': 'eyJkZXZpY2VJZCI6ImQwZWNmODM0YWNhODNiZTEyZDlhZTlmMGMzNTUwZjk0Njk0Mjc1ODQiLCJ1c2VySWQiOiIxMDAwMDA3OTAyNjc1NjIiLCJvcHRPdXQiOmZhbHNlLCJzZXNzaW9uSWQiOjE2MTQ3MjQ4MDAsImxhc3RFdmVudFRpbWUiOjE2MTQ3MjQ5NDI0NDUsImV2ZW50SWQiOjQxOSwiaWRlbnRpZnlJZCI6NjIsInNlcXVlbmNlTnVtYmVyIjo0ODF9',
-    '_uetsid': 'cf97e7807b9811eb873063e4b6442eea',
-    '_uetvid': '13a1fd407a3411eb8ea737d45dda3c8a',
-    'nlbi_987752_2147483646': 'hR2iXQRNA0MC1RSr5Tz1lQAAAACNRB4H/k5XBNqBa/SmS6Lj',
-    'reese84': '3:iq7XYbLy3PN8Juc2zEMvnA==:rkGb6G4z6ImgwgotSSBf9CNiXnErdUD72klP1zF6woeQomqVIxRpVFkyncVjCY/+S6T8ISfVTVT61IObCgQCEPTvmNXYOjuPAS2QEt0mMfocXPtwAIkq9WiuLOIEd9xpNrR7WLFqVC2zQP1lBL9o/nmVF1zquizNCU/PIiAubexF37W/kqZjcfZArbZVgHjZ7CRhNs0yU1XenDHo+qBOTiPJgAJyDRnAcZIXsACKdKjWIcs0KVKmhEZrE19Eic7lGgbHyuo9s3V1tpyybM98lqHLkEk4GoogWP5BfOi4+R9EyRShFnAT2ahOjESneiwqg2BPSe/ZZmnPPiBpZuNUrLbNk58leFBVI/Q7CAGl6w0d1PW3cx8448wSR7nd5I1bJu+r+KFL56MQE7YJulNqd3ALRWTOIw9+5gccaxEdr+I=:q+xMMUrD5BYf35b8+tqt9VbJcvdH2TKNneCt4nt5TgE=',
-})
+ch_sesh.headers = {
+    'Authorization': 'Bearer MWI0NGFhZTJkMGM0MWNmOTlkMmMzZGEyN2Y3N2VhNDM4ZTNmOGM4MDAxMjUxMTBlZDUwMTQxMWQ5ZWNkZjhmOQ',
+    'CH-DEVICE-ID': '3DF1F68C-1C1C-4FD0-8AEC-5A9CEEE62ECA',
+    'Accept': '*/*',
+    'User-Agent': 'Course Hero/1.9.88 (iPhone; iOS 14.1; Scale/3.00)',
+    'Accept-Language': 'en-US;q=1',
+    'Accept-Encoding': 'gzip, deflate'
+}
 venmo_sesh = requests.Session()
 csite_sesh = requests.Session()
 csite_sesh.headers = {
@@ -155,28 +62,6 @@ csite_sesh.headers = {
     'accept-language': 'en-US,en;q=0.9',
 }
 sesh_id = str(uuid.uuid4())
-
-
-def ch_pdf(_id):
-    headers = {
-        'Sec-Fetch-Mode': 'cors',
-        'Sec-Fetch-Site': 'same-origin',
-        'Accept-Language': 'en-US,en;q=0.9',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36',
-        'Accept': '*/*',
-        'Referer': 'https://www.coursehero.com/pdfjs/build/pdf.worker.js',
-        'Sec-Fetch-Dest': 'empty',
-        'Connection': 'keep-alive',
-    }
-    response = ch_sesh.get('https://www.coursehero.com/pdf/document/' + _id + '/', headers=headers)
-    if "Something is broken." in response.text:
-        return False
-    file_name = str(uuid.uuid4()) + ".pdf"
-    output_file = open("/home/autobuy/html/" + file_name, "wb")
-    output_file.write(response.content)
-    output_file.close()
-    ch_db.set(_id, file_name)
-    return file_name
 
 
 def check_chegg_link(update, context):
@@ -197,11 +82,13 @@ def check_chegg_link(update, context):
         users.set(username, str(data))
     else:
         data = eval(data)
+    credit_used = False
     if not data["subscribed"]:
         if (data["credits"]) > 0:
             data["credits"] = int(data["credits"]) - 1
             data["chat_id"] = update.effective_chat.id
             users.set(username, str(data))
+            credit_used = True
         else:
             try:
                 data["go"]
@@ -246,7 +133,20 @@ def check_chegg_link(update, context):
         question_id = check_question(link)
         if not question_id:
             return False
-        formatted_html = get_question(question_id)
+        if question_id == "no_answer":
+            context.bot.send_message(chat_id=update.effective_chat.id, text="No answer available for this question! Did not burn an unlock.")
+            if credit_used:
+                data["credits"] = int(data["credits"]) + 1
+                users.set(username, str(data))
+            return
+        while True:
+            try:
+                formatted_html = get_question(question_id)
+            except Exception:
+                time.sleep(1)
+                context.bot.send_message(chat_id=update.effective_chat.id, text="Failed to get answer, trying again..")
+            else:
+                break
         if formatted_html == "answer_html":
             i += 1
             continue
@@ -263,6 +163,15 @@ def check_chegg_link(update, context):
         return
 
 
+def check_coursehero_unlocks():
+    response = ch_sesh.get("https://www.coursehero.com/api/v1/users/unlocks/uploads/")
+    try:
+        return response.json()["unlocks_remaining"] > 0
+    except Exception:
+        print("prob expired auth")
+        return False
+
+
 def check_coursehero_link(update, context):
     link = update.message.text
     _id = re.search('file/(.*?)/', link).group(1)
@@ -272,6 +181,9 @@ def check_coursehero_link(update, context):
         return
     data = users.get(username)
     gator = False
+    if not check_coursehero_unlocks():
+        context.bot.send_message(chat_id=update.effective_chat.id, text="Out of Coursehero unlocks, contact @pixxllated. You were not charged.")
+        return
     if not data:
         data = {
             "subscribed": False,
@@ -288,45 +200,22 @@ def check_coursehero_link(update, context):
     else:
         context.bot.send_message(chat_id=update.effective_chat.id, text="Not enough credits to unlock! View /purchase to get started.")
         return
-    headers = {
-        'Connection': 'keep-alive',
-        'Upgrade-Insecure-Requests': '1',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-        'Sec-Fetch-Site': 'none',
-        'Sec-Fetch-Mode': 'navigate',
-        'Sec-Fetch-User': '?1',
-        'Sec-Fetch-Dest': 'document',
-        'Accept-Language': 'en-US,en;q=0.9',
-    }
-    response = ch_sesh.get(link, headers=headers)
-    full_url = response.url
-    if 'u/file/' in response.text:
-        dl_id = ch_pdf(_id)
-        users.set(username, str(data))
-        context.bot.send_message(chat_id=update.effective_chat.id, text="Download here: https://pleaseunlock.it/ch/" + dl_id)
-        return
-    post_data = {
-        "dbFilename": _id
-    }
-    main_url = response.url
-    headers["Referer"] = main_url
-    response = ch_sesh.post("https://www.coursehero.com/api/v1/unlock-doc-action/", headers=headers, json=post_data)
-    print(response.text)
-    response = ch_sesh.get(main_url.replace("file", "unlock-document"), headers=headers)
-    dl_id = ch_pdf(_id)
-    if not dl_id:
+    response = ch_sesh.post("https://www.coursehero.com/api/v1/users/unlocks/content/document/id/" + _id + "/")
+    if response.json()["success"] == "true":
+        response = ch_sesh.get("https://www.coursehero.com/api/v2/documents/" + _id + "/pdf/")
+        pdf = requests.get(response.json()["url"])
+        file_name = str(uuid.uuid4()) + ".pdf"
+        output_file = open("/home/autobuy/html/" + file_name, "wb")
+        output_file.write(pdf.content)
+        output_file.close()
+        ch_db.set(_id, file_name)
+    else:
         context.bot.send_message(chat_id=update.effective_chat.id, text="Failed to get your document, please contact @pixxllated. You were not charged.")
         return
-    post_data = {
-        "contentType": "document",
-        "typeId": _id,
-        "sourceName": "null"
-    }
-    response = ch_sesh.post('https://www.coursehero.com/api/v1/document/' + _id + '/like/', headers=headers, json=post_data)
+    response = ch_sesh.post("https://www.coursehero.com/api/v1/documents/" + _id + "/like/")
     print(response.text)
     users.set(username, str(data))
-    context.bot.send_message(chat_id=update.effective_chat.id, text="Download here: https://pleaseunlock.it/ch/" + dl_id)
+    context.bot.send_message(chat_id=update.effective_chat.id, text="Download here: https://pleaseunlock.it/ch/" + file_name)
 
 
 def check_question(url):
@@ -335,6 +224,8 @@ def check_question(url):
     if not already_found:
         print("fetching url")
         response = csite_sesh.get(url)
+        if "this question hasn" in response.text:
+            return "no_answer"
         try:
             question_id = re.search('pageNameDetailed":"(.*?)"', response.text).group(1) # suprisingly works for textbook & regular
         except Exception:
@@ -824,7 +715,7 @@ def tele_add(update, context):
         data["credits"] = int(data["credits"]) + int(context.args[2])
     elif type_ == "sub":
         data["subscribed"] = True
-        data["subscription_date"] = (datetime.now() + timedelta(days=365)).strftime('%m/%d/%Y')
+        data["subscription_date"] = (datetime.now() + timedelta(days=30)).strftime('%m/%d/%Y')
     users.set(username, str(data))
     context.bot.send_message(chat_id=update.effective_chat.id, text="Operation success!")
 
@@ -966,6 +857,7 @@ def tele_start(update, context):
 def tele_stats(update, context):
     sub_amt = 0
     member_amt = 0
+    credit_amount = 0
     for user in users.getall():
         try:
             data = eval(users[user])
@@ -975,8 +867,12 @@ def tele_stats(update, context):
                 member_amt += 1
         except Exception:
             pass
+    for order in orders.getall():
+        data = eval(orders[order])
+        if data["status"] == "paid" and data["type"] == "credit":
+            credit_amount += int(data["amt"])
     solved_amt = len(urls.getall())
-    context.bot.send_message(chat_id=update.effective_chat.id, text="Member count: " + str(member_amt) + "\nSubscriber count: " + str(sub_amt) + "\nTotal unlocks: " + str(solved_amt))
+    context.bot.send_message(chat_id=update.effective_chat.id, text="Member count: " + str(member_amt) + "\nSubscriber count: " + str(sub_amt) + "\nCredits bought: " + str(credit_amount) + "\nTotal unlocks: " + str(solved_amt))
 
 
 def tele_venmo(update, context):
@@ -1028,7 +924,7 @@ add_handler = CommandHandler('add', tele_add)
 gator_handler = CommandHandler('gogators', tele_gator)
 coursehero_handler = CommandHandler('coursehero', tele_coursehero)
 chegg_link_handler = RegexHandler('.*chegg\.com\/homework-help\/questions\-and\-answers.*', check_chegg_link)
-textbook_link_handler = RegexHandler('.*chegg\.com\/homework-help\/.*-exc$', check_textbook_link)
+textbook_link_handler = RegexHandler('.*chegg\.com\/homework-help\/.*-solution-\d+(-exc)?.*$', check_textbook_link)
 ch_link_handler = RegexHandler('.*coursehero.com/file/.*/.*', check_coursehero_link)
 order_handler = RegexHandler('[0-9]{3}o[0-9]{3}o[0-9]{3}', tele_orders)
 dispatcher.add_handler(start_handler)
