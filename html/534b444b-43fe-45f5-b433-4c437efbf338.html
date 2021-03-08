@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <html>
+ <head></head>
+ <body>
+  <p><strong>Relational Database Design and SQL</strong></p> 
+  <p>Using Microsoft SQL Server, answer the questions listed below. You can complete your exercise using either <strong>Management Studio</strong> or <strong>Query Editor</strong>.</p> 
+  <p>a) Create a database called&nbsp;<strong>EXERCISE1630</strong>.</p> 
+  <p>b) Create a&nbsp;<strong>user defined data type</strong>&nbsp;called&nbsp;<strong>KEY_ID</strong>&nbsp;for all the primary key columns containing integer values to ensure the same data type, length and null ability.</p> 
+  <p>c) Create the following tables (see image for column information):</p> 
+  <p>CUSTOMER<br /> INVOICE<br /> LINE<br /> PRODUCT<br /> VENDOR</p> 
+  <p>d) Add all the&nbsp;<strong>primary keys</strong>.</p> 
+  <p>e) Add all the&nbsp;<strong>foreign keys</strong>.</p> 
+  <p>f) The default value for the&nbsp;<strong>VEND_PROVINCE</strong>&nbsp;column in the&nbsp;<strong>VENDOR</strong>&nbsp;table is the value&nbsp;<strong>BC</strong>.</p> 
+  <p>g) The default value for the&nbsp;<strong>INV_DATE</strong>&nbsp;column in the&nbsp;<strong>INVOICE</strong>&nbsp;table is&nbsp;<strong>today’s date</strong>&nbsp;- GETDATE().</p> 
+  <p>h) Add a check constraint to the&nbsp;<strong>PROD_UNIT_PRICE</strong>&nbsp;column in the&nbsp;<strong>PRODUCT</strong>&nbsp;table to ensure the price entered is greater than or equal to&nbsp;<strong>10.00</strong>.</p> 
+  <p>i) The default value for the&nbsp;<strong>CUST_BALANCE</strong>&nbsp;column in the&nbsp;<strong>CUSTOMER</strong>&nbsp;table is the value&nbsp;<strong>0</strong>.</p> 
+  <p>j) The default value for the&nbsp;<strong>VEND_CITY</strong>&nbsp;column in the&nbsp;<strong>VENDOR</strong>&nbsp;table is the value&nbsp;<strong>Burnaby</strong>.</p> 
+  <p><img alt="Table Layout CUSTOMER Data Type Length Column Name Null Values CUST NUMBER (PK) INT User-defined Data Type No CUST LAST NAME VARCHAR 30 No 20 No VARCHAR CUST FIRST NAME CHAR 10 Yes CUST PHONE MONE No CUST BALANCE INVOICE Data Type Length Column Name Null Values User-defined Data Type No INV NUMBER (PK) INT CUST NUMBER (FK) INT User-defined Data Type No DATE DATETIME Yes LINE Data Type Length Column Name Null Values INV NUMBER (PK) INT User-defined Data Type No No LINE NUMBER (PK) SMALLINT No PROD CODE (FK VARCHAR 10 LINE UNIT PRICE MONEY No PRODUCT Data Type Length Column Name Null Values No LPROD CODE (PK) VARCHAR 10 VARCHAR Yes PROD DESCRIPTION No PROD QTY IN STOCK INT No PROD UNIT PRICE MONEY User-defined Data Type No VEND NUMBER (FK) INT VENDOR Data Type Length Column Name Null Values VEND NUMBER (PK) INT User-defined Data Type No VARCHAR 40 No VEND NAME 25 Yes VEND ADDRESS VARCHAR VEND CIT VARCHAR Yes CHAR 2 Yes VEND PROVINCE VEND POSTAL CODE CHAR 6 Yes CHAR 10 Yes VEND PHONE " src="https://d2vlcm61l7u1fs.cloudfront.net/media%2F32f%2F32f81b5e-24f9-4782-a9f6-681b5c7291d4%2FphpXXBWUh.png" style="height:auto;margin:20px 0px 0px;" /></p> 
+  <p>&nbsp;</p> 
+  <p><strong>If you dont use&nbsp;Management Studio or Query Editor you will not be rated</strong></p> 
+ </body>
+</html>
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>create database EXERCISE1630 &nbsp;&nbsp;&nbsp; &nbsp;// excute
+this line alone&nbsp;<br />
+use EXERCISE1630 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// excute this line alone</p>
+<p>create table CUSTOMER &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; // select from create table to closing paranthesis[)]
+and execute<br />
+(<br />
+CUST_NUMBER int primary key identity(1,1),<br />
+CUST_LAST_NAME varchar(30),&nbsp;<br />
+CUST_FIRST_NAME varchar(20),<br />
+CUST_PHONE char(10),<br />
+CUST_BALANCE money<br />
+)</p>
+<p>create table INVOICE&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//
+select from create table to closing paranthesis[)] and
+execute<br />
+(<br />
+INV_NUMBER int primary key identity(1,1),<br />
+CONSTRAINT FK_CUST_NUMBER FOREIGN KEY(CUST_NUMBER) REFERENCES
+CUSTOMER(CUST_NUMBER),&nbsp;<br />
+INV_DATE DATETIME<br />
+)</p>
+<p>create table LINE&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// select
+from create table to closing paranthesis[)] and execute<br />
+(<br />
+INT_NUMBER int primary key identity(1,1),<br />
+LINE_NUMBER int primary key identity(1,1),<br />
+CONSTRAINT FK_PROD_CODE FOREIGN KEY(PROD_CODE) REFERENCES
+PRODUCT(PROD_CODE),<br />
+LINE_UNITS int,<br />
+LINE_UNIT_PRICE money<br />
+)</p>
+<p>create table PRODUCT&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//
+select from create table to closing paranthesis[)] and
+execute<br />
+(<br />
+PROD_CODE varchar(10) primary key,<br />
+PROD_DESCRIPTION varchar(50),<br />
+PROD_QTY_IN_STOCK int,<br />
+PROD_UNIT_PRICE money,<br />
+CONSTRAINT FK_VEND_NUMBER FOREIGN KEY(VEND_NUMBER) REFERENCES
+VENDER(VEND_NUMBER)<br />
+)</p>
+<p>create table VENDER&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//
+select from create table to closing paranthesis[)] and
+execute<br />
+(<br />
+VEND_NUMBER int primary key identity(1,1),<br />
+VEND_NAME varchar(40),<br />
+VEND_ADDRESS varchar(25),<br />
+VEND_CITY varchar(20),<br />
+VEND_PROVINCE char(2),<br />
+VEND_POSTAL_CODE char(6),<br />
+VEND_PHONE char(10)<br />
+)</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Using Java</p>
+<p><strong>You CANNOT use Java class
+java.util.ArrayList</strong></p>
+<p>public class A2 {<br>
+&nbsp;&nbsp; public static void main(String[] args) {<br>
+&nbsp; &nbsp; &nbsp; // The following is example code for
+testing.<br>
+&nbsp; &nbsp; &nbsp; // Feel free to make changes to the main
+method.<br>
+&nbsp; &nbsp; &nbsp; StudentRecord[] arr1 = { new
+StudentRecord("Kathryn", &nbsp; 4.0,&nbsp; 36104),<br>
+&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; new StudentRecord("Christine", 3.97,
+49801),<br>
+&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; new StudentRecord("Timothy", &nbsp;
+3.89, 96813),<br>
+&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; new StudentRecord("Brijian", &nbsp;
+3.71, 62701),<br>
+&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; new StudentRecord("Jose",&nbsp; &nbsp;
+&nbsp; 3.64, 55102) };<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp;<br>
+&nbsp; &nbsp; &nbsp; StudentRecord[] arr2 = { new
+StudentRecord("Ivianni", &nbsp; 3.55, 13301),<br>
+&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; new StudentRecord("Julian",&nbsp;
+&nbsp; 3.42, 28608),<br>
+&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; new StudentRecord("Francisco", 3.39,
+87501),<br>
+&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; new StudentRecord("Antoni",&nbsp;
+&nbsp; 3.2,&nbsp; 73102),<br>
+&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; new StudentRecord("Peter", &nbsp;
+&nbsp; 3.13, 10000) };<br>
+<br>
+&nbsp; &nbsp; &nbsp; MyGenericArrayList&lt;StudentRecord&gt; list1
+= new MyGenericArrayList&lt;StudentRecord&gt;();<br>
+<br>
+&nbsp; &nbsp; &nbsp; MyGenericArrayList&lt;StudentRecord&gt; list2
+= new MyGenericArrayList&lt;StudentRecord&gt;();<br>
+&nbsp; &nbsp; &nbsp; for(StudentRecord e : arr2)
+list2.add(e);<br>
+&nbsp; &nbsp; &nbsp;<br>
+&nbsp; &nbsp; &nbsp; list1.add(arr1[0]);&nbsp; &nbsp; &nbsp; &nbsp;
+A2.print(list1);<br>
+&nbsp; &nbsp; &nbsp; list1.add(arr1[3]);&nbsp; &nbsp; &nbsp; &nbsp;
+A2.print(list1);<br>
+&nbsp; &nbsp; &nbsp; list1.add(1, arr1[4]); &nbsp; &nbsp;
+A2.print(list1); &nbsp; &nbsp;<br>
+&nbsp; &nbsp; &nbsp; list1.add(4, arr1[2]); &nbsp; &nbsp;
+A2.print(list1);&nbsp; //invalid index<br>
+&nbsp; &nbsp; &nbsp; int i = list1.indexOf(arr1[3]);<br>
+&nbsp; &nbsp; &nbsp; list1.addAll(i, list2);&nbsp; &nbsp;
+A2.print(list1);<br>
+&nbsp; &nbsp; &nbsp; list1.addAll(9, list2);&nbsp; &nbsp;
+A2.print(list1);&nbsp; //invalid index<br>
+&nbsp; &nbsp; &nbsp; list1.remove(-4); &nbsp; &nbsp; &nbsp;
+A2.print(list1);&nbsp; //invalid index<br>
+&nbsp; &nbsp; &nbsp; list1.remove(6);&nbsp; &nbsp; &nbsp; &nbsp;
+A2.print(list1);<br>
+&nbsp; &nbsp; &nbsp; list1.set(1, arr1[1]); &nbsp; &nbsp;
+A2.print(list1);<br>
+&nbsp; &nbsp; &nbsp; list1.set(7, arr1[4]); &nbsp; &nbsp;
+A2.print(list1);&nbsp; //invalid index<br>
+&nbsp; &nbsp; &nbsp;
+System.out.println(list1.contains(arr1[1]));<br>
+&nbsp; &nbsp; &nbsp;
+System.out.println(list1.contains(arr1[4]));<br>
+&nbsp; &nbsp; &nbsp; list1.clear();&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; A2.print(list1);<br>
+&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp; public static void
+print(MyGenericArrayList&lt;StudentRecord&gt; list) {<br>
+&nbsp; &nbsp; &nbsp; int size = list.size();<br>
+&nbsp; &nbsp; &nbsp; System.out.println("Student Records (size=" +
+list.size() + ")");<br>
+&nbsp; &nbsp; &nbsp; for(int i = 0; i &lt; size; i++) {<br>
+&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; StudentRecord e =
+list.get(i);<br>
+&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; System.out.println("&nbsp; &nbsp;
+[" + i + "] " + e.name + ", " + e.gpa + ", " + e.zipcode);<br>
+&nbsp; &nbsp; &nbsp; }<br>
+&nbsp;&nbsp; }<br>
+}<br>
+<br>
+class MyGenericArrayList&lt;T&gt; {<br>
+&nbsp;&nbsp; private Object[] arr = new Object[0];<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp; // Append the given element at the end of the
+list<br>
+&nbsp;&nbsp; public void add(T element) { &nbsp; &nbsp;<br>
+&nbsp; &nbsp; &nbsp;
+//---------------------------------------------------------------------<br>
+
+&nbsp; &nbsp; &nbsp; // Fill in your code here<br>
+<br>
+&nbsp; &nbsp; &nbsp;<br>
+&nbsp; &nbsp; &nbsp;<br>
+&nbsp; &nbsp; &nbsp; //<br>
+&nbsp; &nbsp; &nbsp;
+//---------------------------------------------------------------------<br>
+
+&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp; // Insert the given element at the given index<br>
+&nbsp;&nbsp; // Do nothing if the given index is not valid<br>
+&nbsp;&nbsp; public void add(int index, T element) {&nbsp; &nbsp;
+&nbsp;<br>
+&nbsp; &nbsp; &nbsp;
+//---------------------------------------------------------------------<br>
+
+&nbsp; &nbsp; &nbsp; // Fill in your code here<br>
+&nbsp; &nbsp; &nbsp;<br>
+&nbsp; &nbsp; &nbsp;<br>
+&nbsp; &nbsp; &nbsp;<br>
+&nbsp; &nbsp; &nbsp; //<br>
+&nbsp; &nbsp; &nbsp;
+//---------------------------------------------------------------------<br>
+
+&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp; // Insert all elements from the given list into this
+list, starting at the given index<br>
+&nbsp;&nbsp; // Do nothing if the given index is not valid<br>
+&nbsp;&nbsp; public void addAll(int index,
+MyGenericArrayList&lt;T&gt; list) {&nbsp; &nbsp;<br>
+&nbsp; &nbsp; &nbsp;
+//---------------------------------------------------------------------<br>
+
+&nbsp; &nbsp; &nbsp; // Fill in your code here<br>
+<br>
+<br>
+&nbsp; &nbsp; &nbsp; //<br>
+&nbsp; &nbsp; &nbsp;
+//---------------------------------------------------------------------<br>
+
+&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp; // Remove all elements from the list<br>
+&nbsp;&nbsp; public void clear() {&nbsp; &nbsp; &nbsp;<br>
+&nbsp; &nbsp; &nbsp;
+//---------------------------------------------------------------------<br>
+
+&nbsp; &nbsp; &nbsp; // Fill in your code here<br>
+<br>
+<br>
+&nbsp; &nbsp; &nbsp; //<br>
+&nbsp; &nbsp; &nbsp;
+//---------------------------------------------------------------------<br>
+
+&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp; // Return true if the list contains the given
+element<br>
+&nbsp;&nbsp; // Return false if not found<br>
+&nbsp;&nbsp; public boolean contains(T element) {<br>
+&nbsp; &nbsp; &nbsp; boolean retVal = false;<br>
+<br>
+&nbsp; &nbsp; &nbsp;
+//---------------------------------------------------------------------<br>
+
+&nbsp; &nbsp; &nbsp; // Fill in your code here<br>
+<br>
+<br>
+&nbsp; &nbsp; &nbsp; //<br>
+&nbsp; &nbsp; &nbsp;
+//---------------------------------------------------------------------/<br>
+
+<br>
+&nbsp; &nbsp; &nbsp; return retVal;<br>
+&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp; // Return the element at given index<br>
+&nbsp;&nbsp; // Do nothing if the given index is not valid<br>
+&nbsp;&nbsp; public T get(int index) {<br>
+&nbsp; &nbsp; &nbsp; T retVal = null;<br>
+<br>
+&nbsp; &nbsp; &nbsp;
+//---------------------------------------------------------------------<br>
+
+&nbsp; &nbsp; &nbsp; // Fill in your code here<br>
+<br>
+<br>
+&nbsp; &nbsp; &nbsp; //<br>
+&nbsp; &nbsp; &nbsp;
+//---------------------------------------------------------------------<br>
+
+&nbsp; &nbsp; &nbsp;<br>
+&nbsp; &nbsp; &nbsp; return retVal;<br>
+&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp; // Return the first index where the given element is
+found in the list<br>
+&nbsp;&nbsp; // Return -1 if not found<br>
+&nbsp;&nbsp; public int indexOf(T element) {<br>
+&nbsp; &nbsp; &nbsp; int retVal = -1;<br>
+<br>
+&nbsp; &nbsp; &nbsp;
+//---------------------------------------------------------------------<br>
+
+&nbsp; &nbsp; &nbsp; // Fill in your code here<br>
+<br>
+<br>
+&nbsp; &nbsp; &nbsp; //<br>
+&nbsp; &nbsp; &nbsp;
+//---------------------------------------------------------------------<br>
+
+<br>
+&nbsp; &nbsp; &nbsp; return retVal;<br>
+&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp; // remove the element at the given index<br>
+&nbsp;&nbsp; // Do nothing if the given index is not valid<br>
+&nbsp;&nbsp; public void remove(int index) {<br>
+&nbsp; &nbsp; &nbsp;
+//---------------------------------------------------------------------<br>
+
+&nbsp; &nbsp; &nbsp; // Fill in your code here<br>
+<br>
+<br>
+&nbsp; &nbsp; &nbsp; //<br>
+&nbsp; &nbsp; &nbsp;
+//---------------------------------------------------------------------<br>
+
+&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp; // Replace the element at the given index with the
+given element<br>
+&nbsp;&nbsp; // Do nothing if the given index is not valid<br>
+&nbsp;&nbsp; public void set(int index, T element) {<br>
+&nbsp; &nbsp; &nbsp;
+//---------------------------------------------------------------------<br>
+
+&nbsp; &nbsp; &nbsp; // Fill in your code here<br>
+<br>
+<br>
+&nbsp; &nbsp; &nbsp; //<br>
+&nbsp; &nbsp; &nbsp;
+//---------------------------------------------------------------------<br>
+
+&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp; // Return the number of elements in the list<br>
+&nbsp;&nbsp; public int size() {<br>
+&nbsp; &nbsp; &nbsp; int retVal = -1;<br>
+<br>
+&nbsp; &nbsp; &nbsp;
+//---------------------------------------------------------------------<br>
+
+&nbsp; &nbsp; &nbsp; // Fill in your code here<br>
+<br>
+<br>
+&nbsp; &nbsp; &nbsp; //<br>
+&nbsp; &nbsp; &nbsp;
+//---------------------------------------------------------------------<br>
+
+<br>
+&nbsp; &nbsp; &nbsp; return retVal;<br>
+&nbsp;&nbsp; }<br>
+}<br>
+<br>
+class StudentRecord {<br>
+&nbsp;&nbsp; String name; &nbsp;<br>
+&nbsp;&nbsp; double gpa;<br>
+&nbsp;&nbsp; int zipcode;<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp; public StudentRecord(String name, double gpa, int
+zipcode) {<br>
+&nbsp; &nbsp; &nbsp; this.name = name;<br>
+&nbsp; &nbsp; &nbsp; this.gpa = gpa;<br>
+&nbsp; &nbsp; &nbsp; this.zipcode = zipcode;<br>
+&nbsp;&nbsp; }<br>
+}</p>
+<p>&nbsp;</p>
+<p><strong>Output:</strong></p>
+<p><strong>Student Records (size=1)<br>
+&nbsp; &nbsp; [0] Kathryn, 4.0, 36104<br>
+Student Records (size=2)<br>
+&nbsp; &nbsp; [0] Kathryn, 4.0, 36104<br>
+&nbsp; &nbsp; [1] Brijian, 3.71, 62701<br>
+Student Records (size=3)<br>
+&nbsp; &nbsp; [0] Kathryn, 4.0, 36104<br>
+&nbsp; &nbsp; [1] Jose, 3.64, 55102<br>
+&nbsp; &nbsp; [2] Brijian, 3.71, 62701<br>
+Student Records (size=3)<br>
+&nbsp; &nbsp; [0] Kathryn, 4.0, 36104<br>
+&nbsp; &nbsp; [1] Jose, 3.64, 55102<br>
+&nbsp; &nbsp; [2] Brijian, 3.71, 62701<br>
+Student Records (size=8)<br>
+&nbsp; &nbsp; [0] Kathryn, 4.0, 36104<br>
+&nbsp; &nbsp; [1] Jose, 3.64, 55102<br>
+&nbsp; &nbsp; [2] Ivianni, 3.55, 13301<br>
+&nbsp; &nbsp; [3] Julian, 3.42, 28608<br>
+&nbsp; &nbsp; [4] Francisco, 3.39, 87501<br>
+&nbsp; &nbsp; [5] Antoni, 3.2, 73102<br>
+&nbsp; &nbsp; [6] Peter, 3.13, 10000<br>
+&nbsp; &nbsp; [7] Brijian, 3.71, 62701<br>
+Student Records (size=8)<br>
+&nbsp; &nbsp; [0] Kathryn, 4.0, 36104<br>
+&nbsp; &nbsp; [1] Jose, 3.64, 55102<br>
+&nbsp; &nbsp; [2] Ivianni, 3.55, 13301<br>
+&nbsp; &nbsp; [3] Julian, 3.42, 28608<br>
+&nbsp; &nbsp; [4] Francisco, 3.39, 87501<br>
+&nbsp; &nbsp; [5] Antoni, 3.2, 73102<br>
+&nbsp; &nbsp; [6] Peter, 3.13, 10000<br>
+&nbsp; &nbsp; [7] Brijian, 3.71, 62701<br>
+Student Records (size=8)<br>
+&nbsp; &nbsp; [0] Kathryn, 4.0, 36104<br>
+&nbsp; &nbsp; [1] Jose, 3.64, 55102<br>
+&nbsp; &nbsp; [2] Ivianni, 3.55, 13301<br>
+&nbsp; &nbsp; [3] Julian, 3.42, 28608<br>
+&nbsp; &nbsp; [4] Francisco, 3.39, 87501<br>
+&nbsp; &nbsp; [5] Antoni, 3.2, 73102<br>
+&nbsp; &nbsp; [6] Peter, 3.13, 10000<br>
+&nbsp; &nbsp; [7] Brijian, 3.71, 62701<br>
+Student Records (size=7)<br>
+&nbsp; &nbsp; [0] Kathryn, 4.0, 36104<br>
+&nbsp; &nbsp; [1] Jose, 3.64, 55102<br>
+&nbsp; &nbsp; [2] Ivianni, 3.55, 13301<br>
+&nbsp; &nbsp; [3] Julian, 3.42, 28608<br>
+&nbsp; &nbsp; [4] Francisco, 3.39, 87501<br>
+&nbsp; &nbsp; [5] Antoni, 3.2, 73102<br>
+&nbsp; &nbsp; [6] Brijian, 3.71, 62701<br>
+Student Records (size=7)<br>
+&nbsp; &nbsp; [0] Kathryn, 4.0, 36104<br>
+&nbsp; &nbsp; [1] Christine, 3.97, 49801<br>
+&nbsp; &nbsp; [2] Ivianni, 3.55, 13301<br>
+&nbsp; &nbsp; [3] Julian, 3.42, 28608<br>
+&nbsp; &nbsp; [4] Francisco, 3.39, 87501<br>
+&nbsp; &nbsp; [5] Antoni, 3.2, 73102<br>
+&nbsp; &nbsp; [6] Brijian, 3.71, 62701<br>
+Student Records (size=7)<br>
+&nbsp; &nbsp; [0] Kathryn, 4.0, 36104<br>
+&nbsp; &nbsp; [1] Christine, 3.97, 49801<br>
+&nbsp; &nbsp; [2] Ivianni, 3.55, 13301<br>
+&nbsp; &nbsp; [3] Julian, 3.42, 28608<br>
+&nbsp; &nbsp; [4] Francisco, 3.39, 87501<br>
+&nbsp; &nbsp; [5] Antoni, 3.2, 73102<br>
+&nbsp; &nbsp; [6] Brijian, 3.71, 62701<br>
+true<br>
+false<br>
+Student Records (size=0)</strong></p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><u><strong>Screenshot</strong></u></p> <p><u><strong><img alt="public class A2 {
+public static void main(String[] args) {
+// The following is example code for testing.
+<terminated> A2 (1) " src="https://media.cheggcdn.com/coop/661/66141def-6a44-4353-b020-7e9ecc0209d4/1615188624735_Screenprint.jpg" style="height:542px;width:730px"></strong></u></p> <p><u><strong>Program</strong></u></p> <p><u><strong>A2.java</strong></u></p> <p>public class A2 {<br> &nbsp; &nbsp;public static void main(String[] args) {<br> // The following is example code for testing.<br> // Feel free to make changes to the main method.<br> StudentRecord[] arr1 = { new StudentRecord("Kathryn", 4.0, 36104),<br> &nbsp; &nbsp;new StudentRecord("Christine", 3.97, 49801),<br> &nbsp; &nbsp;new StudentRecord("Timothy", 3.89, 96813),<br> &nbsp; &nbsp;new StudentRecord("Brijian", 3.71, 62701),<br> &nbsp; &nbsp;new StudentRecord("Jose", 3.64, 55102) };</p> <p>StudentRecord[] arr2 = { new StudentRecord("Ivianni", 3.55, 13301),<br> &nbsp; &nbsp;new StudentRecord("Julian", 3.42, 28608),<br> &nbsp; &nbsp;new StudentRecord("Francisco", 3.39, 87501),<br> &nbsp; &nbsp;new StudentRecord("Antoni", 3.2, 73102),<br> &nbsp; &nbsp;new StudentRecord("Peter", 3.13, 10000) };</p> <p>MyGenericArrayList&lt;StudentRecord&gt; list1 = new MyGenericArrayList&lt;StudentRecord&gt;();</p> <p>MyGenericArrayList&lt;StudentRecord&gt; list2 = new MyGenericArrayList&lt;StudentRecord&gt;();<br> for(StudentRecord e : arr2) list2.add(e);</p> <p>list1.add(arr1[0]); A2.print(list1);<br> list1.add(arr1[3]); A2.print(list1);<br> list1.add(1, arr1[4]); A2.print(list1);<br> list1.add(4, arr1[2]); A2.print(list1); //invalid index<br> int i = list1.indexOf(arr1[3]);<br> list1.addAll(i, list2); A2.print(list1);<br> list1.addAll(9, list2); A2.print(list1); //invalid index<br> list1.remove(-4); A2.print(list1); //invalid index<br> list1.remove(6); A2.print(list1);<br> list1.set(1, arr1[1]); A2.print(list1);<br> list1.set(7, arr1[4]); A2.print(list1); //invalid index<br> System.out.println(list1.contains(arr1[1]));<br> System.out.println(list1.contains(arr1[4]));<br> list1.clear(); A2.print(list1);<br> &nbsp; &nbsp;}<br> &nbsp;&nbsp;<br> &nbsp; &nbsp;public static void print(MyGenericArrayList&lt;StudentRecord&gt; list) {<br> int size = list.size();<br> System.out.println("Student Records (size=" + list.size() + ")");<br> for(int i = 0; i &lt; size; i++) {<br> &nbsp; &nbsp;StudentRecord e = list.get(i);<br> &nbsp; &nbsp;System.out.println(" [" + i + "] " + e.name + ", " + e.gpa + ", " + e.zipcode);<br> }<br> &nbsp; &nbsp;}<br> }</p> <p>class MyGenericArrayList&lt;T&gt; {<br> &nbsp; &nbsp;private Object[] arr = new Object[0];<br> &nbsp;&nbsp;<br> &nbsp; &nbsp;// Append the given element at the end of the list<br> &nbsp; &nbsp;public void add(T element) {<br> //---------------------------------------------------------------------<br> // Fill in your code here<br> if(arr.length==0) {<br> &nbsp;&nbsp; &nbsp;arr=new Object[1];<br> &nbsp;&nbsp; &nbsp;arr[0]=element;<br> }<br> else {<br> &nbsp;&nbsp; &nbsp;Object[] temp=arr;<br> &nbsp;&nbsp; &nbsp;arr=new Object[temp.length+1];<br> &nbsp;&nbsp; &nbsp;for(int i=0;i&lt;temp.length;i++) {<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;arr[i]=temp[i];<br> &nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;arr[temp.length]=element;<br> }</p> <p>//<br> //---------------------------------------------------------------------<br> &nbsp; &nbsp;}</p> <p>&nbsp; &nbsp;// Insert the given element at the given index<br> &nbsp; &nbsp;// Do nothing if the given index is not valid<br> &nbsp; &nbsp;public void add(int index, T element) {<br> //---------------------------------------------------------------------<br> // Fill in your code here</p> <p>if(index&lt;arr.length &amp;&amp; index&gt;=0) {<br> &nbsp;&nbsp; &nbsp;arr[index]=element;<br> }</p> <p>//<br> //---------------------------------------------------------------------<br> &nbsp; &nbsp;}</p> <p>&nbsp; &nbsp;// Insert all elements from the given list into this list, starting at the given index<br> &nbsp; &nbsp;// Do nothing if the given index is not valid<br> &nbsp; &nbsp;public void addAll(int index, MyGenericArrayList&lt;T&gt; list) {<br> //---------------------------------------------------------------------<br> // Fill in your code here<br> if(index&lt;arr.length &amp;&amp; index&gt;=0) {<br> &nbsp;&nbsp; &nbsp;int i,j;<br> &nbsp;&nbsp; &nbsp;for(i=index,j=0;i&lt;arr.length &amp;&amp; j&lt;list.size();i++,j++) {<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;arr[i]=list.arr[j];<br> &nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;if(j&lt;list.size()-1) {<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Object[] temp=arr;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;arr=new Object[arr.length+list.size()-j];<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;for(i=0;i&lt;temp.length;i++) {<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;arr[i]=temp[i];<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;while(j&lt;list.size()) {<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;arr[i]=list.arr[j];<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;j++;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;}<br> }</p> <p>//<br> //---------------------------------------------------------------------<br> &nbsp; &nbsp;}</p> <p>&nbsp; &nbsp;// Remove all elements from the list<br> &nbsp; &nbsp;public void clear() {<br> //---------------------------------------------------------------------<br> // Fill in your code here</p> <p>arr=new Object[0];<br> //<br> //---------------------------------------------------------------------<br> &nbsp; &nbsp;}<br> &nbsp;&nbsp;<br> &nbsp; &nbsp;// Return true if the list contains the given element<br> &nbsp; &nbsp;// Return false if not found<br> &nbsp; &nbsp;public boolean contains(T element) {<br> boolean retVal = false;</p> <p>//---------------------------------------------------------------------<br> // Fill in your code here<br> for(int i=0;i&lt;arr.length;i++) {<br> &nbsp;&nbsp; &nbsp;if(arr[i]==element) {<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;retVal=true;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;break;<br> &nbsp;&nbsp; &nbsp;}<br> }</p> <p>//<br> //---------------------------------------------------------------------/</p> <p>return retVal;<br> &nbsp; &nbsp;}<br> &nbsp;&nbsp;<br> &nbsp; &nbsp;// Return the element at given index<br> &nbsp; &nbsp;// Do nothing if the given index is not valid<br> &nbsp; &nbsp;public T get(int index) {<br> T retVal = null;</p> <p>//---------------------------------------------------------------------<br> // Fill in your code here</p> <p>if(index&lt;arr.length &amp;&amp; index&gt;=0) {<br> &nbsp;&nbsp; &nbsp;retVal=(T) arr[index];<br> }<br> //<br> //---------------------------------------------------------------------</p> <p>return retVal;<br> &nbsp; &nbsp;}</p> <p>&nbsp; &nbsp;// Return the first index where the given element is found in the list<br> &nbsp; &nbsp;// Return -1 if not found<br> &nbsp; &nbsp;public int indexOf(T element) {<br> int retVal = -1;</p> <p>//---------------------------------------------------------------------<br> // Fill in your code here<br> for(int i=0;i&lt;arr.length;i++) {<br> &nbsp;&nbsp; &nbsp;if(arr[i]==element) {<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;retVal=i;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;break;<br> &nbsp;&nbsp; &nbsp;}<br> }</p> <p>//<br> //---------------------------------------------------------------------</p> <p>return retVal;<br> &nbsp; &nbsp;}<br> &nbsp;&nbsp;<br> &nbsp; &nbsp;// remove the element at the given index<br> &nbsp; &nbsp;// Do nothing if the given index is not valid<br> &nbsp; &nbsp;public void remove(int index) {<br> //---------------------------------------------------------------------<br> // Fill in your code here<br> if(index&lt;arr.length &amp;&amp; index&gt;=0) {<br> &nbsp;&nbsp; &nbsp;for(int i=index;i&lt;arr.length-1;i++) {<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;arr[i]=arr[i+1];<br> &nbsp;&nbsp; &nbsp;}<br> }</p> <p>//<br> //---------------------------------------------------------------------<br> &nbsp; &nbsp;}</p> <p>&nbsp; &nbsp;// Replace the element at the given index with the given element<br> &nbsp; &nbsp;// Do nothing if the given index is not valid<br> &nbsp; &nbsp;public void set(int index, T element) {<br> //---------------------------------------------------------------------<br> // Fill in your code here</p> <p>&nbsp;&nbsp; &nbsp; &nbsp; if(index&lt;arr.length &amp;&amp; index&gt;=0) {<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; arr[index]=element;<br> &nbsp;&nbsp; &nbsp; &nbsp; }<br> //<br> //---------------------------------------------------------------------<br> &nbsp; &nbsp;}</p> <p>&nbsp; &nbsp;// Return the number of elements in the list<br> &nbsp; &nbsp;public int size() {<br> int retVal = -1;</p> <p>//---------------------------------------------------------------------<br> // Fill in your code here</p> <p>retVal=arr.length;<br> //<br> //---------------------------------------------------------------------</p> <p>return retVal;<br> &nbsp; &nbsp;}<br> }</p> <p>class StudentRecord {<br> &nbsp; &nbsp;String name;<br> &nbsp; &nbsp;double gpa;<br> &nbsp; &nbsp;int zipcode;<br> &nbsp;&nbsp;<br> &nbsp; &nbsp;public StudentRecord(String name, double gpa, int zipcode) {<br> this.name = name;<br> this.gpa = gpa;<br> this.zipcode = zipcode;<br> &nbsp; &nbsp;}<br> }</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

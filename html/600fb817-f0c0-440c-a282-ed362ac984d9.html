@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Write a program that creates a green 'T' logo for Thomas Hunter
+on a 30x30 grid.</p>
+<p></p>
+<p>The grading script is expecting:</p>
+<ul>
+<li>The file to be saved as:&nbsp;logo.png.</li>
+<li>The grid to be 30 x 30.</li>
+<li>The 'T' to be 0% red, 100% green, and 0% blue. The top part of
+the 'T' should be the top third of the image and the bottom part of
+the 'T' should be the center third of the image.</li>
+<li>The remaining pixels in the image should be white (100% red,
+100% green, and 100% blue).</li>
+</ul>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><img alt src="https://media.cheggcdn.com/coop/9e2/9e2b7604-bb22-416c-8c02-1a58dde2d802/1614842372615_t_logo.png" style="height:204px;width:300px" /></p> <p>import matplotlib.pyplot as plt</p> <p># create dataset</p> <p>height = [4, 12, 4]</p> <p>bars = (&#39;A&#39;, &#39;B&#39;, &#39;C&#39;)</p> <p>&nbsp;</p> <p># Choose the width of each bar and their positions</p> <p>width = [3,3,3]</p> <p>x_pos = [0,3,6]</p> <p># Make the plot</p> <p>plt.bar(x_pos, height, width=width, color=[&#39;green&#39;, &#39;green&#39;, &#39;green&#39;])</p> <p>&nbsp;</p> <p># Create names on the x-axis</p> <p>plt.xticks(x_pos, bars)</p> <p># Show graphic</p> <p>plt.show()</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

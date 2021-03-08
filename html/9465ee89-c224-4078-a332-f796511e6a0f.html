@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p><img alt="void RemoveExtraSpaces (char txt[]);
+Description: The function takes a text (character array) and removes the extra spaces:
+A" src="https://media.cheggcdn.com/media/619/61993dd1-4f24-4907-be4b-f4a08dbbf0ef/phpjlZd0K.png" style="height:604px;width:710px;"></p>
+<p>please answer in C code and leave comments on what everything
+does.</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <pre>
+<code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+
+void fun(char *arr,int len){
+
+	int i=0;
+	int j=0;
+
+	// remove all leadins spaces.
+	while(j&lt;len &amp;&amp; arr[j]==' '){
+		j++;
+	}
+
+	//printf("dong for %d\n",i);
+	//printf("dong for %d\n",j);
+
+	// remove extra spaces from rest of string
+	while(j&lt;len){
+
+		if(arr[j]==' '){
+
+			arr[i]=arr[j];
+			i++;j++;
+
+			while(j&lt;len &amp;&amp; arr[j]==' '){
+				j++;
+			}
+
+		}
+
+		else if(arr[j]=='.' || arr[j]==',' || arr[j]=='?' ){
+			/* In my code I put one space by default , we need to remove that default space.
+			   i.e. "geeks    ." will be give "geeks ."  if we do not include below if statement
+			*/
+			if(arr[i-1]==' '){
+				arr[i-1]=arr[j];
+				j++;
+			}
+			else{
+				arr[i]=arr[j];
+				i++;j++;
+			}
+
+		}
+		else{
+
+			arr[i]=arr[j];
+			i++;j++;
+		}
+
+		//printf("dong for %d\n",i);
+		//printf("dong for %d\n",j);
+
+	}
+
+	/* In my above code, iff the string  is like "Geek.  " , then I put one space(" ") by default.
+	   we need to remove this space at the end of string
+	*/
+	if(i&lt;j){
+
+		i--;
+		if(arr[i]==' '){
+			arr[i]='\0';
+			i++;
+		}
+		while(i&lt;len){
+			arr[i]='\0';
+			i++;
+		}
+
+	}
+}
+
+int main(void){
+
+	char str[]=" Hello,   Students  !    ";
+	printf("The input text is\n");
+	printf("%s\n",str);
+	int len=strlen(str);
+
+	fun(str,len);
+
+	printf("\nThe modified text is\n");
+	printf("%s\n",str);
+
+}
+</code></pre>
+
+<p><img alt="C:\Users\Rounak\3D Objects\dcsasa.exe
+The input text is
+Ram is a good boy !
+The modified text is
+Ram is a good boy !
+Proces" src="https://media.cheggcdn.com/coop/91f/91fb07d8-1f6c-46fb-a3d2-8d465aa4f31b/1602544524923_out1.png"></p>
+
+<p><img alt="C:\Users\Rounak\3D Objects\dcsasa.exe
+The input text is
+Hello, Students!
+The modified text is
+Hello, Students !
+execution t" src="https://media.cheggcdn.com/coop/bb2/bb20d9db-2901-453b-8a8f-69f0d1d71969/1602544538664_out2.png"></p>
+
+<p>&nbsp;</p>
+
+<p><strong>PLEASE LIKE THE SOLUTION :))</strong></p>
+
+<p><strong>IF YOU HAVE ANY DOUBTS PLEASE MENTION IN THE COMMENT</strong></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

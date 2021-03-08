@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p><img alt="Revise the Course class as follows:
+(DONT use ArrayList)
+The array size is fixed in Listing 10.6. Improve it to automaticall" src="https://media.cheggcdn.com/media/3dc/3dcbd2d4-1049-46a0-a9ee-24f201c55f93/phpQA3RJM.png" style="height:484px;"><img alt="UML diagram:
+Course
+courseName: String
+instructor: String
+studentList: String[]
+capacity: int
+numberfiStudents: int
+urse(name" src="https://media.cheggcdn.com/media/1cf/1cfda620-25a8-41b9-b50d-c3c972718107/phpKFGaz1.png" style="height:680px;width:724px;"></p>
+<div>
+<div class="gtx-trans-icon">&nbsp;</div>
+</div>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>import java.util.Scanner;</p>
+<p>&nbsp;</p>
+<p>// Defines a class to store Course information</p>
+<p>class Course</p>
+<p>{</p>
+<p>// Instance variables to store course information</p>
+<p>String courseName;</p>
+<p>String instructor;</p>
+<p>String [] studentList;</p>
+<p>int numberOfStudents;</p>
+<p>int capacity;</p>
+<p>// Default constructor to initialize default values to&nbsp;</p>
+<p>// instance variables</p>
+<p>Course()</p>
+<p>{</p>
+<p>courseName = "";</p>
+<p>numberOfStudents = 0;</p>
+<p>// Default student capacity is 16</p>
+<p>capacity = 16;</p>
+<p>// Dynamically allocates memory to store students name</p>
+<p>studentList = new String[16];</p>
+<p>}// End of default constructor</p>
+<p>// Parameterized constructor to assign course name to&nbsp;</p>
+<p>// instance variable</p>
+<p>Course(String name)</p>
+<p>{</p>
+<p>courseName = name;</p>
+<p>// Default student capacity is 16</p>
+<p>capacity = 16;</p>
+<p>numberOfStudents = 0;</p>
+<p>studentList = new String[16];</p>
+<p>}// End of parameterized&nbsp; constructor</p>
+<p>// Parameterized constructor to assign course name and&nbsp;</p>
+<p>// instructor name to instance variable</p>
+<p>Course(String name, String instructor)</p>
+<p>{</p>
+<p>courseName = name;</p>
+<p>this.instructor = instructor;</p>
+<p>// Default student capacity is 16</p>
+<p>capacity = 16;</p>
+<p>numberOfStudents = 0;</p>
+<p>// Dynamically allocates memory to store students name</p>
+<p>studentList = new String[16];</p>
+<p>}// End of parameterized&nbsp; constructor</p>
+<p>// Method to return course name&nbsp;</p>
+<p>String getCourseName()</p>
+<p>{</p>
+<p>return courseName;</p>
+<p>}// End of method</p>
+<p>// Method to return instructor name</p>
+<p>String getInstructor()</p>
+<p>{</p>
+<p>return instructor;&nbsp;</p>
+<p>}// End of method</p>
+<p>// Method to set instructor name</p>
+<p>void setInstructor(String instructor)</p>
+<p>{</p>
+<p>this.instructor = instructor;</p>
+<p>}// End of method</p>
+<p>// Method to add a student to student list</p>
+<p>void addStudent(String student)</p>
+<p>{</p>
+<p>// Checks if current number of students is equals to&nbsp;</p>
+<p>// capacity</p>
+<p>if(numberOfStudents == capacity)</p>
+<p>{</p>
+<p>// Creates a temporary array of size equals to&nbsp;</p>
+<p>// number of students enrolled</p>
+<p>String temp [] = new String[numberOfStudents];</p>
+<p>// Loops till number of students enrolled&nbsp;</p>
+<p>for(int c = 0; c &lt; numberOfStudents; c++)</p>
+<p>// Assigns each student name from the student list</p>
+<p>// to temporary array</p>
+<p>temp[c] = studentList[c];</p>
+<p>// Double the capacity of the student list</p>
+<p>studentList = new String[capacity * 2];</p>
+<p>// Double the capacity</p>
+<p>capacity *= 2;</p>
+<p>// Loops till number of students enrolled&nbsp;</p>
+<p>for(int c = 0; c &lt; numberOfStudents; c++)</p>
+<p>// Assigns each student name from temporary array</p>
+<p>// to student list</p>
+<p>studentList[c] = temp[c];</p>
+<p>// Assign the student name to student list&nbsp;</p>
+<p>// at numberOfStudents index position</p>
+<p>studentList[numberOfStudents] = student;</p>
+<p>// Increases the number of students counter by one</p>
+<p>numberOfStudents++;</p>
+<p>}// End of if condition</p>
+<p>// Otherwise current number of students is&nbsp;</p>
+<p>// less than the capacity&nbsp;&nbsp;</p>
+<p>else</p>
+<p>{</p>
+<p>// Assign the student name to student list&nbsp;</p>
+<p>// at numberOfStudents index position</p>
+<p>studentList[numberOfStudents] = student;</p>
+<p>// Increases the number of students counter by one</p>
+<p>numberOfStudents++;</p>
+<p>}// End of else</p>
+<p>}// End of method</p>
+<p>// Method to remove a student from student list</p>
+<p>void dropStudent(String student)</p>
+<p>{</p>
+<p>// To store found status</p>
+<p>int f = -1;</p>
+<p>// Checks if number of students is 0 then empty student list</p>
+<p>if(numberOfStudents == 0)</p>
+<p>System.out.print("\n No students available to drop");</p>
+<p>// Otherwise students available</p>
+<p>else</p>
+<p>{</p>
+<p>// Loops till number of students enrolled&nbsp;</p>
+<p>for(int c = 0; c &lt; numberOfStudents; c++)</p>
+<p>{</p>
+<p>// Checks if current student name is equals to</p>
+<p>// parameter student name</p>
+<p>if(studentList[c].compareTo(student) == 0)</p>
+<p>{</p>
+<p>// Loops from found position to end of the list</p>
+<p>for(int d = c; d &lt; numberOfStudents; d++)</p>
+<p>// Shift each student to left</p>
+<p>studentList[d] = studentList[d + 1];</p>
+<p>// Decrease the number of students counter by one</p>
+<p>numberOfStudents--;</p>
+<p>// Assigns the found index position</p>
+<p>f = c;</p>
+<p>}// End of if condition</p>
+<p>}// End of for loop</p>
+<p>}// End of else</p>
+<p>// Checks if f value is -1 student name not found</p>
+<p>if(f == -1)</p>
+<p>System.out.print("\n No students available with name "</p>
+<p>+ student);</p>
+<p>}// End of method</p>
+<p>// Method to return student list</p>
+<p>String [] getStudents()</p>
+<p>{</p>
+<p>return studentList;</p>
+<p>}// End of method</p>
+<p>// Method to return number of students</p>
+<p>int getNumberOfStudents()</p>
+<p>{</p>
+<p>return numberOfStudents;</p>
+<p>}// End of method</p>
+<p>// Method to print course information</p>
+<p>void print()</p>
+<p>{</p>
+<p>// Checks if number of students is 0 then empty student list</p>
+<p>if(numberOfStudents == 0)</p>
+<p>System.out.print("\n No students available to drop");</p>
+<p>// Otherwise students available</p>
+<p>else</p>
+<p>{</p>
+<p>System.out.print("\n\n*********** Course Information ***********
+");</p>
+<p>System.out.print("\n Course Name: " + courseName +&nbsp;</p>
+<p>"\n Instructor Name: " + instructor +&nbsp;</p>
+<p>"\n Number of Students Enrolled: " +&nbsp;</p>
+<p>numberOfStudents);</p>
+<p>System.out.print("\n\n \t\tStudents Enrolled ");</p>
+<p>// Loops till number of students enrolled&nbsp;</p>
+<p>// to display their names</p>
+<p>for(int c = 0; c &lt; numberOfStudents; c++)</p>
+<p>System.out.print("\n " + studentList[c]);</p>
+<p>}// End of else</p>
+<p>}// End of method</p>
+<p>}// End of class</p>
+<p>&nbsp;</p>
+<p>// Defines the driver class</p>
+<p>public class CourseDemo&nbsp;</p>
+<p>{</p>
+<p>// main method definition</p>
+<p>public static void main(String ss[])</p>
+<p>{</p>
+<p>// Creates a class Course using parameterized constructor</p>
+<p>// by passing course name and instructor name</p>
+<p>Course course = new Course("Java", "Pyari Mohan Sahu");</p>
+<p>// Scanner calss object created</p>
+<p>Scanner sc = new Scanner(System.in);</p>
+<p>// To store user choice</p>
+<p>int ch;</p>
+<p>// Loops till user choice is not 4&nbsp;</p>
+<p>do</p>
+<p>{</p>
+<p>// Displays menu</p>
+<p>System.out.print("\n\n*********** MENU ***********");</p>
+<p>System.out.print("\n 1 Add Student \n 2 Drop Student" +</p>
+<p>"\n 3 Display \n 4 Exit");</p>
+<p>// Accepts user choice</p>
+<p>System.out.print("\n Enter your choice: ");</p>
+<p>ch = sc.nextInt();</p>
+<p>// Checks user choice and calls appropriate method</p>
+<p>switch(ch)</p>
+<p>{</p>
+<p>case 1:</p>
+<p>System.out.print("\n Enter student name to add: ");</p>
+<p>course.addStudent(sc.next());</p>
+<p>break;</p>
+<p>case 2:</p>
+<p>System.out.print("\n Enter student name to drop: ");</p>
+<p>course.dropStudent(sc.next());</p>
+<p>break;</p>
+<p>case 3:</p>
+<p>course.print();</p>
+<p>break;</p>
+<p>case 4:</p>
+<p>System.exit(0);</p>
+<p>default:</p>
+<p>System.out.print("\n Invalid choice!!");</p>
+<p>}// End of switch case</p>
+<p>}while(true); // End of do - while loop</p>
+<p>}// End of main method</p>
+<p>}// End of driver class</p>
+<p><strong>Sample Output:</strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>*********** MENU ***********</p>
+<p>&nbsp;1 Add Student&nbsp;</p>
+<p>&nbsp;2 Drop Student</p>
+<p>&nbsp;3 Display&nbsp;</p>
+<p>&nbsp;4 Exit</p>
+<p>&nbsp;Enter your choice: 1</p>
+<p>&nbsp;</p>
+<p>&nbsp;Enter student name to add: Mohan</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>*********** MENU ***********</p>
+<p>&nbsp;1 Add Student&nbsp;</p>
+<p>&nbsp;2 Drop Student</p>
+<p>&nbsp;3 Display&nbsp;</p>
+<p>&nbsp;4 Exit</p>
+<p>&nbsp;Enter your choice: 1</p>
+<p>&nbsp;</p>
+<p>&nbsp;Enter student name to add: Suresh</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>*********** MENU ***********</p>
+<p>&nbsp;1 Add Student&nbsp;</p>
+<p>&nbsp;2 Drop Student</p>
+<p>&nbsp;3 Display&nbsp;</p>
+<p>&nbsp;4 Exit</p>
+<p>&nbsp;Enter your choice: 1</p>
+<p>&nbsp;</p>
+<p>&nbsp;Enter student name to add: Ramesh</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>*********** MENU ***********</p>
+<p>&nbsp;1 Add Student&nbsp;</p>
+<p>&nbsp;2 Drop Student</p>
+<p>&nbsp;3 Display&nbsp;</p>
+<p>&nbsp;4 Exit</p>
+<p>&nbsp;Enter your choice: 3</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>*********** Course Information ***********&nbsp;</p>
+<p>&nbsp;Course Name: Java</p>
+<p>&nbsp;Instructor Name: Pyari Mohan Sahu</p>
+<p>&nbsp;Number of Students Enrolled: 3</p>
+<p>&nbsp;</p>
+<p>&nbsp; Students Enrolled&nbsp;</p>
+<p>&nbsp;Mohan</p>
+<p>&nbsp;Suresh</p>
+<p>&nbsp;Ramesh</p>
+<p>&nbsp;</p>
+<p>*********** MENU ***********</p>
+<p>&nbsp;1 Add Student&nbsp;</p>
+<p>&nbsp;2 Drop Student</p>
+<p>&nbsp;3 Display&nbsp;</p>
+<p>&nbsp;4 Exit</p>
+<p>&nbsp;Enter your choice: 1</p>
+<p>&nbsp;</p>
+<p>&nbsp;Enter student name to add: Amit</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>*********** MENU ***********</p>
+<p>&nbsp;1 Add Student&nbsp;</p>
+<p>&nbsp;2 Drop Student</p>
+<p>&nbsp;3 Display&nbsp;</p>
+<p>&nbsp;4 Exit</p>
+<p>&nbsp;Enter your choice: 1</p>
+<p>&nbsp;</p>
+<p>&nbsp;Enter student name to add: Sunil</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>*********** MENU ***********</p>
+<p>&nbsp;1 Add Student&nbsp;</p>
+<p>&nbsp;2 Drop Student</p>
+<p>&nbsp;3 Display&nbsp;</p>
+<p>&nbsp;4 Exit</p>
+<p>&nbsp;Enter your choice: 3</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>*********** Course Information ***********&nbsp;</p>
+<p>&nbsp;Course Name: Java</p>
+<p>&nbsp;Instructor Name: Pyari Mohan Sahu</p>
+<p>&nbsp;Number of Students Enrolled: 5</p>
+<p>&nbsp;</p>
+<p>&nbsp; Students Enrolled&nbsp;</p>
+<p>&nbsp;Mohan</p>
+<p>&nbsp;Suresh</p>
+<p>&nbsp;Ramesh</p>
+<p>&nbsp;Amit</p>
+<p>&nbsp;Sunil</p>
+<p>&nbsp;</p>
+<p>*********** MENU ***********</p>
+<p>&nbsp;1 Add Student&nbsp;</p>
+<p>&nbsp;2 Drop Student</p>
+<p>&nbsp;3 Display&nbsp;</p>
+<p>&nbsp;4 Exit</p>
+<p>&nbsp;Enter your choice: 2</p>
+<p>&nbsp;</p>
+<p>&nbsp;Enter student name to drop: Ram</p>
+<p>&nbsp;</p>
+<p>&nbsp;No students available with name Ram</p>
+<p>&nbsp;</p>
+<p>*********** MENU ***********</p>
+<p>&nbsp;1 Add Student&nbsp;</p>
+<p>&nbsp;2 Drop Student</p>
+<p>&nbsp;3 Display&nbsp;</p>
+<p>&nbsp;4 Exit</p>
+<p>&nbsp;Enter your choice: 2</p>
+<p>&nbsp;</p>
+<p>&nbsp;Enter student name to drop: Amit</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>*********** MENU ***********</p>
+<p>&nbsp;1 Add Student&nbsp;</p>
+<p>&nbsp;2 Drop Student</p>
+<p>&nbsp;3 Display&nbsp;</p>
+<p>&nbsp;4 Exit</p>
+<p>&nbsp;Enter your choice: 3</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>*********** Course Information ***********&nbsp;</p>
+<p>&nbsp;Course Name: Java</p>
+<p>&nbsp;Instructor Name: Pyari Mohan Sahu</p>
+<p>&nbsp;Number of Students Enrolled: 4</p>
+<p>&nbsp;</p>
+<p>&nbsp; Students Enrolled&nbsp;</p>
+<p>&nbsp;Mohan</p>
+<p>&nbsp;Suresh</p>
+<p>&nbsp;Ramesh</p>
+<p>&nbsp;Sunil</p>
+<p>&nbsp;</p>
+<p>*********** MENU ***********</p>
+<p>&nbsp;1 Add Student&nbsp;</p>
+<p>&nbsp;2 Drop Student</p>
+<p>&nbsp;3 Display&nbsp;</p>
+<p>&nbsp;4 Exit</p>
+<p>&nbsp;Enter your choice: 4</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

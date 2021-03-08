@@ -1,0 +1,2446 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" xml:lang="en-US" dir="ltr">
+<head xmlns="http://www.w3.org/1999/xhtml">
+    <script>(function (H) { H.className = H.className.replace(/\bno-js\b/, 'js') })(document.documentElement)</script>
+    <title>Mathway | Calculus Problem Solver</title>
+ <meta name="keywords" content="calculus, calculus help, calculus problem, calculus solver, calculus homework, calculus tutor, calculus calculator, calculus answers, problem solver, homework problems" /> 
+ <meta name="description" content="Free math problem solver answers your calculus homework questions with step-by-step explanations." /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content='True' name='HandheldFriendly' />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Language" content="en-US" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"2b26b42fb9","applicationID":"104276513","transactionName":"Yl0HZUZXWEEAV0JZXFsXKGd3GWVHA15TU0dGewpfQERZXg1RRB96W1wASQ==","queueTime":0,"applicationTime":6,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"2b26b42fb9",applicationID:"104276513"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(6),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(y,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var w=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1198.min.js"},h=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:w,features:{},xhrWrappable:h,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var x=0},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(7),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    
+<style>
+    .modalDialog, #tutorial-outer, #mobile-notify, #ex-container, #tm-container, #tf-container,.menu-container, #unsupported, .subject, #container, #about-container, #preloader, #gdpr-banner { display: none; }
+</style>
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta property="fb:app_id" content="407486582633925" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="/icons/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="/icons/favicon-160x160.png" sizes="160x160" />
+    <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/icons/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/icons/favicon-32x32.png" sizes="32x32" />
+    <meta name="msapplication-TileColor" content="#6C6C6C" />
+    <meta name="msapplication-TileImage" content="/icons/mstile-144x144.png" />
+    <meta name="google" value="notranslate">
+    <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": [
+        "MathSolver",
+        "LearningResource"
+    ],
+    "name": "Mathway",
+    "url": "https://www.mathway.com/",
+    "usageInfo": "https://www.mathway.com/privacy",
+    "potentialAction": [
+        {
+            "@type": "SolveMathAction",
+            "target": "https://www.mathway.com/Calculus?asciimath={math_expression_string}",
+            "mathExpression-input": "required name=math_expression_string",
+            "eduQuestionType": [
+                "Calculus",
+                "Limit",
+                "Derivative",
+                "Integral",
+                "Inflection Point"
+            ]
+        }
+    ],
+    "learningResourceType": "Math solver"
+}</script>
+    <link rel="canonical" href="https://www.mathway.com/mathway/Calculus" />
+
+        <link rel="alternate" href="https://www.mathway.com/mathway/Calculus" hreflang="en-US" />
+        <link rel="alternate" href="https://www.mathway.com/es/Calculus" hreflang="es" />
+        <link rel="alternate" href="https://www.mathway.com/pt/Calculus" hreflang="pt" />
+        <link rel="alternate" href="https://www.mathway.com/ar/Calculus" hreflang="ar" />
+        <link rel="alternate" href="https://www.mathway.com/zh/Calculus" hreflang="zh" />
+        <link rel="alternate" href="https://www.mathway.com/ru/Calculus" hreflang="ru" />
+        <link rel="alternate" href="https://www.mathway.com/ko/Calculus" hreflang="ko" />
+        <link rel="alternate" href="https://www.mathway.com/hi/Calculus" hreflang="hi" />
+        <link rel="alternate" href="https://www.mathway.com/de/Calculus" hreflang="de" />
+        <link rel="alternate" href="https://www.mathway.com/fr/Calculus" hreflang="fr" />
+        <link rel="alternate" href="https://www.mathway.com/ja/Calculus" hreflang="ja" />
+        <link rel="alternate" href="https://www.mathway.com/it/Calculus" hreflang="it" />
+        <link rel="alternate" href="https://www.mathway.com/id/Calculus" hreflang="id" />
+        <link rel="alternate" href="https://www.mathway.com/vi/Calculus" hreflang="vi" />
+
+    
+</head>
+
+<!--[if lte IE 9 ]><body class="ie browser-unsupported ltr"><![endif]-->
+<body class="browser-modern ltr lang-us chat-page">
+    <!--<![endif]-->
+    <div id="overlay"></div>
+
+    <div id="container" class="container">
+        <div id="header">
+    <div id="mobile-notify">
+        <div class="cell">
+            <div class="mobile-dismiss"><i class="mw mw-close"></i></div>
+            <div id="culture-hint"></div>
+            <div class="mobile-messages">
+                <div class="icon sprite icon-30"></div>
+                <div class="mathway">Mathway</div>
+                <div id="mobile-web">Visit Mathway on the web</div>
+                <div id="mobile-android">Download free on Google Play</div>
+                <div id="mobile-ios">Download free on iTunes</div>
+                <div id="mobile-amazon">Download free on Amazon</div>
+                <div id="mobile-windows">Download free in Windows Store</div>
+            </div>
+            <button class="mobile-browse">get</button>
+            <button class="culture-go">Go</button>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div id="top-menu">
+        <div class="cell">
+                <div class="left-side">
+                        <div class="hamburger"><i class="mw mw-hamburger"></i></div>
+                        <div class="subject">Calculus</div>
+                </div>
+                            <a href="/" id="mathway-link" class="logo-mathway sprite logo-header" target="_top"></a>
+                <div class="right-side">
+                    <div id="tutor-available" title="Tutor availability">
+                        <label class="switch">
+                            <input type="checkbox" />
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="member-icon">
+                        <div class="subscribed-icon"><i class="mw mw-upgrade"></i></div>
+                        <i class="mw mw-member"></i>
+                    </div>
+                    <div class="show-more"><i class="mw mw-show-more"></i></div>
+                    <div class="clear"></div>
+                </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div id="tutor-toolbar">
+        <div class="cell">
+            <div class="left-side">
+            </div>
+            <div class="right-side">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="dropdowns">
+    <div class="cell">
+        
+
+<div id="subjects-menu" class="menu-container">
+    <a class="menu-row link" href="/mathway/BasicMath" data-subject="BasicMath">
+        <div class="menu-bullet"><i class="mw mw-basic-math"></i></div>
+        <div class="menu-text">Basic Math</div>
+        <div class="clear"></div>
+    </a>
+    <a class="menu-row link" href="/mathway/PreAlgebra" data-subject="PreAlgebra">
+        <div class="menu-bullet"><i class="mw mw-pre-algebra"></i></div>
+        <div class="menu-text">Pre-Algebra</div>
+        <div class="clear"></div>
+    </a>
+    <a class="menu-row link" href="/mathway/Algebra" data-subject="Algebra">
+        <div class="menu-bullet"><i class="mw mw-algebra"></i></div>
+        <div class="menu-text">Algebra</div>
+        <div class="clear"></div>
+    </a>
+    <a class="menu-row link" href="/mathway/Trigonometry" data-subject="Trigonometry">
+        <div class="menu-bullet"><i class="mw mw-trigonometry"></i></div>
+        <div class="menu-text">Trigonometry</div>
+        <div class="clear"></div>
+    </a>
+    <a class="menu-row link" href="/mathway/Precalculus" data-subject="Precalculus">
+        <div class="menu-bullet"><i class="mw mw-precalculus"></i></div>
+        <div class="menu-text">Precalculus</div>
+        <div class="clear"></div>
+    </a>
+    <a class="menu-row current" href="/mathway/Calculus" data-subject="Calculus">
+        <div class="menu-bullet"><i class="mw mw-calculus"></i></div>
+        <div class="menu-text">Calculus</div>
+        <div class="clear"></div>
+    </a>
+    <a class="menu-row link" href="/mathway/Statistics" data-subject="Statistics">
+        <div class="menu-bullet"><i class="mw mw-statistics"></i></div>
+        <div class="menu-text">Statistics</div>
+        <div class="clear"></div>
+    </a>
+    <a class="menu-row link" href="/mathway/FiniteMath" data-subject="FiniteMath">
+        <div class="menu-bullet"><i class="mw mw-finite-math"></i></div>
+        <div class="menu-text">Finite Math</div>
+        <div class="clear"></div>
+    </a>
+    <a class="menu-row link" href="/mathway/LinearAlgebra" data-subject="LinearAlgebra">
+        <div class="menu-bullet"><i class="mw mw-linear-algebra"></i></div>
+        <div class="menu-text">Linear Algebra</div>
+        <div class="clear"></div>
+    </a>
+        <a class="menu-row link" href="/mathway/Chemistry" data-subject="Chemistry">
+            <div class="menu-bullet"><i class="mw mw-chemistry"></i></div>
+            <div class="menu-text">Chemistry</div>
+            <div class="clear"></div>
+        </a>         
+</div>
+
+        <div id="showmore-menu" class="menu-container">
+    <a id="menu-upgrade" class="menu-row link auth-not-subbed" href="#upgrade">
+        <div class="menu-bullet"><i class="mw mw-upgrade"></i></div>
+        <div class="menu-text">Upgrade</div>
+        <div class="clear"></div>
+    </a>
+    <a id="menu-expert-qa" class="menu-row link" href="/Ask-an-Expert">
+        <div class="menu-bullet"><i class="mw mw-expertqa"></i></div>
+        <div class="menu-text">Ask an Expert <span id="unread-expert-qa"></span></div>
+        <div class="clear"></div>
+    </a>
+
+    <a class="menu-row link" href="#examples">
+        <div class="menu-bullet"><i class="mw mw-examples"></i></div>
+        <div class="menu-text">Examples</div>
+        <div class="clear"></div>
+    </a>
+
+    <a class="menu-row link" href="/about" target="_top">
+        <div class="menu-bullet"><i class="mw mw-about"></i></div>
+        <div class="menu-text">About</div>
+        <div class="clear"></div>
+    </a>
+    <a class="menu-row link" href="https://mathway.zendesk.com/hc/en-us/requests/new" target="_blank">
+        <div class="menu-bullet"><i class="mw mw-help"></i></div>
+        <div class="menu-text">Help</div>
+        <div class="clear"></div>
+    </a>
+    <span id="affiliates-placeholder"></span>
+    <span id="tutor-placeholder"></span>
+    <span id="teacher-placeholder"></span>
+</div>
+
+        <div id="user-menu" class="menu-container">
+    <a class="menu-row link" href="#signin" target="_top">
+        <div class="menu-bullet"><i class="mw mw-signinarrow"></i></div>
+        <div class="menu-text user-menu-text">Sign In</div>
+        <div class="clear"></div>
+    </a>
+    <a class="menu-row link" href="#signup" target="_top">
+        <div class="menu-bullet"><i class="mw mw-member"></i></div>
+        <div class="menu-text user-menu-text">Sign Up</div>
+        <div class="clear"></div>
+    </a>
+</div>
+
+        <div id="tutor-macro-menu" class="menu-container">
+    <a class="menu-row link" href="#">
+        <div class="menu-text user-menu-text">Hope that helps!</div>
+        <div class="clear"></div>
+    </a>
+    <a class="menu-row link" href="#">
+        <div class="menu-text user-menu-text">You&#39;re welcome!</div>
+        <div class="clear"></div>
+    </a>
+    <a class="menu-row link" href="#">
+        <div class="menu-text user-menu-text">Let me take a look...</div>
+        <div class="clear"></div>
+    </a>
+    <a class="menu-row link" href="#">
+        <div class="menu-text user-menu-text">You&#39;ll be able to enter math problems once our session is over.</div>
+        <div class="clear"></div>
+    </a>
+</div>
+
+
+    </div>
+</div>
+
+
+
+<div id="chat-area" class="main-window">
+    <div id="chat-notifier">
+        <div class="cn-block cn-new">New Messages</div>
+        <div class="cn-block cn-typing">User is Typing</div>
+        <span class="mw mw-trash cn-dismiss"></span>
+    </div>
+    <div id="static-ad-left"></div>
+    <div class="cell scrollable">
+        <div class="chat-loader" id="chat-loader-upper"></div>
+        <div id="chat-outer">
+            <div id="chat-shim"></div>
+            <div id="chat-inner">
+            </div>
+        </div>
+        <div class="chat-loader" id="chat-loader-lower"></div>
+    </div>
+    <div id="static-ad-right"></div>
+</div>
+
+<div id="drawer">
+
+    <div id="editor">
+        <div class="cell">
+            <div id="editor-outer">
+                <div id="editor-container">
+                    <div id="editor-tester" tabindex="0"></div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="did-you-mean">
+        <div id="dym-container">
+            <div class="cell">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tbody>
+                        <tr id="dym-cellbody">
+                            <td class="dym-suggestion">
+                                <div class="dym-placeholder"></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="keyboard">
+        <div class="cell"></div>
+    </div>
+</div>
+
+
+
+
+
+    </div>
+    <div id="static-ad-right-alt">
+        <div class="ad-video" id="D_VID"></div>
+        <div class="ad-bottom">
+            <div class="ad-scroll">
+                <div id="D_R3"></div>
+                <div id="D_R2"></div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="ex-container">
+    <div id="ex-header"></div>
+    <div id="ex-search">
+        <input type="text" id="ex-input" placeholder="Search Examples" />
+    </div>
+    <div class="ex-inner scrollable">
+    </div>
+</div>
+
+    <div id="tm-container">
+    <div id="tm-header"><i class="mw mw-cap"></i>Expert Macros</div>
+    <div class="tm-inner scrollable">
+        <ul class="tm-main">
+
+            <li class="tm-chapter">
+                <div class="tm-expandable">
+                    <div class="tm-bullet"></div>
+                    <div class="tm-chapter-text">General Replies</div>
+                    <div class="clear"></div>
+                </div>
+                <div class="tm-children">
+                    <ul>
+                        <li class="tm-topic">
+                            <i class="mw mw-bullet"></i>
+                            <div class="tm-single">For a new problem, you will need to begin a new live expert session.</div>
+                            <div class="clear"></div>
+                        </li>
+
+                        <li class="tm-topic">
+                            <i class="mw mw-bullet"></i>
+                            <div class="tm-single">You can contact support with any questions regarding your current subscription.</div>
+                            <div class="clear"></div>
+                        </li>
+
+                        <li class="tm-topic">
+                            <i class="mw mw-bullet"></i>
+                            <div class="tm-single">You will be able to enter math problems once our session is over.</div>
+                            <div class="clear"></div>
+                        </li>
+
+                        <li class="tm-topic">
+                            <i class="mw mw-bullet"></i>
+                            <div class="tm-single">I am only able to help with one math problem per session. Which problem would you like to work on?</div>
+                            <div class="clear"></div>
+                        </li>
+
+                        <li class="tm-topic">
+                            <i class="mw mw-bullet"></i>
+                            <div class="tm-single">Does that make sense?</div>
+                            <div class="clear"></div>
+                        </li>
+
+                        <li class="tm-topic">
+                            <i class="mw mw-bullet"></i>
+                            <div class="tm-single">I am currently working on this problem.</div>
+                            <div class="clear"></div>
+                        </li>
+
+                        <li class="tm-topic">
+                            <i class="mw mw-bullet"></i>
+                            <div class="tm-single">Are you still there?</div>
+                            <div class="clear"></div>
+                        </li>
+
+                        <li class="tm-topic">
+                            <i class="mw mw-bullet"></i>
+                            <div class="tm-single">It appears we may have a connection issue. I will end the session - please reconnect if you still need assistance.</div>
+                            <div class="clear"></div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="tm-chapter">
+                <div class="tm-expandable">
+                    <div class="tm-bullet"></div>
+                    <div class="tm-chapter-text">Need More Info/Time</div>
+                    <div class="clear"></div>
+                </div>
+                <div class="tm-children">
+                    <ul>
+                        <li class="tm-topic">
+                            <i class="mw mw-bullet"></i>
+                            <div class="tm-text-inner">Let me take a look...</div>
+                            <div class="clear"></div>
+                        </li>
+                        <li class="tm-topic">
+                            <i class="mw mw-bullet"></i>
+                            <div class="tm-text-inner">Can you please send an image of the problem you are seeing in your book or homework?</div>
+                            <div class="clear"></div>
+                        </li>
+                        <li class="tm-topic">
+                            <i class="mw mw-bullet"></i>
+                            <div class="tm-text-inner">If you click on "Tap to view steps..." you will see the steps are now numbered. Which step # do you have a question on?</div>
+                            <div class="clear"></div>
+                        </li>
+                        <li class="tm-topic">
+                            <i class="mw mw-bullet"></i>
+                            <div class="tm-text-inner">Please make sure you are in the correct subject. To change subjects, please exit out of this live expert session and select the appropriate subject from the menu located in the upper left corner of the Mathway screen.</div>
+                            <div class="clear"></div>
+                        </li>
+                        <li class="tm-topic">
+                            <i class="mw mw-bullet"></i>
+                            <div class="tm-text-inner">What are you trying to do with this input?</div>
+                            <div class="clear"></div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="tm-chapter">
+                <div class="tm-expandable">
+                    <div class="tm-bullet"></div>
+                    <div class="tm-chapter-text">Not Supported</div>
+                    <div class="clear"></div>
+                </div>
+                <div class="tm-children">
+                    <ul>
+                        <li class="tm-topic">
+                            <i class="mw mw-bullet"></i>
+                            <div class="tm-text-inner">While we cover a very wide range of problems, we are currently unable to assist with this specific problem. I spoke with my team and we will make note of this for future training. Is there a different problem you would like further assistance with?</div>
+                            <div class="clear"></div>
+                        </li>
+                        <li class="tm-topic">
+                            <i class="mw mw-bullet"></i>
+                            <div class="tm-text-inner">Mathway currently does not support this subject. We are more than happy to answer any math specific question you may have about this problem.</div>
+                            <div class="clear"></div>
+                        </li>
+                        <li class="tm-topic">
+                            <i class="mw mw-bullet"></i>
+                            <div class="tm-text-inner">Mathway currently does not support Ask an Expert Live in Chemistry. If this is what you were looking for, please contact support.</div>
+                            <div class="clear"></div>
+                        </li>
+                        <li class="tm-topic">
+                            <i class="mw mw-bullet"></i>
+                            <div class="tm-text-inner">Mathway currently only computes linear regressions.</div>
+                            <div class="clear"></div>
+                        </li>
+                        <li class="tm-topic">
+                            <i class="mw mw-bullet"></i>
+                            <div class="tm-text-inner">We are here to assist you with your math questions. You will need to get assistance from your school if you are having problems entering the answers into your online assignment.</div>
+                            <div class="clear"></div>
+                        </li>
+                        <li class="tm-topic">
+                            <i class="mw mw-bullet"></i>
+                            <div class="tm-text-inner">Phone support is available Monday-Friday, 9:00AM-10:00PM ET. You may speak with a member of our customer support team by calling 1-800-876-1799.</div>
+                            <div class="clear"></div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="tm-chapter">
+                <div class="tm-expandable">
+                    <div class="tm-bullet"></div>
+                    <div class="tm-chapter-text">End of Conversation</div>
+                    <div class="clear"></div>
+                </div>
+                <div class="tm-children">
+                    <ul>
+                        <li class="tm-topic">
+                            <i class="mw mw-bullet"></i>
+                            <div class="tm-text-inner">Have a great day!</div>
+                            <div class="clear"></div>
+                        </li>
+                        <li class="tm-topic">
+                            <i class="mw mw-bullet"></i>
+                            <div class="tm-text-inner">Hope that helps!</div>
+                            <div class="clear"></div>
+                        </li>
+                        <li class="tm-topic">
+                            <i class="mw mw-bullet"></i>
+                            <div class="tm-text-inner">You're welcome!</div>
+                            <div class="clear"></div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="tm-chapter">
+                <div class="tm-expandable">
+                    <div class="tm-bullet"></div>
+                    <div class="tm-chapter-text">Test/Quiz</div>
+                    <div class="clear"></div>
+                </div>
+                <div class="tm-children">
+                    <ul>
+                        <li class="tm-topic">
+                            <i class="mw mw-bullet"></i>
+                            <div class="tm-text-inner">Per our terms of use, Mathway's live experts will not knowingly provide solutions to students while they are taking a test or quiz.</div>
+                            <div class="clear"></div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+
+        </ul>
+    </div>
+</div>
+
+    <div id="tf-container">
+    <div id="tf-header"><i class="mw mw-chemistry"></i>Formulas</div>
+    <div id="tf-search">
+        <input type="text" id="tf-input" placeholder="Search Formulas" />
+    </div>
+    <div class="tf-inner scrollable"></div>
+</div>
+
+    
+<div id="tutorial-outer">
+    <div id="tutorial-inner"></div>
+    <div id="tutorial-content">
+        <div id="tutorial-centered">
+
+            <div id="tutorial-text"></div>
+            <div id="tutorial-controls">
+                <div class="tutorial-control-row" id="tutorial-subject">
+                    <input type="button" class="tutorial-button" id="tutorial-next-subject" value="NEXT" />
+                </div>
+                <div class="tutorial-control-row" id="tutorial-photo">
+                    <input type="button" class="tutorial-button" id="tutorial-next-photo" value="NEXT" />
+                </div>
+                <div class="tutorial-control-row" id="tutorial-problem">
+                    <input type="button" class="tutorial-button" id="tutorial-next-problem" value="NEXT" />
+                </div>
+                <div class="tutorial-control-row" id="tutorial-finished">
+                    <input type="button" class="tutorial-button" id="tutorial-dismiss" value="GOT IT" />
+                </div>
+            </div>
+
+        </div>
+
+        <input type="button" class="tutorial-button" id="tutorial-skip" value="SKIP" />
+    </div>
+</div>
+
+    <script type="mathway-template" id="glossary-template">
+    <div class="glossary-container"></div>
+</script>
+    
+<script type="mathway-template" id="matrix-template">
+    <div id="matrix-container">
+        <div id="matrix-selection">
+            <select id="matrix-num-rows">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            &nbsp;&times;&nbsp;
+            <select id="matrix-num-cols">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+        <div class="matrix-brackets">
+            <table cellpadding="0" cellspacing="0" border="0" class="matrix-cells">
+                <tr>
+                    <td data-row="1" data-col="1" class="matrix-cell"><div></div></td>
+                    <td data-row="1" data-col="2" class="matrix-cell"><div></div></td>
+                    <td data-row="1" data-col="3" class="matrix-cell"><div></div></td>
+                    <td data-row="1" data-col="4" class="matrix-cell"><div></div></td>
+                    <td data-row="1" data-col="5" class="matrix-cell"><div></div></td>
+                </tr>
+                <tr>
+                    <td data-row="2" data-col="1" class="matrix-cell"><div></div></td>
+                    <td data-row="2" data-col="2" class="matrix-cell"><div></div></td>
+                    <td data-row="2" data-col="3" class="matrix-cell"><div></div></td>
+                    <td data-row="2" data-col="4" class="matrix-cell"><div></div></td>
+                    <td data-row="2" data-col="5" class="matrix-cell"><div></div></td>
+                </tr>
+                <tr>
+                    <td data-row="3" data-col="1" class="matrix-cell"><div></div></td>
+                    <td data-row="3" data-col="2" class="matrix-cell"><div></div></td>
+                    <td data-row="3" data-col="3" class="matrix-cell"><div></div></td>
+                    <td data-row="3" data-col="4" class="matrix-cell"><div></div></td>
+                    <td data-row="3" data-col="5" class="matrix-cell"><div></div></td>
+                </tr>
+                <tr>
+                    <td data-row="4" data-col="1" class="matrix-cell"><div></div></td>
+                    <td data-row="4" data-col="2" class="matrix-cell"><div></div></td>
+                    <td data-row="4" data-col="3" class="matrix-cell"><div></div></td>
+                    <td data-row="4" data-col="4" class="matrix-cell"><div></div></td>
+                    <td data-row="4" data-col="5" class="matrix-cell"><div></div></td>
+                </tr>
+                <tr>
+                    <td data-row="5" data-col="1" class="matrix-cell"><div></div></td>
+                    <td data-row="5" data-col="2" class="matrix-cell"><div></div></td>
+                    <td data-row="5" data-col="3" class="matrix-cell"><div></div></td>
+                    <td data-row="5" data-col="4" class="matrix-cell"><div></div></td>
+                    <td data-row="5" data-col="5" class="matrix-cell"><div></div></td>
+                </tr>
+            </table>
+        </div>
+        <div class="matrix-controls">
+            <button id="matrix-select" class="btn-primary">Insert</button>
+        </div>
+    </div>
+</script>
+
+
+    <script type="mathway-template" id="trig-template">
+    <div id="trig-container">
+        <div class="trig-inner">
+            <div class="clear"></div>
+            <div class="trig-row">
+                <div class="trig-cell" data-func="sin">sin</div>
+                <div class="trig-cell" data-func="arcsin">arcsin</div>
+                <div class="trig-cell" data-func="sin^">sin<sup>n</sup></div>
+                <div class="trig-cell" data-func="sinh">sinh</div>
+                <div class="clear"></div>
+            </div>
+            <div class="trig-row">
+                <div class="trig-cell" data-func="cos">cos</div>
+                <div class="trig-cell" data-func="arccos">arccos</div>
+                <div class="trig-cell" data-func="cos^">cos<sup>n</sup></div>
+                <div class="trig-cell" data-func="cosh">cosh</div>
+                <div class="clear"></div>
+            </div>
+            <div class="trig-row">
+                <div class="trig-cell" data-func="tan">tan</div>
+                <div class="trig-cell" data-func="arctan">arctan</div>
+                <div class="trig-cell" data-func="tan^">tan<sup>n</sup></div>
+                <div class="trig-cell" data-func="tanh">tanh</div>
+                <div class="clear"></div>
+            </div>
+            <div class="trig-row">
+                <div class="trig-cell" data-func="cot">cot</div>
+                <div class="trig-cell" data-func="arccot">arccot</div>
+                <div class="trig-cell" data-func="cot^">cot<sup>n</sup></div>
+                <div class="trig-cell" data-func="coth">coth</div>
+                <div class="clear"></div>
+            </div>
+            <div class="trig-row">
+                <div class="trig-cell" data-func="sec">sec</div>
+                <div class="trig-cell" data-func="arcsec">arcsec</div>
+                <div class="trig-cell" data-func="sec^">sec<sup>n</sup></div>
+                <div class="trig-cell" data-func="sech">sech</div>
+                <div class="clear"></div>
+            </div>
+            <div class="trig-row">
+                <div class="trig-cell" data-func="csc">csc</div>
+                <div class="trig-cell" data-func="arccsc">arccsc</div>
+                <div class="trig-cell" data-func="csc^">csc<sup>n</sup></div>
+                <div class="trig-cell" data-func="csch">csch</div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</script>
+
+    
+<script type="mathway-template" id="periodic-table-template">
+    <div id="pt-container">
+        <div class="pt-inner">
+            <div id="pt-upper">
+                <select id="pt-select"></select>
+            </div>
+            <div id="pt-main">
+                <div id="pt-previous"><i class="mw mw-swipe-left"></i></div>
+                <div id="pt-elements-outer">
+                    <div id="pt-elements-inner"></div>
+                </div>
+                <div id="pt-next"><i class="mw mw-swipe-right"></i></div>
+                <div class="clear"></div>
+            </div>
+            <div class="pt-controls">
+                <button class="btn-primary" id="pt-submit">Insert</button>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+    <script type="mathway-template" id="topics-template">
+    <div id="topics-container">
+        <div id="topics-inner"></div>
+    </div>
+</script>
+
+
+    
+<script type="mathway-template" id="rate-solution-template">
+    <div id="rate-solution-container">
+        <div class="rate-solution">
+            <form id="rate-solution-form" method="post">
+                <div class="placeholder">
+                    <div class="rating-container"></div>
+                    <p id="rate-error-general" class="error">Could not save your feedback. Please try again.</p>
+                    <p id="rate-error-stars" class="error">Please select a rating.</p>
+                    <p class="thanks">Thank you for helping improve Mathway with your feedback!</p>
+                    <textarea id="rate-solution-comment" placeholder="Optional comments..."></textarea>
+                </div>
+                <div id="rate-solution-button-container">
+                    <button id="rate-solution-submit" class="btn-primary">Submit</button>
+                </div>                
+            </form>
+        </div>
+    </div>
+</script>
+
+
+    
+<script type="mathway-template" id="suggest-topic-template">
+    <div id="suggest-topic-container">
+        <div class="suggest-topic">
+            <div class="validation-message" data-error-type="no-comment">Please enter a suggestion.</div>
+            <div class="validation-message" data-error-type="error-saving">There was a problem saving your suggestion.  Please try again.</div>
+            <form id="suggest-topic-form" method="post">
+                <textarea id="suggest-topic-comment" placeholder="Enter a suggestion..."></textarea>
+                <input type="submit" id="suggest-topic-submit" value="Submit" />
+            </form>
+        </div>
+    </div>
+</script>
+    <script type="mathway-template" id="graph-template">
+    <div id="graph-container" class="no-selection">
+        <div id="graph-controls">
+            <i class="mw mw-graph-zoom-in" id="graph-zoom-in"></i>
+            <i class="mw mw-graph-center" id="graph-center"></i>
+            <i class="mw mw-graph-zoom-out" id="graph-zoom-out"></i>
+            <div class="clear"></div>
+        </div>
+        <div id="graph-inner"></div>
+    </div>
+</script>
+
+
+    
+<script type="mathway-template" id="viewsteps-template">
+    <div id="viewsteps-container">
+        <div id="steps-sbs-credits">Free step-by-step solutions remaining: <span id="sbs-credit-count"></span></div>
+        <div id="visitor-area"></div>
+        
+    </div>
+</script>
+    
+<script type="mathway-template" id="link-template">
+    <div id="link-container"></div>
+</script>
+    
+<script type="mathway-template" id="survey-text-template">
+    <div id="survey-text-container">
+        <div class="survey-text">
+            <div class="placeholder">
+                <h2 id="survey-text-question"></h2>
+                <div class="survery-text-errors">
+                    <div id="survey-text-empty-error" class="survey-text-error">Please tell us more before submitting</div>
+                </div>
+                <textarea id="survey-text-comment" placeholder="Tell us more..."></textarea>
+            </div>
+            <div id="survey-text-button-container">
+                <button id="survey-text-submit" class="btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+
+    
+
+
+<script type="mathway-template" id="signup-template">
+    <div id="sign-up" class="login-dialog">
+        <h2 class="login-header">Sign Up</h2>
+        <div class="login-validation">
+            <ul>
+                <li class="noemail">Please enter an email address</li>
+                <li class="emailinvalid">Please enter a valid email address</li>
+                <li class="emailtaken">This email has already been used.</li>
+                <li class="nopassword">Please enter a password</li>
+                <li class="passwordinvalid">Unknown or invalid email address or password.</li>
+                <li class="passwordshort">Password must be 5 characters long</li>
+                <li class="serverresult">Unknown email or incorrect password</li>
+                <li class="facebooknoemail">To login with Facebook, you must allow Mathway to access your email address.</li>
+                <li class="captchainvalid">Please answer reCAPTCHA</li>
+                <li class="passwordsimple">
+                    <p style="margin-bottom:0">Please ensure that your password is at least 8 characters and contains each of the following:</p>
+                    <ul>
+                        <li>a letter</li>
+                        <li>a number</li>
+                        <li>a special character: @$#!%*?&amp;</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <form novalidate="novalidate" class="login-form">
+            <input type="email" name="email" class="field login-email" placeholder="Email" tabindex="1" />
+            <input type="password" name="password" class="field login-password" placeholder="Create a password" tabindex="2" />
+            <p class="login-forgot">I agree to Mathway's <a href="/Terms" class="">Terms</a> and <a href="/Privacy" class="">Privacy</a></p>
+            <div class="login-verify"></div>
+            <button class="login-submit" tabindex="3">Sign up</button>
+        </form>
+        <div class="login-separator">
+            <hr />
+            <span>OR</span>
+        </div>
+        <button class="login-facebook">
+            <span class="box"><i class="mw mw-facebook-inverse"></i></span>
+            <span class="buttonText">Sign in with Facebook</span>
+        </button>
+        <button class="login-google">
+            <span class="sprite google-signin"></span>
+            <span class="buttonText">Sign in with Google</span>
+        </button>
+
+        <div id="appleid-signin" class="login-apple" data-color="black" data-border="false" data-border-radius="0" data-type="sign-up"></div>
+
+        <div class="login-bottom">Have an account? <a href="#" class="">Sign In</a></div>
+    </div>
+</script>
+
+<script type="mathway-template" id="signin-template">
+    <div id="sign-in" class="login-dialog">
+        <h2 class="login-header">Sign In</h2>
+        <div class="login-validation">
+            <ul>
+                <li class="noemail">Please enter an email address</li>
+                <li class="emailinvalid">Please enter a valid email address</li>
+                <li class="emailtaken">This email has already been used.</li>
+                <li class="nopassword">Please enter a password</li>
+                <li class="passwordinvalid">Unknown or invalid email address or password.</li>
+                <li class="passwordshort">Password must be 5 characters long</li>
+                <li class="serverresult">Unknown email or incorrect password</li>
+                <li class="facebooknoemail">To login with Facebook, you must allow Mathway to access your email address.</li>
+                <li class="captchainvalid">Please answer reCAPTCHA</li>
+            </ul>
+        </div>
+        <form novalidate="novalidate" class="login-form">
+            <input type="email" name="email" class="field login-email" placeholder="Email" tabindex="1" />
+            <input type="password" name="password" class="field login-password" placeholder="Password" tabindex="2" />
+            <p class="login-forgot"><a href="#" id="si-forgot-password">Forgot your password?</a></p>
+            <div class="login-verify"></div>
+            <button class="login-submit" tabindex="3">Sign in</button>
+        </form>
+        <div class="login-separator">
+            <hr />
+            <span>OR</span>
+        </div>
+        <button class="login-facebook">
+            <span class="box"><i class="mw mw-facebook-inverse"></i></span>
+            <span class="buttonText">Sign in with Facebook</span>
+        </button>
+        <button class="login-google">
+            <span class="sprite google-signin"></span>
+            <span class="buttonText">Sign in with Google</span>
+        </button>
+
+        <div id="appleid-signin" class="login-apple" data-color="black" data-border="false" data-border-radius="0" data-type="sign-in"></div>
+
+        <div class="login-bottom">Don't have an account? <a href="#" class="">Sign Up</a></div>
+    </div>
+</script>
+
+    <script type="mathway-template" id="forgot-password-template">
+    <div id="forgot-password-container">
+        <p id="fp-security" style="display: none;">To protect the security of your account, we&#39;re requiring you to reset your password.</p>
+        <p>Enter the email address associated with your Mathway account below and we&#39;ll send you a link to reset your password.</p>
+        <input type="email" name="email" id="f-email" class="field login-email" placeholder="Email Address" tabindex="1" />
+        <div class="validation-message" data-error-type="no-email">Please enter an email address</div>
+        <div class="validation-message" data-error-type="invalid-email">Please enter a valid email address</div>
+        <div class="validation-message" data-error-type="email-not-found">The email address you entered was not found in our system</div>
+        <div class="validation-message" data-error-type="email-is-facebook">The email address you entered is associated with a Facebook user</div>
+        <div class="validation-message" data-error-type="generic-error">We&#39;re sorry, we were unable to process your request at this time</div>
+        <button id="forgot-dialog-submit" class="btn-primary">Send Email</button>
+    </div>
+</script>
+
+
+
+    
+<script type="mathway-template" id="upgrade-template">
+
+    <div id="upgrade-container">
+
+        <div id="upgrade-step-plan">
+            <div class="upgrade-cards">
+                <div class="upgrade-card upgrade-card-standard">
+                    <div class="upgrade-logo"></div>
+                    <div class="upgrade-grand-and-intoxicating-innocence">Over 5 Billion Problems Solved</div>
+                    <ul class="upgrade-feature-list">
+                        <li class="mw mw-check"><span>&nbsp;&nbsp;&nbsp;Step-by-step work</span></li>
+                        <li class="mw mw-check"><span>&nbsp;&nbsp;&nbsp;Access on web or app</span></li>
+                        <li class="mw mw-check"><span>&nbsp;&nbsp;&nbsp;Trusted by millions</span></li>
+                        <li class="mw mw-check"><span>&nbsp;&nbsp;&nbsp;No ads</span></li>
+                    </ul>
+                    <div id="upgrade-access-full"><div>Access the steps on both the Mathway website and mobile apps</div></div>
+                    <div class="upgrade-plans">
+                        <div class="radio">
+                            <input type="radio" id="upgrade-option-monthly" name="upgrade-plan-standard" checked />
+                            <label for="upgrade-option-monthly" class="no-selection"><span id="monthly-price">--.--</span><span class="label-text">/month</span></label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="upgrade-option-quarterly" name="upgrade-plan-standard" />
+                            <label for="upgrade-option-quarterly" class="no-selection"><span id="quarterly-price">--.--</span><span class="label-text">/month</span> <span id="quarterly-price-save">(--%)</span></label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="upgrade-option-annual" name="upgrade-plan-standard" />
+                            <label for="upgrade-option-annual" class="no-selection"><span id="annual-price">--.--</span><span class="label-text" id="upgrade-label-annual">/month</span> <span id="annual-price-save">(--%)</span></label>
+                        </div>
+                    </div>
+                    
+                    <div class="upgrade-existing-prices">
+                        <div class="upgrade-existing-current"><em>Current Plan:</em> <span>$--.--/month</span></div>
+                        <div class="upgrade-existing-new"><em>New Plan:</em> <span>$--.--/month</span></div>
+                    </div>
+                    <div id="change-currency" class="dropdown-active">
+                    </div>
+                    <input type="button" id="go-premium" class="upgrade-button" value="Go Premium" />
+                </div>
+            </div>
+        </div>
+
+        <div id="upgrade-step-expertqa">
+            <div id="upgrade-step-expertqa-wrap">
+                <div id="chosen-plan-icon" class="mw mw-cap"></div>
+                <h3>Ask an Expert</h3>
+                <p id="expertqa-text-upper">Have a question about one of the steps?  Need additional help on one of your problems?  Include this option to <strong>ask a math expert</strong> whenever you need a little extra help!</p>
+                
+                <div class="upgrade-plans-expert">
+                    <div class="radio">
+                        <input type="radio" id="upgrade-option-expertqa" name="upgrade-option-expert" checked />
+                        <label for="upgrade-option-expertqa" class="no-selection"><span class="label-text">Ask an Expert</span></label>
+                        <div class="upgrade-option-subtext">(Get a response within an hour*)</div>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="upgrade-option-tutoring" name="upgrade-option-expert" />
+                        <label for="upgrade-option-tutoring" class="no-selection"><span class="label-text">Ask an Expert <i>LIVE</i></span></label>
+                        <div class="upgrade-option-subtext">(Instant live chat**)</div>
+                    </div>
+                </div>
+                <div class="actions">
+                    <div class="col-confirm">
+                        <button id="include-expertqa-confirm" class="btn-primary">Upgrade Plan</button>
+                        <div id="include-expertqa-price"></div>
+                        <div id="include-expert-tutoring-price"></div>
+                    </div>
+                    <div id="include-expertqa-refund">NOTE: your new plan price will be {RENEWAL_AMOUNT} + tax, and you will receive a {REFUND_AMOUNT} refund for the time you have remaining on your current plan</div>
+                    <div id="include-expert-tutoring-refund">NOTE: your new plan price will be {RENEWAL_AMOUNT} + tax, and you will receive a {REFUND_AMOUNT} refund for the time you have remaining on your current plan</div>
+                </div>
+                <div class="footnote">
+                    <div id="footnote-expert">*Expert response time may vary by question. One question may be asked at a time.</div>
+                    <div id="footnote-tutoring">**Typically available 24/7, up to 20 sessions per month.</div>
+                    <div id="footnote-learn-more"><a href=\"#\">Learn more</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="upgrade-step-tutoring">
+            <div id="upgrade-step-tutoring-wrap">
+                <div id="chosen-plan-icon" class="mw mw-upgrade"></div>
+                <h3>Ask an Expert <i>LIVE</i></h3>
+                <p id="tutoring-text-upper">Have a question about one of the steps?  Need additional help on one of your problems?  Include this option to be able to connect to a <strong>math expert</strong> whenever you need a little extra help!</p>
+                <div id="tutoring-video"><iframe width="560" height="315" src="https://www.youtube.com/embed/adaQfmyM0vM?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+                <div id="tutoring-dropdown">
+                    <div class="pack-option">
+                        <button class="btn-primary" id="pack-option-value2"></button>
+                        <div class="pack-price" id="pack-label-value2"></div>
+                    </div>
+                    <div class="pack-option">
+                        <button class="btn-primary" id="pack-option-value3"></button>
+                        <div class="pack-price" id="pack-label-value3"></div>
+                    </div>
+                    <div class="pack-option">
+                        <button class="btn-primary" id="pack-option-value4"></button>
+                        <div class="pack-price" id="pack-label-value4"></div>
+                    </div>
+                    <div class="clear"></div>
+                    <p id="tutoring-text-lower">1 Credit = 1 Live Expert Chat</p>
+                </div>
+                <div class="actions">
+                    <div class="col-confirm">
+                        <button id="include-tutoring-confirm" class="btn-primary">Add Ask an Expert <i>LIVE</i>*</button>
+                        <div id="include-tutoring-price"></div>
+                    </div>
+                    <button id="include-tutoring-deny" class="btn-secondary">No Thanks</button>
+                    <div id="include-tutoring-refund">NOTE: your new plan price will be {RENEWAL_AMOUNT} + tax, and you will receive a {REFUND_AMOUNT} refund for the time you have remaining on your current plan</div>
+                </div>
+                <div class="footnote">
+                    <div id="footnote-tutoring">*Typically available 24/7, up to 20 sessions per month.</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="upgrade-step-one-off">
+            
+
+            <div style="text-align:center">
+                <p>You currently have <STRONG>0</STRONG> Live Expert Sessions remaining.</p>
+                <p id="credit-renewal-date-line">Your <STRONG>20</STRONG> monthly sessions will renew on <strong><span id='credit-renewal-date'></span></strong>.</p>
+                <p>Would you like to purchase a single session now for <strong><span class="one-off-price">--.--</span></strong>?</p>
+
+                
+            </div>
+
+            <div class="pack-option" style="text-align:center">
+                <button class="btn-primary" id="one-off-tutor-session">Buy Session (<span class="one-off-price-total">--.--</span>)</button>
+                <button class="btn-secondary" id="one-off-tutor-session-cancel">Cancel </button>
+            </div>
+
+        </div>
+
+        <div id="upgrade-step-payment">
+            <div class="step-three-content">
+                <form id="upgrade-form-moon-and-star">
+                    <div class="upgrade-logo"></div>
+                    <h4 id="premium-price"></h4>
+                    <ul class="payment-options">
+                        <li class="selected" data-type="cc">
+                            <div class="cc-type" id="cc-type-visa" title="Visa"></div>
+                            <div class="cc-type" id="cc-type-mc" title="Mastercard"></div>
+                            <div class="cc-type" id="cc-type-amex" title="American Express"></div>
+                            <div class="cc-type" id="cc-type-disc" title="Discover"></div>
+                        </li>
+                        <li data-type="paypal"><span class="sprite paypal"></span></li>
+                        <li data-type="amazon"><span class="sprite amazon-icon"></span></li>
+                        <li data-type="applepay"><span class="sprite applepay-icon"></span></li>
+                    </ul>
+                    <div class="upgrade-form-container">
+                        <div class="upgrade-form upgrade-form-cc">
+
+                            <div class="form-row">
+                                <div class="field form-cc-country">
+                                    <label for="cc-country">Country</label>
+                                    <select id="cc-country" data-recurly="country">
+                                    <option value="AF">Afghanistan</option>
+<option value="AX">Åland Islands</option>
+<option value="AL">Albania</option>
+<option value="DZ">Algeria</option>
+<option value="AS">American Samoa</option>
+<option value="AD">Andorra</option>
+<option value="AO">Angola</option>
+<option value="AI">Anguilla</option>
+<option value="AQ">Antarctica</option>
+<option value="AG">Antigua and Barbuda</option>
+<option value="AR">Argentina</option>
+<option value="AM">Armenia</option>
+<option value="AW">Aruba</option>
+<option value="AU">Australia</option>
+<option value="AT">Austria</option>
+<option value="AZ">Azerbaijan</option>
+<option value="BS">Bahamas</option>
+<option value="BH">Bahrain</option>
+<option value="BD">Bangladesh</option>
+<option value="BB">Barbados</option>
+<option value="BY">Belarus</option>
+<option value="BE">Belgium</option>
+<option value="BZ">Belize</option>
+<option value="BJ">Benin</option>
+<option value="BM">Bermuda</option>
+<option value="BT">Bhutan</option>
+<option value="BO">Bolivia, Plurinational State of</option>
+<option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+<option value="BA">Bosnia and Herzegovina</option>
+<option value="BW">Botswana</option>
+<option value="BV">Bouvet Island</option>
+<option value="BR">Brazil</option>
+<option value="IO">British Indian Ocean Territory</option>
+<option value="BN">Brunei Darussalam</option>
+<option value="BG">Bulgaria</option>
+<option value="BF">Burkina Faso</option>
+<option value="BI">Burundi</option>
+<option value="KH">Cambodia</option>
+<option value="CM">Cameroon</option>
+<option value="CA">Canada</option>
+<option value="CV">Cape Verde</option>
+<option value="KY">Cayman Islands</option>
+<option value="CF">Central African Republic</option>
+<option value="TD">Chad</option>
+<option value="CL">Chile</option>
+<option value="CN">China</option>
+<option value="CX">Christmas Island</option>
+<option value="CC">Cocos (Keeling) Islands</option>
+<option value="CO">Colombia</option>
+<option value="KM">Comoros</option>
+<option value="CG">Congo</option>
+<option value="CD">Congo, the Democratic Republic of the</option>
+<option value="CK">Cook Islands</option>
+<option value="CR">Costa Rica</option>
+<option value="CI">Côte d'Ivoire</option>
+<option value="HR">Croatia</option>
+<option value="CU">Cuba</option>
+<option value="CW">Curaçao</option>
+<option value="CY">Cyprus</option>
+<option value="CZ">Czech Republic</option>
+<option value="DK">Denmark</option>
+<option value="DJ">Djibouti</option>
+<option value="DM">Dominica</option>
+<option value="DO">Dominican Republic</option>
+<option value="EC">Ecuador</option>
+<option value="EG">Egypt</option>
+<option value="SV">El Salvador</option>
+<option value="GQ">Equatorial Guinea</option>
+<option value="ER">Eritrea</option>
+<option value="EE">Estonia</option>
+<option value="ET">Ethiopia</option>
+<option value="FK">Falkland Islands (Malvinas)</option>
+<option value="FO">Faroe Islands</option>
+<option value="FJ">Fiji</option>
+<option value="FI">Finland</option>
+<option value="FR">France</option>
+<option value="GF">French Guiana</option>
+<option value="PF">French Polynesia</option>
+<option value="TF">French Southern Territories</option>
+<option value="GA">Gabon</option>
+<option value="GM">Gambia</option>
+<option value="GE">Georgia</option>
+<option value="DE">Germany</option>
+<option value="GH">Ghana</option>
+<option value="GI">Gibraltar</option>
+<option value="GR">Greece</option>
+<option value="GL">Greenland</option>
+<option value="GD">Grenada</option>
+<option value="GP">Guadeloupe</option>
+<option value="GU">Guam</option>
+<option value="GT">Guatemala</option>
+<option value="GG">Guernsey</option>
+<option value="GN">Guinea</option>
+<option value="GW">Guinea-Bissau</option>
+<option value="GY">Guyana</option>
+<option value="HT">Haiti</option>
+<option value="HM">Heard Island and McDonald Islands</option>
+<option value="VA">Holy See (Vatican City State)</option>
+<option value="HN">Honduras</option>
+<option value="HK">Hong Kong</option>
+<option value="HU">Hungary</option>
+<option value="IS">Iceland</option>
+<option value="IN">India</option>
+<option value="ID">Indonesia</option>
+<option value="IR">Iran, Islamic Republic of</option>
+<option value="IQ">Iraq</option>
+<option value="IE">Ireland</option>
+<option value="IM">Isle of Man</option>
+<option value="IL">Israel</option>
+<option value="IT">Italy</option>
+<option value="JM">Jamaica</option>
+<option value="JP">Japan</option>
+<option value="JE">Jersey</option>
+<option value="JO">Jordan</option>
+<option value="KZ">Kazakhstan</option>
+<option value="KE">Kenya</option>
+<option value="KI">Kiribati</option>
+<option value="KP">Korea, Democratic People's Republic of</option>
+<option value="KR">Korea, Republic of</option>
+<option value="KW">Kuwait</option>
+<option value="KG">Kyrgyzstan</option>
+<option value="LA">Lao People's Democratic Republic</option>
+<option value="LV">Latvia</option>
+<option value="LB">Lebanon</option>
+<option value="LS">Lesotho</option>
+<option value="LR">Liberia</option>
+<option value="LY">Libya</option>
+<option value="LI">Liechtenstein</option>
+<option value="LT">Lithuania</option>
+<option value="LU">Luxembourg</option>
+<option value="MO">Macao</option>
+<option value="MK">Macedonia, the former Yugoslav Republic of</option>
+<option value="MG">Madagascar</option>
+<option value="MW">Malawi</option>
+<option value="MY">Malaysia</option>
+<option value="MV">Maldives</option>
+<option value="ML">Mali</option>
+<option value="MT">Malta</option>
+<option value="MH">Marshall Islands</option>
+<option value="MQ">Martinique</option>
+<option value="MR">Mauritania</option>
+<option value="MU">Mauritius</option>
+<option value="YT">Mayotte</option>
+<option value="MX">Mexico</option>
+<option value="FM">Micronesia, Federated States of</option>
+<option value="MD">Moldova, Republic of</option>
+<option value="MC">Monaco</option>
+<option value="MN">Mongolia</option>
+<option value="ME">Montenegro</option>
+<option value="MS">Montserrat</option>
+<option value="MA">Morocco</option>
+<option value="MZ">Mozambique</option>
+<option value="MM">Myanmar</option>
+<option value="NA">Namibia</option>
+<option value="NR">Nauru</option>
+<option value="NP">Nepal</option>
+<option value="NL">Netherlands</option>
+<option value="NC">New Caledonia</option>
+<option value="NZ">New Zealand</option>
+<option value="NI">Nicaragua</option>
+<option value="NE">Niger</option>
+<option value="NG">Nigeria</option>
+<option value="NU">Niue</option>
+<option value="NF">Norfolk Island</option>
+<option value="MP">Northern Mariana Islands</option>
+<option value="NO">Norway</option>
+<option value="OM">Oman</option>
+<option value="PK">Pakistan</option>
+<option value="PW">Palau</option>
+<option value="PS">Palestinian Territory, Occupied</option>
+<option value="PA">Panama</option>
+<option value="PG">Papua New Guinea</option>
+<option value="PY">Paraguay</option>
+<option value="PE">Peru</option>
+<option value="PH">Philippines</option>
+<option value="PN">Pitcairn</option>
+<option value="PL">Poland</option>
+<option value="PT">Portugal</option>
+<option value="PR">Puerto Rico</option>
+<option value="QA">Qatar</option>
+<option value="RE">Réunion</option>
+<option value="RO">Romania</option>
+<option value="RU">Russian Federation</option>
+<option value="RW">Rwanda</option>
+<option value="BL">Saint Barthélemy</option>
+<option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+<option value="KN">Saint Kitts and Nevis</option>
+<option value="LC">Saint Lucia</option>
+<option value="MF">Saint Martin (French part)</option>
+<option value="PM">Saint Pierre and Miquelon</option>
+<option value="VC">Saint Vincent and the Grenadines</option>
+<option value="WS">Samoa</option>
+<option value="SM">San Marino</option>
+<option value="ST">Sao Tome and Principe</option>
+<option value="SA">Saudi Arabia</option>
+<option value="SN">Senegal</option>
+<option value="RS">Serbia</option>
+<option value="SC">Seychelles</option>
+<option value="SL">Sierra Leone</option>
+<option value="SG">Singapore</option>
+<option value="SX">Sint Maarten (Dutch part)</option>
+<option value="SK">Slovakia</option>
+<option value="SI">Slovenia</option>
+<option value="SB">Solomon Islands</option>
+<option value="SO">Somalia</option>
+<option value="ZA">South Africa</option>
+<option value="GS">South Georgia and the South Sandwich Islands</option>
+<option value="SS">South Sudan</option>
+<option value="ES">Spain</option>
+<option value="LK">Sri Lanka</option>
+<option value="SD">Sudan</option>
+<option value="SR">Suriname</option>
+<option value="SJ">Svalbard and Jan Mayen</option>
+<option value="SZ">Swaziland</option>
+<option value="SE">Sweden</option>
+<option value="CH">Switzerland</option>
+<option value="SY">Syrian Arab Republic</option>
+<option value="TW">Taiwan, Province of China</option>
+<option value="TJ">Tajikistan</option>
+<option value="TZ">Tanzania, United Republic of</option>
+<option value="TH">Thailand</option>
+<option value="TL">Timor-Leste</option>
+<option value="TG">Togo</option>
+<option value="TK">Tokelau</option>
+<option value="TO">Tonga</option>
+<option value="TT">Trinidad and Tobago</option>
+<option value="TN">Tunisia</option>
+<option value="TR">Turkey</option>
+<option value="TM">Turkmenistan</option>
+<option value="TC">Turks and Caicos Islands</option>
+<option value="TV">Tuvalu</option>
+<option value="UG">Uganda</option>
+<option value="UA">Ukraine</option>
+<option value="AE">United Arab Emirates</option>
+<option value="GB">United Kingdom</option>
+<option value="US">United States</option>
+<option value="UM">United States Minor Outlying Islands</option>
+<option value="UY">Uruguay</option>
+<option value="UZ">Uzbekistan</option>
+<option value="VU">Vanuatu</option>
+<option value="VE">Venezuela, Bolivarian Republic of</option>
+<option value="VN">Viet Nam</option>
+<option value="VG">Virgin Islands, British</option>
+<option value="VI">Virgin Islands, U.S.</option>
+<option value="WF">Wallis and Futuna</option>
+<option value="EH">Western Sahara</option>
+<option value="YE">Yemen</option>
+<option value="ZM">Zambia</option>
+<option value="ZW">Zimbabwe</option>
+
+                                    </select>
+                                </div>
+                                <div class="field form-cc-address offset-error">
+                                    <label for="cc-address1">Street Address</label>
+                                    <input type="text" id="cc-address1" data-recurly="address1" autocomplete="street-address" />
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="clear"></div>
+
+                            <div class="form-row" id="upgrade-form-row-address-us">
+                                <div class="field form-cc-city">
+                                    <label for="cc-city">City</label>
+                                    <input type="text" id="cc-city" data-recurly="city" autocomplete="address-level2">
+                                </div>
+                                <div class="field form-cc-state">
+                                    <label for="cc-state">State</label>
+                                    <select id="cc-state" data-recurly="state" autocomplete="address-level1">
+                                        <option value=""></option>
+<option value="AL">Alabama</option>
+<option value="AK">Alaska</option>
+<option value="AZ">Arizona</option>
+<option value="AR">Arkansas</option>
+<option value="CA">California</option>
+<option value="CO">Colorado</option>
+<option value="CT">Connecticut</option>
+<option value="DE">Delaware</option>
+<option value="DC">District Of Columbia</option>
+<option value="FL">Florida</option>
+<option value="GA">Georgia</option>
+<option value="HI">Hawaii</option>
+<option value="ID">Idaho</option>
+<option value="IL">Illinois</option>
+<option value="IN">Indiana</option>
+<option value="IA">Iowa</option>
+<option value="KS">Kansas</option>
+<option value="KY">Kentucky</option>
+<option value="LA">Louisiana</option>
+<option value="ME">Maine</option>
+<option value="MD">Maryland</option>
+<option value="MA">Massachusetts</option>
+<option value="MI">Michigan</option>
+<option value="MN">Minnesota</option>
+<option value="MS">Mississippi</option>
+<option value="MO">Missouri</option>
+<option value="MT">Montana</option>
+<option value="NE">Nebraska</option>
+<option value="NV">Nevada</option>
+<option value="NH">New Hampshire</option>
+<option value="NJ">New Jersey</option>
+<option value="NM">New Mexico</option>
+<option value="NY">New York</option>
+<option value="NC">North Carolina</option>
+<option value="ND">North Dakota</option>
+<option value="OH">Ohio</option>
+<option value="OK">Oklahoma</option>
+<option value="OR">Oregon</option>
+<option value="PA">Pennsylvania</option>
+<option value="PR">Puerto Rico</option>
+<option value="RI">Rhode Island</option>
+<option value="SC">South Carolina</option>
+<option value="SD">South Dakota</option>
+<option value="TN">Tennessee</option>
+<option value="TX">Texas</option>
+<option value="UT">Utah</option>
+<option value="VT">Vermont</option>
+<option value="VA">Virginia</option>
+<option value="WA">Washington</option>
+<option value="WV">West Virginia</option>
+<option value="WI">Wisconsin</option>
+<option value="WY">Wyoming</option>
+                                    </select>
+                                </div>
+                                <div class="field form-cc-zipcode offset-error">
+                                    <label for="cc-zipcode">Zip Code</label>
+                                    <input type="text" id="cc-zipcode" data-recurly="postal_code" autocomplete="postal-code">
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="clear"></div>
+
+                            <div class="form-row" id="upgrade-form-row-address-intl">
+                                <div class="field form-cc-city">
+                                    <label for="cc-city-intl">City</label>
+                                    <input type="text" id="cc-city-intl" autocomplete="address-level2">
+                                </div>
+                                <div class="field form-cc-state">
+                                    <label for="cc-state-intl">State</label>
+                                    <input id="cc-state-intl" type="text" autocomplete="address-level1">
+                                </div>
+                                <div class="field form-cc-zipcode offset-error">
+                                    <label for="cc-zipcode-intl">Zip Code</label>
+                                    <input type="text" id="cc-zipcode-intl" autocomplete="postal-code">
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="clear"></div>
+
+                            <div class="form-row">
+                                <div class="field form-first-name">
+                                    <label for="cc-first-name">First Name</label>
+                                    <input type="text" id="cc-first-name" data-recurly="first_name" autocomplete="cc-given-name" />
+                                </div>
+                                <div class="field form-last-name offset-error">
+                                    <label for="cc-last-name">Last Name</label>
+                                    <input type="text" id="cc-last-name" data-recurly="last_name" autocomplete="cc-family-name" />
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="clear"></div>
+
+                            <div class="form-row" id="upgrade-form-row-payment">
+                                <div class="field form-cc offset-error">
+                                    <label for="cc-form-credit-card">Credit Card</label>
+                                    <div id="cc-form-credit-card" data-recurly="card"></div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="clear"></div>
+
+                            <div class="form-row" id="upgrade-form-row-email">
+                                <div class="field form-email">
+                                    <label for="cc-email">Email</label>
+                                    <input type="text" id="cc-email" autocomplete="email" />
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="clear"></div>
+
+
+                            <div class="form-submit">
+                                <button class="upgrade-button" id="cc-upgrade">Upgrade Now</button>
+                            </div>
+
+                            <div class="form-legal">
+
+                            </div>
+
+                            <div class="form-satisfaction"><i class="mw mw-guaranteed"></i> <span>Satisfaction guaranteed. Cancel anytime.</span></div>
+
+                        </div>
+
+                        <div class="upgrade-form upgrade-form-paypal"></div>
+
+                        <div class="upgrade-form upgrade-form-amazon">
+                            <div id="amazon-wallet" class="form-row"></div>
+                            <div class="amazon-validation-message">This option is required to subscribe.</div>
+                            <div id="amazon-consent" class="form-row"></div>
+                            <div class="form-submit">
+                                <button class="upgrade-button" id="amazon-upgrade">Upgrade Now</button>
+                            </div>
+                            <div class="form-satisfaction"><i class="mw mw-guaranteed"></i> <span>Satisfaction guaranteed. Cancel anytime.</span></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <a href="#" class="upgrade-go-back"><i class="mw mw-go-back"></i> Go Back</a>
+
+        </div>
+    </div>
+</script>
+
+    
+<script type="mathway-template" id="upgrade-success-template">
+    <div id="upgrade-success">
+        <p class="upgrade-success">
+
+        <i class="mw mw-upgrade"></i>
+        <p>The transaction is complete, thank you!</p>
+        
+    </div>
+</script>
+
+
+    <script type="mathway-template" id="tutor-learn-more-template">
+    <div id="tutor-learn-more-container">
+        <div class="tutor-learn-more-inner">
+            <h3><span class="mw mw-upgrade"></span> Unlimited Live Tutor Access!</h3>
+            <p>Have a question about one of the steps?  Need additional help on one of your problems?  Include this option to be able to connect to a <strong>live tutor</strong> whenever you need a little extra help!</p>
+            <iframe id="learn-more-video" width="560" height="315" src="https://www.youtube.com/embed/adaQfmyM0vM?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+</script>
+
+
+    <script type="mathway-template" id="avatar-template">
+    <div id="avatar-container">
+        <div class="avatar-inner"></div>
+        <form id="avatar-upload-form"><input id="avatar-upload" type="file" accept="image/*"></form>
+        <input id="avatar-scale" type="range" min=".01" max="10" step=".01" value="1" class="Slider">
+        <div class="avatar-button-container">
+            <button id="avatar-camera" class="btn-primary" data-open="Open Camera" data-close="Close Camera">Open Camera</button>
+            <button id="avatar-swap" class="btn-primary">Swap Camera</button>
+            <button id="avatar-take" class="btn-primary">Take Picture</button>
+            <button id="avatar-select" class="btn-primary">Upload Picture</button>
+            <button id="avatar-update" class="btn-primary">Update Picture</button>
+            <button id="avatar-delete" class="btn-primary">Delete Picture</button>
+        </div>
+    </div>
+</script>
+    
+<div id="unsupported">
+    Mathway requires javascript and a modern browser.
+</div>
+
+    <script type="mathway-template" id="spinner-template">
+    <div id="spinner">
+        <div class="loader"></div>
+    </div>
+    <div id="spinner-message"></div>
+</script>
+    <script type="mathway-template" id="camera-template">
+    <div id="camera-container">
+        <div class="camera-inner"></div>
+        <div class="camera-button-container">
+            <button id="camera-swap" class="btn-primary">Swap Camera</button>
+            <button id="camera-take" class="btn-primary">Take Picture</button>
+        </div>
+    </div>
+</script>
+
+
+
+<script type="mathway-template" id="rate-tutor-template">
+    <form id="rate-tutor-container" method="post">
+        <div class="placeholder">
+            <div class="rating-container"></div>
+            <p id="rate--tutor-error-general" class="error">Could not save your feedback. Please try again.</p>
+            <p id="rate-tutor-error-stars" class="error">Please select a rating.</p>
+            <textarea id="rate-tutor-comment" placeholder="Optional comments..."></textarea>
+        </div>
+        <div class="rate-tutor-button-container">
+            <button id="rate-tutor-submit" class="btn-primary">Submit</button>
+        </div>        
+    </form>
+</script>
+
+<script type="mathway-template" id="tutor-invite-template">
+    <div id="tutor-invite-outer">
+        <div id="tutor-invite-container">
+            <div class="tutor-invite-inner">
+                <h3></h3>
+                <div><span id="invite-topic"></span></div>
+                <div class="invite-problem-wrap"><span id="invite-problem"></span></div>
+            </div>
+        </div>
+        <div id="tutor-invite-answer"></div>
+        <div id="tutor-invite-button-container">
+            <button id="tutor-invite-ok" class="btn-primary">Accept</button>
+        </div>
+        <div id="invite-device">Problem submitted via <span></span></div>
+        <div id="invite-email">By: <span></span></div>
+        <a href="javascript: void(0)" id="invite-end-shift">End Shift</a>
+    </div>
+</script>
+
+
+<script type="mathway-template" id="tutor-pre-session-template">
+    <div id="tutor-pre-session-container">
+        <div class="tutor-pre-session-inner">
+            <div id="pre-session-credits"><span id="pre-session-credits-label">Sessions Remaining:</span><span id="pre-session-credits-number"></span><span class="asterisk-blue">*</span></div>
+            <div id="pre-session-q1">
+                <p>Is this the problem you need help with? <span class="asterisk">*</span></p>
+                <div id="pre-session-problem"></div>
+                <div class="actions">
+                    <button class="btn-primary">Yes</button>
+                    <button class="btn-secondary">No</button>
+                </div>
+                <small><span class="asterisk">*</span> Our experts will only be able to help on the problem provided here. Please make sure the problem is correct.</small>
+                <small id="renew-date-small"><span class="asterisk-blue">*</span> <span id="renew-date-footer"></span></small>
+            </div>
+            <div id="pre-session-q2">
+                <div id="pre-session-q2-inner">
+                    <p id="pre-tutor-q2-title">Please enter the problem you need help with...</p>
+                    <div id="pre-tutor-image-thumb"></div>
+                    <button id="pre-tutor-q2-next" class="btn-primary">Next</button>
+                </div>
+            </div>
+            <div id="pre-session-q3">
+                <p>How can we help you with this problem?</p>
+                <ul>
+                    <li class="radio">
+                        <input id="pre-session-answer-1" type="radio" name="pre-session-answer" value="1" />
+                        <label for="pre-session-answer-1"><span>I need to see the answer and the steps</span></label>
+                    </li>
+                    <li class="radio">
+                        <input id="pre-session-answer-2" type="radio" name="pre-session-answer" value="2" />
+                        <label for="pre-session-answer-2"><span>I only need to see the answer</span></label>
+                    </li>
+                    <li class="radio">
+                        <input id="pre-session-answer-3" type="radio" name="pre-session-answer" value="3" />
+                        <label for="pre-session-answer-3"><span>I need to check my answer to this problem</span></label>
+                    </li>
+                    <li class="radio">
+                        <input id="pre-session-answer-4" type="radio" name="pre-session-answer" value="4" />
+                        <label for="pre-session-answer-4"><span>I didn&#39;t understand the steps provided by Mathway</span></label>
+                    </li>
+                    <li class="radio">
+                        <input id="pre-session-answer-5" type="radio" name="pre-session-answer" value="5" />
+                        <label for="pre-session-answer-5"><span>Explain the concepts of this type of problem to me in detail</span></label>
+                    </li>
+                </ul>
+                <div class="actions">
+                    <button class="btn-primary" disabled="disabled">Get Help</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+    <script type="mathway-template" id="create-expert-question-template">
+    <div id="tutor-pre-session-container">
+        <div class="tutor-pre-session-inner">
+            <div id="pre-session-q1">
+                <p>Is this the problem you need help with? <span class="asterisk">*</span></p>
+                <div id="pre-session-problem"></div>
+                <div class="actions">
+                    <button class="btn-primary">Yes</button>
+                    <button class="btn-secondary">No</button>
+                </div>
+                <small><span class="asterisk">*</span> The tutor will only be able to help on the problem provided here. Please make sure the problem is correct.</small>
+            </div>
+            <div id="pre-session-q2">
+                <div id="pre-session-q2-inner">
+                    <p id="pre-tutor-q2-title">Please enter the problem you need help with...</p>
+                    <div id="pre-tutor-image-thumb"></div>
+                    <button id="pre-tutor-q2-next" class="btn-primary">Next</button>
+                </div>
+            </div>
+            <div id="pre-session-q3">
+                <p>How can we help you with this problem?</p>
+                <ul>
+                    <li class="radio">
+                        <input id="pre-session-answer-1" type="radio" name="pre-session-answer" value="1" />
+                        <label for="pre-session-answer-1"><span>I need to see the answer and the steps</span></label>
+                    </li>
+                    <li class="radio">
+                        <input id="pre-session-answer-2" type="radio" name="pre-session-answer" value="2" />
+                        <label for="pre-session-answer-2"><span>I only need to see the answer</span></label>
+                    </li>
+                    <li class="radio">
+                        <input id="pre-session-answer-3" type="radio" name="pre-session-answer" value="3" />
+                        <label for="pre-session-answer-3"><span>I need to check my answer to this problem</span></label>
+                    </li>
+                    <li class="radio">
+                        <input id="pre-session-answer-4" type="radio" name="pre-session-answer" value="4" />
+                        <label for="pre-session-answer-4"><span>I didn&#39;t understand the steps provided by Mathway</span></label>
+                    </li>
+                    <li class="radio">
+                        <input id="pre-session-answer-5" type="radio" name="pre-session-answer" value="5" />
+                        <label for="pre-session-answer-5"><span>Explain the concepts of this type of problem to me in detail</span></label>
+                    </li>
+                </ul>
+                <div class="actions">
+                    <button class="btn-primary" disabled="disabled">Get Help</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+
+    <script type="mathway-template" id="ask-experts-template">
+    <div id="ask-experts-container">
+
+        <p>How would you like to contact us?</p>
+
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td><button id="aoe-question" class="btn-primary">Send a Message</button></td>
+                <td><button id="aoe-tutor" class="btn-primary">Live Chat</button></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td><div class="eqa-trial-expert-live"><span class="mw mw-callout-viewtrialsteps"></span> Free Trial!</div></td>
+            </tr>
+        </table>
+
+    </div>
+</script>
+    
+<div id="gdpr-banner">
+
+    <div class="gdpr-header">Cookies &amp; Privacy</div>
+    <div class="gdpr-content">This website uses cookies to ensure you get the best experience on our website.</div>
+
+    <div class="gdpr-actions">
+        <a href="/privacy">More Information</a>
+        <input type="button" class="gdpr-button" value="Accept" />
+    </div>
+
+</div>
+
+    <script type="mathway-template" id="ocr-template">
+    <div id="ocr-container" class="no-selection">
+        <div id="ocr-image"><img id="ocr-result" /></div>
+        <div id="ocr-submit" class="no-selection"><i class="mw mw-paper-airplane"></i></div>
+        <div id="ocr-overlay">
+            <div class="ocr-corner ocr-corner-nw"><div class="ocr-corner-inner"></div></div>
+            <div class="ocr-corner ocr-corner-ne"><div class="ocr-corner-inner"></div></div>
+            <div class="ocr-corner ocr-corner-sw"><div class="ocr-corner-inner"></div></div>
+            <div class="ocr-corner ocr-corner-se"><div class="ocr-corner-inner"></div></div>
+        </div>
+    </div>
+</script>
+
+
+    
+    <script type="mathway-template" id="tutor-video-template">
+        <div id="tutoring-video"><iframe width="560" height="315" src="https://www.youtube.com/embed/adaQfmyM0vM?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+    </script>
+
+    
+<script type="mathway-template" id="expert-video-template">
+    <div id="expert-video"><iframe width="560" height="315" src="https://www.youtube.com/embed/Y2pfdv_K9-w?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+</script>
+
+    
+<script type="mathway-template" id="set-password-template">
+    <div id="sp-container">
+        <div class="sp-inner">
+
+            <div class="placeholder">
+                <h2>Create a Password</h2>
+                <div class="sp-errors">
+                    <div id="sp-error-invalid" class="sp-error">The password you have entered is not valid</div>
+                    <div id="sp-error-empty" class="sp-error">The password is empty.</div>
+                    <div id="sp-error-tooshort" class="sp-error">The password must be at least 5 characters</div>
+                </div>
+                <input type="password" id="sp-password" placeholder="Password" />
+            </div>
+
+            <div id="sp-button-container">
+                <button id="sp-submit" class="btn-primary">Set Password</button>
+            </div>
+
+        </div>
+    </div>
+</script>
+
+
+    
+
+<link href="/css/styles.css" rel="stylesheet" type="text/css" async />
+
+
+    
+    
+
+<div id="preloader">
+    <script type="math/mml">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mrow>
+                <mtext index="0" type="Space">&#160;</mtext>
+                <mrow index="1">
+                    <mo>[</mo>
+                    <mtable rowalign="center" columnalign="center">
+                        <mtr>
+                            <mtd>
+                                <msup index="2">
+                                    <mrow>
+                                        <mi index="3">x</mi>
+                                    </mrow>
+                                    <mrow>
+                                        <mn index="4">2</mn>
+                                    </mrow>
+                                </msup>
+                                <mtext index="5" type="Space">&#160;</mtext>
+                            </mtd>
+                            <mtd>
+                                <mtext index="6" type="Space">&#160;</mtext>
+                                <mfrac index="7" linethickness="thin">
+                                    <mrow>
+                                        <mn index="8">1</mn>
+                                    </mrow>
+                                    <mrow>
+                                        <mn index="9">2</mn>
+                                    </mrow>
+                                </mfrac>
+                                <mtext index="10" type="Space">&#160;</mtext>
+                            </mtd>
+                        </mtr>
+                        <mtr>
+                            <mtd>
+                                <mtext index="11" type="Space">&#160;</mtext>
+                                <msqrt index="12">
+                                    <mrow>
+                                        <mi index="13">π</mi>
+                                    </mrow>
+                                </msqrt>
+                                <mtext index="14" type="Space">&#160;</mtext>
+                            </mtd>
+                            <mtd>
+                                <mtext index="15" type="Space">&#160;</mtext>
+                                <mrow index="16">
+                                    <mstyle displaystyle="true">
+                                        <mo>&#x222B;</mo>
+                                    </mstyle>
+                                    <mo>&#8289;</mo>
+                                    <mrow>
+                                        <mrow>
+                                            <mi index="17">x</mi>
+                                        </mrow>
+                                        <mi>d</mi>
+                                        <mrow>
+                                            <mi index="18">x</mi>
+                                        </mrow>
+                                    </mrow>
+                                </mrow>
+                                <mtext index="19" type="Space">&#160;</mtext>
+                            </mtd>
+                        </mtr>
+                    </mtable>
+                    <mo>]</mo>
+                </mrow>
+                <mtext index="20" type="Space">&#160;</mtext>
+            </mrow>
+        </math>
+    </script>
+</div>
+
+<script type='text/x-mathjax-config'>
+    MathJax.Hub.Config({
+        config: ["MML_CHTML-full.js"],
+        CommonHTML: {
+            linebreaks: {
+                automatic: true
+            }
+        },
+        "HTML-CSS": {
+            linebreaks: {
+                automatic: true
+            },
+            imageFont: null
+        },
+        SVG: {
+            linebreaks: {
+                automatic: true
+            }
+        },
+        showMathMenu: false,
+        messageStyle: 'none'
+    });
+</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"></script>
+    <script type="text/javascript" src="//apis.google.com/js/api:client.js"></script>
+    <script type="text/javascript" src="https://js.recurly.com/v4/recurly.js"></script>
+
+<script type="text/javascript" src="https://gdpr.studybreakmedia.com/short-circuit-viewer-location.js"></script>
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/tcf.stub.js" charSet="UTF-8"></script>
+<!-- OneTrust Cookies Consent Notice start for mathway.com -->
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="d63056ea-c316-4b07-8abb-6f04b1dcbb32"></script>
+<script type="text/javascript">
+    function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end for mathway.com -->
+<script src="https://cdn.cookielaw.org/opt-out/otCCPAiab.js"
+        type="text/javascript"
+        charSet="UTF-8"
+        ccpa-opt-out-ids="trg,goog,C0005,prf"
+        ccpa-opt-out-geo="all"
+        ccpa-opt-out-lspa="true"></script>
+
+        <script type="text/javascript" src="/inject.js"></script>
+
+<script type="text/javascript" src="/js/scripts.js"></script>
+
+<script>
+    window.Intl || document.write('<script src="js/intlPolyfill.min.js"><\/script>');
+</script>
+
+    <script type="text/javascript">
+        var onloadCallback = function () { App.Validator.process(); };
+    </script>
+    <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=en-US&amp;onload=onloadCallback&amp;render=explicit" async defer></script>
+    <div id="login-verify-signin-container"><div id="login-verify-signin" class="g-recaptcha" data-sitekey="6Lf2yz0UAAAAADGO2GpV0mkBluQg-v3uXTJEMZIr"></div></div>
+    <div id="settings-verify-upgrade-container"><div id="settings-verify-upgrade" class="g-recaptcha" data-sitekey="6Lf2yz0UAAAAADGO2GpV0mkBluQg-v3uXTJEMZIr"></div></div>
+    <div id="pay-with-amazon-container">
+        <span id="pay-with-amazon"></span>
+    </div>
+    <script>
+        var payWithAmazon = new PayWithAmazon({
+            sellerId: 'AOKTDULHLSTK0',
+            clientId: 'amzn1.application-oa2-client.4d560c9ef35c4f108c70fd7a99c7ad71',
+            button: { id: 'pay-with-amazon', type: 'small', color: 'Gold', kind: 'pay' },
+            wallet: 'amazon-wallet',
+            consent: 'amazon-consent',
+            production: true
+        });
+    </script>
+
+
+
+
+<script type="text/javascript">
+    Recurly.key = "sjc-6FKX3Thuvh39YZJ0nGlbCG";
+    App.debug = false;
+    App.urlPrefix = "/";
+    App.Version = "3.1.7";
+    App.deviceName = "web";
+    App.IP = "66.231.135.229";
+    App.Environment = "Release";
+    App.isProduction = "True" === "True" ? true : false;
+    App.EnvironmentSupportsApplePay = true;
+    App.Plans.MonthlyStepByStep = "monthly-premium-5";
+    App.Plans.QuarterlyStepByStep = "quarterly-premium";
+    App.Plans.AnnualStepByStep = "annual-premium-4";
+    App.Plans.MonthlyExpertQA = "monthly-premium-expertqa";
+    App.Plans.QuarterlyExpertQA = "quarterly-premium-expertqa";
+    App.Plans.AnnualExpertQA = "annual-premium-expertqa";
+    App.Plans.MonthlyTutoring = "monthly-premium-tutoring";
+    App.Plans.QuarterlyTutoring = "quarterly-premium-tutoring";
+    App.Plans.AnnualTutoring = "annual-premium-tutoring";
+    App.Services.API ="/localapi";
+    App.Services.UserAPI = "/localapiuser";
+    App.Services.Data = "/localdata";
+    App.Services.Solver = "/localsolver";
+    App.Services.Chat = "/chat";
+    App.Services.Topic = "/localtopics";
+    App.Services.Sockets = "https://sockethubs.mathway.com";
+    App.Services.Blob = "/localblob";
+    App.Culture.acceptLanguages = "en-US,en;q=0.9";
+    App.Services.BroadcastHub = "https://tutorhub.mathway.com";
+    App.Culture.current = "en-US";
+    App.Culture.currentSmall = "en";
+    App.Culture.header = "en-US";
+    App.Culture.mismatch = false;
+    App.Culture.hint = "Looking for the English version of Mathway?";
+    App.Culture.action = "Yes";
+    App.Validator.key = "6Lf2yz0UAAAAADGO2GpV0mkBluQg-v3uXTJEMZIr";
+    App.Validator.on = true; //;
+</script>
+
+    <script type="text/javascript">
+    Strings.General.Ok = "OK";
+    Strings.General.Cancel = "Cancel";
+    Strings.General.Yes = "Yes";
+    Strings.General.No = "No";
+    Strings.General.SessionStale = "Your session has expired.  The browser will now reload.";
+    Strings.General.Month = "month";
+    Strings.General.Year = "year";
+    Strings.Topics.Header = "How should I answer?";
+    Strings.Topics.SuggestHeader = "What are you looking for?";
+    Strings.Topics.TopicINeed = "I don't see what I need...";
+    Strings.Topics.SearchPlaceholder = "Search...";
+    Strings.Topics.More = "More...";
+    Strings.Auth = {
+        OutdatedPassword: "We are making efforts to ensure that our user accounts are as secure as possible.  Please enter a new password for your account to proceed with login.",
+        OutdatedPasswordThanks: "Thank you! You will now be logged in."
+    };
+    Strings.Chat.CanIHelp = "How can I help you?";
+    Strings.Chat.ClickExamples = "Click here for some examples.";
+    Strings.Chat.SeeSteps = "Would you like to see the steps?";
+    Strings.Chat.NoTopics = "I'm having unexpected technical difficulties.  Please try again later.";
+    Strings.Chat.RateSolution = "How was this solution?";
+    Strings.Chat.ReSolve = "Want to see the solution?";
+    Strings.Chat.Today = "Today";
+    Strings.Chat.Subscribed = "Thanks for subscribing!  You now have access to all the step-by-step work and explanations.";
+    Strings.Chat.SubscribedTutoring = "Your upgrade is complete - you now have access to bigger and better features!";
+    Strings.Chat.SubscribedExpertQA = "Your upgrade is complete - you now have access to bigger and better features!";
+    Strings.Chat.CreditsPurchased = "Thanks for purchasing live expert credits!  You can use your credits to connect to a live expert at any time.";
+    Strings.Chat.HistoryMore = "Want to see more?";
+    Strings.Chat.ActionAppShare = "Tap to share...";
+    Strings.Chat.ActionExamples = "Tap for examples...";
+    Strings.Chat.ActionHistory = "Tap for history...)";
+    Strings.Chat.ActionHistoryMore = "Tap for more history...";
+    Strings.Chat.ActionInsertExample = "Tap to try an example...";
+    Strings.Chat.ActionGoToUrl = "Tap to go...";
+    Strings.Chat.ActionReSolve = "Tap for the answer...";
+    Strings.Chat.ActionRating = "Tap to rate...";
+    Strings.Chat.ActionUpgrade = "Tap to view steps...";
+    Strings.Chat.ActionShowSteps = "Tap for more steps...";
+    Strings.Chat.ActionHideSteps = "Tap for fewer steps...";
+    Strings.Chat.ActionGraph = "Tap to enlarge...";
+    Strings.Chat.ActionTutorial = "Tap to view tutorial...";
+    Strings.Chat.ActionTutorRequest = "Tap to connect to a live tutor...";
+    Strings.Chat.ActionFreeTrialTutor = "Tap for FREE tutor session...";
+    Strings.Chat.ActionFreeTrialTutorUpgrade = "Tap to upgrade...";
+    Strings.Chat.ActionFreeTrialLiveExpert = "Tap here to talk to a live expert for free!";
+    Strings.Chat.ActionExpertRequest = "Tap to ask an Expert...";
+    Strings.Chat.ActionFreeTrialExpert = "Tap to ask an Expert FREE...";
+    Strings.Chat.ActionFreeTrialExpertUpgrade = "Tap to upgrade...";
+    Strings.Chat.ActionTrial = "Tap to view FREE steps...";
+    Strings.Chat.InputError = "I don't recognize this problem, please make sure the input is complete.";
+    Strings.Chat.SolutionError = "I am unable to solve this problem.";
+    Strings.Chat.TimeoutError = "Sorry, I was temporarily busy.  Please try your problem again.";
+    Strings.Chat.MoreTopics = "Not the answer you were looking for?";
+    Strings.Chat.MoreOptions = "Tap for more options...";
+    Strings.Chat.CancelTutor = "Tap to cancel...";
+    Strings.Chat.LoadWhiteboard = "Edit Image";
+    Strings.Chat.RateSolutionTitle = "Rate This Solution";
+    Strings.Chat.TutorUpgradeRequest = "I hope the free trial was helpful! To always have access to a live expert, please upgrade your subscription.";
+    Strings.Chat.TutorCreditPackRequest = "I hope the free trial was helpful! To always have access to a live expert, please add live expert credits to your subscription.";
+    Strings.Chat.StudentFinished = "I hope your live expert session was helpful! I'm ready to start answering your questions again.";
+    Strings.Chat.ShowGraph = "Tap to show graph...";
+    Strings.Chat.HideGraph = "Tap to hide graph...";
+    Strings.Chat.ThanksForFeedback = "Thank you for helping improve Mathway with your feedback!";
+    Strings.Chat.RateSolutionFeedback = "Thank you for helping improve Mathway with your feedback!";
+    Strings.Chat.UpdateApp = "Tap to update app...";
+    Strings.Editor.Empty = "Enter a problem...";
+    Strings.Editor.EmptyMessage = "Enter a message...";
+    Strings.Editor.DidYouMean = "Did you mean";
+    Strings.Graph.Close = "Close";
+    Strings.Auth.TooManyAttempts = "You have made too many failed login attempts, please try again in 5 minutes.";
+    Strings.GiftCards.PurchaseSuccess = "Your gift card has been purchased successfully!";
+    Strings.GiftCards.RedeemSuccess = "Your gift card has been redeemed.  Enjoy your new Mathway subscription!";
+    Strings.GiftCards.RedeemSuccessNoPurchase = "The gift card balance has been added to your account and will be applied on your next renewal.";
+    Strings.Pages = {
+        Affiliates: "Affiliates",
+        Tutors: "Tutors",
+        Teachers: "Classroom",
+        Organization: "Classroom Dashboard"
+    };
+    Strings.RateSolution.Button_Success = "OK";
+    Strings.Search.NotFound = "No results found.";
+    Strings.Upgrade.ErrorBillingValidation = "There was a problem validating your credit card information.  Please review and try again.";
+    Strings.Upgrade.ErrorBillingPaypalCanceled = "The PayPal checkout process has been canceled.)";
+    Strings.Upgrade.ErrorBillingPaypalError = "An error occured while checking out with PayPal:";
+    Strings.Upgrade.ErrorBillingNumber = "The card number entered is invalid.";
+    Strings.Upgrade.ErrorBillingCVV = "The cvv code entered is invalid.";
+    Strings.Upgrade.ErrorBillingDeclined = "The card provided was declined.";
+    Strings.Upgrade.ErrorInvalid = "Invalid";
+    Strings.Upgrade.ErrorEmailExists = "It looks like you already have an account with Mathway. Would you like to sign in now?";
+    Strings.Upgrade.Upgrade_Blocked_Ip = "We were unable to process your request at this time.  Please try again or contact support.";
+    Strings.Upgrade.AmazonCheckbox = "This option is required to subscribe.";
+    Strings.Upgrade.SavePercent = "save {PERCENT}%";
+    Strings.Upgrade.Confirmation = "Are you sure you want to change your step-by-step subscription?";
+    Strings.Upgrade.PerYear = "/year";
+    Strings.Upgrade.PerQuarter = "every 3 months";
+    Strings.Upgrade.Quarter = "/3 months";
+    Strings.Upgrade.PerMonth = "/month";
+    Strings.Upgrade.PriceQuarterly = "{PRICE} billed every 3 months";
+    Strings.Upgrade.PriceAnnual = "{PRICE} billed annually";
+    Strings.Upgrade.PriceMonthly = "Only {PRICE}/month";
+    Strings.Upgrade.Wait = "Please allow up to 60 seconds to process...";
+    Strings.Upgrade.Price_Label_SBS = "Step-By-Step Work";
+    Strings.Upgrade.Price_Label_Tutor_1 = "Step-by-Step ";
+    Strings.Upgrade.Price_Label_Tutor_2 = "Ask an Expert LIVE";
+    Strings.Upgrade.Price_Label_Tutor_3 = "Grade Insurance";
+    Strings.Upgrade.SimpleTitle = "Step-By-Step Work";
+    Strings.Upgrade.TutoringLearnMorePurchase = "Have a question about one of the steps?  Need additional help on one of your problems?  Connect to a <strong>math expert</strong> whenever you need a little extra help!";
+    Strings.Upgrade.UpgradeConfirmPurchase = "Are you sure you want to purchase a {ONE_TIME} tutor session for {PRICE}?";
+    Strings.Upgrade.UpgradeConfirmPurchaseOneTime = "one-time";
+    Strings.Upgrade.UpgradeConfirmPurchaseNote = "Please note that tutors can only assist with one problem per session.";
+    Strings.Upgrade.LabelCardNumber = "Card Number";
+    Strings.Upgrade.LabelCardMMYY = "MM / YY";
+    Strings.Upgrade.LabelCardCVV = "CVV";
+    Strings.Upgrade.BilledAnnually = "{PRICE} billed annually";
+    Strings.Upgrade.ShowTotalPrice = "Total: {PRICE} + tax";
+    Strings.Upgrade.ShowTotalPriceTaxes = "Total: {SUBTOTAL} + {TAX} tax = {TOTAL}";
+    Strings.Upgrade.ShowPriceTaxes = "{SUBTOTAL} + {TAX} tax = {TOTAL}";
+    Strings.Upgrade.PriceTax = "tax";
+    Strings.Upgrade.UpgradeConfirmPurchase = "Are you sure you want to purchase {QUANTITY} {CREDIT} for {PRICE}?";
+    Strings.Upgrade.Credit = "Credit";
+    Strings.Upgrade.Credits = "Credits";
+    Strings.Upgrade.Session = "Session";
+    Strings.Upgrade.Sessions = "Sessions";
+    Strings.Upgrade.ExpertFootnote = "*Expert response time may vary by question. One question may be asked at a time.";
+    Strings.Upgrade.LegalText = "By clicking {UPGRADE_BUTTON} you consent to our {TERMS_LINK} and acknowledge having read our {PRIVACY_LINK}.  Payment will be charged to your payment method after your confirmation of purchase. Your subscription will automatically renew at {RENEWAL_PRICE} + tax, unless auto-renew is turned off at least 24-hours before the end of the current period. After upgrading, you can cancel your subscription or change your auto-renewal settings by going to your account settings page.";
+    Strings.Upgrade.LegalTerms = "Terms of Use";
+    Strings.Upgrade.UpgradeTitle = "Upgrade Now";
+    Strings.Upgrade.LegalPrivacy = "Privacy Policy";
+    Strings.Settings.BillingRenewsOn = "Next Billing Date:";
+    Strings.Settings.BillingEndsOn = "Ends on:";
+    Strings.Settings.BillingCompedText = "Access Ends:";
+    Strings.Settings.ResetPasswordComplete = "Your password has been reset. You can now log into Mathway's website and mobile apps using your new password.";
+    Strings.Settings.CancellationSurveyOpts = [{
+        id: 1,
+        text: "I don't need it anymore",
+        subOpts: [
+            { id: 7, text: "My class is over" },
+            { id: 8, text: "It's not helping me" },
+            { id: 9, text: "I don't need it now, but I'll be back" },
+            { id: 10, text: "I'm not happy with the service" }
+        ]},
+        { id: 2, text: "I couldn't figure out how to enter my problems" },
+        { id: 3, text: "The topics I needed weren't available" },
+        { id: 4, text: "The answers were wrong" },
+        { id: 5, text: "The explanations were too confusing" },
+        { id: 6, text: "Other" }
+    ];
+    Strings.ForgotPassword.ForgotPasswordSuccess = "Check your email for instructions to reset your password.";
+    Strings.Settings.UpdateBillingError = "There was a problem retrieving your billing information";
+    Strings.Settings.UpgradeError = "There was a problem upgrading your subscription. Please try again.";
+    Strings.Settings.PauseConfirm = "Are you sure you want to pause the renewal of your subscription until {DATE}?";
+    Strings.Settings.CancelPauseConfirm = "Are you sure you would like to cancel the pending pause of your subscription?";
+    Strings.Settings.PauseError = "There was a problem pausing your subscription. Please try again.";
+    Strings.Settings.PauseDefaultOption = "No Pause";
+    Strings.Settings.ResumeError = "There was a problem resuming your subscription. Please try again.";
+    Strings.Settings.ReactivateError = "There was a problem reactivating your subscription. Please try again.";
+    Strings.Settings.CancelError = "There was a problem cancelling your subscription. If the problem persists please contact support.";
+    Strings.Settings.CancelSuccess = "Your subscription has been cancelled.";
+    Strings.Settings.UpgradeSuccessAnnual = "Your subscription has been upgraded to an annual plan that includes step-by-step access.";
+    Strings.Settings.UpgradeSuccessMonthlyExpertQA = "Your subscription has been upgraded to a monthly plan that includes step-by-step access and Ask an Expert.";
+    Strings.Settings.UpgradeSuccessQuarterlyExpertQA = "Your subscription has been upgraded to a plan that renews every 3 months and includes step-by-step access and Ask an Expert.";
+    Strings.Settings.UpgradeSuccessAnnualExpertQA = "Your subscription has been upgraded to an annual plan that includes step-by-step access and Ask an Expert.";
+    Strings.Settings.UpgradeSuccessMonthlyTutoring = "Your subscription has been upgraded to a monthly plan that includes step-by-step access and &quot;Ask an Expert LIVE&quot;.";
+    Strings.Settings.UpgradeSuccessQuarterlyTutoring = "Your subscription has been upgraded to a plan that renews every 3 months and includes step-by-step access and Ask an Expert LIVE.";
+    Strings.Settings.UpgradeSuccessAnnualTutoring = "Your subscription has been upgraded to an annual plan that includes step-by-step access and Ask an Expert LIVE.";
+    Strings.Settings.ConfirmUpgradeAAE = "Ask an Expert";
+    Strings.Settings.ConfirmUpgradeAAEL = "Ask an Expert LIVE";
+    Strings.Settings.ConfirmUpgradeAnnual = "Are you sure you want to upgrade your subscription to an annual plan that includes step-by-step solutions {PRICE}?";
+    Strings.Settings.ConfirmUpgradeMonthlyExpertQA = "Are you sure you want to upgrade your subscription to a monthly plan that includes step-by-step solutions and {AAE} {PRICE}?".replace('{AAE}', '<i>' + Strings.Settings.ConfirmUpgradeAAE + '</i>');
+    Strings.Settings.ConfirmUpgradeQuarterlyExpertQA = "Are you sure you want to upgrade your subscription to a plan that includes step-by-step solutions and {AAE} {PRICE}?".replace('{AAE}', '<i>' + Strings.Settings.ConfirmUpgradeAAE + '</i>');
+    Strings.Settings.ConfirmUpgradeAnnualExpertQA = "Are you sure you want to upgrade your subscription to an annual plan that includes step-by-step solutions and {AAE} {PRICE}?".replace('{AAE}', '<i>' + Strings.Settings.ConfirmUpgradeAAE + '</i>');
+    Strings.Settings.ConfirmUpgradeMonthlyTutoring = "Are you sure you want to upgrade your subscription to a monthly plan that includes step-by-step solutions and {AAEL} {PRICE}?".replace('{AAEL}', '<i>' + Strings.Settings.ConfirmUpgradeAAEL + '</i>');
+    Strings.Settings.ConfirmUpgradeQuarterlyTutoring = "Are you sure you want to upgrade your subscription to a plan that includes step-by-step solutions and {AAEL} {PRICE}?".replace('{AAEL}', '<i>' + Strings.Settings.ConfirmUpgradeAAEL + '</i>');
+    Strings.Settings.ConfirmUpgradeAnnualTutoring = "Are you sure you want to upgrade your subscription to an annual plan that includes step-by-step solutions and {AAEL} {PRICE}?".replace('{AAEL}', '<i>' + Strings.Settings.ConfirmUpgradeAAEL + '</i>');
+    Strings.Settings.UpgradeRefundNote = "You will receive a {REFUND} refund for the time you have remaining on your current plan.";
+    Strings.Settings.PauseSuccess = "Your subscription has been successfully paused.";
+    Strings.Settings.CancelPauseSuccess = "The scheduled pause on your subscription has been canceled.";
+    Strings.Settings.ResumeSuccess = "Your subscription has been resumed.";
+    Strings.Settings.ReactivateSuccess = "Your subscription has been reactivated.";
+    Strings.Settings.UpdateInfoSuccess = "Your billing information has been updated.";
+    Strings.Settings.AlreadySubscribed = "It appears you already have a subscription.";
+    Strings.Settings.SessionExpired = "Your session has expired. Please try again.";
+    Strings.Settings.PasswordSuccess = "Your password has been changed.";
+    Strings.Settings.EmailSuccess = "Your email has been changed.";
+    Strings.Settings.ChatConfirm = "Are you sure you want to clear your chat history?";
+    Strings.Settings.ProfileSuccess = "Your profile has been changed.";
+    Strings.Settings.PauseReactivateConfirm = "Are you sure you want to resume your subscription? Your billing period will begin today, and you will receive immediate access.";
+    Strings.Settings.StepByStep = "Step-by-Step ";
+    Strings.Settings.Expert = "Ask an Expert";
+    Strings.Settings.ExpertLive = "Ask an Expert LIVE";
+    Strings.Settings.ChatHistoryCleared = "Your chat history has been cleared.";
+    Strings.Settings.StepByStepCredits = "{NUM} free step-by-step solution(s) remaining";
+    Strings.Settings.TutoringCredits = "{NUM} live expert credit(s) remaining";
+    Strings.Settings.ExpertLiveCredits = "Live Expert Sessions:";
+    Strings.Settings.AccountDeleteConfirm = "Are you sure you want to delete your account? This action cannot be undone.";
+    Strings.Tutor = {
+        InvitationTitle: "A question is being asked in: {SUBJECT}",
+        InvitationSomeone : "Someone",
+        InvitationMessage : "is requesting a new tutoring session",
+        InterviewMessage : "is inviting you to join a live session",
+        InvitationStart : "Start",
+        InvitationTimeout : "Time's Up!",
+        InvitationTimedOut: "The session request has timed out",
+        InvitationCancelled: "The session request has been cancelled by the student",
+        InvitationOtherTutor: "has accepted this session",
+        Tutor : "Tutor",
+        Connecting : "Connecting to first available expert",
+        Connected : "You are now connected to",
+        ConnectedMessage : "You have been connected to a live expert.",
+        DisconnectTitle : "Disconnect",
+        DisconnectMessage : "Do you want to end your live session?",
+        TimeoutMessage : "We have not detected any activity for a while.  End session now?",
+        TutorConnected : "You are now connected to a student",
+        TutorInitialQuestion1 : "Problem Entered: ",
+        TutorInitialQuestion2 : "What is your question regarding this problem?  ",
+        TutorSessionGone : "A live expert session was missed at: ",
+		StudentLeavesRoom: "The student has ended the session.",
+        NoTutors : "There are no experts currently available",
+        ChatStart : "live expert session started",
+        ChatEnd : "live expert session ended",
+        WelcomeBack: "Welcome back to the room.",
+        InvitationNotAvailable: "The invitation is no longer available.",
+        NoTutorsAvailable: "There are no experts currently available.",
+        ConnectedMessageForTutor: "You are now connected.",
+        ContinueMessage: "Do you want to continue your chat session?",
+        FindingTutor: "Finding a live expert",
+        RateTitle: "Please Rate Your Expert",
+        WelcomeInstructions: "You are now connected to a real person.  While your live expert session is active your messages will be sent directly to your tutor.  If you'd like to use Mathway to solve a problem simply start your message with @mathway.",
+        ShowImage: "Tap to show image...",
+        HideImage: "Tap to hide image...",
+        Hi_one: "Hi, my name is ",
+        Hi_two: ".  Please allow me a few moments to review your problem and provide assistance!",
+        HideImage: "Tap to hide image...",
+        StudentDisconnect: "Student has disconnected for an unknown reason.",
+        StudentReconnect: "Student has reconnected.",
+        PreSessionTitle: "Before we connect you...",
+        TooManyRequests: "You already have a pending request.  We can only accommodate one request at a time.  Please try again.",
+        AlreadyInRoom: "Your account is currently active in another live expert session. We can only accommodate one session at a time per account.",
+        MissedRoom: "There was an unexpected problem connecting you to a live expert. Please try again.",
+        WaitingForStudent: "Waiting for student to connect... You will see the problem bubbles once they have joined the session. Any messages sent before the student connects will not be received.",
+        TutorEndsSession: "You ended this session.",
+        RenewDateFooter: "Your sessions will renew on {SESSION_RENEWAL_DATE}",
+        PreSessionAnswers: [
+            "I need to see the answer and the steps",
+            "I only need to see the answer",
+            "I need to check my answer to this problem",
+            "I didn't understand the steps provided by Mathway",
+            "Explain the concepts of this type of problem to me in detail"
+        ],
+        ConsumeUserCredit: "Should this student be charged 1 Credit for the session?"
+    };
+    Strings.Date.Months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ];
+    Strings.Date.DaysOfWeek = [
+        "Sunday",
+        "Monday",
+        "Tuesday)",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+    ];
+    Strings.Prompt.Clipboard = "Copy to clipboard: Ctrl+C, Enter";
+    Strings.Errors = {
+        Generic: "There was an error processing your request.",
+        EmailEmpty: "The email is empty.",
+        EmailInvalid: "The email is invalid.",
+        EmailUnchanged: "The email has not changed.",
+        PasswordEmpty: "The password is empty.",
+        PasswordInvalid: "The password you have entered is not valid",
+        PasswordIncorrect: "The password is incorrect.",
+        PasswordOutdated: "To protect the security of your account, we're requiring you to reset your password.",
+        PasswordShort: "The password must be at least 5 characters",
+        PasswordOutdatedTitle: "Password Out of Date",
+        PasswordMismatch: "The passwords do not match",
+        UserNotFound: "The user could not be found.",
+        FacebookEmailNotProvided: "To login with Facebook, you must allow Mathway to access your email address.",
+        UnauthorizedUser: "Not authorized.",
+        CredentialsInvalid: "Unknown or invalid email address or password.",
+        InvalidUser: "Unknown or invalid user specified.",
+        EmailUpdate: "The email has been updated.",
+        LoginFailed: "The login has failed.",
+        EmailIsFacbookUser: "This email is a Facebook user.",
+        InvalidGoogleAccessToken: "An error has occurred.",
+        RecurlyGeneric: "An error has occurred.",
+        RecurlyCardDeclined: "The card was declined.",
+        RecurlyFraud: "An error occurred.",
+        RecurlyInvalidData: "Invalid data was sent.",
+        RecurlyFraudAttempts: "An error occurred.",
+        RecurlyInsufficientFunds: "The account balance was insufficient.",
+        RecurlyCardExpired: "The card is expired.",
+        RecurlyCallIssuer: "An error occurred.  Please contact your card issuer for more information.",
+        RecurlyDuplicateTrans: "A duplicate transaction has already occurred.",
+        RecurlyBadPaymentMethod: "The payment method is invalid.",
+        RecurlyGatewayTimeout: "The payment authorizer has timed out.",
+        RecurlyNotCancelled: "The subscription has not been canceled.",
+        SubscriptionUsed: "The subscription has already been used.",
+        NoPaymentMethod: "No payment method was found.  Please add a payment method and try again.",
+        IncompatibleUpgradeiOS:"This feature is not available in your current subscription.  To add Ask an Expert LIVE access, please upgrade your subscription using your Mathway iOS app.",
+        IncompatibleUpgradeAndroid:"This feature is not available in your current subscription.  To add Ask an Expert LIVE access, please upgrade your subscription using your Mathway Android app.",
+        IncompatibleUpgradeDefault: "This feature is not available in your current subscription.  To add Ask an Expert LIVE access, please upgrade your subscription using the platform where you initially purchased your subscription.",
+        IncompatibleUpgradeStudent: "Your account is part of a Mathway Classroom, and does not currently have access to this feature. Please talk to your teacher about adding this feature to your account.",
+        NeedToUnpause: "Your subscription is currently paused.  Please unpause before making any subscription changes.",
+        TeacherUpgradeError: "This feature is not currently available.",
+        UserSessionExpired: "Your session has expired.",
+        NullSteps: "There was a problem retrieving the steps for this answer. Please try again.",
+        NullSteps2: "If this problem persists, please contact {SUPPORT_LINK}",
+        NullStepsSupportLink: "support"
+    };
+    Strings.Tutorials = {
+        StepOne: "To get started, select a subject.",
+        StepTwo: "Next, type in your problem...",
+        StepThree: "Then submit!",
+        StepFour: "... or upload a picture.",
+        Solved: "You can tap the problem to re-enter it into the editor."
+    };
+    Strings.TutorSignUp = {
+        ErrorSaving: "There was a problem saving your application.  Please try again or contact us to submit the application"
+    };
+    Strings.Examples = {
+        BasicMath: "Basic Math Examples",
+        PreAlgebra: "Pre-Algebra Examples",
+        Algebra: "Algebra Examples",
+        Trigonometry: "Trigonometry Examples",
+        Precalculus: "Precalculus Examples",
+        Calculus: "Calculus Examples",
+        Statistics: "Statistics Examples",
+        FiniteMath: "Finite Math Examples",
+        LinearAlgebra: "Linear Algebra Examples",
+        Chemistry: "Chemistry Examples",
+        Graph: "Graphing Examples"
+    };
+    Strings.Cancellation = {
+        Confirmation: "Are you sure you want to cancel your step-by-step subscription?",
+        ConfirmationTutoring: "Are you sure you want to cancel your step-by-step and Ask an Expert subscription?"
+    };
+    Strings.Worksheet = {
+        PreviewTitle: "Mathway Worksheet",
+        ClickToEdit: "Click to Edit",
+        Header: "Header",
+        Subheader: "Subheader",
+        NumProblems: "Number of Problems",
+        ShowNameDate: "Show Name/Date",
+        Create: "Create",
+        Update: "Update"
+    };
+    Strings.ViewSteps = {
+        LinkTitle: "Link to This Solution",
+        CreateLink: "Create link to solution",
+        UpgradeText: "Upgrade to Premium to get the steps on every problem!",
+        UpgradeButton: "Upgrade Now",
+        TutorLink: "Connect to a live tutor!",
+        TutorLinkTitle: "Need more help?",
+        TutorLinkTrial: "Free Trial!",
+        SBSCreditLabel: "Free step-by-step solutions remaining:",
+        TutorOther: "OR",
+        ExpertLink: "Ask an Expert",
+        ExpertLinkTrial: "Ask an Expert",
+        Live: "Live"
+    };
+    Strings.MetaTitles = {
+        'basicmath': "Mathway | Basic Math Problem Solver",
+        'prealgebra': "Mathway | Pre-Algebra Problem Solver",
+        'algebra': "Mathway | Algebra Problem Solver",
+        'trigonometry': "Mathway | Trigonometry Problem Solver",
+        'precalculus': "Mathway | Precalculus Problem Solver",
+        'calculus': "Mathway | Calculus Problem Solver",
+        'statistics': "Mathway | Statistics Problem Solver",
+        'finitemath': "Mathway | Finite Math Problem Solver",
+        'linearalgebra': "Mathway | Linear Algebra Problem Solver",
+        'chemistry': "Mathway | Chemistry Problem Solver",
+        'graph': "Mathway | Graphing Calculator"
+    };
+    Strings.OCR = {
+        InvalidImage: "Please choose a valid image file.",
+        ProblemWithImage: "There was a problem processing the image.",
+        TooSmall: "Please upload an image at least 80 pixels in height and width.",
+        Title: "Crop Just One Question"
+    };
+    Strings.ExpertQA.QuestionSubmitThanks = "Thanks for submitting your question! You can expect an answer back within a few hours.";
+    Strings.ExpertQA.QuestionSubmitError = "There was a problem submitting your expert question. Please try again in a few moments.";
+    Strings.ExpertQA.AnswerType1 = "I need to see the answer and the steps";
+    Strings.ExpertQA.AnswerType2 = "I only need to see the answer";
+    Strings.ExpertQA.AnswerType3 = "I need to check my answer to this problem";
+    Strings.ExpertQA.AnswerType4 = "I didn't understand the steps provided by Mathway";
+    Strings.ExpertQA.AnswerType5 = "Explain the concepts of this type of problem to me in detail";
+    Strings.ExpertQA.ErrorQuestionAnswered = "This question has already been answered, please select another.";
+    Strings.ExpertQA.ErrorPendingAnswers = "Please finish answering any pending questions before starting a new one.";
+    Strings.ExpertQA.ErrorGeneric = "There was an error processing your request.";
+    Strings.ExpertQA.ShowImage = "Tap to show image...";
+    Strings.ExpertQA.HideImage = "Tap to hide image...";
+    Strings.ExpertQA.NothingAsked = "There are no questions currently unanswered.";
+    Strings.ExpertQA.NoQuestions = "You haven't asked any questions yet!";
+    Strings.ExpertQA.LearnMore = "Learn more...";
+    Strings.ExpertQA.TooManyQuestions = "You can only have {MAX_PENDING_QUESTIONS} pending expert questions at a time.";
+    Strings.ExpertQA.OneTooManyQuestions = "You can only have one pending expert question at a time.";
+    Strings.ExpertQA.Title = "Ask an Expert";
+    Strings.ExpertQA.StatusWaiting = "Waiting";
+    Strings.ExpertQA.StatusAnswered = "Answered";
+    Strings.ExpertQA.Unread = "Unread";
+    Strings.ExpertQA.DetailsSubject = "Subject:";
+    Strings.ExpertQA.DetailsTopic = "Topic:";
+    Strings.ExpertQA.DetailsRequest = "Request:";
+    Strings.ExpertQA.DetailsFrom = "From:";
+    Strings.ExpertQA.DetailsAnsweredBy = "Answered By:";
+    Strings.ExpertQA.PreSessionTitle = "Ask an Expert";
+    Strings.Ad = {
+        Title: "Sponsored"
+    };
+
+    supportedCurrencies.UnitedStatesDollar.text = "United States Dollar";
+    supportedCurrencies.BritishPound.text = "United Kingdom Pound";
+    supportedCurrencies.Euro.text = "Euro";
+    supportedCurrencies.CanadianDollar.text = "Canadian Dollar";
+    supportedCurrencies.AustralianDollar.text = "Australian Dollar";
+    supportedCurrencies.IndianRupee.text = "Indian Rupee";
+    supportedCurrencies.SouthAfricanRand.text = "South African Rand";
+    supportedCurrencies.NewZealandDollar.text = "New Zealand Dollar";
+    supportedCurrencies.SingaporeanDollar.text = "Singaporean Dollar";
+    supportedCurrencies.MexicanPeso.text = "Mexican Peso";
+    supportedCurrencies.ColombianPeso.text = "Colombian Peso";
+    //supportedCurrencies.ChileanPesos.text = "Chilean Peso";
+    supportedCurrencies.ArgentineanPeso.text = "Argentine Peso";
+    supportedCurrencies.DanishKrone.text = "Danish Krone";
+    supportedCurrencies.HongKongDollar.text = "Hong Kong Dollar";
+    supportedCurrencies.IsraeliSheqel.text = "Israeli Sheqel";
+    supportedCurrencies.JapaneseYen.text = "Japanese Yen";
+    supportedCurrencies.NorwegianKrone.text = "Norwegian Krone";
+    supportedCurrencies.RussianRuble.text = "Russian Ruble";
+    supportedCurrencies.SouthKoreanWon.text = "South Korean Won";
+    supportedCurrencies.SwissFranc.text = "Swiss Franc";
+
+    </script>
+
+<div id="password-simple" style="display: none">
+    <p style="margin-bottom:0">Please ensure that your password is at least 8 characters and contains each of the following:</p>
+    <ul>
+        <li>a number</li>
+        <li>a letter</li>
+        <li>a special character: @$#!%*?&amp;</li>
+    </ul>
+</div>
+    
+    <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.2.min.js"></script>
+    <script src="//atc-edge.studybreakmedia.com/allocators/production/mw/allocator.js" async></script>
+    <script type="text/javascript">
+        Pages.Web.Subject("Calculus");
+    </script>
+
+
+    <!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-4006613-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<!-- Google Analytics -->
+
+    <div id="notification-sound"></div>
+</body>
+</html>

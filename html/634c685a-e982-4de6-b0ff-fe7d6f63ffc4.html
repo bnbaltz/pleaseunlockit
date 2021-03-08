@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Modify the given HTML file to look like the web page below.</p>
+<p><img alt="Chapter 5 - Lab
+X
+x zy 5.12. LAR Peutin the playing x 5.12 LAR Rote the playing a X
+leamobook.com/zybook/VALENCIACOLLEGECOP28" src="https://media.cheggcdn.com/media/df5/df524f68-0e65-4599-b17e-3e7664f4888e/phplDttpV.png" style="height:576px;width:1024px;"></p>
+<p>Add the following CSS to the embedded stylesheet:</p>
+<ul>
+<li>Add a&nbsp;linear-gradient&nbsp;background to
+the&nbsp;.table&nbsp;rule that goes from forestgreen to
+darkgreen.</li>
+<li>Add a&nbsp;border-radius&nbsp;property of 5px and a
+black&nbsp;box-shadow&nbsp;property with 3px x and y offsets to
+the&nbsp;.card&nbsp;rule.</li>
+<li>Add absolute positioning to the&nbsp;.cardTop&nbsp;rule, and
+position the card 150px from the left and 100px from the top of the
+container edge.</li>
+<li>Add absolute positioning to the&nbsp;.cardBottom&nbsp;rule, and
+position the card 240px from the left and 120px from the top of the
+container edge.</li>
+<li>Add a&nbsp;z-index&nbsp;property to
+the&nbsp;.cardTop&nbsp;and&nbsp;.cardBottom&nbsp;rules to make the
+top card appear on top. Do NOT modify any HTML.</li>
+<li>Add absolute positioning to the&nbsp;.topLeft&nbsp;selector to
+place the symbol 2px from the left and top edges of the card.</li>
+<li>Add absolute positioning to the&nbsp;.bottomRight&nbsp;selector
+to place the symbol 2px from the right and bottom edges of the
+card.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Here is the code that needs the solution:</strong></p>
+<p>&lt;!DOCTYPE HTML&gt;<br>
+&lt;html&gt;<br>
+&nbsp; &nbsp;&lt;title&gt;Playing cards&lt;/title&gt;<br>
+&nbsp; &nbsp;&lt;style&gt;</p>
+<p>&nbsp; &nbsp; &nbsp; .table {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;width: 400px;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;height: 300px;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/* Part of your solution goes
+here */<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+&nbsp; &nbsp; &nbsp; }</p>
+<p>&nbsp; &nbsp; &nbsp; .cardRed {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;color: red;<br>
+&nbsp; &nbsp; &nbsp; }</p>
+<p>&nbsp; &nbsp; &nbsp; .cardBlack {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;color: black;<br>
+&nbsp; &nbsp; &nbsp; }</p>
+<p>&nbsp; &nbsp; &nbsp; .card {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;background-color:
+whitesmoke;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;border: 1px solid black; &nbsp;
+&nbsp; &nbsp; &nbsp;&nbsp;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;width: 100px;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;height: 160px;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;line-height: 160px;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;text-align: center;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;font-size: 80px;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/* Part of your solution goes
+here */</p>
+<p>&nbsp; &nbsp; &nbsp; } &nbsp; &nbsp; &nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; .cardTop {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/* Part of your solution goes
+here */</p>
+<p>&nbsp; &nbsp; &nbsp; }</p>
+<p>&nbsp; &nbsp; &nbsp; .cardBottom {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/* Part of your solution goes
+here */</p>
+<p>&nbsp; &nbsp; &nbsp; }<br>
+&nbsp; &nbsp; &nbsp;&nbsp;<br>
+&nbsp; &nbsp; &nbsp; .heart {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;color: red;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;font-size: 28px;&nbsp;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;width: 30px;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;height: 30px; &nbsp;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;line-height: 30px;<br>
+&nbsp; &nbsp; &nbsp; }<br>
+&nbsp; &nbsp; &nbsp;&nbsp;<br>
+&nbsp; &nbsp; &nbsp; .spade {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;color: black;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;font-size: 36px;&nbsp;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;width: 30px;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;height: 30px; &nbsp;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;line-height: 30px;<br>
+&nbsp; &nbsp; &nbsp; }</p>
+<p>&nbsp; &nbsp; &nbsp; .topLeft {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/* Part of your solution goes
+here */</p>
+<p>&nbsp; &nbsp; &nbsp; }</p>
+<p>&nbsp; &nbsp; &nbsp; .bottomRight {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/* Part of your solution goes
+here */</p>
+<p>&nbsp; &nbsp; &nbsp; }</p>
+<p>&nbsp; &nbsp;&lt;/style&gt;</p>
+<p><br>
+&lt;body&gt;<br>
+&nbsp; &nbsp;&lt;div class="table"&gt;<br>
+&nbsp; &nbsp; &nbsp; &lt;div class="card cardTop
+cardBlack"&gt;A<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span class="spade
+topLeft"&gt;&amp;#9824;&lt;/span&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span class="spade
+bottomRight"&gt;&amp;#9824;&lt;/span&gt;<br>
+&nbsp; &nbsp; &nbsp; &lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &lt;div class="card cardBottom
+cardRed"&gt;5<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span class="heart
+topLeft"&gt;&amp;#10084;&lt;/span&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span class="heart
+bottomRight"&gt;&amp;#10084;&lt;/span&gt;<br>
+&nbsp; &nbsp; &nbsp; &lt;/div&gt;<br>
+&nbsp; &nbsp;&lt;/div&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>&lt;!DOCTYPE&nbsp;HTML&gt;</p> <p>&lt;html&gt;</p> <p>&lt;title&gt;Playing&nbsp;cards&lt;/title&gt;</p> <p>&lt;style&gt;</p> <p>&nbsp;</p> <p>.table&nbsp;{</p> <p>width:&nbsp;400px;</p> <p>height:&nbsp;300px;</p> <p>&nbsp;</p> <p>/*&nbsp;Part&nbsp;of&nbsp;your&nbsp;solution&nbsp;goes&nbsp;here&nbsp;*/</p> <p>background-image:&nbsp;linear-gradient(forestgreen,darkgreen)</p> <p>&nbsp;</p> <p>}</p> <p>&nbsp;</p> <p>.cardRed&nbsp;{</p> <p>color:&nbsp;red;</p> <p>}</p> <p>&nbsp;</p> <p>.cardBlack&nbsp;{</p> <p>color:&nbsp;black;</p> <p>}</p> <p>&nbsp;</p> <p>.card&nbsp;{</p> <p>background-color:&nbsp;whitesmoke;</p> <p>border:&nbsp;1px&nbsp;solid&nbsp;black;&nbsp;&nbsp;&nbsp;</p> <p>width:&nbsp;100px;</p> <p>height:&nbsp;160px;</p> <p>line-height:&nbsp;160px;</p> <p>text-align:&nbsp;center;</p> <p>font-size:&nbsp;80px;</p> <p>&nbsp;</p> <p>/*&nbsp;Part&nbsp;of&nbsp;your&nbsp;solution&nbsp;goes&nbsp;here&nbsp;*/</p> <p>border-radius:&nbsp;5px;</p> <p>box-shadow:&nbsp;3px&nbsp;3px&nbsp;black;</p> <p>}</p> <p>&nbsp;</p> <p>.cardTop&nbsp;{</p> <p>/*&nbsp;Part&nbsp;of&nbsp;your&nbsp;solution&nbsp;goes&nbsp;here&nbsp;*/</p> <p>position:&nbsp;absolute;</p> <p>left:&nbsp;150px;</p> <p>top:&nbsp;100px;</p> <p>z-index:1;</p> <p>}</p> <p>&nbsp;</p> <p>.cardBottom&nbsp;{</p> <p>/*&nbsp;Part&nbsp;of&nbsp;your&nbsp;solution&nbsp;goes&nbsp;here&nbsp;*/</p> <p>position:&nbsp;absolute;</p> <p>left:&nbsp;240px;</p> <p>top:&nbsp;120px;</p> <p>z-index:initial;</p> <p>}</p> <p>&nbsp;&nbsp;</p> <p>.heart&nbsp;{</p> <p>color:&nbsp;red;</p> <p>font-size:&nbsp;28px;</p> <p>width:&nbsp;30px;</p> <p>height:&nbsp;30px;</p> <p>line-height:&nbsp;30px;</p> <p>}</p> <p>&nbsp;&nbsp;</p> <p>.spade&nbsp;{</p> <p>color:&nbsp;black;</p> <p>font-size:&nbsp;36px;</p> <p>width:&nbsp;30px;</p> <p>height:&nbsp;30px;</p> <p>line-height:&nbsp;30px;</p> <p>}</p> <p>&nbsp;</p> <p>.topLeft&nbsp;{</p> <p>/*&nbsp;Part&nbsp;of&nbsp;your&nbsp;solution&nbsp;goes&nbsp;here&nbsp;*/</p> <p>position:&nbsp;absolute;</p> <p>left:&nbsp;2px;</p> <p>top:&nbsp;2px;</p> <p>&nbsp;</p> <p>}</p> <p>&nbsp;</p> <p>.bottomRight&nbsp;{</p> <p>/*&nbsp;Part&nbsp;of&nbsp;your&nbsp;solution&nbsp;goes&nbsp;here&nbsp;*/</p> <p>position:&nbsp;absolute;</p> <p>right:&nbsp;&nbsp;2px;</p> <p>bottom:&nbsp;2px;</p> <p>}</p> <p>&nbsp;</p> <p>&lt;/style&gt;</p> <p><br> &nbsp;</p> <p>&lt;body&gt;</p> <p>&lt;div&nbsp;class="table"&gt;</p> <p>&lt;div&nbsp;class="card&nbsp;cardTop&nbsp;cardBlack"&gt;A</p> <p>&lt;span&nbsp;class="spade&nbsp;topLeft"&gt;&amp;#9824;&lt;/span&gt;</p> <p>&lt;span&nbsp;class="spade&nbsp;bottomRight"&gt;&amp;#9824;&lt;/span&gt;</p> <p>&lt;/div&gt;</p> <p>&lt;div&nbsp;class="card&nbsp;cardBottom&nbsp;cardRed"&gt;5</p> <p>&lt;span&nbsp;class="heart&nbsp;topLeft"&gt;&amp;#10084;&lt;/span&gt;</p> <p>&lt;span&nbsp;class="heart&nbsp;bottomRight"&gt;&amp;#10084;&lt;/span&gt;</p> <p>&lt;/div&gt;</p> <p>&lt;/div&gt;</p> <p>&lt;/body&gt;</p> <p>&lt;/html&gt;</p> <p>&nbsp;</p> <p>output:</p> <p><img src="https://media.cheggcdn.com/coop/304/30461b6b-79a1-4cd0-b5ac-a5ca0e665ed8/1592111902452_image.png" style="height:550px;width:521px" alt="<
+Playing cards
++
+1
+1
+127.0.0.1:5500/vvv.html
+A
+u
+"></p> <p>..</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

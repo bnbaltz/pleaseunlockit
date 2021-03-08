@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>In python please and explain/use comments</p>
+<p><img alt="The requirements of the system are given below. Please ensure that your functions have the EXACT naming as specified! Failure" src="https://media.cheggcdn.com/media/9a3/9a31f206-915a-4409-9b5b-b0b98dbcab08/phpMFBCOt" style="height:500px;width:1000px;"></p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>Code Snippet for the problem with complete comments in each line.</p>
+
+<p><img alt="1
+import copy
+2
+3
+#defining the function extract_temps which take one argument temps
+def extract_temps (temps):
+4.
+5
+6
+7
+8
+9
+" src="https://media.cheggcdn.com/coop/14a/14adf780-dc8d-420c-905c-b35ee92bfb25/1614704107934_image.png" style="height:875px;width:982px"></p>
+
+<p>&nbsp;</p>
+
+<p><img alt="40
+41
+42
+43
+#defining calculate_median function which takes one argument
+def calculate_median(nums):
+44
+45
+46
+47
+48
+if len(nu" src="https://media.cheggcdn.com/coop/682/682bc023-6622-43ed-bc28-5746f42c9a09/1614704147482_image.png" style="height:876px;width:958px"></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>Output:</p>
+
+<p><img alt="Given Temps: [5, , 5.5, 6.2, 4.5, N/A, Not Recorded, 5.67]
+Median: 5.5
+Given Temps: [5, N/A, 5]
+Median:" src="https://media.cheggcdn.com/coop/54d/54dd518b-70cf-4f42-a073-f325ac340e9d/1614704346121_image.png" style="height:236px;width:734px"></p>
+
+<p>&nbsp;</p>
+
+<p>Code :</p>
+
+<pre>
+<code class="language-python">import copy
+
+#defining the function extract_temps which take one argument temps
+def extract_temps(temps):
+
+    #we will use try catch block here so that if there occurs
+    #some error the it will ignore it
+    new = []
+    #converting the items in temps from string to float
+    for i in range(len(temps)):
+        try:
+            new.append(float(temps[i]))
+        except:
+            pass
+
+    return new
+
+#defining selection_sort function which takes one argument
+def selection_sort(nums):
+    #first let's create a copy for nums
+    arr = copy.copy(nums)
+
+    #applying selection sort to the array to sort it
+    # Traverse through all array elements
+    for i in range(len(arr)):
+
+        # Find the minimum element in remaining
+        # unsorted array
+        min_index = i
+        for j in range(i+1, len(arr)):
+            if arr[min_index] &gt; arr[j]:
+                min_index = j
+
+        # Swap the found minimum element with
+        # the first element
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+
+    return arr
+
+#defining calculate_median function which takes one argument
+def calculate_median(nums):
+
+    if len(nums) &lt;= 0:
+        return
+    #for finding the median first check if the lenght of nums
+    #is odd or even
+    if len(nums)%2 == 0:
+        #then the median will be average of two mid elements
+        n = len(nums)//2  #integer division
+        median = (nums[n]+nums[n-1])/2
+    else:
+        #if the length is odd
+        n = len(nums)//2  #integer division
+        median = nums[n]
+
+
+    return median
+
+#defining main function which takes one argument
+def main(temp_data):
+
+    #to find the median first we will call the function extract_temps
+    #to convert the string of integer to float
+    try:
+        nums = extract_temps(temp_data)
+        if len(nums) == 0:
+            fail
+        #then we will call the function to sort it
+        arr = selection_sort(nums)
+        #calculate the median from the array
+        median = calculate_median(arr)
+        #return the median
+        return median
+    except:
+        #if any error occurs
+        print("Median cannot be found")
+
+
+#driver code
+
+temps = ["5","","5.5","6.2","4.5","N/A","Not Recorded","5.67"]
+print("Given Temps:",temps)
+if main(temps) is not None:
+    print("Median:",main(temps))
+print("-----")
+temps = ["5","N/A","5"]
+print("Given Temps:",temps)
+if main(temps) is not None:
+    print("Median:",main(temps))
+print("-----")
+temps = ["-10","",""]
+print("Given Temps:",temps)
+if main(temps) is not None:
+    print("Median:",main(temps))
+print("-----")
+temps = ["","",""]
+print("Given Temps:",temps)
+if main(temps) is not None:
+    print("Median:",main(temps))
+</code></pre>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>If you have any doubt regarding the solution the ask in the comment box I will always be there to answer you.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

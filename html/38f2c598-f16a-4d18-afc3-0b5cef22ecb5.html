@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>The RMC Corporation blends three raw materials to produce two
+products: a fuel additive and a solvent base. Each ton of fuel
+additive is a mixture of 2/5 ton of material 1 and 3/5 ton of
+material 3. A ton of solvent base is a mixture of 1/2 ton of
+material 1, 1/5 ton of material 2, and 3/10 ton of material 3.
+RMC’s production is constrained by a limited availability of the
+three raw materials. For the current production period, RMC has the
+following quantities of each raw material: material 1, 20 tons;
+material 2, 5 tons; material 3, 21 tons. Management wants to
+achieve the following P<sub>1</sub> priority level goals:</p>
+<p>Goal 1: Produce at least 30 tons of fuel additive.</p>
+<p>Goal 2: Produce at least 15 tons of solvent base.</p>
+<p>Assume there are no other goals.</p>
+<p>&nbsp;</p>
+<p>Is it possible for management to achieve both P<sub>1</sub>
+level goals given the constraints on the amounts of each material
+available?</p>
+<p><img alt="Raw Material Amount needed to Achieve Both P1 Goal"  src=
+"//d2vlcm61l7u1fs.cloudfront.net/media%2Fa8b%2Fa8bfb2ee-ab3f-40a1-bb0d-10a745ad7a46%2Fphpdr6ZWS.png"
+style="height:169px;width:421px;" /></p>
+<p>Treating the amounts of each material available as constraints,
+formulate a goal programming model to determine the optimal product
+mix. Assume that both P<sub>1</sub> priority level goals are
+equally important to management. If you don't need the variable in
+the model, enter "0". If you need a negative number, enter minus
+sign with it. If necessary, enter the numbers as a common
+fraction.<br />
+&nbsp;</p>
+<table>
+<tbody>
+<tr>
+<td>Let</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><em>x<sub>1</sub></em> = the number of tons of fuel additive
+produced</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><em>x<sub>2</sub></em> = the number of tons of solvent base
+produced</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><em>d<sub>1</sub><sup>+</sup></em> = the amount by which the
+number of tons of fuel additive produced exceeds the target value
+of 30 tons</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><em>d<sub>1</sub><sup>-</sup></em> = the amount by which the
+number of tons of fuel additive produced is less than the target of
+30 tons</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><em>d<sub>2</sub><sup>+</sup></em> = the amount by which the
+number of tons of solvent base produced exceeds the target value of
+15 tons</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>
+<p><em>d<sub>2</sub><sup>-</sup></em> = the amount by which the
+number of tons of solvent base is less than the target value of 15
+tons</p>
+<p><img alt="" src=
+"//d2vlcm61l7u1fs.cloudfront.net/media%2F210%2F21032cbb-97ba-4d1e-9cc0-0f62cceb7429%2FphpJT0Zk9.png"
+style="height:256px;width:924px;" /><img alt="" src=
+"//d2vlcm61l7u1fs.cloudfront.net/media%2F55f%2F55f5fa5c-269c-4935-b3bc-3f427ced6ac6%2FphpaEutac.png"
+style="height:454px;width:848px;" /><img alt="" src=
+"//d2vlcm61l7u1fs.cloudfront.net/media%2Fa17%2Fa1706294-bd3d-4a5f-ab6a-c4a6c454e3d4%2FphpnoiGLX.png"
+style="height:463px;width:835px;" /><img alt="" src=
+"//d2vlcm61l7u1fs.cloudfront.net/media%2Fe34%2Fe347eeb3-f6b9-4e41-a56c-59beeedf6477%2Fphpbni0Wk.png"
+style="height:438px;width:840px;" /><img alt="" src=
+"//d2vlcm61l7u1fs.cloudfront.net/media%2F17b%2F17b7e43d-4d4a-4114-b30e-099a159f9ce2%2Fphp75MJBI.png"
+style="height:458px;width:827px;" /></p>
+</td>
+</tr>
+</tbody>
+</table>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>The Given data is tabulated as follows:</p>
+<table border="1" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="height:18px;width:145px;">
+<p>Resources</p>
+</td>
+<td colspan="2" style="height:18px;width:274px;">
+<p>Requirement of each resource per ton</p>
+</td>
+<td rowspan="2" style="height:18px;width:110px;">
+<p>Available</p>
+</td>
+</tr>
+<tr>
+<td style="height:18px;width:145px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:18px;width:137px;">
+<p>Fuel Additive</p>
+</td>
+<td style="height:18px;width:137px;">
+<p>Solvent Base</p>
+</td>
+</tr>
+<tr>
+<td style="height:18px;width:145px;">
+<p>RM 1 (in ton)</p>
+</td>
+<td style="height:18px;width:137px;">
+<p>2/5</p>
+</td>
+<td style="height:18px;width:137px;">
+<p>1/2</p>
+</td>
+<td style="height:18px;width:110px;">
+<p>20</p>
+</td>
+</tr>
+<tr>
+<td style="height:18px;width:145px;">
+<p>RM 2 (in ton)</p>
+</td>
+<td style="height:18px;width:137px;">
+<p>0</p>
+</td>
+<td style="height:18px;width:137px;">
+<p>1/5</p>
+</td>
+<td style="height:18px;width:110px;">
+<p>5</p>
+</td>
+</tr>
+<tr>
+<td style="height:18px;width:145px;">
+<p>RM 3 (in ton)</p>
+</td>
+<td style="height:18px;width:137px;">
+<p>3/5</p>
+</td>
+<td style="height:18px;width:137px;">
+<p>3/10</p>
+</td>
+<td style="height:18px;width:110px;">
+<p>21</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>a.</p>
+<table border="1" cellpadding="0" cellspacing="0" style=
+"width:758px;">
+<tbody>
+<tr>
+<td style="width:115px;">&nbsp;</td>
+<td style="width:293px;">
+<p>Amount needed to produce x<sub>1</sub> = 30 and x<sub>2</sub> =
+15</p>
+</td>
+<td rowspan="2" style="width:123px;">
+<p>Available amount</p>
+</td>
+<td rowspan="2" style="width:227px;">
+<p>Comment</p>
+</td>
+</tr>
+<tr>
+<td style="width:115px;">
+<p>Raw Material</p>
+</td>
+<td style="width:293px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="width:115px;">
+<p>1</p>
+</td>
+<td style="width:293px;">
+<p>&nbsp;(2/5)(30) + (1/2)(15)</p>
+<p>&nbsp;= 12 + 7.5= <strong>19.5</strong></p>
+</td>
+<td style="width:123px;">
+<p>20</p>
+</td>
+<td style="width:227px;">
+<p>Requirement &lt;Available</p>
+</td>
+</tr>
+<tr>
+<td style="width:115px;">
+<p>2</p>
+</td>
+<td style="width:293px;">
+<p>&nbsp;(0)(30) + (1/5)(15) = 3</p>
+</td>
+<td style="width:123px;">
+<p>5</p>
+</td>
+<td style="width:227px;">
+<p>Requirement &lt;Available</p>
+</td>
+</tr>
+<tr>
+<td style="width:115px;">
+<p>3</p>
+</td>
+<td style="width:293px;">
+<p>&nbsp;(3/5)(30) + (3/10)(15) = 18 +4.5 =
+<strong>22.5</strong></p>
+</td>
+<td style="width:123px;">
+<p>21</p>
+</td>
+<td style="width:227px;">
+<p>Requirement &gt;Available</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>To satisfy both the goals, raw material 3 required is 22.5
+units, but available is only 21 units, thus it is not possible to
+achieve both goals. Any of the goal will be underachieved.<br />
+&nbsp;</p>
+<p>b.</p>
+<table border="1" cellpadding="0" cellspacing="0" style=
+"width:698px;">
+<tbody>
+<tr>
+<td style="height:25px;width:39px;">
+<p>Min</p>
+</td>
+<td style="height:25px;width:90px;">
+<p><em>__1__d<sub>1</sub><sup>-</sup></em></p>
+</td>
+<td style="height:25px;width:30px;">
+<p>+</p>
+</td>
+<td style="height:25px;width:82px;">
+<p><em>__1__d<sub>2</sub><sup>-</sup></em></p>
+</td>
+<td style="height:25px;width:22px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:25px;width:83px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:25px;width:24px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:25px;width:79px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:25px;width:38px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:25px;width:63px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:25px;width:149px;">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td style="height:20px;width:39px;">
+<p>s.t.</p>
+</td>
+<td style="height:20px;width:90px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:20px;width:30px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:20px;width:82px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:20px;width:22px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:20px;width:83px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:20px;width:24px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:20px;width:79px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:20px;width:38px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:20px;width:63px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:20px;width:149px;">
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td style="height:24px;width:39px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:24px;width:90px;">
+<p><em>__2/5__x<sub>1</sub></em></p>
+</td>
+<td style="height:24px;width:30px;">
+<p>+</p>
+</td>
+<td style="height:24px;width:82px;">
+<p><em>_1/2__x<sub>2</sub></em></p>
+</td>
+<td style="height:24px;width:22px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:24px;width:83px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:24px;width:24px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:24px;width:79px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:24px;width:38px;">
+<p>≤</p>
+</td>
+<td style="height:24px;width:63px;">
+<p>20</p>
+</td>
+<td style="height:24px;width:149px;">
+<p>_____Material 1</p>
+</td>
+</tr>
+<tr>
+<td style="height:24px;width:39px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:24px;width:90px;">
+<p><em>_0__x<sub>1</sub></em></p>
+</td>
+<td style="height:24px;width:30px;">
+<p>+</p>
+</td>
+<td style="height:24px;width:82px;">
+<p><em>_1/5___x<sub>2</sub></em></p>
+</td>
+<td style="height:24px;width:22px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:24px;width:83px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:24px;width:24px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:24px;width:79px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:24px;width:38px;">
+<p>≤</p>
+</td>
+<td style="height:24px;width:63px;">
+<p>5</p>
+</td>
+<td style="height:24px;width:149px;">
+<p>______Material 2</p>
+</td>
+</tr>
+<tr>
+<td style="height:24px;width:39px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:24px;width:90px;">
+<p><em>__3/5__x<sub>1</sub></em></p>
+</td>
+<td style="height:24px;width:30px;">
+<p>+</p>
+</td>
+<td style="height:24px;width:82px;">
+<p><em>__3/10__x<sub>2</sub></em></p>
+</td>
+<td style="height:24px;width:22px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:24px;width:83px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:24px;width:24px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:24px;width:79px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:24px;width:38px;">
+<p>≤</p>
+</td>
+<td style="height:24px;width:63px;">
+<p>21</p>
+</td>
+<td style="height:24px;width:149px;">
+<p>_____Material 3</p>
+</td>
+</tr>
+<tr>
+<td style="height:25px;width:39px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:25px;width:90px;">
+<p><em>__1__x<sub>1</sub></em></p>
+</td>
+<td style="height:25px;width:30px;">
+<p>+</p>
+</td>
+<td style="height:25px;width:82px;">
+<p><em>__0__x<sub>2</sub></em></p>
+</td>
+<td style="height:25px;width:22px;">
+<p>+</p>
+</td>
+<td style="height:25px;width:83px;">
+<p><em>__</em>−<em>1__d<sub>1</sub><sup>+</sup></em></p>
+</td>
+<td style="height:25px;width:24px;">
+<p>+</p>
+</td>
+<td style="height:25px;width:79px;">
+<p><em>&nbsp;__1__d<sub>1</sub><sup>-</sup></em></p>
+</td>
+<td style="height:25px;width:38px;">
+<p>=</p>
+</td>
+<td style="height:25px;width:63px;">
+<p>30</p>
+</td>
+<td style="height:25px;width:149px;">
+<p>______Goal 1</p>
+</td>
+</tr>
+<tr>
+<td style="height:27px;width:39px;">
+<p>&nbsp;</p>
+</td>
+<td style="height:27px;width:90px;">
+<p><em>__0__x<sub>1</sub></em></p>
+</td>
+<td style="height:27px;width:30px;">
+<p>+</p>
+</td>
+<td style="height:27px;width:82px;">
+<p><em>__1___x<sub>2</sub></em></p>
+</td>
+<td style="height:27px;width:22px;">
+<p>+</p>
+</td>
+<td style="height:27px;width:83px;">
+<p><em>___−1__d<sub>2</sub><sup>+</sup></em></p>
+</td>
+<td style="height:27px;width:24px;">
+<p>+</p>
+</td>
+<td style="height:27px;width:79px;">
+<p><em>&nbsp;__1__d<sub>2</sub><sup>-</sup></em></p>
+</td>
+<td style="height:27px;width:38px;">
+<p>=</p>
+</td>
+<td style="height:27px;width:63px;">
+<p>15</p>
+</td>
+<td style="height:27px;width:149px;">
+<p>_______Goal 2</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>c.</p>
+<p>&nbsp;</p>
+<table border="1" cellpadding="0" cellspacing="0" style=
+"width:606px;">
+<tbody>
+<tr>
+<td style="height:20px;width:67px;">
+<p>Graph</p>
+</td>
+<td style="height:20px;width:104px;">
+<p>Extreme point</p>
+</td>
+<td style="height:20px;width:152px;">
+<p><em>d<sub>1</sub><sup>-</sup></em></p>
+</td>
+<td style="height:20px;width:113px;">
+<p><em>d<sub>2</sub><sup>-</sup></em></p>
+</td>
+<td style="height:20px;width:170px;">
+<p>Objective function Value</p>
+<p>Z = <em>d<sub>1</sub><sup>-</sup> +
+d<sub>2</sub><sup>-</sup></em></p>
+</td>
+</tr>
+<tr>
+<td style="height:20px;width:67px;">
+<p>i</p>
+</td>
+<td style="height:20px;width:104px;">
+<p>(18.75, 25)</p>
+</td>
+<td style="height:20px;width:152px;">
+<p>30 – 17.75 = 11.25</p>
+</td>
+<td style="height:20px;width:113px;">
+<p>0</p>
+</td>
+<td style="height:20px;width:170px;">
+<p>11.25</p>
+</td>
+</tr>
+<tr>
+<td style="height:20px;width:67px;">
+<p>ii</p>
+</td>
+<td style="height:20px;width:104px;">
+<p>(30, 10)</p>
+</td>
+<td style="height:20px;width:152px;">
+<p>30-30 = 0</p>
+</td>
+<td style="height:20px;width:113px;">
+<p>15 – 10 = 5</p>
+</td>
+<td style="height:20px;width:170px;">
+<p>5</p>
+</td>
+</tr>
+<tr>
+<td style="height:20px;width:67px;">
+<p>iii</p>
+</td>
+<td style="height:20px;width:104px;">
+<p>(27.5, 15)</p>
+</td>
+<td style="height:20px;width:152px;">
+<p>30-27.5 = 2.5</p>
+</td>
+<td style="height:20px;width:113px;">
+<p>15-15 = 0</p>
+</td>
+<td style="height:20px;width:170px;">
+<p>2.5</p>
+</td>
+</tr>
+<tr>
+<td style="height:20px;width:67px;">
+<p>iv</p>
+</td>
+<td style="height:20px;width:104px;">
+<p>(25, 20)</p>
+</td>
+<td style="height:20px;width:152px;">
+<p>5</p>
+</td>
+<td style="height:20px;width:113px;">
+<p>0</p>
+</td>
+<td style="height:20px;width:170px;">
+<p>5</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>At the point (27.5, 15) the objective function value is
+minimum.</p>
+<p>The objective function is minimum at point (27.5, 15), graph
+(iii) is correct graph, optimal product mix is:</p>
+<p>fuel additive = 27.5 tons</p>
+<p>solvent base = 15 tons</p>
+<p>&nbsp;</p>
+<p><strong>Correct Option: Graph (iii)</strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>d.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>If the goal 1 is twice important a goal 2, new objective
+function is Min: P<sub>1</sub><em>d<sub>1</sub><sup>-</sup> +
+P<sub>2</sub>d<sub>2</sub><sup>-</sup></em></p>
+<p>P<sub>1</sub> = first priority to achieve at least 30 units of
+x<sub>1</sub></p>
+<p>P<sub>2</sub> = second priority to achieve at least 15 units of
+x<sub>2</sub></p>
+<p>&nbsp;</p>
+<p>First identify point at which
+<em>d<sub>1</sub><sup>-</sup></em>is minimum, from four points the
+<em>d<sub>1</sub><sup>-</sup></em>is minimum at (30, 10).</p>
+<p>&nbsp;</p>
+<table border="1" cellpadding="0" cellspacing="0" style=
+"width:606px;">
+<tbody>
+<tr>
+<td style="height:20px;width:67px;">
+<p>Graph</p>
+</td>
+<td style="height:20px;width:104px;">
+<p>Extreme point</p>
+</td>
+<td style="height:20px;width:152px;">
+<p><em>d<sub>1</sub><sup>-</sup></em></p>
+</td>
+<td style="height:20px;width:113px;">
+<p><em>d<sub>2</sub><sup>-</sup></em></p>
+</td>
+<td style="height:20px;width:170px;">
+<p>Objective function Value</p>
+<p>Z = <em>d<sub>1</sub><sup>-</sup> +
+d<sub>2</sub><sup>-</sup></em></p>
+</td>
+</tr>
+<tr>
+<td style="height:20px;width:67px;">
+<p>i</p>
+</td>
+<td style="height:20px;width:104px;">
+<p>(18.75, 25)</p>
+</td>
+<td style="height:20px;width:152px;">
+<p>30 – 17.75 = 11.25</p>
+</td>
+<td style="height:20px;width:113px;">
+<p>0</p>
+</td>
+<td style="height:20px;width:170px;">
+<p>11.25</p>
+</td>
+</tr>
+<tr>
+<td style="height:20px;width:67px;">
+<p>ii</p>
+</td>
+<td style="height:20px;width:104px;">
+<p>(30, 10)</p>
+</td>
+<td style="height:20px;width:152px;">
+<p>30-30 = 0</p>
+</td>
+<td style="height:20px;width:113px;">
+<p>15 – 10 = 5</p>
+</td>
+<td style="height:20px;width:170px;">
+<p>5</p>
+</td>
+</tr>
+<tr>
+<td style="height:20px;width:67px;">
+<p>iii</p>
+</td>
+<td style="height:20px;width:104px;">
+<p>(27.5, 15)</p>
+</td>
+<td style="height:20px;width:152px;">
+<p>30-27.5 = 2.5</p>
+</td>
+<td style="height:20px;width:113px;">
+<p>15-15 = 0</p>
+</td>
+<td style="height:20px;width:170px;">
+<p>2.5</p>
+</td>
+</tr>
+<tr>
+<td style="height:20px;width:67px;">
+<p>iv</p>
+</td>
+<td style="height:20px;width:104px;">
+<p>(25, 20)</p>
+</td>
+<td style="height:20px;width:152px;">
+<p>5</p>
+</td>
+<td style="height:20px;width:113px;">
+<p>0</p>
+</td>
+<td style="height:20px;width:170px;">
+<p>5</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Thus, optimal product mix is:</p>
+<p>fuel additive = 30 tons</p>
+<p>solvent base = 10 tons</p>
+<p>&nbsp;</p>
+<p><strong>Correct Option: Graph (ii)</strong></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

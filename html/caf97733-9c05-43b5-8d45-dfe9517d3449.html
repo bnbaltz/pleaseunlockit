@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <html>
+ <head></head> 
+ <body> 
+  <p>HW3 (Graded out of 100)</p> 
+  <p style="margin-left:0px;margin-right:0px;">Write a program that performs input validation when reading grocery product records from a file. Each grocery product record consists of the following 5 items:<br> - PLU code: Product Look Up Code. Unique for each product, stored as a string.<br> - Product Name, stored as a string<br> - Product Sales Type: 0 = per unit, 1 = per pound<br> - Price per Pound or price per unit,<br> - Current Inventory Level (pounds or units).<br> Below is an example of file content. In this example, there are four records, and each line corresponds to a record.<br> A001 Apples 1 0.90 21<br> A002 Peaches 1 0.82 11<br> A006 Avocados 0 1.54 27<br> A008 Mangos 0 1.69 19<br> Your program should read a file and performs input validation on the items read, then print the outcome of the input validation:<br> File has valid content if all the data is valid<br> File has invalid content otherwise, along with the reason.</p> 
+  <p style="margin-left:0px;margin-right:0px;">To contain valid data, the file must have only valid records. A record is valid if<br> • It has exactly 5 items on the same line<br> • The first item should be a PLU. It is valid if and only if it contains only letters or digits, and is 4 characters long<br> • The second item should be product name. It is valid if and only if the first character is a letter<br> • The third item should be a sales type. It is valid if and only if it is only one character, and the character is a 1 or a 0<br> • The fourth item should be a unit price. It is valid if and only if it contains only digits and at most one dot. If there is a dot, there are at most two digits after the dot<br> • The fifth item should be the inventory level. It is valid if and only if it contains only digits<br> In order to validate the individual items, each line has first to be broken into tokens, where a token is a string that corresponds to an item. The tokens are separated by one or more delimiters, where a delimiter is a space, a tab, a new line or a carriage return. To take the line<br> A001 Apples 1 0.90 21<br> as an example, the first token would be A001, the second token would be Apples, and so on. You may assume each line contains at most only one record.</p> 
+  <p>1. Additional Requirements – Make sure you meet all the requirements to avoid losing points</p> 
+  <p>a) Functions</p> 
+  <p style="margin-left:0px;margin-right:0px;">You are required to implement your program with these functions. You may implement more functions to make your program more modular if you wish.</p> 
+  <pre>
+/* Returns true if the string is a valid PLU, false otherwise 
+*/
+bool isValidPLU(string); 
+
+/* Returns true if the string is a valid product name, false otherwise 
+*/
+bool isValidName(string);
+
+/* Returns true if the string is a valid sales type, false otherwise 
+*/
+bool isValidType(string); 
+
+/* Returns true if the string is a valid price, false otherwise 
+*/
+bool isValidPrice(string); 
+
+/* Returns true if the string is a valid inventory level, false otherwise 
+*/
+bool isValidInventory(string); 
+
+/* Takes as reference parameter a string to be tokenized and returns the first token found
+Returns the empty string if no token is found
+The function deletes any leading delimiter and the first token found from the original string
+Tokenization is based on a delimiter, where a delimiter is the '        ' (tab) , '  ' (space), ‘
+’ (new line) or ‘
+’ (carriage return)  character  
+Example: if the string s  is "   abcd            345     ^7$ ", the function returns "abcd" as the first token found, and modifies
+the string s to become "                 345     ^7$ " 
+*/ 
+string tokenize(string &amp;); 
+</pre> 
+  <p>b) Outline of main</p> 
+  <pre>
+Prompt the user to enter a file name
+Read from the file and repeatedly call tokenize to extract the items
+Print the item and perform the appropriate validation. For example, for the first token which should be the PLU, perform PLU validation. For the second token, perform name validation, etc. Print the result of the validation. If an item is invalid, determine that the file is invalid and close the file.
+Check every line has the correct number of items. if the number of items is not 5, print an error message, determine that the file is invalid and close the file.
+If all validations are successful, the file is determined to be valid.
+Print a message to indicate if the file is valid or invalid.
+</pre> 
+  <p>c) Style</p> 
+  <p style="margin-left:0px;margin-right:0px;">Make sure you follow the style requirements, especially regarding the comment header for functions, to avoid losing points.</p> 
+  <p>2. Implementation Suggestions - You are not required to implement the suggestions</p> 
+  <p style="margin-left:0px;margin-right:0px;">You are allowed to use any of the existing library functions in chapter 10 of the Gaddis textbook.</p> 
+  <p>a) bool isFileValid(string file)</p> 
+  <pre>
+Open file // Check that open is successful  
+Read line by line. For each line:  
+     Repeatedly call tokenize to extract the items  
+     Print the item and perform the appropriate validation. Print the result of the validation. If an item is invalid, close the file and return false.  
+     Check the line has the correct number of items. if the number of items is not 5, print an error message, close the file and return false  
+At end of file, close the file and return true  
+</pre> 
+  <p style="margin-left:0px;margin-right:0px;">Notes:<br> To read line by line, you can use getline(inFile, stringRead)<br> Detect end of file when getline returns an empty string</p> 
+  <p>b) string tokenize(string &amp; s)</p> 
+  <pre>
+Loop over the characters of s as long as they are a delimiter and the end of s is not reached // Remove any leading delimiter(s)  
+Loop over the remaining characters as long as they are not a delimiter and the end of s is not reached // Extract the first token found
+    store the characters into token  
+Delete the first n characters from s  // n is the number of characters looped over in the two above loops  
+Return token  
+</pre> 
+  <p>2. Grading criteria</p> 
+  <ul> 
+   <li>Source code inspection (grader)<br> *Style: 5 points (refer to the “Homework Notes” for the style requirements)</li> 
+   <li>Code compilation and execution (zylabs)<br> *Output test-1 – Valid file – Output exactly matches output-1: 9 points<br> *Output test-2 – File with invalid PLU – Output exactly matches output-2: 9 points<br> *Output test-3 – File with invalid product name – Output exactly matches output-3: 9 points<br> *Output test-4 – File with invalid sales type – Output exactly matches output-4: 9 points<br> *Output test-5 – File with invalid price – Output exactly matches output-5: 9 points<br> *Output test-6 – File with invalid inventory – Output exactly matches output-6: 9 points<br> *Output test-7 – File with excessive number of items – Output exactly matches output-7: 9 points<br> *Output test-8 – File with insufficient number of items – Output exactly matches output-8: 9 points<br> *Output test-9 – File with invalid price – Output exactly matches output-9: 9 points<br> *Unit test-1 – tokenize: 9 points<br> *Unit test-2 – isValidPrice: 5 points</li> 
+  </ul> 
+  <p><strong>***My program has to have 9 outputs and each output is supposed to be different. in the picture is all the outputs. I need to make a code where for example if I type "in0.txt" in the "enter input file:" it should show me the expected output for in0.txt it shouldn't show me extra stuff. same goes for the rest of the outputs.</strong></p> 
+  <p>input files:</p> 
+  <p style="margin-left:0px;margin-right:0px;"> <strong>in.txt:</strong></p> 
+  <p style="margin-left:0px;margin-right:0px;">A001 Apples 1 &nbsp;&nbsp; 0.90 21 &nbsp;&nbsp;<br> A002 Peaches 1 0.82 11&nbsp;&nbsp;<br> A009 Strawberries_Case 0 12.50 8<br> 4261 Rice_1_LB_Bag 0 0.49 107</p> 
+  <p style="margin-left:0px;margin-right:0px;"> <strong>in0.txt</strong></p> 
+  <p style="margin-left:0px;margin-right:0px;">A001 Apples 1 0.90 21 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<br> A00% Peaches 1 0.82 11<br> A009 Strawberries_Case 0 12.50 8<br> 4261 Rice_1_LB_Bag 0 0.49 107</p> 
+  <p style="margin-left:0px;margin-right:0px;"> <strong>in1.txt</strong></p> 
+  <p style="margin-left:0px;margin-right:0px;">A001 Apples &nbsp;&nbsp; 1 0.90 &nbsp;&nbsp;&nbsp; 21<br> A002 [eaches 2 0.82 11<br> A009 Strawberries_Case 0 12.50 8<br> 4261 Rice_1_LB_Bag 0 0.49 107</p> 
+  <p style="margin-left:0px;margin-right:0px;"> <strong>in2.txt</strong></p> 
+  <p style="margin-left:0px;margin-right:0px;"> <strong>&nbsp;&nbsp;</strong> A001 Apples 1 0.90 &nbsp;&nbsp; 21<br> A002 Peaches 11 0.82 11<br> A009 Strawberries_Case 0 12.50 8<br> 4261 Rice_1_LB_Bag 0 0.49 107</p> 
+  <p style="margin-left:0px;margin-right:0px;"> <strong>in3.txt</strong></p> 
+  <p style="margin-left:0px;margin-right:0px;">A001 Apples 1 -0.90 21<br> A002 Peaches 1 0.823 11<br> A009 Strawberries_Case 0 12.50 8<br> 4261 Rice_1_LB_Bag 0 0.49 107</p> 
+  <p style="margin-left:0px;margin-right:0px;"> <strong>in4.txt</strong></p> 
+  <p style="margin-left:0px;margin-right:0px;">A001 Apples 1 0.90 21<br> A002 Peaches 1 &nbsp;&nbsp; 0.82 11.<br> A009 Strawberries_Case 0 12.50 8<br> 4261 Rice_1_LB_Bag 0 0.49 107</p> 
+  <p style="margin-left:0px;margin-right:0px;"> <strong>in5.txt</strong></p> 
+  <p style="margin-left:0px;margin-right:0px;">A001 Apples 1 0.90 21<br> A002 &nbsp;&nbsp; Peaches 1 0.82 11 &amp;^ &nbsp;&nbsp;&nbsp;<br> A009 Strawberries_Case 0 12.50 8<br> 4261 Rice_1_LB_Bag 0 0.49 107</p> 
+  <p style="margin-left:0px;margin-right:0px;"> <strong>in6.txt</strong></p> 
+  <p style="margin-left:0px;margin-right:0px;">A001 Apples 1 0.90&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<br> A002 Peaches 1 0.82 11<br> A009 Strawberries_Case 0 12.50 8<br> 4261 Rice_1_LB_Bag 0 0.49 107</p> 
+  <p style="margin-left:0px;margin-right:0px;"> <strong>in7.txt</strong></p> 
+  <p style="margin-left:0px;margin-right:0px;">A001 Apples 1 &nbsp;&nbsp; 0.907 21 &nbsp;&nbsp;<br> A002 Peaches 1 0.825 11&nbsp;&nbsp;<br> A009 Strawberries_Case 0 12.50 8<br> 4261 Rice_1_LB_Bag 0 0.49 107</p> 
+  <p style="margin-left:0px;margin-right:0px;">-First picture is output 1 and it goes all the way to output 9. In the pictures it tells you which output each one is if you look under the expected outputs. like for example the first picture it says right underneath the expected out "Output-1". That's how you know which output you are looking at.</p> 
+  <p><img alt="y 23. HW
+My Grades-MATH 241870
+C HW3 (Graded Out of 10)
+Get Hamework Help with
+indude indude vinclude
+einclude include eincl" src="https://media.cheggcdn.com/media%2F4ad%2F4adf9048-06af-41e0-a8f1-b8cd2da0541d%2FphpSHRINN.png" style="height:576px;width:1024px;"><img alt="Enter input file:ind.txt
+checking ind.txt
+Token #1 İ8 A001, PLU İ8 valid
+tokan #2 is Apple, Product nana is valid
+Token #3 İ8" src="https://media.cheggcdn.com/media%2F119%2F1194c363-9c3c-494a-9faf-4c365f7be41f%2FphpA1XXti.png" style="height:576px;width:1024px;"><img alt="nt。r input tiLe:in2.txt
+Chacking in2.txt
+Zoken 11 is 001, PLU is valid
+Tokan 12 is Applos, Droduct name is valid
+zoken 13 is " src="https://media.cheggcdn.com/media%2F373%2F373743c8-6587-4bd6-b672-cb091dd0e279%2FphpCI489b.png" style="height:576px;width:1024px;"><img alt="Enter input file:in4.txt
+Checking in4.txt
+Token #1 is A001, PLU įs valid
+Token #2 is Apples, Product name is valid
+To kon #3 " src="https://media.cheggcdn.com/media%2Fd95%2Fd95e2010-cd63-4538-8a58-1887c067532e%2FphptuQNCA.png" style="height:576px;width:1024px;"><img alt="" src="https://media.cheggcdn.com/media%2F2c7%2F2c78d0ec-27a3-4443-a0dd-255e9b82971a%2FphptUzaBJ.png" style="height:576px;width:1024px;"><img alt="Enter input filc:in7.txt
+Checking in7.txt
+Token 1 is A001, PLU is valid
+Token #2 18 Apples, Product name i8 valid
+Token 륫3 ǐ”" src="https://media.cheggcdn.com/media%2F79b%2F79b19973-d09d-47e6-847d-4764e25ea728%2FphpqIjM0j.png" style="height:576px;width:1024px;"></p>  
+ </body>
+</html>
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <html>
+ <head></head>
+ <body>
+  <pre>
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;sstream&gt;
+#include &lt;bits/stdc++.h&gt;
+#include &lt;string&gt;
+#include &lt;cstdlib&gt;
+using namespace std;
+
+bool isFileValid(string);
+bool isValidPLU(string);
+bool isValidName(string);
+bool isValidType(string);
+bool isValidPrice(string);
+bool isValidInventory(string);
+string tokenize(string &amp;);
+int getWordsCount(string);
+
+int main() {
+
+    string fName;
+    cout &lt;&lt; "Enter input file: ";
+    cin &gt;&gt; fName;
+
+    cout &lt;&lt; "***Checking " &lt;&lt; fName &lt;&lt; "***" &lt;&lt; endl;
+
+    if (isFileValid(fName))
+        cout &lt;&lt; endl &lt;&lt; "######## " &lt;&lt; fName &lt;&lt; " has valid content ########" &lt;&lt; endl;
+    else
+        cout &lt;&lt; endl &lt;&lt; "######## " &lt;&lt; fName &lt;&lt; " has invalid content ########" &lt;&lt; endl;
+
+    return 0;
+}
+
+bool isFileValid(string fName) {
+
+    ifstream myfile(fName.c_str());
+
+    string line;
+    string token;
+
+    if (myfile.is_open()) {
+
+        while (getline(myfile, line)) {
+            cout &lt;&lt; endl;
+
+            int i = 1;
+            int c = getWordsCount(line);
+
+            while (line.length() != 0 &amp;&amp; i &lt; c+2) {
+                token = tokenize(line);
+
+                if (i == 1) {
+                    if (isValidPLU(token)) {
+                    cout &lt;&lt; "Token #1 is " &lt;&lt; token &lt;&lt; ", PLU is valid" &lt;&lt; endl;
+                    } else {
+                    cout &lt;&lt; "Token #1 is " &lt;&lt; token &lt;&lt; ", PLU is invalid" &lt;&lt; endl;
+                    return false;
+                    }
+
+                } else if (i == 2) {
+                    if (isValidName(token)) {
+                    cout &lt;&lt; "Token #2 is " &lt;&lt; token &lt;&lt; ", Product name is valid" &lt;&lt; endl;
+                    } else {
+                    cout &lt;&lt; "Token #2 is " &lt;&lt; token &lt;&lt; ", Product name is invalid" &lt;&lt; endl;
+                    return false;
+                    }
+
+                } else if (i == 3) {
+                    if (isValidType(token)) {
+                    cout &lt;&lt; "Token #3 is " &lt;&lt; token &lt;&lt; ", Sales type is valid" &lt;&lt; endl;
+                    } else {
+                    cout &lt;&lt; "Token #3 is " &lt;&lt; token &lt;&lt; ", Sales type is invalid" &lt;&lt; endl;
+                    return false;
+                    }
+
+                } else if (i == 4) {
+                    if (isValidPrice(token)) {
+                    cout &lt;&lt; "Token #4 is " &lt;&lt; token &lt;&lt; ", Price is valid" &lt;&lt; endl;
+                    } else {
+                    cout &lt;&lt; "Token #4 is " &lt;&lt; token &lt;&lt; ", Price is invalid" &lt;&lt; endl;
+                    return false;
+                    }
+
+                } else if (i == 5) {
+                    if (isValidInventory(token)) {
+                    cout &lt;&lt; "Token #5 is " &lt;&lt; token &lt;&lt; ", Inventory is valid" &lt;&lt; endl;
+                    } else {
+                    cout &lt;&lt; "Token #5 is " &lt;&lt; token &lt;&lt; ", Inventory is invalid" &lt;&lt; endl;
+                    return false;
+                    }
+
+                } else if (i == 6 &amp;&amp; !token.empty()) {
+                    cout &lt;&lt; "Token #6 is " &lt;&lt; token &lt;&lt; ", Too many items in record" &lt;&lt; endl;
+                    return false;
+                }
+
+                i++;
+            }
+        }
+    } else {
+        cout &lt;&lt; "Unable to open the file!!!" &lt;&lt; endl;
+    } 
+    return true;
+}
+
+string tokenize(string &amp;line) {
+    std::string delimiter = " ";
+    size_t pos = 0;
+    std::string token = "";
+
+    while(!line.empty() &amp;&amp; line.at(0) == ' ') {
+        line.erase(0, 1);
+    }
+
+    if ((pos = line.find(delimiter)) != std::string::npos) {
+        token = line.substr(0, pos);
+        line.erase(0, pos + delimiter.length());
+    }
+
+    if(token == "") {
+        token = line;
+        line = "";
+    }
+    return token;
+}
+
+bool isValidPLU(string str) {
+    bool st = false;
+
+    if (str.length() != 4) {
+        return false;
+    } else {
+        for (size_t i = 0; i &lt; str.length(); i++) {
+
+            char ch = str[i];
+
+            if ((ch &gt;= 'a' &amp;&amp; ch &lt;= 'z') || (ch &gt;= 'A' &amp;&amp; ch &lt;= 'Z')) {
+            st = true;
+            } else if (ch &gt;= '0' &amp;&amp; ch &lt;= '9') {
+            st = true;
+            } else {
+            return false;
+            }
+
+        }
+    }
+
+    return st;
+}
+
+bool isValidName(string str) {
+    char ch = str[0];
+
+    if ((ch &gt;= 'a' &amp;&amp; ch &lt;= 'z') || (ch &gt;= 'A' &amp;&amp; ch &lt;= 'Z'))
+        return true;
+    else
+        return false;
+}
+
+bool isValidType(string str) {
+    if (str.length() == 1 &amp;&amp; (str[0] == '0' || str[0] == '1'))
+        return true;
+    else
+        return false;
+}
+
+bool isValidPrice(string str) {
+    bool st = false;
+    int dot = 0;
+
+    for (size_t i = 0; i &lt; str.length(); i++) {
+        char ch = str[i];
+        if (ch &gt;= '0' &amp;&amp; ch &lt;= '9') {
+            st = true;
+        } else if (ch == '.') {
+            dot++;
+            if (dot &gt; 1)
+                return false;
+            else {
+                st = true;
+                string str2 = str.substr(i, str.length());
+
+                if (str2.length() &gt; 3)
+                    return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    return st;
+}
+
+bool isValidInventory(string str) {
+    bool st = true;
+
+    for (size_t i = 0; i &lt; str.length(); i++) {
+        char ch = str[i];
+        if (ch &lt; '0' || ch &gt; '9') {
+            st = false;
+        }
+    }
+
+    return st;
+}
+
+int getWordsCount(string str) {
+    std::stringstream stream(str);
+
+    int length = int(std::distance(std::istream_iterator&lt;std::string&gt;(stream), std::istream_iterator&lt;std::string&gt;()));
+
+    return length;
+}</pre> 
+  <p>&nbsp;</p> 
+  <p>&nbsp;</p> 
+  <p><img alt="Files
+main.cpp
+saved
+https //BulkyLowActivemovie.anjaligupta000.repl.run
+106 string tokenize(string &amp;line) f
+107
+108
+109
+110
+" src="https://media.cheggcdn.com/media%2F52b%2F52b18d74-a56a-4bf5-b087-681d04a168d5%2FphpGum57v.png" style="height:497px;width:1024px;"><br> Please upvote, as i have given the exact answer as asked in question. Still in case of any concerns in code, let me know in comments. Thanks!</p> 
+ </body>
+</html>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

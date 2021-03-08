@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>1) Ionization involves completely removing an electron from an
+atom. Light of a particular wavelength can cause ionization to
+occur if it has the required energy.<br />
+<span style="line-height:1.6;">The energy to ionize a certain
+element is &nbsp;&nbsp;530&nbsp;&nbsp;&nbsp;kJ/mol. What
+wavelength&nbsp;contains enough energy in a single photon to ionize
+one atom of this element?</span><br />
+<em><span style="line-height:1.6;">Enter your answer with three
+significant figures.</span></em><br />
+<br />
+<span style="line-height:1.6;">2) S</span><span style=
+"line-height:1.6;">uppose that the microwave radiation has a
+wavelength of&nbsp;12.4&nbsp;cm&nbsp;. How many photons are
+required to heat 255&nbsp;mL&nbsp;of coffee from 25.0&nbsp;∘Cto
+62.0&nbsp;∘C? Assume that the coffee has the same density,
+0.997&nbsp;g/mL&nbsp;, and specific heat capacity,
+4.184&nbsp;J/(g⋅K)&nbsp;, as water over this temperature
+range.</span><br />
+<em style="line-height:1.6;">Express the number of photons
+numerically.</em></p>
+<p><em style="line-height:1.6;">3)</em>Which of the following
+transitions in the hydrogen atom correspond to light being
+emitted?<br />
+n = 2 to n = 3<br />
+n = 4 to n = 5<br />
+n = 5 to n = 2<br />
+n = 3 to n = 1<br />
+n = 1 to n = 4</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>1) E= h x c/<img alt="\lambda" src=
+"https://latex.codecogs.com/gif.latex?%5Clambda" /></p>
+<p>h= 6.626x10<sup>-34</sup>&nbsp;J/s</p>
+<p>c= 3x10<sup>8</sup>m/s</p>
+<p><img alt="\lambda" src=
+"https://latex.codecogs.com/gif.latex?%5Clambda" />= wavelength</p>
+<p>Now, we have the energy per mol of substance. So, 1 mol are
+6.02x10<sup>23</sup>&nbsp;atoms, that means that 530 kJ of energy
+can ionize&nbsp;&nbsp;6.02x10<sup>23</sup>&nbsp;atoms, but the
+question says "to ionize 1 atom". Then, the energy will be:</p>
+<p>E= 530 kJ/mol/6.02x10<sup>23</sup>&nbsp;atoms/mol =
+8.8x10<sup>-22</sup>&nbsp;kJ/atom=&nbsp;8.8x10<sup>-19</sup>&nbsp;J/atom</p>
+<p>8.8x10<sup>-19</sup>&nbsp;J =(6.626x10<sup>-34</sup>&nbsp;J/s
+x&nbsp;3x10<sup>8</sup>m/s)/<img alt="\lambda" src=
+"https://latex.codecogs.com/gif.latex?%5Clambda" /></p>
+<p><img alt="\lambda" src=
+"https://latex.codecogs.com/gif.latex?%5Clambda" />=
+2.26x10<sup>-7</sup>m = 226 nm (i don´t know the unit that you need
+to put the answer)</p>
+<p>2) Heat needed to increase the temperature of the water:</p>
+<p>H= mass x C x DT</p>
+<p>H= (255mL x 0.997g/mL) x 4.184 J/g.K x 37K = 39357.6 J</p>
+<p>wavelength= 0.124m</p>
+<p>E= h x c/<img alt="\lambda" src=
+"https://latex.codecogs.com/gif.latex?%5Clambda" /></p>
+<p>E=&nbsp;6.626x10<sup>-34</sup>&nbsp;J/s x
+3x10<sup>8</sup>&nbsp;m/s/0.124m = 1.6x10<sup>-24</sup>&nbsp;J</p>
+<p>1.6x10<sup>-24</sup>&nbsp;J is the energy emitted by 1 photon,
+but we need&nbsp;39357.6 J to heat the water:</p>
+<p>photons needed=&nbsp;39357.6 J x
+1photon/1.6x10<sup>-24</sup>&nbsp;J =
+2.5x10<sup>28</sup>&nbsp;photons</p>
+<p>3) When the electron&nbsp;goes from a lower energy level to a
+higher one, as in n=2 to n=3 the atom needs to absorb energy. But,
+when the electron falls from a higher energy level to a lower one,
+as in n=5 to n=2 and n=3 to n=1, it emits energy in the form of
+light.</p>
+<p>&nbsp;</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div>A home security has a master switch that is used to enable analarm, lights, video cameras, and a call to local police in theeven one or more of six sets of sensors detects an intrusion. Inaddition there are separate switches to enable and disable thealarm, lights, and the call to local police. The inputs, outputs,and operation of the enabling logic are specified as follows:</div><div><strong>Inputs</strong></div><div>S<sub>i</sub>=0,1,2,3,4,5: signals from six sensor sets (0 =intrusion detected, 1 = no intrusion detected)</div><div>M: master switch (0 = security system enabled, 1 = securitysystem disabled)</div><div>A: alarm switch (0 = alarm disabled, 1 =&nbsp;alarmenabled)</div><div>L:&nbsp;light switch (0 =&nbsp;lights disabled, 1=&nbsp;lights enabled)</div><div>P:&nbsp;police switch (0 =&nbsp;police call&nbsp;disabled, 1=&nbsp;police call&nbsp;enabled)</div><div><strong>Outputs</strong></div><div>A: alarm (0 = alarm on, 1 = alarm off)</div><div>L:&nbsp;lights (0 =&nbsp;lights on, 1 =&nbsp;lights off)</div><div>V:&nbsp;video cameras&nbsp;(0 = video cameras off, 1 = videocameras on)</div><div>C:&nbsp;call to police&nbsp;(0 =&nbsp;call off, 1 =&nbsp;callon)</div><div><strong>Operation</strong><div>If one or more of the sets of sensors detects an intrusion andthe security system is enabled, then ouputs activate based on theoutputs of the remaining switches. Otherwise, all ouputs aredisabled.</div><div><br>Find a minimum-gate-input cost realization of the enabling logicusing AND and OR gates and inverters.</div></div>
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <div><img src="https://media.cheggcdn.com/study/608/60865d93-19b2-4e68-b364-d1da2847d8f1/17c82897d84ab76267fa4d556ff983ae.png"alt=""></div><div>**I know this looks a bit messy, but like I said, theconnections for A, L, and P are exactly the same type. There is alittle stem coming from A going nowhere, i don't know why that isthere, just ignore it. My camera battery is dead so i had to drawit out for you. I hope this helps.</div><div><br>&nbsp;</div><div>I am having trouble uploading pictures for you to see, i'lltry again later, but untill then, here are the logic equations thati came up with.&nbsp;</div><div>From what i understand, if the master switch is on, the alarmwill turn on if the alarm is switch is also on (M+A) and it willturn on if the master switch is off, but the alarm switch is on(MA)</div><div>This means that the lights will turn on with this equation:(M+A)(MA)</div><div>This goes for the Lights, and Calling the Police as well</div><div>So....</div><div>[(S0+S1+S2+S3+S4+S5+M)A](S0+S1+S2+S3+S4+S5+M+A) = A</div><div>Same circuit can be drawn for L (replace A for L) = C</div><div>Same circuit can be drawn for C (replace A for C) =C</div><div>(S0+S1+S2+S3+S4+S5+M) = C</div><div><br></div><div>to draw the circuit, have all of the Si&nbsp;gates go throughan OR gate, which then goes through another OR gate with M</div><div><br></div><div>then from M, one line goes streight to V</div><div>Then for A, L, and C**:</div><div>Have two lines coming from M, one line goes through an OR gatewith A, the other goes through an AND gate with A, the result ofthose to go through an AND gate. This is A.</div><div>Again the same formula goes for V and C (just put them inplace of A)</div><div><br></div><div>**If I am seeing this wrong, and the Alarm, Video, Lights, andPolice switches go off if either it's own switch or the masterswitch is one, then just change the gates to M OR A = A</div><div>M OR L = L</div><div>M OR P = C</div><div>V is still the same</div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>A soft tissue for a strain of up to 4% possesses modulus of
+E1=2.5 MPa and at higher strains E2=5 MPa. Steady state condition
+begins at the strain magnitude of 15%.</p>
+<p>&nbsp;</p>
+<p>(a) Use Excel to plot the stress-strain response of the soft
+tissue. <strong>Load</strong> the soft tissue starting at σ=0, ε=0
+and ending at σ=2.5MPa and ε=25%. The middle part of σ-ε curve can
+be interpolated. (Note: clearly describe your assumptions in your
+analysis, if there is any. Present your full analysis and
+data!).</p>
+<p>&nbsp;</p>
+<p>(b) <strong>Unload</strong> the stress-strain from σ=2.5MPa and
+ε=25% and close the loop at σ=0, ε=0. Plot the closed loop using
+Excel. Calculate the area within the hysteresis loop. What does
+this calculated area correspond to?</p>
+<p>&nbsp;</p>
+<p>(c) For the stress rate of 2MPa/sec and the strain rate of
+0.22/sec, use Excel to plot stress-time diagrams based on the
+<strong>SLS</strong>, <strong>Maxwell</strong> and
+<strong>Kelvin-Voigt</strong> models. Plot them all in a single
+diagram and discuss their differences.</p>
+<p>&nbsp;</p>
+<p>(d) For the stress rate of 2MPa/sec, and every stress increment
+of 0.5MPa, construct the&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+strain-time diagram, assuming strain rate is 0.22/sec.</p>
+<p>Use coefficients of A, B, and μ as given below:</p>
+<p>
+<em>A=</em><em>1</em><em>τ</em><em>2</em><em>=</em><em>E</em><em>1</em><em>+</em><em>E</em><em>2</em><em>μ</em>&nbsp;
+&amp;&nbsp;&nbsp;
+<em>B</em>=<em>E</em><em>1</em><em>E</em><em>2</em><em>μ</em>&nbsp;<br />
+
+<em>μ=</em>120MPa/sec.<img src=
+"data:image/png;base64,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"
+style="height:39px;width:205px;" alt=
+"QsAWAfwjp22LqDwh0BMEiJw9MSQ1o38IEDn7Z1Nq" /><br />
+<img src=
+"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKQAAAAeCAIAAAAthiIFAAAAAXNSR0IArs4c6QAAAAlwSFlzAAAWJQAAFiUBSVIk8AAABTZJREFUaEPtWjt26jAQNVkLfkVOVmBWAGmoaNOZMjTpUqZLAyV0tKnSJF4BXkFOith74c1Htn5jY4dfOFilPJrflUZXA73tdht04zoycHMdYXZRYgY6sK9oH3Rgd2BfUQauKNTuZJ8T7GTa6/Wmyalc+Etg58li0BssciH2HL5NBwNIDY/BYJoIciRVIZKD8nLICTZESjcID2+A/YXkQCvY8sXLKojmT8NWq/YRhqfXXxjZPI4ojGieuf58xvQl/lRfMjXhitK0mlQyjohaSMr8qLM5u+B+5HmtKvtUgoKvLXJJavdT0cIaigYt5Y8gDrhEQRTFjLaAAkIkomZNmlCTl4yspQ/zG0UVdsgMfXR8cMHWysU90zBFp8d6e/Yyni8e3m+fs81m+TRRB8stVMPldrt57JvT4a0rm7yvAKvJvRYbjhHt1bt7JU6e8Uh586ggnkwaVklWHnz9SJdOEx35x1tq+9tk1X4yZwe7/7hZPg4tJBtElH2nthRhHdz9MxXxjvDxCO9xW9lo4/0J1+d9A9sswsrT76zxCkvwHFjrpgqTE5O4EDWR+dLvAjzcKoY2fi6Pe/7zhdfqbWja6P+7k/Hoe2hj7q2ysNNX3m6WRYdFAoes1JK8zlLTfxbME5OEAgu1sp9r8ikTVHu5sxr1lyebnDd95/zZZ8V1XqaqPncVGfbOfFYJEIuF63Kpaax30o21QqlVaL8UfiHWxtZp4BlvN70/8KyE4eh7vN7AnU30MF2NquCm1fHYouGgIRytggmzUCSBaaoLB2Q6nH1NmKNmn3egPLS0o8BodfesBOLAXF0EpOiETxc8wtOQePxajHmQRJMtlaJfTMZEem7OEkEjum+RLlzNdkUffDbOXNI0RzKG7xKpK8Mgb91AvbhQhRLyFrjqPTLq+kO2FRv3gzw51nKina1TRWHrwHYgKCDSAWqs68A2jzu8HebFQ7Bic9fkT8RaPR6CqHxhasWCLhsw4eEhuaXK+K+KeINqd1ARLHQz2OwOM0cbPjvfaZn4dPr2kUBNbdLZMM8xvB3ak0rlkbqE7BoO34ZL6jVgfQaqZPZs+EJNZzBfjhDu/JJ8ioxFSACD7b1biCy6hMdffso7O5lCgIC0cVNrh0QutiMHjPZsNFq1o2aV2wj6d9jm40YfXL/iYBouts36j8sNXtYE+Qwwt/iZdL8J275ukxPYHhdTWJuvVlEJvoAbjJY+SaaSKWAyz0Sk9dG2uRiXq+og1Fv5IK9dImijt2C8Xm+QohVV2Y1l55OrP1SQAwdIZ68H7ZsT2E4Rhz7HG07XM/GddfKAAgz12mqsYHo1H2V+DVVZNzn8NovrEaPdjobLx3XxgE8puGCG/dqWQTXWUCSNg9wfUjw8/Jei44QQvCGhOv6YK70JqU4g5YcTVHAILCp+s7rBYW4vUnS8fYKiO9pupq3SVpA0Yk7Ug5XpeR3fF5mO6pk3WVe8m2Lou1Y1XuV2uCJhivap9nspasWmnmYxcDmb4EO8+vcDwlG/MJDYA9iqYax+h+BcF78JSNywPY61K5CWcLvaGDBTRlKNtfd8KX9OAVWu6+XPHPhN2sCmgJawrVcDjoeEA0DXszKDpi2ZhnN2cHeaaWAtxjBjUzasvPJlr4a5Wu/VgL3a+bo9MMJXqa4O65Mk5IYv7G4cPwNS2+z4Vk0LN0xj7KbyaV24Emvnx7r7d+mJtlpVK+VE5tlMD1um3Th2Brj5N88O0HHYw9UO7D2Sd2lLz/7nhUtL2CX724F9yei19L0Du2XCLln8P1VIsQmDrYztAAAAAElFTkSuQmCC"
+style="height:20px;width:109px;" alt=
+"7nhUtL2CX724F9yei19L0Du2XCLln8P1VIsQmDrY" /></p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <html>
+ <head></head>
+ <body>
+  <p>&nbsp;</p> 
+  <p><img alt="Given
+M Pa
+ma
+Fom the iven
+time diaavown were pisttect
+The StYess-Time
+togrowm
+o 2 4 6o 12 14
+The tme
+The 52 cowe heu minimm
+" src="https://d2vlcm61l7u1fs.cloudfront.net/media%2Fbbd%2Fbbd63ab7-90d8-4109-af5b-c5ad7ddcf99d%2FphpfxHw8Y.png"></p> 
+  <p>&nbsp;</p> 
+ </body>
+</html>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

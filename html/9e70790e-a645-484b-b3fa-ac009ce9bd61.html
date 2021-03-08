@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>In Python 3, URGENT</p>
+<p>For this assignment you will write a program to simulate a
+payroll application. To that affect you will also create
+an&nbsp;Employee&nbsp;class, according to the specifications below.
+Since an&nbsp;Employee&nbsp;list might be large, and
+individual&nbsp;Employee&nbsp;objects may contain significant
+information themselves, we will store the&nbsp;Employee&nbsp;list
+as a linked list. You will also be asked to implement a basic
+linked list from scratch.</p>
+<p>Specification for&nbsp;Employee&nbsp;class (located in
+an&nbsp;employee&nbsp;module):</p>
+<p><strong>Attributes</strong></p>
+<ul>
+<li>A&nbsp;<strong>static</strong>&nbsp;integer attribute that
+starts at 1 and increments every time an&nbsp;Employee&nbsp;object
+is created.</li>
+<li>Employee ID. This is an integer attribute assigned to be the
+current static attribute's value at object creation.</li>
+<li>Employee Name. A string</li>
+<li>Number of hours worked: a floating-point number.</li>
+<li>Hourly pay rate: a floating-point number that represents how
+much the employee is paid for one hour of work.</li>
+</ul>
+<p><strong>Methods</strong></p>
+<ul>
+<li>A constructor (__init__(name,rate=0.0)). This is used to set up
+the attributes. Arguments are the employee name (as a string) and
+(optionally) the pay rate (as a number), in that order. In addition
+it should set the employee ID to the current static attribute's
+value and increment that static attribute's value.</li>
+<li>Getters:
+<ul>
+<li>getRate(self). Returns the pay rate as a number.</li>
+<li>getEID(self). Returns the employee id as a number.</li>
+<li>getName(self). Returns the employee name as a string</li>
+<li>getHours(self). Returns the number of hours worked as a
+number.</li>
+<li>getGrossPay(self). Returns the product of the number of hours
+and pay rate, as a number.</li>
+<li>__eq__(self,ID). Returns&nbsp;True&nbsp;if the&nbsp;Employee's
+(self) ID matches the parameter&nbsp;ID&nbsp;(a number),
+and&nbsp;False&nbsp;otherwise.</li>
+<li>__str__(self). Returns a string in the format:</li>
+</ul>
+</li>
+</ul>
+<pre>
+Employee Name: &lt;attribval&gt;
+Employee ID: &lt;attribval&gt;
+Hourly Rate: &lt;attribval&gt;
+Hours Worked: &lt;attribval&gt;
+Gross Pay: &lt;computed by getGrossPay&gt;
+</pre>
+<ul>
+<li>Setters:
+<ul>
+<li>setRate(self,rate). Updates the pay rate attribute to the
+number&nbsp;rate.</li>
+<li>setHours(self,hours). Updates the number of hours worked to the
+number&nbsp;hours</li>
+</ul>
+</li>
+</ul>
+<p>Specification for the&nbsp;Node&nbsp;class</p>
+<p>You will need to provide an implementation of
+the&nbsp;Node&nbsp;and the&nbsp;LinkedList&nbsp;classes. These will
+both be put in the&nbsp;linkedList&nbsp;module. If you wish, you
+can re-use the code demoed during lecture but you will need to add
+a comment citing the source and you may need to modify it.</p>
+<p>The&nbsp;Node&nbsp;class must have:</p>
+<ul>
+<li>Attributes for the data and the next node.</li>
+<li>Constructor:&nbsp;init(self,data,next=None).
+Where&nbsp;data&nbsp;is the data to be stored in this node
+and&nbsp;next&nbsp;is either a&nbsp;Node&nbsp;object
+or&nbsp;None</li>
+<li>Getters:
+<ul>
+<li>getData(self). Returns the data attribute.</li>
+<li>getNext(self). Returns the next attribute.</li>
+<li>__str__(self). Returns a string representation of
+it's&nbsp;data.</li>
+</ul>
+</li>
+<li>Setters:
+<ul>
+<li>setData(self, data). Sets the data attribute to&nbsp;data.</li>
+<li>setNext(self,next). Sets the next attribute
+to&nbsp;next&nbsp;where&nbsp;next&nbsp;is either
+a&nbsp;Node&nbsp;object or&nbsp;None</li>
+</ul>
+</li>
+</ul>
+<p>Specification for the&nbsp;LinkedList&nbsp;class:</p>
+<p>The&nbsp;LinkedList&nbsp;class must have</p>
+<ul>
+<li>Attribute storing the head of the linked list (i.e the first
+node)</li>
+<li>Constructor:&nbsp;init(self). Creates an empty linked list (so
+the head is equal to&nbsp;None).</li>
+<li>Getters:
+<ul>
+<li>isEmpty(self)&nbsp;Returns True if the linked list is empty (no
+nodes) and False otherwise.</li>
+<li>__len__(self). Returns the number of nodes in the linked
+list.</li>
+<li>__getitem__(self,index). Returns
+the&nbsp;<strong>data</strong>&nbsp;in the&nbsp;Node&nbsp;object at
+location&nbsp;index&nbsp;(a number) in the linked list. Raises an
+exception if the index is out of bounds.</li>
+<li>search(self,data). If the data in one of the nodes
+equals&nbsp;data, then return the data in that node. Otherwise,
+return a&nbsp;None&nbsp;object.</li>
+<li>__str__(self). Return a string of the linked list. You may want
+to look at the main script to determine a useful way for this to be
+formatted.</li>
+</ul>
+</li>
+<li>Setters:
+<ul>
+<li>append(self, data). Creates a new&nbsp;Node&nbsp;object,
+setting its data attribute to the value&nbsp;data&nbsp;and appends
+this object to the end of the linked list.</li>
+<li>remove(self,data). Locates the first instance of a node whose
+data matches&nbsp;data&nbsp;, and removes it from the linked
+list.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Main Script</strong></p>
+<p>Your main script will simulate a basic payroll system.</p>
+<p>Employees will be stored in a&nbsp;LinkedList. Since initially
+there are no employees, start off with an empty linked list.</p>
+<p>Then greet the user:&nbsp;*** CS 172 Payroll Simulator ***</p>
+<p>Then, until they choose to quit we should display a menu, and
+based on their choice do additional things.</p>
+<p>The menu is formatted as:</p>
+<pre>
+a. Add New Employee
+b. Enter Employee Hours
+c. Update Employee Hourly Rate
+d. Display Payroll
+e. Remove Employee from Payroll
+f. Exit the program
+</pre>
+<p>And here is what should happen based on the user choice:</p>
+<p>a. Add New Employee</p>
+<ol>
+<li>Ask the user for the new employee name as&nbsp;Enter the new
+employee name:</li>
+<li>Ask the user for the employee's hourly rate as&nbsp;Enter their
+hourly rate:</li>
+<li>Now create a new&nbsp;Employee&nbsp;object and add it to your
+linked list.</li>
+<li>Display&nbsp;Employee &lt;EID&gt; added to payroll</li>
+</ol>
+<p>b. Enter Employee Hours</p>
+<ol>
+<li>Go through each&nbsp;Employee&nbsp;in your linked list and:
+<ol>
+<li>Ask for how many hours they worked as ```Enter hours worked for
+employee&nbsp;: "</li>
+<li>Update that&nbsp;Employee's number of hours attribute.</li>
+</ol>
+</li>
+</ol>
+<p>c. Update Employee Hourly Rate</p>
+<ol>
+<li>Ask the user for an employee ID as&nbsp;Enter employee ID:</li>
+<li>Search your linked list for an&nbsp;Employee&nbsp;with that
+ID.</li>
+<li>If none is found, tell them&nbsp;Employee doesn't exist.</li>
+<li>If one is found, ask them for their new wage as&nbsp;Enter new
+wage for employee &lt;EID&gt;:, and use it to update their hourly
+wage.</li>
+</ol>
+<p>d. Display Payroll</p>
+<ol>
+<li>Go through all&nbsp;Employees in your linked list and print
+their string representation.</li>
+</ol>
+<p>e. Remove Employee from Payroll</p>
+<ol>
+<li>Ask the user for an employee ID as&nbsp;Enter employee ID:</li>
+<li>Search your linked list for an&nbsp;Employee&nbsp;with that
+ID.</li>
+<li>If none is found, tell them&nbsp;Employee doesn't exist.</li>
+<li>If one is found delete them from the linked list.</li>
+</ol>
+<p>f. Exit the program</p>
+<ol>
+<li>Display&nbsp;Goodbye.</li>
+<li>Exit the program/loop.</li>
+</ol>
+<p><em>If the user enters an invalid option, display&nbsp;Invalid
+entry.</em></p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><strong>Working code implemented in Python and appropriate
+comments provided for better understanding.</strong></p>
+<p><strong>Here I am attaching code for these files:</strong></p>
+<ul>
+<li><strong>LinkedList.py</strong></li>
+<li><strong>Employee.py</strong></li>
+<li><strong>main.py</strong></li>
+</ul>
+<p><strong>LinkedList.py:</strong></p>
+<p>class Node:<br>
+def __init__(self, data, nextNode=None):<br>
+self.__data = data<br>
+self.__next = nextNode</p>
+<p>def getData(self):<br>
+return self.__data</p>
+<p>def getID(self):<br>
+return self.__data.getID()</p>
+<p>def getNext(self):<br>
+return self.__next</p>
+<p>def setData(self, d):<br>
+self.__data = d</p>
+<p>def setNext(self, n):<br>
+self.__next = n</p>
+<p>def __str__(self):<br>
+return str(self.__data)</p>
+<p>class LinkedList:<br>
+def __init__(self):<br>
+self.__head = None</p>
+<p>def isEmpty(self):<br>
+return self.__head == None</p>
+<p>def append(self, data):<br>
+newNode = Node(data)</p>
+<p>if self.isEmpty():<br>
+self.__head = newNode<br>
+else:<br>
+current = self.__head<br>
+while current.getNext() != None:<br>
+current = current.getNext()<br>
+current.setNext(newNode)</p>
+<p># search for item in linked list<br>
+def search(self, item):<br>
+current = self.__head<br>
+found = False<br>
+while current != None and not found:<br>
+if current.getData().getID().lower() == item.lower():<br>
+found = True<br>
+else:<br>
+current = current.getNext()<br>
+return found</p>
+<p>def remove(self, item):<br>
+current = self.__head<br>
+previous = None<br>
+found = False<br>
+# first find item in the list<br>
+while not found:<br>
+if current.getData() == item:<br>
+found = True<br>
+else:<br>
+previous = current<br>
+current = current.getNext()<br>
+# item was in the fist node<br>
+if previous == None:<br>
+self.__head = current.getNext()<br>
+# item was somewhere after the first node<br>
+else:<br>
+previous.setNext(current.getNext())</p>
+<p>def __getitem__(self, index):<br>
+current = self.__head<br>
+for i in range(index):<br>
+current = current.getNext()<br>
+return current.getData()</p>
+<p>def __len__(self):<br>
+if self.__head == None:<br>
+return 0<br>
+current = self.__head<br>
+counter = 1<br>
+while current.getNext() != None:<br>
+counter += 1<br>
+current = current.getNext()<br>
+return counter</p>
+<p><strong>Code Screenshots:</strong></p>
+<p><img alt="class Node:
+def init__(self, data, nextNode=None):
+self. data
+data
+self. __next nextNode
+def getData(self):
+return self._data" src="https://media.cheggcdn.com/media/3ea/3ea763dc-f0f1-42f5-9f26-ed1455d54eff/phpRd86yD.png"></p>
+<p><img alt="61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71 V
+else:
+previous = current
+current = current.getNext()
+# item was in the fist node
+if previo" src="https://media.cheggcdn.com/media/5a0/5a0ecc6a-40d4-45a6-bd51-28e9a80cf3cf/php0QaT7R.png"></p>
+<p><strong>Employee.py:</strong></p>
+<p>class Employee:<br>
+def __init__(self, employeeID, pay_rate):<br>
+self.__employeeID = employeeID<br>
+self.__hours = 0.0<br>
+self.__pay_rate = float(pay_rate)<br>
+self.__gross_wages = 0.0</p>
+<p>def __str__(self):<br>
+return 'Employee ID: ' + self.__employeeID + '\n' + 'Hours: ' +
+str(self.__hours) + '\n' + 'Pay Rate: ' \<br>
++ str(self.__pay_rate) + '\n' + 'Gross Wages: ' +
+str(self.__gross_wages)</p>
+<p>def getID(self):<br>
+return self.__employeeID</p>
+<p>def getHours(self):<br>
+return float(self.__hours)</p>
+<p>def setRate(self, new_rate):<br>
+self.__pay_rate = new_rate</p>
+<p>def setHours(self, new_hours):<br>
+self.__hours = float(new_hours)</p>
+<p>def setWages(self):<br>
+self.__gross_wages = float(self.__hours) *
+float(self.__pay_rate)</p>
+<p>def getWages(self):<br>
+return self.__gross_wages</p>
+<p><strong>Code Screenshots:</strong></p>
+<p><img alt="1
+2
+class Employee:
+def _init__(self, employeeID, pay_rate):
+self._employee ID employeeID
+self._hours
+self._pay_rate float(pa" src="https://media.cheggcdn.com/media/d87/d87ec12e-6e2b-44d3-b45e-5c2d2a8abe4f/phpd4Y31x.png"><strong>Node.py:</strong></p>
+<p>class Node:<br>
+def __init__(self, data, nextNode=None):<br>
+self.__data = data<br>
+self.__next = nextNode</p>
+<p>def getData(self):<br>
+return self.__data</p>
+<p>def getID(self):<br>
+return self.__data.getID()</p>
+<p>def getNext(self):<br>
+return self.__next</p>
+<p>def setData(self, d):<br>
+self.__data = d</p>
+<p>def setNext(self, n):<br>
+self.__next = n</p>
+<p>def __str__(self):<br>
+return str(self.__data)</p>
+<p><strong>Code Screenshots:</strong></p>
+<p><img alt="1 class Node:
+2
+def _init__(self, data, nextNode=None):
+3
+self._data data
+4
+self._next = nextNode
+5
+6
+def getData(self):
+7
+re" src="https://media.cheggcdn.com/media/d95/d95b7f54-8690-417d-b389-9877ac6d25e0/phpUAOpSC.png"></p>
+<p><strong>main.py:</strong></p>
+<p>from Employee import *<br>
+from LinkedList import *</p>
+<p>employeeList = LinkedList()</p>
+<p>loop = True<br>
+while loop:<br>
+print('*** CS 172 Payroll Simulator ***')<br>
+print('A. Add New Employee')<br>
+print('B. Enter Hours Worked')<br>
+print('C. Display Payroll')<br>
+print('D. Update Employee Pay Rate')<br>
+print('E. Remove Employee from Payroll')<br>
+print('F. Exit the program')<br>
+userInput = input('Enter your choice: ')<br>
+if userInput.lower() == 'a':<br>
+loop2 = True<br>
+id_input = ""<br>
+while loop2:<br>
+id_input = input('Enter the new employee ID: ')<br>
+if employeeList.search(id_input):<br>
+print('That employee already exists, please try a new ID')<br>
+else:<br>
+loop2 = False<br>
+hourly_rate = input('Enter the hourly rate: ')<br>
+newEmployee = Employee(id_input, hourly_rate)<br>
+employee_node = Node(newEmployee)<br>
+employeeList.append(employee_node)<br>
+employeeList[(len(employeeList) -
+2)].setNext(employeeList[(len(employeeList) - 1)])</p>
+<p>elif userInput.lower() == 'b':<br>
+for x in range(len(employeeList)):<br>
+new_hours = input('Enter hours worked for Employee ' +
+employeeList[x].getData().getID() + ': ')<br>
+loop3 = True<br>
+while loop3:<br>
+if new_hours[0] == '-':<br>
+print("No negative hours worked, please try again.")<br>
+new_hours = input('Enter hours worked for Employee ' +
+employeeList[x].getData().getID() + ': ')<br>
+else:<br>
+loop3 = False<br>
+employeeList[x].getData().setHours(new_hours)<br>
+employeeList[x].getData().setWages()</p>
+<p>elif userInput.lower() == 'c':<br>
+print('*** Payroll ***')<br>
+if len(employeeList) == 0:<br>
+print('None')<br>
+else:<br>
+for x in range(len(employeeList)):<br>
+print(employeeList[x].getData())</p>
+<p>elif userInput.lower() == 'd':<br>
+id_input = input('Enter the employee ID: ')<br>
+loop4 = True<br>
+while loop4:<br>
+if employeeList.search(id_input) == False:<br>
+print('That is not a valid employee ID')<br>
+new_rate = input('Enter the employee ID: ')<br>
+else:<br>
+loop4 = False<br>
+check = 0<br>
+for x in range(len(employeeList)):<br>
+if employeeList[x].getData().getID() == id_input.lower():<br>
+new_rate = input('Enter new hourly rate for Employee ' +
+employeeList[x].getData().getID() + ': ')<br>
+loop5 = True<br>
+while loop5:<br>
+if float(new_rate) &lt; 6.00:<br>
+print('Hourly rate must be greater than 6.00')<br>
+new_rate = input('Enter new hourly rate for Employee ' +
+employeeList[x].getData() + ': ')<br>
+else:<br>
+loop5 = False<br>
+employeeList[x].getData().setRate(new_rate)<br>
+employeeList[x].getData().setWages()<br>
+break</p>
+<p>elif userInput.lower() == 'e':<br>
+remove_ID = input('Enter the ID of the employee to remove from
+payroll: ')<br>
+check = 0<br>
+for x in range(len(employeeList)):<br>
+if employeeList[x].getData().getID().lower() ==
+remove_ID.lower():<br>
+check += 1<br>
+employeeList.remove(employeeList[x])<br>
+break<br>
+if check == 0:<br>
+print('That is an invalid employee ID')<br>
+elif userInput.lower() == 'f':<br>
+loop = False<br>
+print('Good-Bye!')</p>
+<p>else:<br>
+print('Invalid input. Please try again')</p>
+<p><strong>Code Screenshots:</strong></p>
+<p><img alt="From Employee import *
+from Linkedlist import *
+True
+10
+10
+11
+12
+12
+13
+14
+15
+16
+42.
+17
+4.
+18
+40
+19
+20
+20
+21
+22
+23
+22
+24
+25
+2" src="https://media.cheggcdn.com/media/ec6/ec606683-f9fd-423d-a3eb-5b4db4f70f4b/phpwuuAcc.png"></p>
+<p><img alt="check = 0
+for x in range(len(employeelist)):
+if employeeList[x]-getData().getID() == id_input.lower():
+new_rate input(Enter " src="https://media.cheggcdn.com/media/c1b/c1b2a6a1-ec64-4432-9628-24531cc84928/php53sYtW.png"></p>
+<p><strong>Sample Output Screenshots:</strong></p>
+<p><img alt="C:\Windows\System32\cmd.exe
+Microsoft Windows [Version 10.0.18363.1016]
+(c) 2019 Microsoft Corporation. All rights reserved.
+" src="https://media.cheggcdn.com/media/2a7/2a7dc9db-ba3e-4494-a29a-bd76e53b8804/phpRITu1Q.png"></p>
+<p><strong>Hope it helps, if you like the answer give it a thumbs
+up. Thank you.</strong></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

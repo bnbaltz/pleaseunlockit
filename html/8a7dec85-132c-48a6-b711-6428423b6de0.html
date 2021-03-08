@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p><em>Question:&nbsp;</em>3.50 LAB: Move the heart image with a
+timer In this lab, you will use a timer to animate the move...</p>
+<p>3.50 LAB: Move the heart image with a timer</p>
+<p>In this lab, you will use a timer to animate the movement of a
+heart image to the location where the mouse clicks, as shown
+below.</p>
+<p><img alt="" src="https://media.cheggcdn.com/media/799/799b62f8-56bc-4ff5-b4ee-fe52c0945872/phpdOVsgw"></p>
+<p>The given web page shows a heart image. When the user clicks
+anywhere in the page, the startAnimation() function is called.
+startAnimation() determines where the user clicked and calls
+moveImage() with the clicked (x, y) coordinate. moveImage() moves
+the heart 1 pixel in the direction of the given (x, y)
+coordinates.</p>
+<p>Make the following JavaScript modifications using
+clearInterval() and setInterval() where appropriate:</p>
+<ul>
+<li>
+<p>In startAnimation(), add an if statement that stops the timer
+with the ID timerId if timerId is not null.</p>
+</li>
+<li>
+<p>In startAnimation(), start a timer that calls moveImage(clickX,
+clickY) every 10 milliseconds. Save the timer ID in the timerId
+variable.</p>
+</li>
+<li>
+<p>Add an if statement in moveImage() that stops the timer with the
+ID timerId if (imgX, imgY) is equal to (centerX, centerY). Also set
+timerId to null.</p>
+</li>
+</ul>
+<p>After the modifications are complete, the user should be able to
+click anywhere in the browser, and the heart will move to the
+clicked location.</p>
+<p><strong>index.html</strong></p>
+<p>&lt;!DOCTYPE html&gt;<br>
+&lt;html lang="en"&gt;<br>
+&nbsp;&nbsp; &lt;title&gt;Animate the Heart&lt;/title&gt;<br>
+&nbsp;&nbsp; &lt;script src="animate.js"&gt;&lt;/script&gt;<br>
+&nbsp;&nbsp; &lt;body&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;img src="heart.png" alt="heart"
+style="position:absolute; left:50px; top:50px"&gt;<br>
+&nbsp;&nbsp; &lt;/body&gt;<br>
+&lt;/html&gt;</p>
+<p><strong>animate.js</strong></p>
+<p>let timerId = null;</p>
+<p>window.addEventListener("DOMContentLoaded", function() {<br>
+document.addEventListener("click", startAnimation);<br>
+});</p>
+<p>function startAnimation(e) {</p>
+<p>// Get mouse coordinates<br>
+let clickX = e.clientX;<br>
+let clickY = e.clientY;<br>
+<br>
+// TODO: Modify the code below<br>
+moveImage(clickX, clickY); &nbsp;&nbsp;<br>
+}</p>
+<p>function moveImage(x, y) {<br>
+const img = document.querySelector("img");<br>
+&nbsp;&nbsp;<br>
+// Determine location of image<br>
+let imgX = parseInt(img.style.left);<br>
+let imgY = parseInt(img.style.top);</p>
+<p>// Determine (x,y) coordinates that center the image<br>
+// around the clicked (x, y) coords<br>
+const centerX = Math.round(x - (img.width / 2));<br>
+const centerY = Math.round(y - (img.height / 2));</p>
+<p>// TODO: Add code here<br>
+<br>
+<br>
+// Move 1 pixel in both directions toward the click<br>
+if (imgX &lt; centerX) {<br>
+imgX++;<br>
+}<br>
+else if (imgX &gt; centerX) {<br>
+imgX--;<br>
+}<br>
+<br>
+if (imgY &lt; centerY) {<br>
+imgY++;<br>
+}<br>
+else if (imgY &gt; centerY) {<br>
+imgY--;<br>
+}<br>
+<br>
+img.style.left = imgX + "px";<br>
+img.style.top = imgY + "px";<br>
+}</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><strong>index.html</strong></p>
+
+<pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+   &lt;title&gt;Animate the Heart&lt;/title&gt;
+   &lt;script src="animate.js"&gt;&lt;/script&gt;
+   &lt;body&gt;
+       &lt;img src="heart.png" alt="heart" style="position:absolute; left:50px; top:50px"&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<p><strong>animate.js</strong></p>
+
+<pre>
+<code class="language-javascript">let timerId = null;
+
+window.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("click", startAnimation);
+});
+
+function startAnimation(e) {
+
+// Get mouse coordinates
+let clickX = e.clientX;
+let clickY = e.clientY;
+
+// if timerId is not null
+if(timerId != null){
+    // stop the timer with id timerId
+    clearTimeout(timerId)
+}
+// call the moveImage function in every 10 milliseconds with parameters clickX and clickY 
+// also save the timer to the variable timerId  
+timerId = setInterval(moveImage, 10, clickX, clickY);
+}
+
+function moveImage(x, y) {
+const img = document.querySelector("img");
+  
+// Determine location of image
+let imgX = parseInt(img.style.left);
+let imgY = parseInt(img.style.top);
+
+// Determine (x,y) coordinates that center the image
+// around the clicked (x, y) coords
+const centerX = Math.round(x - (img.width / 2));
+const centerY = Math.round(y - (img.height / 2));
+
+// checks if (imgX,imgY) and (centerX,centerY) are same
+if((imgX == centerX) &amp;&amp;(imgY == centerY)){
+    // if same then stop the timeId
+    clearInterval(timerId);
+
+    // and set timerId to null
+    timerId = null;
+}
+
+// Move 1 pixel in both directions toward the click
+if (imgX &lt; centerX) {
+imgX++;
+}
+else if (imgX &gt; centerX) {
+imgX--;
+}
+
+if (imgY &lt; centerY) {
+imgY++;
+}
+else if (imgY &gt; centerY) {
+imgY--;
+}
+
+img.style.left = imgX + "px";
+img.style.top = imgY + "px";
+}</code></pre>
+
+<p><strong>output</strong></p>
+
+<p><img alt src="https://media.cheggcdn.com/coop/b40/b409a4b8-eca3-48e1-bb29-8ac6dfc1ef0a/1604888823434_out_1.png" style="height:635px;width:1366px" /><img alt src="https://media.cheggcdn.com/coop/844/8448a909-c507-4ea6-80c4-79260d444c1d/1604888836630_out_2.png" style="height:619px;width:1366px" /></p>
+
+<p><img alt src="https://media.cheggcdn.com/coop/627/62731a47-9bbc-49e0-ae36-f31d03d8acad/1604888849786_out_3..png" style="height:631px;width:1366px" /></p>
+
+<p><strong><em><span style="color:#2980b9">PS: If you have any problems/doubts please comment below.Thank You.</span></em></strong></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

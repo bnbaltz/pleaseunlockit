@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p><img alt="a) How many datum surfaces are indicated?
+b) How many basic dimensions are indicated?
+c) How many features use datum B as a r" src="https://media.cheggcdn.com/media/6a4/6a44d933-a053-418f-bc63-9b34e858b4de/phpzG0pKJ" style="height:850px;width:834px;"><img alt="6.000,020
+.825.005
+©.028 M ABC
+4.500
+3x500.00
+D
+1.000
+.500
+0
+4.000.010
+0
+3.125
+2000
+1.650
+875
+500
+500
+4x 0.100+.005
+010 AD
+С
+" src="https://media.cheggcdn.com/media/369/3698a32b-ca3c-4976-a24f-ed9e83cef03d/phpCKuFG2" style="height:572px;width:815px;"></p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p style="text-align:justify">a) 4 datum&nbsp;</p> <p style="text-align:justify">A datum is theoretical exact plane, axis or point location that GD&amp;T or dimensional tolerances are referenced to. You can think of them&nbsp;as an anchor for the entire part; where the other features are referenced from. A datum feature is usually an important functional feature that needs to be controlled during measurement as well.</p> <p style="text-align:justify">All GD&amp;T symbols except for the form tolerances (straightness,&nbsp;flatness,&nbsp;circularity&nbsp;and&nbsp;cylindricity)&nbsp;can use datums to help specify what geometrical control is needed on the part. When it comes to GD&amp;T, datum symbols&nbsp;are your starting points where all other features&nbsp;are referenced from.</p> <p style="text-align:justify"><strong>Symbol:</strong></p> <p style="text-align:justify"><strong><img alt="A
+" src="https://www.gdandtbasics.com/wp-content/uploads/2014/12/01-Datum-Symbol.jpg" style="height:75px;width:50px"></strong></p> <p style="text-align:justify">&nbsp;</p> <p style="text-align:justify">The datum features on a drawing are denoted with a series of capital letters. These letters are in boxes and tied to the datum feature with a black triangle.&nbsp; This letter will also show up in any&nbsp;feature control frame&nbsp;that uses this datum feature as a reference. A feature control frame can reference multiple datums at once and each&nbsp;one&nbsp;can be referenced as many times as needed.</p> <p style="text-align:justify"><img alt="|Α
+1
+0 0.2
+A
+Feature Control Frame referencing Datum “A”
+Datum feature A
+" src="https://www.gdandtbasics.com/wp-content/uploads/2014/12/02-Datum-feature-control-frame.jpg" style="height:205px;width:660px"></p> <p style="text-align:justify">The 4 datums</p> <p style="text-align:justify"><img src="https://media.cheggcdn.com/coop/2e5/2e530161-4e6f-447e-aac7-0f0cd974996e/1607123499984_image.png" style="height:396px;width:144px" alt=".750.020
+A
+8
+010
+.010 A
+375
+С
+0.8250.005
+0.028M
+028 MABC
+D
+"></p> <p style="text-align:justify">b) 15 basic dimensions</p> <p style="text-align:justify"><strong>Basic dimension</strong>: A basic dimension is a numerical value used to describe the theoretically exact size, profile, orientation, or location of a feature or datum target. Basic dimensions are used to define or position tolerance zones. Title block tolerances do not apply to basic dimensions. The tolerance associated with a basic dimension usually appears in a feature control frame or a note.</p> <p style="text-align:justify">The Basic Dimension has a box around the dimension. The title block tolerance does not apply to basic dimensions. The tolerance associated with a basic dimension usually appears in a feature control frame or a note. And its usually toleranced with gage-makers’ tolerances. And also the true position of a feature should be established by basic dimensions.</p> <p style="text-align:justify"><img alt="Dimension, Basic
+1.000
+" src="https://lh5.ggpht.com/_EhOQGW2GHBg/SgBu8J1U91I/AAAAAAAAHMg/sny-ZfFXnfA/Basic_Dimension_GD%26T%5B5%5D.jpg?imgmax=800" style="height:43px;width:363px"></p> <p style="text-align:justify">c) 4 features use datum B as reference</p> <p style="text-align:justify"><img src="https://media.cheggcdn.com/coop/cfb/cfb09c44-0f0b-48c7-a47b-43e237fb0014/1607123848760_image.png" style="height:147px;width:350px" alt="1
+.825.005
+0.028 M ABC
+2
+3X.500.005
+10.028 ABC
+D
+3 1021006
+VIOB
+4X4.187.005
+0.028MBAC
+4
+"></p> <p style="text-align:justify">e)&nbsp;&nbsp;&nbsp;Secondary datum is A&nbsp;</p> <p style="text-align:justify">Datums are specified in the Feature Control Frame in an Order of Precedence. This Feature Control Frame has 2 Datums specified (A and B):</p> <p style="text-align:justify"><img alt="0.02 AB
+" src="https://mk0cnccookbookgxcner.kinstacdn.com/wp-content/uploads/2017/08/FeatureControlFrame.jpg" style="height:241px;width:396px"></p> <p style="text-align:justify">Datum A is the Primary Datum and B is the Secondary Datum.&nbsp;</p> <p style="text-align:justify">Here for holes&nbsp;</p> <p style="text-align:justify"><img src="https://media.cheggcdn.com/coop/b50/b5042e57-c0dd-4ef0-89b1-0bb7d2c5da61/1607124274562_image.png" style="height:68px;width:141px" alt="4X 9.1871.005
+0.028MBAC
+"></p> <p style="text-align:justify">Primary Datum is B and secondary datum is A&nbsp;</p> <p style="text-align:justify">&nbsp;</p> <p style="text-align:justify">g) &nbsp;</p> <p style="text-align:justify">Virtual condition is the theoretical extreme boundary condition of a feature of size generated by the collective effects of MMC and any applicable geometric tolerances.</p> <p style="text-align:justify">Virtual condition for&nbsp;<img alt="\phi" src="https://media.cheggcdn.com/media/494/4949ad42-57af-463c-ad9b-c9b2e38489e0/f00ac3cd-4ef6-4d90-9791-76913445fc14.gif">&nbsp;0.825&nbsp; = 0.825 + 0.028&nbsp;</p> <p style="text-align:justify">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= 0.853</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

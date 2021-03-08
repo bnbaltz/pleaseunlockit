@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Consider the following Metric k-cluster problem. Let G = (V,E)
+be a complete undirected graph with edge costs satisfying the
+triangle inequality, and let k be a positive integer. The problem
+is to partition V into sets v1,...,Vk so as to minimize the
+costliest edge between two vertices in the same set, i.e., minimize
+max1≤i≤k,u,v∈Vi cost(u,v).</p>
+<p>1. Give a factor 2 approximation algorithm for this problem
+together with a tight example.</p>
+<p>2. Show that this problem cannot be approximated within a factor
+of 2 − ε, for any ε &gt; 0, unless P = NP.&nbsp;</p>
+<p>&nbsp;</p>
+<p>I need a detailed answer，thanks</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><strong>solution</strong>:-Let G=(V,E) be a complete graph with
+cost function on the edges satisfying triangle inequality,and two
+positive integers i,k such that i<img alt="\leq" src=
+"https://latex.codecogs.com/gif.latex?%5Cleq" />k.</p>
+<p>In k-clustring means given a set P of n points a metric d on P
+and an integer K&gt;0,to find a set K of k-centers in P, such that
+cost of K is cost (K)=<img alt=
+"\sum _{p\in P}min_{q\in K}d(p,q)^{2}" src=
+"https://latex.codecogs.com/gif.latex?%5Csum%20_%7Bp%5Cin%20P%7Dmin_%7Bq%5Cin%20K%7Dd%28p%2Cq%29%5E%7B2%7D" />
+is minimized.</p>
+<p>In the weighted setting, each point p in P has a weight
+w<sub>p</sub> and the cost of K is cost(K) =<img alt=
+"\sum _{p\in P} w_{p}min_{q\in K}d(p,q)^{2}" src=
+"https://latex.codecogs.com/gif.latex?%5Csum%20_%7Bp%5Cin%20P%7D%20w_%7Bp%7Dmin_%7Bq%5Cin%20K%7Dd%28p%2Cq%29%5E%7B2%7D" /></p>
+<p>The algorithm consists of 2 steps.</p>
+<p><strong>step1:</strong>- the algorithm computes a solution
+consisting of O(k logn) centers, whose cost is atmost constant
+times the cost of the optimal k-means cost.</p>
+<p><strong>Step2:</strong>- It runs a constant factor
+appproximation algorithm for k-means on these O(k logn)
+centers.</p>
+<p>The input is an undirected k-regular graph and the goal is to
+find the smallest subset of nodes such that every edge in the graph
+has atleast one end-vertex in that node.</p>
+<p>To do this we first show the approximation preserving reductions
+from "VERTEX COVER" on k-regular graphs. THese reductions prove all
+the inapproximiability results under the assumption that P is not
+equal to NP.</p>
+<p>We run the 2 approximation algorithm for k-means on the O(k
+logn) centers T computed in step (1) of the algorithm , treating
+them as points weighted by the number of points of P assigned to
+them.</p>
+<p>Let S<img alt="\subseteq" src=
+"https://latex.codecogs.com/gif.latex?%5Csubseteq" />T be the set of
+k centers returned by this algorithm.The cost of S for the points
+in P is atmost a constant times the optimal k-means cost for P.</p>
+<p>For a given clustering set,x<sub>uv</sub>=0 if u and v are in a
+common cluster and x<sub>uv</sub>=1 otherwise.</p>
+<p>1-x<sub>e</sub> is 1 if edge e is within a cluster and
+1-x<sub>e</sub> is 0 if e is between the clusters.</p>
+<p>w(S)=<img alt=
+"\sum _{e\in E}c_{e}(1-x_{e})+\sum _{e\in E}c_{e}x_{e}" src=
+"https://latex.codecogs.com/gif.latex?%5Csum%20_%7Be%5Cin%20E%7Dc_%7Be%7D%281-x_%7Be%7D%29&amp;plus;%5Csum%20_%7Be%5Cin%20E%7Dc_%7Be%7Dx_%7Be%7D" /></p>
+<p>x<sub>uv</sub> is a valid if x<sub>uv</sub> is in {0,1} and
+x<sub>uv</sub> is satisfying the triangle inequality.</p>
+<p>This can be written as linear program</p>
+<p>minimize <img alt=
+"\sum _{e\in E}c_{e}(1-x_{e})+\sum _{e\in E}c_{e}x_{e}" src=
+"https://latex.codecogs.com/gif.latex?%5Csum%20_%7Be%5Cin%20E%7Dc_%7Be%7D%281-x_%7Be%7D%29&amp;plus;%5Csum%20_%7Be%5Cin%20E%7Dc_%7Be%7Dx_%7Be%7D" />
+</p>
+<p>subject to x<sub>uv</sub><img alt="\in" src=
+"https://latex.codecogs.com/gif.latex?%5Cin" />[0,1]</p>
+<p>x<sub>uv</sub>+x<sub>vw</sub><img alt="\geq" src=
+"https://latex.codecogs.com/gif.latex?%5Cgeq" />x<sub>uw</sub></p>
+<p><img alt="\Rightarrow" src=
+"https://latex.codecogs.com/gif.latex?%5CRightarrow" />x<sub>uv</sub>=x<sub>vu</sub></p>
+<p>For the k-cycle whose order is 2 for each i, the greedy multiway
+cut is of size 2(k-1)</p>
+<p>The minimum multiway cut is infact the k-cycle cut, Hene OPT
+=<img alt="(1+\epsilon )K" src=
+"https://latex.codecogs.com/gif.latex?%281&amp;plus;%5Cepsilon%20%29K" /></p>
+<p>IN the weighted vertex cover problem each vertex v has a weight
+wv,we assign a price P<sub>e</sub> to each.</p>
+<p>A node v is tight if <img alt=
+"\sum _{e incident to v}p_{e}=w_{v}" src=
+"https://latex.codecogs.com/gif.latex?%5Csum%20_%7Be%20incident%20to%20v%7Dp_%7Be%7D%3Dw_%7Bv%7D" />
+</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

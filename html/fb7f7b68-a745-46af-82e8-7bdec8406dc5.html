@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Oil with a specific gravity of 0.80 forms a layer 0.90m deep in
+an open tank that is otherwise filled with water. The total depth
+of water and oil is 3m. What is the gage pressure at the bottom of
+the tank?</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><strong>Given,</strong></p> <p>Specific gravity of oil,&nbsp;&nbsp;<img alt="S_o" src="https://media.cheggcdn.com/media/b68/b68adbaf-92a3-4409-b919-82e9d15d55ad/d75c6583-26b9-468a-8059-4e8659eb6f0f.png">&nbsp; =&nbsp; 0.80</p> <p>Therefore, density of oil,&nbsp;<img alt="\rho_o" src="https://media.cheggcdn.com/media/9f0/9f04a858-99fc-4301-bf92-4f5ab3bdbaae/72f7682d-9e27-43bd-82a6-ae3fb708fdae.png">&nbsp; =&nbsp;</p> <p>=&nbsp;&nbsp;<img alt="S, * density of water
+" src="https://media.cheggcdn.com/media/a44/a44c7a93-02d7-4085-8ff1-8b1f71719500/5bd08c69-3f16-464e-9b86-dd77322830e9.png">&nbsp;</p> <p>=&nbsp; 0.80 * 1000</p> <p>= 800 kg/<img alt="3
+" src="https://media.cheggcdn.com/media/d9b/d9bd9cde-a9d5-48ed-be79-14bb383fdd6a/ecf00a83-78f3-4ae4-882a-d80fa4996c71.png"></p> <p>&nbsp;</p> <p>Depth of oil,&nbsp;&nbsp;<img alt="h_1" src="https://media.cheggcdn.com/media/f5b/f5be6785-5a11-4970-8706-92d00284efa6/02b46644-efc8-4326-ab7a-c1c0ca31ef22.png">&nbsp; =&nbsp; 0.9 m</p> <p>&nbsp;</p> <p>Total depth of water and oil, H&nbsp; =&nbsp; 3 m</p> <p>Therefore, depth of water in the tank,&nbsp;<img alt="h_2" src="https://media.cheggcdn.com/media/378/3789add8-e6d2-4d50-b2eb-e2fef4179712/1b872f17-8f25-4a02-8bb6-2c4502b4c6c8.png">&nbsp; =3 - 0.9 = 2.1 m</p> <p>&nbsp;</p> <p>We are asked to determine the gauge pressure at the <strong>bottom</strong> of tank.</p> <p>&nbsp;</p> <p>Gauge pressure refers to that pressure which is in excess of the atmosphere pressure. This is found by the use of&nbsp;<strong>Hydrostatic law.&nbsp;</strong></p> <p>&nbsp;</p> <p>According to this law, the equation for gauge pressure at any point in a fluid at rest is given by,&nbsp;</p> <p style="text-align:center"><img alt="P = h\rho g" src="https://media.cheggcdn.com/media/634/634de99b-bc04-410e-a5f6-a4fcaed11617/bb81dac5-9f06-48b4-a250-b7bc2c114949.png"></p> <p>where, 'h' is the depth of point in fluid under consideration,</p> <p><img alt="\rho" src="https://media.cheggcdn.com/media/34b/34b7bf4f-3d06-4e18-8b55-1f493a270264/4b358c20-a13e-41e5-964a-635cb1790b22.png">&nbsp; is the density of fluid, and</p> <p>'g'&nbsp; is the acceleration due to gravity.&nbsp;</p> <p>&nbsp;</p> <p>Based on the data given in question, we should first draw the cross section of the open tank.&nbsp;</p> <p>&nbsp;</p> <p>This is obtained as follows:</p> <p><img alt="9:00 80
+OIL
+h=0.۹ m
+3 *
+- ATER لط
+h=
+= 2.1 m
+لا
+" src="https://media.cheggcdn.com/coop/f2a/f2a69c74-9d0d-415d-ba87-abefdc5da87c/1598513951094_CamScanner08-27-202013.06.42.png" style="height:256px;width:290px"></p> <p>&nbsp;</p> <p>To calculate pressure at bottom of tank, we must consider effect of both oil and water.&nbsp;</p> <p>&nbsp;</p> <p>Hence, total pressure at bottom of tank will be,</p> <p style="text-align:center"><img alt="P = h_1\rho_og \ +\ h_2\rho_wg" src="https://media.cheggcdn.com/media/a65/a6505517-ee35-4101-8062-dfe8405a4ccf/d9ff1413-e863-43bb-a0d6-94eb295b69c2.png"></p> <p>where,&nbsp;<img alt="\rho_w" src="https://media.cheggcdn.com/media/9f2/9f2a11c1-402d-4902-8682-89d67bdcee12/de1c1d5b-0d78-40d1-b49f-22c4a9c06a56.png">&nbsp; is the density of water.&nbsp;</p> <p>&nbsp;</p> <p>We have to then substitute the given values in above equation. Then, it shall be obtained as:</p> <p><img alt="P = (0.9\ *\ 800\ * \ 9.81)\ + (2.1\ *\ 1000\ *\ 9.81) = 27664.2\ N/m^2 = 27.66\ kN/m^2" src="https://media.cheggcdn.com/media/903/9032e442-5da3-4bf0-8df5-8676b3fc9581/e39ed2e5-b0b9-4a07-a9e2-45c5752d5dca.png"></p> <p>&nbsp;</p> <p>Hence, gauge pressure at bottom of the tank is&nbsp;&nbsp;<strong>27.66 kN/m^2.&nbsp;</strong></p> <p>&nbsp;</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div id="mobile-question-style" style="font-family: 'Helvetica Neue',Helvetica,Arial; color:#333333;"><div><br><img src="https://media.cheggcdn.com/study/084/0846e0d4-53ef-4c86-b409-9d3e20da0ce8/image.png" alt="OG MIS
+Out of hundred pieces of fabric tested for the strength, 15 pieces have shown strength >75 units and 20
+pieces have sh"></div></div>
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>Given data:</p> <p>number of pieces &gt;75units strenghts =15 out 100 units</p> <p>number of pieces &lt;60 units strengths = 20 out of 100 units</p> <p>Probability for getting pieces strength &gt;75 , p(X&gt;75)= 15/100 =0.15</p> <p>Probability for getting pieces strength &lt;75 , P(x&lt;75)= 1-p(x&gt;75)=1-0.15=0.85</p> <p>Z value curresponding to 0.85 =&nbsp;Z(0.85)</p> <p>Z(0.8508 )=1.04</p> <p>Z(0.8485)=1.03</p> <p><img alt="\frac{Z(0.85)-Z(0.8485)}{0.85-0.8485}=\frac{Z(0.8508)-Z(0.8485)}{0.8508-0.8485}" src=https://media.cheggcdn.com/media/6fd/6fd5a0bb-a760-4524-b0e4-c7e35e69b933/76895fa9-5e57-45ae-857e-03b058021ea0.png /></p> <p><img alt="\frac{Z(0.85)-1.03}{0.85-0.8485}=\frac{1.04-1.03}{0.8508-0.8485}" src=https://media.cheggcdn.com/media/1cd/1cdde9a2-21ab-43c0-9668-50ce3bb936ff/463ac592-4077-4f8a-8e6c-57144d4dea20.png /></p> <p>Z(0.85)=1.0365</p> <p>&nbsp;</p> <p>Probability for getting pieces strength &lt;60&nbsp;, P(x&lt;60)= 20/100=0.2</p> <p>Z value curresponding to 0.2&nbsp;=&nbsp;Z(0.2)</p> <p>Z(0.2005) =-0.84</p> <p>Z(0.1977)=0.85</p> <p><img alt="\frac{Z(0.2)-Z(0.1977)}{0.2-0.1977}=\frac{Z(0.2005)-Z(0.1977)}{0.2005-0.1977}" src=https://media.cheggcdn.com/media/586/58625b8c-a2cb-432c-88da-c70d6a8d38c0/17862255-0a36-4b65-8dd8-48b77775ee19.png /></p> <p><img alt="\frac{Z(0.2)-(-0.84))}{0.2-0.1977}=\frac{(-0.85)-(-0.84)}{0.2005-0.1977}" src=https://media.cheggcdn.com/media/3db/3db147b6-17e7-401b-a4da-df49b34dbdea/b90f3d51-bfb1-4cb2-923f-c4899b19be62.png /></p> <p>Z(0.2)=-0.848</p> <p><img alt="Z_x=\frac{X-\mu}{\sigma}" src=https://media.cheggcdn.com/media/f4a/f4aa9a12-67d0-4f0f-9a90-3f829c227799/57efeaf2-cbff-4aac-bdb6-82b135e6047b.png /></p> <p><img alt="Z_{75}=\frac{75-\mu}{\sigma}=1.0365" src=https://media.cheggcdn.com/media/098/09806900-3bca-4574-8deb-808ebe3d83ae/c88f2b9b-4c92-46df-a072-0f3bff3b0676.png />............(1)</p> <p><img alt="Z_{60}=\frac{60-\mu}{\sigma}=-0.848" src=https://media.cheggcdn.com/media/a24/a24d2631-cda8-4061-8e15-56050c71ee52/ab32e31a-4d97-4563-8e72-21a76844559e.png />&nbsp;............(2)</p> <p>Eqn (1)/eqn (2)</p> <p><img alt="\frac{\frac{75-\mu}{\sigma}}{\frac{60-\mu}{\sigma}}=\frac{1.0365}{-0.848}" src=https://media.cheggcdn.com/media/963/963b2a0c-f246-494a-b0d8-c570e9670519/95dac4f9-3a91-4f8a-aacb-8574c0d9c228.png /></p> <p><img alt="\frac{75-\mu}{60-\mu}=-1.2223" src=https://media.cheggcdn.com/media/676/676d913e-7779-496d-9ed4-c8c9c763ec65/9355b1a7-a167-48ec-bc1e-bb9885266deb.png /></p> <p><img alt="\mu = 66.75" src=https://media.cheggcdn.com/media/896/896a0b8b-0e0f-49a9-a43f-a629bd0f26dc/f834a4e6-3459-4b9f-a844-8b230406d5bf.png /></p> <p>ie.,&nbsp;<img alt="\mu = 66.7" src=https://media.cheggcdn.com/media/2d8/2d8abca8-f1a2-4727-b8fd-753c2f0b1d21/605c0ab2-1fe5-4532-a214-5ea7d835a37a.png /></p> <p><img alt="Z_{60}=\frac{60-66.7}{\sigma}=-0.848" src=https://media.cheggcdn.com/media/949/949da954-68fb-4373-9622-b5ab7054e58f/1a170b7a-d5a8-4714-bd07-a40e3cf18dcc.png /></p> <p><img alt="\sigma= 7.9787" src=https://media.cheggcdn.com/media/24e/24e9cd26-6997-4b1e-99be-602dd4a71e6c/7984ca96-2f71-4f92-a899-2ed072aeb078.png /></p> <p>&nbsp;</p> <p>So&nbsp;</p> <p><img alt="\sigma= 7.9787" src=https://media.cheggcdn.com/media/24e/24e9cd26-6997-4b1e-99be-602dd4a71e6c/7984ca96-2f71-4f92-a899-2ed072aeb078.png />&nbsp;and&nbsp;<img alt="\mu = 66.7" src=https://media.cheggcdn.com/media/2d8/2d8abca8-f1a2-4727-b8fd-753c2f0b1d21/605c0ab2-1fe5-4532-a214-5ea7d835a37a.png /></p> <p><strong>Option-C</strong></p> <p>&nbsp;</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

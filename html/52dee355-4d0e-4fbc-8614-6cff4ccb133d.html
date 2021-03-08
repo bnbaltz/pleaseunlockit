@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <html>
+ <head></head>
+ <body>
+  <p><img alt="Sora Industries has 63 million outstanding shares, $122 million in debt, $40 milin in cash, and the following projected free cash flow for the next four years a. Suppose Soras revenue and free cash flow are expected to grow at a 4.1% rate beyond year 4. If Soras weighted average cost of capital is 13.0%, what is the value of Soras stock based on this information? b. Soras cost of goods sold was assumed to be 67% of sales. If its cost of goods sold is actually 70% of sales, how would the estimate of the stocks value change? c. Lets return to the assumptions of part (a) and suppose Sora can maintain its cost of goods sold at 67% of sales. However, now suppose Sora reduces its selling, general, and administrative expenses from 20% of sales to 16% of sales. What stock price would you estimate now? (Assume no other expenses, except taxes, are affected.) d. Soras net working capital needs were estimated to be 18% of sales (which is their current level in year 0). If Sora can reduce this requirement to 12% of sales starting in year 1, but all other assumptions remain as in part (a), what stock price do you estimate for Sora? (Hint This change will have the largest impact on Soras free cash flow in year 1.) a. Suppose Soras revenue and free cash flow are expected to grow at a 4.1% rate beyond year 4. If Soras weighted average cost of capital is 13.0%, what is the value of Soras stock based on this information? The stock price for this cas Round to two decimal places.) Data Table (Click on the Icon located on the top-right corner of the data table below in order to copy its contents into a spreadsheet.) Year 2 Earnings &amp; FCF Forecast (S million) 1 Sales 2 Growth vs. Prior Year 3 Cost of Goods Sold 433.0468.0 516.0 547.0 574.3 8.1% 10.3% 6.0% 5.0% (313.6) (345.7) (366.5) (384.8) 154.4 170.3 180.5 189.5 (93.6) (103.2) 109.4) 114.9) (7.0) (7.5)(9.0 9.5) 65.2 (21.5) (23.8) (24.8) (26.1) 9.5 (7.7) (10.0) 9.9) (10.4) (6.3) (8.6) (5.6 4.9) 33.3 Gross Profit Selling, General &amp; Admin Depreciation EBIT 5 6 53.8 59.6 62.1 8 Less: Income tax at 40% 9 Plus: Depreciation 10 Less: Capital Expenditures 7.0 7.5 9.0 Less: Increases in NWC 12 Free Cash Flow 25.3 24.6 30.8 Ent PrintDone 3 Check Answer " src="https://d2vlcm61l7u1fs.cloudfront.net/media%2F5d0%2F5d0e1963-00ee-4754-ae46-5a56758015d3%2FphpEMuG3g.png" style="height:794px;width:873px;"></p> 
+  <p>&nbsp;</p> 
+  <p>Sample question:</p> 
+  <p><img alt="" src="https://d2vlcm61l7u1fs.cloudfront.net/media%2Fc98%2Fc98973e6-c6f3-4ff6-8a53-52870e19d288%2FphppW0Jlu.png" style="height:412px;width:1024px;"></p> 
+  <p><img alt="" src="https://d2vlcm61l7u1fs.cloudfront.net/media%2F252%2F252fa39e-f817-46cb-8b80-63bb409b9452%2FphptFKkK6.png" style="height:261px;width:782px;"></p> 
+  <p><img alt="" src="https://d2vlcm61l7u1fs.cloudfront.net/media%2F68d%2F68d75e5e-e208-441a-b747-1cf35bce2d1d%2Fphpv85mdF.png" style="height:242px;width:696px;"></p> 
+  <p><img alt="" src="https://d2vlcm61l7u1fs.cloudfront.net/media%2F590%2F590a9127-c7a6-4706-94c6-0a9ad14a825c%2Fphp1af0D7.png" style="height:262px;width:785px;"></p> 
+  <p><img alt="" src="https://d2vlcm61l7u1fs.cloudfront.net/media%2F3f5%2F3f54f337-ae87-4086-bf75-ea9b3f307eac%2Fphpb4FVsR.png" style="height:265px;width:654px;"></p> 
+  <p><img alt="" src="https://d2vlcm61l7u1fs.cloudfront.net/media%2Fe19%2Fe19e78da-ea76-40a7-a957-bb5203d45d4f%2FphpH3wkxC.png" style="height:233px;width:692px;"></p> 
+  <p><img alt="" src="https://d2vlcm61l7u1fs.cloudfront.net/media%2Fc7b%2Fc7b4522f-553c-44d9-adf6-0a08b639a022%2Fphpl4nd5j.png" style="height:260px;width:785px;"></p> 
+  <p><img alt="" src="https://d2vlcm61l7u1fs.cloudfront.net/media%2F6d4%2F6d457339-7315-4bb4-abea-6386ca3a71f4%2FphpYm5gn3.png" style="height:259px;width:656px;"><img alt="" src="https://d2vlcm61l7u1fs.cloudfront.net/media%2F1d8%2F1d896e1a-e8a8-4755-9f59-ed387099dc91%2Fphps6dG5W.png" style="height:213px;width:671px;"></p> 
+ </body>
+</html>
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <table border="0" cellpadding="0" cellspacing="0" style=
+"width:384pt;">
+<tbody>
+<tr>
+<td style="height:15pt;width:48pt;">&nbsp;</td>
+<td style="width:48pt;">&nbsp;</td>
+<td style="width:48pt;">&nbsp;</td>
+<td style="width:48pt;">&nbsp;</td>
+<td style="width:48pt;">&nbsp;</td>
+<td style="width:48pt;">&nbsp;</td>
+<td style="width:48pt;">&nbsp;</td>
+<td style="width:48pt;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">a)</td>
+<td>Year</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>Sales</td>
+<td>433</td>
+<td>468.0</td>
+<td>516.0</td>
+<td>547.0</td>
+<td>574.3</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>COGS</td>
+<td>&nbsp;</td>
+<td>313.6</td>
+<td>345.7</td>
+<td>366.5</td>
+<td>384.8</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Gross profit</td>
+<td>154.4</td>
+<td>170.3</td>
+<td>180.5</td>
+<td>189.5</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Selling and admin</td>
+<td>93.6</td>
+<td>103.2</td>
+<td>109.4</td>
+<td>114.9</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Depreciation</td>
+<td>7.0</td>
+<td>7.5</td>
+<td>9.0</td>
+<td>9.5</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>EBIT</td>
+<td>&nbsp;</td>
+<td>53.8</td>
+<td>59.6</td>
+<td>62.1</td>
+<td>65.2</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Less: Tax @ 40%</td>
+<td>21.5</td>
+<td>23.8</td>
+<td>24.8</td>
+<td>26.1</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Plus Depreciation</td>
+<td>7.0</td>
+<td>7.5</td>
+<td>9.0</td>
+<td>9.5</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Less: Capital Exp.</td>
+<td>7.7</td>
+<td>10.0</td>
+<td>9.9</td>
+<td>10.4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>Less : Increase in NWC</td>
+<td>(Increase in sales)x 18%</td>
+<td>6.3</td>
+<td>8.6</td>
+<td>5.6</td>
+<td>4.9</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>FCF</td>
+<td>&nbsp;</td>
+<td>25.3</td>
+<td>24.6</td>
+<td>30.8</td>
+<td>33.3</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="4">Horizon value at t=4(FCF4 x (1+g)/(re-g)</td>
+<td>&nbsp;</td>
+<td>389.3</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>NCF&nbsp;</td>
+<td>&nbsp;</td>
+<td>25.3</td>
+<td>24.6</td>
+<td>30.8</td>
+<td>422.6</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">PV Fcator @ 13%</td>
+<td>0.884956</td>
+<td>0.783147</td>
+<td>0.69305</td>
+<td>0.613319</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">PV of NCF</td>
+<td>22.39292</td>
+<td>19.27167</td>
+<td>21.33624</td>
+<td>259.1649</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Total value of Sora (Sum of PV of NCF) =</td>
+<td>322.1658</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Less: Debt</td>
+<td>122</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Add: Cash</td>
+<td>40</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Value of equity</td>
+<td>240.1658</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">No. of shares</td>
+<td>63</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>Value per share</td>
+<td>(Value of equity/No. of shares)</td>
+<td>3.812155</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">b)</td>
+<td>Year</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>Sales</td>
+<td>433</td>
+<td>468.0</td>
+<td>516.0</td>
+<td>547.0</td>
+<td>574.3</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>COGS</td>
+<td>(Sales x 70%)</td>
+<td>327.6</td>
+<td>361.2</td>
+<td>382.9</td>
+<td>402.0</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Gross profit</td>
+<td>140.4</td>
+<td>154.8</td>
+<td>164.1</td>
+<td>172.3</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Selling and admin</td>
+<td>93.6</td>
+<td>103.2</td>
+<td>109.4</td>
+<td>114.9</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Depreciation</td>
+<td>7.0</td>
+<td>7.5</td>
+<td>9.0</td>
+<td>9.5</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>EBIT</td>
+<td>&nbsp;</td>
+<td>39.8</td>
+<td>44.1</td>
+<td>45.7</td>
+<td>47.9</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Less: Tax @ 40%</td>
+<td>15.9</td>
+<td>17.6</td>
+<td>18.3</td>
+<td>19.2</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Plus Depreciation</td>
+<td>7.0</td>
+<td>7.5</td>
+<td>9.0</td>
+<td>9.5</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Less: Capital Exp.</td>
+<td>7.7</td>
+<td>10.0</td>
+<td>9.9</td>
+<td>10.4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>Less : Increase in NWC</td>
+<td>(Increase in sales)x 18%</td>
+<td>6.3</td>
+<td>8.6</td>
+<td>5.6</td>
+<td>4.9</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>FCF</td>
+<td>&nbsp;</td>
+<td>16.9</td>
+<td>15.3</td>
+<td>20.9</td>
+<td>22.9</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="4">Horizon value at t=4(FCF4 x (1+g)/(re-g)</td>
+<td>&nbsp;</td>
+<td>268.4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>NCF&nbsp;</td>
+<td>&nbsp;</td>
+<td>16.9</td>
+<td>15.3</td>
+<td>20.9</td>
+<td>291.3</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">PV Fcator @ 13%</td>
+<td>0.884956</td>
+<td>0.783147</td>
+<td>0.69305</td>
+<td>0.613319</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">PV of NCF</td>
+<td>14.93805</td>
+<td>11.99781</td>
+<td>14.51247</td>
+<td>178.6668</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Total value of Sora (Sum of PV of NCF) =</td>
+<td>220.1151</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Less: Debt</td>
+<td>122</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Add: Cash</td>
+<td>40</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Value of equity</td>
+<td>138.1151</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">No. of shares</td>
+<td>63</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>Value per share</td>
+<td>(Value of equity/No. of shares)</td>
+<td>2.192303</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">(c )</td>
+<td>Year</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>Sales</td>
+<td>433</td>
+<td>468.0</td>
+<td>516.0</td>
+<td>547.0</td>
+<td>574.3</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>COGS</td>
+<td>&nbsp;</td>
+<td>313.6</td>
+<td>345.7</td>
+<td>366.5</td>
+<td>384.8</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Gross profit</td>
+<td>154.4</td>
+<td>170.3</td>
+<td>180.5</td>
+<td>189.5</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Selling and admin (sales x 16%)</td>
+<td>74.9</td>
+<td>82.6</td>
+<td>87.5</td>
+<td>91.9</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Depreciation</td>
+<td>7.0</td>
+<td>7.5</td>
+<td>9.0</td>
+<td>9.5</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>EBIT</td>
+<td>&nbsp;</td>
+<td>72.6</td>
+<td>80.2</td>
+<td>84.0</td>
+<td>88.1</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Less: Tax @ 40%</td>
+<td>29.0</td>
+<td>32.1</td>
+<td>33.6</td>
+<td>35.3</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Plus Depreciation</td>
+<td>7.0</td>
+<td>7.5</td>
+<td>9.0</td>
+<td>9.5</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Less: Capital Exp.</td>
+<td>7.7</td>
+<td>10.0</td>
+<td>9.9</td>
+<td>10.4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>Less : Increase in NWC</td>
+<td>(Increase in sales)x 18%</td>
+<td>6.3</td>
+<td>8.6</td>
+<td>5.6</td>
+<td>4.9</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>FCF</td>
+<td>&nbsp;</td>
+<td>36.5</td>
+<td>37.0</td>
+<td>43.9</td>
+<td>47.1</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="4">Horizon value at t=4(FCF4 x (1+g)/(re-g)</td>
+<td>&nbsp;</td>
+<td>550.5</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>NCF&nbsp;</td>
+<td>&nbsp;</td>
+<td>36.5</td>
+<td>37.0</td>
+<td>43.9</td>
+<td>597.6</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">PV Fcator @ 13%</td>
+<td>0.884956</td>
+<td>0.783147</td>
+<td>0.69305</td>
+<td>0.613319</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">PV of NCF</td>
+<td>32.33274</td>
+<td>28.97016</td>
+<td>30.4346</td>
+<td>366.4958</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Total value of Sora (Sum of PV of NCF) =</td>
+<td>458.2333</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Less: Debt</td>
+<td>122</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Add: Cash</td>
+<td>40</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Value of equity</td>
+<td>376.2333</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">No. of shares</td>
+<td>63</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>Value per share</td>
+<td>(Value of equity/No. of shares)</td>
+<td>5.971958</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">d.</td>
+<td>Year</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>Sales</td>
+<td>433</td>
+<td>468.0</td>
+<td>516.0</td>
+<td>547.0</td>
+<td>574.3</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>COGS</td>
+<td>&nbsp;</td>
+<td>313.6</td>
+<td>345.7</td>
+<td>366.5</td>
+<td>384.8</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Gross profit</td>
+<td>154.4</td>
+<td>170.3</td>
+<td>180.5</td>
+<td>189.5</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Selling and admin</td>
+<td>93.6</td>
+<td>103.2</td>
+<td>109.4</td>
+<td>114.9</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Depreciation</td>
+<td>7.0</td>
+<td>7.5</td>
+<td>9.0</td>
+<td>9.5</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>EBIT</td>
+<td>&nbsp;</td>
+<td>53.8</td>
+<td>59.6</td>
+<td>62.1</td>
+<td>65.2</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Less: Tax @ 40%</td>
+<td>21.5</td>
+<td>23.8</td>
+<td>24.8</td>
+<td>26.1</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Plus Depreciation</td>
+<td>7.0</td>
+<td>7.5</td>
+<td>9.0</td>
+<td>9.5</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Less: Capital Exp.</td>
+<td>7.7</td>
+<td>10.0</td>
+<td>9.9</td>
+<td>10.4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>Less : Increase in NWC</td>
+<td>(Increase in sales)x 12%</td>
+<td>21.8</td>
+<td>-5.8</td>
+<td>-3.7</td>
+<td>-3.3</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>FCF</td>
+<td>&nbsp;</td>
+<td>53.4</td>
+<td>27.5</td>
+<td>32.6</td>
+<td>34.9</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="4">Horizon value at t=4(FCF4 x (1+g)/(re-g)</td>
+<td>&nbsp;</td>
+<td>408.4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>NCF&nbsp;</td>
+<td>&nbsp;</td>
+<td>53.4</td>
+<td>27.5</td>
+<td>32.6</td>
+<td>443.4</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">PV Fcator @ 13%</td>
+<td>0.884956</td>
+<td>0.783147</td>
+<td>0.69305</td>
+<td>0.613319</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">PV of NCF</td>
+<td>47.24248</td>
+<td>21.52714</td>
+<td>22.62532</td>
+<td>271.9202</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Total value of Sora (Sum of PV of NCF) =</td>
+<td>363.3151</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Less: Debt</td>
+<td>122</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Add: Cash</td>
+<td>40</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">Value of equity</td>
+<td>281.3151</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td colspan="2">No. of shares</td>
+<td>63</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>Value per share</td>
+<td>(Value of equity/No. of shares)</td>
+<td>4.465319</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;">&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

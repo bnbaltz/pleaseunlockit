@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>i need c coding</p>
+<p>1)<br>
+Consider the case when several persons play<br>
+the wireless phone game They send a message<br>
+from the first person until the last one and the<br>
+message gets distorted Simulate this process<br>
+according to your own distortion rules<br>
+2)<br>
+Some of the persons do not want to be<br>
+understood by others who are around them, so<br>
+they start to use the chicken language by<br>
+adding a ‘ letter before and after a vowel<br>
+Simulate the new game and display the results</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>1)<br> Consider the case when several persons play<br> the wireless phone game They send a message<br> from the first person until the last one and the<br> message gets distorted Simulate this process<br> according to your own distortion rules</p> <p><strong>Answer:</strong></p> <p>In our program the distortion is that every two consecutive letters are swapped, that is first and second, then third and fourth.</p> <p><strong>Code:</strong></p> <p>#include &lt;stdio.h&gt;<br> #include &lt;stdlib.h&gt;<br> #include &lt;string.h&gt;<br> int main()<br> {<br> &nbsp; &nbsp; char message[20];<br> &nbsp; &nbsp; printf("Enter message: ");<br> &nbsp; &nbsp; scanf("%[^\n]c",message);<br> &nbsp; &nbsp; printf("Distorted message is: ");<br> &nbsp; &nbsp; int len=strlen(message);<br> &nbsp; &nbsp; if(len%2==0)<br> &nbsp; &nbsp; {<br> &nbsp; &nbsp; &nbsp; &nbsp; for(int i=0;i&lt;len;i=i+2)<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf("%c%c",message[i+1],message[i]);<br> &nbsp; &nbsp; }<br> &nbsp; &nbsp; else<br> &nbsp; &nbsp; {<br> &nbsp; &nbsp; &nbsp; &nbsp; for(int i=0;i&lt;len-1;i=i+2)<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf("%c%c",message[i+1],message[i]);<br> &nbsp; &nbsp; &nbsp; &nbsp; printf("%c",message[len-1]);<br> &nbsp; &nbsp; }<br> &nbsp; &nbsp; return 0;<br> }</p> <p>&nbsp;</p> <p>&nbsp;</p> <p><strong>Code Screenshot:</strong></p> <p><img src="https://media.cheggcdn.com/coop/47c/47cf94b8-382b-4133-ac82-be7da872376d/1614706802380_image.png" style="height:468px;width:1100px" alt="#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main()
+{
+char message [20];
+printf(Enter message: );
+scanf("></p> <p>&nbsp;</p> <p><strong>Output:</strong></p> <p><img src="https://media.cheggcdn.com/coop/9e2/9e2646a0-bfab-4fef-bf57-5924cc3de827/1614706772129_image.png" style="height:90px;width:675px" alt="Enter message: abcdefghij
+Distorted message is: badcfehgji
+"></p> <p>&nbsp;</p> <p>2)<br> Some of the persons do not want to be<br> understood by others who are around them, so<br> they start to use the chicken language by<br> adding a ‘ letter before and after a vowel<br> Simulate the new game and display the results</p> <p><strong>Answer:</strong></p> <p><strong>Code:</strong></p> <p>#include &lt;stdio.h&gt;<br> #include &lt;stdlib.h&gt;<br> #include &lt;string.h&gt;<br> int main()<br> {<br> &nbsp; &nbsp; char orig[20];<br> &nbsp; &nbsp; printf("Enter original message: ");<br> &nbsp; &nbsp; scanf("%[^\n]c",orig);<br> &nbsp; &nbsp; printf("Message in chicken language is: ");<br> &nbsp; &nbsp; int len=strlen(orig);<br> &nbsp; &nbsp; for(int i=0;i&lt;len;i++)<br> &nbsp; &nbsp; {<br> &nbsp; &nbsp; &nbsp; &nbsp; if(orig[i]=='a'||orig[i]=='e'||orig[i]=='i'||orig[i]=='o'||orig[i]=='u'||orig[i]=='A'||orig[i]=='E'||orig[i]=='I'||orig[i]=='O'||<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;orig[i]=='U')<br> &nbsp; &nbsp; &nbsp; &nbsp; {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf("'%c'",orig[i]);<br> &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; &nbsp; &nbsp; else<br> &nbsp; &nbsp; &nbsp; &nbsp; {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf("%c",orig[i]);<br> &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; }<br> &nbsp; &nbsp; return 0;<br> }</p> <p>&nbsp;</p> <p>&nbsp;</p> <p><strong>Code Screenshot:</strong></p> <p><img src="https://media.cheggcdn.com/coop/bc9/bc934dbf-1637-4b12-bbcb-b9db792015f9/1614707127969_image.png" style="height:407px;width:1100px" alt="#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main()
+{
+char orig[20];
+printf(Enter original message: );
+sc"></p> <p>&nbsp;</p> <p>&nbsp;</p> <p><strong>Output:</strong></p> <p><img src="https://media.cheggcdn.com/coop/e93/e93c7ea0-cd31-448d-93d4-7ad8e0629be2/1614707101825_image.png" style="height:81px;width:900px" alt="Enter original message: abcdefghij
+Message in chicken language is: abcdefghij
+"></p> <p>&nbsp;</p> <p>&nbsp;</p> <p>Kindly comment below for any further query.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

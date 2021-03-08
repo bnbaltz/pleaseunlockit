@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>4. The table shows the delays (pico second) of the components in
+Figure 4.17.</p>
+<p><img alt="Adder
+Control
+Read/write l-mem
+PC
+D-mem
+10250
+Register Mux ALU
+file
+150 25 200
+And, Sign
+Shifter extend
+10 50
+150
+50
+" src="https://media.cheggcdn.com/media/59a/59a0f2ce-e77e-4b80-a134-03fa1df728d1/phpW8G2C5"></p>
+<p>Calculate the delay of the 4 types of instructions. You need to
+show which components are used in each instruction.</p>
+<p><img alt="Instruction
+Delay
+add
+Id
+sd
+beq
+" src="https://media.cheggcdn.com/media/0f3/0f372c1a-74ea-4ee5-8f11-4fff1ff74287/phpJ9ByDz"></p>
+<p><img alt="0
+Add
+4
+ALU
+Add
+result
+1
+Shift
+left 2
+Instruction (31-26]
+RegDst
+Branch
+MemRead
+MemtoReg
+Control
+ALUOp
+MemWrite
+ALUST
+RegWrit" src="https://media.cheggcdn.com/media/5e3/5e3fa953-c0d9-438b-9021-696132cf2b1b/phpWVW2Dy" style="height:596px;width:723px;"></p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>(1)Instruction ADD<br /> =&gt; (PC Read + I-mem + Mux + Register file + Mux + ALU + Mux + Register file)<br /> =&gt; (10 + 250 + 25 + 150 + 25 + 200 + 25 + 150) = 835 picoseconds<br /> ---------------------------------------------------------------------------<br /> (2)Instruction LD<br /> =&gt; (PC Read + I-mem + Mux + Register file + Mux + ALU + D-mem + Mux + Register file)<br /> =&gt; (10 + 250 + 25 + 150 + 25 + 200 + 250 + 25 + 150) = 1085 picoseconds<br /> ---------------------------------------------------------------------------<br /> (3)Instruction SD<br /> =&gt; (PC Read + I-mem + Mux + Register file + Mux + ALU + D-mem)<br /> =&gt; (10 + 250 + 25 + 150 + 25 + 200 + 250 ) = 910 picoseconds<br /> ---------------------------------------------------------------------------<br /> (4)Instruction BEQ<br /> =&gt; (PC Read + I-mem + Mux + Register file + Mux + ALU + And + Mux + PcWrite)<br /> =&gt; (10 + 250 + 25 + 150 + 25 + 200 + 10 + 25 + 10) = 705 picoseconds</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

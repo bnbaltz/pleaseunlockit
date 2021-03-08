@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>12.8&nbsp;LAB: Flexbox Styling</p>
+<p>Complete a CSS stylesheet such that the provided HTML
+(oatmeal_cookies.html) looks like the following webpage.</p>
+<p><img alt="binary eats
+sign-in search
+OATMEAL COCONUT PANTRY COOKIES Chef Roman, August 24, 2018
+010 RELATED RECIPES:
+• Melt-in-the-mout" src="https://s3-us-west-2.amazonaws.com/static-resources.zybooks.com/flexbox_styling.png"></p>
+<p>To achieve the desired web page, the following style rules
+should be utilized:</p>
+<ul>
+<li>&lt;header&gt;&nbsp;tag: set display to be flex and
+justify-content to be space-between</li>
+<li>content&nbsp;class: set display to be flex and flex-wrap to be
+wrap</li>
+<li>main-content&nbsp;class: set display to be flex, flex-wrap to
+be wrap, flex-grow to be 1, and flex-basis to be 70%</li>
+<li>title&nbsp;class: set display to be flex and align-items to be
+baseline</li>
+<li>summary&nbsp;class: set display to be flex, justify-content to
+be space-evenly, flex-grow to be 1, and flex-basis to be 100%</li>
+<li>&lt;div&gt;&nbsp;tag child of&nbsp;&lt;div&gt;&nbsp;tag child
+of&nbsp;summary&nbsp;class: set display to be flex and
+justify-content to be space-between</li>
+<li>ingredients&nbsp;and&nbsp;directions&nbsp;classes: set
+flex-grow to be 1 and flex-basis to be 45%</li>
+<li>related-content&nbsp;class: set flex-grow to be 1 and
+flex-basis to be 20%</li>
+</ul>
+<p>need to edit css</p>
+<p><strong>/* Add your styles here */</strong></p>
+<p>/* Given CSS rules below */<br>
+body {<br>
+&nbsp; &nbsp;margin: 0;<br>
+&nbsp; &nbsp;font-family: Helvetica, sans-serif;<br>
+}</p>
+<p>header {<br>
+&nbsp; &nbsp;border-bottom: 2px solid #93B5C6;<br>
+&nbsp; &nbsp;background-color: #DDEDAA;<br>
+&nbsp; &nbsp;padding: 8px;<br>
+}</p>
+<p>.logo {<br>
+&nbsp; &nbsp;color: #BD4F6C;<br>
+&nbsp; &nbsp;font-size: 18px;<br>
+}</p>
+<p>.content {<br>
+&nbsp; &nbsp;margin-left: 30px;<br>
+}</p>
+<p>.title {<br>
+&nbsp; &nbsp;border-bottom: 1px dashed #93B5C6;<br>
+}</p>
+<p>.title h1 {<br>
+&nbsp; &nbsp;color: #BD4F6C;<br>
+}</p>
+<p>.title p {<br>
+&nbsp; &nbsp;color: #93B5C6;<br>
+&nbsp; &nbsp;margin-left: 30px;<br>
+}</p>
+<p>.summary {<br>
+&nbsp; &nbsp;margin-top: 30px;<br>
+}</p>
+<p>.summary &gt; div {<br>
+&nbsp; &nbsp;background-color: #DDEDAA;<br>
+&nbsp; &nbsp;border: 2px solid #93B5C6;<br>
+&nbsp; &nbsp;border-radius: 5px;<br>
+&nbsp; &nbsp;color: #BD4F6C;<br>
+&nbsp; &nbsp;padding: 5px;<br>
+&nbsp; &nbsp;width: 210px;<br>
+}</p>
+<p>.related-content {<br>
+&nbsp; &nbsp;margin-left: 100px;<br>
+}</p>
+<p>&nbsp;</p>
+<p>but here is the html also this does not have to be changed just
+the css</p>
+<p>&lt;!DOCTYPE html&gt;<br>
+&lt;html lang="en"&gt;<br>
+&nbsp; &nbsp;&lt;head&gt;<br>
+&nbsp; &nbsp; &nbsp; &lt;meta charset="UTF-8"&gt;<br>
+&nbsp; &nbsp; &nbsp; &lt;title&gt;binary eats - Oatmeal Coconut
+Pantry Cookies&lt;/title&gt;<br>
+&nbsp; &nbsp; &nbsp; &lt;link href="styles.css"
+rel="stylesheet"&gt;<br>
+&nbsp; &nbsp;&lt;/head&gt;</p>
+<p>&nbsp; &nbsp;&lt;body&gt;<br>
+&nbsp; &nbsp; &nbsp; &lt;header&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class="logo"&gt;binary
+eats&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a
+href=""&gt;sign-in&lt;/a&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a
+href=""&gt;search&lt;/a&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &lt;/header&gt;<br>
+&nbsp; &nbsp; &nbsp; &lt;div class="content"&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div
+class="main-content"&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div
+class="title"&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;h1&gt;OATMEAL COCONUT PANTRY COOKIES&lt;/h1&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;p&gt;Chef Roman, August 24, 2018&lt;/p&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div
+class="summary"&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;img
+src="oatmealCookie_small.jpg" alt="Photo of two of the world's best
+oatmeal cookies"&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;&lt;p&gt;Prep Time:&lt;/p&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;&lt;p&gt;30 minutes&lt;/p&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;&lt;p&gt;Cooking Time:&lt;/p&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;&lt;p&gt;9-13 minutes&lt;/p&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;&lt;p&gt;Skill level:&lt;/p&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;&lt;p&gt;Easy&lt;/p&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;&lt;p&gt;Makes:&lt;/p&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;&lt;p&gt;24 cookies&lt;/p&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div
+class="ingredients"&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;h2&gt;Ingredients&lt;/h2&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;ul&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;⅔ cup granulated sugar&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;⅔ cup packed brown sugar&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;1 cup butter&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;2 eggs&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;1 teaspoon vanilla&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;1 teaspoon baking soda&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;½ teaspoon baking powder&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;½ teaspoon salt&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;3 cups quick-cooking or old-fashioned
+oats&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;1 cup all-purpose flour&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;1 ½ cup Toasted Coconut*&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;½ cup golden raisins&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;½ cup chopped walnuts&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;½ cup mini chocolate chips&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;/ul&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;p&gt;*
+Now with more coconut&lt;/p&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div
+class="directions"&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;h2&gt;Directions&lt;/h2&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;ol&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;Toast coconut at 350° F for about 10-15 minutes.
+Stir/toss every 5 minutes. Coconut should be golden brown. Be
+careful...coconut can go from golden brown to burnt very quickly.
+Cool completely.&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;Beat sugar, butter, vanilla, and eggs.&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;Mix all other ingredients together. The flour should coat
+all the ingredients. Then mix into the wet
+ingredients.&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;Scoop cookies and press the dough firmly the ensure the
+shape is held.&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;Bake at 375° F for about 9-13 minutes. This really
+depends on how big you made the cookies. Start at 9 minutes, and
+then just keep checking until they are done.&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;/ol&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div
+class="related-content"&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;h4&gt;010 RELATED RECIPES:&lt;/h4&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;ul&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;Melt-in-the-mouth Cookies&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;German Chocolate Cake&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;/ul&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;h4&gt;TOP 011 RECIPES:&lt;/h4&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;ul&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;Umeboshi Chicken&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;Battleship Curry&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;Gran Marnier Souffle&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;/ul&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &lt;/div&gt;<br>
+&nbsp; &nbsp;&lt;/body&gt;<br>
+&lt;/html&gt;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><strong>Working code implemented HTML &amp; CSS in and comments
+for better understanding:</strong></p>
+<p><strong>Here I am attaching these 2 files:</strong></p>
+<ul>
+<li><strong>oatmeal_cookies.html:</strong></li>
+<li><strong>style.css:</strong></li>
+</ul>
+<p><strong>Code
+for&nbsp;</strong><strong>oatmeal_cookies.html:<span>&nbsp;</span><span>&nbsp;</span></strong></p>
+<p>&lt;!DOCTYPE html&gt;<br>
+&lt;html lang="en"&gt;<br>
+&nbsp; &nbsp;&lt;head&gt;<br>
+&nbsp; &nbsp; &nbsp; &lt;meta charset="UTF-8"&gt;<br>
+&nbsp; &nbsp; &nbsp; &lt;title&gt;binary eats - Oatmeal Coconut
+Pantry Cookies&lt;/title&gt;<br>
+&nbsp; &nbsp; &nbsp; &lt;link href="styles.css"
+rel="stylesheet"&gt;<br>
+&nbsp; &nbsp;&lt;/head&gt;</p>
+<p>&nbsp; &nbsp;&lt;body&gt;<br>
+&nbsp; &nbsp; &nbsp; &lt;header&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class="logo"&gt;binary
+eats&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a
+href=""&gt;sign-in&lt;/a&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a
+href=""&gt;search&lt;/a&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &lt;/header&gt;<br>
+&nbsp; &nbsp; &nbsp; &lt;div class="content"&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div
+class="main-content"&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div
+class="title"&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;h1&gt;OATMEAL COCONUT PANTRY COOKIES&lt;/h1&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;p&gt;Chef Roman, August 24, 2018&lt;/p&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div
+class="summary"&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;img
+src="oatmealCookie_small.jpg" alt="Photo of two of the world's best
+oatmeal cookies"&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;&lt;p&gt;Prep Time:&lt;/p&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;&lt;p&gt;30 minutes&lt;/p&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;&lt;p&gt;Cooking Time:&lt;/p&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;&lt;p&gt;9-13 minutes&lt;/p&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;&lt;p&gt;Skill level:&lt;/p&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;&lt;p&gt;Easy&lt;/p&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;&lt;p&gt;Makes:&lt;/p&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp;&lt;p&gt;24 cookies&lt;/p&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div
+class="ingredients"&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;h2&gt;Ingredients&lt;/h2&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;ul&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;⅔ cup granulated sugar&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;⅔ cup packed brown sugar&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;1 cup butter&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;2 eggs&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;1 teaspoon vanilla&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;1 teaspoon baking soda&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;½ teaspoon baking powder&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;½ teaspoon salt&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;3 cups quick-cooking or old-fashioned
+oats&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;1 cup all-purpose flour&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;1 ½ cup Toasted Coconut*&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;½ cup golden raisins&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;½ cup chopped walnuts&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;½ cup mini chocolate chips&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;/ul&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;p&gt;*
+Now with more coconut&lt;/p&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div
+class="directions"&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;h2&gt;Directions&lt;/h2&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;ol&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;Toast coconut at 350° F for about 10-15 minutes.
+Stir/toss every 5 minutes. Coconut should be golden brown. Be
+careful...coconut can go from golden brown to burnt very quickly.
+Cool completely.&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;Beat sugar, butter, vanilla, and eggs.&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;Mix all other ingredients together. The flour should coat
+all the ingredients. Then mix into the wet
+ingredients.&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;Scoop cookies and press the dough firmly the ensure the
+shape is held.&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;Bake at 375° F for about 9-13 minutes. This really
+depends on how big you made the cookies. Start at 9 minutes, and
+then just keep checking until they are done.&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;/ol&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div
+class="related-content"&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;h4&gt;010 RELATED RECIPES:&lt;/h4&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;ul&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;Melt-in-the-mouth Cookies&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;German Chocolate Cake&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;/ul&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;h4&gt;TOP 011 RECIPES:&lt;/h4&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;ul&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;Umeboshi Chicken&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;Battleship Curry&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&lt;li&gt;Gran Marnier Souffle&lt;/li&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&lt;/ul&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &lt;/div&gt;<br>
+&nbsp; &nbsp;&lt;/body&gt;<br>
+&lt;/html&gt;</p>
+<p><strong>Code Screenshots:</strong></p>
+<p><strong><span>&nbsp;</span></strong><img src="https://media.cheggcdn.com/media/b4b/b4bbe9d8-8a6d-4363-9c4e-eee9e79310bb/phpCMR93U.png" style="height:968px;width:1025px;" alt="<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=UTF-8>
+<title>binary eats - Oatmeal Coconut Pantry Cookies</title>
+<l"><img src="https://media.cheggcdn.com/media/94f/94f55991-ca33-47c3-81f3-c661b9c3469e/phpkgzcIs.png" style="height:553px;" alt="</ul>
+<p>* Now with more coconut</p>
+</div>
+<div class=directions>
+<h2>Directions</h2>
+<ol>
+<li>Toast coconut at 350° F for"></p>
+<p><strong>Code for style.css:</strong></p>
+<p>/* Add your styles here */</p>
+<p>/* Given CSS rules below */<br>
+body {<br>
+&nbsp; &nbsp;margin: 0;<br>
+&nbsp; &nbsp;font-family: Helvetica, sans-serif;<br>
+}</p>
+<p>header {<br>
+&nbsp; &nbsp;border-bottom: 2px solid #93B5C6;<br>
+&nbsp; &nbsp;background-color: #DDEDAA;<br>
+&nbsp; &nbsp;padding: 8px;<br>
+&nbsp; &nbsp;display: flex;<br>
+&nbsp; &nbsp;justify-content: space-between;<br>
+}</p>
+<p>.logo {<br>
+&nbsp; &nbsp;color: #BD4F6C;<br>
+&nbsp; &nbsp;font-size: 18px;<br>
+}</p>
+<p>.content {<br>
+&nbsp; &nbsp;margin-left: 30px;<br>
+&nbsp; &nbsp;display: flex;<br>
+&nbsp; &nbsp;flex-wrap: wrap;<br>
+}</p>
+<p>.title {<br>
+&nbsp; &nbsp;border-bottom: 1px dashed #93B5C6;<br>
+&nbsp; &nbsp;display: flex;<br>
+&nbsp; &nbsp;align-items: baseline;<br>
+}</p>
+<p>.title h1 {<br>
+&nbsp; &nbsp;color: #BD4F6C;<br>
+}</p>
+<p>.title p {<br>
+&nbsp; &nbsp;color: #93B5C6;<br>
+&nbsp; &nbsp;margin-left: 30px;<br>
+&nbsp; &nbsp;display: flex;<br>
+&nbsp; &nbsp;align-items: baseline;<br>
+}</p>
+<p>.summary {<br>
+&nbsp; &nbsp;margin-top: 30px;<br>
+&nbsp; &nbsp;display: flex;<br>
+&nbsp; &nbsp;justify-content: space-evenly;<br>
+&nbsp; &nbsp;flex-grow: 1;<br>
+&nbsp; &nbsp;flex-basis: 100%;<br>
+}</p>
+<p>.summary &gt; div {<br>
+&nbsp; &nbsp;background-color: #DDEDAA;<br>
+&nbsp; &nbsp;border: 2px solid #93B5C6;<br>
+&nbsp; &nbsp;border-radius: 5px;<br>
+&nbsp; &nbsp;color: #BD4F6C;<br>
+&nbsp; &nbsp;padding: 5px;<br>
+&nbsp; &nbsp;width: 210px;<br>
+}</p>
+<p>.summary &gt; div &gt; div {<br>
+&nbsp; &nbsp;display: flex;<br>
+&nbsp; &nbsp;justify-content: space-between;<br>
+}</p>
+<p>.related-content {<br>
+&nbsp; &nbsp;margin-left: 100px;<br>
+&nbsp; &nbsp;flex-grow: 1;<br>
+&nbsp; &nbsp;flex-basis: 20%;<br>
+}</p>
+<p>.main-content {<br>
+&nbsp; display: flex;<br>
+&nbsp; flex-wrap: wrap;<br>
+&nbsp; flex-grow: 1;<br>
+&nbsp; flex-basis: 70%<br>
+}</p>
+<p>.ingredients, .directions {<br>
+&nbsp; flex-grow: 1;<br>
+&nbsp; flex-basis: 45%;<br>
+}<br>
+&nbsp;</p>
+<p><strong>Code Screenshots:</strong></p>
+<p><img src="https://media.cheggcdn.com/media/617/6179f4c1-3585-4af6-945c-319f4ba0f05c/phpXQlVJI.png" style="height:967px;width:611px;" alt="1
+3
+4
+* Add your styles here */
+/* Given CSS rules below */
+body {
+margin: 0;
+font-family: Helvetica, sans-serif;
+header {
+bo"><img src="https://media.cheggcdn.com/media/cb9/cb94043d-383c-489b-95a1-67d18f7035af/phpEQrfyD.png" style="height:417px;width:545px;" alt=". summary > div > div {
+display: flex;
+justify-content: space-between;
+.related-content {
+margin-left: 100px;
+flex-grow: 1;
+f"></p>
+<p>&nbsp;</p>
+<p><strong>Output Screenshots:</strong></p>
+<p><img src="https://media.cheggcdn.com/media/283/28381392-1cc7-45d2-9fbe-14aa609bca52/phpuJlkRf.png" style="height:1010px;" alt=".
+binary eats - Oatmeal Coconut Par X
+-
+O
+X
++
+0
+0 File
+A:/Chegg/95/oatmeal_cookies.html
+VA
+binary eats
+sign-in search
+OATMEAL"></p>
+<p><strong>Hope it helps, if you like the answer give it thumbs up.
+Thank you.</strong><span>&nbsp;</span></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

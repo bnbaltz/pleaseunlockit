@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p><img alt="3.
+4.
+Create the following variable to use in calculating enrollment scenarios:
+Variable Name
+Initial Value(s)
+initial.enroll" src="https://media.cheggcdn.com/media/295/2952604d-525b-4c94-9746-07c7028d3c0c/phpVDZ1Lb" style="height:529px;width:550px;"></p>
+<p><strong>Code should be developed in C. Please focus on step 4b
+and 5. What is na?</strong></p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><br> #include&lt;stdio.h&gt;<br> #include&lt;math.h&gt;</p> <p>int main(){<br> &nbsp;&nbsp; &nbsp;int initial_enrollment = 29933;<br> &nbsp;&nbsp; &nbsp;int target;<br> &nbsp;&nbsp; &nbsp;int valid_return;<br> &nbsp;&nbsp; &nbsp;printf("Enter your enrollment target for year 2030: ");<br> &nbsp;&nbsp; &nbsp;//Scanf will return positive integer value only when input is an integer<br> &nbsp;&nbsp; &nbsp;valid_return = scanf("%d", &amp;target);<br> &nbsp;&nbsp; &nbsp;while (1){<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//Check if input was valid<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (valid_return == 1 &amp;&amp; target&gt;0)<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;break;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//If input was not valid, give error message, and ask for input again<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;else{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;printf("Invalid input. Try again.\n");<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;printf("Enter your enrollment target for year 2030: ");<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;fflush(stdin);<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;valid_return = scanf("%d", &amp;target);&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;}</p> <p>&nbsp;&nbsp; &nbsp;//Calculate growth rate using given formula<br> &nbsp;&nbsp; &nbsp;double growth_rate = pow(target*1.0/initial_enrollment, 1 / 11.0) - 1;<br> &nbsp;&nbsp; &nbsp;growth_rate *= 100;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//To convert to percentage terms<br> &nbsp;&nbsp; &nbsp;printf("Growht rate: %6.2lf\n", growth_rate);</p> <p>&nbsp;&nbsp; &nbsp;//Print evaluation message as per given condition<br> &nbsp;&nbsp; &nbsp;if (growth_rate &lt; 0)<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;printf("Negative growth rate\n");<br> &nbsp;&nbsp; &nbsp;else if (growth_rate &gt;= 0 &amp;&amp; growth_rate &lt; 1)<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;printf("Reasonable growth rate\n");<br> &nbsp;&nbsp; &nbsp;else if (growth_rate &lt;= 1 &amp;&amp; growth_rate &lt; 2)<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;printf("Ambitious growth rate\n");<br> &nbsp;&nbsp; &nbsp;else if (growth_rate &lt;= 2 &amp;&amp; growth_rate &lt; 4)<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;printf("Very ambitious growth rate\n");<br> &nbsp;&nbsp; &nbsp;else if (growth_rate &gt;= 4)<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;printf("Unreasonable growth rate\n");</p> <p>&nbsp;&nbsp; &nbsp;//Base year<br> &nbsp;&nbsp; &nbsp;int year = 2019;<br> &nbsp;&nbsp; &nbsp;//Print header<br> &nbsp;&nbsp; &nbsp;printf("%6s %10s\n", "Year", "Enrollment");<br> &nbsp;&nbsp; &nbsp;//Calculate for each year and print<br> &nbsp;&nbsp; &nbsp;while (year &lt;= 2069){<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;target = initial_enrollment * pow(1 + growth_rate/100, year - 2019);<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;printf("%6d %10d\n", year, target);<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;year++;<br> &nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;getch();<br> &nbsp;&nbsp; &nbsp;return 0;<br> }</p> <p><img alt="C:\Users\Sona\documents\visual studio 2013\Projects\Chegg\Debug Chegg.exe
+Enter your enrollment target for year 2030: kjhkj
+I" src="https://media.cheggcdn.com/coop/04f/04fb027d-746f-4478-984c-1dfe1fe4d6a3/1614500238570_1.png" style="height:1017px;width:739px"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

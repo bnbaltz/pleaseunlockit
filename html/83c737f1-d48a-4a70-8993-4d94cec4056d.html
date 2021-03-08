@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Find&nbsp;the&nbsp;equation&nbsp;of&nbsp;the&nbsp;tangent&nbsp;plane&nbsp;to&nbsp;the&nbsp;surface&nbsp;<span&nbsp;class="MathJax_Preview"></span><span&nbsp;style=""&nbsp;role="textbox"&nbsp;id="MathJax-Element-1-Frame"&nbsp;class="MathJax"><nobr><span&nbsp;id="MathJax-Span-1"&nbsp;class="math"><span&nbsp;style="display:&nbsp;inline-block;&nbsp;position:&nbsp;relative;&nbsp;width:&nbsp;140px;&nbsp;height:&nbsp;0px;&nbsp;font-size:&nbsp;101%;"><span&nbsp;style="position:&nbsp;absolute;&nbsp;clip:&nbsp;rect(1.208em,&nbsp;1000em,&nbsp;2.618em,&nbsp;-0.522em);&nbsp;top:&nbsp;-2.228em;&nbsp;left:&nbsp;0em;"><span&nbsp;id="MathJax-Span-2"&nbsp;class="mrow"><span&nbsp;style="font-family:&nbsp;MathJax_Math;&nbsp;font-style:&nbsp;italic;"&nbsp;id="MathJax-Span-3"&nbsp;class="mi">z<span&nbsp;style="display:&nbsp;inline-block;&nbsp;overflow:&nbsp;hidden;&nbsp;height:&nbsp;1px;&nbsp;width:&nbsp;0.003em;"></span></span><span&nbsp;style="font-family:&nbsp;MathJax_Main;&nbsp;padding-left:&nbsp;0.278em;"&nbsp;id="MathJax-Span-4"&nbsp;class="mo">=</span><span&nbsp;style="font-family:&nbsp;MathJax_Main;&nbsp;padding-left:&nbsp;0.278em;"&nbsp;id="MathJax-Span-5"&nbsp;class="mn">1</span><span&nbsp;id="MathJax-Span-6"&nbsp;class="msubsup"><span&nbsp;style="display:&nbsp;inline-block;&nbsp;position:&nbsp;relative;&nbsp;width:&nbsp;1.003em;&nbsp;height:&nbsp;0px;"><span&nbsp;style="position:&nbsp;absolute;&nbsp;clip:&nbsp;rect(1.538em,&nbsp;1000em,&nbsp;2.362em,&nbsp;-0.522em);&nbsp;top:&nbsp;-2.166em;&nbsp;left:&nbsp;0em;"><span&nbsp;style="font-family:&nbsp;MathJax_Math;&nbsp;font-style:&nbsp;italic;"&nbsp;id="MathJax-Span-7"&nbsp;class="mi">x</span><span&nbsp;style="display:&nbsp;inline-block;&nbsp;width:&nbsp;0px;&nbsp;height:&nbsp;2.166em;"></span></span><span&nbsp;style="position:&nbsp;absolute;&nbsp;top:&nbsp;-2.157em;&nbsp;left:&nbsp;0.557em;"><span&nbsp;style="font-size:&nbsp;70.7%;&nbsp;font-family:&nbsp;MathJax_Main;"&nbsp;id="MathJax-Span-8"&nbsp;class="mn">2</span><span&nbsp;style="display:&nbsp;inline-block;&nbsp;width:&nbsp;0px;&nbsp;height:&nbsp;1.795em;"></span></span></span></span><span&nbsp;style="font-family:&nbsp;MathJax_Main;&nbsp;padding-left:&nbsp;0.222em;"&nbsp;id="MathJax-Span-9"&nbsp;class="mo">+</span><span&nbsp;style="font-family:&nbsp;MathJax_Main;&nbsp;padding-left:&nbsp;0.222em;"&nbsp;id="MathJax-Span-10"&nbsp;class="mn">4</span><span&nbsp;style="font-family:&nbsp;MathJax_Math;&nbsp;font-style:&nbsp;italic;"&nbsp;id="MathJax-Span-11"&nbsp;class="mi">x</span><span&nbsp;style="font-family:&nbsp;MathJax_Math;&nbsp;font-style:&nbsp;italic;"&nbsp;id="MathJax-Span-12"&nbsp;class="mi">y<span&nbsp;style="display:&nbsp;inline-block;&nbsp;overflow:&nbsp;hidden;&nbsp;height:&nbsp;1px;&nbsp;width:&nbsp;0.006em;"></span></span><span&nbsp;style="font-family:&nbsp;MathJax_Main;&nbsp;padding-left:&nbsp;0.222em;"&nbsp;id="MathJax-Span-13"&nbsp;class="mo">?</span><span&nbsp;style="font-family:&nbsp;MathJax_Main;&nbsp;padding-left:&nbsp;0.222em;"&nbsp;id="MathJax-Span-14"&nbsp;class="mn">6</span><span&nbsp;id="MathJax-Span-15"&nbsp;class="msubsup"><span&nbsp;style="display:&nbsp;inline-block;&nbsp;position:&nbsp;relative;&nbsp;width:&nbsp;0.993em;&nbsp;height:&nbsp;0px;"><span&nbsp;style="position:&nbsp;absolute;&nbsp;clip:&nbsp;rect(1.538em,&nbsp;1000em,&nbsp;2.556em,&nbsp;-0.536em);&nbsp;top:&nbsp;-2.166em;&nbsp;left:&nbsp;0em;"><span&nbsp;style="font-family:&nbsp;MathJax_Math;&nbsp;font-style:&nbsp;italic;"&nbsp;id="MathJax-Span-16"&nbsp;class="mi">y<span&nbsp;style="display:&nbsp;inline-block;&nbsp;overflow:&nbsp;hidden;&nbsp;height:&nbsp;1px;&nbsp;width:&nbsp;0.006em;"></span></span><span&nbsp;style="display:&nbsp;inline-block;&nbsp;width:&nbsp;0px;&nbsp;height:&nbsp;2.166em;"></span></span><span&nbsp;style="position:&nbsp;absolute;&nbsp;top:&nbsp;-2.157em;&nbsp;left:&nbsp;0.547em;"><span&nbsp;style="font-size:&nbsp;70.7%;&nbsp;font-family:&nbsp;MathJax_Main;"&nbsp;id="MathJax-Span-17"&nbsp;class="mn">2</span><span&nbsp;style="display:&nbsp;inline-block;&nbsp;width:&nbsp;0px;&nbsp;height:&nbsp;1.795em;"></span></span></span></span></span><span&nbsp;style="display:&nbsp;inline-block;&nbsp;width:&nbsp;0px;&nbsp;height:&nbsp;2.228em;"></span></span></span><span&nbsp;style="border-left:&nbsp;0em&nbsp;solid;&nbsp;display:&nbsp;inline-block;&nbsp;overflow:&nbsp;hidden;&nbsp;width:&nbsp;0px;&nbsp;height:&nbsp;1.174em;&nbsp;vertical-align:&nbsp;-0.27em;"></span></span></nobr></span>&nbsp;at&nbsp;the&nbsp;point&nbsp;
+(4,&nbsp;-4,&nbsp;-144).
+<br>&nbsp;<br>
+z&nbsp;=</p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><img&nbsp;src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoYAAACNCAIAAAClsCzEAAAQxklEQVR4nO3cO47bSB7HcR6KZ5g+BaEz6AQCGPsAihUw2d5o4WjQyQACmHQwgwkMdLDADmDQCwPrG8wGfNXjX6xiVUkqd38/cNBWk/UiWT8WKbv6GwAAFKD6AgAAHu3p6akaAADAo02R/AQAAB7ky5cvWiQ/+N4AAICPikgGAKAIRDIAAEUgkgEAKAKRDABAEYhkAACKQCQDAFAEIhkAgCIQyQAAFIFIBgCgCEQyAABFIJIBACgCkQwAQBGIZAAAikAkAwBQBCIZAIAiEMkAABSBSAYAoAhEMoC7+vTp0y+//FJV1adPnx7dlkdiHGAjkgHcVVVVwzBcLpfxhw+LcYAtJZL7tq4kddsPw9A1VdV0O0ra3HhPaXd124Z1zTSmjiqKHZZ0pXXt3u3xHfqy7MqV6/W6d5dAb29vj4230+k0HrXL5eLd+GbjcJ9zNbGWrjH27popOlKKjC+hb+vKubur5PVzqzuxklfJXWP0o2+bfZE8zz3ujactipybbnj2L4fbGuO16lKHJVFpXbt3e3yHviBjoox27Rj+wDa85OPx+MBIPh6P5/N5mIM5cK/cD67vdq4mTH3Crl1TJZ7qKSXMISTv7ipZ/7xv6xzXav5IjiGvkvu2nj/0L6PvSWnYDbnO+PRhuU/70yq9yRHf2/FHnYGlPSHw2xVCwzAcj8fj8Ri4cWDJz8/PEXcGuby8vCxVh98Z7BqHYRjc53Bps+XGtSYsKLumadMSLb0EV6S6ShY+zzGz5o3kvm2j2iOfQ8rEVMRJtrjLjOnscvqwPGTG31npTY743o4/6Aws62wPsiuSP3/+POZQ4C4hm42PrPfeGWR0OBz2Vr13HIZhcJ/Dpc2WzmtNeAbcNU2XtshML8EVya6SHZ+nh3LeSO6atTXLIRl/mF88K81d3pZJD67VX057S4Ws77Mdx8KxgVZ33bbKw3P9Qbr2wlz99fR39cxTtl0rc3ZfbOS4o/6WXm14+rAY7bc76G6zccCsEZrrsnc3KzW6vm68lKFMKztauKfjjuOVcaiNOpquc5xmU+Hm+I5FSt03Cw5szKAsJd/e3i6Xy/Pzs7jZXnYWvr29HY/H0+l0OBzO5/P5fF6Wg2oPQwoP2WzskdEMVxvGz8/n87jXMAyvr6+BjdloQFVVY11LT7cr8o6Db/JZ5DhXXVei0RBzZhv2Xe9CIk+pkRCo6SUMjt1dJbtrTM7kLJFcWeO/vM9Yfl23vZbfapSPG5n9UO/1psNtFNK3tTCD60W4pni14DUGzdtMdciXetct1dc26qZLqc7uG/20dnTf6qYPi1mC0UFXm9ebD2Unuy7H7mJL1pNHOSvW4XQdAlcL93TcNezZh3r9fdtJZTbNMgjarZ37AA3adb/jcpiWki8vL+MLYPGRabXJFeF2JB+Px9fX17HAMRGr2Mzz7ng+n8eGGc1wteFwOFyv1zEdX15exPZHNLKac7eqqtPplFqRZ/KxN044VzeuxM2Zbd/1PgiL52UZFx2o6SUMjt1dJW/WmPoM8marZG1KteYXoytByWEVYi0qpMGxN9CHTGuS88mP9vZf3NI4ENvdNxvp2zHvsEglb3bQOmRLIoh1OXf3dWez+/4W7uq4a9hvMNRauc47P2kQFFr3xe9/ehujuFwuh8PB9dsIdtIsXzmuqur5+fn19XX8gnGIMTs3qBtfr9cx/+xmuNowfq4+aq6kG5TtZhgbqx8uPwdWtM155quyTwvhM9ue6938WHnVGRmo6SWobdMfDcgle2pM/XbVzd4lOw9Y1XTCgdk5Ic7nynbXxQ2Eu4GtSF4nVfEG0NWjZevNpJc+k3bMOyx6yYEd1AZO/UJwwOIy9A7D0f3QFu7puHPYvR3ZVePS+kqqOCyS7e7LU09IY4ZhGIbL5RLyT3R2cS3+rtdrNa8do4klq7+1qR0U2zA+MFjuSyr3A4DwRtqRnFiR58y3Ns04LSxV+ieoPde78bH9qqYSe6fXrm6YXoLWNm0pLJfsq7GsSFZsHzBjr+hI9g++tYEw/YWtfb15YB0YZ/fNRvp2zDssrsWiJ5LVk1TdZXOEoyJZ237fIdjVcaleb0d21agVHzx/eQ+QWG9YY06n0xJXYjaICbcIf3B9vV7f3t7U59Xjk9sIVfAjZaMZG20YvyA9difLfYOxFK6qalyRx1fkPfNVeacFtXrvBLXrenc3I3GNm17Cxu6uX7lWyWGTguxBkWy8Po6L5PEn5am51Q5xg/XWc95kfVeqvMatmk7bf/15ozHqx/YrYfk0Ddgx77CYi8XADnbSv4WX6tofyfbMs2y/+xCEddw57LmHenlsNK9ShNNsI5Ll7hvT5PRfAXgvh+lJ7Ol0enl5yfvlZDsLxxwaw2n8ZPw3uxHiItnbhirfi+Rh/t7W8i5ZLTCuIv+Zb22dPi0IV6J3gtp1vbtX6w+P5I3l7Y5I7tsHfr1rPFTC0l1a9Ndtt2yuTCs6vSt6+d5C5HEQNzCqXh/HTn9vmnraQfnaw/RhpXwp0ShB+dwq0mq5o6f22Ii3KknDspQgd9BRrHm85m4Ydbm6rFZqtqWujbFRvzMS3sJdHRePl/u4xNWoFqBOdnJ39PGz/q6cgXq9a+O3GjPG8DD/q9nD4ZC4Lhyp/1XIaJjz6Xg8jr89nU7L694IVfAXsxeXy8XbhuXzav42VqIl/o2xja1oe/IxDnCec9W6Eq3CzSvUVZ2rnc5M1uJt2ntftiWUoHZHaF14JCuJrN8DBfvw/8d1+r3ZR6H/o/Pkm0GlnCwF4d2KXl5veH5+Hh8mj+96w796VmxFqe53JQZ/66FrU2fm9BJ21pf+32oSyURyEGOc+vVfVKSXSyTj3qr5K1eHwyHvl88fVVGqe16J/lnXfIO9X3oJMTWmV/ixI9n72Bsr7clYxjxm/HF/438hkvhEvaiKkjzgSsywoCxJtu587EgGAKAYRDIAAEUgkgEAKAKRDABAEYhkAACKQCQDAFAEIhkAgCIQyQAAFIFIBgCgCEQyAABFIJIBACgCkQwAQBGIZAAAikAkAwBQBCIZAIAiEMkAABSBSAYAoAhEMgAARSCSAQAoApEMAEARiGQAAIrw+Ej+/Y8/f3357R///Bd/+MOf9/Hn15fffv/jz/tPJsDP7vGR/J+//vvt+4+/AbwX377/ePv31/tPJsDProhIfvQEAiAzIhmIQCQDyI9IBiIQyQDyI5KBCEQygPyIZCACkQwgPyIZiEAkA8iPSAYiEMkA8iOSgQhpkdw1larpNn7p2oxIBt4fIhmIkBjJ3ZSuXWMmbTAiGXh/iGQgQpYH1wmBTCQD7xGRDETIEMmuQObBNfBhEclAhORITlohDwORDLxHRDIQITGStUBe3izvQiQD7w+RDERIiuS+rTeeSAcikoH3h0gGIvDvkgHkRyQDEYhkAPkRyUAEIhlAfkQyEIFIBpAfkQxEKCKSv33/8egJBEA2377/IJKBCI+P5K9fv/317X/84Q9/3tOfr1+/3X8yAX52j49kAAAwEMkAABSCSAYAoAhEMgAARSCSAQAoApEMAEARiGQAAIpAJAMAUAQiGQCAIhDJAAAUgUgGAKAIRDIAAEUgkgEAKAKRDABAEYhkAACKQCQDAFAEIhkAgCIQyQAAFIFIBgCgCEQyAABFIJIBACgCkQwAQBGIZAAAikAkAwBQBCIZAIAipERy11SzppM/r9s+Z2vVotdKXe14p7omtZ+OEvq2tj8XP/wQ0sfZV/rdTtkSD+J61d6kYV2TffJR9W39YSYc3FX6Knk6OY1zs2/rW52tfVtbWX/jC7Ac00SWMLaOEuYZUvv8Q088N4zk5XTtmvy3rUJlxR3Erpmbc5u7ha6JXA/0bePdaxzQkoYT70iOSG6apjavgIBI7ts69rw2ZrIb5n950ucwVwmsku/ktutvQWkHse/79S/5b6e7pmnb+jaR3DXEMW4pSyS3vXXnGJCSKROTulLu2/pjrJBHRPLP7v5DWvJBzH4/3TVNN/S3iWQCGbeWK5Lnh5zz6apfaPMD0HUtrb4UHjdct1E3cV5WyyzTNfp6Wa9IfWqn/jztLj+DUkpZfjneQJhPcpUtp3lg/nnpYN32c9XrPYTe09DGNN26sf1MeW/fp9201/POSF4KVw+I1ZHYYXTtV7e98te67ZVxdDVMGEyhneaoCp+ot4z2Cby7L0Zn3IOpdzNhSDePrHquDsrDWOm1kHxcLEZ9IdGl3U4HjYBP1yxXiXm5GT11NGgrksenc+09vwaAjyZfJM/nfj0HtDqdafNlvUa4so0xpfor7pqqqmvl4XdARePPzeY3S9Ripifkdr7O8+taX7vM/mrHleRb4kHvqbcxRhXTDKO3JLzveiSrbwA27wjU2yRHR4Qdw4bR3eFaDdVpp6Yb1Nlfb5jwnSGpQHFUtU/UN+7i2Ab2xXvmyzvMZ0v8kPqPrHl+buef9wpd72ACV6j2XdHgHQGfZS+9DZ6emvcSrpuKcZFQr1c6qYzsckbyoN9sazfxyuZ2MNjXRNDtsXFDH1KR+KHD3Ch1TbYUoix57NWHvvidClPv0Y2ebjTGrkJsSVzfjbkz6MH1XFPwIfMPo7S1VWxvfovQaJjryLoH3B5VeZxDx1bsi29Hk9VNSdiZ6Tuyg/oa15fI3sNt3n6EZpV6H698EJV1833xYB+Q0J5urpKNA8pTbNxA5khe5rZ2jmRrNphv341Ijnnxo10iQRWFRfI6P6sLYruQZdPKaMdynz91bB0jsafb9wdGFVJL4vpu7hUcydMq0XfIdgyjWryrWE/MSF3eKFA+cMI47xtbswbfjt5uSq32DmnQkZ1/MZbmiRb/4Vbave9ytjq8NQL2Cy/5d9ZGgT3dE8n3/5oePoDskbxObeoKWFhmmavkiHNb3y2kopBIVksNzBK96rGA8drvmqpq2nWIxJ4GLNnXKsSWxPXd/uK6N5Jd63K5wTuH0TU+4y/qtlP3cC3fhVWyu532Qsce511ju1W4o4Xb3TQLDBvSkCO7/KZumizfxRTeGgTpGn2UNkYgmB3rYT31v0sWrgUgn/RIlh4EaZOR9kxwPY17a36t19wKO9OlJ4PCo0T9jatvWlSbsv7syLblQZm2MOiUL6aZ87LU080H12YVchLE9V1/yeiPZKtu9yHbMYzO4V+K7YXXIPqjZqOf3gG3R9U9zgEn8EZfPGe+sf3WPeqeIQ04smt3Q+LPe4XqwRquN77hlXaXrpRqxWVITz3fuM6wjgA2JUXy8qjPPtV7zzeu1Q/HDZXHTsoHW08xhbrFitai6/FfUAvPtVTKd4fM7acbeOtne6mlrpmNSoyebi4uzCFWvs6jtqSP6Pu4kfC0zz6Uxj6OjsQOY+/ccb2D0H6sqrrtx4yojWLEwbTaaZ+4G+Msj+3GgXAMnj3e2qA5uhk/pP4jO1espJDSio0DKt2WmdWt9wubR9ieEDZHIJS4gg35f0C8pDPM0U1gP/6Pa/ycQp72w098ytXujxflOcOwvrotSejDN+CBiGT8nIjkHHrzP+qI/BqxsSrty/vve6yeAiUikvETUp4HM8/G2XpEnVBe2vPmm8jdU+CGiGQAAIpAJAMAUAQiGQCAIhDJAAAUgUgGAKAIRDIAAEUgkgEAKAKRDABAEYhkAACKQCQDAFAEIhkAgCIQyQAAFIFIBgCgCEQyAABFIJIBACgCkQwAQBG0SP4CAAAeZ41kAADwWE9PT9UTAAAoQPU3AAAoAJEMAEAR/g8CVrrEi0BiKQAAAABJRU5ErkJggg=="&nbsp;alt=""></p>
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>(x0,y0,z0) = (4,-4,-144)</p><p><br></p><p>Fx = 2x+4y</p><p>at (4,-4,-144), Fx = 2*4 -16 = -8</p><p>Fy = 4x-12y &nbsp;= 4*4 -12*-4 = &nbsp;64</p><p><br></p><p>tangent equation,&nbsp;</p><p>z-z0 = Fx*(x-x0)+Fy*(y-y0)</p><p>z-(-144) = -8*(x-4) +64(y-(-4)</p><p>z+144 = -8x+32 +64y+256</p><p>8x-64y+z = 256+32-144 =144</p><p><br></p><p>8x - 64y + z = 144</p><p>or</p><p>8x - 64y +z -144 =0</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

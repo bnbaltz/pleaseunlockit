@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p><img alt="7.14 LAB: Quote web API
+In this lab, you will use a web API to fetch and display quotes on a selected topic, as shown below.
+" src="https://media.cheggcdn.com/media/9ed/9ed49e3e-5e89-444e-b105-2dc75bf47641/php1TFuWB.png" style="height:795px;"></p>
+<p><img alt="returns 3 quotes about love, formatted in JSON:
+[
+{
+quote: If I know what love is, it is because of you.,
+source: Herm" src="https://media.cheggcdn.com/media/1e7/1e750812-f241-40ca-b247-f89b5252b6e4/phpDUYsnn.png" style="height:829px;"><img alt="Fetch the quote
+The fetchQuotes () function in quote.js is called with the selected topic and count when the Fetch Topics but" src="https://media.cheggcdn.com/media/724/7243f753-958a-4b50-8921-85f8038108fe/phpcSeIPb.png" style="height:804px;"><img alt="quotejs
+1 Çwindow.addEventListener(DOMContentLoaded, function () {
+2. document.querySelector(#fetchQuotesBtn).addEventLis" src="https://media.cheggcdn.com/media/7f6/7f6a9d02-8e5c-4f68-8d39-803e4a65e500/phpSrN3LA.png" style="height:670px;"><img alt="index.html
+<!DOCTYPE html>
+I<html lang=en>
+<title>Notable Quotes</title>
+<script src=quote.js></script>
+<style>
+body {
+fo" src="https://media.cheggcdn.com/media/967/967805ab-e8e9-4e06-8e1f-03ec61c5cf81/phpg3LIlI.png" style="height:916px;width:727px;"></p>
+<p>&nbsp;</p>
+<p>Need help: Code has been provide below to make life easier:</p>
+<p>index.html</p>
+<p>&lt;!DOCTYPE html&gt;<br>
+&lt;html lang="en"&gt;<br>
+&nbsp;&nbsp; &lt;title&gt;Notable Quotes&lt;/title&gt;<br>
+&nbsp;&nbsp; &lt;script src="quote.js"&gt;&lt;/script&gt;<br>
+&nbsp;&nbsp; &lt;style&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; body {<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; font-family:
+Arial, Helvetica, sans-serif;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; #quotes {<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+background-color: #F1EAFF;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; padding-top:
+10px;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; padding-bottom:
+10px;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp; &lt;/style&gt;<br>
+&nbsp;&nbsp; &lt;body&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;h1&gt;Notable
+Quotes&lt;/h1&gt;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;p&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;label
+for="topicSelection"&gt;Select a topic:&lt;/label&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;select
+id="topicSelection"&gt;<br>
+&lt;option&gt;Choose one&lt;/option&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &lt;option&gt;love&lt;/option&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &lt;option&gt;motivational&lt;/option&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &lt;option&gt;wisdom&lt;/option&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &lt;option&gt;humor&lt;/option&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&lt;/select&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;/p&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;p&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;label
+for="countSelection"&gt;How many quotes?&lt;/label&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;select
+id="countSelection"&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &lt;option&gt;1&lt;/option&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &lt;option&gt;2&lt;/option&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &lt;option selected&gt;3&lt;/option&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &lt;option&gt;4&lt;/option&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &lt;option&gt;5&lt;/option&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&lt;/select&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;/p&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;p&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;button
+id="fetchQuotesBtn"&gt;Fetch Quotes&lt;/button&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;/p&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;div id="quotes"&gt;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>
+&nbsp;&nbsp; &lt;/body&gt;<br>
+&lt;/html&gt;</p>
+<p>quote.js</p>
+<p>window.addEventListener("DOMContentLoaded", function () {<br>
+document.querySelector("#fetchQuotesBtn").addEventListener("click",
+function () {</p>
+<p>// Get values from drop-downs<br>
+const topicDropdown =
+document.querySelector("#topicSelection");<br>
+const selectedTopic =
+topicDropdown.options[topicDropdown.selectedIndex].value;<br>
+const countDropdown =
+document.querySelector("#countSelection");<br>
+const selectedCount =
+countDropdown.options[countDropdown.selectedIndex].value;<br>
+<br>
+// Get and display quotes<br>
+fetchQuotes(selectedTopic, selectedCount);&nbsp;&nbsp;
+&nbsp;&nbsp;<br>
+});<br>
+});</p>
+<p>function fetchQuotes(topic, count) {<br>
+// TODO: Modify to use XMLHttpRequest</p>
+<p>let html = "&lt;ol&gt;";<br>
+for (let c = 1; c &lt;= count; c++) {<br>
+html += `&lt;li&gt;Quote ${c} - Anonymous&lt;/li&gt;`;<br>
+}<br>
+html += "&lt;/ol&gt;";</p>
+<p>document.querySelector("#quotes").innerHTML = html;<br>
+}</p>
+<p>// TODO: Add responseReceivedHandler() here</p>
+<p>&nbsp;</p>
+<p><strong>Here is code that actually works but I keep getting
+errors:</strong> <strong>See code then the images:</strong></p>
+<p><strong>window.addEventListener("DOMContentLoaded", function ()
+{<br>
+&nbsp;
+&nbsp;document.querySelector("#fetchQuotesBtn").addEventListener("click",
+function () {</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; // Get values from drop-downs<br>
+&nbsp; &nbsp; &nbsp; const topicDropdown =
+document.querySelector("#topicSelection");<br>
+&nbsp; &nbsp; &nbsp; const selectedTopic =
+topicDropdown.options[topicDropdown.selectedIndex].value;<br>
+&nbsp; &nbsp; &nbsp; const countDropdown =
+document.querySelector("#countSelection");<br>
+&nbsp; &nbsp; &nbsp; const selectedCount =
+countDropdown.options[countDropdown.selectedIndex].value;<br>
+&nbsp; &nbsp;<br>
+&nbsp; &nbsp; &nbsp; // Get and display quotes<br>
+&nbsp; &nbsp; &nbsp; fetchQuotes(selectedTopic,
+selectedCount);&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;<br>
+&nbsp; &nbsp;});<br>
+});</strong></p>
+<p><strong>function fetchQuotes(topic, count) {<br>
+&nbsp;<br>
+&nbsp; var url =
+"http://cs.harding.edu/fmccown/zybooks/quotes/quotes.php?topic="+topic+"&amp;count="+count;<br>
+
+&nbsp; var quoteHttp = new XMLHttpRequest();<br>
+&nbsp; quoteHttp.onreadystatechange =
+responseReceivedHandler;<br>
+&nbsp; quoteHttp.responseType = "json";<br>
+&nbsp; quoteHttp.open("GET", url, true);<br>
+&nbsp; quoteHttp.send();<br>
+}</strong></p>
+<p><strong>function responseReceivedHandler() {<br>
+&nbsp; &nbsp;<br>
+&nbsp; &nbsp;if (this.readyState == 4 &amp;&amp; this.status ==
+200) {<br>
+&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;<br>
+&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;<br>
+&nbsp;&nbsp; &nbsp; &nbsp; if(this.response.error) {<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; html =
+response.error;<br>
+&nbsp;&nbsp; &nbsp; &nbsp; }<br>
+&nbsp;&nbsp; &nbsp; &nbsp; else<br>
+&nbsp;&nbsp; &nbsp; &nbsp; {<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; html +=
+"&lt;ol&gt;";<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;for (let c
+= 0; c &lt; this.response.length; c++) {<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;html += `&lt;li&gt;Quote
+${this.response[c].quote} -
+${this.response[c].source}&lt;/li&gt;`;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;html +=
+"&lt;/ol&gt;";<br>
+&nbsp;&nbsp; &nbsp; &nbsp; }<br>
+&nbsp;&nbsp; &nbsp; &nbsp;
+document.querySelector("#quotes").innerHTML = html;<br>
+&nbsp; &nbsp;}<br>
+}</strong></p>
+<p><img alt="1: QUnit test A
+0/2
+Test XMLHttpRequest addEventListener() method
+X XMLHttpRequest addEventListener() is called
+Your value
+fa" src="https://media.cheggcdn.com/media/131/131a4483-774a-4ad3-a997-a5a19fe1874a/phpe7M2YH.png" style="height:864px;width:1030px;"></p>
+<p><img alt="✓ XMLHttpRequest send() is called
+5: QUnit test A
+0/1
+Test responseReceivedHandler() with humor quote
+✓ response ReceivedHand" src="https://media.cheggcdn.com/media/4c1/4c11e0cf-d418-429e-8d0a-833227922e6a/phpCeVsrz.png" style="height:932px;width:1039px;"></p>
+<p>&nbsp;</p>
+<p>Number 5 is looking for:</p>
+<p>&lt;ol&gt;<br>
+&lt;li&gt;Outside of a dog, a book is man's best friend. Inside of
+a dog it's too dark to read - Groucho Marx&lt;/li&gt;<br>
+&lt;/ol&gt;</p>
+<p>Number 6 is looking for:</p>
+<p>&lt;ol&gt;<br>
+&lt;li&gt;No one can make you feel inferior without your consent. -
+Eleanor Roosevelt&lt;/li&gt;<br>
+&lt;li&gt;Love is a better teacher than duty. - Albert
+Einstein&lt;/li&gt;<br>
+&lt;li&gt;The way to get started is to quit talking and begin
+doing. - Walt Disney&lt;/li&gt;<br>
+&lt;li&gt;It is during our darkest moments that we must focus to
+see the light. - Aristotle&lt;/li&gt;<br>
+&lt;li&gt;Whoever is happy will make others happy too. - Anne
+Frank&lt;/li&gt;<br>
+&lt;/ol&gt;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>The code you added should work actually. Somehow it is not passing in the QUnit test cases. It is expecting in the way to be executed in a certain way with add event listener to the XMLHttpRequest instead readystatechange.</p>
+
+<pre>
+<code class="language-javascript">window.addEventListener("DOMContentLoaded", function () {
+    document.querySelector("#fetchQuotesBtn").addEventListener("click", function () {
+
+        // Get values from drop-downs
+        const topicDropdown = document.querySelector("#topicSelection");
+        const selectedTopic = topicDropdown.options[topicDropdown.selectedIndex].value;
+        const countDropdown = document.querySelector("#countSelection");
+        const selectedCount = countDropdown.options[countDropdown.selectedIndex].value;
+
+        // Get and display quotes
+        fetchQuotes(selectedTopic, selectedCount);
+    });
+});
+
+function fetchQuotes(topic, count) {
+    var url = "http://cs.harding.edu/fmccown/zybooks/quotes/quotes.php?topic=" + topic + "&amp;count=" + count;
+    var quoteHttp = new XMLHttpRequest();
+    quoteHttp.addEventListener("load", responseReceivedHandler);
+    quoteHttp.responseType = "json";
+    quoteHttp.open("GET", url, true);
+    quoteHttp.send();
+}
+
+function responseReceivedHandler() {
+    var html = "";
+    if (this.response.error) {
+        html = this.response.error;
+    }
+    else {
+        html += "&lt;ol&gt;";
+
+        for (let c = 0; c &lt; this.response.length; c++) {
+            html += `&lt;li&gt;Quote ${this.response[c].quote} - ${this.response[c].source}&lt;/li&gt;`;
+        }
+        html += "&lt;/ol&gt;";
+    }
+    document.querySelector("#quotes").innerHTML = html;
+}</code></pre>
+
+<p>Updated to event listener. You can put updated code and check.</p>
+
+<p>Also, i am experiencing some delay in the opened API request to receive response. If even putting this not solves your problem, then it is not the problem in the UI javascript end. We have to update the QUnit test cases&nbsp;in the certain way that, test case will&nbsp;wait until&nbsp;the list binds.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

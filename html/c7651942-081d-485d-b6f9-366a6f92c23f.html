@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <table border="0" cellpadding="0" cellspacing="0" style=
+"width:620px;">
+<tbody>
+<tr>
+<td style="width:100%;">
+<p>Morganton Company makes one product and it provided the
+following information to help prepare the master budget for its
+first four months of operations:</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" style=
+"line-height:1.6;width:620px;">
+<tbody>
+<tr>
+<td style="width:19px;">
+<p>a.</p>
+</td>
+<td style="width:601px;">
+<p>The budgeted selling price per unit is $60. Budgeted unit sales
+for June, July, August, and September are 9,800, 29,000, 31,000,
+and 32,000 units, respectively. All sales are on credit.</p>
+</td>
+</tr>
+<tr>
+<td style="width:19px;">
+<p>b.</p>
+</td>
+<td style="width:601px;">
+<p>Thirty percent of credit sales are collected in the month of the
+sale and 70% in the following month.</p>
+</td>
+</tr>
+<tr>
+<td style="width:19px;">
+<p>c.</p>
+</td>
+<td style="width:601px;">
+<p>The ending finished goods inventory equals 20% of the following
+month’s unit sales.</p>
+</td>
+</tr>
+<tr>
+<td style="width:19px;">
+<p>d.</p>
+</td>
+<td style="width:601px;">
+<p>The ending raw materials inventory equals 10% of the following
+month’s raw materials production needs. Each unit of finished goods
+requires 4 pounds of raw materials. The raw materials cost $2.50
+per pound.</p>
+</td>
+</tr>
+<tr>
+<td style="width:19px;">
+<p>e.</p>
+</td>
+<td style="width:601px;">
+<p>Thirty percent of raw materials purchases are paid for in the
+month of purchase and 70% in the following month.</p>
+</td>
+</tr>
+<tr>
+<td style="width:19px;">
+<p>f.</p>
+</td>
+<td style="width:601px;">
+<p>The direct labor wage rate is $15 per hour. Each unit of
+finished goods requires two direct labor-hours.</p>
+</td>
+</tr>
+<tr>
+<td style="width:19px;">
+<p>g.</p>
+</td>
+<td style="width:601px;">
+<p>The variable selling and administrative expense per unit sold is
+$1.80. The fixed selling and administrative expense per month is
+$68,000.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0" style=
+"width:620px;">
+<tbody>
+<tr>
+<td style="width:19px;">
+<p>1.</p>
+</td>
+<td colspan="2" style="width:601px;">
+<p>What are the budgeted sales for July?</p>
+</td>
+</tr>
+<tr>
+<td style="width:19px;">
+<p>2.</p>
+</td>
+<td colspan="2" style="width:601px;">
+<p>What are the expected cash collections for July?</p>
+</td>
+</tr>
+<tr>
+<td style="width:19px;">
+<p>3.</p>
+</td>
+<td colspan="2" style="width:601px;">
+<p>What is the accounts receivable balance at the end of July?</p>
+</td>
+</tr>
+<tr>
+<td style="width:19px;">
+<p>4.</p>
+</td>
+<td colspan="2" style="width:601px;">
+<p>According to the production budget, how many units should be
+produced in July?</p>
+</td>
+</tr>
+<tr>
+<td style="width:19px;">
+<p>5.</p>
+</td>
+<td colspan="2" style="width:601px;">
+<p>If 124,800 pounds of raw materials are needed to meet production
+in August, how many pounds of raw materials should be purchased in
+July?</p>
+</td>
+</tr>
+<tr>
+<td style="width:19px;">
+<p>6.</p>
+</td>
+<td colspan="2" style="width:601px;">
+<p>What is the estimated cost of raw materials purchases for
+July?</p>
+</td>
+</tr>
+<tr>
+<td style="width:19px;">
+<p>7.</p>
+</td>
+<td colspan="2" style="width:601px;">
+<p>If the cost of raw material purchases in June is $152,160, what
+are the estimated cash disbursements for raw materials purchases in
+July?</p>
+</td>
+</tr>
+<tr>
+<td style="width:19px;">
+<p>8.</p>
+</td>
+<td colspan="2" style="width:601px;">
+<p>What is the estimated accounts payable balance at the end of
+July?</p>
+</td>
+</tr>
+<tr>
+<td style="width:19px;">
+<p>9.</p>
+</td>
+<td colspan="2" style="width:601px;">
+<p>What is the estimated raw materials inventory balance at the end
+of July?</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="width:25px;">
+<p>10.</p>
+</td>
+<td style="width:595px;">
+<p>What is the total estimated direct labor cost for July assuming
+the direct labor workforce is adjusted to match the hours required
+to produce the forecasted number of units produced?</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="width:25px;">
+<p>11.</p>
+</td>
+<td style="width:595px;">
+<p>If the company always uses an estimated predetermined plantwide
+overhead rate of $7 per direct labor-hour, what is the estimated
+unit product cost?</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="width:25px;">
+<p>12.</p>
+</td>
+<td style="width:595px;">
+<p>What is the estimated finished goods inventory balance at the
+end of July, if the company always uses an estimated predetermined
+plantwide overhead rate of $7 per direct labor-hour?</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="width:25px;">
+<p>13.</p>
+</td>
+<td style="width:595px;">
+<p>What is the estimated cost of goods sold and gross margin for
+July, if the company always uses an estimated predetermined
+plantwide overhead rate of $7 per direct labor-hour?</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="width:25px;">
+<p>14.</p>
+</td>
+<td style="width:595px;">
+<p>What is the estimated total selling and administrative expense
+for July?</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="width:25px;">
+<p>15.</p>
+</td>
+<td style="width:595px;">
+<p>What is the estimated net operating income for July, if the
+company always uses an estimated predetermined plantwide overhead
+rate of $7 per direct labor-hour?</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>1.</p>
+<p>Unit sales * Selling Price</p>
+<p>29,000*60 = <strong>$1,740,000</strong></p>
+<p>2.</p>
+<table border="1" cellpadding="1" cellspacing="1" style=
+"width:500px;">
+<tbody>
+<tr>
+<td>June Sales (9800*60*70/100)</td>
+<td>$411,600</td>
+</tr>
+<tr>
+<td>July Sales (29,000*60*30/100)</td>
+<td>$522,000</td>
+</tr>
+<tr>
+<td><strong>Total cash collections</strong></td>
+<td><strong>$933,600</strong></td>
+</tr>
+</tbody>
+</table>
+<p>3.</p>
+<table border="1" cellpadding="1" cellspacing="1" style=
+"width:500px;">
+<tbody>
+<tr>
+<td>July sales</td>
+<td><strong>$1,740,000</strong></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;Percent uncollected</td>
+<td>70%</td>
+</tr>
+<tr>
+<td><strong>Accounts receivable</strong></td>
+<td><strong>$1,218,000</strong></td>
+</tr>
+</tbody>
+</table>
+<p>4.</p>
+<table border="1" cellpadding="1" cellspacing="1" style=
+"width:500px;">
+<tbody>
+<tr>
+<td>Budgeted sales in units</td>
+<td>29,000</td>
+</tr>
+<tr>
+<td>Add desired ending inventory ( 31,000*20/100)</td>
+<td>6200</td>
+</tr>
+<tr>
+<td>Total needs</td>
+<td>35,200</td>
+</tr>
+<tr>
+<td>Less beginning inventory(29,000*20/100)</td>
+<td>5800</td>
+</tr>
+<tr>
+<td><strong>Required production</strong></td>
+<td><strong>29,400</strong></td>
+</tr>
+</tbody>
+</table>
+<p>5.</p>
+<table border="1" cellpadding="1" cellspacing="1" style=
+"width:500px;">
+<tbody>
+<tr>
+<td>Required production in units</td>
+<td>29,400</td>
+</tr>
+<tr>
+<td>Raw materials needed per unit (pounds)</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Raw materials needed to meet production</td>
+<td>117,600</td>
+</tr>
+<tr>
+<td>Add desired ending raw materials inventory</td>
+<td>12,480</td>
+</tr>
+<tr>
+<td>Total raw material needs</td>
+<td>130,080</td>
+</tr>
+<tr>
+<td>Less beginning raw materials inventory</td>
+<td>(11,760)</td>
+</tr>
+<tr>
+<td><strong>Raw materials to be purchased (pounds)</strong></td>
+<td><strong>118,320</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Desired ending raw materials inventory
+=31,000+6400-6200=31,200*4*10/100 =12,480</p>
+<p>6.</p>
+<table border="1" cellpadding="1" cellspacing="1" style=
+"width:500px;">
+<tbody>
+<tr>
+<td>Raw materials to be purchased (pounds)</td>
+<td>118,320</td>
+</tr>
+<tr>
+<td>Cost per pound</td>
+<td>2.50</td>
+</tr>
+<tr>
+<td><strong>Cost of raw material purchases</strong></td>
+<td><strong>$295,800</strong></td>
+</tr>
+</tbody>
+</table>
+<p>7.</p>
+<table border="1" cellpadding="1" cellspacing="1" style=
+"width:500px;">
+<tbody>
+<tr>
+<td>June purchases($152,160*70/100)</td>
+<td>$106,512</td>
+</tr>
+<tr>
+<td>July purchases($295,800*30/100)</td>
+<td>$88,740</td>
+</tr>
+<tr>
+<td><strong>Total cash disbursements</strong></td>
+<td><strong>$195,252</strong></td>
+</tr>
+</tbody>
+</table>
+<p>8.</p>
+<table border="1" cellpadding="1" cellspacing="1" style=
+"width:500px;">
+<tbody>
+<tr>
+<td>July purchases</td>
+<td>$295,800</td>
+</tr>
+<tr>
+<td>Percent unpaid</td>
+<td>70%</td>
+</tr>
+<tr>
+<td><strong>Accounts payable</strong></td>
+<td><strong>$207,060</strong></td>
+</tr>
+</tbody>
+</table>
+<p>9.</p>
+<table border="1" cellpadding="1" cellspacing="1" style=
+"width:500px;">
+<tbody>
+<tr>
+<td>Ending raw materials inventory (pounds)</td>
+<td>12,480</td>
+</tr>
+<tr>
+<td>Cost per pound</td>
+<td>$2.5</td>
+</tr>
+<tr>
+<td><strong>Raw material inventory balance</strong></td>
+<td><strong>$31,200</strong></td>
+</tr>
+</tbody>
+</table>
+<p>10.</p>
+<table border="1" cellpadding="1" cellspacing="1" style=
+"width:500px;">
+<tbody>
+<tr>
+<td>Required production in units</td>
+<td>29,400</td>
+</tr>
+<tr>
+<td>Direct labor hours per unit</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Total direct labor-hours needed</td>
+<td>58,800</td>
+</tr>
+<tr>
+<td>Direct labor cost per hour</td>
+<td>$15</td>
+</tr>
+<tr>
+<td><strong>Total direct labor cost</strong></td>
+<td><strong>$882,000</strong></td>
+</tr>
+</tbody>
+</table>
+<p>11.</p>
+<table border="1" cellpadding="1" cellspacing="1" style=
+"width:500px;">
+<tbody>
+<tr>
+<td>Direct materials</td>
+<td>4 Pounds</td>
+<td>2.5</td>
+<td>$10</td>
+</tr>
+<tr>
+<td>Direct labor</td>
+<td>2 Hrs</td>
+<td>$15</td>
+<td>$30</td>
+</tr>
+<tr>
+<td>Manufacturing OH</td>
+<td>2 Hrs</td>
+<td>$7</td>
+<td>$14</td>
+</tr>
+<tr>
+<td><strong>Unit product cost</strong></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><strong>$54</strong></td>
+</tr>
+</tbody>
+</table>
+<p>12.</p>
+<table border="1" cellpadding="1" cellspacing="1" style=
+"width:500px;">
+<tbody>
+<tr>
+<td>Ending finished goods inventory in units</td>
+<td>6200</td>
+</tr>
+<tr>
+<td>Unit product cost</td>
+<td>$54</td>
+</tr>
+<tr>
+<td><strong>Ending finished goods inventory</strong></td>
+<td><strong>$334,800</strong></td>
+</tr>
+</tbody>
+</table>
+<p>13.</p>
+<table border="1" cellpadding="1" cellspacing="1" style=
+"width:500px;">
+<tbody>
+<tr>
+<td>Unit sales</td>
+<td>29,000</td>
+</tr>
+<tr>
+<td>Unit product cost</td>
+<td>54</td>
+</tr>
+<tr>
+<td><strong>Estimated cost of goods sold</strong></td>
+<td><strong>$1,566,000</strong></td>
+</tr>
+<tr>
+<td>Total sales</td>
+<td><strong>$1,740,000</strong></td>
+</tr>
+<tr>
+<td>Cost of goods sold</td>
+<td>1,566,000</td>
+</tr>
+<tr>
+<td><strong>Estimated gross margin</strong></td>
+<td><strong>$174,000</strong></td>
+</tr>
+</tbody>
+</table>
+<p>14.</p>
+<table border="1" cellpadding="1" cellspacing="1" style=
+"height:129px;width:489px;">
+<tbody>
+<tr>
+<td>Budgeted unit sales</td>
+<td>29,000</td>
+</tr>
+<tr>
+<td>Variable selling and administrative expense per unit</td>
+<td>$1.80</td>
+</tr>
+<tr>
+<td>Total variable expense</td>
+<td>$52,200</td>
+</tr>
+<tr>
+<td>Fixed selling and administrative expenses</td>
+<td>$68,000</td>
+</tr>
+<tr>
+<td><strong>Total selling and administrative expenses</strong></td>
+<td><strong>$120,200</strong></td>
+</tr>
+</tbody>
+</table>
+<p>15.</p>
+<table border="1" cellpadding="1" cellspacing="1" style=
+"height:86px;width:444px;">
+<tbody>
+<tr>
+<td>Gross margin</td>
+<td><strong>$174,000</strong></td>
+</tr>
+<tr>
+<td>Less Selling and administrative expenses</td>
+<td><strong>($120,200)</strong></td>
+</tr>
+<tr>
+<td><strong>Net operating income</strong></td>
+<td><strong>$53,800</strong></td>
+</tr>
+</tbody>
+</table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

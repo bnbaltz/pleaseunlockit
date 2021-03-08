@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p><img alt="(a) Describe the advantages and disadvantages of the following topologies, and provide ONE
+real life example of using them:
+(" src="https://media.cheggcdn.com/media/2be/2bed9842-2143-4231-8163-d67b79f3389d/phpVh7wI6" style="height:482px;width:892px;"></p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><strong>i. Mesh Topology</strong></p> <p>The mesh topology is a wired or wireless networking structure where computers and network devices&nbsp;are connected in an interconnected network. For N number of nodes in a network, the links are N(N-1)/2. The nodes relay data and sends out their own data. It is one of the most common types of network tolopogy as a transmissions are not interrupted even when one node goes down.</p> <table style="width:683px"> 	<tbody> 		<tr> 			<td style="text-align:center;width:338px"><strong>Advantages</strong></td> 			<td style="text-align:center;width:332px"><strong>Disadvantages</strong></td> 		</tr> 		<tr> 			<td style="width:338px">Relays data even when one node goes down as the mesh distributes data with the other systems in the network.</td> 			<td style="width:332px">Installation is complex and difficult.</td> 		</tr> 		<tr> 			<td style="width:338px">Reduces data transmission redundancy due to to high distribution over the network.</td> 			<td style="width:332px">Redundancy in connections may occur.</td> 		</tr> 		<tr> 			<td style="width:338px">Can easily add extra nodes or systems.</td> 			<td style="width:332px">Implementation is costly in comparison to other topologies.</td> 		</tr> 		<tr> 			<td style="width:338px">Extremey robust and consistent.</td> 			<td style="width:332px">Maintainence is high with this topology.</td> 		</tr> 		<tr> 			<td style="width:338px">Does not have a central point of authority.</td> 			<td style="width:332px">Higher power requirement to run the entire network.</td> 		</tr> 	</tbody> </table> <p><strong>ii. Bus Topology</strong></p> <p>The bus topology connects all the systems - computers and networking devices - to&nbsp;one single networking cable called the &quot;backbone.&quot; The data is carried by the cable and checks it chacks if the correct recipient machine is founcd by comparing the MAC or IP address and the cable then transmits the data to the system that matches.</p> <table style="width:682px"> 	<tbody> 		<tr> 			<td style="text-align:center;width:331px"><strong>Advantages</strong></td> 			<td style="text-align:center;width:338px"><strong>Disadvantages</strong></td> 		</tr> 		<tr> 			<td style="width:331px">Optimum for small networks.</td> 			<td style="width:338px">Not ideal for networks with a large number of devices.</td> 		</tr> 		<tr> 			<td style="width:331px">Adding and removing devices in this topology is easy due to its singular cable &quot;backbone.&quot;</td> 			<td style="width:338px">Difficult to deal with individual system issues within the bus network.</td> 		</tr> 		<tr> 			<td style="width:331px">The cost of implementation is comparitively small as the length of the cable is small among other things.</td> 			<td style="width:338px">Since all the devices are connected to one cable, damage to the cable can impar teh network.</td> 		</tr> 		<tr> 			<td style="width:331px">The bus topolgy is easy to understand and navigate</td> 			<td style="width:338px">Rate of transmission of packets is slower in comparison.</td> 		</tr> 		<tr> 			<td style="width:331px">Extremely easy to install and connect devices to a network.</td> 			<td style="width:338px">High probability for data or pack lost during transmission.</td> 		</tr> 	</tbody> </table> <p><strong>iii. Star Topology</strong></p> <p>The star topology is a network where all the systems in a network is connected to a central system which acts as a hub.&nbsp;All information in the network is first relayed to the hub and then proceeds to the intended recipient system. Thus each device in the network as connect with its own cable to the hub. Therefore for each system N, the number of cables required would be N.</p> <table style="width:685px"> 	<tbody> 		<tr> 			<td style="text-align:center;width:330px"><strong>Advantages</strong></td> 			<td style="text-align:center;width:342px"><strong>Disadvantages</strong></td> 		</tr> 		<tr> 			<td style="width:330px">Reliable than the bus or ring topology.</td> 			<td style="width:342px">The whole network fails if the central hub fails.</td> 		</tr> 		<tr> 			<td style="width:330px">Can add or remove systems from the network without disrupting the other connections.</td> 			<td style="width:342px">Requires more cables than bus topology</td> 		</tr> 		<tr> 			<td style="width:330px">Since the systems are lined up to the hub, its easy to detect any faults that occur at a certian node.&nbsp;</td> 			<td style="width:342px">Performance of the network depends on the central system or hub.</td> 		</tr> 		<tr> 			<td style="width:330px">Requires only one port to connect to the central system.</td> 			<td style="width:342px">The central hub requires a lot of mantainence to ensure the network is connected without issues.</td> 		</tr> 		<tr> 			<td style="width:330px">It is cost effective when compared to mesh topolgy.</td> 			<td style="width:342px">When compared to bus topology, the extra cables, central hubs etc. makes implementation and installation costly.</td> 		</tr> 	</tbody> </table> <p><strong>iv. Ring Topology</strong></p> <p>The ring topology has all the systems in the network connected to one another in the form of a ring. Each system is connected to two other systems in close proximity by cables. Repeaters are used to ensure data loss does not occur.&nbsp;</p> <table style="width:685px"> 	<tbody> 		<tr> 			<td style="text-align:center;width:330px"><strong>Advantages</strong></td> 			<td style="text-align:center;width:342px"><strong>Disadvantages</strong></td> 		</tr> 		<tr> 			<td style="width:330px">Packet loss is minimized as data flows in one direction.</td> 			<td style="width:342px">It is time consuming as the packets have to travel through all the nodes to reach the intented recipient system.</td> 		</tr> 		<tr> 			<td style="width:330px">Since the systems are connected to each other in an orderly fashion, central hubs are not required.</td> 			<td style="width:342px">As the systems are conencted in a ring, if one node is removed or goes down, the entire network shuts down.</td> 		</tr> 		<tr> 			<td style="width:330px">This topology is easy to manage as all systems are connected with only one cable.</td> 			<td style="width:342px">Since they depend on one cable, its hard to scale it to include many systems without increasing risk of network faliure.</td> 		</tr> 		<tr> 			<td style="width:330px">All nodes have equal access to all the resources.</td> 			<td style="width:342px">All systems must be operational for data to be relayed and the network to function.</td> 		</tr> 		<tr> 			<td style="width:330px">Can manage traffic better than bus topology.</td> 			<td style="width:342px">Troubleshooting in a ring topology is difficult.</td> 		</tr> 	</tbody> </table> <p>---</p> <p><span style="color:#999999"><em>NOTE: As per Chegg guidelines I am required to answer only the first question.</em></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

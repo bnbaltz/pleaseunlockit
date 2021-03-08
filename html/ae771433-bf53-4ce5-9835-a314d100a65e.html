@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>PYTHON PLEASE:</p>
+<p>Construct a class “Monster” with the following attributes:</p>
+<ol>
+<li>self.name (a string)</li>
+<li>self.type (a string, default is ‘Normal’)</li>
+<li>self.current_hp (int, starts out equal to max_hp)</li>
+<li>self.max_hp (int, is given as input when the class instance is
+created, default is 20)</li>
+<li>self.exp (int, starts at 0, is increased by fighting)</li>
+<li>self.attacks (a dict of all known attacks)</li>
+<li>self.possible_attacks (a dictionary of all possible
+attacks)</li>
+</ol>
+<p>The dictionary
+of&nbsp;<strong>possible_attacks</strong>&nbsp;will map the name of
+an attack (the key) to how many points of damage the attack does.
+These are all the possible attacks with their corresponding damage
+points.</p>
+<ol>
+<li>sneak_attack: 1</li>
+<li>slash: 2</li>
+<li>ice_storm: 3</li>
+<li>fire_storm: 3</li>
+<li>whirlwind: 3</li>
+<li>earthquake: 2</li>
+<li>double_hit: 4</li>
+<li>wait: 0</li>
+</ol>
+<p>&nbsp;Every monster will start out with only the “wait” attack
+within&nbsp;<strong>self.attacks</strong>, but you will need to
+construct the method&nbsp;<strong>add_attacks</strong>&nbsp;and
+method&nbsp;<strong>remove_attacks</strong>. Both methods will take
+in an&nbsp;<strong>attack_name</strong>&nbsp;as a parameter.</p>
+<p>A monster can only to have a max of four attacks at a time. If
+you add an attack when the monster already has four, the weakest
+one should be dropped automatically. If there is a tie for weakest
+attack, drop the attack that comes first alphabetically. If adding
+the attack ended successfully return True if you try to add an
+invalid attack return False.</p>
+<p>If all of a monster’s attacks are removed, “wait” should
+automatically be added again, so that every monster always has at
+least 1 attack. If removing an attack ended successfully return
+True if you try to remove an invalid or an attack which has not
+been learned return False.</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>Monster with attacks</p>
+<p>-----------------------------------------------------code
+start-------------------------------------------------------------------------------------------</p>
+<p>class Monster:<br>
+&nbsp; &nbsp; def __init__(self, name, typee = 'Normal', max_hpm =
+20, exp = 0):<br>
+&nbsp; &nbsp; &nbsp; &nbsp; self.name = name<br>
+&nbsp; &nbsp; &nbsp; &nbsp; self.type = typee<br>
+&nbsp; &nbsp; &nbsp; &nbsp; self.current_hp = max_hpm<br>
+&nbsp; &nbsp; &nbsp; &nbsp; self.max_hp = max_hpm<br>
+&nbsp; &nbsp; &nbsp; &nbsp; self.exp = 0<br>
+&nbsp; &nbsp; &nbsp; &nbsp; self.attacks = {"wait":0}<br>
+&nbsp; &nbsp; &nbsp; &nbsp; self.possible_attacks =
+{"sneak_attack": 1,"slash": 2,"ice_storm": 3,"fire_storm":
+3,"whirlwind": 3,"earthquake": 2,"double_hit": 4,"wait": 0}<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+&nbsp; &nbsp; def __repr__(self):<br>
+&nbsp; &nbsp; &nbsp; &nbsp; return f" monster {self.name} has
+attacks {list(self.attacks.keys())}"<br>
+&nbsp; &nbsp;&nbsp;<br>
+&nbsp; &nbsp; def add_attacks(self,attack):<br>
+&nbsp; &nbsp; &nbsp; &nbsp; if "wait" in self.attacks.keys():<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; del
+self.attacks["wait"]<br>
+&nbsp; &nbsp; &nbsp; &nbsp; if len(self.attacks) &lt; 4 and (attack
+not in self.attacks.keys()):<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+self.attacks.update({attack:self.possible_attacks[attack]})<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return True<br>
+&nbsp; &nbsp; &nbsp; &nbsp; elif attack not in
+self.attacks.keys():<br>
+# &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; len(self.attacks) &gt;
+4:<br>
+# &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; print("delete and
+insert")<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; min_val =
+sorted(list(self.attacks.values()))<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mini = min_val[0]<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; min_val_count =
+min_val.count(mini)<br>
+# &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; print(mini,
+min_val_count)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if min_val_count ==
+1:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; delete_key
+=
+list(self.attacks.keys())[list(self.attacks.values()).index(mini)]<br>
+
+# &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+print(delete_key)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; del
+self.attacks[delete_key]<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+self.attacks.update({attack:self.possible_attacks[attack]})<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; elif min_val_count &gt;
+1:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; keys =
+[]<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for k,v in
+self.attacks.items():<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; if v == mini:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; keys.append(k)<br>
+# &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+print("unsorted",keys)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; keys =
+sorted(keys)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+print(keys)<br>
+# &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+print("deleting alpha",keys[0])<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; del
+self.attacks[keys[0]]<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+self.attacks.update({attack:self.possible_attacks[attack]})<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return
+True<br>
+&nbsp; &nbsp; &nbsp; &nbsp; else:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return False<br>
+&nbsp; &nbsp;&nbsp;<br>
+&nbsp; &nbsp; def remove_attack(self,attack):<br>
+&nbsp; &nbsp; &nbsp; &nbsp; if len(self.attacks) != 0 and (attack
+in self.attacks.keys()):<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; del
+self.attacks[attack]<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if len(self.attacks) ==
+0:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+self.attacks.update({"wait":0})<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return True<br>
+&nbsp; &nbsp; &nbsp; &nbsp; else:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return False</p>
+<p>&nbsp; &nbsp; &nbsp;
+--------------------------------------------------------end-----------------------------------------------------------------------------------------</p>
+<p>readme usage:</p>
+<p><em>1) creating an object:</em>&nbsp;<strong>cj =
+Monster("cj")</strong></p>
+<p><em>2) Adding attack: (it follows the guidelines and constraints
+you provided)</em></p>
+<ul>
+<li><img src="https://media.cheggcdn.com/media/6ad/6adcd7ec-90b7-4d0e-9c21-970008dcc0ff/phpp0NWBy.png" style="height:141px;width:1113px;" alt="In [231]: cj.add_attacks(whirlwind)
+cj.add_attacks(fire_storm)
+cj.add_attacks(ice_storm)
+cj.add_attacks (double_hit)
+">adding the
+same attack returns false</li>
+<li><em>to check the status of monster</em>:<img src="https://media.cheggcdn.com/media/1a5/1a520290-c127-411b-863c-40be7493c277/phpgF7M5A.png" style="height:75px;width:600px;" alt="In [243]: cj.attacks
+Out[243]: {whirlwind: 3, fire_storm: 3, ice_storm: 3, double_hit: 4}
+"></li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li><em>Adding after the attack dict is full. (it sorts alpha and
+deletes the attack with min power)</em>&nbsp;&lt;here min is 3 and
+fire_storm comes first&gt;&nbsp;
+<ul>
+<li>&nbsp;<img src="https://media.cheggcdn.com/media/314/31460572-c42f-4b1b-93ae-d1ac94d90ca0/phpcYPW8n.png" style="height:101px;width:399px;" alt="In [249]: cj.add_attacks (slash)
+[fire_storm, ice_storm, whirlwind ]
+deleting fire_storm
+Out[249]: True
+">&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</li>
+<li>and the attacks become {'whirlwind': 3, 'ice_storm': 3,
+'double_hit': 4, 'slash': 2}</li>
+<li>DELETES the attack with least power</li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li><em>Removing: removes if the attack is owned in attack dict
+else returns False</em>
+<ul>
+<li><em>if the attack dict is empty, it is updated with
+{wait:0}</em></li>
+<li><img src="https://media.cheggcdn.com/media/edd/eddc7f10-72f5-4b5b-8dc8-a27963df023a/php4RKTDK.png" style="height:58px;width:284px;" alt="In [251]: cj.remove_attack(slash)
+Out[251]: True
+"></li>
+<li>after removing all</li>
+<li>,&nbsp;<img src="https://media.cheggcdn.com/media/cd5/cd52766a-c5e6-4914-a705-8e9ffa6d35c8/phpxgipEK.png" style="height:76px;width:179px;" alt="In [254]: cj.attacks
+Out [254]: {wait: 0}
+"></li>
+</ul>
+</li>
+</ul>
+<p>Please rate my answer, if you found it useful and If you still
+need the&nbsp; jupyter notebook.&nbsp;</p>
+<p>&nbsp;</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

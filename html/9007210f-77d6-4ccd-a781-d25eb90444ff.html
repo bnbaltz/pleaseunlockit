@@ -1,0 +1,2110 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Implement a WPF app to list stock information that is loaded
+from StockData.csv. Your app should allow users to Search a
+specific company’s stock information, and display the search result
+in a DataGrid, and the result should be sorted according to the
+date. Clean the data by removing those rows that the price contains
+negative value while the data is loading. Your app should also
+allow users to calculate the factorial number. The factorial number
+calculation should not block users to interact with your app.</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <pre>
+<code class="language-cs">using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using InventorySystem1._0.Properties;
+
+namespace InventorySystem1._0
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        public void closeForm()
+        {
+            foreach (Form frm in this.MdiChildren)
+            {
+                frm.Close();
+            }
+
+        }
+        public void enabled_menu()
+        {
+            ts_ManageUsers.Enabled = true;
+            ts_Report.Enabled = true;
+            ts_Return.Enabled = true;
+            ts_StockOut.Enabled = true;
+            ts_stocks.Enabled = true;
+            ts_Login.Text = "Logout";
+            ts_Login.Image = Resources.lock_open;
+            ts_settings.Enabled = true;
+
+        }
+        public void disabled_menu()
+        {
+            ts_ManageUsers.Enabled = false;
+            ts_Report.Enabled = false;
+            ts_Return.Enabled = false;
+            ts_StockOut.Enabled = false;
+            ts_stocks.Enabled = false;
+            ts_Login.Image = Resources.login;
+            ts_settings.Enabled = false;
+        }
+        public void showFrm(Form frm)
+        {
+            this.IsMdiContainer = true;
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void ts_stocks_Click(object sender, EventArgs e)
+        {
+            closeForm();
+            showFrm(new frmItems());
+        }
+
+        private void ts_StockOut_Click(object sender, EventArgs e)
+        {
+            closeForm();
+            showFrm(new frmStockOut(""));
+        }
+
+        private void ts_Return_Click(object sender, EventArgs e)
+        {
+            closeForm();
+            showFrm(new frmReturn());
+        }
+
+        private void ts_ManageUsers_Click(object sender, EventArgs e)
+        {
+            closeForm();
+            showFrm(new frmUsers());
+        }
+
+        private void ts_Report_Click(object sender, EventArgs e)
+        {
+            closeForm();
+            showFrm(new frmReport());
+
+        }
+
+        private void ts_Login_Click(object sender, EventArgs e)
+        {
+            if (ts_Login.Text == "Login")
+            {
+                closeForm();
+                showFrm(new frmLogin(this));
+            }
+            else
+            {
+                closeForm();
+                disabled_menu();
+                ts_Login.Text = "Login";
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            disabled_menu();
+
+        }
+
+        private void ts_settings_Click(object sender, EventArgs e)
+        {
+            closeForm();
+            showFrm(new frmSettings());
+        }
+    }
+}
+
+
+
+
+namespace InventorySystem1._0
+{
+    partial class Form1
+    {
+        
+        private System.ComponentModel.IContainer components = null;
+
+       
+         &lt;param name="disposing"&gt;true if managed resources should be disposed; otherwise, false.&lt;/param&gt;
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing &amp;&amp; (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+      
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.ts_stocks = new System.Windows.Forms.ToolStripButton();
+            this.ts_StockOut = new System.Windows.Forms.ToolStripButton();
+            this.ts_Return = new System.Windows.Forms.ToolStripButton();
+            this.ts_ManageUsers = new System.Windows.Forms.ToolStripButton();
+            this.ts_settings = new System.Windows.Forms.ToolStripButton();
+            this.ts_Report = new System.Windows.Forms.ToolStripButton();
+            this.ts_Login = new System.Windows.Forms.ToolStripButton();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStrip1.SuspendLayout();
+            this.SuspendLayout();
+            
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(50, 35);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ts_stocks,
+            this.ts_StockOut,
+            this.ts_Return,
+            this.ts_ManageUsers,
+            this.ts_settings,
+            this.ts_Report,
+            this.ts_Login});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(107, 556);
+            this.toolStrip1.TabIndex = 0;
+            this.toolStrip1.Text = "toolStrip1";
+           
+            this.ts_stocks.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ts_stocks.Image = ((System.Drawing.Image)(resources.GetObject("ts_stocks.Image")));
+            this.ts_stocks.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ts_stocks.Name = "ts_stocks";
+            this.ts_stocks.Size = new System.Drawing.Size(104, 59);
+            this.ts_stocks.Text = "Stocks Master";
+            this.ts_stocks.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.ts_stocks.Click += new System.EventHandler(this.ts_stocks_Click);
+          
+            this.ts_StockOut.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ts_StockOut.Image = ((System.Drawing.Image)(resources.GetObject("ts_StockOut.Image")));
+            this.ts_StockOut.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ts_StockOut.Name = "ts_StockOut";
+            this.ts_StockOut.Size = new System.Drawing.Size(104, 59);
+            this.ts_StockOut.Text = "Stock-out";
+            this.ts_StockOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.ts_StockOut.Click += new System.EventHandler(this.ts_StockOut_Click);
+           
+            this.ts_Return.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ts_Return.Image = ((System.Drawing.Image)(resources.GetObject("ts_Return.Image")));
+            this.ts_Return.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ts_Return.Name = "ts_Return";
+            this.ts_Return.Size = new System.Drawing.Size(104, 59);
+            this.ts_Return.Text = "Stock Return";
+            this.ts_Return.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.ts_Return.Click += new System.EventHandler(this.ts_Return_Click);
+          
+            this.ts_ManageUsers.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ts_ManageUsers.Image = ((System.Drawing.Image)(resources.GetObject("ts_ManageUsers.Image")));
+            this.ts_ManageUsers.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ts_ManageUsers.Name = "ts_ManageUsers";
+            this.ts_ManageUsers.Size = new System.Drawing.Size(104, 59);
+            this.ts_ManageUsers.Text = "Manage Users";
+            this.ts_ManageUsers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.ts_ManageUsers.Click += new System.EventHandler(this.ts_ManageUsers_Click);
+            
+            this.ts_settings.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ts_settings.Image = ((System.Drawing.Image)(resources.GetObject("ts_settings.Image")));
+            this.ts_settings.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ts_settings.Name = "ts_settings";
+            this.ts_settings.Size = new System.Drawing.Size(104, 59);
+            this.ts_settings.Text = "Settings";
+            this.ts_settings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.ts_settings.Click += new System.EventHandler(this.ts_settings_Click);
+           
+            this.ts_Report.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ts_Report.Image = ((System.Drawing.Image)(resources.GetObject("ts_Report.Image")));
+            this.ts_Report.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ts_Report.Name = "ts_Report";
+            this.ts_Report.Size = new System.Drawing.Size(104, 59);
+            this.ts_Report.Text = "Report";
+            this.ts_Report.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.ts_Report.Click += new System.EventHandler(this.ts_Report_Click);
+            
+            this.ts_Login.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ts_Login.Image = global::InventorySystem1._0.Properties.Resources.login;
+            this.ts_Login.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ts_Login.Name = "ts_Login";
+            this.ts_Login.Size = new System.Drawing.Size(104, 59);
+            this.ts_Login.Text = "Login";
+            this.ts_Login.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.ts_Login.Click += new System.EventHandler(this.ts_Login_Click);
+            
+            this.statusStrip1.Location = new System.Drawing.Point(107, 534);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(881, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(988, 556);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.toolStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.IsMdiContainer = true;
+            this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Inventory System Dashboard";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton ts_stocks;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripButton ts_StockOut;
+        private System.Windows.Forms.ToolStripButton ts_Return;
+        private System.Windows.Forms.ToolStripButton ts_ManageUsers;
+        private System.Windows.Forms.ToolStripButton ts_Report;
+        private System.Windows.Forms.ToolStripButton ts_Login;
+        private System.Windows.Forms.ToolStripButton ts_settings;
+    }
+}
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using InventorySystem1._0.Includes;
+
+namespace InventorySystem1._0
+{
+    public partial class frmItems : Form
+    {
+        public frmItems()
+        {
+            InitializeComponent();
+        }
+        SQLConfig config = new SQLConfig();
+        usableFunction funct = new usableFunction();
+        string sql;
+        int maxcolumn;
+        int inc = 0;
+        int maxrow;
+
+        private void select_navigation(string sql)
+        {
+            config.singleResult(sql);
+            maxrow = config.dt.Rows.Count;
+        }
+        public void navigate_records(int inc)
+        {
+            config.singleResult("SELECT * FROM `tblitems`");
+            txtitemid.Text =config.dt.Rows[inc].Field&lt;string&gt;("ITEMID");
+            txtname.Text = config.dt.Rows[inc].Field&lt;string&gt;("NAME");
+            txtdescription.Text = config.dt.Rows[inc].Field&lt;string&gt;("DESCRIPTION");
+            txtprice.Text = config.dt.Rows[inc].Field&lt;double&gt;("PRICE").ToString();
+            cbotype.Text = config.dt.Rows[inc].Field&lt;string&gt;("TYPE");
+}
+        private void btnnew_Click(object sender, EventArgs e)
+        {
+
+            inc = 0;
+          
+            sql = "SELECT * FROM tblitems";
+            config.Load_DTG(sql, dtglist);  
+
+            maxcolumn = dtglist.Columns.Count - 1;
+
+            dtglist.Columns[maxcolumn].Visible = false;
+
+            btnadd.Visible = false;
+             
+            select_navigation("SELECT ITEMID FROM tblitems");
+            lblmax.Text = maxrow.ToString();
+            lblinc.Text = inc.ToString();
+
+            sql = "SELECT DESCRIPTION FROM `tblsettings` WHERE `PARA`='CATEGORY'";
+            config.fiil_CBO(sql, cbotype);
+
+            sql = "SELECT DESCRIPTION FROM `tblsettings` WHERE `PARA`='Unit'";
+            config.fiil_CBO(sql, cbounit);
+
+
+            funct.clearTxt(pnl_stockmaster);
+
+        }
+
+        private void frmItems_Load(object sender, EventArgs e)
+        {
+            btnnew_Click(sender, e);
+        }
+
+        private void cbotype_SelectedIndexChanged(object sender, EventArgs e)
+        { 
+                sql = "SELECT concat(`STRT`, `END`) FROM `tblautonumber` WHERE `DESCRIPTION`= '" + cbotype.Text + "'";
+                config.autonumber(sql, txtitemid);
+ 
+        }
+
+        private void btnsave_Click(object sender, EventArgs e)
+        {
+
+            foreach(Control obj in pnl_stockmaster.Controls)
+            {
+                if(obj is TextBox)
+                {
+                    if(obj.Text == "")
+                    {
+                        MessageBox.Show("Action connot be perform. All fields are required to be fill up.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                }
+            }
+
+
+
+            sql = "INSERT INTO  `tblstock_in_out` (`ITEMID`, `QTY`,`TRANSACTIONDATE`, `TOTALPRICE`, `REMARKS`)" +
+              " VALUES ('" + txtitemid.Text + "','" + txtqty.Text + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + txtprice.Text +
+              "','StockIn')";
+           config.Execute_Query(sql);
+
+
+            sql = "SELECT ITEMID FROM tblitems WHERE ITEMID='" + txtitemid.Text + "'";
+            config.singleResult(sql);
+            if(config.dt.Rows.Count &gt; 0)
+            {
+                sql = "UPDATE tblitems SET qty =qty + '" + txtqty.Text + "' WHERE ITEMID ='" + txtitemid.Text + "'";
+                config.Execute_Query(sql);
+            }
+            else
+            {
+                sql = "insert into tblitems  (ITEMID,`NAME`, `DESCRIPTION`, `TYPE`, `PRICE`, `QTY`,UNIT)" +
+                   "VALUES ('" + txtitemid.Text + "','" + txtname.Text + "','" + txtdescription.Text + "','" + cbotype.Text 
+                   + "','" + txtprice.Text + "','" + txtqty.Text + "','" + cbounit.Text + "' )";
+                config.Execute_CUD(sql, "No data saved.", "Data has been saved in the database.");
+
+                config.update_Autonumber(cbotype.Text);
+            }
+
+            btnnew_Click(sender, e);
+            
+        }
+
+        private void btnupdate_Click(object sender, EventArgs e)
+        {
+            sql = "UPDATE tblitems SET `NAME`='" + txtname.Text + "', `DESCRIPTION`='" + txtdescription.Text + "', `TYPE`='" + cbotype.Text + "', `PRICE`='" + txtprice.Text + "'" +
+            ",`UNIT`='" + cbounit.Text + "' WHERE ITEMID='" + txtitemid.Text + "'";
+            config.Execute_CUD(sql, "Error to update", "Data has been updated in the database"); 
+            btnnew_Click(sender, e);
+        }
+
+        private void btndelete_Click(object sender, EventArgs e)
+        {
+            sql = "DELETE FROM tblitems WHERE ITEMID='" + dtglist.CurrentRow.Cells[0].Value + "'";
+            config.Execute_CUD(sql, "error to delete", "Data has been deleted.");
+            btnnew_Click(sender, e);
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtitemid_TextChanged(object sender, EventArgs e)
+        {
+            
+             
+        }
+
+        private void dtglist_Click(object sender, EventArgs e)
+        { 
+            sql = "SELECT * FROM tblitems WHERE ITEMID='" + dtglist.CurrentRow.Cells[0].Value.ToString() + "'";
+            config.singleResult(sql);
+            if (config.dt.Rows.Count &gt; 0)
+            {
+                txtitemid.Text = config.dt.Rows[0].Field&lt;string&gt;("ITEMID");
+                txtname.Text = config.dt.Rows[0].Field&lt;string&gt;("NAME");
+                txtdescription.Text = config.dt.Rows[0].Field&lt;string&gt;("DESCRIPTION");
+                txtprice.Text = config.dt.Rows[0].Field&lt;double&gt;("PRICE").ToString();
+                cbotype.Text = config.dt.Rows[0].Field&lt;string&gt;("TYPE");
+}
+        }
+
+        private void btnfirst_Click(object sender, EventArgs e)
+        {
+            inc = 1; 
+            lblinc.Text = inc.ToString();
+            inc = 0;
+            navigate_records(inc);
+        }
+
+        private void btnlast_Click(object sender, EventArgs e)
+        {
+            select_navigation("SELECT ITEMID FROM tblitems"); 
+            if(inc!= maxrow)
+            {
+                inc = maxrow;
+                lblinc.Text = inc.ToString();
+                inc = maxrow - 1;
+                navigate_records(inc); 
+            } 
+        }
+
+        private void btnprev_Click(object sender, EventArgs e)
+        {
+            int lbl_inc=0; 
+
+            if(inc &gt; 0)
+            {
+                inc = inc - 1;
+                navigate_records(inc);
+                 
+
+                lbl_inc = int.Parse(lblinc.Text) - 1;
+
+                lblinc.Text = lbl_inc.ToString();
+            }
+            else if(inc == 0)
+            {
+                navigate_records(inc);
+                lbl_inc = 1;
+                lblinc.Text = lbl_inc.ToString();
+                MessageBox.Show("First Records", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } 
+        }
+
+        private void btnnext_Click(object sender, EventArgs e)
+        {
+            int lbl_inc;
+
+            select_navigation("SELECT ITEMID FROM tblitems");
+            if(inc==maxrow-1)
+            {
+                MessageBox.Show("no more rows", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (inc != maxrow - 1)
+                {
+                    inc = inc + 1;
+                    navigate_records(inc);
+                }
+
+                lbl_inc = int.Parse(lblinc.Text) + 1;
+                lblinc.Text = lbl_inc.ToString();
+            }
+        }
+
+        private void txtsearch_TextChanged(object sender, EventArgs e)
+        {
+            sql = "SELECT * FROM tblitems WHERE ITEMID LIKE '%" + txtsearch.Text + "%' OR NAME LIKE '%" + txtsearch.Text + "%'";
+            config.Load_DTG(sql, dtglist);
+
+
+            maxcolumn = dtglist.Columns.Count - 1;
+
+            dtglist.Columns[maxcolumn].Visible = false;
+
+        }
+    }
+}
+
+
+namespace InventorySystem1._0
+{
+    partial class frmItems
+    {
+       
+        private System.ComponentModel.IContainer components = null;
+
+       
+         &lt;param name="disposing"&gt;true if managed resources should be disposed; otherwise, false.&lt;/param&gt;
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing &amp;&amp; (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+       
+        private void InitializeComponent()
+        {
+            this.txtqty = new System.Windows.Forms.TextBox();
+            this.Button1 = new System.Windows.Forms.Button();
+            this.Label6 = new System.Windows.Forms.Label();
+            this.lblinc = new System.Windows.Forms.Label();
+            this.txtsearch = new System.Windows.Forms.TextBox();
+            this.btnnew = new System.Windows.Forms.Button();
+            this.Label9 = new System.Windows.Forms.Label();
+            this.btnlast = new System.Windows.Forms.Button();
+            this.btndelete = new System.Windows.Forms.Button();
+            this.btnnext = new System.Windows.Forms.Button();
+            this.cbotype = new System.Windows.Forms.ComboBox();
+            this.txtname = new System.Windows.Forms.TextBox();
+            this.Label4 = new System.Windows.Forms.Label();
+            this.Label3 = new System.Windows.Forms.Label();
+            this.txtprice = new System.Windows.Forms.TextBox();
+            this.btnprev = new System.Windows.Forms.Button();
+            this.btnupdate = new System.Windows.Forms.Button();
+            this.btnfirst = new System.Windows.Forms.Button();
+            this.btnsave = new System.Windows.Forms.Button();
+            this.txtdescription = new System.Windows.Forms.RichTextBox();
+            this.Label2 = new System.Windows.Forms.Label();
+            this.lblmax = new System.Windows.Forms.Label();
+            this.txtitemid = new System.Windows.Forms.TextBox();
+            this.Label8 = new System.Windows.Forms.Label();
+            this.cbounit = new System.Windows.Forms.ComboBox();
+            this.dtglist = new System.Windows.Forms.DataGridView();
+            this.Panel2 = new System.Windows.Forms.Panel();
+            this.btnadd = new System.Windows.Forms.Button();
+            this.Label1 = new System.Windows.Forms.Label();
+            this.Label7 = new System.Windows.Forms.Label();
+            this.pnl_stockmaster = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.dtglist)).BeginInit();
+            this.Panel2.SuspendLayout();
+            this.pnl_stockmaster.SuspendLayout();
+            this.SuspendLayout();
+            
+            this.txtqty.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtqty.Location = new System.Drawing.Point(443, 131);
+            this.txtqty.Name = "txtqty";
+            this.txtqty.Size = new System.Drawing.Size(153, 22);
+            this.txtqty.TabIndex = 4;
+           
+            this.Button1.BackColor = System.Drawing.Color.Transparent;
+            this.Button1.ForeColor = System.Drawing.Color.Black;
+            this.Button1.Location = new System.Drawing.Point(450, 193);
+            this.Button1.Name = "Button1";
+            this.Button1.Size = new System.Drawing.Size(106, 30);
+            this.Button1.TabIndex = 44;
+            this.Button1.Text = "Close";
+            this.Button1.UseVisualStyleBackColor = false;
+            this.Button1.Click += new System.EventHandler(this.Button1_Click);
+            
+            this.Label6.AutoSize = true;
+            this.Label6.Location = new System.Drawing.Point(419, 238);
+            this.Label6.Name = "Label6";
+            this.Label6.Size = new System.Drawing.Size(47, 13);
+            this.Label6.TabIndex = 31;
+            this.Label6.Text = "Search :";
+            
+            this.lblinc.AutoSize = true;
+            this.lblinc.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblinc.Location = new System.Drawing.Point(14, 235);
+            this.lblinc.Name = "lblinc";
+            this.lblinc.Size = new System.Drawing.Size(14, 16);
+            this.lblinc.TabIndex = 42;
+            this.lblinc.Text = "1";
+             
+            this.txtsearch.Location = new System.Drawing.Point(472, 235);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(263, 20);
+            this.txtsearch.TabIndex = 29;
+            this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
+           
+            this.btnnew.BackColor = System.Drawing.Color.Transparent;
+            this.btnnew.ForeColor = System.Drawing.Color.Black;
+            this.btnnew.Location = new System.Drawing.Point(338, 193);
+            this.btnnew.Name = "btnnew";
+            this.btnnew.Size = new System.Drawing.Size(106, 30);
+            this.btnnew.TabIndex = 33;
+            this.btnnew.Text = "New";
+            this.btnnew.UseVisualStyleBackColor = false;
+            this.btnnew.Click += new System.EventHandler(this.btnnew_Click);
+            
+            this.Label9.AutoSize = true;
+            this.Label9.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label9.Location = new System.Drawing.Point(36, 235);
+            this.Label9.Name = "Label9";
+            this.Label9.Size = new System.Drawing.Size(19, 16);
+            this.Label9.TabIndex = 37;
+            this.Label9.Text = "of";
+            
+            this.btnlast.BackColor = System.Drawing.Color.Transparent;
+            this.btnlast.ForeColor = System.Drawing.Color.Black;
+            this.btnlast.Location = new System.Drawing.Point(222, 229);
+            this.btnlast.Name = "btnlast";
+            this.btnlast.Size = new System.Drawing.Size(39, 30);
+            this.btnlast.TabIndex = 38;
+            this.btnlast.Text = "&gt;&gt;";
+            this.btnlast.UseVisualStyleBackColor = false;
+            this.btnlast.Click += new System.EventHandler(this.btnlast_Click);
+             
+            this.btndelete.BackColor = System.Drawing.Color.Transparent;
+            this.btndelete.ForeColor = System.Drawing.Color.Black;
+            this.btndelete.Location = new System.Drawing.Point(228, 193);
+            this.btndelete.Name = "btndelete";
+            this.btndelete.Size = new System.Drawing.Size(106, 30);
+            this.btndelete.TabIndex = 34;
+            this.btndelete.Text = "Delete";
+            this.btndelete.UseVisualStyleBackColor = false;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
+             
+            this.btnnext.BackColor = System.Drawing.Color.Transparent;
+            this.btnnext.ForeColor = System.Drawing.Color.Black;
+            this.btnnext.Location = new System.Drawing.Point(174, 229);
+            this.btnnext.Name = "btnnext";
+            this.btnnext.Size = new System.Drawing.Size(39, 30);
+            this.btnnext.TabIndex = 39;
+            this.btnnext.Text = "&gt;";
+            this.btnnext.UseVisualStyleBackColor = false;
+            this.btnnext.Click += new System.EventHandler(this.btnnext_Click);
+            
+            this.cbotype.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbotype.FormattingEnabled = true;
+            this.cbotype.Location = new System.Drawing.Point(441, 59);
+            this.cbotype.Name = "cbotype";
+            this.cbotype.Size = new System.Drawing.Size(252, 24);
+            this.cbotype.TabIndex = 2;
+            this.cbotype.SelectedIndexChanged += new System.EventHandler(this.cbotype_SelectedIndexChanged);
+             
+            this.txtname.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtname.Location = new System.Drawing.Point(110, 59);
+            this.txtname.Name = "txtname";
+            this.txtname.Size = new System.Drawing.Size(252, 22);
+            this.txtname.TabIndex = 0;
+             
+            this.Label4.AutoSize = true;
+            this.Label4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label4.Location = new System.Drawing.Point(392, 99);
+            this.Label4.Name = "Label4";
+            this.Label4.Size = new System.Drawing.Size(45, 16);
+            this.Label4.TabIndex = 1;
+            this.Label4.Text = "Price ::";
+            
+            this.Label3.AutoSize = true;
+            this.Label3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label3.Location = new System.Drawing.Point(368, 62);
+            this.Label3.Name = "Label3";
+            this.Label3.Size = new System.Drawing.Size(67, 16);
+            this.Label3.TabIndex = 1;
+            this.Label3.Text = "Category ::";
+             
+            this.txtprice.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtprice.Location = new System.Drawing.Point(443, 96);
+            this.txtprice.Name = "txtprice";
+            this.txtprice.Size = new System.Drawing.Size(250, 22);
+            this.txtprice.TabIndex = 0;
+            
+            this.btnprev.BackColor = System.Drawing.Color.Transparent;
+            this.btnprev.ForeColor = System.Drawing.Color.Black;
+            this.btnprev.Location = new System.Drawing.Point(128, 229);
+            this.btnprev.Name = "btnprev";
+            this.btnprev.Size = new System.Drawing.Size(39, 30);
+            this.btnprev.TabIndex = 40;
+            this.btnprev.Text = "&lt;";
+            this.btnprev.UseVisualStyleBackColor = false;
+            this.btnprev.Click += new System.EventHandler(this.btnprev_Click);
+           
+            this.btnupdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnupdate.ForeColor = System.Drawing.Color.Black;
+            this.btnupdate.Location = new System.Drawing.Point(119, 193);
+            this.btnupdate.Name = "btnupdate";
+            this.btnupdate.Size = new System.Drawing.Size(103, 30);
+            this.btnupdate.TabIndex = 35;
+            this.btnupdate.Text = "Update";
+            this.btnupdate.UseVisualStyleBackColor = false;
+            this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
+            
+            this.btnfirst.BackColor = System.Drawing.Color.Transparent;
+            this.btnfirst.ForeColor = System.Drawing.Color.Black;
+            this.btnfirst.Location = new System.Drawing.Point(83, 229);
+            this.btnfirst.Name = "btnfirst";
+            this.btnfirst.Size = new System.Drawing.Size(39, 30);
+            this.btnfirst.TabIndex = 41;
+            this.btnfirst.Text = "&lt;&lt;";
+            this.btnfirst.UseVisualStyleBackColor = false;
+            this.btnfirst.Click += new System.EventHandler(this.btnfirst_Click);
+             
+            this.btnsave.BackColor = System.Drawing.Color.Transparent;
+            this.btnsave.ForeColor = System.Drawing.Color.Black;
+            this.btnsave.Location = new System.Drawing.Point(7, 193);
+            this.btnsave.Name = "btnsave";
+            this.btnsave.Size = new System.Drawing.Size(106, 30);
+            this.btnsave.TabIndex = 36;
+            this.btnsave.Text = "Save";
+            this.btnsave.UseVisualStyleBackColor = false;
+            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
+             
+            this.txtdescription.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdescription.Location = new System.Drawing.Point(109, 95);
+            this.txtdescription.Name = "txtdescription";
+            this.txtdescription.Size = new System.Drawing.Size(253, 62);
+            this.txtdescription.TabIndex = 3;
+            this.txtdescription.Text = "";
+             
+            this.Label2.AutoSize = true;
+            this.Label2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label2.Location = new System.Drawing.Point(23, 98);
+            this.Label2.Name = "Label2";
+            this.Label2.Size = new System.Drawing.Size(80, 16);
+            this.Label2.TabIndex = 1;
+            this.Label2.Text = "Description ::";
+            
+            this.lblmax.AutoSize = true;
+            this.lblmax.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmax.Location = new System.Drawing.Point(63, 235);
+            this.lblmax.Name = "lblmax";
+            this.lblmax.Size = new System.Drawing.Size(14, 16);
+            this.lblmax.TabIndex = 43;
+            this.lblmax.Text = "1";
+            
+            this.txtitemid.Enabled = false;
+            this.txtitemid.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtitemid.Location = new System.Drawing.Point(110, 31);
+            this.txtitemid.Name = "txtitemid";
+            this.txtitemid.Size = new System.Drawing.Size(251, 22);
+            this.txtitemid.TabIndex = 7;
+            this.txtitemid.TextChanged += new System.EventHandler(this.txtitemid_TextChanged);
+             
+            this.Label8.AutoSize = true;
+            this.Label8.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label8.Location = new System.Drawing.Point(47, 34);
+            this.Label8.Name = "Label8";
+            this.Label8.Size = new System.Drawing.Size(56, 16);
+            this.Label8.TabIndex = 8;
+            this.Label8.Text = "Item Id ::";
+           
+            this.cbounit.FormattingEnabled = true;
+            this.cbounit.Items.AddRange(new object[] {
+            "Metre",
+            "Pcs."});
+            this.cbounit.Location = new System.Drawing.Point(606, 130);
+            this.cbounit.Name = "cbounit";
+            this.cbounit.Size = new System.Drawing.Size(87, 23);
+            this.cbounit.TabIndex = 6;
+            this.cbounit.Text = "Metre";
+            
+            this.dtglist.AllowUserToAddRows = false;
+            this.dtglist.AllowUserToDeleteRows = false;
+            this.dtglist.AllowUserToResizeColumns = false;
+            this.dtglist.AllowUserToResizeRows = false;
+            this.dtglist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtglist.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtglist.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dtglist.Location = new System.Drawing.Point(0, 0);
+            this.dtglist.Name = "dtglist";
+            this.dtglist.Size = new System.Drawing.Size(733, 311);
+            this.dtglist.TabIndex = 0;
+            this.dtglist.Click += new System.EventHandler(this.dtglist_Click);
+            
+            this.Panel2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Panel2.Controls.Add(this.dtglist);
+            this.Panel2.Controls.Add(this.btnadd);
+            this.Panel2.Location = new System.Drawing.Point(6, 265);
+            this.Panel2.Name = "Panel2";
+            this.Panel2.Size = new System.Drawing.Size(735, 313);
+            this.Panel2.TabIndex = 32;
+            
+            this.btnadd.Location = new System.Drawing.Point(344, 55);
+            this.btnadd.Name = "btnadd";
+            this.btnadd.Size = new System.Drawing.Size(142, 25);
+            this.btnadd.TabIndex = 2;
+            this.btnadd.Text = "Add";
+            this.btnadd.UseVisualStyleBackColor = true;
+             
+            this.Label1.AutoSize = true;
+            this.Label1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label1.Location = new System.Drawing.Point(30, 59);
+            this.Label1.Name = "Label1";
+            this.Label1.Size = new System.Drawing.Size(74, 16);
+            this.Label1.TabIndex = 1;
+            this.Label1.Text = "Item Name ::";
+            
+            this.Label7.AutoSize = true;
+            this.Label7.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label7.Location = new System.Drawing.Point(373, 134);
+            this.Label7.Name = "Label7";
+            this.Label7.Size = new System.Drawing.Size(64, 16);
+            this.Label7.TabIndex = 5;
+            this.Label7.Text = "Quantity ::";
+            
+            this.pnl_stockmaster.BackColor = System.Drawing.Color.White;
+            this.pnl_stockmaster.Controls.Add(this.txtitemid);
+            this.pnl_stockmaster.Controls.Add(this.Label8);
+            this.pnl_stockmaster.Controls.Add(this.cbounit);
+            this.pnl_stockmaster.Controls.Add(this.Label7);
+            this.pnl_stockmaster.Controls.Add(this.txtqty);
+            this.pnl_stockmaster.Controls.Add(this.txtdescription);
+            this.pnl_stockmaster.Controls.Add(this.cbotype);
+            this.pnl_stockmaster.Controls.Add(this.txtname);
+            this.pnl_stockmaster.Controls.Add(this.Label4);
+            this.pnl_stockmaster.Controls.Add(this.Label3);
+            this.pnl_stockmaster.Controls.Add(this.txtprice);
+            this.pnl_stockmaster.Controls.Add(this.Label2);
+            this.pnl_stockmaster.Controls.Add(this.Label1);
+            this.pnl_stockmaster.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_stockmaster.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnl_stockmaster.Location = new System.Drawing.Point(0, 0);
+            this.pnl_stockmaster.Name = "pnl_stockmaster";
+            this.pnl_stockmaster.Size = new System.Drawing.Size(748, 184);
+            this.pnl_stockmaster.TabIndex = 30;
+             
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(748, 590);
+            this.Controls.Add(this.Button1);
+            this.Controls.Add(this.Label6);
+            this.Controls.Add(this.lblinc);
+            this.Controls.Add(this.txtsearch);
+            this.Controls.Add(this.btnnew);
+            this.Controls.Add(this.Label9);
+            this.Controls.Add(this.btnlast);
+            this.Controls.Add(this.btndelete);
+            this.Controls.Add(this.btnnext);
+            this.Controls.Add(this.btnprev);
+            this.Controls.Add(this.btnupdate);
+            this.Controls.Add(this.btnfirst);
+            this.Controls.Add(this.btnsave);
+            this.Controls.Add(this.lblmax);
+            this.Controls.Add(this.Panel2);
+            this.Controls.Add(this.pnl_stockmaster);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "frmItems";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Stock Master";
+            this.Load += new System.EventHandler(this.frmItems_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtglist)).EndInit();
+            this.Panel2.ResumeLayout(false);
+            this.pnl_stockmaster.ResumeLayout(false);
+            this.pnl_stockmaster.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        internal System.Windows.Forms.TextBox txtqty;
+        internal System.Windows.Forms.Button Button1;
+        internal System.Windows.Forms.Label Label6;
+        internal System.Windows.Forms.Label lblinc;
+        internal System.Windows.Forms.TextBox txtsearch;
+        internal System.Windows.Forms.Button btnnew;
+        internal System.Windows.Forms.Label Label9;
+        internal System.Windows.Forms.Button btnlast;
+        internal System.Windows.Forms.Button btndelete;
+        internal System.Windows.Forms.Button btnnext;
+        internal System.Windows.Forms.ComboBox cbotype;
+        internal System.Windows.Forms.TextBox txtname;
+        internal System.Windows.Forms.Label Label4;
+        internal System.Windows.Forms.Label Label3;
+        internal System.Windows.Forms.TextBox txtprice;
+        internal System.Windows.Forms.Button btnprev;
+        internal System.Windows.Forms.Button btnupdate;
+        internal System.Windows.Forms.Button btnfirst;
+        internal System.Windows.Forms.Button btnsave;
+        internal System.Windows.Forms.RichTextBox txtdescription;
+        internal System.Windows.Forms.Label Label2;
+        internal System.Windows.Forms.Label lblmax;
+        internal System.Windows.Forms.TextBox txtitemid;
+        internal System.Windows.Forms.Label Label8;
+        internal System.Windows.Forms.ComboBox cbounit;
+        internal System.Windows.Forms.DataGridView dtglist;
+        internal System.Windows.Forms.Panel Panel2;
+        internal System.Windows.Forms.Button btnadd;
+        internal System.Windows.Forms.Label Label1;
+        internal System.Windows.Forms.Label Label7;
+        internal System.Windows.Forms.Panel pnl_stockmaster;
+    }
+}
+
+
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using InventorySystem1._0.Includes;
+
+namespace InventorySystem1._0
+{
+    public partial class frmListReturned : Form
+    {
+        public frmListReturned()
+        {
+            InitializeComponent();
+        }
+        SQLConfig config = new SQLConfig();
+        string sql;
+        private void frmListReturned_Load(object sender, EventArgs e)
+        {
+            sql = "SELECT concat(`FIRSTNAME`, `LASTNAME`) as 'FULLNAME',`STOCKRETURNNUMBER` as 'TRANSACTION#',`NAME` as 'ITEMNAME', `RETURNDATE` FROM `tblstock_return` r, `tblitems` i,`tblperson` p WHERE i.`ITEMID`=r.`ITEMID` and r.`OWNER_CUS_ID` =p.`SUPLIERCUSTOMERID` and p.TYPE not in ('Suplier')" +
+                 " AND STOCKRETURNNUMBER LIKE '%" + txtsearch.Text + "%'";
+            config.Load_DTG(sql, dtglist);
+        }
+
+        private void txtsearch_TextChanged(object sender, EventArgs e)
+        {
+            frmListReturned_Load(sender, e);
+        }
+    }
+}
+
+
+namespace InventorySystem1._0
+{
+    partial class frmListReturned
+    {
+       
+        private System.ComponentModel.IContainer components = null;
+
+      
+         &lt;param name="disposing"&gt;true if managed resources should be disposed; otherwise, false.&lt;/param&gt;
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing &amp;&amp; (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+      
+        private void InitializeComponent()
+        {
+            this.Label1 = new System.Windows.Forms.Label();
+            this.txtsearch = new System.Windows.Forms.TextBox();
+            this.dtglist = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dtglist)).BeginInit();
+            this.SuspendLayout();
+             
+            this.Label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Label1.AutoSize = true;
+            this.Label1.Location = new System.Drawing.Point(397, 15);
+            this.Label1.Name = "Label1";
+            this.Label1.Size = new System.Drawing.Size(47, 13);
+            this.Label1.TabIndex = 21;
+            this.Label1.Text = "Search: ";
+            
+            this.txtsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtsearch.Location = new System.Drawing.Point(450, 12);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(330, 20);
+            this.txtsearch.TabIndex = 20;
+            this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
+             
+            this.dtglist.AllowUserToAddRows = false;
+            this.dtglist.AllowUserToDeleteRows = false;
+            this.dtglist.AllowUserToResizeColumns = false;
+            this.dtglist.AllowUserToResizeRows = false;
+            this.dtglist.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtglist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtglist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtglist.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dtglist.Location = new System.Drawing.Point(4, 38);
+            this.dtglist.Name = "dtglist";
+            this.dtglist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtglist.Size = new System.Drawing.Size(776, 394);
+            this.dtglist.TabIndex = 19;
+            
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(792, 444);
+            this.Controls.Add(this.Label1);
+            this.Controls.Add(this.txtsearch);
+            this.Controls.Add(this.dtglist);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "frmListReturned";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "List of Returned Items";
+            this.Load += new System.EventHandler(this.frmListReturned_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtglist)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        internal System.Windows.Forms.Label Label1;
+        internal System.Windows.Forms.TextBox txtsearch;
+        internal System.Windows.Forms.DataGridView dtglist;
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using InventorySystem1._0.Includes;
+namespace InventorySystem1._0
+{
+    public partial class frmListStockout : Form
+    {
+        public frmListStockout()
+        {
+            InitializeComponent();
+        }
+        SQLConfig config = new SQLConfig();
+        string sql;
+        private void frmListStockout_Load(object sender, EventArgs e)
+        {
+            sql = "SELECT  `TRANSACTIONNUMBER` as ID,concat(`FIRSTNAME`, `LASTNAME`) as 'CUSTOMER',`NAME` as 'ITEMNAME', `DESCRIPTION`, `PRICE`, `TRANSACTIONDATE` as DATE, o.`QTY`, `TOTALPRICE` FROM  `tblperson` p,`tblstock_in_out` o ,`tblitems` i WHERE REMARKS='StockOut' and i.`ITEMID`=o.`ITEMID` and p.`SUPLIERCUSTOMERID`=o.`SUPLIERCUSTOMERID` and p.TYPE = 'Customer'" +
+              " AND (NAME like '%" + txtsearch.Text + "%' OR  TRANSACTIONNUMBER like '%" + txtsearch.Text + "%')";
+            config.Load_DTG(sql, dtglist);
+        }
+
+        private void txtsearch_TextChanged(object sender, EventArgs e)
+        {
+            frmListStockout_Load(sender, e);
+        }
+    }
+}
+
+
+namespace InventorySystem1._0
+{
+    partial class frmListStockout
+    {
+       
+        private System.ComponentModel.IContainer components = null;
+
+         &lt;param name="disposing"&gt;true if managed resources should be disposed; otherwise, false.&lt;/param&gt;
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing &amp;&amp; (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+      
+        private void InitializeComponent()
+        {
+            this.Label1 = new System.Windows.Forms.Label();
+            this.txtsearch = new System.Windows.Forms.TextBox();
+            this.dtglist = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dtglist)).BeginInit();
+            this.SuspendLayout();
+             
+            this.Label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Label1.AutoSize = true;
+            this.Label1.Location = new System.Drawing.Point(217, 15);
+            this.Label1.Name = "Label1";
+            this.Label1.Size = new System.Drawing.Size(47, 13);
+            this.Label1.TabIndex = 18;
+            this.Label1.Text = "Search: ";
+             
+            this.txtsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtsearch.Location = new System.Drawing.Point(270, 12);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(463, 20);
+            this.txtsearch.TabIndex = 17;
+            this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
+             
+            this.dtglist.AllowUserToAddRows = false;
+            this.dtglist.AllowUserToDeleteRows = false;
+            this.dtglist.AllowUserToResizeColumns = false;
+            this.dtglist.AllowUserToResizeRows = false;
+            this.dtglist.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtglist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtglist.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtglist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtglist.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dtglist.Location = new System.Drawing.Point(3, 38);
+            this.dtglist.Name = "dtglist";
+            this.dtglist.Size = new System.Drawing.Size(730, 403);
+            this.dtglist.TabIndex = 16;
+            
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(745, 453);
+            this.Controls.Add(this.Label1);
+            this.Controls.Add(this.txtsearch);
+            this.Controls.Add(this.dtglist);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "frmListStockout";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "List of Stock-Out";
+            this.Load += new System.EventHandler(this.frmListStockout_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtglist)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        internal System.Windows.Forms.Label Label1;
+        internal System.Windows.Forms.TextBox txtsearch;
+        internal System.Windows.Forms.DataGridView dtglist;
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using InventorySystem1._0.Includes;
+
+namespace InventorySystem1._0
+{
+    public partial class frmLogin : Form
+    {
+        Form1 frm;
+        public frmLogin(Form1 frm)
+        {
+            InitializeComponent();
+
+            this.frm = frm;
+        }
+        SQLConfig config = new SQLConfig();
+        string sql;
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            lbltime.Text = DateTime.Now.ToShortTimeString();
+            lbldate.Text = DateTime.Now.ToShortDateString();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            Timer1.Start();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            sql =" SELECT* FROM user WHERE user_name = '" + txtusername.Text + "' and pass = sha1('" + txtpass.Text + "')";
+            config.singleResult(sql);
+            if(config.dt.Rows.Count &gt; 0)
+            {
+                frm.enabled_menu();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Account does not exist! Please contact administrator.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            txtpass.Clear();
+            txtusername.Clear();
+            txtusername.Focus();
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+}
+
+
+namespace InventorySystem1._0
+{
+    partial class frmLogin
+    {
+       
+        private System.ComponentModel.IContainer components = null;
+
+         &lt;param name="disposing"&gt;true if managed resources should be disposed; otherwise, false.&lt;/param&gt;
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing &amp;&amp; (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
+            this.lbldate = new System.Windows.Forms.Label();
+            this.lbltime = new System.Windows.Forms.Label();
+            this.Label4 = new System.Windows.Forms.Label();
+            this.Label3 = new System.Windows.Forms.Label();
+            this.Button3 = new System.Windows.Forms.Button();
+            this.Button2 = new System.Windows.Forms.Button();
+            this.Label2 = new System.Windows.Forms.Label();
+            this.Label1 = new System.Windows.Forms.Label();
+            this.txtpass = new System.Windows.Forms.TextBox();
+            this.txtusername = new System.Windows.Forms.TextBox();
+            this.Button1 = new System.Windows.Forms.Button();
+            this.PictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Timer1 = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
+            this.SuspendLayout();
+            
+            this.lbldate.AutoSize = true;
+            this.lbldate.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldate.Location = new System.Drawing.Point(77, 179);
+            this.lbldate.Name = "lbldate";
+            this.lbldate.Size = new System.Drawing.Size(56, 23);
+            this.lbldate.TabIndex = 32;
+            this.lbldate.Text = "Time :";
+             
+            this.lbltime.AutoSize = true;
+            this.lbltime.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltime.Location = new System.Drawing.Point(77, 150);
+            this.lbltime.Name = "lbltime";
+            this.lbltime.Size = new System.Drawing.Size(56, 23);
+            this.lbltime.TabIndex = 31;
+            this.lbltime.Text = "Time :";
+             
+            this.Label4.AutoSize = true;
+            this.Label4.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label4.Location = new System.Drawing.Point(15, 179);
+            this.Label4.Name = "Label4";
+            this.Label4.Size = new System.Drawing.Size(53, 23);
+            this.Label4.TabIndex = 29;
+            this.Label4.Text = "Date :";
+             
+            this.Label3.AutoSize = true;
+            this.Label3.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label3.Location = new System.Drawing.Point(15, 150);
+            this.Label3.Name = "Label3";
+            this.Label3.Size = new System.Drawing.Size(56, 23);
+            this.Label3.TabIndex = 30;
+            this.Label3.Text = "Time :";
+             
+            this.Button3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button3.Location = new System.Drawing.Point(177, 110);
+            this.Button3.Name = "Button3";
+            this.Button3.Size = new System.Drawing.Size(75, 27);
+            this.Button3.TabIndex = 28;
+            this.Button3.Text = "Close";
+            this.Button3.UseVisualStyleBackColor = true;
+            this.Button3.Click += new System.EventHandler(this.Button3_Click);
+            
+            this.Button2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button2.Location = new System.Drawing.Point(96, 110);
+            this.Button2.Name = "Button2";
+            this.Button2.Size = new System.Drawing.Size(75, 27);
+            this.Button2.TabIndex = 27;
+            this.Button2.Text = "Clear";
+            this.Button2.UseVisualStyleBackColor = true;
+            this.Button2.Click += new System.EventHandler(this.Button2_Click);
+           
+            this.Label2.AutoSize = true;
+            this.Label2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label2.Location = new System.Drawing.Point(12, 61);
+            this.Label2.Name = "Label2";
+            this.Label2.Size = new System.Drawing.Size(66, 16);
+            this.Label2.TabIndex = 23;
+            this.Label2.Text = "Password :";
+             
+            this.Label1.AutoSize = true;
+            this.Label1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label1.Location = new System.Drawing.Point(12, 9);
+            this.Label1.Name = "Label1";
+            this.Label1.Size = new System.Drawing.Size(67, 16);
+            this.Label1.TabIndex = 24;
+            this.Label1.Text = "Username :";
+             
+            this.txtpass.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpass.Location = new System.Drawing.Point(15, 80);
+            this.txtpass.Name = "txtpass";
+            this.txtpass.Size = new System.Drawing.Size(237, 22);
+            this.txtpass.TabIndex = 25;
+            this.txtpass.UseSystemPasswordChar = true;
+             
+            this.txtusername.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtusername.Location = new System.Drawing.Point(15, 28);
+            this.txtusername.Name = "txtusername";
+            this.txtusername.Size = new System.Drawing.Size(237, 22);
+            this.txtusername.TabIndex = 22;
+            
+            this.Button1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button1.Location = new System.Drawing.Point(19, 110);
+            this.Button1.Name = "Button1";
+            this.Button1.Size = new System.Drawing.Size(75, 27);
+            this.Button1.TabIndex = 26;
+            this.Button1.Text = "&amp;Login";
+            this.Button1.UseVisualStyleBackColor = true;
+            this.Button1.Click += new System.EventHandler(this.Button1_Click);
+            
+            this.PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox1.Image")));
+            this.PictureBox1.Location = new System.Drawing.Point(258, 3);
+            this.PictureBox1.Name = "PictureBox1";
+            this.PictureBox1.Size = new System.Drawing.Size(197, 199);
+            this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBox1.TabIndex = 33;
+            this.PictureBox1.TabStop = false;
+             
+            this.Timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            
+            this.AcceptButton = this.Button1;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(466, 216);
+            this.Controls.Add(this.lbldate);
+            this.Controls.Add(this.lbltime);
+            this.Controls.Add(this.Label4);
+            this.Controls.Add(this.Label3);
+            this.Controls.Add(this.Button3);
+            this.Controls.Add(this.Button2);
+            this.Controls.Add(this.Label2);
+            this.Controls.Add(this.Label1);
+            this.Controls.Add(this.txtpass);
+            this.Controls.Add(this.txtusername);
+            this.Controls.Add(this.Button1);
+            this.Controls.Add(this.PictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Login";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        internal System.Windows.Forms.Label lbldate;
+        internal System.Windows.Forms.Label lbltime;
+        internal System.Windows.Forms.Label Label4;
+        internal System.Windows.Forms.Label Label3;
+        internal System.Windows.Forms.Button Button3;
+        internal System.Windows.Forms.Button Button2;
+        internal System.Windows.Forms.Label Label2;
+        internal System.Windows.Forms.Label Label1;
+        internal System.Windows.Forms.TextBox txtpass;
+        internal System.Windows.Forms.TextBox txtusername;
+        internal System.Windows.Forms.Button Button1;
+        internal System.Windows.Forms.PictureBox PictureBox1;
+        internal System.Windows.Forms.Timer Timer1;
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using InventorySystem1._0.Includes;
+
+namespace InventorySystem1._0
+{
+    public partial class frmReport : Form
+    {
+        public frmReport()
+        {
+            InitializeComponent();
+        }
+        SQLConfig config = new SQLConfig();
+        string sql;
+        private void reports(string sql, string rptname)
+        {
+
+            try
+            {
+
+                config.loadReports(sql);
+
+                string reportname = rptname;
+
+
+                CrystalDecisions.CrystalReports.Engine.ReportDocument reportdoc = new CrystalDecisions.CrystalReports.Engine.ReportDocument(); ;
+
+                string strReportPath = Application.StartupPath + "\\reports\\" + reportname + ".rpt";
+
+
+                reportdoc.Load(strReportPath);
+                reportdoc.SetDataSource(config.dt);
+
+                crystalReportViewer1.ReportSource = reportdoc;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "No crystal reports installed. Pls. contact administrator.");
+            }
+
+
+        }
+
+        private void frmReport_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnitemlisat_Click(object sender, EventArgs e)
+        {
+            sql = "SELECT * FROM `tblitems`";
+            reports(sql, "allitems");
+        }
+
+        private void btnListStockin_Click(object sender, EventArgs e)
+        {
+
+            switch (cbooption.Text)
+            {
+
+                case "Daily Report":
+                    sql = "SELECT i.`ITEMID`, `NAME`, `DESCRIPTION`, `TYPE`, `PRICE`,so.`QTY`, `UNIT`,TRANSACTIONDATE FROM `tblitems` i ,`tblstock_in_out` so WHERE  i.`ITEMID`=so.`ITEMID` AND `REMARKS`='StockIn' AND DATE(`TRANSACTIONDATE`)=CURDATE()";
+                    reports(sql, "itemlist");
+                    break;
+
+                case "Weekly Report":
+                    sql = "SELECT i.`ITEMID`, `NAME`, `DESCRIPTION`, `TYPE`, `PRICE`,so.`QTY`, `UNIT`,TRANSACTIONDATE FROM `tblitems` i ,`tblstock_in_out` so WHERE  i.`ITEMID`=so.`ITEMID` AND `REMARKS`='StockIn' AND WEEKDAY(`TRANSACTIONDATE`) &gt;=0 AND WEEKDAY(`TRANSACTIONDATE`) &lt;=4";
+                    reports(sql, "itemlist");
+                    break;
+                case "Monthly Report":
+                    sql = "SELECT i.`ITEMID`, `NAME`, `DESCRIPTION`, `TYPE`, `PRICE`,so.`QTY`, `UNIT`,TRANSACTIONDATE FROM `tblitems` i ,`tblstock_in_out` so WHERE  i.`ITEMID`=so.`ITEMID` AND `REMARKS`='StockIn' AND MONTH(`TRANSACTIONDATE`)=MONTH(CURDATE())";
+                    reports(sql, "itemlist");
+                    break;
+
+            } 
+        }
+
+        private void btnStockOut_Click(object sender, EventArgs e)
+        {
+            switch (cbooption.Text)
+            {
+                case "Daily Report":
+                    sql = "SELECT  `TRANSACTIONNUMBER` , concat(`FIRSTNAME`,' ', `LASTNAME`) as 'Customer',    `NAME` AS  'Item', io.`QTY` ,  `TOTALPRICE` ,  `TRANSACTIONDATE` " +
+                        " FROM  `tblitems` i,  `tblstock_in_out` io,`tblperson` p" +
+                        " WHERE i.`ITEMID` = io.`ITEMID` AND io.`SUPLIERCUSTOMERID`=p.`SUPLIERCUSTOMERID` AND REMARKS ='StockOut' AND DATE(`TRANSACTIONDATE`)=CURDATE()";
+                    reports(sql, "soldList");
+                    break;
+
+                case "Weekly Report":
+                    sql = "SELECT  `TRANSACTIONNUMBER` , concat(`FIRSTNAME`,' ', `LASTNAME`) as 'Customer',    `NAME` AS  'Item', io.`QTY` ,  `TOTALPRICE` ,  `TRANSACTIONDATE` " +
+                        " FROM  `tblitems` i,  `tblstock_in_out` io,`tblperson` p" +
+                        " WHERE i.`ITEMID` = io.`ITEMID` AND io.`SUPLIERCUSTOMERID`=p.`SUPLIERCUSTOMERID` AND REMARKS ='StockOut' AND WEEKDAY(`TRANSACTIONDATE`) &gt;=0 AND WEEKDAY(`TRANSACTIONDATE`) &lt;=4";
+                    reports(sql, "soldList");
+                    break;
+                case "Monthly Report":
+                    sql = "SELECT  `TRANSACTIONNUMBER` , concat(`FIRSTNAME`,' ', `LASTNAME`) as 'Customer',    `NAME` AS  'Item', io.`QTY` ,  `TOTALPRICE` ,  `TRANSACTIONDATE` " +
+                        " FROM  `tblitems` i,  `tblstock_in_out` io,`tblperson` p" +
+                        " WHERE i.`ITEMID` = io.`ITEMID` AND io.`SUPLIERCUSTOMERID`=p.`SUPLIERCUSTOMERID` AND REMARKS ='StockOut' AND MONTH(`TRANSACTIONDATE`)=MONTH(CURDATE())";
+                    reports(sql, "soldList");
+                    break;
+
+            }
+        }
+
+        private void btnStockReturn_Click(object sender, EventArgs e)
+        {
+            switch (cbooption.Text)
+            {
+                case "Daily Report":
+                    sql = "SELECT `STOCKRETURNNUMBER`,`NAME` AS 'Item', `RETURNDATE`, r.`QTY` as 'Quantity' FROM `tblstock_return` r,`tblitems` i WHERE r.`ITEMID`=i.`ITEMID` AND DATE(`RETURNDATE`)=CURDATE()";
+                    reports(sql, "returnList");
+                    break; 
+                case "Weekly Report":
+                    sql = "SELECT `STOCKRETURNNUMBER`,`NAME` AS 'Item', `RETURNDATE`, r.`QTY` as 'Quantity' FROM `tblstock_return` r,`tblitems` i WHERE r.`ITEMID`=i.`ITEMID` AND WEEKDAY(`RETURNDATE`) &gt;=0 AND WEEKDAY(`RETURNDATE`) &lt;=4";
+                    reports(sql, "returnList");
+                    break;
+                case "Monthly Report":
+                    sql = "SELECT `STOCKRETURNNUMBER`,`NAME` AS 'Item', `RETURNDATE`, r.`QTY` as 'Quantity' FROM `tblstock_return` r,`tblitems` i WHERE r.`ITEMID`=i.`ITEMID` AND MONTH(`RETURNDATE`)=MONTH(CURDATE())";
+                    reports(sql, "returnList");
+                    break; 
+            }
+
+     
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            sql = "SELECT  `NAME` ,  `DESCRIPTION` ,  `TYPE` , i.`QTY` AS  'Stock-In',  `UNIT` , o.`QTY` AS  'Stock-Out',  `TRANSACTIONDATE` ,  `REMARKS` " +
+                  "FROM  `tblitems` i" +
+                  " LEFT JOIN  `tblstock_in_out` o ON i.`ITEMID` = o.`ITEMID` " +
+                  " AND REMARKS =  'StockOut' and TRANSACTIONDATE between '"  +  dptfrom.Text + "' and '" + dtpto.Text  + "'";
+            reports(sql, "inventory");
+        }
+    }
+}
+
+namespace InventorySystem1._0
+{
+    partial class frmReport
+    {
+        
+        private System.ComponentModel.IContainer components = null;
+
+         &lt;param name="disposing"&gt;true if managed resources should be disposed; otherwise, false.&lt;/param&gt;
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing &amp;&amp; (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+     
+        private void InitializeComponent()
+        {
+            this.Panel1 = new System.Windows.Forms.Panel();
+            this.GroupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnitemlisat = new System.Windows.Forms.Button();
+            this.cbooption = new System.Windows.Forms.ComboBox();
+            this.btnListStockin = new System.Windows.Forms.Button();
+            this.btnStockOut = new System.Windows.Forms.Button();
+            this.btnStockReturn = new System.Windows.Forms.Button();
+            this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.Label2 = new System.Windows.Forms.Label();
+            this.Label1 = new System.Windows.Forms.Label();
+            this.dtpto = new System.Windows.Forms.DateTimePicker();
+            this.dptfrom = new System.Windows.Forms.DateTimePicker();
+            this.ComboBox1 = new System.Windows.Forms.ComboBox();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Panel1.SuspendLayout();
+            this.GroupBox2.SuspendLayout();
+            this.GroupBox1.SuspendLayout();
+            this.SuspendLayout();
+             
+            this.Panel1.BackColor = System.Drawing.Color.White;
+            this.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Panel1.Controls.Add(this.GroupBox2);
+            this.Panel1.Controls.Add(this.GroupBox1);
+            this.Panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Panel1.Location = new System.Drawing.Point(0, 0);
+            this.Panel1.Name = "Panel1";
+            this.Panel1.Size = new System.Drawing.Size(164, 607);
+            this.Panel1.TabIndex = 6;
+            
+            this.GroupBox2.Controls.Add(this.btnitemlisat);
+            this.GroupBox2.Controls.Add(this.cbooption);
+            this.GroupBox2.Controls.Add(this.btnListStockin);
+            this.GroupBox2.Controls.Add(this.btnStockOut);
+            this.GroupBox2.Controls.Add(this.btnStockReturn);
+            this.GroupBox2.Location = new System.Drawing.Point(5, 24);
+            this.GroupBox2.Name = "GroupBox2";
+            this.GroupBox2.Size = new System.Drawing.Size(146, 211);
+            this.GroupBox2.TabIndex = 2;
+            this.GroupBox2.TabStop = false;
+            this.GroupBox2.Text = "Report Type";
+           
+            this.btnitemlisat.BackColor = System.Drawing.Color.Transparent;
+            this.btnitemlisat.ForeColor = System.Drawing.Color.Black;
+            this.btnitemlisat.Location = new System.Drawing.Point(9, 19);
+            this.btnitemlisat.Name = "btnitemlisat";
+            this.btnitemlisat.Size = new System.Drawing.Size(124, 30);
+            this.btnitemlisat.TabIndex = 3;
+            this.btnitemlisat.Text = "List Of Items";
+            this.btnitemlisat.UseVisualStyleBackColor = false;
+            this.btnitemlisat.Click += new System.EventHandler(this.btnitemlisat_Click);
+            
+            this.cbooption.FormattingEnabled = true;
+            this.cbooption.Items.AddRange(new object[] {
+            "Daily Report",
+            "Weekly Report",
+            "Monthly Report"});
+            this.cbooption.Location = new System.Drawing.Point(9, 55);
+            this.cbooption.Name = "cbooption";
+            this.cbooption.Size = new System.Drawing.Size(124, 21);
+            this.cbooption.TabIndex = 2;
+            this.cbooption.Text = "Daily Report";
+             
+            this.btnListStockin.BackColor = System.Drawing.Color.Transparent;
+            this.btnListStockin.ForeColor = System.Drawing.Color.Black;
+            this.btnListStockin.Location = new System.Drawing.Point(9, 84);
+            this.btnListStockin.Name = "btnListStockin";
+            this.btnListStockin.Size = new System.Drawing.Size(124, 30);
+            this.btnListStockin.TabIndex = 0;
+            this.btnListStockin.Text = "List Of Stock Items";
+            this.btnListStockin.UseVisualStyleBackColor = false;
+            this.btnListStockin.Click += new System.EventHandler(this.btnListStockin_Click);
+             
+            this.btnStockOut.BackColor = System.Drawing.Color.Transparent;
+            this.btnStockOut.ForeColor = System.Drawing.Color.Black;
+            this.btnStockOut.Location = new System.Drawing.Point(9, 120);
+            this.btnStockOut.Name = "btnStockOut";
+            this.btnStockOut.Size = new System.Drawing.Size(124, 30);
+            this.btnStockOut.TabIndex = 0;
+            this.btnStockOut.Text = "List Of Sold Items";
+            this.btnStockOut.UseVisualStyleBackColor = false;
+            this.btnStockOut.Click += new System.EventHandler(this.btnStockOut_Click);
+             
+            this.btnStockReturn.BackColor = System.Drawing.Color.Transparent;
+            this.btnStockReturn.ForeColor = System.Drawing.Color.Black;
+            this.btnStockReturn.Location = new System.Drawing.Point(9, 156);
+            this.btnStockReturn.Name = "btnStockReturn";
+            this.btnStockReturn.Size = new System.Drawing.Size(124, 30);
+            this.btnStockReturn.TabIndex = 0;
+            this.btnStockReturn.Text = "List Of Returned Items";
+            this.btnStockReturn.UseVisualStyleBackColor = false;
+            this.btnStockReturn.Click += new System.EventHandler(this.btnStockReturn_Click);
+            
+            this.GroupBox1.Controls.Add(this.button1);
+            this.GroupBox1.Controls.Add(this.Label2);
+            this.GroupBox1.Controls.Add(this.Label1);
+            this.GroupBox1.Controls.Add(this.dtpto);
+            this.GroupBox1.Controls.Add(this.dptfrom);
+            this.GroupBox1.Location = new System.Drawing.Point(5, 254);
+            this.GroupBox1.Name = "GroupBox1";
+            this.GroupBox1.Size = new System.Drawing.Size(146, 152);
+            this.GroupBox1.TabIndex = 2;
+            this.GroupBox1.TabStop = false;
+            this.GroupBox1.Text = "Report Date Filter";
+           
+            this.Label2.AutoSize = true;
+            this.Label2.Location = new System.Drawing.Point(6, 67);
+            this.Label2.Name = "Label2";
+            this.Label2.Size = new System.Drawing.Size(20, 13);
+            this.Label2.TabIndex = 3;
+            this.Label2.Text = "To";
+           
+            this.Label1.AutoSize = true;
+            this.Label1.Location = new System.Drawing.Point(6, 28);
+            this.Label1.Name = "Label1";
+            this.Label1.Size = new System.Drawing.Size(30, 13);
+            this.Label1.TabIndex = 2;
+            this.Label1.Text = "From";
+            
+            this.dtpto.CustomFormat = "yyyy-MM-dd";
+            this.dtpto.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpto.Location = new System.Drawing.Point(9, 83);
+            this.dtpto.Name = "dtpto";
+            this.dtpto.Size = new System.Drawing.Size(131, 20);
+            this.dtpto.TabIndex = 2;
+            
+            this.dptfrom.CustomFormat = "yyyy-MM-dd";
+            this.dptfrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dptfrom.Location = new System.Drawing.Point(9, 44);
+            this.dptfrom.Name = "dptfrom";
+            this.dptfrom.Size = new System.Drawing.Size(131, 20);
+            this.dptfrom.TabIndex = 2;
+           
+            this.ComboBox1.FormattingEnabled = true;
+            this.ComboBox1.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March ",
+            "April",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
+            this.ComboBox1.Location = new System.Drawing.Point(239, 44);
+            this.ComboBox1.Name = "ComboBox1";
+            this.ComboBox1.Size = new System.Drawing.Size(124, 21);
+            this.ComboBox1.TabIndex = 7;
+            
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(164, 0);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.ShowGroupTreeButton = false;
+            this.crystalReportViewer1.ShowParameterPanelButton = false;
+            this.crystalReportViewer1.ShowRefreshButton = false;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(743, 607);
+            this.crystalReportViewer1.TabIndex = 8;
+            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            
+            this.button1.Location = new System.Drawing.Point(9, 109);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Preview";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+             
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(907, 607);
+            this.Controls.Add(this.crystalReportViewer1);
+            this.Controls.Add(this.Panel1);
+            this.Controls.Add(this.ComboBox1);
+            this.Name = "frmReport";
+            this.Text = "Reports";
+            this.Load += new System.EventHandler(this.frmReport_Load);
+            this.Panel1.ResumeLayout(false);
+            this.GroupBox2.ResumeLayout(false);
+            this.GroupBox1.ResumeLayout(false);
+            this.GroupBox1.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        internal System.Windows.Forms.Panel Panel1;
+        internal System.Windows.Forms.GroupBox GroupBox2;
+        internal System.Windows.Forms.Button btnitemlisat;
+        internal System.Windows.Forms.ComboBox cbooption;
+        internal System.Windows.Forms.Button btnListStockin;
+        internal System.Windows.Forms.Button btnStockOut;
+        internal System.Windows.Forms.Button btnStockReturn;
+        internal System.Windows.Forms.GroupBox GroupBox1;
+        internal System.Windows.Forms.Label Label2;
+        internal System.Windows.Forms.Label Label1;
+        internal System.Windows.Forms.DateTimePicker dtpto;
+        internal System.Windows.Forms.DateTimePicker dptfrom;
+        internal System.Windows.Forms.ComboBox ComboBox1;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private System.Windows.Forms.Button button1;
+    }
+}
+
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using InventorySystem1._0.Includes;
+
+
+namespace InventorySystem1._0
+{
+    public partial class frmReturn : Form
+    {
+        public frmReturn()
+        {
+            InitializeComponent();
+        }
+        SQLConfig config = new SQLConfig();
+        usableFunction funct = new usableFunction();
+        string sql, custormerid;
+
+        private void frmReturn_Load(object sender, EventArgs e)
+        {
+            sql = "SELECT `TRANSACTIONNUMBER` FROM `tblstock_in_out` WHERE  `REMARKS`='Stockout'";
+            config.autocomplete(sql, txttransactionid); 
+        }
+
+        private void btnreturnadd_Click(object sender, EventArgs e)
+        {
+     
+            if (dtCus_addedlist.RowCount == 0)
+            {
+
+                string[] row = new string[] { dtgCus_itemlist.CurrentRow.Cells[0].Value.ToString(),
+                    dtgCus_itemlist.CurrentRow.Cells[1].Value.ToString(),
+                    dtgCus_itemlist.CurrentRow.Cells[2].Value.ToString(),
+                    dtgCus_itemlist.CurrentRow.Cells[3].Value.ToString(),
+                    dtgCus_itemlist.CurrentRow.Cells[5].Value.ToString(),
+                    dtgCus_itemlist.CurrentRow.Cells[6].Value.ToString(),
+                    dtgCus_itemlist.CurrentRow.Cells[7].Value.ToString()};
+
+                dtCus_addedlist.Rows.Add(row);
+
+
+            }
+            else
+            {
+                foreach (DataGridViewRow r in dtCus_addedlist.Rows)
+                {
+                    if (dtgCus_itemlist.CurrentRow.Cells[0].Value == r.Cells[0].Value)
+                    {
+                        MessageBox.Show("Item is already in the cart", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                }
+
+                if (dtCus_addedlist.CurrentRow.Cells[0].Value != dtgCus_itemlist.CurrentRow.Cells[0].Value)
+                {
+
+                    string[] row = new string[] { dtgCus_itemlist.CurrentRow.Cells[0].Value.ToString(),
+                    dtgCus_itemlist.CurrentRow.Cells[1].Value.ToString(),
+                    dtgCus_itemlist.CurrentRow.Cells[2].Value.ToString(),
+                    dtgCus_itemlist.CurrentRow.Cells[3].Value.ToString(),
+                    dtgCus_itemlist.CurrentRow.Cells[5].Value.ToString(),
+                    dtgCus_itemlist.CurrentRow.Cells[6].Value.ToString(),
+                    dtgCus_itemlist.CurrentRow.Cells[7].Value.ToString()};
+                    dtCus_addedlist.Rows.Add(row);
+                }
+                else
+                {
+                    MessageBox.Show("Item is already in the cart", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+
+
+            }
+        }
+
+        private void dtCus_addedlist_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            double total;
+            if (dtCus_addedlist.CurrentCell.ColumnIndex == 4)
+            {
+                foreach (DataGridViewRow row in dtCus_addedlist.Rows)
+                {
+                    total = double.Parse(row.Cells[4].Value.ToString()) * double.Parse(row.Cells[3].Value.ToString());
+                    row.Cells[5].Value = total;
+                }
+            }
+        }
+
+        private void btnreturn_save_Click(object sender, EventArgs e)
+        {
+            string tranid;
+
+            config.singleResult("SELECT concat(STRT,END) FROM tblautonumber WHERE ID = 6");
+            tranid = config.dt.Rows[0].Field&lt;string&gt;(0);
+
+            if (txttransactionid.Text == "")
+            {
+                MessageBox.Show("There are empty fields left that must be fill up!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (dtCus_addedlist.RowCount == 0)
+            {
+                MessageBox.Show("Cart is empty!", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            sql = "SELECT `ITEMID`, `QTY` FROM `tblstock_in_out` WHERE  `TRANSACTIONNUMBER` ='" + txttransactionid.Text + "'";
+            config.singleResult(sql);
+
+            foreach (DataRow row in config.dt.Rows)
+            {
+                for (int i = 0; i &lt; dtCus_addedlist.Rows.Count; i++)
+                {
+                    if (dtCus_addedlist.Rows[i].Cells[0].Value.ToString() == row.Field&lt;string&gt;(0))
+                    {
+                        if (int.Parse(dtCus_addedlist.Rows[i].Cells[4].Value.ToString()) &gt; row.Field&lt;int&gt;(1))
+                        {
+                            MessageBox.Show("The returned quantity of the item ( " + dtCus_addedlist.Rows[i].Cells[1].Value.ToString() + " ) is greater than the available quantity of it.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            return;
+                        }
+                    }
+                    if (dtCus_addedlist.Rows[i].Cells[4].Value.ToString() == "")
+                    {
+                        MessageBox.Show("Set your purpose.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                }
+            }
+
+            foreach (DataGridViewRow r in dtCus_addedlist.Rows)
+            {
+                sql = "INSERT INTO `tblstock_return` (  `STOCKRETURNNUMBER`, `ITEMID`, `RETURNDATE`, `QTY`, `TOTALPRICE`, `OWNER_CUS_ID`)" +
+                        " VALUES ('" + tranid + "','" + r.Cells[0].Value + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + r.Cells[4].Value +
+                        "','" + r.Cells[5].Value + "','" + custormerid + "')";
+                config.Execute_Query(sql);
+
+                //     '-----------------------------------------------update item
+                sql = "UPDATE `tblitems`  SET `QTY`=`QTY` + '" + r.Cells[4].Value + "' WHERE ITEMID='" + r.Cells[0].Value + "'";
+                config.Execute_Query(sql);
+
+                sql = "UPDATE `tblstock_in_out` SET  `QTY`=`QTY`-'" + r.Cells[4].Value + "', `TOTALPRICE`=`TOTALPRICE`-'" + r.Cells[5].Value + "'  WHERE `STOCKOUTID` ='" + r.Cells[6].Value + "'";
+                config.Execute_Query(sql);
+            }
+
+
+            sql = "INSERT INTO  `tbltransaction` (`TRANSACTIONNUMBER`,  `TRANSACTIONDATE`,  `TYPE`, `SUPLIERCUSTOMERID`)" +
+                  " VALUES ('" + txttransactionid.Text + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','Returned','" + custormerid + "')";
+            config.Execute_Query(sql);
+
+            // '-----------------------------------------------update autonumber
+            config.Execute_Query("UPDATE tblautonumber SET END= END + INCREMENT WHERE ID = 6");
+
+            // '------------------------------------------------------------
+            MessageBox.Show("Item(s) has been returned in the database.");
+            // '------------------------------------------------------------clearing
+            funct.clearTxt(GroupBox3);
+            dtCus_addedlist.Rows.Clear();
+
+            frmReturn_Load(sender, e);
+        }
+
+        private void btnreturn_remove_Click(object sender, EventArgs e)
+        {
+            dtCus_addedlist.Rows.Remove(dtCus_addedlist.CurrentRow);
+        }
+
+        private void btnreturn_clear_Click(object sender, EventArgs e)
+        {
+            dtCus_addedlist.Columns.Clear();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnvewlreturn_Click(object sender, EventArgs e)
+        {
+            frmListReturned frm = new frmListReturned();
+            frm.Show();
+        }
+
+        private void txttransactionid_TextChanged(object sender, EventArgs e)
+        {
+            
+            sql = "SELECT p.SUPLIERCUSTOMERID as ID, `FIRSTNAME`, `LASTNAME` ,`ADDRESS` FROM  `tbltransaction` t, `tblperson`  p  WHERE t.`SUPLIERCUSTOMERID`=p.`SUPLIERCUSTOMERID` AND `TRANSACTIONNUMBER`='" + txttransactionid.Text + "'";
+            config.singleResult(sql);
+            if(config.dt.Rows.Count &gt; 0)
+            {
+                custormerid = config.dt.Rows[0].Field&lt;string&gt;("ID");
+                txtreturn_name.Text = config.dt.Rows[0].Field&lt;string&gt;("FIRSTNAME").ToString() + " " + config.dt.Rows[0].Field&lt;string&gt;("LASTNAME").ToString();
+                txtreturn_address.Text = config.dt.Rows[0].Field&lt;string&gt;("ADDRESS").ToString();
+
+
+
+
+                sql = "SELECT   i.`ITEMID`, `NAME`, `DESCRIPTION`, `PRICE`,`TRANSACTIONDATE`, o.`QTY`, `TOTALPRICE`,`STOCKOUTID` FROM  `tblitems` i , `tblstock_in_out` o WHERE i.`ITEMID`=o.`ITEMID` AND `TRANSACTIONNUMBER`='" + txttransactionid.Text + "'";
+                config.Load_DTG(sql,dtgCus_itemlist);
+                dtgCus_itemlist.Columns[7].Visible = false;
+            }
+            else
+            {
+                txtreturn_name.Clear();
+                txtreturn_address.Clear();
+                dtgCus_itemlist.Columns.Clear();
+            }
+
+          
+        }
+    }
+}
+
+
+
+
+   
+
+   
+
+
+
+
+</code></pre>
+
+<p>&nbsp;</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

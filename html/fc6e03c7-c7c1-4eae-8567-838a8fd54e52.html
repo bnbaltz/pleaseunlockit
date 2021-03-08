@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>java hjomework<br />
+Problem 2: Point of Sale SystemThe McDowell Restaurant chain has
+asked you to write a menu program for their new Fast-foodservice
+machines. Your program already prints the following menu like
+this:**********************************************************************McDowell’s
+Restaurant**********************************************************************Make
+your selection from the menu below:1. Regular Hamburger $1.502.
+Regular Cheeseburger $1.753. Fish Sandwich $2.504. Half-pounder
+with cheese $2.75 5. French Fries $0.99 6. Large Soft Drink
+$1.25***********************************************************************Select
+1, 2, 3, 4, 5, or 6 ----- &gt;Your program must now read the
+customer’s selection and compute the total price of theirpurchase,
+including 6.5% sales tax.InputThe first line of input represents N,
+the number of test cases. The additional lines consists of
+asequence of integers scoped between 1 to 6. Each number should
+indicate a selection from theabove menu to be purchased.OutputThe
+program should print the sum of the orders plus tax as “Please pay
+$&lt;dollars&gt;”, where&lt;dollar&gt; is the total amount of the
+purchase then conclude with “Thank you for eating
+atMcDowell’s”.Sample InputSample Output11 4 4 5 3 1Please pay
+​$12.77Thank you for eating at McDowell’s!2<br />
+Problem 3: An Interesting ProblemWrite a program that accepts two
+positive integers: a deposited amount of money and aninterest rate,
+as an annual percentage rate. Your program will calculate the
+number of years thatwill take for the account balance to reach $1,
+000,000. You can assume that the initial deposit isless than
+$1,000,000InputThe input will begin with a single line containing T
+, the number of test cases to follow. Theremaining lines contain
+the lines to be calculated. Each of these lines has two positive
+integersseparated by a single space. The first value is the
+deposited amount, the second is the interestrate.OutputThe output
+should consist of the number of years.Sample input 2 10000 10 500 5
+simple output 49 years 156 years.<br />
+Problem 4: Min/Max Search by ValueDevelop a program that, given a
+sequence S of integers as input, produces as two outputvalues, the
+first is the minimum value that appears in the sequence and the
+second is themaximum value that appears in the
+sequence.Facts●Scanner has a method that returns a boolean
+indicating whether a next integer exists inits input stream (
+​hasNextInt()​ )●Scanner objects can be initialized to to scan
+String data as input.InputThe input will begin with a single line
+containing T , the number of test cases to follow. Theremaining
+lines contain the T sequences, one line per sequence. Each of these
+lines containsthe values in the sequence. Each such value is
+separated from the next by at least one space.OutputFor each
+sequence given as input, there should be four lines of output. The
+first line echos thegiven sequence. The second line indicates the
+minimum value that occurs. The third lineindicates the maximum
+value that occurs. The fourth line is blank.Sample Input3 3 6 -1 4
+6 5 3<br />
+&nbsp;0 0 0 0<br />
+-4 45 2 0 3 5 11 -7 854 25 3 -7 4 -3<br />
+output<br />
+3 6 -1 4 6 5 3<br />
+-1<br />
+6<br />
+0 0 0<br />
+&nbsp;0<br />
+0<br />
+0<br />
+-4 45 2 0 3 5 11 -7 854 25 3 -7 4 -3<br />
+-7<br />
+85<br />
+Problem 5: Min/Max Search by IndexDevelop a program that, given a
+sequence S of integers as input, produces as output twosequences of
+positive integers, the first of which indicates all those positions
+in S at which S'sminimum value occurs and the second of which
+indicates all those positions at which S'smaximum value occurs.
+Positions are numbered starting at zero (0).Facts●Scanner has a
+method that returns a boolean indicating whether a next integer
+exists inits input stream ( ​hasNextInt()​ )●Scanner objects can be
+initialized to to scan String data as input.InputThe input will
+begin with a single line containing T , the number of test cases to
+follow. Theremaining lines contain the T sequences, one line per
+sequence. Each of these lines containsthe values in the sequence.
+Each such value is separated from the next by at least one
+space.OutputFor each sequence given as input, there should be four
+lines of output. The first line echos thegiven sequence. The second
+line indicates the positions at which the minimum value occurs.The
+third line indicates the positions at which the maximum value
+occurs. The fourth line isblank.Sample Input 3<br />
+3 6 -1 4 6 5 3<br />
+0 0 0 0<br />
+-4 45 2 0 3 5 11 -7 854 25 3 -7 4 -3<br />
+sample output<br />
+3 6 -1 4 6 5 3<br />
+2<br />
+1 4<br />
+0 0 0 0<br />
+0 1 2 3<br />
+0 1 2 3<br />
+-4 45 2 0 3 5 11 -7 854 25 3 -7 4 -3<br />
+7 11<br />
+8</p>
+<p>here is java codes</p>
+<p>import java.util.Scanner;<br />
+public class AnInterestingProblem<br />
+{<br />
+&nbsp; public static void main(String[] arg)<br />
+&nbsp; {<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />
+&nbsp;Scanner in = new Scanner (System.in);<br />
+&nbsp; double interest;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double initialAmount =
+in.nextDouble ();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double initialRate =
+in.nextDouble ();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int ye = 0;<br />
+&nbsp;&nbsp;&nbsp; int cases = in.nextInt ();<br />
+&nbsp;&nbsp;&nbsp; for (int y = 1; y &lt;= cases; y++)<br />
+&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp; &nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while (initialAmount &lt;
+1000000)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; interest = (initialAmount *
+initialRate) / 100;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; initialAmount +=
+interest;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ye += 1;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.printf ("%d
+years\n", ye);<br />
+&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp; import java.util.Scanner;<br />
+&nbsp;&nbsp;&nbsp; public class MinMaxSearchByValue<br />
+&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp; public static void main (String[]args)<br />
+&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp; Scanner input = new Scanner (System.in);<br />
+&nbsp;&nbsp;&nbsp; int cases = input.nextInt ();<br />
+&nbsp;&nbsp;&nbsp; input.nextLine ();</p>
+<p>&nbsp;&nbsp;&nbsp; for (int i = 0; i &lt; cases; i++)<br />
+&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; String sequence =
+input.nextLine ();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Scanner reader = new Scanner
+(sequence);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int max = reader.nextInt
+();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int min = max;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while (reader.hasNextInt ()
+== true)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int number = reader.nextInt
+();</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (number &gt; max)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; max =
+number;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (number &lt; min)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; min =
+number;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println
+(sequence);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println
+(min);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println
+(max);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println ();<br />
+&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp; }</p>
+<p>import java.util.Scanner;</p>
+<p>public class MinMaxSearchByIndex{<br />
+&nbsp;&nbsp; public static void main(String[] args){<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Scanner input = new
+Scanner(System.in);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; int cases = input.nextInt();<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; input.nextLine();</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; for (int i = 0; i &lt; cases;
+i++){<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; String sequence
+= input.nextLine();<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Scanner index =
+new Scanner(sequence);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; int max =
+index.nextInt();<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; int min =
+max;</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; while
+(index.hasNextInt() == true){<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; int number = index.nextInt();</p>
+<p>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; if (number &gt; max){<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; max = number;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; if (number &lt; min){<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; min = number;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+System.out.println( sequence );<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+System.out.println( min );<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+System.out.println( max );<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+System.out.println();<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp; }<br />
+}</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp; import java.util.Scanner;</p>
+<p>&nbsp;&nbsp;&nbsp; public class PointOfSaleSystem<br />
+&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp; public static void main (String[]args)<br />
+&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp; Scanner input = new Scanner (System.in);<br />
+&nbsp;&nbsp;&nbsp; int cases = input.nextInt ();<br />
+&nbsp;&nbsp;&nbsp; input.nextLine ();<br />
+&nbsp;&nbsp;&nbsp; System.out.println ("
+*********************************************************");</p>
+<p>&nbsp;&nbsp;&nbsp; System.out.println (" \t\t McDowell's
+Restaurant");</p>
+<p>&nbsp;&nbsp;&nbsp; System.out. println ("
+*********************************************************");</p>
+<p>&nbsp;&nbsp;&nbsp; System.out.println (" Make your selection
+from the menu below:");</p>
+<p>&nbsp;&nbsp;&nbsp; System.out.println (" 1. Regular Hamburger
+$1.50 \n 2. Regular Cheeseburger $1.75 \n 3. Fish Sandwich $2.50 \n
+4. Half-pounder with cheese $2.75 \n 5. French Fries $0.99 \n 6.
+Large Soft Drink $1.25");</p>
+<p>&nbsp;&nbsp;&nbsp; System.out.println ("
+*********************************************************");</p>
+<p>&nbsp;&nbsp;&nbsp; System.out.println (" Select 1, 2, 3, 4, 5 or
+6 -----&gt;");</p>
+<p>&nbsp;&nbsp;&nbsp; for (int i = 0; i &lt; cases; i++)<br />
+&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double total = 0;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double p = 1.065;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; String sequence =
+input.nextLine ();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Scanner sales = new Scanner
+(sequence);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while (sales.hasNextInt () ==
+true)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int number = sales.nextInt
+();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (number == 1)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; total
+= total + 1.50;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if (number == 2)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; total
+= total + 1.75;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if (number == 3)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; total
+= total + 2.50;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if (number == 4)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; total
+= total + 2.75;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if (number == 5)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; total
+= total + .99;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if (number == 6)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; total
+= total + 1.25;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; total = total * p;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.printf ("Please pay
+$%.2f\nThank you for eating at McDowell's!\n",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+total);</p>
+<p>&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp; }</p>
+<p>&nbsp; &nbsp;</p>
+<p>&nbsp;</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>As for the chegg question and answer guidelines I can answer
+only one question otherwise my account will be revoked. So I am
+answering only problem 2. You can post other questions as seperate
+questions.</p>
+<p>If you don't like the answer please don't dislike, let me know
+in the comments.</p>
+<p>&nbsp;</p>
+<p>/******************************</p>
+<p>* McDowellRestaurantChain.java</p>
+<p>*</p>
+<p>******************************/</p>
+<p>&nbsp;</p>
+<p>import java.text.DecimalFormat;</p>
+<p>import java.util.Scanner;</p>
+<p>&nbsp;</p>
+<p>//The class: McDowellRestaurantChain</p>
+<p>public class McDowellRestaurantChain {</p>
+<p>&nbsp; &nbsp;//menu and price are taken in a constant static
+array of equal length</p>
+<p>&nbsp; &nbsp;//where ith element in MENU array represent the
+(i+1)th menu name and</p>
+<p>&nbsp; &nbsp;//ith element in PRICE array represents the
+corresponding menu's price</p>
+<p>&nbsp; &nbsp;private static final String[] MENU = {"Regular
+Hamburger","Regular Cheeseburger","Fish Sandwich",</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"Half-pounder with
+cheese","French Fries","Large Soft Drink"};</p>
+<p>&nbsp; &nbsp;private static final double[] PRICE =
+{1.50,1.75,2.50,2.75,0.99,1.25};</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp; &nbsp;private static final double SALES_TAX = 0.065;
+//6.5% sales tax as constant</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp; &nbsp;//the main method</p>
+<p>&nbsp; &nbsp;public static void main(String[] args){</p>
+<p>&nbsp; &nbsp; &nbsp;&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;printMenu(); //prints menu first</p>
+<p>&nbsp; &nbsp; &nbsp;&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;Scanner sc = new Scanner(System.in);
+//create the keyboard scanner</p>
+<p>&nbsp; &nbsp; &nbsp;&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;try{</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;int numOfTestCases =
+Integer.parseInt(sc.nextLine()); //get the number of test cases</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//prompt for user entry
+for &lt;numOfTestCases&gt; times to compute total for each test
+case</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for(int i = 1; i &lt;=
+numOfTestCases ; i++){</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//get the
+current line entries</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;//expecting the entries as space separated integer</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;String
+currentEntry = sc.nextLine();</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;String[]
+data = currentEntry.split(" "); //split it by space</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;int[]
+selections = new int[data.length];//create integer array of
+splitted data array length</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//conver
+string[] into int[]</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for(int p
+= 0 ; p &lt; data.length; p++){</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;selections[p] = Integer.parseInt(data[p]);</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;printTotalPay(selections); //print the total pay using
+current tst case's selection</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;System.out.println("Thank you for eating at
+McDowell’s!");</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;}catch(NumberFormatException
+nfe){</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;System.out.println("Invalid input"); //if any issue with
+string to integer conversion</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;}</p>
+<p>&nbsp; &nbsp; &nbsp;&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;sc.close();//close scanner</p>
+<p>&nbsp; &nbsp;}</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp; &nbsp;/**</p>
+<p>&nbsp; &nbsp;* print the menu</p>
+<p>&nbsp; &nbsp;*/</p>
+<p>&nbsp; &nbsp;private static void printMenu(){</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;DecimalFormat df = new
+DecimalFormat("#.00");//this will be used to format the price in 2
+decimal digit</p>
+<p>&nbsp; &nbsp; &nbsp;
+&nbsp;System.out.println("**********************************************************************");</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;System.out.println("McDowell’s
+Restaurant");</p>
+<p>&nbsp; &nbsp; &nbsp;
+&nbsp;System.out.println("**********************************************************************");</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;System.out.println("Make your
+selection from the menu below:");</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;for(int i = 0; i &lt; MENU.length;
+i++){</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;System.out.println((i+1)+". "+MENU[i]+"
+"+"$"+df.format(PRICE[i]));</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;}</p>
+<p>&nbsp; &nbsp; &nbsp;
+&nbsp;System.out.println("**********************************************************************");</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;System.out.println("Select 1, 2, 3,
+4, 5, or 6 ----- &gt;");</p>
+<p>&nbsp; &nbsp;}</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp; &nbsp;/**</p>
+<p>&nbsp; &nbsp;* calculate and print total pay including sales
+tax</p>
+<p>&nbsp; &nbsp;* using the selections array</p>
+<p>&nbsp; &nbsp;* @param selections</p>
+<p>&nbsp; &nbsp;*/</p>
+<p>&nbsp; &nbsp;private static void printTotalPay(int[]
+selections){</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;double total = 0;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;DecimalFormat df = new
+DecimalFormat("#.00"); //this will be used to format the output in
+2 decimal digit</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;for(int currentSelection:
+selections){</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;total = total +
+PRICE[currentSelection -1];//get the price from PRICE array</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;}</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;double finalTotal = total + (total *
+SALES_TAX);</p>
+<p>&nbsp; &nbsp; &nbsp;&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;System.out.println("Please pay
+$"+df.format(finalTotal));</p>
+<p>&nbsp; &nbsp;}</p>
+<p>&nbsp;</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>======================================</p>
+<p>&nbsp;</p>
+<p>OUTPUT</p>
+<p>&nbsp;</p>
+<p>======================================</p>
+<p>&nbsp;</p>
+<p>RUN1</p>
+<p>&nbsp;</p>
+<p>
+**********************************************************************</p>
+<p>McDowell’s Restaurant</p>
+<p>
+**********************************************************************</p>
+<p>Make your selection from the menu below:</p>
+<p>1. Regular Hamburger $1.50</p>
+<p>2. Regular Cheeseburger $1.75</p>
+<p>3. Fish Sandwich $2.50</p>
+<p>4. Half-pounder with cheese $2.75</p>
+<p>5. French Fries $.99</p>
+<p>6. Large Soft Drink $1.25</p>
+<p>
+**********************************************************************</p>
+<p>Select 1, 2, 3, 4, 5, or 6 ----- &gt;</p>
+<p>1</p>
+<p>1 4 4 5 3 2</p>
+<p>Please pay $13.04</p>
+<p>Thank you for eating at McDowell’s!</p>
+<p>&nbsp;</p>
+<p>RUN2</p>
+<p>&nbsp;</p>
+<p>
+**********************************************************************</p>
+<p>McDowell’s Restaurant</p>
+<p>
+**********************************************************************</p>
+<p>Make your selection from the menu below:</p>
+<p>1. Regular Hamburger $1.50</p>
+<p>2. Regular Cheeseburger $1.75</p>
+<p>3. Fish Sandwich $2.50</p>
+<p>4. Half-pounder with cheese $2.75</p>
+<p>5. French Fries $.99</p>
+<p>6. Large Soft Drink $1.25</p>
+<p>
+**********************************************************************</p>
+<p>Select 1, 2, 3, 4, 5, or 6 ----- &gt;</p>
+<p>3</p>
+<p>1 4 4 5 3 1 2</p>
+<p>Please pay $14.63</p>
+<p>Thank you for eating at McDowell’s!</p>
+<p>2 4 5 1 2 3 4 5 1 2</p>
+<p>Please pay $19.41</p>
+<p>Thank you for eating at McDowell’s!</p>
+<p>2 2 2 3 1 3 4</p>
+<p>Please pay $15.44</p>
+<p>Thank you for eating at McDowell’s!</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Suppose F (x,y,z)=&lt;x,y,3z&gt;. Let&nbsp;W&nbsp;be the solid
+bounded by the paraboloid&nbsp;z=x^2+y^2&nbsp;and the
+plane&nbsp;z=9.Let&nbsp;S&nbsp;be the closed boundary
+of&nbsp;W&nbsp;oriented outward.&nbsp;<br />
+<br />
+(a) Use the divergence theorem to find the flux of F
+&nbsp;through&nbsp;S.&nbsp;Let N &nbsp;denote the outward unit
+normal vector to&nbsp;S.&nbsp;<span style="line-height:1.6;">double
+integral F ?N dS= __________</span></p>
+<p><br />
+(b) Find the flux of F &nbsp;out the bottom of&nbsp;S&nbsp;(the
+truncated paraboloid) and the top of&nbsp;S&nbsp;(the
+disk).&nbsp;<br />
+Flux out the bottom = &nbsp;____________<br />
+Flux out the top = &nbsp;_____________</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><strong><img alt=
+"F(x,y,z)=&lt;x,y,3z&gt; \ and \ Solid \ W: z=x^2+y^2 \ and \ z=9"
+src=
+"https://latex.codecogs.com/gif.latex?F%28x%2Cy%2Cz%29%3D%3Cx%2Cy%2C3z%3E%20%5C%20and%20%5C%20Solid%20%5C%20W%3A%20z%3Dx%5E2&amp;plus;y%5E2%20%5C%20and%20%5C%20z%3D9" /></strong></p>
+<p><strong>Part a</strong></p>
+<p><strong>The surface is the closed boundary of W and is oriented
+outward. Therefore, the surface S is of positive
+orientation.</strong></p>
+<p><strong>From Divergence Theorem,</strong></p>
+<p><strong><img alt=
+"\int \int (F(x,y,z).n)dS=\int \int \int (divF)dV" src=
+"https://latex.codecogs.com/gif.latex?%5Cint%20%5Cint%20%28F%28x%2Cy%2Cz%29.n%29dS%3D%5Cint%20%5Cint%20%5Cint%20%28divF%29dV" /></strong></p>
+<p><strong>Now,</strong></p>
+<p><strong><img alt=
+"div(F)=\bigtriangledown.F=\frac{\partial x}{\partial x}+\frac{\partial y}{\partial y}+\frac{\partial 3z}{\partial z}=1+1+3=5"
+src=
+"https://latex.codecogs.com/gif.latex?div%28F%29%3D%5Cbigtriangledown.F%3D%5Cfrac%7B%5Cpartial%20x%7D%7B%5Cpartial%20x%7D&amp;plus;%5Cfrac%7B%5Cpartial%20y%7D%7B%5Cpartial%20y%7D&amp;plus;%5Cfrac%7B%5Cpartial%203z%7D%7B%5Cpartial%20z%7D%3D1&amp;plus;1&amp;plus;3%3D5" /></strong></p>
+<p><strong>Therefore,</strong></p>
+<p><strong><img alt=
+"\int \int (F(x,y,z).n)dS=\int \int \int_{W} (divF)dV = \int \int \int_{W} 5dV"
+src=
+"https://latex.codecogs.com/gif.latex?%5Cint%20%5Cint%20%28F%28x%2Cy%2Cz%29.n%29dS%3D%5Cint%20%5Cint%20%5Cint_%7BW%7D%20%28divF%29dV%20%3D%20%5Cint%20%5Cint%20%5Cint_%7BW%7D%205dV" /></strong></p>
+<p><strong>Use cylindrical coordiantes,</strong></p>
+<p><strong><img alt=
+"x=rcos\theta \ and \ y=rsin\theta \ and \ dV=rdzdrd\theta" src=
+"https://latex.codecogs.com/gif.latex?x%3Drcos%5Ctheta%20%5C%20and%20%5C%20y%3Drsin%5Ctheta%20%5C%20and%20%5C%20dV%3Drdzdrd%5Ctheta" /></strong></p>
+<p><strong>The limits of z ,r and theta are</strong></p>
+<p><strong><img alt=
+"z=r^2cos^2\theta+r^2sin^2\theta=r^2 =&gt; r=\sqrt{z}" src=
+"https://latex.codecogs.com/gif.latex?z%3Dr%5E2cos%5E2%5Ctheta&amp;plus;r%5E2sin%5E2%5Ctheta%3Dr%5E2%20%3D%3E%20r%3D%5Csqrt%7Bz%7D" /></strong></p>
+<p><strong>Therefore,</strong></p>
+<p><strong><img alt=
+"0\leq r\leq \sqrt{z}, \ and \ 0\leq z\leq 9 \ and \ 0\leq \theta\leq 2\pi"
+src=
+"https://latex.codecogs.com/gif.latex?0%5Cleq%20r%5Cleq%20%5Csqrt%7Bz%7D%2C%20%5C%20and%20%5C%200%5Cleq%20z%5Cleq%209%20%5C%20and%20%5C%200%5Cleq%20%5Ctheta%5Cleq%202%5Cpi" /></strong></p>
+<p><strong>This implies,</strong></p>
+<p><strong><img alt=
+"5\int_{0}^{2\pi} \int_{0}^{9} \int_{0}^{\sqrt{z}} rdrdzd\theta =&gt; 5\int_{0}^{2\pi} \int_{0}^{9} [\frac{r^2}{2}]_{0}^{\sqrt{z}}dzd\theta"
+src=
+"https://latex.codecogs.com/gif.latex?5%5Cint_%7B0%7D%5E%7B2%5Cpi%7D%20%5Cint_%7B0%7D%5E%7B9%7D%20%5Cint_%7B0%7D%5E%7B%5Csqrt%7Bz%7D%7D%20rdrdzd%5Ctheta%20%3D%3E%205%5Cint_%7B0%7D%5E%7B2%5Cpi%7D%20%5Cint_%7B0%7D%5E%7B9%7D%20%5B%5Cfrac%7Br%5E2%7D%7B2%7D%5D_%7B0%7D%5E%7B%5Csqrt%7Bz%7D%7Ddzd%5Ctheta" /></strong></p>
+<p><strong><img alt=
+"5\int_{0}^{2\pi} \int_{0}^{9} \frac{z}{2}dzd\theta =&gt; 5\int_{0}^{2\pi} [\frac{z^2}{4}]_{0}^{9}d\theta =&gt; 5\int_{0}^{2\pi} [\frac{9^2}{4}] d\theta"
+src=
+"https://latex.codecogs.com/gif.latex?5%5Cint_%7B0%7D%5E%7B2%5Cpi%7D%20%5Cint_%7B0%7D%5E%7B9%7D%20%5Cfrac%7Bz%7D%7B2%7Ddzd%5Ctheta%20%3D%3E%205%5Cint_%7B0%7D%5E%7B2%5Cpi%7D%20%5B%5Cfrac%7Bz%5E2%7D%7B4%7D%5D_%7B0%7D%5E%7B9%7Dd%5Ctheta%20%3D%3E%205%5Cint_%7B0%7D%5E%7B2%5Cpi%7D%20%5B%5Cfrac%7B9%5E2%7D%7B4%7D%5D%20d%5Ctheta" /></strong></p>
+<p><strong><img alt=
+"\frac{81 \times 5 \times 2\pi}{4}=\frac{405\pi}{2}" src=
+"https://latex.codecogs.com/gif.latex?%5Cfrac%7B81%20%5Ctimes%205%20%5Ctimes%202%5Cpi%7D%7B4%7D%3D%5Cfrac%7B405%5Cpi%7D%7B2%7D" /></strong></p>
+<p><strong>Part B</strong></p>
+<p><strong>The unit normal vector for the top of S is <img alt=
+"n=k" src=
+"https://latex.codecogs.com/gif.latex?n%3Dk" /></strong></p>
+<p><strong>Therefore, the flux value is</strong></p>
+<p><strong><img alt=
+"Flux=\int \int_{S1}(F.k) dS=\int \int_{S1}&lt;x,y,3z&gt;.&lt;0,0,1&gt; dS"
+src=
+"https://latex.codecogs.com/gif.latex?Flux%3D%5Cint%20%5Cint_%7BS1%7D%28F.k%29%20dS%3D%5Cint%20%5Cint_%7BS1%7D%3Cx%2Cy%2C3z%3E.%3C0%2C0%2C1%3E%20dS" /></strong></p>
+<p><strong><img alt="\int \int_{S1}3z dS" src=
+"https://latex.codecogs.com/gif.latex?%5Cint%20%5Cint_%7BS1%7D3z%20dS" /></strong></p>
+<p><strong>The equation of surface S1 is given by</strong></p>
+<p><strong><img alt=
+"z=9 =&gt; z=g(x,y)=9 =&gt; g_{x}=0 \ and \ g_{y}=0" src=
+"https://latex.codecogs.com/gif.latex?z%3D9%20%3D%3E%20z%3Dg%28x%2Cy%29%3D9%20%3D%3E%20g_%7Bx%7D%3D0%20%5C%20and%20%5C%20g_%7By%7D%3D0" /></strong></p>
+<p><strong>Therefore,</strong></p>
+<p><strong><img alt=
+"\int \int_{S1}3z dS= 3\int \int (9) \sqrt{g_{x}^2+g_{y}^2+1}dA"
+src=
+"https://latex.codecogs.com/gif.latex?%5Cint%20%5Cint_%7BS1%7D3z%20dS%3D%203%5Cint%20%5Cint%20%289%29%20%5Csqrt%7Bg_%7Bx%7D%5E2&amp;plus;g_%7By%7D%5E2&amp;plus;1%7DdA" /></strong></p>
+<p><strong><img alt="27\int \int \sqrt{0^2+0^2+1}dA" src=
+"https://latex.codecogs.com/gif.latex?27%5Cint%20%5Cint%20%5Csqrt%7B0%5E2&amp;plus;0%5E2&amp;plus;1%7DdA" /></strong></p>
+<p><strong>Evaluate the above integral by polar coordinates which
+implies</strong></p>
+<p><strong><img alt=
+"dA=rdrd\theta \ and \ 0\leq r\leq 3 \ and \ 0\leq \theta \leq 2\pi"
+src=
+"https://latex.codecogs.com/gif.latex?dA%3Drdrd%5Ctheta%20%5C%20and%20%5C%200%5Cleq%20r%5Cleq%203%20%5C%20and%20%5C%200%5Cleq%20%5Ctheta%20%5Cleq%202%5Cpi" /></strong></p>
+<p><strong>This implies,</strong></p>
+<p><strong><img alt=
+"27\int_{0}^{2\pi} \int_{0}^{3} rdrd\theta =&gt; 27 \int_{0}^{2\pi} [\frac{r^2}{2}]_{0}^{3}d\theta =&gt; 9 \times \frac{27}{2} \times 2\pi=243\pi"
+src=
+"https://latex.codecogs.com/gif.latex?27%5Cint_%7B0%7D%5E%7B2%5Cpi%7D%20%5Cint_%7B0%7D%5E%7B3%7D%20rdrd%5Ctheta%20%3D%3E%2027%20%5Cint_%7B0%7D%5E%7B2%5Cpi%7D%20%5B%5Cfrac%7Br%5E2%7D%7B2%7D%5D_%7B0%7D%5E%7B3%7Dd%5Ctheta%20%3D%3E%209%20%5Ctimes%20%5Cfrac%7B27%7D%7B2%7D%20%5Ctimes%202%5Cpi%3D243%5Cpi" /></strong></p>
+<p><strong>The flux out of the bottom is</strong></p>
+<p><strong>Total Flux due to Divergence Theorem-Flux out of the top
+Surface</strong></p>
+<p><strong><img alt="\frac{405\pi}{2}-243\pi=\frac{-81\pi}{2}" src=
+"https://latex.codecogs.com/gif.latex?%5Cfrac%7B405%5Cpi%7D%7B2%7D-243%5Cpi%3D%5Cfrac%7B-81%5Cpi%7D%7B2%7D" /></strong></p>
+<p><strong>The figure shows below the region W and surface
+S</strong></p>
+<p><strong><img alt="" src=
+"//d2vlcm61l7u1fs.cloudfront.net/media%2Fde0%2Fde074dff-8c70-4a76-814b-34d4a1cb6312%2FphpfYXTt5.png"
+style="height:615px;width:1063px;" /></strong></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

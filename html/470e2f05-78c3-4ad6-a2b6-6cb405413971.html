@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Tic-tac-toe game with grid layout</p>
+<p>Modify the given HTML file to look like the web page below.</p>
+<p></p>
+<p>Add the following CSS to the&nbsp;#board&nbsp;selector in the
+embedded stylesheet:</p>
+<ul>
+<li>A&nbsp;display&nbsp;property that makes the
+board's&nbsp;&lt;div&gt;&nbsp;element a grid layout container.</li>
+<li>A&nbsp;grid-template-columns&nbsp;property to create 3 columns
+that are all 100px wide.</li>
+<li>A&nbsp;grid-template-rows&nbsp;property to create 3 rows that
+are all 100px tall.</li>
+<li>A&nbsp;grid-gap&nbsp;property to create a 10px gap between each
+of the 9 grid cells.</li>
+<li>A&nbsp;justify-content&nbsp;property that centers the grid
+horizontally.</li>
+</ul>
+<p>&nbsp;</p>
+<p>This is the given html file to add the above rules to:</p>
+<p>&nbsp;</p>
+<p>&lt;!DOCTYPE HTML&gt;<br>
+&lt;html&gt;<br>
+&nbsp; &nbsp;&lt;title&gt;Tic-Tac-Toe&lt;/title&gt;
+&nbsp;&nbsp;<br>
+&nbsp; &nbsp;&lt;style&gt;<br>
+&nbsp; &nbsp;<br>
+&nbsp; &nbsp;body {<br>
+&nbsp; &nbsp; &nbsp; font-family: Roboto, Helvetica,
+sans-serif;<br>
+&nbsp; &nbsp; &nbsp; text-align: center;<br>
+&nbsp; &nbsp;}</p>
+<p>&nbsp; &nbsp;.x {<br>
+&nbsp; &nbsp; &nbsp; color: red;<br>
+&nbsp; &nbsp;}<br>
+&nbsp; &nbsp;<br>
+&nbsp; &nbsp;.o {<br>
+&nbsp; &nbsp; &nbsp; color: blue;<br>
+&nbsp; &nbsp; }<br>
+&nbsp; &nbsp;&nbsp;<br>
+&nbsp; &nbsp;#board {<br>
+&nbsp; &nbsp; &nbsp; font: 85px arial, sans-serif;<br>
+&nbsp; &nbsp; &nbsp; margin: 3px;<br>
+&nbsp; &nbsp; &nbsp;&nbsp;<br>
+&nbsp; &nbsp; &nbsp; /* Your solution goes here */ &nbsp; &nbsp;
+&nbsp;</p>
+<p>&nbsp; &nbsp;}</p>
+<p>&nbsp; &nbsp;#board &gt; div {<br>
+&nbsp; &nbsp; &nbsp; border: 1px solid LightSkyBlue;<br>
+&nbsp; &nbsp; &nbsp; text-align: center;<br>
+&nbsp; &nbsp;}</p>
+<p>&nbsp; &nbsp;&lt;/style&gt;</p>
+<p>&nbsp; &nbsp;&lt;body&gt;<br>
+&nbsp; &nbsp; &nbsp; &lt;h1&gt;Tic-Tac-Toe&lt;/h1&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+&nbsp; &nbsp; &nbsp; &lt;div id="board"&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div
+class="x"&gt;X&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div
+class="o"&gt;O&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div
+class="x"&gt;X&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div
+class="o"&gt;O&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div
+class="x"&gt;X&lt;/div&gt;<br>
+&nbsp; &nbsp; &nbsp; &lt;/div&gt;</p>
+<p>&nbsp; &nbsp;&lt;/body&gt;<br>
+&lt;/html&gt;</p>
+<p>&nbsp;</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>Hi,</p>
+
+<p>Here is the final html code and the comments are provided to make you understannd the code. Every changes or functionality was need&nbsp;to be implemented&nbsp; is coded here and usefull information is provided along with code.</p>
+
+<p>Hope you got the answer.&nbsp;</p>
+
+<pre>
+<code class="language-html">&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;title&gt;Tic-Tac-Toe&lt;/title&gt;
+&lt;style&gt;
+    body {
+        font-family: Roboto, Helvetica, sans-serif;
+        text-align: center;
+    }
+
+    .x {
+        color: red;
+    }
+
+    .o {
+        color: blue;
+    }
+
+    #board {
+        font: 85px arial, sans-serif;
+        /* set margin to auto to align to center */
+        margin: auto;
+        /* use display as grid to show in grid format. */
+        /* the size for the grid must be fixed side so that it can display the grid properly. */
+        display: grid;
+        width: 300px;
+        height: 300px;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 100px 100px 100px;
+        grid-gap:10px
+        /* every grid follow a template to show and the grid rows and column is of 100px.*/
+
+    }
+
+    #board&gt;div {
+        border: 1px solid LightSkyBlue;
+        text-align: center;
+    }
+&lt;/style&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;Tic-Tac-Toe&lt;/h1&gt;
+
+    &lt;div id="board"&gt;
+        &lt;div class="x"&gt;X&lt;/div&gt;
+        &lt;div class="o"&gt;O&lt;/div&gt;
+        &lt;div class="o"&gt;O&lt;/div&gt;
+        &lt;div class="o"&gt;X&lt;/div&gt;
+        &lt;div class="x"&gt;X&lt;/div&gt;
+        &lt;div class="x"&gt;X&lt;/div&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;!-- 
+            Style is applied to the div inside #board not to the class x/o.
+            here you can apply the dynamic class using javascript and style will not change. it is independent of class and id.
+        --&gt;
+        &lt;div class="x"&gt;X&lt;/div&gt;
+        &lt;div class="x"&gt;X&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+
+<p>output:</p>
+
+<p><img alt="Tic-Tac-Toe
+ХОО
+X X X
+XX
+" src="https://media.cheggcdn.com/coop/95f/95f84dc2-c324-4524-9096-cd9f4728ad49/1600959109919_output.png"></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

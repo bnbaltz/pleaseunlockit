@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>USING C++</p>
+<p><strong>Goal</strong></p>
+<p>You are asked to create a commandline-based <em>interactive</em>
+program that allows users to add two types of shapes: triangles and
+circles. The program also allows the user the print the list of
+stored shapes. Furthermore, it allows the user to modify the stored
+shapes.</p>
+<p><strong>Sample run of this program</strong></p>
+<p>The following run illustrates the interactions supported by this
+program.</p>
+<pre>
+./lab7
+Choose a shape to add
+</pre>
+<p><strong>(</strong>a<strong>) for</strong> triangle<br />
+<strong>(</strong>b<strong>) for</strong> circle<br />
+<strong>(</strong>p<strong>)</strong> to print the shapes
+<strong>(</strong>0-9<strong>)</strong> to modify a shape
+<strong>(</strong>q<strong>)</strong> to exit</p>
+<p>:a<br />
+== You selected a triangle. == Enter position: 0 0<br />
+Enter width and height: 1 2 Choose a shape to add</p>
+<p><strong>(</strong>a<strong>) for</strong> triangle<br />
+<strong>(</strong>b<strong>) for</strong> circle<br />
+<strong>(</strong>p<strong>)</strong> to print the shapes
+<strong>(</strong>0-9<strong>)</strong> to modify a shape
+<strong>(</strong>q<strong>)</strong> to exit</p>
+<p>:b<br />
+== You selected a circle. ==</p>
+<p><span>Enter position: 10 2</span></p>
+<pre>
+Enter radius: 1
+Choose a shape to add
+</pre>
+<p><strong>(</strong>a<strong>) for</strong> triangle<br />
+<strong>(</strong>b<strong>) for</strong> circle<br />
+<strong>(</strong>p<strong>)</strong> to print the shapes
+<strong>(</strong>0-9<strong>)</strong> to modify a shape
+<strong>(</strong>q<strong>)</strong> to exit</p>
+<p>:a<br />
+== You selected a triangle. == Enter position: 3 4<br />
+Enter width and height: 1 22 Choose a shape to add</p>
+<p><strong>(</strong>a<strong>) for</strong> triangle<br />
+<strong>(</strong>b<strong>) for</strong> circle<br />
+<strong>(</strong>p<strong>)</strong> to print the shapes
+<strong>(</strong>0-9<strong>)</strong> to modify a shape
+<strong>(</strong>q<strong>)</strong> to exit</p>
+<p>:p<br />
+[0] Triangle</p>
+<pre>
+    location: (0, 0)
+</pre>
+<pre>
+    width and height: (1, 2)
+[1] Radius
+</pre>
+<pre>
+    location: (10, 2)
+</pre>
+<pre>
+    radius: (1)
+[2] Triangle
+</pre>
+<pre>
+    location: (3, 4)
+</pre>
+<pre>
+    width and height: (1, 22)
+Choose a shape to add
+</pre>
+<p><strong>(</strong>a<strong>) for</strong> triangle<br />
+<strong>(</strong>b<strong>) for</strong> circle<br />
+<strong>(</strong>p<strong>)</strong> to print the shapes
+<strong>(</strong>0-9<strong>)</strong> to modify a shape
+<strong>(</strong>q<strong>)</strong> to exit</p>
+<p>:1<br />
+Enter position: 11 3 Enter radius: 1000 Choose a shape to add</p>
+<p><strong>(</strong>a<strong>) for</strong> triangle<br />
+<strong>(</strong>b<strong>) for</strong> circle<br />
+<strong>(</strong>p<strong>)</strong> to print the shapes
+<strong>(</strong>0-9<strong>)</strong> to modify a shape
+<strong>(</strong>q<strong>)</strong> to exit</p>
+<p>:p<br />
+[0] Triangle</p>
+<pre>
+    location: (0, 0)
+</pre>
+<pre>
+    width and height: (1, 2)
+[1] Radius
+</pre>
+<pre>
+    location: (11, 3)
+</pre>
+<pre>
+    radius: (1000)
+[2] Triangle
+</pre>
+<pre>
+    location: (3, 4)
+</pre>
+<pre>
+    width and height: (1, 22)
+Choose a shape to add
+</pre>
+<p><strong>(</strong>a<strong>) for</strong> triangle
+<strong>(</strong>b<strong>) for</strong> circle</p>
+<p><strong>(</strong>p<strong>)</strong> to print the shapes
+<strong>(</strong>0-9<strong>)</strong> to modify a shape
+<strong>(</strong>q<strong>)</strong> to exit</p>
+<p>:q</p>
+<p><strong>Some specifics</strong></p>
+<p>If user enters a, the programs prompts the user for information
+about a triangle (position x, position y, width, and height).</p>
+<p>If user enters b, the programs prompts the user for information
+about a circle (position x, position y, radius).</p>
+<p>If user enters p, the program prints the shapes (their types,
+position x, position y, and other info, e.g., width</p>
+<p>and height in case of triangles).</p>
+<p>The program can store up to 10 shapes.</p>
+<p>If user presses 0-9 the shape stored at that index allows user
+to re-enter the values (e.g., position x, position y, and radious
+for circle).</p>
+<p><strong>Source Code</strong></p>
+<p>Please complete the Tri and Cir classes in the code below:
+<strong>main</strong></p>
+<p>#include &lt;iostream&gt; <strong>using namespace</strong>
+std;</p>
+<p><strong>class</strong> Point {</p>
+<p><strong>public</strong>: int x, y;</p>
+<p>Point() {}<br />
+Point(int x, int y) { <strong>this</strong>-&gt;x = x;
+<strong>this</strong>-&gt;y = y; }</p>
+<p><strong>friend</strong> ostream&amp;
+<strong>operator</strong>&lt;&lt;(ostream&amp; os, const Point&amp;
+pt) { os &lt;&lt; "(" &lt;&lt; pt.x &lt;&lt; ", " &lt;&lt; pt.y
+&lt;&lt; ")";<br />
+<strong>return</strong> os;</p>
+<p>} };</p>
+<p><strong>class</strong> Shape {</p>
+<pre>
+<em>  // FEEL FREE TO CHANGE THE THIS CLASS
+  // AS LONG AS YOU DON</em><em>'</em><em>T HAVE TO CHANGE THE
+  // CONTENTS OF MAIN() AND
+  // PRINT_SHAPES() FUNCTIONS
+</em>
+</pre>
+<p><strong>protected</strong>:<br />
+Point _location;</p>
+<p><strong>public</strong>:<br />
+Shape() {}<br />
+Shape(const Point&amp; location) : _location(location) {} ~Shape()
+{}</p>
+<pre>
+  void draw() {
+    cout &lt;&lt; "location: " &lt;&lt; _location &lt;&lt; endl;
+</pre>
+<p>}</p>
+<pre>
+  void get_info_from_user() {
+    cout &lt;&lt; "Enter position: ";
+    cin &gt;&gt; _location.x &gt;&gt; _location.y;
+</pre>
+<p>} };</p>
+<pre>
+<em>// YOU NEED TO COMPLETE THIS CLASS
+</em>
+</pre>
+<p><strong>class</strong> Tri {</p>
+<p><strong>protected</strong>:<br />
+int _width, _height;</p>
+<p><strong>public</strong>:</p>
+<p><em>// TODO ...</em></p>
+<p>};</p>
+<pre>
+<em>// YOU NEED TO COMPLETE THIS CLASS
+</em>
+</pre>
+<p><strong>class</strong> Cir {</p>
+<p><strong>protected</strong>: int _radius;</p>
+<p><strong>public</strong>:</p>
+<p><em>// TODO ...</em></p>
+<p>};</p>
+<p><em>///////////////////////////////////////////////// //<br />
+// DO NOT CHANGE CODE BELOW THIS LINE<br />
+// /////////////////////////////////////////////////</em> #define
+MAX_SHAPES 10</p>
+<pre>
+void print_shapes(Shape** shapes, int n)
+{
+</pre>
+<p><strong>for</strong> (int i=0; i&lt;n; ++i) {<br />
+cout &lt;&lt; "[" &lt;&lt; i &lt;&lt; "] ";
+shapes[i]-&gt;draw();</p>
+<p>} }</p>
+<p>int main() {</p>
+<pre>
+  Shape* shapes[MAX_SHAPES];
+</pre>
+<p>int n = 0;<br />
+char shape_choice; <strong>do</strong> {</p>
+<pre>
+    cout &lt;&lt; "Choose a shape to add" &lt;&lt; endl;
+    cout &lt;&lt; "\t(a) for triangle" &lt;&lt; endl;
+    cout &lt;&lt; "\t(b) for circle" &lt;&lt; endl;
+    cout &lt;&lt; "\t(p) to print the shapes" &lt;&lt; endl;
+</pre>
+<pre>
+cout &lt;&lt; "\t(0-9) to modify a shape" &lt;&lt; endl;
+    cout &lt;&lt; "\t(q) to exit" &lt;&lt; endl;
+    cout &lt;&lt; ": ";
+    cin &gt;&gt; shape_choice;
+</pre>
+<p><strong>if</strong> (shape_choice == 'q')
+<strong>break</strong>;</p>
+<p><strong>switch</strong>(shape_choice) {</p>
+<p><strong>case</strong> '0': <strong>case</strong> '1':
+<strong>case</strong> '2': <strong>case</strong> '3':
+<strong>case</strong> '4': <strong>case</strong> '5':
+<strong>case</strong> '6': <strong>case</strong> '7':
+<strong>case</strong> '8': <strong>case</strong> '9':</p>
+<p>shapes[((int) shape_choice) - 48]-&gt;get_info_from_user();
+<strong>break</strong>;</p>
+<p><strong>case</strong> 'a':<br />
+<strong>if</strong> (n &gt;= MAX_SHAPES) {</p>
+<pre>
+          cout &lt;&lt; "== Cannot add any more shapes ==" &lt;&lt; endl;
+</pre>
+<p><strong>continue</strong>; }</p>
+<p>cout &lt;&lt; "== You selected a triangle. ==" &lt;&lt; endl;
+shapes[n] = <strong>new</strong> Tri();
+shapes[n]-&gt;get_info_from_user();<br />
+++n;</p>
+<p><strong>break</strong>; <strong>case</strong> 'b':</p>
+<p><strong>if</strong> (n &gt;= MAX_SHAPES) {<br />
+cout &lt;&lt; "== Cannot add any more shapes ==" &lt;&lt; endl;
+<strong>continue</strong>;</p>
+<p>}<br />
+cout &lt;&lt; "== You selected a circle. ==" &lt;&lt; endl;
+shapes[n] = <strong>new</strong> Cir();
+shapes[n]-&gt;get_info_from_user();<br />
+++n;</p>
+<p><strong>break</strong>; <strong>case</strong> 'p':</p>
+<p>print_shapes(shapes, n); <strong>break</strong>;</p>
+<p><strong>case</strong> 'q': <strong>break</strong>;
+<strong>default</strong>:</p>
+<p>cerr &lt;&lt; "== Invalid choice ==" &lt;&lt; endl;
+<strong>break</strong>;</p>
+<p>}<br />
+} <strong>while</strong> (<strong>true</strong>);</p>
+<p><strong>for</strong> (int i=0; i&lt;n; ++i)
+<strong>delete</strong> shapes[i];</p>
+<p>}&nbsp;</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <html>
+ <head></head>
+ <body>
+  <p>The solution to the above question is given below with screenshot of output.</p> 
+  <p>====================================================</p> 
+  <p>I kept the logic simple and i have tested for both cases.</p> 
+  <ul> 
+   <li>triangle</li> 
+   <li>circle</li> 
+   <li>print</li> 
+  </ul> 
+  <p>If there is anything else do let me know in comments.</p> 
+  <p>===================================================</p> 
+  <p>====== CODE TO COPY ==================================</p> 
+  <pre>
+#include &lt;iostream&gt;
+<strong>using</strong> <strong>namespace</strong> std;
+
+///////////////// CLASS POINT //////////////////////
+<strong>class</strong> Point
+{
+  <strong>public</strong>:
+    <strong>int</strong> x, y;
+
+  Point() {}
+  Point(<strong>int</strong> x, <strong>int</strong> y) { <strong>this</strong>-&gt;x = x; <strong>this</strong>-&gt;y = y; }
+ 
+  <strong>friend</strong> ostream&amp; <strong>operator</strong>&lt;&lt;(ostream&amp; os, <strong>const</strong> Point&amp; pt) {
+    os &lt;&lt; "(" &lt;&lt; pt.x &lt;&lt; ", " &lt;&lt; pt.y &lt;&lt; ")";
+    <strong>return</strong> os;
+  }
+};
+
+///////////////// BASE CLASS FOR TRIANGLE AND CIRCLE //////////////////////
+<strong>class</strong> Shape
+{
+  <strong>protected</strong>:
+   Point _location;
+
+  <strong>public</strong>:
+    Shape() {}
+    Shape(<strong>const</strong> Point&amp; location) : _location(location) {}
+    ~Shape() {}
+ 
+    <strong>virtual</strong> <strong>void</strong> draw() {
+      cout &lt;&lt; "location: " &lt;&lt; _location &lt;&lt; endl;
+    }
+ 
+    <strong>virtual</strong> <strong>void</strong> get_info_from_user() {
+      cout &lt;&lt; "Enter position: ";
+      cin &gt;&gt; _location.x &gt;&gt; _location.y;
+    }
+};
+
+
+///////////////// CLASS TRIANGLE SUBCLASS OF SHAPE CLASS //////////////////////
+<strong>class</strong> Tri : <strong>public</strong> Shape
+{
+  <strong>protected</strong>:
+    <strong>int</strong> _width, _height;
+
+  <strong>public</strong>:
+    Tri(){}
+    Tri(<strong>const</strong> Tri&amp; t) : Shape(), _width(t._width) , _height(t._height) {}
+ 
+    <strong>void</strong> draw() {
+      cout &lt;&lt; "Triangle" &lt;&lt; endl;
+      cout &lt;&lt; "\t" &lt;&lt; "location: " &lt;&lt; _location &lt;&lt; endl;
+      cout &lt;&lt; "\t" &lt;&lt;  "width and height: " &lt;&lt; "(" &lt;&lt; _width &lt;&lt; ", " &lt;&lt; _height &lt;&lt; ")" &lt;&lt; endl;
+    }
+ 
+    <strong>void</strong> get_info_from_user() {
+      Shape :: get_info_from_user();
+      cout &lt;&lt; "Enter width and height:  ";
+      cin &gt;&gt; _width &gt;&gt; _height;
+    }
+ 
+};
+
+///////////////// CLASS CIRCLE SUBCLASS OF SHAPE CLASS //////////////////////
+<strong>class</strong> Cir : <strong>public</strong> Shape
+{
+  <strong>protected</strong>:
+    <strong>int</strong> _radius;
+
+  <strong>public</strong>:
+    Cir(){}
+    Cir(<strong>const</strong> Cir&amp; c) : Shape(), _radius(c._radius) {}
+ 
+    <strong>void</strong> draw() {
+      cout &lt;&lt; "Circle" &lt;&lt; endl;
+      cout &lt;&lt; "\t" &lt;&lt; "location: " &lt;&lt; _location &lt;&lt; endl;
+      cout &lt;&lt; "\t" &lt;&lt;  "radius: " &lt;&lt; "(" &lt;&lt; _radius &lt;&lt;")" &lt;&lt; endl;
+    }
+ 
+    <strong>void</strong> get_info_from_user() {
+      Shape :: get_info_from_user();
+      cout &lt;&lt; "Enter radius: ";
+      cin &gt;&gt; _radius;
+    }
+};
+
+
+/////////////////////////////////////////////////
+//
+// DO NOT CHANGE CODE BELOW THIS LINE
+//
+/////////////////////////////////////////////////
+#define MAX_SHAPES 10
+
+<strong>void</strong> print_shapes(Shape** shapes, <strong>int</strong> n)
+{
+  <strong>for</strong> (<strong>int</strong> i=0; i&lt;n; ++i) {
+    cout &lt;&lt; "[" &lt;&lt; i &lt;&lt; "] "; shapes[i]-&gt;draw();
+  }
+}
+
+<strong>int</strong> main()
+{
+  Shape* shapes[MAX_SHAPES];
+
+  <strong>int</strong> n = 0;
+  <strong>char</strong> shape_choice;
+  <strong>do</strong> {
+    cout &lt;&lt; "Choose a shape to add" &lt;&lt; endl;
+    cout &lt;&lt; "\t(a) for triangle" &lt;&lt; endl;
+    cout &lt;&lt; "\t(b) for circle" &lt;&lt; endl;
+    cout &lt;&lt; "\t(p) to print the shapes" &lt;&lt; endl;
+    cout &lt;&lt; "\t(0-9) to modify a shape" &lt;&lt; endl;
+    cout &lt;&lt; "\t(q) to exit" &lt;&lt; endl;
+    cout &lt;&lt; ": ";
+    cin &gt;&gt; shape_choice;
+
+    <strong>if</strong> (shape_choice == 'q') <strong>break</strong>;
+    
+    <strong>switch</strong>(shape_choice)
+    {
+      <strong>case </strong>'0':
+      <strong>case </strong>'1':
+      <strong>case </strong>'2':
+      <strong>case </strong>'3':
+      <strong>case </strong>'4':
+      <strong>case </strong>'5':
+      <strong>case </strong>'6':
+      <strong>case </strong>'7':
+      <strong>case </strong>'8':
+      <strong>case </strong>'9':
+        shapes[((<strong>int</strong>) shape_choice) - 48]-&gt;get_info_from_user();
+      <strong>break</strong>;
+      <strong>case </strong>'a':
+        <strong>if</strong> (n &gt;=  MAX_SHAPES) {
+          cout &lt;&lt; "== Cannot add any more shapes ==" &lt;&lt; endl;
+          <strong>continue</strong>;
+        }      
+        cout &lt;&lt; "== You selected a triangle. ==" &lt;&lt; endl;
+        shapes[n] = <strong>new</strong> Tri();
+        shapes[n]-&gt;get_info_from_user();
+        ++n;
+      <strong>break</strong>;
+      <strong>case </strong>'b':
+        <strong>if</strong> (n &gt;=  MAX_SHAPES) {
+          cout &lt;&lt; "== Cannot add any more shapes ==" &lt;&lt; endl;
+          <strong>continue</strong>;
+        }
+        cout &lt;&lt; "== You selected a circle. ==" &lt;&lt; endl;
+        shapes[n] = <strong>new</strong> Cir();
+        shapes[n]-&gt;get_info_from_user();
+        ++n;     
+      <strong>break</strong>;
+      <strong>case </strong>'p':
+        print_shapes(shapes, n);
+      <strong>break</strong>;
+      <strong>case </strong>'q':
+      <strong>break</strong>;
+      <strong>default</strong>:
+        cerr &lt;&lt; "== Invalid choice ==" &lt;&lt; endl;
+      <strong>break</strong>;
+    }
+  } <strong>while</strong> (<strong>true</strong>);
+
+  <strong>for</strong> (<strong>int</strong> i=0; i&lt;n; ++i) <strong>delete</strong> shapes[i];
+}
+</pre> 
+  <p>===================================================</p> 
+  <p>Output :</p> 
+  <p>&nbsp;</p> 
+  <p><img alt="gcc version 4.6.3
+2
+Choose a shape to add
+(a) for triangle
+(b) for circle
+(p) to print the shapes
+(0-9) to modify a shape
+(q)" src="https://d2vlcm61l7u1fs.cloudfront.net/media%2Fd3a%2Fd3a31072-5f61-4669-9fa1-5a007414090a%2Fphp9XCPeb.png" style="border-style:solid;border-width:4px;height:545px;width:436px;"></p> 
+ </body>
+</html>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

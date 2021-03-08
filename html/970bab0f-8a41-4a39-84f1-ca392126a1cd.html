@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <html>
+ <head></head> 
+ <body> 
+  <p><img alt="(70 points) A fashion retailer has decided to provide discount codes to teachers and students
+during a promotional event. The" src="https://media.cheggcdn.com/media%2F2ca%2F2ca4c25c-da0f-44ff-aa9b-d048f126f6f1%2FphpYGPOAs.png"><img alt="int read_line (char *str, int n)
+int ch; int = 0;
+while ((chgetchar )) !- n)
+f if (i < n)
+*str++=
+ch ;
+*str10/
+return i;
+/*" src="https://media.cheggcdn.com/media%2Fac4%2Fac4485c9-ddaa-4451-816e-140859c19232%2Fphpdoc5gb.png" style="height:245px;width:635px;"></p>  
+ </body>
+</html>
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <html>
+ <head></head>
+ <body>
+  <p><span style="text-decoration: underline"><strong>C Program:</strong></span></p> 
+  <p>#include &lt;stdio.h&gt;<br> #include &lt;string.h&gt;<br> #include &lt;stdlib.h&gt;</p> 
+  <p>//Function that extracts domain name<br> int find_domain (char *s1, char *s2);<br> int read_line(char *str, int n);</p> 
+  <p>//Main function<br> int main()<br> {<br> &nbsp; &nbsp; char email[1000], domain[1000];<br> &nbsp; &nbsp; int len;</p> 
+  <p>&nbsp; &nbsp; //Reading email address<br> &nbsp; &nbsp; printf("Enter email address: ");<br> &nbsp; &nbsp; len = read_line(email, 1000);</p> 
+  <p>&nbsp; &nbsp; //Extracting domain<br> &nbsp; &nbsp; if(find_domain(email, domain)==1)<br> &nbsp; &nbsp; {<br> &nbsp; &nbsp; &nbsp; &nbsp; printf("\nDomain: %s\n", domain);<br> &nbsp; &nbsp; }<br> &nbsp; &nbsp; else<br> &nbsp; &nbsp; {<br> &nbsp; &nbsp; &nbsp; &nbsp; printf("\nNot a valid email address for the discount code\n");<br> &nbsp; &nbsp; }</p> 
+  <p>&nbsp; &nbsp; return 0;<br> }</p> 
+  <p><br> //Function that extracts domain name<br> int find_domain (char *s1, char *s2)<br> {<br> &nbsp; &nbsp; int i, lastDotPos, aPos, j=0;<br> &nbsp; &nbsp; int len = strlen(s1);</p> 
+  <p>&nbsp; &nbsp; //Checking length<br> &nbsp; &nbsp; if(len &lt; 4)<br> &nbsp; &nbsp; {<br> &nbsp; &nbsp; &nbsp; &nbsp; s2 = "\0";<br> &nbsp; &nbsp; &nbsp; &nbsp; return 0;<br> &nbsp; &nbsp; }</p> 
+  <p>&nbsp; &nbsp; //Position of last dot<br> &nbsp; &nbsp; lastDotPos = len-4;</p> 
+  <p>&nbsp; &nbsp; //Comparing characters<br> &nbsp; &nbsp; if( (*(s1+lastDotPos)=='.') &amp;&amp; (*(s1+lastDotPos+1)=='e') &amp;&amp; (*(s1+lastDotPos+2)=='d') &amp;&amp; (*(s1+lastDotPos+3)=='u'))<br> &nbsp; &nbsp; {<br> &nbsp; &nbsp; &nbsp; &nbsp; i=0;<br> &nbsp; &nbsp; &nbsp; &nbsp; aPos=-1;</p> 
+  <p>&nbsp; &nbsp; &nbsp; &nbsp; //Searching for position of @<br> &nbsp; &nbsp; &nbsp; &nbsp; for(i=0; *(s1+i)!='\0'; i++)<br> &nbsp; &nbsp; &nbsp; &nbsp; {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //Checking for @<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(*(s1+i) == '@')<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; aPos = i;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; &nbsp; &nbsp; }</p> 
+  <p>&nbsp; &nbsp; &nbsp; &nbsp; //Checking aPos<br> &nbsp; &nbsp; &nbsp; &nbsp; if(aPos == -1)<br> &nbsp; &nbsp; &nbsp; &nbsp; {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; s2 = "\0";<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return 0;<br> &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; &nbsp; &nbsp; else<br> &nbsp; &nbsp; &nbsp; &nbsp; {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //Fetching domain<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for(i=aPos+1; *(s1+i)!='\0'; i++, j++)<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //Copying values<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *(s2+j) = *(s1+i);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</p> 
+  <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //Adding Null<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *(s2+j) = '\0';<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return 1;<br> &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; }<br> &nbsp; &nbsp; else<br> &nbsp; &nbsp; {<br> &nbsp; &nbsp; &nbsp; &nbsp; s2 = "\0";<br> &nbsp; &nbsp; &nbsp; &nbsp; return 0;<br> &nbsp; &nbsp; }<br> }</p> 
+  <p><br> //read_line function<br> int read_line(char *str, int n)<br> {<br> &nbsp; &nbsp; int ch;<br> &nbsp; &nbsp; int i=0;</p> 
+  <p>&nbsp; &nbsp; while((ch=getchar()) != '\n')<br> &nbsp; &nbsp; {<br> &nbsp; &nbsp; &nbsp; &nbsp; if(i &lt; n)<br> &nbsp; &nbsp; &nbsp; &nbsp; {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *str++ = ch;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; i++;<br> &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; }<br> &nbsp; &nbsp; *str = '\0';<br> &nbsp; &nbsp; return i;<br> }<br> &nbsp;</p> 
+  <p> _________________________________________________________________________________________________</p> 
+  <p><span style="text-decoration: underline"><strong>Sample Run:</strong></span></p> 
+  <p><span style="text-decoration: underline"><strong><img alt="CATClemail addresslbin Debuglemail address.exe
+Enter email address: joew19@mail.usf.edu
+Domain: mail.usf.edu
+process returned" src="https://media.cheggcdn.com/media%2Fb7a%2Fb7a83f36-d8d5-4109-a00e-42b43aad1688%2FphpPY4RBI.png"></strong></span></p> 
+ </body>
+</html>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

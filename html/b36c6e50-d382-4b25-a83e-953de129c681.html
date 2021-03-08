@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p dir="ltr">Python programming <br>
+use turtle graphics to draw at least 8 different alphabetic characters of your choice across your output screen. Each character may be drawn using straight lines. Make sure that the characters are lined up in a row, not overlapping, and large enough to be read easily. </p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>Without functions:</p>
+<p>import&nbsp;turtle</p>
+<p>from&nbsp;turtle&nbsp;import*</p>
+<p>screenVal=turtle.Screen()</p>
+<p>screenVal.setup(618,440)</p>
+<p>&nbsp;</p>
+<p>alphabet=turtle.Turtle()</p>
+<p>alphabet.pencolor('red')</p>
+<p>alphabet.pensize(4)</p>
+<p>alphabet.shape('turtle')</p>
+<p>alphabet.penup()</p>
+<p>alphabet.goto(-240,0)</p>
+<p>alphabet.pendown()</p>
+<p>&nbsp;</p>
+<p>#Code snippet to draw alphabet E</p>
+<p>alphabet.pendown()</p>
+<p>alphabet.back(39)</p>
+<p>alphabet.left(269)</p>
+<p>alphabet.forward(24)</p>
+<p>alphabet.left(89)</p>
+<p>alphabet.forward(24)</p>
+<p>alphabet.back(24)</p>
+<p>alphabet.left(269)</p>
+<p>alphabet.forward(24)</p>
+<p>alphabet.left(89)</p>
+<p>alphabet.forward(39)</p>
+<p>alphabet.penup()</p>
+<p>alphabet.forward(9)</p>
+<p>alphabet.pendown()</p>
+<p>&nbsp;</p>
+<p>#Code snippet to draw alphabet W</p>
+<p>alphabet.pencolor('green')</p>
+<p>alphabet.right(89)</p>
+<p>alphabet.forward(49)</p>
+<p>alphabet.left(149)</p>
+<p>alphabet.forward(39)</p>
+<p>alphabet.right(119)</p>
+<p>alphabet.forward(39)</p>
+<p>alphabet.left(149)</p>
+<p>alphabet.forward(49)</p>
+<p>alphabet.penup()</p>
+<p>alphabet.right(89)</p>
+<p>alphabet.forward(49)</p>
+<p>&nbsp;</p>
+<p>#Code snippet to draw alphabet L</p>
+<p>alphabet.pencolor('yellow')</p>
+<p>alphabet.pendown()</p>
+<p>alphabet.left(89)</p>
+<p>alphabet.forward(49)</p>
+<p>alphabet.back(49)</p>
+<p>alphabet.right(89)</p>
+<p>alphabet.forward(39)</p>
+<p>alphabet.penup()</p>
+<p>alphabet.forward(9)</p>
+<p>&nbsp;</p>
+<p>#Code snippet to draw alphabet L</p>
+<p>alphabet.pencolor('blue')</p>
+<p>alphabet.pendown()</p>
+<p>alphabet.left(89)</p>
+<p>alphabet.forward(49)</p>
+<p>alphabet.right(89)</p>
+<p>alphabet.penup()</p>
+<p>alphabet.forward(9)</p>
+<p>&nbsp;</p>
+<p>#Code snippet to draw alphabet N</p>
+<p>alphabet.pencolor('red')</p>
+<p>alphabet.pendown()</p>
+<p>alphabet.right(89)</p>
+<p>alphabet.forward(49)</p>
+<p>alphabet.back(49)</p>
+<p>alphabet.left(29)</p>
+<p>alphabet.forward(59)</p>
+<p>alphabet.left(149)</p>
+<p>alphabet.forward(52)</p>
+<p>alphabet.back(52)</p>
+<p>alphabet.right(89)</p>
+<p>alphabet.penup()</p>
+<p>alphabet.forward(49)</p>
+<p>&nbsp;</p>
+<p>#Code snippet to draw alphabet G</p>
+<p>alphabet.pencolor('green')</p>
+<p>alphabet.pendown()</p>
+<p>alphabet.left(89)</p>
+<p>alphabet.forward(19)</p>
+<p>alphabet.left(89)</p>
+<p>alphabet.forward(19)</p>
+<p>alphabet.back(19)</p>
+<p>alphabet.left(89)</p>
+<p>alphabet.forward(19)</p>
+<p>alphabet.right(89)</p>
+<p>alphabet.forward(19)</p>
+<p>alphabet.right(44)</p>
+<p>alphabet.forward(29)</p>
+<p>alphabet.right(44)</p>
+<p>alphabet.forward(19)</p>
+<p>alphabet.right(44)</p>
+<p>alphabet.forward(19)</p>
+<p>alphabet.right(44)</p>
+<p>alphabet.forward(24)</p>
+<p>alphabet.penup()</p>
+<p>alphabet.forward(9)</p>
+<p>&nbsp;</p>
+<p>#Code snippet to draw alphabet T</p>
+<p>alphabet.pencolor('yellow')</p>
+<p>alphabet.pendown()</p>
+<p>alphabet.forward(39)</p>
+<p>alphabet.back(19)</p>
+<p>alphabet.right(89)</p>
+<p>alphabet.forward(49)</p>
+<p>alphabet.left(89)</p>
+<p>alphabet.penup()</p>
+<p>alphabet.forward(69)</p>
+<p>alphabet.left(89)</p>
+<p>alphabet.forward(24)</p>
+<p>&nbsp;</p>
+<p>#Code snippet to draw alphabet O</p>
+<p>alphabet.pencolor('blue')</p>
+<p>alphabet.pendown()</p>
+<p>alphabet.circle(24)</p>
+<p>alphabet.penup()</p>
+<p>alphabet.left(179)</p>
+<p>alphabet.forward(24)</p>
+<p>alphabet.left(89)</p>
+<p>alphabet.forward(9)</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>#With functions</p>
+<p>import&nbsp;turtle</p>
+<p>from&nbsp;turtle&nbsp;import*</p>
+<p>screenVal=turtle.Screen()</p>
+<p>screenVal.setup(618,440)</p>
+<p>alphabet=turtle.Turtle()</p>
+<p>alphabet.pencolor('red')</p>
+<p>alphabet.pensize(4)</p>
+<p>alphabet.shape('turtle')</p>
+<p>alphabet.penup()</p>
+<p>alphabet.goto(-240,0)</p>
+<p>alphabet.pendown()</p>
+<p>&nbsp;</p>
+<p>def&nbsp;drawLetters():</p>
+<p>&nbsp;&nbsp;#Code snippet to draw alphabet E</p>
+<p>&nbsp;&nbsp;alphabet.pendown()</p>
+<p>&nbsp;&nbsp;alphabet.back(39)</p>
+<p>&nbsp;&nbsp;alphabet.left(269)</p>
+<p>&nbsp;&nbsp;alphabet.forward(24)</p>
+<p>&nbsp;&nbsp;alphabet.left(89)</p>
+<p>&nbsp;&nbsp;alphabet.forward(24)</p>
+<p>&nbsp;&nbsp;alphabet.back(24)</p>
+<p>&nbsp;&nbsp;alphabet.left(269)</p>
+<p>&nbsp;&nbsp;alphabet.forward(24)</p>
+<p>&nbsp;&nbsp;alphabet.left(89)</p>
+<p>&nbsp;&nbsp;alphabet.forward(39)</p>
+<p>&nbsp;&nbsp;alphabet.penup()</p>
+<p>&nbsp;&nbsp;alphabet.forward(9)</p>
+<p>&nbsp;&nbsp;alphabet.pendown()</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;#Code snippet to draw alphabet W</p>
+<p>&nbsp;&nbsp;alphabet.pencolor('green')</p>
+<p>&nbsp;&nbsp;alphabet.right(89)</p>
+<p>&nbsp;&nbsp;alphabet.forward(49)</p>
+<p>&nbsp;&nbsp;alphabet.left(149)</p>
+<p>&nbsp;&nbsp;alphabet.forward(39)</p>
+<p>&nbsp;&nbsp;alphabet.right(119)</p>
+<p>&nbsp;&nbsp;alphabet.forward(39)</p>
+<p>&nbsp;&nbsp;alphabet.left(149)</p>
+<p>&nbsp;&nbsp;alphabet.forward(49)</p>
+<p>&nbsp;&nbsp;alphabet.penup()</p>
+<p>&nbsp;&nbsp;alphabet.right(89)</p>
+<p>&nbsp;&nbsp;alphabet.forward(49)</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;#Code snippet to draw alphabet L</p>
+<p>&nbsp;&nbsp;alphabet.pencolor('yellow')</p>
+<p>&nbsp;&nbsp;alphabet.pendown()</p>
+<p>&nbsp;&nbsp;alphabet.left(89)</p>
+<p>&nbsp;&nbsp;alphabet.forward(49)</p>
+<p>&nbsp;&nbsp;alphabet.back(49)</p>
+<p>&nbsp;&nbsp;alphabet.right(89)</p>
+<p>&nbsp;&nbsp;alphabet.forward(39)</p>
+<p>&nbsp;&nbsp;alphabet.penup()</p>
+<p>&nbsp;&nbsp;alphabet.forward(9)</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;#Code snippet to draw alphabet L</p>
+<p>&nbsp;&nbsp;alphabet.pencolor('blue')</p>
+<p>&nbsp;&nbsp;alphabet.pendown()</p>
+<p>&nbsp;&nbsp;alphabet.left(89)</p>
+<p>&nbsp;&nbsp;alphabet.forward(49)</p>
+<p>&nbsp;&nbsp;alphabet.right(89)</p>
+<p>&nbsp;&nbsp;alphabet.penup()</p>
+<p>&nbsp;&nbsp;alphabet.forward(9)</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;#Code snippet to draw alphabet N</p>
+<p>&nbsp;&nbsp;alphabet.pencolor('red')</p>
+<p>&nbsp;&nbsp;alphabet.pendown()</p>
+<p>&nbsp;&nbsp;alphabet.right(89)</p>
+<p>&nbsp;&nbsp;alphabet.forward(49)</p>
+<p>&nbsp;&nbsp;alphabet.back(49)</p>
+<p>&nbsp;&nbsp;alphabet.left(29)</p>
+<p>&nbsp;&nbsp;alphabet.forward(59)</p>
+<p>&nbsp;&nbsp;alphabet.left(149)</p>
+<p>&nbsp;&nbsp;alphabet.forward(52)</p>
+<p>&nbsp;&nbsp;alphabet.back(52)</p>
+<p>&nbsp;&nbsp;alphabet.right(89)</p>
+<p>&nbsp;&nbsp;alphabet.penup()</p>
+<p>&nbsp;&nbsp;alphabet.forward(49)</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;#Code snippet to draw alphabet G</p>
+<p>&nbsp;&nbsp;alphabet.pencolor('green')</p>
+<p>&nbsp;&nbsp;alphabet.pendown()</p>
+<p>&nbsp;&nbsp;alphabet.left(89)</p>
+<p>&nbsp;&nbsp;alphabet.forward(19)</p>
+<p>&nbsp;&nbsp;alphabet.left(89)</p>
+<p>&nbsp;&nbsp;alphabet.forward(19)</p>
+<p>&nbsp;&nbsp;alphabet.back(19)</p>
+<p>&nbsp;&nbsp;alphabet.left(89)</p>
+<p>&nbsp;&nbsp;alphabet.forward(19)</p>
+<p>&nbsp;&nbsp;alphabet.right(89)</p>
+<p>&nbsp;&nbsp;alphabet.forward(19)</p>
+<p>&nbsp;&nbsp;alphabet.right(44)</p>
+<p>&nbsp;&nbsp;alphabet.forward(29)</p>
+<p>&nbsp;&nbsp;alphabet.right(44)</p>
+<p>&nbsp;&nbsp;alphabet.forward(19)</p>
+<p>&nbsp;&nbsp;alphabet.right(44)</p>
+<p>&nbsp;&nbsp;alphabet.forward(19)</p>
+<p>&nbsp;&nbsp;alphabet.right(44)</p>
+<p>&nbsp;&nbsp;alphabet.forward(24)</p>
+<p>&nbsp;&nbsp;alphabet.penup()</p>
+<p>&nbsp;&nbsp;alphabet.forward(9)</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;#Code snippet to draw alphabet T</p>
+<p>&nbsp;&nbsp;alphabet.pencolor('yellow')</p>
+<p>&nbsp;&nbsp;alphabet.pendown()</p>
+<p>&nbsp;&nbsp;alphabet.forward(39)</p>
+<p>&nbsp;&nbsp;alphabet.back(19)</p>
+<p>&nbsp;&nbsp;alphabet.right(89)</p>
+<p>&nbsp;&nbsp;alphabet.forward(49)</p>
+<p>&nbsp;&nbsp;alphabet.left(89)</p>
+<p>&nbsp;&nbsp;alphabet.penup()</p>
+<p>&nbsp;&nbsp;alphabet.forward(69)</p>
+<p>&nbsp;&nbsp;alphabet.left(89)</p>
+<p>&nbsp;&nbsp;alphabet.forward(24)</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;#Code snippet to draw alphabet O</p>
+<p>&nbsp;&nbsp;alphabet.pencolor('blue')</p>
+<p>&nbsp;&nbsp;alphabet.pendown()</p>
+<p>&nbsp;&nbsp;alphabet.circle(24)</p>
+<p>&nbsp;&nbsp;alphabet.penup()</p>
+<p>&nbsp;&nbsp;alphabet.left(179)</p>
+<p>&nbsp;&nbsp;alphabet.forward(24)</p>
+<p>&nbsp;&nbsp;alphabet.left(89)</p>
+<p>&nbsp;&nbsp;alphabet.forward(9)</p>
+<p>&nbsp;</p>
+<p># Function to draw all the letters defined</p>
+<p>drawLetters()</p>
+<p>&nbsp;</p>
+<p>Please do comment for any queries.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

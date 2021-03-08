@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Please code this in C and explain what each function does. Thank
+you!</p>
+<p><img alt="_Bool IsDecimalInteger(char str[]);
+Description: The function takes a string (character array) and checks if it is a valid de" src="https://media.cheggcdn.com/media/bdb/bdba15cd-b4d8-4470-87c8-3eef4887ca58/phplgKIGl.png" style="height:924px;width:554px;"><img alt="Examples:
+The Array
+{-17,-5,-5,-2,1,17,17,17,289}
+{289,17,17,17,1,-2,-5,-5,-17}
+(25,25,25,25,25,25,25)
+{-17,-5,10,2,-19,23)
++" src="https://media.cheggcdn.com/media/407/407c9154-a6f2-4e46-8a7c-08a7848e6ea7/phprxGnth.png" style="height:462px;width:583px;"></p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>Code in c with explanation in comments (code to copy)</p>
+
+<pre>
+<code class="language-cpp">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+_Bool IsDecimalInteger(char str[]){
+	//initialize i with 0 to traverse the  string str
+	int i=0;
+	//if the string starts with - sign, it could be a negative number so we move forward
+	if(str[0]=='-'){
+		i++;
+	}
+	//if the string ends without any digit, then this is not an integer so we return 0
+	if(str[0]=='\0')
+		return 0;
+	//we loop through the string and check each character for a digit character, if not we return 0
+	while(str[i]!='\0'){
+		if(str[i]&lt;'0'||str[i]&gt;'9'){
+			return 0;
+		}
+		i++;
+	}
+	//if our program reaches here, it means that we have checked all the characters and they are all digits
+	//we can now return 1
+	return 1;
+}
+
+char GetSortingOrder(double arr[], size_t arr_size){
+	//if size is 0 it is an error situation
+	if(arr_size==0)
+		return -1;
+	//if size is 1 then by default it is a constant array
+	if(arr_size==1)
+		return 3;
+	// lets assume that this is is constant and sorted and reverse sorted
+	// So that we can loop through the array and check if each of them is valid or not
+	int is_constant=1;
+	int is_sorted=1;
+	int is_reverse_sorted=1;
+	//loop through the array
+	for(int i=1;i&lt;arr_size;i++){
+		//if we have already identified that this is not a constant array then dont check
+		//if it is a constant array then all elements must be equal, if not then we know that it is not constant
+		if(is_constant &amp;&amp; arr[i]!=arr[i-1]){
+			is_constant=0;
+		}
+		//if we have already identified that this is not a sorted array then dont check
+		//if it is a sorted array then all elements must be greater than or equal to their preceding element, if not then we know that it is not sorted
+		if(is_sorted &amp;&amp; arr[i]&lt;arr[i-1]){
+			is_sorted=0;
+		}
+		//if we have already identified that this is not a reverse sorted array then dont check
+		//if it is a reverse sorted array then all elements must be less than or equal to their preceding element, if not then we know that it is not reverse sorted
+		if(is_reverse_sorted &amp;&amp; arr[i]&gt;arr[i-1]){
+			is_reverse_sorted=0;
+		}
+		//if we know that this array is neither sorted, nor constant nor reverse sorted, then no need to check further
+		if(!is_constant &amp;&amp; !is_sorted &amp;&amp; !is_reverse_sorted)
+			break;
+	}
+	//check if constant
+	if(is_constant){
+		return 3;
+	}else if(is_sorted){//check if sorted
+		return 1;
+	}else if(is_reverse_sorted){//check if reverse sorted
+		return 2;
+	}else{//else it is unsorted
+		return 0;
+	}
+}
+
+void RemoveExtraSpaces(char txt[]){
+	int i, x;
+  	for(i=x=0; txt[i]; i++)
+	//add next character only if it is not a space or if the preceding character is not a space
+    if(txt[i] != ' ' || (i &gt; 0 &amp;&amp; txt[i-1] != ' '))
+      txt[x++] = txt[i];
+	//there could be a space left at the end
+	if(x-1&gt;0&amp;&amp;txt[x-1]==' '){
+		txt[x-1]='\0';
+	}else{
+		txt[x] = '\0';
+	}
+}
+int main()
+{
+	//Test IsDecimalInteger function
+	printf("IsDecimalInteger(\"23510\") = %d\n", IsDecimalInteger("23510"));
+	printf("IsDecimalInteger(\" -2319\") = %d\n", IsDecimalInteger(" -2319"));
+	printf("IsDecimalInteger(\"-2319\") = %d\n", IsDecimalInteger("-2319"));
+	printf("IsDecimalInteger(\"25g17\") = %d\n", IsDecimalInteger("25g17"));
+	printf("IsDecimalInteger(\"200-50\") = %d\n", IsDecimalInteger("200-50"));
+	printf("IsDecimalInteger(\"\") = %d\n", IsDecimalInteger(""));
+	printf("IsDecimalInteger(\"99999999999999999999999999999999999999999999\") = %d\n", IsDecimalInteger("99999999999999999999999999999999999999999999"));
+	printf("IsDecimalInteger(\"570.11\") = %d\n\n", IsDecimalInteger("570.11"));
+
+	//Test GetSortingOrder function
+	double arr1 [] = {-17, -5, -5, -2, 1, 17, 17, 17, 289};
+	printf("GetSortingOrder({-17, -5, -5, -2, 1, 17, 17, 17, 289}, 9) = %d\n", GetSortingOrder(arr1, 9));
+	double arr2 [] = {289, 17, 17, 17, 1, -2, -5, -5, -17};
+	printf("GetSortingOrder({289, 17, 17, 17, 1, -2, -5, -5, -17}, 9) = %d\n", GetSortingOrder(arr2, 9));
+	double arr3 [] = {25, 25, 25, 25, 25, 25, 25};
+	printf("GetSortingOrder({25, 25, 25, 25, 25, 25, 25}, 7) = %d\n", GetSortingOrder(arr3, 7));
+	double arr4 [] = {-17, -5, 10, 2, -19, 23};
+	printf("GetSortingOrder({-17, -5, 10, 2, -19, 23}, 6) = %d\n", GetSortingOrder(arr4, 9));
+	double arr5 [] = {};
+	printf("GetSortingOrder({}, 0) = %d\n\n", GetSortingOrder(arr5, 0));
+
+	//Test RemoveExtraSpaces function
+	char str1[] =  "   Hello,   Students  !  ";
+	RemoveExtraSpaces(str1);
+	printf("RemoveExtraSpaces(\"   Hello,   Students  !  \") = \"%s\"\n", str1);
+	
+	char str2[] =  "";
+	RemoveExtraSpaces(str2);
+	printf("RemoveExtraSpaces(\"\") = \"%s\"\n", str2);
+	
+	char str3[] =  "  ";
+	RemoveExtraSpaces(str3);
+	printf("RemoveExtraSpaces(\"  \") = \"%s\"\n", str3);
+}</code></pre>
+
+<p>Code Screenshot</p>
+
+<p><img src="https://media.cheggcdn.com/coop/31b/31bfbb2e-40a1-42d8-b2d0-ef95f9cc380d/1602517741729_image.png" style="height:921px;width:1295px" alt="2
+#include <stdio.h>
+#include <stdlib.h>
+_Bool IsDecimalInteger(char str[]){
+//initialize i with @ to traverse the string str"><img src="https://media.cheggcdn.com/coop/e20/e20acaa5-ae1a-47b1-a40c-d56245475cff/1602517764780_image.png" style="height:825px;width:1480px" alt="41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+if(is_constant &amp;&amp; arr[i]!=arr[i-1]){
+is_constant=0;
+}
+//if we "><img src="https://media.cheggcdn.com/coop/62f/62fd02c3-5e5f-44a5-b1ee-ca703a67b201/1602517789355_image.png" style="height:712px;width:1360px" alt="83
+int main()
+//Test IsDecimalInteger function
+printf(IsDecimalInteger(\23510\) = %d\n, IsDecimalInteger(23510));
+print"></p>
+
+<p>&nbsp;</p>
+
+<p>Output Screenshot</p>
+
+<p><img src="https://media.cheggcdn.com/coop/95d/95d8f684-61f5-4f73-af2e-54b6f89a7ce7/1602517825797_image.png" style="height:308px;width:528px" alt="IsDecimalInteger(23510) = 1
+IsDecimalInteger( -2319) =
+= 0
+IsDecimalInteger(-2319) = 1
+IsDecimalInteger(25g17) = 0
+Is"></p>
+
+<p>&nbsp;</p>
+
+<p>Let me know in the comments if you have any doubts.<br>
+Do leave a thumbs up if this was helpful.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

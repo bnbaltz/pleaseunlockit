@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div>1.Once an array is created, its size cannot be changed. Doesthe following code resize the array?</div><div>&nbsp;</div><div>int [] myList;</div><div>myList = new int [10];</div><div>// Some time later you want to assign a new array tomyList</div><div>myList = new int [20]</div><div>&nbsp;</div><div>2. When an array is passed to a method, a new array is createdand passed to the method. Is this true?</div><div>&nbsp;</div><div>Thanks~</div>
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;&nbsp;&nbsp;&nbsp; Hi,</div><div>&nbsp;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in Java, arrayscannot be resized dynamically.</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;one approachis to use "java.util.ArrayList" or "java.util.Vector" instead ofnative array.</div><div>&nbsp;&nbsp;&nbsp;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Another solution isreallocate the array with a different size and to copy the contentsof the&nbsp;old&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array to the new array.The generic function is<strong>resizeArray()</strong> can be used.</div><div>&nbsp;</div><div>--------------------------------------------------------------------------------------------------</div><pre>/*** Reallocates an array with a new size, and copies the contents* of the old array to the new array.* @param oldArray  the old array, to be reallocated.* @param newSize   the new array size.* @return          A new array with the same contents.*/private static Object resizeArray (Object oldArray, int newSize) {int oldSize = java.lang.reflect.Array.getLength(oldArray);Class elementType = oldArray.getClass().getComponentType();Object newArray = java.lang.reflect.Array.newInstance(elementType,newSize);int preserveLength = Math.min(oldSize,newSize);if (preserveLength &gt; 0)System.arraycopy (oldArray,0,newArray,0,preserveLength);return newArray; }</pre><div>--------------------------------------------------------------------------------------------------</div><pre>// Test routine for resizeArray().public static void main (String[] args) {int[] a = {1,2,3};a = (int[])resizeArray(a,5);a[3] = 4;a[4] = 5;for (int i=0; i&lt;a.length; i++)System.out.println (a[i]); }</pre><p>--------------------------------------------------------------------------------------------------</p><div>Arrays are references. This means that when we pass an arrayas a parameter, we are passing its handle or reference.</div><div>&nbsp;</div><div>&nbsp; for example :</div><div>&nbsp;&nbsp;&nbsp;We can change the contents of the arrayinside the method.<pre>  public static void tryArray(char[] b)  {    b[0] = 'x';    b[1] = 'y';    b[2] = 'z';  }</pre>When the following code is executed, the array <tt>a</tt> doesindeed have the new values in the array.<pre>    char[] a = {'a', 'b', 'c'};    tryArray(a);    System.out.println("a[0] = " + a[0] + ", a[1] = " + a[1] +                        ", a[2] =" + a[2]);</pre></div><div>--------------------------------------------------------------------------------------------------<br></div><div>&nbsp;</div><div>&nbsp; When an array is passed to the method then newarray&nbsp;will not&nbsp;be created, but it&nbsp;refersthe&nbsp;same array. So,&nbsp;given statement is false.</div><div>&nbsp;&nbsp;</div><div>&nbsp;&nbsp;&nbsp;&nbsp; Thank you, if you have anydoubt postthe&nbsp;question&nbsp;</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

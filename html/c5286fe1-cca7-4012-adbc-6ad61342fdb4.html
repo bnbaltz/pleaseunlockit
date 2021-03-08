@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div id="mobile-question-style" style="font-family: Roboto; color:#333333; "><p dir="ltr"><img src="https://media.cheggcdn.com/study/210/210cf0d6-7997-4c0b-bc3d-4331b0ad20c3/image" alt="MECH 3032 Processing Pre-Lab: Conditionals
+Points Possible: 20
+Submission Instructions: Your homework will be submitted elect"></p>
+</div><p dir="ltr">&nbsp; </p>
+<p dir="ltr">posting both together because they're related, done in Processing, <u>java</u></p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>Program 1)</p>
+
+<pre>
+<code>function setup() {
+    createCanvas( 400, 400 );
+
+    // set the frame rate for the sketch
+    frameRate( 4 );
+}
+
+
+function draw() {
+    background( 'rgb(255, 255, 255)' );
+    var context = canvas.getContext('2d');
+    if (keyPressed) 
+    {
+     text( "Press 1- for Ellipse 2-for Rectangle 2-for Line", 10, 20 );
+    if (key == '1') 
+    {
+    translate( width*0.25, height*0.25 );
+    fill(0, 255, 255);
+    ellipse( 0, 0, 200, 40 );
+    }
+    if (key == '2') 
+    {
+    translate( width*0.25, height*0.25 );
+    fill(42, 255, 255);
+    context.clearRect(40,40,80,80);
+    }
+    if (key == '3') 
+    {
+    context.beginPath();
+    context.moveTo(0, 0);
+    context.lineTo(400, 400);
+    context.stroke();
+    }
+    }  
+}
+</code></pre>
+
+<p>Program 2</p>
+
+<p>For ellips and Rectangle code will be same for line code is given below</p>
+
+<pre>
+<code>function setup() {
+    createCanvas( 640, 480 );
+
+    // set the frame rate for the sketch
+    frameRate( 4 );
+}</code></pre>
+
+<pre>
+<code class="language-javascript">var canvas = new fabric.Canvas('c', { selection: false });
+
+var line, isDown;
+
+canvas.on('mouse:down', fun(o){
+  isDown = true;
+  var pointer = canvas.getPointer(o.e);
+  var points = [ pointer.x, pointer.y, pointer.x, pointer.y ];
+  line = new fabric.Line(points, {
+    strokeWidth: 5,
+    fill: 'red',
+    stroke: 'red',
+    originX: 'center',
+    originY: 'center'
+  });
+  canvas.add(line);
+});
+
+canvas.on('mouse:move', fun(o){
+  if (!isDown) return;
+  var pointer = canvas.getPointer(o.e);
+  line.set({ x2: pointer.x, y2: pointer.y });
+  canvas.renderAll();
+});
+
+canvas.on('mouse:up', fun(o){
+  isDown = false;
+});</code></pre>
+
+<p>&nbsp;</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div id='mobile-question-style' style="font-family: 'Helvetica Neue',Helvetica,Arial; color:#333333;">How to calculate federal income tax<div><br></div></div>
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p style="text-align:left;">The following steps describe how to
+calculate your Federal income taxes:</p>
+<table border="0" cellpadding="5" cellspacing="0" style=
+"width:100%;">
+<tbody>
+<tr>
+<td>&nbsp;</td>
+<td>STEP 1:</td>
+<td>
+<p>Determine the value of your total withholding allowances
+(exemptions) as claimed on your current <em>W-4 Form</em> by
+multi­plying each allowance (exemption) by the semi-monthly amount
+of $168.80.</p>
+</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>STEP 2:</td>
+<td>
+<p>Subtract the amount of any salary reductions, such as
+PERS,TIAA/CREF, or health insurance premium from your total
+semi-month.</p>
+</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>STEP 3:</td>
+<td>Subtract STEP 1 from STEP 2 to determine your taxable gross
+wages.</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>STEP 4:</td>
+<td>
+<p>Use the tables below to calculate the amount of Federal income
+taxes.&nbsp; Be sure to use the appropriate table based upon your
+marital status (single or married) as marked on your current
+<em>W-4 Form.</em></p>
+<p>&nbsp;</p>
+<p>SEMI-MONTHLY&nbsp;PAYCYCLE</p>
+<p style="text-align:left;"><strong>SINGLE</strong> person -
+including head of household:</p>
+<p style="text-align:left;">If the amount of wages is:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The amount of
+income tax to withhold is:</p>
+<p style="text-align:left;">Not over $96 . . . . . . . . . . 0</p>
+<table border="0" cellpadding="5" cellspacing="0" style=
+"width:100%;">
+<tbody>
+<tr>
+<td><strong>Over</strong></td>
+<td><strong>But not over</strong></td>
+<td><strong>of excess over</strong></td>
+</tr>
+<tr>
+<td>$ &nbsp;96</td>
+<td>$ 484. . . . 10%</td>
+<td>$ 96</td>
+</tr>
+<tr>
+<td>$ 484</td>
+<td>$ 1,677. . . .$&nbsp;&nbsp;&nbsp;&nbsp; 38.80 plus 15%</td>
+<td>$ 484</td>
+</tr>
+<tr>
+<td>$ 1,677</td>
+<td>$ 3,925. . . .$&nbsp;&nbsp;&nbsp; 217.75 plus 25%</td>
+<td>$ 1,677</td>
+</tr>
+<tr>
+<td>$ 3,925</td>
+<td>$ 8,081. . . .$&nbsp;&nbsp;&nbsp; 779.75 plus 28%</td>
+<td>$ 3,925</td>
+</tr>
+<tr>
+<td>$ 8,081</td>
+<td>$17,458. . . $ 1,943.43 plus 33%</td>
+<td>$ 8,081</td>
+</tr>
+<tr>
+<td>$ 17,458</td>
+<td>$17,529. . . $ 5,037.84 plus 35%</td>
+<td>$17,458</td>
+</tr>
+<tr>
+<td>$ 17,529 . . . . . . . . . .</td>
+<td>. . . . . . . . . . $5,062.69 plus 39.6%</td>
+<td>$17,529</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align:left;">&nbsp;</p>
+<p style="text-align:left;"><strong>MARRIED</strong> person -
+including head of household:</p>
+<p style="text-align:left;">If the amount of wages is:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The
+amount of income tax to withhold is:</p>
+<p style="text-align:left;">Not over $360 . . . . . . . . . . 0</p>
+<table border="0" cellpadding="5" cellspacing="0" style=
+"width:100%;">
+<tbody>
+<tr>
+<td><strong>Over</strong></td>
+<td><strong>But not over</strong></td>
+<td><strong>of excess over</strong></td>
+</tr>
+<tr>
+<td>$ 360</td>
+<td>$ 1,138. . . . 10%</td>
+<td>$ 360</td>
+</tr>
+<tr>
+<td>$ 1,138</td>
+<td>$ 3,523. . . .$&nbsp;&nbsp;&nbsp; 77.80 plus 15%</td>
+<td>$ 1,138</td>
+</tr>
+<tr>
+<td>$ 3,523</td>
+<td>$ 6,740. . . .$&nbsp;&nbsp; 435.55 plus 25%</td>
+<td>$ 3,523</td>
+</tr>
+<tr>
+<td>$ 6,740</td>
+<td>$ 10,083. . . .$ 1,239.80 plus 28%</td>
+<td>$ 6,740</td>
+</tr>
+<tr>
+<td>$ 10,083</td>
+<td>$ 17,723. . . $ 2,175.84 plus 33%</td>
+<td>$ 10,083</td>
+</tr>
+<tr>
+<td>$ 17,723</td>
+<td>$ 19,973. . . $ 4,697.04 plus 35%</td>
+<td>$ 17,723</td>
+</tr>
+<tr>
+<td>$ 19,973 . . . . . . . . . .</td>
+<td>. . . . . . . . . . $ 5,484.54 plus 39.6%</td>
+<td>$ 19,973</td>
+</tr>
+</tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" style=
+"height:10px;">
+<tbody>
+<tr>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table border="0" cellpadding="5" cellspacing="0" style=
+"width:100%;">
+<tbody>
+<tr>
+<td><strong>EXAMPLE:</strong></td>
+<td>Monthly Salary:</td>
+<td>$4,200</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>Semi-monthly Salary:</td>
+<td>$2,100</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>Marital Status:</td>
+<td>Married</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>Withholding Allowances (Exemptions):</td>
+<td>3</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>SRA (Reduction):</td>
+<td>$100</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>PERS II (Reduction):</td>
+<td>6.12%</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>Health Insurance Premium</td>
+<td>$ 39.50</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align:left;">&nbsp;</p>
+<table border="0" cellpadding="5" cellspacing="0" style=
+"width:100%;">
+<tbody>
+<tr>
+<td>STEP 1:</td>
+<td>$168.80</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><u>x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3</u></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>$ 506.40</td>
+<td>&nbsp;</td>
+<td>Value of withholding allowances</td>
+</tr>
+<tr>
+<td>STEP 2:</td>
+<td>$ 2,100.00</td>
+<td>&nbsp;</td>
+<td>Semi-monthly earnings</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>-&nbsp;&nbsp; 100.00</td>
+<td>&nbsp;</td>
+<td>Less SRA</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>-&nbsp;&nbsp;&nbsp;108.52</td>
+<td>&nbsp;</td>
+<td>Less PERS II $2,100 X .0612</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><u>- 39.50</u></td>
+<td>&nbsp;</td>
+<td>Less Health Insurance Premium</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>$ 1,831.98</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>STEP 3:</td>
+<td>$ 1,831.98</td>
+<td>&nbsp;</td>
+<td>STEP 2</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><u>- &nbsp;&nbsp;&nbsp;506.40</u></td>
+<td>&nbsp;</td>
+<td>Less STEP 1</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>
+<p>$ 1,325.58</p>
+</td>
+<td>&nbsp;</td>
+<td>Taxable Gross Wages</td>
+</tr>
+<tr>
+<td>STEP 4:</td>
+<td>$ 1,325.58</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><u>-&nbsp;&nbsp;1,138.00</u></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>$187.58</td>
+<td>x 15% = $28.14 + $77.80&nbsp;</td>
+<td>= $105.94 Federal Income Tax</td>
+</tr>
+</tbody>
+</table>
+<p>"Reductions" are amounts which are not subject to federal income
+tax such as the Public Employees Retirement System (PERS), Health
+Insurance Premium, Teachers Retirement System, TIAA/CREF,
+Supplemental Retirement Annuity (SRA), State Deferred Compensations
+or Lincoln National. The following rates apply:</p>
+<table align="center" border="1" cellpadding="5" cellspacing="0"
+style="width:400px;">
+<tbody>
+<tr>
+<th>REDUCTION</th>
+<th>RATE</th>
+</tr>
+<tr>
+<td>PERS I</td>
+<td>6.00%</td>
+</tr>
+<tr>
+<td>PERS II</td>
+<td>6.12%</td>
+</tr>
+<tr>
+<td>PERS III</td>
+<td>5-15%</td>
+</tr>
+<tr>
+<td>TRS I</td>
+<td>6.00%</td>
+</tr>
+<tr>
+<td>TRS II</td>
+<td>5.95%</td>
+</tr>
+<tr>
+<td>TRS III</td>
+<td>5-15%</td>
+</tr>
+<tr>
+<td>TIAA/CREF</td>
+<td>5.00%, 7.50% or 10.00%</td>
+</tr>
+<tr>
+<td>LEOFF II</td>
+<td>8.41%</td>
+</tr>
+</tbody>
+</table>
+<p>You should review your <em>W-4 Withholding Certificate</em>
+yearly to ensure that the proper amount of withholding is being
+deducted. You can change the amount of withholding by completing
+and submitting a new <em>W-4 Withholding Certificate</em> to
+Payroll Services. Your tax status (married or single) and the
+number of withholding allowances (exemptions) appear on your pay
+stub/earnings statement each pay period.</p>
+<p>Overall see the type of all kind of people will cover in federal
+income tax slabs so that individual can submit tax return
+easily.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

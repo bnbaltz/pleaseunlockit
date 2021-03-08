@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Write a program that implements the pseudocode below:</p>
+<pre>
+Ask the user for their taxable income.
+Compute and output the marginal tax rate as follows:
+  -  Error if income is negative
+  -  10% if income $0 - $9,700
+  -  12% if income $9,701 – $39,475
+  -  22% if income $39,476 – $84,200
+  -  24% if income $84,201 – $160,725
+  -  32% if income $160,726 – $204,100
+  -  35% if income $204,101 – $510,300
+  -  37% if income $510,301+
+</pre>
+<p>Think about the order of your decisions: <strong>elif/else
+clauses are considered only if the previous condition is
+false!</strong></p>
+<p>A sample run of your program should look like:</p>
+<pre>
+Enter taxable income: 120000
+Marginal tax rate: 24%
+</pre>
+<p>and another sample run:</p>
+<pre>
+Enter taxable income: -50000
+Marginal tax rate: Error</pre>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Must be done in python idle</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><strong><em>ANSWER:<br>
+CODE:</em></strong><br>
+&nbsp;</p>
+
+<pre>
+<code class="language-python">income = int(input())
+m_tax = 0
+#condition for calculating Marginal tax
+if(income&gt;=0 and income &lt;=9700) :
+    m_tax = 10
+elif(income&gt;9700 and income&lt;=39475):
+    m_tax = 12
+elif(income&gt;=39476 and income&lt;=84200):
+    m_tax = 22
+elif(income&gt;=84201 and income&lt;=160725):
+    m_tax = 24
+elif(income&gt;=160726 and income&lt;=204100):
+    m_tax = 32
+elif(income&gt;=204101 and income&lt;=510300):
+    m_tax = 35
+elif(income&gt;=510301):
+    m_tax = 37
+else:
+    m_tax = 0
+#condition for verifying if m_tax is greater than zero
+if(m_tax&gt;0):
+    print("Marginal tax rate: {}%".format(m_tax))
+else:
+    print("Marginal tax rate: ERROR")</code></pre>
+
+<p><strong><em>OUTPUT:</em></strong></p>
+
+<p><strong><em><img alt="120000
+Marginal tax rate: 248
+... Program finished with exit code 0
+Press ENTER to exit console. I
+" src="https://media.cheggcdn.com/coop/a69/a6999107-5074-4e1c-98e6-afadb46f71e3/1614406907842_1.PNG" style="height:161px;width:429px"></em></strong></p>
+
+<p><strong><em><img alt="-50000
+Marginal tax rate: ERROR
+... Program finished with exit code 0
+Press ENTER to exit console. I
+" src="https://media.cheggcdn.com/coop/607/607da4e5-1b96-4a85-9342-e2a611456981/1614406920279_2.PNG" style="height:163px;width:411px"></em></strong></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

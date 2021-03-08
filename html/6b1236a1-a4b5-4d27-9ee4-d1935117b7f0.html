@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Use Python Please:</p>
+<p>Now we want a way to make our monsters fight!</p>
+<p>Before two monsters can fight, we need to give two new class
+methods that update their stats.</p>
+<p>Implement a method for “win_fight” and “lose_fight”. Win_fight
+should add 5 to the monster’s self.exp, and reset their current_hp
+to their max_hp. Lose_fight should also reset their hp, but only
+adds 1 exp to self.exp.</p>
+<p>Now write a function that takes two instances of the Monster
+class as its input and makes them “fight”. A fight goes as
+follows:</p>
+<ol>
+<li>The monster entered as the first function parameter always goes
+first.</li>
+<li>Each monster takes a turn using one attack move.</li>
+<li>Loop over all attacks from most powerful to least powerful
+attack until there is a winner. If there is a tie in hit points for
+an attack select using alphabetical order.</li>
+</ol>
+<p>An attack is always successful and decreases the opponent’s
+current_hp by the given number of points. Monsters continue taking
+turns until one of them reaches current_hp less than or equal to 0,
+at which point the win_fight and lose_fight methods should be
+invoked. Once the fight is complete, return the round number in
+which the fight ended, the monster that won and the list of attacks
+the winning monster used. If both monsters only have “wait” as an
+attack, return -1, None, None</p>
+<p>&nbsp;</p>
+<p><strong>Sample Input&nbsp;1:</strong></p>
+<pre>
+a = Monster("a", 9)
+b = Monster("b", 9)
+a.add_attack("ice_storm")
+b.add_attack("ice_storm")
+b.remove_attack("wait")
+a.remove_attack("wait")
+round1, winner, moves = monster_fight(a, b)
+print(round1)
+print(winner.name)
+print(moves)</pre>
+<p><strong>Sample Output&nbsp;1:</strong></p>
+<pre>
+3
+a
+['ice_storm', 'ice_storm', 'ice_storm']</pre>
+<p><strong>Sample Input&nbsp;2:</strong></p>
+<pre>
+a = Monster("a", 6)
+b = Monster("b", 2)
+round1, winner, moves = monster_fight(a, b)
+print(round1)
+print(winner)
+print(moves)
+print(a.exp)</pre>
+<p><strong>Sample Output&nbsp;2:</strong></p>
+<pre>
+-1
+None
+None
+0</pre>
+<p><strong>Sample Input&nbsp;3:</strong></p>
+<pre>
+a = Monster("a", 10)
+b = Monster("b", 9)
+a.add_attack("fire_storm")
+b.add_attack("ice_storm")
+b.add_attack("whirlwind")
+a.add_attack("whirlwind")
+round1, winner, moves = monster_fight(a, b)
+print(round1)
+print(winner.exp)
+print(moves)
+print(b.exp)</pre>
+<p><strong>Sample Output&nbsp;3:</strong></p>
+<pre>
+4
+5
+['fire_storm', 'whirlwind', 'wait', 'fire_storm']
+1</pre>
+<p><strong>Sample Input&nbsp;4:</strong></p>
+<pre>
+a = Monster("a", 9)
+b = Monster("b")
+a.add_attack("fire_storm")
+b.add_attack("ice_storm")
+b.add_attack("whirlwind")
+a.add_attack("whirlwind")
+round1, winner, moves = monster_fight(a, b)
+print(round1)
+print(winner.name)
+print(moves)</pre>
+<p><strong>Sample Output&nbsp;4:</strong></p>
+<pre>
+4
+b
+['ice_storm', 'whirlwind', 'wait', 'ice_storm']</pre>
+<p><strong>Sample Input&nbsp;5:</strong></p>
+<pre>
+a = Monster("a", 9)
+b = Monster("b", 8)
+b.add_attack("double_hit")
+b.remove_attack("wait")
+a.add_attack("ice_storm")
+a.add_attack("whirlwind")
+round1, winner, moves = monster_fight(a, b)
+print(round1)
+print(winner.name)
+print(moves)</pre>
+<p><strong>Sample Output&nbsp;5:</strong></p>
+<pre>
+3
+b
+['double_hit', 'double_hit', 'double_hit']</pre>
+<p><strong>Sample Input&nbsp;6:</strong></p>
+<pre>
+a = Monster("a", 11)
+b = Monster("b", 10)
+b.add_attack("double_hit")
+b.add_attack("double_hit")
+b.remove_attack("double_hit")
+b.add_attack("double_hit")
+a.add_attack("ice_storm")
+a.add_attack("whirlwind")
+round1, winner, moves = monster_fight(a, b)
+print(round1)
+print(winner.name)
+print(moves)</pre>
+<p><strong>Sample Output&nbsp;6:</strong></p>
+<pre>
+5
+a
+['ice_storm', 'whirlwind', 'wait', 'ice_storm', 'whirlwind']</pre>
+<p><strong>Sample Input&nbsp;7:</strong></p>
+<pre>
+a = Monster("a", 11)
+b = Monster("b", 10)
+b.add_attack("double_hit")
+b.add_attack("double_hit")
+b.remove_attack("double_hit")
+b.add_attack("double_hit")
+a.add_attack("ice_storm")
+a.add_attack("whirlwind")
+round1, winner, moves = monster_fight(a, b)
+print(round1)
+print(winner.max_hp)
+print(winner.current_hp)</pre>
+<p><strong>Sample Output&nbsp;7:</strong></p>
+<pre>
+5
+11
+11</pre>
+<p>#code I have</p>
+<p>class Monster():<br>
+&nbsp; &nbsp; def __init__(self, name, hp=20):<br>
+&nbsp; &nbsp; &nbsp; &nbsp; self.exp = 0<br>
+&nbsp; &nbsp; &nbsp; &nbsp; self.attacks = {'wait': 0}<br>
+&nbsp; &nbsp; &nbsp; &nbsp; self.name = name<br>
+&nbsp; &nbsp; &nbsp; &nbsp; self.known_attacks = {'sneak_attack':
+1, 'slash': 2, 'ice_storm': 3, 'fire_storm': 3,<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'whirlwind': 3,
+'earthquake': 2, 'double_hit': 4, 'wait': 0}<br>
+&nbsp; &nbsp; &nbsp; &nbsp; self.current_hp = hp<br>
+&nbsp; &nbsp; &nbsp; &nbsp; self.max_hp = hp<br>
+&nbsp; &nbsp; &nbsp; &nbsp; self.type = 'normal'</p>
+<p>&nbsp; &nbsp; def add_attack(self, attack_name):<br>
+&nbsp; &nbsp; &nbsp; &nbsp; if attack_name in self.known_attacks
+and attack_name not in self.attacks:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; try:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+assert(len(self.attacks) &lt; 4)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+self.attacks[attack_name] =
+self.known_attacks.get(attack_name)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return
+True<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; except:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #find the
+min value of self.attacks<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; minval =
+min(self.attacks.keys(), key=(lambda k: self.attacks[k]))<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for keys,
+values in self.attacks.items():<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; if self.attacks[minval] == values and min(minval, keys) ==
+keys:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; minval = keys<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; del
+self.attacks[minval]<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+self.attacks[attack_name] =
+self.known_attacks.get(attack_name)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return
+True<br>
+&nbsp; &nbsp; &nbsp; &nbsp; else:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return False</p>
+<p>&nbsp; &nbsp; def remove_attack(self, attack_name):<br>
+&nbsp; &nbsp; &nbsp; &nbsp; if attack_name in
+self.attacks.keys():<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; del
+self.attacks[attack_name]<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if len(self.attacks) ==
+0:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+self.attacks['wait'] = 0<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return True<br>
+&nbsp; &nbsp; &nbsp; &nbsp; else:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return False<br>
+&nbsp; &nbsp; def win_fight(self):<br>
+&nbsp; &nbsp; &nbsp; &nbsp; self.exp += 5<br>
+&nbsp; &nbsp; &nbsp; &nbsp; self.current_hp = self.max_hp<br>
+&nbsp; &nbsp; def lose_fight(self):<br>
+&nbsp; &nbsp; &nbsp; &nbsp; self.exp += 1<br>
+&nbsp; &nbsp; &nbsp; &nbsp; self.current_hp = self.max_hp</p>
+<p>&nbsp; &nbsp; def monster_fight(monster1, monster2):</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; M1round = 0<br>
+&nbsp; &nbsp; &nbsp; &nbsp; M2round = 0<br>
+&nbsp; &nbsp; &nbsp; &nbsp; monster2attackLis = []<br>
+&nbsp; &nbsp; &nbsp; &nbsp; monster1attackLis = []<br>
+&nbsp; &nbsp; &nbsp; &nbsp; winner = None<br>
+&nbsp; &nbsp; &nbsp; &nbsp; round = 0</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; for values in
+monster2.attacks.values():<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+monster2attackLis.append(values)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; for values in
+monster1.attacks.values():<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+monster1attackLis.append(values)</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; monster2attackLis =
+sorted(monster2attackLis, reverse=True)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; monster1attackLis =
+sorted(monster1attackLis, reverse=True)</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; M1attacknames =
+sorted(monster1.attacks.items(), key=operator.itemgetter(1),
+reverse=True)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; M2attacknames =
+sorted(monster2.attacks.items(), key=operator.itemgetter(1),
+reverse=True)</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; winnerList = [] #list of the winners
+moves</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; index1 = 0<br>
+&nbsp; &nbsp; &nbsp; &nbsp; index2 = 0</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; if all(key == 'wait' for key in
+monster1.attacks.keys()) and all(key == 'wait' for key in
+monster1.attacks.keys()):<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return (-1, None,
+None)</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; while(monster2.current_hp &gt;
+0):</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; try:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+monster2.current_hp -= monster1attackLis[index1]<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; index1 +=
+1<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; M1round +=
+1</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; except IndexError:</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; index1 =
+0</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; while(monster1.current_hp &gt;
+0):</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; try:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+monster1.current_hp -= monster2attackLis[index2]<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; index2 +=
+1<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; M2round +=
+1</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; except IndexError:</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; index2 =
+0</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; if(M1round == M2round):<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; winner = monster1<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; round = M1round<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+monster1.win_fight()<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+monster2.lose_fight()<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; index = 0<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; i = 0<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; while i &lt;
+M1round:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; try:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; winnerList.append(M1attacknames[index][0])<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; index += 1<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; i+=1<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+except:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; index = 0<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; continue</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; elif(M1round &lt; M2round):<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; winner = monster1<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+monster1.win_fight()<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+monster2.lose_fight()<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; round = M1round<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; index = 0<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; i = 0<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; while i &lt; round:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; try:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; winnerList.append(M1attacknames[index][0])<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; index += 1<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; i+=1<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+except:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; index = 0<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; continue</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; elif(M2round &lt; M1round):<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; winner = monster2<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+monster2.win_fight()<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+monster1.lose_fight()<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; round = M2round<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; index = 0<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; i = 0<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; while i &lt;
+M2round:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; try:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; winnerList.append(M2attacknames[index][0])<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; index += 1<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; i += 1<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+except:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; index = 0<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; continue</p>
+<p><br>
+&nbsp; &nbsp; &nbsp; &nbsp; return (round, winner, winnerList)</p>
+<p><img alt="Traceback (most recent call last):
+File jailed_code, line 151, in <module>
+exec(x)
+File <string>, line 1, in <module>
+Nam" src="https://media.cheggcdn.com/media/fce/fce9ebb8-c085-4536-84a5-2b72d8fc4a01/phpwxk6i0.png" style="height:100px;width:461px;"></p>
+<p>How to fix this problem? Thank You</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>import operator<br />
+class Monster():<br />
+&nbsp; &nbsp; def __init__(self, name, hp=20):<br />
+&nbsp; &nbsp; &nbsp; &nbsp; self.exp = 0<br />
+&nbsp; &nbsp; &nbsp; &nbsp; self.attacks = {'wait': 0}<br />
+&nbsp; &nbsp; &nbsp; &nbsp; self.name = name<br />
+&nbsp; &nbsp; &nbsp; &nbsp; self.known_attacks = {'sneak_attack':
+1, 'slash': 2, 'ice_storm': 3, 'fire_storm': 3,<br />
+&nbsp; &nbsp; &nbsp; &nbsp; 'whirlwind': 3, 'earthquake': 2,
+'double_hit': 4, 'wait': 0}<br />
+&nbsp; &nbsp; &nbsp; &nbsp; self.current_hp = hp<br />
+&nbsp; &nbsp; &nbsp; &nbsp; self.max_hp = hp<br />
+&nbsp; &nbsp; &nbsp; &nbsp; self.type = 'normal'<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; def add_attack(self, attack_name):<br />
+&nbsp; &nbsp; &nbsp; &nbsp; if attack_name in self.known_attacks
+and attack_name not in self.attacks:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; try:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+assert(len(self.attacks) &lt; 4)<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+self.attacks[attack_name] =
+self.known_attacks.get(attack_name)<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return
+True<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; except:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; #find the min value of
+self.attacks<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; minval =
+min(self.attacks.keys(), key=(lambda k: self.attacks[k]))<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for keys,
+values in self.attacks.items():<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; if self.attacks[minval] == values and min(minval, keys) ==
+keys:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; minval = keys<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; del
+self.attacks[minval]<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+self.attacks[attack_name] =
+self.known_attacks.get(attack_name)<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return True<br />
+&nbsp; &nbsp; &nbsp; &nbsp; else:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return False<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; def remove_attack(self, attack_name):<br />
+&nbsp; &nbsp; &nbsp; &nbsp; if attack_name in
+self.attacks.keys():<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; del
+self.attacks[attack_name]<br />
+&nbsp; &nbsp; &nbsp; &nbsp; if len(self.attacks) == 0:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; self.attacks['wait'] =
+0<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return True<br />
+&nbsp; &nbsp; &nbsp; &nbsp; else:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return False<br />
+&nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; def win_fight(self):<br />
+&nbsp; &nbsp; &nbsp; &nbsp; self.exp += 5<br />
+&nbsp; &nbsp; &nbsp; &nbsp; self.current_hp = self.max_hp<br />
+&nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; def lose_fight(self):<br />
+&nbsp; &nbsp; &nbsp; &nbsp; self.exp += 1<br />
+&nbsp; &nbsp; &nbsp; &nbsp; self.current_hp = self.max_hp<br />
+&nbsp; &nbsp;&nbsp;<br />
+def monster_fight(monster1, monster2):<br />
+&nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; M1round = 0<br />
+&nbsp; &nbsp; M2round = 0<br />
+&nbsp; &nbsp; monster2attackLis = []<br />
+&nbsp; &nbsp; monster1attackLis = []<br />
+&nbsp; &nbsp; winner = None<br />
+&nbsp; &nbsp; round = 0<br />
+&nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; for values in monster2.attacks.values():<br />
+&nbsp; &nbsp; &nbsp; &nbsp; monster2attackLis.append(values)<br />
+&nbsp; &nbsp; for values in monster1.attacks.values():<br />
+&nbsp; &nbsp; &nbsp; &nbsp; monster1attackLis.append(values)<br />
+&nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; monster2attackLis = sorted(monster2attackLis,
+reverse=True)<br />
+&nbsp; &nbsp; monster1attackLis = sorted(monster1attackLis,
+reverse=True)<br />
+&nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; M1attacknames = sorted(monster1.attacks.items(),
+key=operator.itemgetter(1), reverse=True)<br />
+&nbsp; &nbsp; M2attacknames = sorted(monster2.attacks.items(),
+key=operator.itemgetter(1), reverse=True)<br />
+&nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; winnerList = [] #list of the winners moves<br />
+&nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; index1 = 0<br />
+&nbsp; &nbsp; index2 = 0<br />
+&nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; if all(key == 'wait' for key in
+monster1.attacks.keys()) and all(key == 'wait' for key in
+monster1.attacks.keys()):<br />
+&nbsp; &nbsp; &nbsp; &nbsp; return (-1, None, None)<br />
+&nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; while(monster2.current_hp &gt; 0):<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; try:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; monster2.current_hp -=
+monster1attackLis[index1]<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; index1 += 1<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; M1round += 1<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; except IndexError:<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; index1 = 0<br />
+&nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; while(monster1.current_hp &gt; 0):<br />
+&nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; try:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; monster1.current_hp -=
+monster2attackLis[index2]<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; index2 += 1<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; M2round += 1<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; except IndexError:<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; index2 = 0<br />
+&nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; if(M1round == M2round):<br />
+&nbsp; &nbsp; &nbsp; &nbsp; winner = monster1<br />
+&nbsp; &nbsp; &nbsp; &nbsp; round = M1round<br />
+&nbsp; &nbsp; &nbsp; &nbsp; monster1.win_fight()<br />
+&nbsp; &nbsp; &nbsp; &nbsp; monster2.lose_fight()<br />
+&nbsp; &nbsp; &nbsp; &nbsp; index = 0<br />
+&nbsp; &nbsp; &nbsp; &nbsp; i = 0<br />
+&nbsp; &nbsp; &nbsp; &nbsp; while i &lt; M1round:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; try:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+winnerList.append(M1attacknames[index][0])<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; index +=
+1<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; i+=1<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; except:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; index =
+0<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+continue<br />
+&nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; elif(M1round &lt; M2round):<br />
+&nbsp; &nbsp; &nbsp; &nbsp; winner = monster1<br />
+&nbsp; &nbsp; &nbsp; &nbsp; monster1.win_fight()<br />
+&nbsp; &nbsp; &nbsp; &nbsp; monster2.lose_fight()<br />
+&nbsp; &nbsp; &nbsp; &nbsp; round = M1round<br />
+&nbsp; &nbsp; &nbsp; &nbsp; index = 0<br />
+&nbsp; &nbsp; &nbsp; &nbsp; i = 0<br />
+&nbsp; &nbsp; &nbsp; &nbsp; while i &lt; round:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; try:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+winnerList.append(M1attacknames[index][0])<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; index +=
+1<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; i+=1<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; except:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; index =
+0<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+continue<br />
+&nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; elif(M2round &lt; M1round):<br />
+&nbsp; &nbsp; &nbsp; &nbsp; winner = monster2<br />
+&nbsp; &nbsp; &nbsp; &nbsp; monster2.win_fight()<br />
+&nbsp; &nbsp; &nbsp; &nbsp; monster1.lose_fight()<br />
+&nbsp; &nbsp; &nbsp; &nbsp; round = M2round<br />
+&nbsp; &nbsp; &nbsp; &nbsp; index = 0<br />
+&nbsp; &nbsp; &nbsp; &nbsp; i = 0<br />
+&nbsp; &nbsp; &nbsp; &nbsp; while i &lt; M2round:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; try:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+winnerList.append(M2attacknames[index][0])<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; index +=
+1<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; i +=
+1<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; except:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; index =
+0<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+continue<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; return (round, winner, winnerList)<br />
+a = Monster("a", 10)<br />
+b = Monster("b", 9)<br />
+a.add_attack("fire_storm")<br />
+b.add_attack("ice_storm")<br />
+b.add_attack("whirlwind")<br />
+a.add_attack("whirlwind")<br />
+round1, winner, moves = monster_fight(a, b)<br />
+print(round1)<br />
+print(winner.exp)<br />
+print(moves)<br />
+print(b.exp)</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

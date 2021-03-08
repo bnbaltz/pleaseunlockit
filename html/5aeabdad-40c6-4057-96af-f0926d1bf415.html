@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <html>
+ <head></head> 
+ <body> 
+  <p>This homework assignment gives you the opportunity to practice strings <strong>(C++ string class)</strong> and chars.</p> 
+  <p><strong>Write code in c++</strong></p> 
+  <p>HW3 (Graded out of 100)</p> 
+  <p>Write a program that performs input validation when reading grocery product records from a file. Each grocery product record consists of the following 5 items:<br> - PLU code: Product Look Up Code. Unique for each product, stored as a string.<br> - Product Name, stored as a string<br> - Product Sales Type: 0 = per unit, 1 = per pound<br> - Price per Pound or price per unit,<br> - Current Inventory Level (pounds or units).<br> Below is an example of file content. In this example, there are four records, and each line corresponds to a record.<br> A001 Apples 1 0.90 21<br> A002 Peaches 1 0.82 11<br> A006 Avocados 0 1.54 27<br> A008 Mangos 0 1.69 19<br> Your program should read a file and performs input validation on the items read, then print the outcome of the input validation:<br> File has valid content if all the data is valid<br> File has invalid content otherwise, along with the reason.</p> 
+  <p>To contain valid data, the file must have only valid records. A record is valid if<br> • It has exactly 5 items on the same line<br> • The first item should be a PLU. It is valid if and only if it contains only letters or digits, and is 4 characters long<br> • The second item should be product name. It is valid if and only if the first character is a letter<br> • The third item should be a sales type. It is valid if and only if it is only one character, and the character is a 1 or a 0<br> • The fourth item should be a unit price. It is valid if and only if it contains only digits and at most one dot. If there is a dot, there are at most two digits after the dot<br> • The fifth item should be the inventory level. It is valid if and only if it contains only digits<br> In order to validate the individual items, each line has first to be broken into tokens, where a token is a string that corresponds to an item. The tokens are separated by one or more delimiters, where a delimiter is a space, a tab, a new line or a carriage return. To take the line<br> A001 Apples 1 0.90 21<br> as an example, the first token would be A001, the second token would be Apples, and so on. You may assume each line contains at most only one record.</p> 
+  <p><strong>1. Additional Requirements – Make sure you meet all the requirements to avoid losing points</strong></p> 
+  <p><em>a) Functions</em></p> 
+  <p>You are required to implement your program with these functions. You may implement more functions to make your program more modular if you wish.<img alt="/Returns true if the string is a valid PLU, false otherwise
+bool isValidPLU (string)
+/ Returns true if the string is a valid " src="https://media.cheggcdn.com/media%2Fb54%2Fb54883db-874d-4854-ac95-d54d030694da%2FphpvY5Ls1.png" style="height:513px;width:771px;"></p> 
+  <p>b) Outline of main<img alt="Prompt the user to enter a file name
+Read from the file and repeatedly call tokenize to extract the items
+Print the item and " src="https://media.cheggcdn.com/media%2Fba4%2Fba46c779-3ac5-4082-b480-206d4ebe712e%2FphppBLAgu.png" style="height:223px;width:964px;"></p> 
+  <p>c) Style</p> 
+  <p>Make sure you follow the style requirements, especially regarding the comment header for functions, to avoid losing points.</p> 
+  <p><strong>2. Implementation Suggestions - You are not required to implement the suggestions</strong></p> 
+  <p>You are allowed to use any of the existing library functions in chapter 10 of the Gaddis textbook.</p> 
+  <p>a) bool isFileValid(string file)<img alt="Open file // Check that open is successful
+Read line by line. For each line:
+Repeatedly call tokenize to extract the items
+Pr" src="https://media.cheggcdn.com/media%2Fe5c%2Fe5c165f9-ad50-4c5c-958c-e404bbd8cec8%2Fphp6bTIe3.png" style="height:177px;width:963px;">Notes:<br> To read line by line, you can use getline(inFile, stringRead)<br> Detect end of file when getline returns an empty string</p> 
+  <p>b) string tokenize(string &amp; s)</p> 
+  <p><img alt="Loop over the characters of s as long as they are a delimiter and the end of s is not reached //
+Remove any leading delimiter" src="https://media.cheggcdn.com/media%2Ff66%2Ff66cc97a-69a8-4de9-81b7-a8960d2f9cbb%2FphpNjk9Ls.png" style="height:177px;width:963px;"></p> 
+  <p><strong>2. Grading criteria</strong></p> 
+  <ul> 
+   <li>Source code inspection (grader)<br> *Style: 5 points (refer to the “Homework Notes” for the style requirements)</li> 
+   <li>Code compilation and execution (zylabs)<br> *Output test-1 – Valid file – Output exactly matches output-1: 9 points<br> *Output test-2 – File with invalid PLU – Output exactly matches output-2: 9 points<br> *Output test-3 – File with invalid product name – Output exactly matches output-3: 9 points<br> *Output test-4 – File with invalid sales type – Output exactly matches output-4: 9 points<br> *Output test-5 – File with invalid price – Output exactly matches output-5: 9 points<br> *Output test-6 – File with invalid inventory – Output exactly matches output-6: 9 points<br> *Output test-7 – File with excessive number of items – Output exactly matches output-7: 9 points<br> *Output test-8 – File with insufficient number of items – Output exactly matches output-8: 9 points<br> *Output test-9 – File with invalid price – Output exactly matches output-9: 9 points<br> *Unit test-1 – tokenize: 9 points<br> *Unit test-2 – isValidPrice: 5 points</li> 
+   <li><strong>3. Screen outputs</strong></li> 
+  </ul> 
+  <p>&nbsp;<img alt="Enter input file:in.txt
+Checking in.txt
+Token #1 13 A001, PLU 13 valid
+Token #2 13 Apples, Product name is valid
+Token #3 13 " src="https://media.cheggcdn.com/media%2F3a6%2F3a624596-b99c-4b9c-827b-9bb94072803a%2FphpAwXyz2.png" style="height:565px;width:829px;"></p> 
+  <p><img alt="Enter input file:ino.txt
+Checking ino.txt
+Token #1 i3 A001, PLU i3 valid
+Token #2 13 Apples, Product name 13 valid
+Token #3 i" src="https://media.cheggcdn.com/media%2F3fb%2F3fb36924-8fe1-44c1-a3f4-1dcebbd8b3cd%2FphpBVFwOv.png" style="height:593px;width:822px;"></p> 
+  <p><img alt="Enter input file:in2.txt
+Checking in2.txt
+Token #1 is A001, PLU is valid
+Token #2 is Apples, Product name is valid
+Token #3 i" src="https://media.cheggcdn.com/media%2Fce8%2Fce84ea8d-7f69-493e-9e91-ddd6632b67d0%2FphpnDD8Rw.png" style="height:562px;width:813px;"></p> 
+  <p><img alt="Enter input file:in4.txt
+Checking in.txt
+Token #1 is A001, PLU is valid
+Token #2 is Apples, Product name is valid
+Token #3 13" src="https://media.cheggcdn.com/media%2F748%2F7486c05f-0cf9-4ca1-b5c8-bfc3079c7d84%2FphpLVo4cU.png" style="height:356px;width:824px;"></p> 
+  <p><img alt="Enter input file:in5.txt
+Checking in5.txt
+Token #1 is A001, PLU is valid
+Token #2 is Apples, Product name is valid
+Token #3 i" src="https://media.cheggcdn.com/media%2F0af%2F0aff9c4a-cceb-49cd-bc45-c65792234b03%2FphpfzWqmV.png" style="height:373px;width:810px;"></p> 
+  <p><img alt="" src="https://media.cheggcdn.com/media%2Fd85%2Fd850ecaf-c02d-478b-a182-8fd8cb39d493%2FphpTH7Cei.png" style="height:491px;width:833px;"></p>  
+ </body>
+</html>
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <html>
+ <head></head> 
+ <body> 
+  <p>#include &lt;iostream&gt;<br> #include&lt;fstream&gt;<br> #include&lt;sstream&gt;<br> #include&lt;filesystem&gt;<br> #include&lt;ctype.h&gt;<br> using namespace std;<br> string &nbsp;PLU;<br> bool rowOK = false; //Global boolean variable to fllg true if all record tokens are validated<br> bool isvalidPLU(string text)<br> {&nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;int len = 0;<br> &nbsp;&nbsp; &nbsp;char temp[15];<br> &nbsp;&nbsp; &nbsp;strcpy(temp, text.c_str());<br> &nbsp;&nbsp; &nbsp;if (strlen(temp) != 4) //Check if the PLU length is 4 characters<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return false;<br> &nbsp;&nbsp; &nbsp;else<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return true;<br> }<br> bool isvalidName(string text)<br> {<br> &nbsp;&nbsp; &nbsp;if (isalpha(text[0]))//Check if the first character is alphabet<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return true;<br> &nbsp;&nbsp; &nbsp;else<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return false;<br> }<br> bool isValidType(string text)<br> {<br> &nbsp;&nbsp; &nbsp;char temp[10];<br> &nbsp;&nbsp; &nbsp;strcpy(temp, text.c_str());<br> &nbsp;&nbsp; &nbsp;if(strlen(temp)==1)//check if the length of type is 1 character long<br> &nbsp;&nbsp; &nbsp;{&nbsp;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (temp[0] = 1 || temp[0] == 0) //Also check if the parsedvalue is 1 0r 0<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return true;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;else<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return false;<br> &nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;else<br> &nbsp;&nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return false;<br> &nbsp;&nbsp; &nbsp;}<br> }<br> bool isValidPrice(string text)<br> {&nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;char temp[10];<br> &nbsp;&nbsp; &nbsp;strcpy(temp, text.c_str());<br> &nbsp;&nbsp; &nbsp;if (!isdigit(temp[0]))//check if the first letter is numeric<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return false;<br> &nbsp;&nbsp; &nbsp;stringstream ss;<br> &nbsp;&nbsp; &nbsp;float t = stof(text); //convert passed string to float&nbsp;<br> &nbsp;&nbsp; &nbsp;ss &lt;&lt; abs(t - (int)t); //get the decimal values of a float value<br> &nbsp;&nbsp; &nbsp;string t1;&nbsp;<br> &nbsp;&nbsp; &nbsp;ss &gt;&gt; t1;//put decimal value into t1<br> &nbsp;&nbsp; &nbsp;if ((t1.length() - 2) &lt;= 2) //validate if decimal points are 2 letters. Here -2 is for removing 2 charcters before decimal inclusing dot i.e, for 0.234 returns 234<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return true;<br> &nbsp;&nbsp; &nbsp;else<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return false;<br> &nbsp;&nbsp; &nbsp;std::stringstream sstr(text); //validate text is floating number&nbsp;<br> &nbsp;&nbsp; &nbsp;float f;<br> &nbsp;&nbsp; &nbsp;return !((sstr &gt;&gt; noskipws &gt;&gt; f).rdstate() ^ ios_base::eofbit); //it checks whether end bit after . is numeric or not and returns true if numberic after . else return false<br> }<br> bool isValidInventory(string text)<br> {<br> &nbsp;&nbsp; &nbsp;char temp[10];<br> &nbsp;&nbsp; &nbsp;strcpy(temp, text.c_str());<br> &nbsp;&nbsp; &nbsp;for (int i = 0; i &lt; strlen(temp)+1 - 1; )<br> &nbsp;&nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (isdigit(temp[i]))//validate for each letter is numeric(int) for Inventory<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;i++;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;else<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return false;<br> &nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return true;<br> }<br> bool isValidColumns(string *arr)<br> {<br> &nbsp;&nbsp; &nbsp;char temp_str[10];<br> &nbsp;&nbsp; &nbsp;string temp[10];<br> &nbsp;&nbsp; &nbsp;temp[0] = arr[5]; //First check for if any additional column data is present in a record by checking the length of 5th token in tokens array. Return false if so.<br> &nbsp;&nbsp; &nbsp;strcpy(temp_str, temp-&gt;c_str());<br> &nbsp;&nbsp; &nbsp;if (strlen(temp_str) &gt; 0)<br> &nbsp;&nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt; "\nToo many items in record";<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return false;<br> &nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;temp[0] = arr[0]; //Similarly check for nullity for each column from 0th token to 4th token in each record. Return false if any null values from 0th to 4th token.<br> &nbsp;&nbsp; &nbsp;strcpy(temp_str, temp-&gt;c_str());<br> &nbsp;&nbsp; &nbsp;if (strlen(temp_str) &lt;= 0)<br> &nbsp;&nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt; "\nPLU is Invalid. Record has missing items";<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return false;<br> &nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;temp[0] = arr[1];<br> &nbsp;&nbsp; &nbsp;strcpy(temp_str, temp-&gt;c_str());<br> &nbsp;&nbsp; &nbsp;if (strlen(temp_str) &lt;= 0)<br> &nbsp;&nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt; "\nProduct Name is Invalid. Record has missing items";<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return false;<br> &nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;temp[0] = arr[2];<br> &nbsp;&nbsp; &nbsp;strcpy(temp_str, temp-&gt;c_str());<br> &nbsp;&nbsp; &nbsp;if (strlen(temp_str) &lt;= 0)<br> &nbsp;&nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt; "\nSales type is Invalid. Record has missing items";<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return false;<br> &nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;temp[0] = arr[3];<br> &nbsp;&nbsp; &nbsp;strcpy(temp_str, temp-&gt;c_str());<br> &nbsp;&nbsp; &nbsp;if (strlen(temp_str) &lt;= 0)<br> &nbsp;&nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt; "\nPrice is Invalid. Record has missing items";<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return false;<br> &nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;temp[0] = arr[4];<br> &nbsp;&nbsp; &nbsp;strcpy(temp_str, temp-&gt;c_str());<br> &nbsp;&nbsp; &nbsp;if (strlen(temp_str) &lt;= 0)<br> &nbsp;&nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt; "\nInventory is Invalid. Record has missing items";<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return false;<br> &nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;return true;<br> }<br> int main()<br> {<br> &nbsp;&nbsp; &nbsp;string line;<br> &nbsp;&nbsp; &nbsp;char filename[100];<br> &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt; "\nEnter the input filename\n";<br> &nbsp;&nbsp; &nbsp;cin&gt;&gt;(filename);//Input file name<br> &nbsp;&nbsp; &nbsp;ifstream fin(filename);<br> &nbsp;&nbsp; &nbsp;cout &lt;&lt; "Checking " &lt;&lt; filename &lt;&lt; " ..." &lt;&lt; endl;<br> &nbsp;&nbsp; &nbsp;while (getline(fin, line,'\n')) //Read the whole line untill EOF encountered<br> &nbsp;&nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;std::istringstream iss(line);<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (!(iss &gt;&gt; PLU)) // error if file is not present<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt; "\nInput file has invalid input\n";&nbsp;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;break;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}&nbsp;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;else<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//cout &lt;&lt; line;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;string delimiter = " ",token,tokens[10]; //define delimitter as space character and tokens array to store tokens of a record.<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;int pos = 0,k=0;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;while ((pos = line.find(delimiter)) != std::string::npos)&nbsp;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;token = line.substr(0, pos);<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;tokens[k] = token; //assign parsed token to tokens array<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//cout &lt;&lt; token &lt;&lt; endl;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;line.erase(0, pos + delimiter.length()); //remove the parsed token<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;k++; //increase the index value for tokens arry<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//check for number of colums<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (!isValidColumns(tokens))<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt; "." &lt;&lt; endl; //You can comment this line if you want. Used just for formatting<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;rowOK = false;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;break;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//check for valid PL<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (isvalidPLU(tokens[0]))<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt; "\nToken #1 is " &lt;&lt; tokens[0] &lt;&lt; ", PLU is valid\n";<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;rowOK = true;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;else<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt; "\nToken #1 is " &lt;&lt; tokens[0] &lt;&lt; ", PLU is Invalid\n";<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;rowOK = false;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;break;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//check for valid product name<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (isvalidName(tokens[1]))<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt; "Token #2 is " &lt;&lt; tokens[1] &lt;&lt; ", Productname is valid\n";<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;rowOK = true;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;else<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt; "Token #2 is " &lt;&lt; tokens[1] &lt;&lt; ", Productname is Invalid\n";<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;rowOK = false;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;break;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//check for valid sales type<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (isValidType(tokens[2]))<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt; "Token #3 is " &lt;&lt; tokens[2] &lt;&lt; ", Sales type is valid\n";<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;rowOK = true;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;else<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt; "Token #3 is " &lt;&lt; tokens[2] &lt;&lt; ", Sales type is Invalid\n";<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;rowOK = false;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;break;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//check for valid unit price<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (isValidPrice(tokens[3]))<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt; "Token #4 is " &lt;&lt; tokens[3] &lt;&lt; ", Price is valid\n";<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;rowOK = true;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;else<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt; "Token #4 is " &lt;&lt; tokens[3] &lt;&lt; ", Price is Invalid\n";<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;rowOK = false;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;break;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//check for valid inventory<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (isValidInventory(tokens[4]))<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt; "Token #5 is " &lt;&lt; tokens[4] &lt;&lt; ", Inventory is valid\n";<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;rowOK = true;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;else<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt; "Token #5 is " &lt;&lt; tokens[4] &lt;&lt; ", Inventory is Invalid\n";<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;rowOK = false;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;break;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt; endl;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//check if the complete record is valid&nbsp;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(isvalidPLU(tokens[0]) &amp;&amp; isvalidName(tokens[1]) &amp;&amp; isValidType(tokens[2]) &amp;&amp; isValidPrice(tokens[3]) &amp;&amp; isValidInventory(tokens[4]))<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;rowOK=true;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;else<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;rowOK=false;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;if (rowOK)<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt; "\t\t\t####" &lt;&lt; filename &lt;&lt; " has valid content.####" &lt;&lt; endl;<br> &nbsp;&nbsp; &nbsp;else<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt; "\t\t\t####" &lt;&lt; filename &lt;&lt; " has invalid content.####" &lt;&lt; endl;<br> }</p> 
+  <p><strong>Output:</strong></p> 
+  <p><img alt="コǐn.txt-Notepad
+File Edit Format View Help
+Ale visl
+A001 Apples 1 0.90 21
+A002 Peaches 1 0.82 11
+A006 Avocados 0 1.54 27
+A008" src="https://media.cheggcdn.com/media%2Fd5c%2Fd5c74816-1d23-40dc-815d-833a694c8034%2FphpRCRzDE.png" style="height:156px;width:278px;"></p> 
+  <p><img alt="Microsoft Visual Studio Debug Console
+Enter the input filename
+in.txt
+Checking in.txt
+Token #1 is A001 , PLU is valid
+Token #" src="https://media.cheggcdn.com/media%2Fc50%2Fc50e14ab-1597-4ce2-a7a4-cd26e846cc81%2FphpvwzYrc.png" style="height:429px;width:666px;"></p> 
+  <p><img alt="in1.txt - Notepad
+File Edit Format View Help
+A001 Apples 1 0.90 21
+A00 Peaches 1 0.82 11
+A006 Avocados 0 1.54 27
+A008 Mangos " src="https://media.cheggcdn.com/media%2Fea8%2Fea894f74-495b-48a4-936b-027cb7ad25e5%2Fphpmo1Lid.png" style="height:188px;width:331px;"></p> 
+  <p><img alt="Microsoft Visual Studio Debug Console
+Enter the input filename
+in.txt
+Checking in.txt
+Token #1 is A001 , PLU is valid
+Token #" src="https://media.cheggcdn.com/media%2Fba4%2Fba4f4283-4686-4ded-a910-fd4c2464dfd4%2Fphphogyig.png" style="height:429px;width:666px;"></p> 
+  <p><img alt="in2.txt - Notepad
+File Edit Format View Help
+A001 Apples 1 0.90 21
+A001 [eaches 1 0.82 11
+A006 Avocados 0 1.54 27
+A008 Mangos" src="https://media.cheggcdn.com/media%2Ff81%2Ff81a2618-d455-4f9f-81a2-f3e6be208b51%2FphpifoyK4.png" style="height:141px;width:270px;"></p> 
+  <p><img alt="Microsoft Visual Studio Debug Console
+Enter the input filename
+in2.txt
+Checking in2.txt
+Token #1 is A001 , PLU is valid
+Token" src="https://media.cheggcdn.com/media%2Fc61%2Fc619f2c8-18ba-4641-8383-48d923af5a31%2FphpdQEKtj.png" style="height:214px;width:668px;"></p> 
+  <p><img alt="in3.txt-Notepad
+File Edit Format View Help
+A001 Apples 1 0.90 21
+A001 Peaches 11 0.82 11
+A006 Avocados 0 1.54 27
+A008 Mangos " src="https://media.cheggcdn.com/media%2Faef%2Faef7a320-0a34-4d9f-b946-ee09fc237202%2FphpC0MUtu.png" style="height:168px;width:306px;"></p> 
+  <p><img alt="Microsoft Visual Studio Debug Console
+Enter the input filename
+in3.txt
+Checking in3.txt
+Token #1 is A001 , PLU is valid
+Token" src="https://media.cheggcdn.com/media%2Fb1d%2Fb1d0d9e2-3c63-437d-a92f-f09ce904d90f%2Fphp82YCir.png" style="height:230px;width:668px;"></p> 
+  <p><img alt="in4.txt- Notepad
+File Edit Format View Help
+A001 Apples 1 0.90 21
+A001 Peaches 1 -0. 82 11
+A006 Avocados 0 1.54 27
+A008 Mango" src="https://media.cheggcdn.com/media%2F851%2F851f2e1a-1960-4f48-b2e0-004223c287dc%2FphpLouMYV.png" style="height:155px;width:274px;"></p> 
+  <p><img alt="Microsoft Visual Studio Debug Console
+Enter the input filename
+in4.txt
+Checking in4.txt
+Token #1 is A001 , PLU is valid
+Token" src="https://media.cheggcdn.com/media%2Fdab%2Fdab85fd4-722d-44a8-8cd3-d4f9a5fa3446%2FphpFsypwB.png" style="height:238px;width:661px;"></p> 
+  <p><img alt="Neiii
+in5.txt - Notepad
+File Edit Format View Help
+A001 Apples 1 0.90 21
+A001 Peaches 1 0.82 11
+A006 Avocados 0 1.54 27
+A008 " src="https://media.cheggcdn.com/media%2Fd70%2Fd70cb91d-c75c-4db9-a294-232bc27aa5cd%2FphptnITmT.png" style="height:167px;width:328px;"></p> 
+  <p><img alt="Microsoft Visual Studio Debug Console
+Enter the input filename
+in5.txt
+Checking in5.txt
+Token #1 is A001 , PLU is valid
+Token" src="https://media.cheggcdn.com/media%2Fd1b%2Fd1bed6f0-0e5e-412d-8644-8c23bd46ab2a%2FphpNVSk7b.png"></p> 
+  <p><img alt="in6itxt- Notepad
+File Edit Format View Help
+zA001 Apples 1 0.90 21
+A001 Peaches 1 0.82 11 s5
+A006 Avocados 0 1.54 27
+A008 Man" src="https://media.cheggcdn.com/media%2Ff0d%2Ff0d636d1-df50-4358-a74f-fecaedc2ff1c%2Fphp6AFQ82.png"></p> 
+  <p><img alt="Enter the input filename
+in6.txt
+Checking in6.txt ..-
+Token #1 is A001 , PLU is valid
+Token #2 is Apples, Productnane is vali" src="https://media.cheggcdn.com/media%2F83b%2F83b03081-1ea0-430a-866c-7849794874a5%2Fphp7XrdgR.png" style="height:206px;width:674px;"></p> 
+  <p><img alt="LI in/.ixR··N: írywxd
+File Edit Format View Help
+A001 Apples 1 0.90 21
+A001 Peaches1.54 27
+A006 Avocados 0 1.54 27
+A008 Mango" src="https://media.cheggcdn.com/media%2F47a%2F47a22061-3673-486f-acdb-ea8677f87484%2FphplJIH6k.png" style="height:168px;width:299px;"></p> 
+  <p><img alt="2
+Microsoft Visual Studio Debug Console
+Enter the input filename
+in7.txt
+Checking in?.txt .
+Token #1 is A001 , PLU is valid
+T" src="https://media.cheggcdn.com/media%2F5e9%2F5e9abacc-26c9-46cc-b5b2-25f3e1ab1933%2Fphp3aPHQV.png" style="height:212px;width:676px;"></p> 
+  <p><img alt="in8.txt - Notepad
+File Edit Format View Help
+A001 Apples 1 0.90 21
+A001 Peaches 1 0.828 11
+A006 Avocados 0 1.54 27
+A008 Mango" src="https://media.cheggcdn.com/media%2F71f%2F71fbf0ba-f0e4-4790-b656-05227b52f056%2FphpfLnUag.png" style="height:171px;width:343px;"></p> 
+  <p><img alt="Microsoft Visual Studio Debug Console
+Enter the input filename
+in8.txt
+Checking in8.txt
+Token #1 is A001 , PLU is valid
+Token" src="https://media.cheggcdn.com/media%2F793%2F79391116-44a6-48b5-aca6-3fc1c7882515%2FphpW7hSgu.png" style="height:247px;width:674px;"></p> 
+  <p>&nbsp;</p>  
+ </body>
+</html>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

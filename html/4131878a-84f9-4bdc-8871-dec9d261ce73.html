@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Today is January 1, 2019, and your friend Arnold Armstrong signs
+a 4-year contract to play for a minor league football team.&nbsp;
+He will receive $300,000 for 2019, $500,000 for 2020, $700,000 for
+2021, and $900,000 for 2022. All payments are made at the end of
+year.&nbsp; Assume 10% annual interest rate (EAR).</p>
+<p style="margin-left:24px;">a.&nbsp;&nbsp; What is the present
+value of his contract?</p>
+<p style="margin-left:24px;">b.&nbsp;&nbsp; If instead of annual
+payments he wants equal dollar amount month-end cheques over his
+contract period, starting January 31, 2019, how large is his
+monthly pay?</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>1.<br />
+=300000/1.1+500000/1.1^2+700000/1.1^3+900000/1.1^4<br />
+=1826582.8836828</p>
+<p>2.<br />
+rate compounded monthly=((1+10%)^(1/12)-1)*12=9.56897%</p>
+<p>Monthly
+pay=1826582.8836828*(9.56897%/12)/(1-1/(1+9.56897%/12)^(12*4))=45949.6741<br />
+
+&nbsp;</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

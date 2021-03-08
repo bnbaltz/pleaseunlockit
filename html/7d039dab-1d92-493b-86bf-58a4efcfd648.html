@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    Question ID: 9780073529288-1232768
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row"> <div class="col"><div class="answer"> <p>Given:</p> <p>External Load applied, <img src="https://media.cheggcdn.com/study/85c/85c73abf-fbf5-4f7e-a519-4280609b9d9f/4654-8-29p-i1.png" /></p> <p>Bolt stiffness, <img src="https://media.cheggcdn.com/study/390/390c8b23-439e-4700-89a9-4ce3426ad0c8/4654-8-29p-i2.png" /></p> <p>Member stiffness, <img src="https://media.cheggcdn.com/study/455/455ab22c-7e51-4188-881e-05134c1411a2/4654-8-29p-i3.png" /></p> <p>Diameter of bolts, <img src="https://media.cheggcdn.com/study/655/655a53d9-dc39-4dfb-b22f-314e128a9b75/4654-8-29p-i4.png" /></p> <p>Number of bolts = 6</p> </div></div><div class="col"><div class="answer"> <p>From standard tables, for Unified Screw Threads UNC and UNF we have,</p> <p>Tensile stress area<img src="https://media.cheggcdn.com/study/721/721e4c55-d319-4a5a-8b15-019ad680307f/4654-8-29p-i5.png" /></p> <p>From standard tables, SAE specifications for steel bolts for grade 8, we have,</p> <p>Minimum proof strength<img src="https://media.cheggcdn.com/study/141/14144192-9d27-4838-ad5d-d907e6fd2f2b/4654-8-29p-i6.png" /></p> <p>Minimum tensile strength<img src="https://media.cheggcdn.com/study/de1/de1cb27c-2126-4c75-b3cd-b14ca03753b1/4654-8-29p-i7.png" /></p> </div></div><div class="col"><div class="answer"> <p>Load per each bolt <img src="https://media.cheggcdn.com/study/a66/a66963f3-c9c1-4eec-b7fb-3e51f7ebede4/4654-8-29p-i8.png" /></p> <p>Preload is given by,</p> <p> <img src="https://media.cheggcdn.com/study/3ce/3ce8b541-b78a-41fe-89dd-0618d0901959/4654-8-29p-i9.png" /> </p> <p> <img src="https://media.cheggcdn.com/study/051/05178786-79ae-4432-9943-efff18d12601/4654-8-29p-i10.png" /> </p> <p> <img src="https://media.cheggcdn.com/study/8ff/8ff56272-1253-41e9-9519-9e960364b4d7/4654-8-29p-i11.png" /> </p> <p>Preload stress is given by,</p> <p> <img src="https://media.cheggcdn.com/study/aa6/aa67c7fc-5816-4f62-8965-a6b00c63d369/4654-8-29p-i12.png" /> </p> <p> <img src="https://media.cheggcdn.com/study/772/77286cc4-45c0-49e2-a8d7-c2abb18d300f/4654-8-29p-i13.png" /> </p> <p> <img src="https://media.cheggcdn.com/study/a44/a44e9982-b86a-4e46-9b27-d40080035bde/4654-8-29p-i14.png" /></p> <p>Stiffness constant is given by,</p> <p> <img src="https://media.cheggcdn.com/study/551/5516126a-cb4b-42a6-8640-2cd3035778f3/4654-8-29p-i15.png" /> </p> <p> <img src="https://media.cheggcdn.com/study/2ff/2ffde851-e324-4145-8a74-879462af9994/4654-8-29p-i16.png" /> </p> <p> <img src="https://media.cheggcdn.com/study/20a/20a4c057-89d6-4f15-b3d3-1014587a4b7c/4654-8-29p-i17.png" /> </p> </div></div><div class="col"><div class="answer"> <p>a) Yielding factor of safety is given by,</p> <p> <img src="https://media.cheggcdn.com/study/ee9/ee9f17ad-6af9-4841-95d6-eac7ee3db5e3/4654-8-29p-i18.png" /> </p> <p> <img src="https://media.cheggcdn.com/study/798/79875df2-7e70-4d7a-8480-4ebb2c75e1ed/4654-8-29p-i19.png" /> </p> <p> <img src="https://media.cheggcdn.com/study/9e7/9e78d1cd-a0ea-42ec-a308-3022e57369d7/4654-8-29p-i20.png" /> </p> <p> <img src="https://media.cheggcdn.com/study/477/47753b2b-822f-416e-9aaf-7a9c765f7d5e/4654-8-29p-i21.png" /> </p> <p> <img src="https://media.cheggcdn.com/study/c8d/c8d7a088-a3a1-4f15-84c8-68a95ba2ffa7/4654-8-29p-i22.png" /> </p> </div></div><div class="col"><div class="answer"> <p>b) Load factor is given by,</p> <p> <img src="https://media.cheggcdn.com/study/f89/f895d28c-f19c-418d-bae8-a3ac942be389/4654-8-29p-i23.png" /> </p> <p> <img src="https://media.cheggcdn.com/study/598/598ed86d-fa5c-49a0-b51a-554dca10da71/4654-8-29p-i24.png" /> </p> <p> <img src="https://media.cheggcdn.com/study/767/767f1914-b544-4531-b688-c0280bb697e3/4654-8-29p-i25.png" /> </p> <p> <img src="https://media.cheggcdn.com/study/736/736a1f6c-5fd5-4ba8-b7dd-6bf6d8703d20/4654-8-29p-i26.png" /> </p> <p> <img src="https://media.cheggcdn.com/study/8d9/8d991481-38f5-4c0e-98c2-356775be2dea/4654-8-29p-i27.png" /> </p> </div></div><div class="col"><div class="answer"> <p>c) Factor against joint separation is given by,</p> <p> <img src="https://media.cheggcdn.com/study/644/64413667-b4ac-4d94-8f54-60e0c329688e/4654-8-29p-i28.png" /> </p> <p> <img src="https://media.cheggcdn.com/study/c7b/c7b1e38b-f949-42a8-99e7-5d478618e836/4654-8-29p-i29.png" /> </p> <p> <img src="https://media.cheggcdn.com/study/4c9/4c9dcc94-e5a5-45d0-9108-cb8694e56f59/4654-8-29p-i30.png" /> </p> <p> <img src="https://media.cheggcdn.com/study/d2c/d2caf6be-9ed3-4d3c-a0b1-019eb5c46f04/4654-8-29p-i31.png" /> </p> <p> <img src="https://media.cheggcdn.com/study/08b/08bce8b8-0cdb-44e3-8c85-f76fd0643e71/4654-8-29p-i32.png" /> </p></div></div></div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

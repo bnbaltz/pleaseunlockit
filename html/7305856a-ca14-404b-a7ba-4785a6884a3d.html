@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div id="mobile-question-style" style="font-family: Roboto; color:#333333; "><p dir="ltr"><img src="https://media.cheggcdn.com/study/46f/46fc11ba-763c-4158-b733-b7226f69f99d/image.png" alt="You needto create HTML form:
+Your HTML page will have HTML form which will have below fields
+Last Name: text box,
+First Name:"></p>
+</div><p dir="ltr">&nbsp; </p>
+<div id="mobile-question-style" style="font-family: Roboto; color:#333333; "><p dir="ltr"><img src="https://media.cheggcdn.com/study/42b/42bab851-90aa-4745-805d-95f4d7044319/image.png" alt="Button to calculate Amount: On button click of this, you should call javascript function to validate all
+the fields. Remember"></p>
+</div><p dir="ltr">&nbsp; </p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>I have created the above web page using html for pizza ordering. I have also added the javascript code for validation and calculating total cost of the order and display it to the user. You may add more styling according to your choice.</p> <p>Note: You may look the screenshot of the code to have better understanding of the indentation.</p> <p><strong>Html+javascript code:</strong></p> <p>&lt;!DOCTYPE HTML&gt;<br> &lt;html&gt;</p> <p>&lt;head&gt;<br> &nbsp;&nbsp; &nbsp;&lt;title&gt; Pizza Order &lt;/title&gt;<br> &nbsp;&nbsp; &nbsp;&lt;script&gt;<br> &nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;function validate()<br> &nbsp;&nbsp; &nbsp;{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;var cost = 0;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;var size = document.forms["order_form"]["size"].value;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(size == "small")<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cost = 10;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;else if(size == "medium")<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cost = 12;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;else&nbsp;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cost = 14;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//add cost for type<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;var type = document.forms["order_form"]["type"].value;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//if veg lover, do nothing<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//if pepperoni, add 10 to base price<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(type == "pepperoni")<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cost = cost + 10;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//if cheese, add 20 to base<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;else if(type == "cheese")<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cost = cost + 20;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//add cost for drink<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;var drink = document.forms["order_form"]["drink"].value;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//if any drink is selected, then add $2 to the cost<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(drink != null)<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cost = cost + 2;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//calculate tax<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;var tax = cost*0.13;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//total amount<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;var totalCost = cost+tax;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//display cost to the user<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;document.getElementById("invoice").innerHTML = "Order Invoice";<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;document.getElementById("cost").innerHTML = "Cost (before tax) = $"+cost;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;document.getElementById("tax").innerHTML = "Tax = $" + tax;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;document.getElementById("totalCost").innerHTML = "Total amount = $" + totalCost;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;document.getElementById("thanks").innerHTML = "Thanks for the order";<br> &nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;&lt;/script&gt;<br> &nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;&lt;style&gt;<br> &nbsp;&nbsp; &nbsp;table,td{<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;border: 1px solid black;<br> &nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;&lt;/style&gt;<br> &nbsp;&nbsp; &nbsp;<br> &lt;/head&gt;</p> <p>&lt;body&gt;</p> <p>&nbsp; &lt;h1&gt; Order a pizza &lt;/h1&gt;<br> &nbsp;&nbsp;<br> &nbsp; &lt;form name="order_form" action="" method=""&gt;<br> &nbsp;&nbsp; &nbsp;Last name:<br> &nbsp;&nbsp; &nbsp;&lt;input type="text" name="lname" placeholder="Enter last name" required&gt;<br> &nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;&lt;br&gt;&lt;br&gt;<br> &nbsp;&nbsp; &nbsp;First name:<br> &nbsp;&nbsp; &nbsp;&lt;input type="text" name="fname" placeholder="Enter first name" required&gt;<br> &nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;&lt;br&gt;&lt;br&gt;<br> &nbsp;&nbsp; &nbsp;Phone Number:<br> &nbsp;&nbsp; &nbsp;&lt;input type="text" name="phone" placeholder="Phone Number" required&gt;<br> &nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;&lt;br&gt;&lt;br&gt;<br> &nbsp;&nbsp; &nbsp;Pizza size:&nbsp;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;input type="radio" name="size" value="small" checked required&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Small<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;input type="radio" name="size" value="medium"&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Medium<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;input type="radio" name="size" value="large"&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Large<br> &nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;&lt;br&gt;&lt;br&gt;<br> &nbsp;&nbsp; &nbsp;Pizza Type:&nbsp;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;input type="radio" name="type" value="vegLoves" checked required&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Veg Loves<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;input type="radio" name="type" value="pepperoni"&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Pepperoni<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;input type="radio" name="type" value="cheese"&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Cheese<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;&lt;br&gt;&lt;br&gt;<br> &nbsp;&nbsp; &nbsp;Extra to add:&nbsp;<br> &nbsp;&nbsp; &nbsp;&lt;select id="drink" name="drink"&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;option disabled selected value&gt; Select an option &lt;/option&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;option value="coke"&gt;Coke&lt;/option&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;option value="sprite"&gt;Sprite&lt;/option&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;option value="canadaDry"&gt;Canada dry&lt;/option&gt;<br> &nbsp;&nbsp; &nbsp;&lt;/select&gt;<br> &nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;&lt;br&gt;&lt;br&gt;<br> &nbsp;&nbsp; &nbsp;&lt;table&gt;<br> &nbsp;&nbsp; &nbsp;&lt;h3&gt;Pizza prices&lt;/h3&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;tr&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;td colspan="1"&gt;&lt;/th&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;td&gt;Small &lt;/th&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;td&gt;Medium &lt;/th&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;td&gt;Large&lt;/th&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;/tr&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;tr&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;td&gt;veg lovers&lt;/td&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;td&gt;10&lt;/td&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;td&gt;12&lt;/td&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;td&gt;14&lt;/td&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;/tr&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;tr&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;td&gt;Pepperoni&lt;/td&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;td&gt;20&lt;/td&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;td&gt;22&lt;/td&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;td&gt;24&lt;/td&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;/tr&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;tr&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;td&gt;Cheese&lt;/td&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;td&gt;30&lt;/td&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;td&gt;32&lt;/td&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;td&gt;34&lt;/td&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;/tr&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;tr&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;td&gt;Drinks&lt;/td&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;td&gt;2&lt;/td&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;td&gt;2&lt;/td&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;td&gt;2&lt;/td&gt;<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;/tr&gt;<br> &nbsp;&nbsp; &nbsp;&lt;/table&gt;<br> &nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;&lt;br&gt;&lt;br&gt;<br> &nbsp;&nbsp; &nbsp;&lt;input type="submit" onclick="event.preventDefault(); validate();" value="Order"&gt;<br> &nbsp; &lt;/form&gt;<br> &nbsp;&nbsp;<br> &nbsp; &lt;h3 id="invoice"&gt;&lt;/h3&gt;<br> &nbsp; &lt;p id="cost"&gt; &lt;/p&gt;<br> &nbsp; &lt;p id="tax"&gt; &lt;/p&gt;<br> &nbsp; &lt;p id="totalCost"&gt;&lt;/p&gt;<br> &nbsp; &lt;p id="thanks"&gt;&lt;/p&gt;</p> <p>&lt;/body&gt;</p> <p>&lt;/html&gt;</p> <p><strong>Output:</strong></p> <p><img src="https://media.cheggcdn.com/coop/338/3388c930-a1c3-409f-9f4c-7b56334bb1b8/1593369451150_image.png" style="height:906px;width:519px" alt="Order a pizza
+Last name: Garg
+First name: Shivam
+Phone Number: 38928
+Pizza size: O Small
+Medium Large
+Pizza Type: O Veg Loves"></p> <p><strong>Screenshot of code:</strong></p> <p><img src="https://media.cheggcdn.com/coop/2cb/2cb5f3bd-31e5-414b-b3d8-42d08aaf63d4/1593369483847_image.png" style="height:862px;width:866px" alt="<!DOCTYPE HTML>
+<html>
+<head>
+<title> Pizza Order </title>
+<script>
+function validate()
+=
+{
+=
+var cost 0;
+var size document.f"><img src="https://media.cheggcdn.com/coop/d69/d693b786-6069-4b02-8d7a-2f25b232697d/1593369508231_image.png" style="height:812px;width:757px" alt="</head>
+<body>
+<h1> Order a pizza </h1>
+<form name=order_form action= method=>
+코
+Last name:
+<input type=text name=ln"><img src="https://media.cheggcdn.com/coop/7c3/7c3469c1-437b-4023-a673-4c21227e8392/1593369523570_image.png" style="height:874px;width:874px" alt="로
+E
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+1"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

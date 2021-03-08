@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Consider a Hash table with separate chaining with N buckets and
+k items currently in the table.</p>
+<p>&nbsp;</p>
+<p>1) k=N is the definition of a term used when discussing hashing.
+What is this term?</p>
+<p style="margin-left:1in;">&nbsp;</p>
+<p>2) Is it necessary that k &lt; N?</p>
+<p style="margin-left:1in;">&nbsp;</p>
+<p>3) What is the average number of items in a bucket?</p>
+<p style="margin-left:1in;">&nbsp;</p>
+<p>4) In the worst-case, how many items could be in a single
+bucket?</p>
+<p style="margin-left:1in;">&nbsp;</p>
+<p>5) If k &gt; N, is it possible that any buckets are empty?</p>
+<p style="margin-left:1in;">&nbsp;</p>
+<p>6) If we resize the table to a table of size 2N, what is the
+asymptotic running time in terms of k and N to put all the items in
+the new table?</p>
+<p style="margin-left:1in;">&nbsp;</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><strong>Solution:</strong></p>
+<p><strong>1)</strong></p>
+<p>k=N, this means that the number of items is same as the number
+of slots in the table, so if the hash function is efficient there
+won't be any collision and chaining won't even be required.</p>
+<p>&nbsp;</p>
+<p><strong>2)</strong></p>
+<p>&nbsp;</p>
+<p>No, it is not necessary that k&lt;N, because it provides us an
+opportunity to fill the complete table.</p>
+<p><strong>3)</strong></p>
+<p>Average number of items = k/N</p>
+<p>&nbsp;</p>
+<p><strong>4)</strong></p>
+<p>In the worst case all the items will be placed in a single
+bucket chained to one another.&nbsp;</p>
+<p>in that case k items.</p>
+<p><strong>5)</strong></p>
+<p>If k&gt;N, it is very much possible that the buckets are left
+empty.</p>
+<p><strong>6)</strong></p>
+<p>After resizing the table to place the elements in the new table
+the running time will be O(k).</p>
+<p>&nbsp;</p>
+<p>I hope this helps if you find any problem. Please comment below.
+Don't forget to give a thumbs up if you liked it. :)</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

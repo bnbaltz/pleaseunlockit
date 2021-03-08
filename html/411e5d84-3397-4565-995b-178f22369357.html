@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div id="mobile-question-style" style="font-family: 'Helvetica Neue',Helvetica,Arial; color:#333333;">Create a Java program that will guess a number between 1 and 100 chosen by the USER. Use boolean and scanners!&nbsp;<div><br></div><div>Thank you!<div><br></div><div>&nbsp;I only know how to build games like this when the computer chooses a number.&nbsp;</div></div><div><br><img src="https://media.cheggcdn.com/media%2F5ae%2F5ae03071-cf88-424d-a359-6845b93e11c6%2Fimage.png" alt="Initialize a variable that represents the lowest possible number to 0 (what type should this be?)
+Initialize a variable that "></div></div>
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><strong>JAVA PROGRAM:</strong></p>
+<p>import java.util.Random;<br />
+import java.util.Scanner;<br />
+public class GuessGame<br />
+{<br />
+&nbsp; &nbsp;public static boolean getAndCheckGuess(int
+numberToGuess)<br />
+&nbsp; &nbsp;{<br />
+&nbsp; &nbsp; &nbsp; &nbsp;Scanner keyboard=new
+Scanner(System.in);<br />
+&nbsp; &nbsp; &nbsp; &nbsp;System.out.println("Enter your guess:
+");<br />
+&nbsp; &nbsp; &nbsp; &nbsp;int userGuess;<br />
+&nbsp; &nbsp; &nbsp; &nbsp;userGuess=keyboard.nextInt();<br />
+&nbsp; &nbsp; &nbsp; &nbsp;if(userGuess&gt;numberToGuess)<br />
+&nbsp; &nbsp; &nbsp; &nbsp;{<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println("Too
+High");<br />
+&nbsp; &nbsp; &nbsp; &nbsp;}<br />
+&nbsp; &nbsp; &nbsp; &nbsp;else
+if(userGuess&lt;numberToGuess)<br />
+&nbsp; &nbsp; &nbsp; &nbsp;{<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println("Too
+Low");<br />
+&nbsp; &nbsp; &nbsp; &nbsp;}<br />
+&nbsp; &nbsp; &nbsp; &nbsp;else if(userGuess==numberToGuess)<br />
+&nbsp; &nbsp; &nbsp; &nbsp;{<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println("You
+Guessed It");<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return(true);<br />
+&nbsp; &nbsp; &nbsp; &nbsp;}<br />
+&nbsp; &nbsp; &nbsp; &nbsp;else
+if(userGuess&lt;1||userGuess&gt;20)<br />
+&nbsp; &nbsp; &nbsp; &nbsp;{<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println("Guess
+is not Valid");<br />
+&nbsp; &nbsp; &nbsp; &nbsp;}<br />
+&nbsp; &nbsp; &nbsp; &nbsp;return(false);<br />
+&nbsp; &nbsp;} &nbsp;</p>
+<p><br />
+public static void main(String args[])<br />
+{<br />
+&nbsp; &nbsp;int numToGuess=0;<br />
+&nbsp; &nbsp;boolean correctGuess=false;<br />
+&nbsp; &nbsp;Random rand=new Random();<br />
+&nbsp;&nbsp;<br />
+&nbsp; &nbsp;int flag=1,flag1=1;<br />
+&nbsp; &nbsp;Scanner sc=new Scanner(System.in);<br />
+&nbsp; &nbsp;while(flag!=0)<br />
+&nbsp; &nbsp;{<br />
+&nbsp; &nbsp; &nbsp; &nbsp;numToGuess=rand.nextInt(100)+1;<br />
+&nbsp; &nbsp; &nbsp; &nbsp;correctGuess=false;<br />
+&nbsp; &nbsp; &nbsp; &nbsp;flag1=1;<br />
+&nbsp; &nbsp; &nbsp; &nbsp;while(correctGuess==false &amp;&amp;
+flag1!=0)<br />
+&nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp; &nbsp; &nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;correctGuess=getAndCheckGuess(numToGuess);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;if(correctGuess==false)<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;System.out.println("Do you need more guess enter
+1/0:");<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;flag1=sc.nextInt();<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br />
+&nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp;}<br />
+&nbsp; &nbsp;System.out.println("Do you want to generate a new
+number enter 1/0:");<br />
+&nbsp; &nbsp;flag=sc.nextInt();<br />
+&nbsp; &nbsp;}<br />
+}<br />
+}</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

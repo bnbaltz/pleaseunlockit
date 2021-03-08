@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>What are coordinates of the center of mass for the uniform plate shown in the figure below? (x1 = 19 cm, y1 = 16 cm, and y2 = 3 cm. The figure is not shown to scale.)<img class="mceBlock" src="https://media.cheggcdn.com/study/7ab/7abbdb4e-2dd9-44e1-97fc-e0b253c4d84c/12b0bf40-5c08-462b-b79b-42129a0d0a0b.png" border="0" alt="uploaded image" /></p>
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        find the mass and center of mass of each piece of plate in eachquadrant. The mass is directly proportional to the area (since itis a uniform plate); so we will just find the area.<br /><br />in the first quadrant (top right)<br />&nbsp;&nbsp;&nbsp; center of mass is:<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; CM<sub>1</sub> =(x<sub>1</sub>/2, y<sub>1</sub> - y<sub>2</sub>/2) = (19cm/2, 16cm- 3cm/2)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; = (9.5, 14.5)cm<br />&nbsp;&nbsp;&nbsp; area is: A<sub>1</sub> = 3cm * 19cm =57 cm<sup>2</sup><br /><br />in the second quadrant (top left)<br />&nbsp;&nbsp;&nbsp; center of mass is:<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; CM<sub>2</sub> =(-10cm/2, y<sub>1</sub>/2)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = (-5, 8)cm<br />&nbsp;&nbsp;&nbsp; area is: A<sub>2</sub> = 10cm * 16cm =160cm<sup>2</sup><br /><br />in the third quadrant (bottom left)<br />&nbsp;&nbsp;&nbsp; center of mass is:<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; CM<sub>3</sub> =(-10cm/2, -20cm/2)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = (-5, -10)cm<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; area is: A<sub>3</sub>= 20cm * 10cm = 200cm<sup>2</sup><br /><br />in the fourth quadrant (bottom right)<br />&nbsp;&nbsp;&nbsp; center of mass is:<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; CM<sub>4</sub> =(10cm/2, -10cm - 10cm/2)<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = (5, -15)cm<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; area is: A<sub>4</sub>= 10cm * 10cm = 100cm<sup>2</sup><br /><br />the center of mass of the plate is then the weighted sum of eachindividual center of mass, divided by the total mass (area)<br /><br />the x component is<br />&nbsp;&nbsp;&nbsp; X = (9.5 *&nbsp;57 + -5 * 160 + -5 * 200 + 5 * 100)/ (57 + 160 + 200 + 100)<br />&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; = -1.467 cm<br /><br />the y component is:<br />&nbsp;&nbsp;&nbsp; Y = (14.5 *&nbsp;57 +&nbsp;8 * 160 + -10 * 200 + -15 *100) / (57 + 160 + 200 + 100)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = -2.695 cm<br /><br />
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

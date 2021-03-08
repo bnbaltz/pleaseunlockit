@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>6.16 LAB: JavaScript game object</p>
+<p>Create an object called game in the script.js file.</p>
+<ul>
+<li>Add 2 properties: lives - initially 3, and coins - initially
+0.</li>
+<li>Add a getter called points that returns coins * 10.</li>
+<li>Add a playerDies() method that subtracts 1 from lives if lives
+is greater than 0.</li>
+<li>Add a newGame() method that sets lives to 3 and coins to
+0.</li>
+</ul>
+<p>The script.js file includes several console.log() statements,
+which should match the output below if the game object works
+correctly.</p>
+<pre>
+lives = 3
+coins = 0
+points = 0
+points = 20
+lives = 2
+lives = 0
+lives = 3
+coins = 0
+</pre>
+<p>View the program's output in the browser's JavaScript
+console.</p>
+<p>&nbsp;</p>
+<p><img alt="+
+1 // Your solution goes here
+2
+3
+4 console.log(lives = game.livesimll should be 30
+5 console.log(coins = + game.coins // " src="https://media.cheggcdn.com/media/0da/0daa5cd8-dd70-4954-b40c-43accbb5b11d/phpJJeTRz.png" style="height:338px;width:611px;"></p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>6.16 LAB: JavaScript game object</p> <p>Code -&nbsp;</p> <p>//an object called game&nbsp;<br> var game = {};<br> //Add 2 properties: lives - initially 3,&nbsp;<br> game.lives = 3;<br> //coins - initially 0.<br> game.coins = 0;<br> //add a getter called points that returns coins * 10.<br> Object.defineProperty(game, 'points', {<br> //getter added name point<br> &nbsp; get() {<br> &nbsp; //return coins*10<br> &nbsp; &nbsp; return this.coins*10;<br> &nbsp; }<br> });<br> //|Add a playerDies() method that subtracts 1 from lives if lives is greater than 0.<br> game.playerDies = function(){<br> //method that subtracts 1 from lives if lives is greater than 0.<br> &nbsp;&nbsp; &nbsp;if(this.lives&gt;0){<br> &nbsp; &nbsp;&nbsp; &nbsp;this.lives--;<br> &nbsp; }<br> }<br> //Add a newGame() method that sets lives to 3 and coins to 0.</p> <p>game.newGame = function(){<br> //that sets lives to 3 and coins to 0.<br> &nbsp;&nbsp; &nbsp;this.lives = 3;<br> &nbsp; this.coins = 0;<br> }<br> //output<br> console.log("lives = "+game.lives)<br> console.log("coins = "+game.coins)<br> console.log("points = "+game.points)<br> game.coins = 2<br> console.log("points = "+game.points)<br> game.playerDies()<br> console.log("lives = "+game.lives)<br> game.playerDies()<br> game.playerDies()<br> game.playerDies()<br> console.log("lives = "+game.lives)<br> game.newGame();<br> console.log("lives = "+game.lives)<br> console.log("coins = "+game.coins)</p> <p>&nbsp;</p> <p>Screenshots -&nbsp;</p> <p><img src="https://media.cheggcdn.com/coop/dd2/dd2758e0-d18c-4f91-9fe1-d34691da005f/1592679037704_image.png" style="height:203px;width:173px" alt="lives = 3
+coins = 0
+points = 0
+points
+20
+lives - 2
+lives = 0
+lives = 3
+coins = 0
+"></p> <p>Pls do give a like , thank you</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

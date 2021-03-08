@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>This is a problem review for an exam. Please, the most you can
+be detailed about the process, the most I changes for me to
+understand this. Thank you very much. The class is Intro To C
+programming</p>
+<p>This is the question:</p>
+<p><img alt="5 FUNCTION REQUIREMENTS
+The source file you submit should contain the following functions. Please note that these functions a" src="https://media.cheggcdn.com/media/f1e/f1e75df0-8df0-4736-b49d-83bd3bc24b5b/php75sI8g.png" style="height:454px;width:530px;"></p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p style="text-align:center;"><strong>Program Code [C]</strong></p>
+<p style="text-align:center;">&nbsp;</p>
+<p>#include &lt;stdio.h&gt;<br>
+#include &lt;stdlib.h&gt;<br>
+#include &lt;string.h&gt;</p>
+<p>bool IsDecimalInteger(char str[]);</p>
+<p>int main() {<br>
+&nbsp;&nbsp; &nbsp;<br>
+&nbsp;&nbsp; &nbsp;// Testing IsDecimalInteger function with
+various inputs<br>
+&nbsp;&nbsp; &nbsp;<br>
+&nbsp;&nbsp; &nbsp;printf("%d\n", IsDecimalInteger("23510"));<br>
+&nbsp;&nbsp; &nbsp;printf("%d\n", IsDecimalInteger("
+-2319"));<br>
+&nbsp;&nbsp; &nbsp;printf("%d\n", IsDecimalInteger("-2319"));<br>
+&nbsp;&nbsp; &nbsp;printf("%d\n", IsDecimalInteger("25g17"));<br>
+&nbsp;&nbsp; &nbsp;printf("%d\n",
+IsDecimalInteger("200-50"));<br>
+&nbsp;&nbsp; &nbsp;printf("%d\n", IsDecimalInteger(""));<br>
+&nbsp;&nbsp; &nbsp;printf("%d\n",
+IsDecimalInteger("999999999999999999999999999999999999999999999999999999999"));<br>
+
+&nbsp;&nbsp; &nbsp;printf("%d\n",
+IsDecimalInteger("570.11"));<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;<br>
+&nbsp;&nbsp; &nbsp;return 0;<br>
+}</p>
+<p>bool IsDecimalInteger(char str[]) {<br>
+&nbsp;&nbsp; &nbsp;<br>
+&nbsp;&nbsp; &nbsp;// First finding number of characters in
+string(char array)<br>
+&nbsp;&nbsp; &nbsp;<br>
+&nbsp;&nbsp; &nbsp;int length = strlen(str);<br>
+&nbsp;&nbsp; &nbsp;<br>
+&nbsp;&nbsp; &nbsp;// If length of array is 0, return false<br>
+&nbsp;&nbsp; &nbsp;if(length == 0)<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return false;</p>
+<p>&nbsp;&nbsp; &nbsp;// Then iterating over array and checking if
+each char is a digit or not<br>
+&nbsp;&nbsp; &nbsp;// Then if any character in array is number or
+symbol - or +<br>
+&nbsp;&nbsp; &nbsp;// Adding that and if it matches length, return
+1<br>
+&nbsp;&nbsp; &nbsp;<br>
+&nbsp;&nbsp; &nbsp;int count = 0;<br>
+&nbsp;&nbsp; &nbsp;int i=0;<br>
+&nbsp;&nbsp; &nbsp;<br>
+&nbsp;&nbsp; &nbsp;for (; i&lt;length; i++) {<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// If digit or symbol + or -
+only at first character(place)<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if((str[i] &gt;= '0'
+&amp;&amp; str[i] &lt;= '9') || str[0] == '+' || str[0] ==
+'-')<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;count++;<br>
+&nbsp;&nbsp; &nbsp;}<br>
+&nbsp;&nbsp; &nbsp;<br>
+&nbsp;&nbsp; &nbsp;if(count == length)<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return true;<br>
+&nbsp;&nbsp; &nbsp;else<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return false;<br>
+}</p>
+<p>&nbsp;</p>
+<p><strong>Sample Output:-</strong></p>
+<p><img src="https://media.cheggcdn.com/media/c2a/c2aa71d0-f947-410d-8ad6-9aff3c42b83c/php5bLcLu.png" style="height:271px;width:726px;" alt="C:\Users\Dell OneDrive\Desktop\C-CPP, Sep 2020\Testinteger.exe
+Process exited after 0.1895 seconds with return value o
+Press "></p>
+<p><strong>Comment Down for any Queries###<br>
+Hit a thumbs up if you do like it!!!!</strong><br>
+&nbsp;</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Write a program that reads in all lines from a file and saves
+each to an element in an array. The program should then print out
+the lines in reverse to a file.</p>
+<p>1. Create a class called&nbsp;Lab7.</p>
+<p>2. To break up this problem, first write code that reads in the
+first line of the file and prints it to the screen. Use my sample
+file called&nbsp;haikuFun.txt.</p>
+<p>3. When you have this working, modify your code to read in every
+line of the file and print it to the screen. Assume the file will
+only ever have&nbsp;<em><strong>6 lines</strong></em>. You should
+use breakpoint debugging to make sure each line is getting read in
+properly.</p>
+<p>4. Next, modify your code to store each of the 6 lines into an
+array.</p>
+<p>5. Lastly, modify your code to print the lines in reverse order
+to a file called&nbsp;reverse.txt. Your program does not need to
+print anything to the screen at this point.</p>
+<p>&nbsp;</p>
+<p><strong>Submission</strong></p>
+<p>Please submit the following:</p>
+<ol>
+<li>To
+Web-CAT:&nbsp;your&nbsp;<strong>Lab7.java&nbsp;file</strong>.</li>
+<li>To Canvas: the&nbsp;<strong>reverse.txt</strong>&nbsp;created
+by your program.</li>
+</ol>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <pre>
+<code class="language-java">import java.io.File;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+public class Lab7 {
+	public static void main(String[] args) throws Exception {
+		Scanner sc = new Scanner(new File("haikuFun.txt"));
+		String arr[] = new String[6];
+		int index = 0;
+		//reading lines into array
+		while (sc.hasNext()) {
+			arr[index++] = sc.nextLine();
+		}
+		PrintWriter pw = new PrintWriter(new File("reverse.txt"));
+		//writing the files content in reverse into file
+		for (int i = 5; i &gt;= 0; i--) {
+			pw.println(arr[i]);
+		}
+		pw.close();
+	}
+
+}</code></pre>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><img alt="haikufun.txt X
+1 Create a class called Lab7.
+2 to break up this problem,
+3 first write code that reads in the first line of t" src="https://media.cheggcdn.com/coop/e61/e615c3e0-ad19-4be9-bf62-3fb2436848a7/1614820404280_Capture.PNG"></p>
+
+<p>&nbsp;</p>
+
+<p><img alt="haikufun.txt X
+1 Create a class called Lab7.
+2 to break up this problem,
+3 first write code that reads in the first line of t" src="https://media.cheggcdn.com/coop/221/221435e4-b548-4dd7-8e31-2448bb21f3a5/1614820413709_Capture.PNG"></p>
+
+<p>NOTE : PLEASE COMMENT BELOW IF YOU HAVE CONCERNS.&nbsp;</p>
+
+<p>Please Like and Support me as it is very much IMP for me</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

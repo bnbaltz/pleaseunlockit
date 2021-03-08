@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p><img alt="1. Short answer (4 points)
+(1 point) When a PDA transitions, it may push any string over I onto the stack.
+Define a 1-PDA to " src="https://media.cheggcdn.com/media/53d/53d4de1a-07cc-4e95-be31-a48af4f58f8c/phpbDOXO9.png" style="height:594px;"></p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>1.a)&nbsp; Defining 1-PDA as follows:</p> <p><strong>P = (Q, &sum;, &Gamma;&nbsp;, &delta;, q<sub>0</sub>, Z, F)</strong> where</p> <p>Q = the set of states<br /> &sum;= the set of input symbols<br /> &Gamma; = the set of pushdown symbols that are allowed ro push onto the stack such that</p> <p><strong>|&Gamma; |=1 for 1-PDA</strong></p> <p>&delta; = the transition function which maps Q x {&Sigma; &cup; &isin;} x &Gamma; into Q x &Gamma;*.</p> <p><strong>(q,a,X)&nbsp;</strong><strong>⊢ (p,b)</strong>&nbsp;means in a given state q, PDA will read input symbol a and stack symbol (top of the stack) X and move to a new state p and change the symbol of the stack to b.</p> <p><br /> q0 = the initial state<br /> Z = the initial pushdown symbol (which is initially present in stack)<br /> F =&nbsp; the set of final states</p> <p>Consider the following example for the above defined 1-PDA&nbsp;</p> <p>L={ww<sup>R&nbsp;</sup>| w is in (0+1)<sup>*</sup>&nbsp;} 1-PDA for this will contain only 1 stack symbol&nbsp;<strong>&Gamma; </strong>={ Z<sub>0&nbsp;</sub>}</p> <p>&nbsp;</p> <p><img alt src="https://media.cheggcdn.com/coop/5f9/5f94bcf1-72c4-412c-939f-f2be35d534ee/1601034360835_pda.png" /></p> <p>&nbsp;</p> <p>Since the definition of 1-PDA is same as the standard definition of PDA with only restriction that the set of stack symbols&nbsp;<strong>&Gamma;&nbsp;</strong>has only 1 alphabet, hence atmost 1 stack symbol can be allowed in the transitions. The class of 1-PDA is hence, a subset of PDA , and hence, it also recognizes the context free languages.</p> <p>&nbsp;</p> <p>b) A 2-Form context free grammar is defined as:</p> <p>&nbsp; &nbsp; &nbsp;<strong>A</strong>&rarr;<strong> &alpha; |&nbsp;&beta;&nbsp; &nbsp; where A is in V and &alpha; ,&beta;&isin;&nbsp;(V+T)<sup>*&nbsp;</sup></strong></p> <p>A&nbsp;grammar is context free if it has one Non-Terminal (V) on LHS of production and any combination of Terminals and Non-terminals on RHS. The above definition is in accordance with the standard context free grammar, and hence, being a Context free grammar, it generates the class of Context free languages.</p> <p>&nbsp;</p> <p>c) L= Set of all strings of length 2 or greater.</p> <p>Let the set of input alphabets be&nbsp;&sum;&nbsp;</p> <p>eg 1.&nbsp;&sum; ={ a } then G = Context free grammar that generates L over&nbsp;&sum; ={ a }</p> <p>G&nbsp; with S as Starting symbol and &#39;a&#39; as terminal, is as follows:</p> <p>S &rarr;<strong> </strong>aS</p> <p>S&nbsp;&rarr;<strong> </strong> aa</p> <p>Thus, L={aa,aaa,aaaa,aaaaa,...}</p> <p>Each of the productions in G is of the form A&nbsp;&rarr;<strong> </strong>x<sub>1</sub>x<sub>2&nbsp;</sub>with A= Non-Terminal and&nbsp;x<sub>1</sub>, x<sub>2&nbsp;</sub>being either Terminal or Non-Terminal.</p> <p>eg 2.&nbsp;&sum; ={ a, b } then&nbsp;G<sup>&#39;</sup>&nbsp;= Context free grammar that generates L over&nbsp;&sum; ={ a, b }</p> <p>G<sup>&#39;&nbsp;</sup>with S as Starting symbol and &#39;a&#39; and &#39;b&#39; as terminals, is as follows:</p> <p>S &rarr;<strong> </strong>aS | bS</p> <p>S&nbsp;&rarr;<strong> </strong> aa | ab | ba | bb</p> <p>Thus, L={aa,ab,ba,bb,aba,baa,bba,aab,aaa,bbb,abb,bab,aaaa,aaba,bbba,....}</p> <p>Each of the productions in G is of the form A&nbsp;&rarr;<strong> </strong>x<sub>1</sub>x<sub>2&nbsp;</sub>with A= Non-Terminal and&nbsp;x<sub>1</sub>, x<sub>2&nbsp;</sub>being either Terminal or Non-Terminal. Note that &#39;|&#39; is a way of writing more than one production rules in the same line.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

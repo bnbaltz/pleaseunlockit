@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>1) Let F = &lt;y<sup>2</sup>, -z<sup>2</sup>, x &gt; and C be
+the circle r(t) = &lt; 3cost, 4cost, 5sint &gt;
+calculate&nbsp;<img alt="\oint F \cdot dr" src=
+"https://d2vlcm61l7u1fs.cloudfront.net/media/3d9/3d9abdf4-86b2-4413-8551-18d1c03bc067/5ac64552b09df.gif" /></p>
+<p>2)&nbsp;Let F = &lt; 3x<sup>2</sup>y, x<sup>3</sup>+
+2yz<sup>2</sup>, 2y<sup>2z</sup>&nbsp;&gt; and C be the circle r(t)
+= &lt; 3cost, 4cost, 5sint &gt; calculate &nbsp;&nbsp;<img alt=
+"\oint F \cdot dr" src=
+"https://d2vlcm61l7u1fs.cloudfront.net/media/3d9/3d9abdf4-86b2-4413-8551-18d1c03bc067/5ac64552b09df.gif" /></p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>(1) Given that&nbsp;<img alt=
+"F=\left \langle y^2,-z^2,x \right \rangle" src=
+"https://latex.codecogs.com/gif.latex?F%3D%5Cleft%20%5Clangle%20y%5E2%2C-z%5E2%2Cx%20%5Cright%20%5Crangle" />&nbsp;and&nbsp;<img alt="C"
+src="https://latex.codecogs.com/gif.latex?C" />&nbsp;be the
+circle&nbsp;<img alt=
+"r(t)=\left \langle 3cos(t) ,4cos(t),5sin(t)\right \rangle" src=
+"https://latex.codecogs.com/gif.latex?r%28t%29%3D%5Cleft%20%5Clangle%203cos%28t%29%20%2C4cos%28t%29%2C5sin%28t%29%5Cright%20%5Crangle" /></p>
+<p>To calculate&nbsp;<img alt="\int F\cdot dr" src=
+"https://latex.codecogs.com/gif.latex?%5Cint%20F%5Ccdot%20dr" />.</p>
+<p><img alt="\int F\cdot dr=\int F(r(t))\cdot r'(t)dt" src=
+"https://latex.codecogs.com/gif.latex?%5Cint%20F%5Ccdot%20dr%3D%5Cint%20F%28r%28t%29%29%5Ccdot%20r%27%28t%29dt" /></p>
+<p><img alt=
+"r(t)=\left \langle 3cos(t) ,4cos(t),5sin(t)\right \rangle" src=
+"https://latex.codecogs.com/gif.latex?r%28t%29%3D%5Cleft%20%5Clangle%203cos%28t%29%20%2C4cos%28t%29%2C5sin%28t%29%5Cright%20%5Crangle" /></p>
+<p>So&nbsp;<img alt=
+"r'(t)=\left \langle -3sin(t) ,-4sin(t),5cos(t)\right \rangle" src=
+"https://latex.codecogs.com/gif.latex?r%27%28t%29%3D%5Cleft%20%5Clangle%20-3sin%28t%29%20%2C-4sin%28t%29%2C5cos%28t%29%5Cright%20%5Crangle" /></p>
+<p><img alt="x=3cos(t),y=4cos(t),z=5sin(t)" src=
+"https://latex.codecogs.com/gif.latex?x%3D3cos%28t%29%2Cy%3D4cos%28t%29%2Cz%3D5sin%28t%29" /></p>
+<p>So&nbsp;<img alt=
+"F(r(t))=\left \langle 16cos^2t,-25sin^2t,3cos(t) \right \rangle"
+src=
+"https://latex.codecogs.com/gif.latex?F%28r%28t%29%29%3D%5Cleft%20%5Clangle%2016cos%5E2t%2C-25sin%5E2t%2C3cos%28t%29%20%5Cright%20%5Crangle" /></p>
+<p><img alt=
+"F(r(t))\cdot r'(t)=\left \langle 16cos^2t,-25sin^2t,3cos(t) \right \rangle\cdot r'(t)=\left \langle -3sin(t) ,-4sin(t),5cos(t)\right \rangle"
+src=
+"https://latex.codecogs.com/gif.latex?F%28r%28t%29%29%5Ccdot%20r%27%28t%29%3D%5Cleft%20%5Clangle%2016cos%5E2t%2C-25sin%5E2t%2C3cos%28t%29%20%5Cright%20%5Crangle%5Ccdot%20r%27%28t%29%3D%5Cleft%20%5Clangle%20-3sin%28t%29%20%2C-4sin%28t%29%2C5cos%28t%29%5Cright%20%5Crangle" /></p>
+<p><img alt="=-48cos^2tsin(t)+100sin^3t+15cos^2(t)" src=
+"https://latex.codecogs.com/gif.latex?%3D-48cos%5E2tsin%28t%29&amp;plus;100sin%5E3t&amp;plus;15cos%5E2%28t%29" /></p>
+<p><img alt="=-48cos^2tsin(t)+100sin(t)sin^2t+15cos^2(t)" src=
+"https://latex.codecogs.com/gif.latex?%3D-48cos%5E2tsin%28t%29&amp;plus;100sin%28t%29sin%5E2t&amp;plus;15cos%5E2%28t%29" /></p>
+<p><img alt="=-48cos^2tsin(t)+100sin(t)(1-cos^2t)+15cos^2(t)" src=
+"https://latex.codecogs.com/gif.latex?%3D-48cos%5E2tsin%28t%29&amp;plus;100sin%28t%29%281-cos%5E2t%29&amp;plus;15cos%5E2%28t%29" /></p>
+<p><img alt="=-48cos^2tsin(t)+100sin(t)-100sin(t)cos^2t+15cos^2(t)"
+src=
+"https://latex.codecogs.com/gif.latex?%3D-48cos%5E2tsin%28t%29&amp;plus;100sin%28t%29-100sin%28t%29cos%5E2t&amp;plus;15cos%5E2%28t%29" /></p>
+<p><img alt=
+"=100sin(t)-148sin(t)cos^2t+\frac{15}{2}\left ( 1+cos(2t) \right )"
+src=
+"https://latex.codecogs.com/gif.latex?%3D100sin%28t%29-148sin%28t%29cos%5E2t&amp;plus;%5Cfrac%7B15%7D%7B2%7D%5Cleft%20%28%201&amp;plus;cos%282t%29%20%5Cright%20%29" /></p>
+<p>So&nbsp;<img alt="\int F\cdot dr=\int F(r(t))\cdot r'(t)dt" src=
+"https://latex.codecogs.com/gif.latex?%5Cint%20F%5Ccdot%20dr%3D%5Cint%20F%28r%28t%29%29%5Ccdot%20r%27%28t%29dt" /></p>
+<p><img alt=
+"=\int_0^{2\pi} \left ( 100sin(t)-148sin(t)cos^2t+\frac{15}{2}\left ( 1+cos(2t) \right ) \right )dt"
+src=
+"https://latex.codecogs.com/gif.latex?%3D%5Cint_0%5E%7B2%5Cpi%7D%20%5Cleft%20%28%20100sin%28t%29-148sin%28t%29cos%5E2t&amp;plus;%5Cfrac%7B15%7D%7B2%7D%5Cleft%20%28%201&amp;plus;cos%282t%29%20%5Cright%20%29%20%5Cright%20%29dt" /></p>
+<p><img alt=
+"=100\int_0^{2\pi}sin(t)dt-148\int_0^{2\pi}sin(t)cos^2tdt+\frac{15}{2}\int_0^{2\pi}\left ( 1+cos(2t) \right )dt"
+src=
+"https://latex.codecogs.com/gif.latex?%3D100%5Cint_0%5E%7B2%5Cpi%7Dsin%28t%29dt-148%5Cint_0%5E%7B2%5Cpi%7Dsin%28t%29cos%5E2tdt&amp;plus;%5Cfrac%7B15%7D%7B2%7D%5Cint_0%5E%7B2%5Cpi%7D%5Cleft%20%28%201&amp;plus;cos%282t%29%20%5Cright%20%29dt" /></p>
+<p>Let&nbsp;<img alt="cos(t)=u" src=
+"https://latex.codecogs.com/gif.latex?cos%28t%29%3Du" />&nbsp;in
+second integral.</p>
+<p>So&nbsp;<img alt="-sin(t)dt=du" src=
+"https://latex.codecogs.com/gif.latex?-sin%28t%29dt%3Ddu" /></p>
+<p><img alt=
+"=100(-cos(t))_0^{2\pi}+148\int_0^{2\pi}u^2du+\frac{15}{2} \left ( t+\frac{sin(2t)}{2} \right )_0^{2\pi}"
+src=
+"https://latex.codecogs.com/gif.latex?%3D100%28-cos%28t%29%29_0%5E%7B2%5Cpi%7D&amp;plus;148%5Cint_0%5E%7B2%5Cpi%7Du%5E2du&amp;plus;%5Cfrac%7B15%7D%7B2%7D%20%5Cleft%20%28%20t&amp;plus;%5Cfrac%7Bsin%282t%29%7D%7B2%7D%20%5Cright%20%29_0%5E%7B2%5Cpi%7D" /></p>
+<p><img alt=
+"=100(-1+1)_0^{2\pi}+148\left ( \frac{u^3}{3} \right )_0^{2\pi}+\frac{15}{2} \left ( 2\pi +0\right )"
+src=
+"https://latex.codecogs.com/gif.latex?%3D100%28-1&amp;plus;1%29_0%5E%7B2%5Cpi%7D&amp;plus;148%5Cleft%20%28%20%5Cfrac%7Bu%5E3%7D%7B3%7D%20%5Cright%20%29_0%5E%7B2%5Cpi%7D&amp;plus;%5Cfrac%7B15%7D%7B2%7D%20%5Cleft%20%28%202%5Cpi%20&amp;plus;0%5Cright%20%29" /></p>
+<p><img alt="=148\left ( \frac{cos^3t}{3} \right )_0^{2\pi}+15\pi"
+src=
+"https://latex.codecogs.com/gif.latex?%3D148%5Cleft%20%28%20%5Cfrac%7Bcos%5E3t%7D%7B3%7D%20%5Cright%20%29_0%5E%7B2%5Cpi%7D&amp;plus;15%5Cpi" /></p>
+<p><img alt="=148\left ( \frac{1}{3} -\frac{1}{3}\right )+15\pi"
+src=
+"https://latex.codecogs.com/gif.latex?%3D148%5Cleft%20%28%20%5Cfrac%7B1%7D%7B3%7D%20-%5Cfrac%7B1%7D%7B3%7D%5Cright%20%29&amp;plus;15%5Cpi" /></p>
+<p><img alt="=0+15\pi" src=
+"https://latex.codecogs.com/gif.latex?%3D0&amp;plus;15%5Cpi" /></p>
+<p><img alt="=15\pi" src=
+"https://latex.codecogs.com/gif.latex?%3D15%5Cpi" /></p>
+<p>So&nbsp;<img alt="\int F\cdot dr=15\pi" src=
+"https://latex.codecogs.com/gif.latex?%5Cint%20F%5Ccdot%20dr%3D15%5Cpi" /></p>
+<p>---------------------------------------------------</p>
+<p>(2) Given that&nbsp;<img alt=
+"F=\left \langle 3x^2y,x^3+2yz^2,2y^2z \right \rangle" src=
+"https://latex.codecogs.com/gif.latex?F%3D%5Cleft%20%5Clangle%203x%5E2y%2Cx%5E3&amp;plus;2yz%5E2%2C2y%5E2z%20%5Cright%20%5Crangle" /></p>
+<p><img alt=
+"r(t)=\left \langle 3cos(t) ,4cos(t),5sin(t)\right \rangle" src=
+"https://latex.codecogs.com/gif.latex?r%28t%29%3D%5Cleft%20%5Clangle%203cos%28t%29%20%2C4cos%28t%29%2C5sin%28t%29%5Cright%20%5Crangle" /></p>
+<p>So&nbsp;<img alt=
+"r'(t)=\left \langle -3sin(t) ,-4sin(t),5cos(t)\right \rangle" src=
+"https://latex.codecogs.com/gif.latex?r%27%28t%29%3D%5Cleft%20%5Clangle%20-3sin%28t%29%20%2C-4sin%28t%29%2C5cos%28t%29%5Cright%20%5Crangle" /></p>
+<p><img alt="x=3cos(t),y=4cos(t),z=5sin(t)" src=
+"https://latex.codecogs.com/gif.latex?x%3D3cos%28t%29%2Cy%3D4cos%28t%29%2Cz%3D5sin%28t%29" /></p>
+<p>So&nbsp;<img alt=
+"F(r(t))=\left \langle 3(3cos(t))^2(4cos(t)),(3cos(t))^3+2(4cos(t))(5sin(t))^2,2(4cos(t))^2(5sin(t)) \right \rangle"
+src=
+"https://latex.codecogs.com/gif.latex?F%28r%28t%29%29%3D%5Cleft%20%5Clangle%203%283cos%28t%29%29%5E2%284cos%28t%29%29%2C%283cos%28t%29%29%5E3&amp;plus;2%284cos%28t%29%29%285sin%28t%29%29%5E2%2C2%284cos%28t%29%29%5E2%285sin%28t%29%29%20%5Cright%20%5Crangle" /></p>
+<p><img alt=
+"F(r(t))=\left \langle 108cos^3t,27cos^3t+200costsin^2t,160cos^2tsint \right \rangle"
+src=
+"https://latex.codecogs.com/gif.latex?F%28r%28t%29%29%3D%5Cleft%20%5Clangle%20108cos%5E3t%2C27cos%5E3t&amp;plus;200costsin%5E2t%2C160cos%5E2tsint%20%5Cright%20%5Crangle" /></p>
+<p><img alt=
+"F(r(t))\cdot r'(t)=\left \langle 108cos^3t,27cos^3t+200costsin^2t,160cos^2tsint \right \rangle\cdot \left \langle -3sin(t) ,-4sin(t),5cos(t)\right \rangle"
+src=
+"https://latex.codecogs.com/gif.latex?F%28r%28t%29%29%5Ccdot%20r%27%28t%29%3D%5Cleft%20%5Clangle%20108cos%5E3t%2C27cos%5E3t&amp;plus;200costsin%5E2t%2C160cos%5E2tsint%20%5Cright%20%5Crangle%5Ccdot%20%5Cleft%20%5Clangle%20-3sin%28t%29%20%2C-4sin%28t%29%2C5cos%28t%29%5Cright%20%5Crangle" /></p>
+<p><img alt=
+"=-324cos^3tsint-108cos^3tsint-800costsin^3t+800cos^3tsint" src=
+"https://latex.codecogs.com/gif.latex?%3D-324cos%5E3tsint-108cos%5E3tsint-800costsin%5E3t&amp;plus;800cos%5E3tsint" /></p>
+<p><img alt="=368cos^3tsint-800costsin^3t" src=
+"https://latex.codecogs.com/gif.latex?%3D368cos%5E3tsint-800costsin%5E3t" /></p>
+<p><img alt="\int F\cdot dr=\int F(r(t))\cdot r'(t)dt" src=
+"https://latex.codecogs.com/gif.latex?%5Cint%20F%5Ccdot%20dr%3D%5Cint%20F%28r%28t%29%29%5Ccdot%20r%27%28t%29dt" /></p>
+<p><img alt=
+"=\int_0^{2\pi} \left ( 368cos^3tsint-800costsin^3t \right )dt"
+src="https://latex.codecogs.com/gif.latex?%3D%5Cint_0%5E%7B2%5Cpi%7D%20%5Cleft%20%28%20368cos%5E3tsint-800costsin%5E3t%20%5Cright%20%29dt" /></p>
+<p><img alt=
+"=368\int_0^{2\pi} cos^3tsintdt-800\int_0^{2\pi} costsin^3t dt"
+src="https://latex.codecogs.com/gif.latex?%3D368%5Cint_0%5E%7B2%5Cpi%7D%20cos%5E3tsintdt-800%5Cint_0%5E%7B2%5Cpi%7D%20costsin%5E3t%20dt" /></p>
+<p>Let&nbsp;<img alt="cost=u" src=
+"https://latex.codecogs.com/gif.latex?cost%3Du" />&nbsp;in first
+integral.</p>
+<p>So&nbsp;<img alt="-sintdt=du" src=
+"https://latex.codecogs.com/gif.latex?-sintdt%3Ddu" /></p>
+<p>Let&nbsp;<img alt="sint=v" src=
+"https://latex.codecogs.com/gif.latex?sint%3Dv" />&nbsp;in second
+integral.</p>
+<p>So&nbsp;<img alt="costdt=dv" src=
+"https://latex.codecogs.com/gif.latex?costdt%3Ddv" /></p>
+<p><img alt="=-368\int_0^{2\pi} u^3du-800\int_0^{2\pi} v^3 dv" src=
+"https://latex.codecogs.com/gif.latex?%3D-368%5Cint_0%5E%7B2%5Cpi%7D%20u%5E3du-800%5Cint_0%5E%7B2%5Cpi%7D%20v%5E3%20dv" /></p>
+<p><img alt=
+"=-368\left ( \frac{u^4}{4} \right )_0^{2\pi} -800\left ( \frac{v^4}{4} \right )_0^{2\pi}"
+src=
+"https://latex.codecogs.com/gif.latex?%3D-368%5Cleft%20%28%20%5Cfrac%7Bu%5E4%7D%7B4%7D%20%5Cright%20%29_0%5E%7B2%5Cpi%7D%20-800%5Cleft%20%28%20%5Cfrac%7Bv%5E4%7D%7B4%7D%20%5Cright%20%29_0%5E%7B2%5Cpi%7D" /></p>
+<p><img alt=
+"=-368\left ( \frac{cos^4t}{4} \right )_0^{2\pi} -800\left ( \frac{sin^4t}{4} \right )_0^{2\pi}"
+src=
+"https://latex.codecogs.com/gif.latex?%3D-368%5Cleft%20%28%20%5Cfrac%7Bcos%5E4t%7D%7B4%7D%20%5Cright%20%29_0%5E%7B2%5Cpi%7D%20-800%5Cleft%20%28%20%5Cfrac%7Bsin%5E4t%7D%7B4%7D%20%5Cright%20%29_0%5E%7B2%5Cpi%7D" /></p>
+<p><img alt=
+"=-368\left ( \frac{1}{4}- \frac{1}{4} \right ) -800\left ( 0-0 \right )"
+src=
+"https://latex.codecogs.com/gif.latex?%3D-368%5Cleft%20%28%20%5Cfrac%7B1%7D%7B4%7D-%20%5Cfrac%7B1%7D%7B4%7D%20%5Cright%20%29%20-800%5Cleft%20%28%200-0%20%5Cright%20%29" /></p>
+<p><img alt="=0-0" src=
+"https://latex.codecogs.com/gif.latex?%3D0-0" /></p>
+<p><img alt="=0" src=
+"https://latex.codecogs.com/gif.latex?%3D0" /></p>
+<p>So&nbsp;<img alt="\int F\cdot dr=0" src=
+"https://latex.codecogs.com/gif.latex?%5Cint%20F%5Ccdot%20dr%3D0" /></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p><strong>This is all supposed to be written in Java.</strong></p>
+<p><strong><img alt="Instructions: For this assignment, employ all the standard algorithm methods. You will be making a grade book program similar" src="https://media.cheggcdn.com/media/7cf/7cf87713-8dd3-4214-b616-b4eae086d543/phphoyf8D" style="height:954px;"><img alt="Expected Output: This is a sample of the expected output. The details will vary based on design choices you make while comple" src="https://media.cheggcdn.com/media/ffd/ffd86a9d-74fe-48d5-811e-c26e83d7ba70/phpwtEMcN" style="height:570px;"></strong></p>
+<p><strong>This is the rubric please include
+everything&nbsp;listed<img alt="Points
+Possible
+Points
+Earned
+Components
+Comments included for name, date, and purpose of the program.
+1
+Class created to def" src="https://media.cheggcdn.com/media/ac0/ac0b00fa-3f90-47d1-aa25-bc1666772a05/php8dGAVV" style="height:998px;"></strong></p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><em>Comment for any query or suggestion</em></p>
+
+<p>&nbsp;</p>
+
+<p><strong>Code:</strong>&nbsp;</p>
+
+<pre>
+<code class="language-java">package chegg;
+
+import java.util.ArrayList;
+import java.util.List;
+
+// Student structure with name and quizScore array 
+class Student {
+	static final int SIZE = 5;
+
+	String name;
+	int quizScore[] = new int[SIZE];
+
+	public Student(String name, int[] quizScore) {
+		super();
+		this.name = name;
+		this.quizScore = quizScore;
+	}
+
+	// get specific quiz Score - 0 based index
+	int getQuizScore(int number) {
+		return quizScore[number];
+	}
+
+	// set specific quiz Score - 0 based index
+	void setQuizScore(int number, int newScore) {
+		quizScore[number] = newScore;
+	}
+
+	// get student name
+	String getName() {
+		return name;
+	}
+
+	// set student name
+	void setName(String newName) {
+		name = newName;
+	}
+
+	// to print student data in proper format
+	@Override
+	public String toString() {
+		System.out.printf("%-10s%8d%15d%16d%17d%16d\n", name, quizScore[0], quizScore[1], quizScore[2], quizScore[3],
+				quizScore[4]);
+
+		return "";
+	}
+
+}
+
+//Test student structure
+public class Client {
+	static final int SIZE = Student.SIZE;
+
+	// print student details in proper format
+	static void printStudentsDetails(List&lt;Student&gt; students) {
+		System.out.println("Name\t\tQ1\t\tQ2\t\tQ3\t\tQ4\t\tQ5");
+		System.out.println("----------------------------------------------------------------------------------");
+		for (Student student : students) {
+			student.toString();
+		}
+		System.out.println();
+	}
+
+	// replace specific student name
+	static void repalceStudentName(List&lt;Student&gt; students, String oldName, String newName) {
+		for (Student student : students) {
+			if (student.getName().equals(oldName)) { // find student in students array list
+				student.setName(newName); // when found change name to newName
+				break; // break the loop
+			}
+		}
+		printStudentsDetails(students);
+
+	}
+
+	// replace specific student's score with new score
+	static void repalceStudentScore(List&lt;Student&gt; students, String name, int number, int newScore) {
+		for (Student student : students) {
+			if (student.getName().equals(name)) {
+				student.setQuizScore(number, newScore);
+				break;
+			}
+		}
+		printStudentsDetails(students);
+	}
+
+	// replace whole student data
+	static void repalceStudent(List&lt;Student&gt; students, String oldName, String newName, int[] score) {
+		for (Student student : students) {
+			if (student.getName().equals(oldName)) {
+				student.setName(newName);
+				for (int i = 0; i &lt; SIZE; i++)
+					student.setQuizScore(i, score[i]);
+				break;
+			}
+		}
+		printStudentsDetails(students);
+	}
+
+	// add student data before specific student by name
+	static void addStudentBeforeAnother(List&lt;Student&gt; students, String oldName, String newName, int[] score) {
+		int index = 0;
+		for (Student student : students) {
+			if (student.getName().equals(oldName))
+				break;
+
+			index++;
+		}
+		students.add(index, new Student(newName, score));
+
+		printStudentsDetails(students);
+	}
+
+	// delete student by name
+	static void deleteStudent(List&lt;Student&gt; students, String name) {
+		int index = 0;
+		for (Student student : students) {
+			if (student.getName().equals(name))
+				break;
+
+			index++;
+		}
+		students.remove(index);
+
+		printStudentsDetails(students);
+	}
+
+	public static void main(String[] args) {
+		List&lt;Student&gt; students = new ArrayList&lt;&gt;();
+		students.add(new Student("name1", new int[] { 1, 2, 3, 4, 5 }));
+		System.out.println("Pre-Populated data:");
+		printStudentsDetails(students);
+
+		System.out.println("Replace student name name1 to name2:");
+		repalceStudentName(students, "name1", "name2");
+
+		System.out.println("Replace student score of 1st quiz of name2 to 10:");
+		repalceStudentScore(students, "name2", 0, 10);
+
+		System.out.println("Replace student with name2 as name3 with scores {25,43,23,2,1}:");
+		repalceStudent(students, "name2", "name3", new int[] { 25, 43, 23, 2, 1 });
+
+		students.add(new Student("name1", new int[] { 1, 2, 3, 4, 5 }));
+		System.out.println("Adding a student at last:");
+		printStudentsDetails(students);
+
+		System.out.println("Add student with name4 bewfore name3 with scores {2, 3, 3, 20, 10}:");
+		addStudentBeforeAnother(students, "name3", "name4", new int[] { 2, 3, 3, 20, 10 });
+
+		System.out.println("Remove student with name3");
+		deleteStudent(students, "name3");
+
+	}
+}</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<p><img src="https://media.cheggcdn.com/coop/68a/68a7ce0e-9921-4240-a668-9da4749ea09a/1613193801625_image.png" style="height:651px;width:886px" alt="Pre-Populated data:
+Name
+Q1
+Q2
+Q3
+04
+25
+name1
+1
+2
+3
+4
+5
+5
+Replace student name name1 to name2:
+Name
+Q1
+Q2
+Q3
+04
+Q5
+name2
+1
+2
+"></p>
+
+<p><img src="https://media.cheggcdn.com/coop/28e/28ecf981-f6d5-47ad-ba49-be70b732255e/1613193815325_image.png" style="height:132px;width:783px" alt="Remove student with name3
+Name
+01
+Q2
+Q3
+04
+Q5
+name4
+name1
+2
+1
+3
+2
+لنا لنا
+20
+4
+10
+5
+"></p>
+
+<p>&nbsp;</p>
+
+<p style="text-align:center"><em><strong>A THMBUS UP is appreciated</strong></em></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

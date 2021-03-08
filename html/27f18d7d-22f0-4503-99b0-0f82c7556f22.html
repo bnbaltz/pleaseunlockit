@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Alice designs a double-AES cipher. Given the plaintext M, she
+uses the first key K1 (256 bits) to AES-encrypt M to obtain
+ciphertext C1, then uses the second key K2 (256 bits) to
+AES-encrypt C1 to obtain the final ciphertext C2. Does this mean
+that Alice’s design has a key strength of 512 bits? Is Alice’s
+design vulnerable to meet-in-the-middle? Detail your answers.</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p style="text-align:justify">Double AES Cipher</p> <p style="text-align:justify">Alice designs a double-AES cipher. Given the plaintext M, she uses the first key K1 (256 bits) to AES-encrypt M to obtain ciphertext C1, then uses the second key K2 (256 bits) to AES-encrypt C1 to obtain the final ciphertext C2.</p> <p style="text-align:justify"><strong>Does this mean that Alice&rsquo;s design has a key strength of 512 bits?&nbsp;</strong></p> <p style="text-align:justify">first key K1 (256 bits)</p> <p style="text-align:justify">second key K2 (256 bits)</p> <p style="text-align:justify">the simplest form of multiple encryption has two encryption stages and two keys and it&#39;s called Double-AES. In Double-AES, for the encryption, 2 AES encryption cipher sequentially applied where the key K1 is used first and then the key K2 is used for the following DES cipher.</p> <p style="text-align:justify">Cipher = Enc( k2 , Enc(k1,p) )</p> <p style="text-align:justify">where p is the plain text and Enc is the encryprion function.</p> <p style="text-align:justify">&nbsp;This can also be expressed in math as it&#39;s shown and in the mathematical expression those that are inside the parenthesis are computed or processed first. The use of two independent keys, keys of one and keys of two, K1 and K2 are 256&nbsp;bits long. Twice as long as a single key and can provide 512&nbsp;bits of entropy for the ciphertext. So, the computational effort of a brute force attacker, who only analyzes the Double-AES input and the output P and C, it&#39;s effort will grow by O(2^512).&nbsp;</p> <p style="text-align:justify">This means that that the&nbsp;Alice&rsquo;s design has a key strength of 512 bits.</p> <p style="text-align:justify"><strong>Is Alice&rsquo;s design vulnerable to meet-in-the-middle?</strong></p> <p style="text-align:justify">No, the Alice&#39;s design is not vulnerable to the meet in the middle attack.</p> <p style="text-align:justify">Let X= Enc(K1,P) =&nbsp; Dec(k2,C)</p> <p style="text-align:justify">Here X is in between the two AES functions. P is the plain text and C is the cipher text</p> <p style="text-align:justify">The meet in the middle attacker knows that there is an intermediate value. Let us suppose, Given a known plaintext or a pair of P and C that is known to the attacker, the attacker first takes the known plaintext P and computes the first DES function with the key of K1. The attacker varies the key K1 which value does not know, and stores all of the two to the 256&nbsp;possible pair of values K1 and X.</p> <p style="text-align:justify">The attacker then takes the ciphertext C and computes in the backward direction to compute X that is, it will compute the decryption of C to compute X. Whenever the attacker computes the AES decryption from C, it compares the result with the X values that it computed and stored from using P and the encryption computations in the forward direction. When there&#39;s a match for X, it has a candidate K1 and K2 which it can then use to try another known plaintext&nbsp;ciphertext pair of P and C.</p> <p style="text-align:justify">If it were the correct key pair of K1, K2 then, it will always yield the correct P, C regardless of the plaintext P that the attacker tries. This reduces the attacker effort to O of two to the 256. The strength of double AES again reduces to O(2^256).</p> <p>&nbsp;</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

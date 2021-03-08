@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p><span style="line-height: 13px;"><img class="mceBlock" src="https://media.cheggcdn.com/study/60c/60c61701-497a-44fc-bbf4-92fb4fdec793/2840852d-a686-4f07-a88d-7b88d57970d2.png" border="0" alt="Image for 12. Five resistors are connected as shown in the diagram. The potential difference between points A & B is 25 " /></span></p><p><span style="line-height: 13px;">12. Five resistors are connected as shown in the diagram. The potential difference between points A &amp; B is 25 V</span></p><p><span style="line-height: 13px;">12a.- What is the equivalent resistance between the points A and B?</span></p><p><span style="line-height: 13px;">a)1.5&nbsp;&Omega; &nbsp;b) 4.8&nbsp;&Omega; c) 7.5&nbsp;&Omega; d) 9.4&nbsp;&Omega;</span></p><p><span style="line-height: 13px;">12b.- What is the current through the 1.8&nbsp;&Omega; resistor?</span></p><p><span style="line-height: 13px;">a) 2.8 A, b) 3.3 A c) 5.6 A d) 6.9 A</span></p>
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>12a. 3.5&Omega; and 5.1&Omega; resistors in series = 3.5+5.1 = 8.6&Omega;. 8.6&Omega; in parallel with 1.8&Omega; = 1/(1/8.6 + 1/1.8) = 1.5&Omega;. 1.5&Omega; in series with 3.6&Omega; and 2.4&Omega; is total equivalent resistance of 1.5 + 3.6 + 2.4 = <strong>7.5&Omega;, choice c.</strong><br /><br />12b. Total current through equivalent resistance of 7.5&Omega; is given by I = V/R = 25V/7.5&Omega; = 3.33A. Now to split the resistances back apart, there are 3.33A flowing throught the equivalent resistance of 1.5&Omega; found in part a (1.8&Omega; in parallel with 8.6&Omega;). To find the current flowing just through the 1.8, remember that voltage is the same in parallel. So since V = IR, I<sub>1</sub>*1.8&Omega; = I<sub>2</sub>*8.6&Omega;, and I<sub>1</sub>+I<sub>2</sub> = 3.33A --&gt; I<sub>2</sub> = 3.33A - I<sub>1</sub>. Substitute that in so you end up with two equations in terms of I<sub>1</sub> (the current through the 1.8&Omega; resistor):<br /><br />1.8I<sub>1</sub> = (3.33-I<sub>1</sub>)*8.6 = 28.638 - 8.6I<sub>1</sub><br />10.4I<sub>1</sub> = 28.638<br />I<sub>1</sub> = 2.75A &asymp; <strong>2.8A, choice a.</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

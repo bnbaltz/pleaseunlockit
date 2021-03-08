@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <pre>
+N7gC-oY5 Company prepared the following aging schedule for its accounts
+receivable as of December 31, 2028:
+
+                         <strong>Accounts Receivable       % Uncollectible
+</strong>not past due                 $206,700                     2%
+1-50 days past due           $149,400                     9%
+51-100 days past due             ?                       17%
+101-150 days past due        $133,200                    22%
+over 150 days past due       $101,600                    75%
+
+The net realizable value of N7gC-oY5 Company's accounts receivable at
+December 31, 2028 was $618,710.
+
+Calculate the amount of <strong>accounts receivable that were 51-100 days past
+due</strong>.</pre>
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <table cellspacing="0" style=
+"border-collapse:collapse;border:none;width:475pt;">
+<tbody>
+<tr>
+<td style=
+"height:29.4pt;vertical-align:bottom;white-space:nowrap;width:148pt;">
+<strong>Age of account</strong></td>
+<td style="height:29.4pt;vertical-align:bottom;width:103pt;">
+<strong>Accounts receivable</strong></td>
+<td style="height:29.4pt;vertical-align:bottom;width:99pt;">
+<strong>Percentage Uncollectible</strong></td>
+<td style="height:29.4pt;vertical-align:bottom;width:125pt;">
+<strong>Estimated uncollectibles</strong></td>
+</tr>
+<tr>
+<td style=
+"background-color:#FFFFFF;border-color:#000000;height:15pt;vertical-align:middle;width:148pt;">
+not past due</td>
+<td style=
+"background-color:#FFFFFF;border-color:#000000;height:15pt;vertical-align:middle;width:103pt;">
+206,700</td>
+<td style=
+"background-color:#FFFFFF;border-color:#000000;height:15pt;vertical-align:middle;width:99pt;">
+2.00%</td>
+<td style=
+"background-color:#FFFFFF;border-color:#000000;height:15pt;vertical-align:middle;width:125pt;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4,134</td>
+</tr>
+<tr>
+<td style=
+"background-color:#FFFFFF;border-color:#000000;height:15pt;vertical-align:middle;width:148pt;">
+1-50 past due</td>
+<td style=
+"background-color:#FFFFFF;border-color:#000000;height:15pt;vertical-align:middle;width:103pt;">
+149,400</td>
+<td style=
+"background-color:#FFFFFF;border-color:#000000;height:15pt;vertical-align:middle;width:99pt;">
+9.00%</td>
+<td style=
+"background-color:#FFFFFF;border-color:#000000;height:15pt;vertical-align:middle;width:125pt;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+13,446</td>
+</tr>
+<tr>
+<td style=
+"background-color:#FFFFFF;border-color:#000000;height:15pt;vertical-align:middle;width:148pt;">
+51-100 days past due</td>
+<td style=
+"background-color:#FFFFFF;border-color:#000000;height:15pt;vertical-align:middle;width:103pt;">
+K</td>
+<td style=
+"background-color:#FFFFFF;border-color:#000000;height:15pt;vertical-align:middle;width:99pt;">
+17.00%</td>
+<td style=
+"background-color:#FFFFFF;border-color:#000000;height:15pt;vertical-align:middle;width:125pt;">
+&nbsp;0.17K&nbsp;</td>
+</tr>
+<tr>
+<td style=
+"background-color:#FFFFFF;border-color:#000000;height:15pt;vertical-align:middle;width:148pt;">
+101-150 days past due</td>
+<td style=
+"background-color:#FFFFFF;border-color:#000000;height:15pt;vertical-align:middle;width:103pt;">
+133,200</td>
+<td style=
+"background-color:#FFFFFF;border-color:#000000;height:15pt;vertical-align:middle;width:99pt;">
+22.00%</td>
+<td style=
+"background-color:#FFFFFF;border-color:#000000;height:15pt;vertical-align:middle;width:125pt;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+29,304</td>
+</tr>
+<tr>
+<td style=
+"background-color:#FFFFFF;border-color:#000000;height:15pt;vertical-align:middle;width:148pt;">
+Over 150 days pat due</td>
+<td style=
+"background-color:#FFFFFF;border-color:#000000;height:15pt;vertical-align:middle;width:103pt;">
+101,600</td>
+<td style=
+"background-color:#FFFFFF;border-color:#000000;height:15pt;vertical-align:middle;width:99pt;">
+75.00%</td>
+<td style=
+"background-color:#FFFFFF;border-color:#000000;height:15pt;vertical-align:middle;width:125pt;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+76,200</td>
+</tr>
+<tr>
+<td style=
+"background-color:#FFFFFF;border-color:#000000;height:15pt;vertical-align:middle;width:148pt;">
+Total</td>
+<td style=
+"background-color:#FFFFFF;border-color:#000000;height:15pt;vertical-align:middle;width:103pt;">
+590,900 + K</td>
+<td style=
+"background-color:#FFFFFF;border-color:#000000;height:15pt;vertical-align:middle;width:99pt;">
+&nbsp;</td>
+<td style=
+"background-color:#FFFFFF;border-color:#000000;height:15pt;vertical-align:middle;width:125pt;">
+&nbsp;123,084+ 0.17K&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Net realizable value of accounts receivable = $618,710</p>
+<p>Let the accounts receivable that here 51-100 days past due be
+$k</p>
+<p>Net realizable value of accounts receivable = Accounts
+receivable- Allowance for uncollectible accounts</p>
+<p>618,710 = (590,900+ K) -&nbsp;&nbsp;(123,084+ 0.17K)</p>
+<p>618,710 = 590,900+K- 123,084-0.17K</p>
+<p>618,710 = 467,816+0.83K</p>
+<p>0.83K = 150,894</p>
+<p>K = $181,800</p>
+<pre>
+The amount of <strong>accounts receivable that were 51-100 days past
+due = </strong> $181,800</pre>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Please give a positive rating if you are satisfied with
+this solution and if you have any query kindly ask.</strong></p>
+<p><strong>Thanks!!!</strong></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

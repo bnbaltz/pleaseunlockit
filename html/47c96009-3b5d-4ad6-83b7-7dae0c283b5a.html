@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p><strong>WalkingBot</strong></p>
+<p><strong>This class represents the brain of the walking robot and
+controls everything the robot will be able to
+do.&nbsp;</strong></p>
+<p>&nbsp;</p>
+<p><strong>Important Information</strong></p>
+<p><strong>A WalkingBot is only capable of moving in 4 directions
+-- it cannot move diagonally!<br>
+(The engineers are working hard to improve this.)</strong></p>
+<p>&nbsp;</p>
+<p><strong>Fields and Constructors</strong></p>
+<p><strong>A WalkingBot should keep track of its name, energy, and
+current Location.<br>
+Energy is represented as an integer from 0 to 100, with 0 being out
+of energy.<br>
+There should not be a default constructor. All WalkingBots start
+with 0 energy.</strong></p>
+<p><strong>Regular parameterized constructor&nbsp;</strong></p>
+<p><strong>Methods</strong></p>
+<p><strong>A WalkingBot should have the following
+methods:</strong></p>
+<ul>
+<li>
+<p><strong>getName() returns its name</strong></p>
+</li>
+<li>
+<p><strong>getEnergy() returns its energy</strong></p>
+</li>
+<li>
+<p><strong>getLocation() returns its Location</strong></p>
+</li>
+<li>
+<p><strong>recharge() fills its energy to 100</strong></p>
+</li>
+<li>
+<p><strong>getDistance(Location) returns the Manhattan distance to
+the given Location</strong></p>
+<ul>
+<li>
+<p><strong>Hint: Call the method you wrote for
+Location!</strong></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>getDistance(WalkingBot) returns the Manhattan distance
+between itself and the input WalkingBot</strong></p>
+</li>
+<li>
+<p><strong>walkTo(Location) will tell the WalkingBot to move to the
+new Location. It will announce each step it takes. Make sure to
+update its Location after it moves!<br>
+Each step takes 1 energy. If the WalkingBot does not have enough
+energy to get to the Location, then it will not move at
+all.</strong></p>
+<ul>
+<li>
+<p><strong>Example: A WalkingBot at (0,0) is trying to move to
+(1,2). It prints<br>
+(0,0) (1,0) (1,1) (1,2)</strong></p>
+</li>
+<li>
+<p><strong>Example: A WalkingBot at (0,0) is trying to move to
+(1,2) with 1 energy. It prints “I do not have enough energy to get
+to (1,2)”.</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><strong>ANSWER:</strong></p>
+
+<p style="margin-left:40px">I have provided the properly commented&nbsp;and indented code so you can easily copy the code as well as check for correct indentation.<br>
+I have provided the output image of the code so you can easily cross-check for the correct output of the code.<br>
+Have a nice and healthy day!!</p>
+
+<p>&nbsp;</p>
+
+<p><strong>CODE</strong></p>
+
+<pre>
+<code class="language-java">
+import java.lang.*;
+
+//defining class Walking Bot
+class WalkingBot{
+    // definig params
+    private String name;
+    private int energy;
+    private int[] location = new int[2];
+    
+    
+    // parameterized constructor
+    public WalkingBot(String name, int[] location){
+        this.name = name;
+        this.location = location;
+    }
+    
+    // getter functions
+    // getName
+    public String getName(){
+        return this.name;
+    }
+    
+    // function getEnergy
+    public int getEnergy(){
+        return this.energy;
+    }
+    
+    // function get location
+    public int[] getLocation(){
+        return this.location;
+    }
+    
+    // function recharge
+    public void recharge(){
+        // seting energy to 100
+        this.energy = 100;
+    }
+    
+    // function getDistance return Manhattan distance for location
+    public int getDistance(int[] location){
+        // returning Manhattan distance
+        return Math.abs(location[0]-this.location[0]) + Math.abs(location[1]-this.location[1]);
+    }
+    
+    // function getDistance return Manhattan distance for another bot
+    public int getDistance(WalkingBot bot){
+        // fetching location of bot
+        int[] location = new int[2];
+        location = bot.getLocation();
+        // calling getDistance for location
+        return this.getDistance(location);
+    }
+    
+    // function walkTo
+    public void walkTo(int[] location){
+        // fetching distance
+        int distance = this.getDistance(location);
+        
+        // checking for enough energy
+        if(this.energy&gt;=distance){
+            // walking in x
+            int x_diff = location[0]-this.location[0];
+            // x increment
+            int x_inc = x_diff/Math.abs(x_diff);
+            
+            // looping for x increments
+            for(int i=0;i&lt;Math.abs(x_diff);i++){
+                // displaying current location
+                System.out.print("("+this.location[0]+","+this.location[1]+") ");
+                
+                // incrementing x loc by x_inc
+                this.location[0]+= x_inc;
+                
+                // decrementing energy by 1
+                this.energy -= 1;
+            }
+            
+            // walking in y
+            int y_diff = location[1]-this.location[1];
+            // x increment
+            int y_inc = y_diff/Math.abs(y_diff);
+            
+            // looping for x increments
+            for(int i=0;i&lt;Math.abs(y_diff);i++){
+                // displaying current location
+                System.out.print("("+this.location[0]+","+this.location[1]+") ");
+                
+                // incrementing x loc by x_inc
+                this.location[1]+= y_inc;
+                
+                // decrementing energy by 1
+                this.energy -= 1;
+            }
+            // displaying final location
+            System.out.print("("+this.location[0]+","+this.location[1]+") ");
+        }
+        else{
+            System.out.println("I do not have enough energy to get to ("+location[0]+","+location[1]+")");
+        }
+    }
+    
+    
+}
+
+
+// Main Driver Class
+public class Main{
+     // Main Function
+     public static void main(String []args){
+        // location array
+        int[] location = {0,0};
+        // object of WalkingBot
+        WalkingBot bot1 = new WalkingBot("Bot1",location);
+        // recharging bot
+        bot1.recharge();
+        
+        // walk to location 1,2
+        int[] walkToLocation = {1,2};
+        // calling method walkTo
+        bot1.walkTo(walkToLocation);
+     }
+}</code></pre>
+
+<p>&nbsp;</p>
+
+<p><strong>OUTPUT IMAGE</strong></p>
+
+<p><strong><img src="https://media.cheggcdn.com/coop/9bd/9bd8271f-e897-4f6a-939c-fb4772cf47c7/1614631514838_image.png" style="height:34px;width:317px" alt="(0,0) (1,0) (1,1) (1,2)
+"></strong></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <table border="0">
+<tbody>
+<tr>
+<td></td>
+<td>Horizontal cross-sections of the vector fields
+<em>F</em><img alt="char7E.png" src=
+"http://webwork.ucr.edu/webwork2_files/jsMath/fonts/cmmi10/alpha/144/char7E.png"
+style="margin-right:-.15em;width:13px;" />(<em>x</em><img alt=
+"char3B.png" src=
+"http://webwork.ucr.edu/webwork2_files/jsMath/fonts/cmmi10/alpha/144/char3B.png"
+style="margin-right:.028em;width:5px;" /><em>y</em><img alt=
+"char3B.png" src=
+"http://webwork.ucr.edu/webwork2_files/jsMath/fonts/cmmi10/alpha/144/char3B.png"
+style="margin-right:.028em;width:5px;" /><em>z</em>) and
+<em>G</em><img alt="char7E.png" src=
+"http://webwork.ucr.edu/webwork2_files/jsMath/fonts/cmmi10/alpha/144/char7E.png"
+style="margin-right:-.15em;width:13px;" />(<em>x</em><img alt=
+"char3B.png" src=
+"http://webwork.ucr.edu/webwork2_files/jsMath/fonts/cmmi10/alpha/144/char3B.png"
+style="margin-right:.028em;width:5px;" /><em>y</em><img alt=
+"char3B.png" src=
+"http://webwork.ucr.edu/webwork2_files/jsMath/fonts/cmmi10/alpha/144/char3B.png"
+style="margin-right:.028em;width:5px;" /><em>z</em>) are given in
+the figure. Each vector field has zero z-component (i.e., all of
+its vectors are horizontal) and is independent of <em>z</em> (i.e.,
+is the same in every horizontal plane). You may assume that the
+graphs of these vector fields use the same scale.<br />
+<br />
+(a) Are div(<em>F</em><img alt="char7E.png" src=
+"http://webwork.ucr.edu/webwork2_files/jsMath/fonts/cmmi10/alpha/144/char7E.png"
+style="margin-right:-.15em;width:13px;" />) and
+div(<em>G</em><img alt="char7E.png" src=
+"http://webwork.ucr.edu/webwork2_files/jsMath/fonts/cmmi10/alpha/144/char7E.png"
+style="margin-right:-.15em;width:13px;" />) positive, negative, or
+zero at the origin? Be sure you can explain your answer.<br />
+At the origin, div(<em>F</em><img alt="char7E.png" src=
+"http://webwork.ucr.edu/webwork2_files/jsMath/fonts/cmmi10/alpha/144/char7E.png"
+style="margin-right:-.15em;width:13px;" />)
+is&nbsp;&nbsp;&nbsp;Choose&nbsp;&nbsp;&nbsp;&nbsp;Positive&nbsp;&nbsp;&nbsp;&nbsp;Negative&nbsp;&nbsp;&nbsp;&nbsp;Zero&nbsp;&nbsp;&nbsp;<br />
+
+At the origin, div(<em>G</em><img alt="char7E.png" src=
+"http://webwork.ucr.edu/webwork2_files/jsMath/fonts/cmmi10/alpha/144/char7E.png"
+style="margin-right:-.15em;width:13px;" />)
+is&nbsp;&nbsp;&nbsp;Choose&nbsp;&nbsp;&nbsp;&nbsp;Positive&nbsp;&nbsp;&nbsp;&nbsp;Negative&nbsp;&nbsp;&nbsp;&nbsp;Zero&nbsp;&nbsp;&nbsp;<br />
+
+<br />
+(b) Are <em>F</em><img alt="char7E.png" src=
+"http://webwork.ucr.edu/webwork2_files/jsMath/fonts/cmmi10/alpha/144/char7E.png"
+style="margin-right:-.15em;width:13px;" /> and <em>G</em><img alt=
+"char7E.png" src=
+"http://webwork.ucr.edu/webwork2_files/jsMath/fonts/cmmi10/alpha/144/char7E.png"
+style="margin-right:-.15em;width:13px;" /> curl free (irrotational)
+or not at the origin? Be sure you can explain your answer.<br />
+At the origin, <em>F</em><img alt="char7E.png" src=
+"http://webwork.ucr.edu/webwork2_files/jsMath/fonts/cmmi10/alpha/144/char7E.png"
+style="margin-right:-.15em;width:13px;" />
+is&nbsp;&nbsp;&nbsp;Choose&nbsp;&nbsp;&nbsp;&nbsp;Irrotational&nbsp;&nbsp;&nbsp;&nbsp;Not
+irrotational&nbsp;&nbsp;&nbsp;<br />
+At the origin, <em>G</em><img alt="char7E.png" src=
+"http://webwork.ucr.edu/webwork2_files/jsMath/fonts/cmmi10/alpha/144/char7E.png"
+style="margin-right:-.15em;width:13px;" />
+is&nbsp;&nbsp;&nbsp;Choose&nbsp;&nbsp;&nbsp;&nbsp;Irrotational&nbsp;&nbsp;&nbsp;&nbsp;Not
+irrotational&nbsp;&nbsp;&nbsp;<br />
+<br />
+(c) Is there a closed surface around the origin such that
+<em>F</em><img alt="char7E.png" src=
+"http://webwork.ucr.edu/webwork2_files/jsMath/fonts/cmmi10/alpha/144/char7E.png"
+style="margin-right:-.15em;width:13px;" /> has nonzero flux through
+it? Be sure you can explain your answer by finding an example or a
+counterexample.&nbsp;&nbsp;&nbsp;Choose&nbsp;&nbsp;&nbsp;&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;No&nbsp;&nbsp;&nbsp;<br />
+
+<br />
+(d) Is there a closed surface around the origin such that
+<em>G</em><img alt="char7E.png" src=
+"http://webwork.ucr.edu/webwork2_files/jsMath/fonts/cmmi10/alpha/144/char7E.png"
+style="margin-right:-.15em;width:13px;" /> has nonzero circulation
+around it? Be sure you can explain your answer by finding an
+example or a
+counterexample.&nbsp;&nbsp;&nbsp;Choose&nbsp;&nbsp;&nbsp;&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;No&nbsp;&nbsp;&nbsp;</td>
+<td></td>
+<td>
+<table align="center" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td><img alt="pmo001-690-set7-Q-3_STOKES_AND_GAUSS_THE" src=
+"http://webwork.ucr.edu/webwork2_course_files/MATH_010B_010_14S/tmp/gif/pmo001-690-set7-Q-3_STOKES_AND_GAUSS_THEOREMSprob6image1.png"
+style="height:250px;width:250px;" /></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td><em>F</em><img alt="char7E.png" src=
+"http://webwork.ucr.edu/webwork2_files/jsMath/fonts/cmmi10/alpha/144/char7E.png"
+style="margin-right:-.15em;width:13px;" /></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td><img alt="pmo001-690-set7-Q-3_STOKES_AND_GAUSS_THE" src=
+"http://webwork.ucr.edu/webwork2_course_files/MATH_010B_010_14S/tmp/gif/pmo001-690-set7-Q-3_STOKES_AND_GAUSS_THEOREMSprob6image2.png"
+style="height:250px;width:250px;" /></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td><em>G</em><img alt="char7E.png" src=
+"http://webwork.ucr.edu/webwork2_files/jsMath/fonts/cmmi10/alpha/144/char7E.png"
+style="margin-right:-.15em;width:13px;" /></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <html>
+ <head></head>
+ <body>
+  <p><img alt="It appears that div F< O and div G< 0; div G is larger in magnitude (more negative) if the scales are the
+same
+curl F and cur" src="//d2vlcm61l7u1fs.cloudfront.net/media%2Fe8c%2Fe8cba23e-58c8-439d-8f38-10b42dad17c3%2Fphp26F5uk.png"></p> 
+ </body>
+</html>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

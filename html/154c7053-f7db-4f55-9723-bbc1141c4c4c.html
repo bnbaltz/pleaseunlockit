@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Donna’s Fashions Corporation has the following sales forecast in
+units:<br />
+<br />
+January 1,000; February 800; March 900; April 1,400; May 1,550;
+June 1,800; July 1,400<br />
+<br />
+Donna always keeps ending inventory equal to 120 percent of the
+next month’s expected sales. The ending inventory for December
+(January’s beginning inventory) is 1,200 units, consistent with
+company policy.<br />
+<br />
+Materials cost $14 per unit and are paid for in the month after
+production. Labour cost is $7 per unit and is paid in same month
+the cost is incurred. Overhead costs are $8,000 per month. Interest
+of $10,000 will be paid in March, and employee bonuses of $15,500
+paid in June.&nbsp;<strong>Enter all values as positive
+value.</strong><br />
+<br />
+<strong>a.&nbsp;</strong>Prepare a monthly production schedule for
+January through June.</p>
+<p>&nbsp;</p>
+<table cellpadding="0" cellspacing="0" style="width:1000px;">
+<tbody>
+<tr>
+<td colspan="8">Donna’s Fashions<br />
+Production Schedule</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>January</td>
+<td>February</td>
+<td>March</td>
+<td>April</td>
+<td>May</td>
+<td>June</td>
+<td>July</td>
+</tr>
+<tr>
+<td>Forecasted unit sales</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Desired ending inventory</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Beginning inventory</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Units to be produced</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td colspan="8">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p><strong>b.&nbsp;</strong>Prepare a monthly summary of cash
+payments for January through June. Donna produced 800 units in
+December.</p>
+<p>&nbsp;</p>
+<table cellpadding="0" cellspacing="0" style="width:1000px;">
+<tbody>
+<tr>
+<td colspan="8">Donna’s Fashions<br />
+Summary of Cash payments</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>December</td>
+<td>January</td>
+<td>February</td>
+<td>March</td>
+<td>April</td>
+<td>May</td>
+<td>June</td>
+</tr>
+<tr>
+<td>Units produced</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Material cost</td>
+<td>&nbsp;</td>
+<td>$&nbsp;</td>
+<td>$&nbsp;</td>
+<td>$&nbsp;</td>
+<td>$&nbsp;</td>
+<td>$&nbsp;</td>
+<td>$&nbsp;</td>
+</tr>
+<tr>
+<td>Labour cost</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Overhead cost</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Interest</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Employee bonuses</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Total cash payments</td>
+<td>&nbsp;</td>
+<td>$&nbsp;</td>
+<td>$&nbsp;</td>
+<td>$&nbsp;</td>
+<td>$&nbsp;</td>
+<td>$&nbsp;</td>
+<td>$&nbsp;</td>
+</tr>
+<tr>
+<td colspan="8">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><span style=
+"text-decoration: underline"><strong>Given:</strong></span></p>
+<ol>
+<li>&nbsp;</li>
+</ol>
+<table border="1" cellpadding="1" cellspacing="1" style=
+"width:500px;">
+<tbody>
+<tr>
+<td><strong>Month</strong></td>
+<td><strong>Jan</strong></td>
+<td><strong>Feb</strong></td>
+<td><strong>Mar</strong></td>
+<td><strong>Apr</strong></td>
+<td><strong>May</strong></td>
+<td><strong>Jun</strong></td>
+<td><strong>Jul</strong></td>
+</tr>
+<tr>
+<td><strong>Sales Forecast ( In Units )</strong></td>
+<td><strong>1000</strong></td>
+<td><strong>800</strong></td>
+<td><strong>900</strong></td>
+<td><strong>1400</strong></td>
+<td><strong>1550</strong></td>
+<td><strong>1800</strong></td>
+<td><strong>1400</strong></td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp; &nbsp; &nbsp; 2. Raw material cost = $ 14 / unit , Kindly
+note that this cost is to be paid in the following month&nbsp;
+&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; 3. Labour cost = $ 7 / unit which is to be
+paid in the same month</p>
+<p>&nbsp; &nbsp; &nbsp; 4. Overhead cost = $ 8000 / Month</p>
+<p>&nbsp; &nbsp; &nbsp; 5. Interest = $ 10000 which should only be
+paid in the month of March</p>
+<p>&nbsp; &nbsp; &nbsp; 6. Employee Bonus = $ 15500 which should
+only be paid in the month of June</p>
+<p>&nbsp; &nbsp; &nbsp; 7. December Ending inventory = January
+Beginning = 1200 Units</p>
+<p><span style=
+"text-decoration: underline"><strong>Solution:</strong></span></p>
+<p><span style="text-decoration: underline"><strong>a. Donna's
+Fashion Production schedule:</strong></span></p>
+<table border="1" cellpadding="1" cellspacing="1" style=
+"width:500px;">
+<tbody>
+<tr>
+<td>&nbsp;</td>
+<td><strong>January</strong></td>
+<td><strong>February</strong></td>
+<td><strong>March</strong></td>
+<td><strong>April</strong></td>
+<td><strong>May</strong></td>
+<td><strong>June</strong></td>
+<td><strong>July</strong></td>
+</tr>
+<tr>
+<td><strong>Forecasted unit sales</strong></td>
+<td>1000</td>
+<td>800</td>
+<td>900</td>
+<td>1400</td>
+<td>1550</td>
+<td>1800</td>
+<td>1400</td>
+</tr>
+<tr>
+<td><strong>Desired ending inventory</strong></td>
+<td>960</td>
+<td>1080</td>
+<td>1680</td>
+<td>1860</td>
+<td>2160</td>
+<td>1680</td>
+<td>&nbsp; &nbsp; -</td>
+</tr>
+<tr>
+<td><strong>Beginning inventory</strong></td>
+<td>1200</td>
+<td>960</td>
+<td>1080</td>
+<td>1680</td>
+<td>1860</td>
+<td>2160</td>
+<td>1680</td>
+</tr>
+<tr>
+<td><strong>Units to be produced</strong></td>
+<td>760</td>
+<td>920</td>
+<td>1500</td>
+<td>1580</td>
+<td>1850</td>
+<td>1320</td>
+<td>&nbsp; &nbsp; -</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Forecasted unit sales values can&nbsp;be filled directly as it
+has&nbsp;been given already in the question</li>
+<li>For filling the Desired ending inventory row, you need use the
+below formula</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Jan Ending inventory = 120% of
+February Forecasted unit Sales</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;i.e; Jan Ending Inventory =
+1.2 * 800 = 960</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Similarly calculate and fill
+up for the other months</p>
+<ul>
+<li>For filling the Beginning inventory row, use the below
+logic</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Beginning inventory of Jan =
+Ending inventory of Dec which is 1200 units (Already given in the
+question)</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; Lets see for the month of
+February</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; Beginning inventory of Feb = Ending
+inventory of Jan = 960 units</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; Similarly fill up for the all the
+other months</p>
+<ul>
+<li>For calculating the Units to be produced value, use the below
+formula</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Units to be produced = Ending
+inventory -&nbsp;( Beginning inventory - Forecasted unit sales
+)&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;i.e; Units to be produced in
+Jan = Ending inventory of Jan - ( Beginning inventory of Jan -
+Forecasted unit sales in Jan )</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; = 960 - (1200 -1000 )</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; = 960 - (200)</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; = 760 Units</p>
+<p>Similarly calculate for all the respective months.</p>
+<p>Coming to part b.</p>
+<p><span style="text-decoration: underline"><strong>b. Donna's
+Fashions Summary of Cash payments</strong></span></p>
+<table border="1" cellpadding="1" cellspacing="1" style=
+"width:500px;">
+<tbody>
+<tr>
+<td>&nbsp;</td>
+<td>December</td>
+<td>January</td>
+<td>February</td>
+<td>March</td>
+<td>April</td>
+<td>May</td>
+<td>June</td>
+</tr>
+<tr>
+<td>Units Produced</td>
+<td>800</td>
+<td>760</td>
+<td>920</td>
+<td>1500</td>
+<td>1580</td>
+<td>1850</td>
+<td>1320</td>
+</tr>
+<tr>
+<td>Material cost</td>
+<td>&nbsp; -</td>
+<td>$11200</td>
+<td>$10640</td>
+<td>$12880</td>
+<td>$21000</td>
+<td>$22120</td>
+<td>$25900</td>
+</tr>
+<tr>
+<td>Labour cost</td>
+<td>$5600</td>
+<td>$5320</td>
+<td>$6440</td>
+<td>$10500</td>
+<td>$11060</td>
+<td>$12950</td>
+<td>$9240</td>
+</tr>
+<tr>
+<td>Overhead cost</td>
+<td>$8000</td>
+<td>$8000</td>
+<td>$8000</td>
+<td>$8000</td>
+<td>$8000</td>
+<td>$8000</td>
+<td>$8000</td>
+</tr>
+<tr>
+<td>Interest</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>$10000</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Employee Bonuses</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>$15500</td>
+</tr>
+<tr>
+<td>Total cash payments</td>
+<td>&nbsp;</td>
+<td>$24520</td>
+<td>$25080</td>
+<td>$41380</td>
+<td>$40060</td>
+<td>$43070</td>
+<td>$58640</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>We have already calculated values for Units produced in the
+previous part ( a )</li>
+<li>As the payments for the raw materials are made in the following
+month of production, the values are calculated as below</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; i.e; Raw material cost for
+800 units produced in the month of Dec will be paid in Jan which
+will be 800*$14&nbsp;= $11200</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Similarly it is calculated for
+all the other months</p>
+<ul>
+<li>Labour cost per unit is $ 7, Labour cost for the month is
+calculated by&nbsp;</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Units produced in the
+month * $ 7</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;i.e; For Jan, Labour
+cost = 760*$7 = $ 5320</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Similarly calculated for
+respective months</p>
+<ul>
+<li>Overhead cost is $ 8000 which is paid every month</li>
+<li>Interest of $10000 is to be paid only in the month of
+March</li>
+<li>Employee Bonus of $ 15500 is to be paid only in the month of
+June</li>
+</ul>
+<p>Totaling up all the rows, we get the total cash payments for the
+respective months as mentioned in the above table.</p>
+<p>&nbsp;</p>
+<p>
+------------------------------------------------------------------END----------------------------------------------------------------------------------------------</p>
+<p>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

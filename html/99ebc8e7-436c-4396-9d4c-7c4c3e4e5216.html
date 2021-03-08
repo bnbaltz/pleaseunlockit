@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>this should be written in Java- Problem: Min/Max Search by Index
+Develop a program that, given a sequence S of integers as input,
+produces as output two sequences of positive integers, the first of
+which indicates all those positions in S at which S's minimum value
+occurs and the second of which indicates all those positions at
+which S's maximum value occurs. Positions are numbered starting at
+zero (0).</p>
+<p>Facts ● Scanner has a method that returns a boolean indicating
+whether a next integer exists in its input stream ( hasNextInt() )
+● Scanner objects can be initialized to to scan String data as
+input.</p>
+<p>Sample input</p>
+<p>3</p>
+<p>3 6 -1 4 6 5 3</p>
+<p>0 0 0 0</p>
+<p>-4 45 2 0 3 5 11 -7 854 25 3 -7 4 -3</p>
+<p>Sample output</p>
+<p>3 6 -1 4 6 5 3</p>
+<p>2</p>
+<p>1 4</p>
+<p>0 0 0 0</p>
+<p>0 1 2 3</p>
+<p>0 1 2 3</p>
+<p>-4 45 2 0 3 5 11 -7 854 25 3 -7 4 -3</p>
+<p>7 11</p>
+<p>8</p>
+<p>Input The input will begin with a single line containing T , the
+number of test cases to follow. The remaining lines contain the T
+sequences, one line per sequence. Each of these lines contains the
+values in the sequence. Each such value is separated from the next
+by at least one space.</p>
+<p>Output For each sequence given as input, there should be four
+lines of output. The first line echos the given sequence. The
+second line indicates the positions at which the minimum value
+occurs. The third line indicates the positions at which the maximum
+value occurs. The fourth line is blank.</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p style="text-align:center;"><strong><span style="text-decoration: underline">Java</span> <span style="text-decoration: underline">Program</span></strong></p>
+<p>import java.util.Scanner; //<em>Import until scanner package for
+scanner class</em><br>
+class MinMaxSeq //<em>set class name</em><br>
+{<br>
+&nbsp; &nbsp; public static void main(String args[]) //<em>Declared
+main function</em><br>
+&nbsp; &nbsp; {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; Scanner sc =new Scanner(System.in);
+//<em>create object sc of&nbsp; scanner class</em><br>
+&nbsp; &nbsp; &nbsp; &nbsp; int i,len=0;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; int seq[]=new int[100];
+//<em>initialize array to store all numbers</em><br>
+&nbsp; &nbsp; &nbsp; &nbsp; System.out.println("\n Enter Sequence
+");<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; while(sc.hasNextInt()) //<em>to take
+integer input from user work until user input non-integer
+value</em><br>
+&nbsp; &nbsp; &nbsp; &nbsp; {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+seq[len]=sc.nextInt();<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; len++;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; }<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; System.out.println();<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; for(i=0;i&lt;len;i++). //<em>&nbsp;To
+print entered series</em><br>
+&nbsp; &nbsp; &nbsp; &nbsp; {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.print(seq[i]+"
+");<br>
+&nbsp; &nbsp; &nbsp; &nbsp; }<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; int min=seq[0],max=seq[0]; //<em>set
+minimum and maximum as first number</em><br>
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; for(i=1;i&lt;len;i++) //<em>find
+minimum and maximum number among sequence</em><br>
+&nbsp; &nbsp; &nbsp; &nbsp; {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(min&gt;seq[i])<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+min=seq[i];<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else
+if(max&lt;seq[i])<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+max=seq[i];<br>
+&nbsp; &nbsp; &nbsp; &nbsp; }<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; System.out.println();<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; for(i=0;i&lt;len;i++)
+//<em>&nbsp;display index number of minimum number</em><br>
+&nbsp; &nbsp; &nbsp; &nbsp; {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(min==seq[i])<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+System.out.print(i+" ");<br>
+&nbsp; &nbsp; &nbsp; &nbsp; }<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; System.out.println();<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+&nbsp; &nbsp; &nbsp; &nbsp; for(i=0;i&lt;len;i++)
+//<em>&nbsp;display index number of maximum number</em><br>
+&nbsp; &nbsp; &nbsp; &nbsp; {<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(max==seq[i])<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+System.out.print(i+" ");<br>
+&nbsp; &nbsp; &nbsp; &nbsp; }<br>
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+&nbsp; &nbsp; }<br>
+}</p>
+<p>
+________________________________________________________________</p>
+<p style="text-align:center;"><strong><span style="text-decoration: underline">OUTPUT</span>:-</strong></p>
+<p><img alt="UpLions
+Enter Sequence
+3
+. waaa
+3 6 -1 4 6 5 3
+14
+Enter Sequence
+oooo
+0 1 2 3
+0 1 2 3
+" src="https://media.cheggcdn.com/media/b3b/b3bb3bea-b553-45db-b4eb-cb72d92bbc9a/phpqthrVV.png" style="height:690px;width:450px;"></p>
+<p><img alt="Enter Sequence
+-4
+-4 45 2 0 3 5 11 -7 854 25 3 -7 4 -3
+7 11
+" src="https://media.cheggcdn.com/media/08c/08c48158-44d3-46b2-9e4d-d25a7ee5f72a/phpQt2ekg.png" style="height:574px;width:506px;"></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

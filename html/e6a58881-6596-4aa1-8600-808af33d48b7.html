@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p><img alt="Project 5, Program Design
+1. (50 points) A store has decided to provide discount codes to university students during a
+promot" src="https://media.cheggcdn.com/media/40e/40eec87d-41ae-40cf-84b4-66c9fcbfd5d9/phpUB70ZU" style="height:809px;width:678px;"></p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>Below is the complete <strong>C</strong> code. If you face any difficulty while understanding it, please let me know in the comments.</p> <p><u><strong>Code:</strong></u></p> <p>#include &lt;stdio.h&gt;</p> <p>int validate(char *s1) {<br> &nbsp; &nbsp; int n = strlen(s1);<br> &nbsp; &nbsp; int count = 0;<br> &nbsp; &nbsp;&nbsp;<br> &nbsp; &nbsp; while(*s1!='\0' &amp;&amp; count &lt; n) {<br> &nbsp; &nbsp; &nbsp; &nbsp; char ch = *s1;<br> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; // check if last 4 characters of string equals .edu<br> &nbsp; &nbsp; &nbsp; &nbsp; if(count == n-4 &amp;&amp; ch != '.')<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return 0;<br> &nbsp; &nbsp; &nbsp; &nbsp; else &nbsp;if(count == n-3 &amp;&amp; ch != 'e')<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return 0; &nbsp;&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; else if(count == n-2 &amp;&amp; ch != 'd')<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return 0; &nbsp; &nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; if(count == n-1 &amp;&amp; ch != 'u')<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return 0;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; *s1++;<br> &nbsp; &nbsp; &nbsp; &nbsp; count++;<br> &nbsp; &nbsp; }<br> &nbsp; &nbsp; return 1; &nbsp; &nbsp;<br> }</p> <p>// function to read a line<br> char* read_line() {<br> &nbsp; &nbsp; char str[1000];<br> &nbsp; &nbsp; char *s1;<br> &nbsp; &nbsp;&nbsp;<br> &nbsp; &nbsp; printf("Enter your email id: ");<br> &nbsp; &nbsp; gets(str);<br> &nbsp; &nbsp; s1 = str;<br> &nbsp; &nbsp;&nbsp;<br> &nbsp; &nbsp; return s1;<br> }</p> <p>// Driver function<br> int main() {<br> &nbsp; &nbsp; char *s1 = read_line();<br> &nbsp; &nbsp;&nbsp;<br> &nbsp; &nbsp; int res = validate(s1);<br> &nbsp; &nbsp; if(res)<br> &nbsp; &nbsp; &nbsp; &nbsp; printf("Verification successful");<br> &nbsp; &nbsp; else<br> &nbsp; &nbsp; &nbsp; &nbsp; printf("Not eligible for discount code");<br> &nbsp; &nbsp; return 0;<br> }<br> &nbsp;</p> <p><u><strong>Output:</strong></u></p> <p><img alt="Enter your email id: vpatel@fsu.edu
+Verification successful
+... Program finished with exit code o
+Press ENTER to exit console" src="https://media.cheggcdn.com/coop/0b7/0b753228-8430-498f-bbb9-38c9a9fab6c8/1615062091092_opp.PNG" style="height:286px;width:535px"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

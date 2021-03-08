@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div id="mobile-question-style" style="font-family: 'Helvetica Neue',Helvetica,Arial; color:#333333;"><div>in C++ please&nbsp;<br><img src="https://media.cheggcdn.com/study/fbc/fbcd0b5f-5cc4-4c1e-acbc-86e6cadf6e37/image" alt="Lab8B: For this part of the lab, you will practice using Linear Search and Binary Search. Please
+review the lecture slides an"></div></div>
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><u><strong>C++ code</strong></u></p> <p>#include&lt;iostream&gt;<br> #include&lt;fstream&gt;<br> using namespace std;</p> <p>//Here we are searching target in sorted arr[] using Linear search Algorithm<br> int linearSearch(int arr[], int size, int target){<br> &nbsp;&nbsp; &nbsp;for(int i=0;i&lt;size;i++){<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout&lt;&lt;i&lt;&lt;" ";<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(arr[i] == target) break;<br> &nbsp;&nbsp; &nbsp;}<br> }</p> <p>//Here we are searching target in sorted arr[] using Binary search Algorithm<br> void binarySearch(int arr[], int size, int target) {<br> &nbsp;&nbsp; &nbsp;int left = 0, right = size-1;<br> &nbsp;&nbsp;&nbsp; while (left &lt;= right) {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int mid = (left + right) / 2; //finding mid index value<br> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout&lt;&lt;mid &lt;&lt; " ";<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Check if target is present at index mid<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (arr[mid] == target) break;<br> &nbsp;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // If target is greater, search in right half<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (arr[mid] &lt; target)<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; left = mid + 1;<br> &nbsp;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // If target is smaller, search in left half<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; right = mid - 1;<br> &nbsp;&nbsp;&nbsp; }<br> &nbsp; &nbsp;<br> }</p> <p>int main(){<br> &nbsp;&nbsp; &nbsp;int size = 15;<br> &nbsp;&nbsp; &nbsp;ifstream in;<br> &nbsp;&nbsp; &nbsp;in.open("input.txt");&nbsp;&nbsp; &nbsp;//opening file<br> &nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;if(!in){<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout&lt;&lt;"File not opened\n";<br> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;exit(0);<br> &nbsp;&nbsp; &nbsp;}<br> &nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;int arr[size], target;<br> &nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;for(int i=0;i&lt;size;i++) in&gt;&gt;arr[i];&nbsp;&nbsp; &nbsp;//reading array from file<br> &nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;cout&lt;&lt;"Enter target to search : ";<br> &nbsp;&nbsp; &nbsp;cin&gt;&gt;target;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//getting value of target from user<br> &nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;cout&lt;&lt;"(1) The array\n";<br> &nbsp;&nbsp; &nbsp;for(int i=0;i&lt;size;i++) cout&lt;&lt;arr[i]&lt;&lt;" ";<br> &nbsp;&nbsp; &nbsp;cout&lt;&lt;"\n(2)The indices of linear search\n";<br> &nbsp;&nbsp; &nbsp;linearSearch(arr, size, target);<br> &nbsp;&nbsp; &nbsp;<br> &nbsp;&nbsp; &nbsp;cout&lt;&lt;"\n\n(2)The indices of Binary search\n";<br> &nbsp;&nbsp; &nbsp;binarySearch(arr, size, target);<br> &nbsp;&nbsp; &nbsp;in.close();<br> &nbsp;&nbsp; &nbsp;return 0;<br> }</p> <p><u><strong>#screenshot</strong></u></p> <p><img alt="#include<iostream>
+#include<fstream>
+using namespace std;
+// Here we are searching target in sorted arr[] using Linear search" src="https://media.cheggcdn.com/coop/998/99801669-d47c-47ea-bb1b-6de51603b712/1615114911513_251.PNG" style="height:596px;width:747px"><img alt="int main() {
+int size = 15;
+ifstream in;
+in.open(input.txt); //opening file
+if(!in) {
+cout<<File not opened\n;
+exit(0);
+}" src="https://media.cheggcdn.com/coop/3f9/3f9dd6de-51ff-4852-aa66-29034cd50354/1615114924060_252.PNG" style="height:532px;width:686px"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

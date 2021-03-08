@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>In Labrador retrievers coat color is controlled by two
+independently assorting loci. The B locus controls hair color;
+black (B) is dominant to chocolate (b). A second locus, E, allows
+for deposition of the color on the hairs. The homozygous recessive
+condition at this locus (ee) produces a yellow dog, regardless of
+whether the animal is BB, Bb, or bb. You discover that your female
+yellow Labrador is pregnant, and she delivers a litter of 5 black
+puppies, 2 chocolate puppies and 3 yellow puppies.</p>
+<p>(a) Is the father of the puppies the yellow Labrador from next
+door or the black Labrador from down the street? How do you
+know?</p>
+<p>(b) What is the genotype of the father?</p>
+<p>(c) What is the genotype of the mother?</p>
+<p>(d) What is the genotype of the chocolate puppies?</p>
+<p>(e) You also have a chocolate Labrador female that comes from a
+pedigreed family of entirely chocolate Labradors. You mate her to a
+yellow Labrador male that came from a family of 14 black Labrador
+and 5 yellow Labrador brothers and sisters. The pedigree for the
+family of the male only contains black and yellow Labradors going
+back several generations. What is/are the expected phenotype(s) and
+genotype(s) of the offspring of this mating and in what
+proportions?&nbsp;</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>Answer: At first we should understand about the genes. Both the
+genes are independently assorting durnig segregation. But one gene
+at loci E is regulating the phenotype of Loci B, so this is an
+epistatic condition.&nbsp;</p>
+<p>As the genes are independently assorting so we can make a table
+of all possible combination of the alleles of these genes.</p>
+<table border="1" cellpadding="1" cellspacing="1" style=
+"width:500px;">
+<tbody>
+<tr>
+<td>&nbsp;</td>
+<td><strong>BE</strong></td>
+<td><strong>Be</strong></td>
+<td><strong>bE</strong></td>
+<td><strong>be</strong></td>
+</tr>
+<tr>
+<td><strong>BE</strong></td>
+<td>
+<p>BBEE</p>
+<p>(Black)</p>
+</td>
+<td>
+<p>BBEe</p>
+<p>(Black)</p>
+</td>
+<td>
+<p>BbEE</p>
+<p>(Black)</p>
+</td>
+<td>
+<p>BbEe</p>
+<p>(Black)</p>
+</td>
+</tr>
+<tr>
+<td><strong>Be</strong></td>
+<td>
+<p>BBEe</p>
+<p>(Black)</p>
+</td>
+<td>
+<p>BB<strong>ee</strong></p>
+<p>(Yellow)</p>
+</td>
+<td>
+<p>BbEe</p>
+<p>(Black)</p>
+</td>
+<td>
+<p>Bb<strong>ee</strong></p>
+<p>(Yellow)</p>
+</td>
+</tr>
+<tr>
+<td><strong>bE</strong></td>
+<td>
+<p>BbEE</p>
+<p>(Black)</p>
+</td>
+<td>
+<p>BbEe</p>
+<p>(Black)</p>
+</td>
+<td>
+<p>bbEE</p>
+<p>(Choclate)</p>
+</td>
+<td>
+<p>bbEe</p>
+<p>(Choclate)</p>
+</td>
+</tr>
+<tr>
+<td><strong>be</strong></td>
+<td>
+<p>BbEe</p>
+<p>(Black)</p>
+</td>
+<td>
+<p>Bb<strong>ee</strong></p>
+<p>(Yellow)</p>
+</td>
+<td>
+<p>bbEe</p>
+<p>(Choclate)</p>
+</td>
+<td>
+<p>bb<strong>ee</strong></p>
+<p>(Yellow)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>A) By the table we have all the possible genotype for the three
+different phenotype. As the Female is Yellow so the possible
+genotype for her&nbsp; loci E can be ; ee. And Possible gametes
+from her will be ; e . As she has a yellow puppy so one allele mus
+come from father to make it "ee". Possible genetype of father for
+Loci E is Ee/ee</p>
+<p>Now she delivers baby with colors Black, choclate, yellow. Black
+is dominant so its single allele is enough. But she also produces
+Choclate puppy for that the condition should be homozygous (bb). So
+she must contribute allele b. For Loci B for mother can be : Bb.
+Same applies to the father. Both mother and father must be having
+atleast one recessive allele b. Possible genotype at Loci B for
+father can be "Bb"only.</p>
+<p>&nbsp;If it has ee than it has yellow color but if it has Ee it
+can have either Black or choclate color. As both theYellow and the
+Black Labrador can contribute allele "e". So both of them can be
+father.</p>
+<p>b) Possible genotype of father Black labrador
+<strong>BbEe</strong> and for Yellowlabrador it is
+<strong>Bbee</strong>.</p>
+<p>c) Possible genotype of mother is <strong>Bbee.</strong></p>
+<p>d) Choclate Puppies genotype can be <strong>bbEe</strong>.</p>
+<p>&nbsp;</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

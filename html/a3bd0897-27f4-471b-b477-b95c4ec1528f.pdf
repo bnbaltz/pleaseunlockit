@@ -1,0 +1,1375 @@
+<!doctype html>
+<!--[if !IE]><!-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!--<![endif]-->
+<!--[if IE]>
+<html class="ie" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<![endif]-->
+<head prefix="og: http://ogp.me/ns#"><script src="/Babout-at-I-daressentlesse-a-crue-an-endone-to-N" async></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true}};(window.NREUM||(NREUM={})).loader_config={xpid:"Ug8CUVVbGwIDUlVUBgkGVg==",licenseKey:"404bf9505f",applicationID:"136461810"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(27),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,c){try{l?l-=1:o(c||new UncaughtException(t,e,n),!0)}catch(u){try{i("ierr",[u,s.now(),!0])}catch(d){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:s.now();i("err",[t,n])}var i=t("handle"),a=t(28),c=t("ee"),s=t("loader"),u=t("gos"),f=window.onerror,d=!1,p="nr@seenError",l=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(13),t(12),"addEventListener"in window&&t(6),s.xhrWrappable&&t(14),d=!0)}c.on("fn-start",function(t,e,n){d&&(l+=1)}),c.on("fn-err",function(t,e,n){d&&!n[p]&&(u(n,p,function(){return!0}),this.thrown=!0,o(n))}),c.on("fn-end",function(){d&&!this.thrown&&l>0&&(l-=1)}),c.on("internal-error",function(t){i("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(){L++,T=g.hash,this[f]=y.now()}function o(){L--,g.hash!==T&&i(0,!0);var t=y.now();this[h]=~~this[h]+t-this[f],this[d]=t}function i(t,e){E.emit("newURL",[""+g,e])}function a(t,e){t.on(e,function(){this[e]=y.now()})}var c="-start",s="-end",u="-body",f="fn"+c,d="fn"+s,p="cb"+c,l="cb"+s,h="jsTime",m="fetch",v="addEventListener",w=window,g=w.location,y=t("loader");if(w[v]&&y.xhrWrappable){var x=t(10),b=t(11),E=t(8),R=t(6),O=t(13),N=t(7),P=t(14),M=t(9),S=t("ee"),C=S.get("tracer");t(16),y.features.spa=!0;var T,L=0;S.on(f,r),b.on(p,r),M.on(p,r),S.on(d,o),b.on(l,o),M.on(l,o),S.buffer([f,d,"xhr-done","xhr-resolved"]),R.buffer([f]),O.buffer(["setTimeout"+s,"clearTimeout"+c,f]),P.buffer([f,"new-xhr","send-xhr"+c]),N.buffer([m+c,m+"-done",m+u+c,m+u+s]),E.buffer(["newURL"]),x.buffer([f]),b.buffer(["propagate",p,l,"executor-err","resolve"+c]),C.buffer([f,"no-"+f]),M.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"]),a(P,"send-xhr"+c),a(S,"xhr-resolved"),a(S,"xhr-done"),a(N,m+c),a(N,m+"-done"),a(M,"new-jsonp"),a(M,"jsonp-end"),a(M,"cb-start"),E.on("pushState-end",i),E.on("replaceState-end",i),w[v]("hashchange",i,!0),w[v]("load",i,!0),w[v]("popstate",function(){i(0,L>1)},!0)}},{}],5:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(13),c=t(12),s="learResourceTimings",u="addEventListener",f="resourcetimingbufferfull",d="bstResource",p="resource",l="-start",h="-end",m="fn"+l,v="fn"+h,w="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(8),"addEventListener"in window&&t(6);var x=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),o.on(v,function(t,e){var n=t[0];n instanceof x&&i("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(v,function(t,e){i(w,[e,this.bstStart,y.now(),this.bstType])}),c.on(m,function(){this.bstStart=y.now()}),c.on(v,function(t,e){i(w,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),o.on(g+l,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),o.on(g+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),u in window.performance&&(window.performance["c"+s]?window.performance[u](f,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["c"+s]()},!1):window.performance[u]("webkit"+f,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["webkitC"+s]()},!1)),document[u]("scroll",r,{passive:!0}),document[u]("keypress",r,!1),document[u]("click",r,!1)}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(f);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[f,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t("wrap-function")(a,!0),s=t("gos"),u=XMLHttpRequest,f="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(u.prototype)):u.prototype.hasOwnProperty(f)&&(o(window),o(u.prototype)),a.on(f+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=i(arguments),e={};o.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var c=r.apply(this,t);return o.emit(n+"start",[t,a],c),c.then(function(t){return o.emit(n+"end",[null,t],c),t},function(t){throw o.emit(n+"end",[t],c),t})})}var o=t("ee").get("fetch"),i=t(28),a=t(27);e.exports=o;var c=window,s="fetch-",u=s+"body-",f=["arrayBuffer","blob","json","text","formData"],d=c.Request,p=c.Response,l=c.fetch,h="prototype",m="nr@context";d&&p&&l&&(a(f,function(t,e){r(d[h],e,u),r(p[h],e,u)}),r(c,"fetch",s),o.on(s+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),o.emit(s+"done",[null,e],n)}else o.emit(s+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),o=t("wrap-function")(r);e.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){function r(t){function e(){s.emit("jsonp-end",[],p),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}function n(){s.emit("jsonp-error",[],p),s.emit("jsonp-end",[],p),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}var r=t&&"string"==typeof t.nodeName&&"script"===t.nodeName.toLowerCase();if(r){var o="function"==typeof t.addEventListener;if(o){var a=i(t.src);if(a){var f=c(a),d="function"==typeof f.parent[f.key];if(d){var p={};u.inPlace(f.parent,[f.key],"cb-",p),t.addEventListener("load",e,!1),t.addEventListener("error",n,!1),s.emit("new-jsonp",[t.src],p)}}}}}function o(){return"addEventListener"in window}function i(t){var e=t.match(f);return e?e[1]:null}function a(t,e){var n=t.match(p),r=n[1],o=n[3];return o?a(o,e[r]):e[r]}function c(t){var e=t.match(d);return e&&e.length>=3?{key:e[2],parent:a(e[1],window)}:{key:t,parent:window}}var s=t("ee").get("jsonp"),u=t("wrap-function")(s);if(e.exports=s,o()){var f=/[?&](?:callback|cb)=([^&#]+)/,d=/(.*)\.([^.]+)/,p=/^(\w+)(\.|$)(.*)$/,l=["appendChild","insertBefore","replaceChild"];Node&&Node.prototype&&Node.prototype.appendChild?u.inPlace(Node.prototype,l,"dom-"):(u.inPlace(HTMLElement.prototype,l,"dom-"),u.inPlace(HTMLHeadElement.prototype,l,"dom-"),u.inPlace(HTMLBodyElement.prototype,l,"dom-")),s.on("dom-start",function(t){r(t[0])})}},{}],10:[function(t,e,n){var r=t("ee").get("mutation"),o=t("wrap-function")(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],11:[function(t,e,n){function r(t){var e=i.context(),n=c(t,"executor-",e,null,!1),r=new u(n);return i.context(r).getCtx=function(){return e},r}var o=t("wrap-function"),i=t("ee").get("promise"),a=t("ee").getOrSetContext,c=o(i),s=t(27),u=NREUM.o.PR;e.exports=i,u&&(window.Promise=r,["all","race"].forEach(function(t){var e=u[t];u[t]=function(n){function r(t){return function(){i.emit("propagate",[null,!o],a,!1,!1),o=o||!t}}var o=!1;s(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var a=e.apply(u,arguments),c=u.resolve(a);return c}}),["resolve","reject"].forEach(function(t){var e=u[t];u[t]=function(t){var n=e.apply(u,arguments);return t!==n&&i.emit("propagate",[t,!0],n,!1,!1),n}}),u.prototype["catch"]=function(t){return this.then(null,t)},u.prototype=Object.create(u.prototype,{constructor:{value:r}}),s(Object.getOwnPropertyNames(u),function(t,e){try{r[e]=u[e]}catch(n){}}),o.wrapInPlace(u.prototype,"then",function(t){return function(){var e=this,n=o.argsToArray.apply(this,arguments),r=a(e);r.promise=e,n[0]=c(n[0],"cb-",r,null,!1),n[1]=c(n[1],"cb-",r,null,!1);var s=t.apply(this,n);return r.nextPromise=s,i.emit("propagate",[e,!0],s,!1,!1),s}}),i.on("executor-start",function(t){t[0]=c(t[0],"resolve-",this,null,!1),t[1]=c(t[1],"resolve-",this,null,!1)}),i.on("executor-err",function(t,e,n){t[1](n)}),i.on("cb-end",function(t,e,n){i.emit("propagate",[n,!0],this.nextPromise,!1,!1)}),i.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=i.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+u})},{}],12:[function(t,e,n){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],13:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t("wrap-function")(i),c="setTimeout",s="setInterval",u="clearTimeout",f="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[u,"clearImmediate"],u+d),i.on(s+f,r),i.on(c+f,o)},{}],14:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=f.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,f.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",c)}function i(t){y.push(t),h&&(b?b.then(a):v?v(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(6);var u=t("ee"),f=u.get("xhr"),d=t("wrap-function")(f),p=NREUM.o,l=p.XHR,h=p.MO,m=p.PR,v=p.SI,w="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=f;var x=window.XMLHttpRequest=function(t){var e=new l(t);try{f.emit("new-xhr",[e],e),e.addEventListener(w,o,!1)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}return e};if(s(l,x),x.prototype=l.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),f.on("send-xhr-start",function(t,e){r(t,e),i(e)}),f.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!v&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else u.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],15:[function(t,e,n){function r(t){if(!c(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,u=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=l.generateSpanId(),m=l.generateTraceId(),v=Date.now(),w={spanId:h,traceId:m,timestamp:v};return(t.sameOrigin||s(t)&&p())&&(w.traceContextParentHeader=o(h,m),w.traceContextStateHeader=i(h,v,n,r,u)),(t.sameOrigin&&!f()||!t.sameOrigin&&s(t)&&d())&&(w.newrelicHeader=a(h,m,v,n,r,u)),w}function o(t,e){return"00-"+e+"-"+t+"-01"}function i(t,e,n,r,o){var i=0,a="",c=1,s="",u="";return o+"@nr="+i+"-"+c+"-"+n+"-"+r+"-"+t+"-"+a+"-"+s+"-"+u+"-"+e}function a(t,e,n,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var c={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:e,ti:n}};return i&&r!==i&&(c.d.tk=i),btoa(JSON.stringify(c))}function c(t){return u()&&s(t)}function s(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var o=h(n.allowed_origins[r]);if(t.hostname===o.hostname&&t.protocol===o.protocol&&t.port===o.port){e=!0;break}}return e}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function p(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var l=t(24),h=t(17);e.exports={generateTracePayload:r,shouldGenerateTrace:c}},{}],16:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<p;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):i(this,t),n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime]))}}function o(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=s(e),t.sameOrigin=t.parsedOrigin.sameOrigin}function i(t,e){t.params.status=e.status;var n=v(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(17),u=t(15).generateTracePayload,f=t("ee"),d=["load","error","abort","timeout"],p=d.length,l=t("id"),h=t(21),m=t(20),v=t(18),w=window.XMLHttpRequest;a.features.xhr=!0,t(14),t(7),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,t.addEventListener("load",function(n){i(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=u(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=m(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<p;c++)e.addEventListener(d[c],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof w&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof w&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof w&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),f.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=s(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var o=u(this.parsedOrigin);if(o&&(o.newrelicHeader||o.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var i={};for(var a in r)i[a]=r[a];i.headers=new Headers(r.headers||{}),e(i.headers,o)&&(this.dt=o),t.length>1?t[1]=i:t.push(i)}else t[0]&&t[0].headers&&e(t[0].headers,o)&&(this.dt=o)})}},{}],17:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,o={};e.href=t,o.port=e.port;var i=e.href.split("://");!o.port&&i[1]&&(o.port=i[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===i[0]?"443":"80"),o.hostname=e.hostname||n.hostname,o.pathname=e.pathname,o.protocol=i[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,c=e.hostname===document.domain&&e.port===n.port;return o.sameOrigin=a&&(!e.hostname||c),"/"===o.pathname&&(r[t]=o),o}},{}],18:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?o(t.response):"text"===n||""===n||void 0===n?o(t.responseText):void 0}var o=t(20);e.exports=r},{}],19:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[u.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(27),c=t(28),s=t("ee").get("tracer"),u=t("loader"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){f[e]=o(p+e,!0,"api")}),f.addPageAction=o(p+"addPageAction",!0),f.setCurrentRouteName=o(p+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[u.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[u.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw s.emit("fn-err",[arguments,this,t],n),t}finally{s.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=o(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),i("err",[t,u.now(),!1,e])}},{}],20:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],21:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],22:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(i=Math.max((new Date).getTime(),i))-a}function o(){return i}var i=(new Date).getTime(),a=i,c=t(29);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=o},{}],23:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function o(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function i(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&&!v){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),v=!0,d("timing",["fi",e,n])}}function c(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var s,u,f,d=t("handle"),p=t("loader"),l=t(26),h=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(m){}u=new PerformanceObserver(o);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}f=new PerformanceObserver(i);try{f.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var v=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(t){document.addEventListener(t,a,!1)})}l(c)}},{}],24:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",c=0;c<i.length;c++)o=i[c],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){return a(16)}function i(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,o=window.crypto||window.msCrypto;o&&o.getRandomValues&&Uint8Array&&(n=o.getRandomValues(new Uint8Array(31)));for(var i=[],a=0;a<t;a++)i.push(e().toString(16));return i.join("")}e.exports={generateUuid:r,generateSpanId:o,generateTraceId:i}},{}],25:[function(t,e,n){function r(t,e){if(!o)return!1;if(t!==o)return!1;if(!e)return!0;if(!i)return!1;for(var n=i.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,s=c.match(a);s&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(o="Safari",i=s[1])}e.exports={agent:o,version:i,match:r}},{}],26:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[o]?"hidden":"visible")}"addEventListener"in document&&i&&document.addEventListener(i,e,!1)}e.exports=r;var o,i,a;"undefined"!=typeof document.hidden?(o="hidden",i="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",i="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",i="webkitvisibilitychange",a="webkitVisibilityState")},{}],27:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],28:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],29:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?u(t,s,a):a()}function n(n,r,o,i,a){if(a!==!1&&(a=!0),!l.aborted||i){t&&a&&t(n,r,o);for(var c=e(o),s=m(n),u=s.length,f=0;f<u;f++)s[f].apply(c,r);var p=d[y[n]];return p&&p.push([x,n,r,c]),c}}function i(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function v(t){return p[t]=p[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:i,addEventListener:i,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:c,aborted:!1};return x}function i(t){return u(t,s,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var s="nr@context",u=t("gos"),f=t(27),d={},p={},l=e.exports=o();e.exports.getOrSetContext=i,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=x.info=NREUM.info,e=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();s(g,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+t.agent,e.parentNode.insertBefore(r,e)}}function o(){"complete"===p.readyState&&i()}function i(){c("mark",["domContent",a()+x.offset],null,"api")}var a=t(22),c=t("handle"),s=t(27),u=t("ee"),f=t(25),d=window,p=d.document,l="addEventListener",h="attachEvent",m=d.XMLHttpRequest,v=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var w=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1198.min.js"},y=m&&v&&v[l]&&!/CriOS/.test(navigator.userAgent),x=e.exports={offset:a.getLastTimestamp(),now:a,origin:w,features:{},xhrWrappable:y,userAgent:f};t(19),t(23),p[l]?(p[l]("DOMContentLoaded",i,!1),d[l]("load",r,!1)):(p[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var b=0},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,s,u){function nrWrapper(){var i,a,f,p;try{a=this,i=d(arguments),f="function"==typeof r?r(i,a):r||{}}catch(l){o([l,"",[i,a,s],f],t)}c(n+"start",[i,a,s],f,u);try{return p=e.apply(a,i)}catch(h){throw c(n+"err",[i,a,h],f,u),h}finally{c(n+"end",[i,a,p],f,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,i(e,nrWrapper,t),nrWrapper)}function r(t,e,r,o,i){r||(r="");var c,s,u,f="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],c=t[s],a(c)||(t[s]=n(c,f?s+r:r,o,s,i))}function c(n,r,i,a){if(!h||e){var c=h;h=!0;try{t.emit(n,r,i,e,a)}catch(s){o([s,n,r,i],t)}h=c}}return t||(t=f),n.inPlace=r,n.flag=p,n}function o(t,e){e||(e=f);try{e.emit("internal-error",t)}catch(n){}}function i(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(i){o([i],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,i(t,n,f),n}function s(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var f=t("ee"),d=t(28),p="nr@original",l=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=s,e.exports.argsToArray=u},{}]},{},["loader",2,16,5,3,4]);</script>
+        <meta name="apple-itunes-app" content="app-id=922208952, affiliate-data=ct=mobile_banner_smart&amp;pt=108036802, app-argument=courseheroapp://pdf/document/45870956/?trk=mobile_banner_smart">
+        <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#001A96">
+        <link rel="search" type="application/opensearchdescription+xml" title="Course Hero Search Results" href="/open-search-description.xml">
+    <title>Permission Denied! | Course Hero</title>
+
+    <script>
+        // NREUM is only defined in production. For other environments,
+        // set a shim so that usages of NREUM don't error.
+        if (typeof NREUM === 'undefined') {
+            NREUM = {};
+            NREUM.setCustomAttribute = NREUM.setPageViewName = function(){};
+        }
+    </script>
+        <script>LUX=(function(){var a=("undefined"!==typeof(LUX)&&"undefined"!==typeof(LUX.gaMarks)?LUX.gaMarks:[]);var d=("undefined"!==typeof(LUX)&&"undefined"!==typeof(LUX.gaMeasures)?LUX.gaMeasures:[]);var j="LUX_start";var k=window.performance;var l=("undefined"!==typeof(LUX)&&LUX.ns?LUX.ns:(Date.now?Date.now():+(new Date())));if(k&&k.timing&&k.timing.navigationStart){l=k.timing.navigationStart}function f(){if(k&&k.now){return k.now()}var o=Date.now?Date.now():+(new Date());return o-l}function b(n){if(k){if(k.mark){return k.mark(n)}else{if(k.webkitMark){return k.webkitMark(n)}}}a.push({name:n,entryType:"mark",startTime:f(),duration:0});return}function m(p,t,n){if("undefined"===typeof(t)&&h(j)){t=j}if(k){if(k.measure){if(t){if(n){return k.measure(p,t,n)}else{return k.measure(p,t)}}else{return k.measure(p)}}else{if(k.webkitMeasure){return k.webkitMeasure(p,t,n)}}}var r=0,o=f();if(t){var s=h(t);if(s){r=s.startTime}else{if(k&&k.timing&&k.timing[t]){r=k.timing[t]-k.timing.navigationStart}else{return}}}if(n){var q=h(n);if(q){o=q.startTime}else{if(k&&k.timing&&k.timing[n]){o=k.timing[n]-k.timing.navigationStart}else{return}}}d.push({name:p,entryType:"measure",startTime:r,duration:(o-r)});return}function h(n){return c(n,g())}function c(p,o){for(i=o.length-1;i>=0;i--){var n=o[i];if(p===n.name){return n}}return undefined}function g(){if(k){if(k.getEntriesByType){return k.getEntriesByType("mark")}else{if(k.webkitGetEntriesByType){return k.webkitGetEntriesByType("mark")}}}return a}return{mark:b,measure:m,gaMarks:a,gaMeasures:d}})();LUX.ns=(Date.now?Date.now():+(new Date()));LUX.ac=[];LUX.cmd=function(a){LUX.ac.push(a)};LUX.init=function(){LUX.cmd(["init"])};LUX.send=function(){LUX.cmd(["send"])};LUX.addData=function(a,b){LUX.cmd(["addData",a,b])};LUX_ae=[];window.addEventListener("error",function(a){LUX_ae.push(a)});LUX_al=[];if("function"===typeof(PerformanceObserver)&&"function"===typeof(PerformanceLongTaskTiming)){var LongTaskObserver=new PerformanceObserver(function(c){var b=c.getEntries();for(var a=0;a<b.length;a++){var d=b[a];LUX_al.push(d)}});try{LongTaskObserver.observe({type:["longtask"]})}catch(e){}};</script>
+    <script>
+                    LUX.addData('userid', '');
+            </script>
+    <script src="https://cdn.speedcurve.com/js/lux.js?id=471255868" async defer crossorigin="anonymous"></script>
+
+            <meta name="description" content="Access quality crowd-sourced study materials tagged to courses at universities all over the world and get homework help from our tutors when you need it.">
+        <meta property="og:description" content="Access quality crowd-sourced study materials tagged to courses at universities all over the world and get homework help from our tutors when you need it.">
+                    <link rel="canonical" href="https://www.coursehero.com/pdf/document/45870956/">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                        <meta property="og:image" content="https://www.coursehero.com/assets/img/CH_Logo_FB.png">
+        <meta property="og:title" content="Permission Denied! | Course Hero">
+                        <meta name="twitter:widgets:csp" content="on">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Permission Denied! | Course Hero">
+        <meta name="twitter:site" content="@CourseHero">
+        <meta name="twitter:image" content="https://www.coursehero.com/assets/img/CH_Logo_Twitter.png">
+                    <base href=/pdf/document/45870956/></base>
+    
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <!-- CSS -->
+            <link rel="stylesheet" href="/assets/fonts/HaasGrotesk.css?v=2" type="text/css" charset="utf-8">
+        <link rel="stylesheet" href="/assets/fonts/Icons.css?v=2" type="text/css">
+
+                                    <link href="/sym-assets/css/44e4edb-8c05a34.css" rel='stylesheet' type='text/css'>
+                    
+                    			<link rel="stylesheet" type="text/css" href="/sym-assets/css/83c0254-9ea1a4d.css" >
+	
+                        <link rel="stylesheet" href="/sym-assets/css/e9974ce-1a7ceb5.css">
+            <style>
+        .sw_search_widget_container .sw_search_bar_wrapper .mobile_sw_start_search_button{
+            display: none;
+        }
+    </style>
+        <link rel="stylesheet" href="/sym-assets/css/dd9725c-fc7f09f.css">
+                    
+    <!-- Head Javascript -->
+                            <script src="/sym-assets/js/bundle-e43017e-eab9215.js" type="text/javascript"></script>
+                <script type="text/javascript">
+                        var percentageDefault = 0.5;
+            CHAnalytics.init({
+                env: 'prod',
+                random_bytes: [60,192,55,69,217,34,40,255,28,19,202,83,34,36,202,150],
+                enable_amplitude: false,
+                interaction_impression_percentage: percentageDefault,
+                interaction_impression_above_window: false            });
+        </script>
+        
+    <link rel="shortcut icon" href="/chfavicon.ico" type="image/x-icon">
+
+    <!-- Google Analytics -->
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	
+    ga('create', 'UA-1389869-2', 'auto');
+
+    
+    ga('set', 'dimension2', "visitor");
+    ga('set', 'dimension3', "false");
+
+    window.__CH_DIMENSIONS = {
+        'dimension2': "visitor",
+        'dimension3': "false"
+    }
+
+        if (typeof utmx !== 'undefined' && utmx('combination') != undefined) {
+        var l = document.location, s = l.search;
+        s = s + (s.length ? '&' : '?') + 'combination=' + utmx('combination');
+        ga('send', 'pageview', l.pathname + s)
+    } else {
+        ga('send', 'pageview');
+    }
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics -->
+
+
+
+    <script>
+        window.__CH_WEBSERVER_NAME = 'prod-apache-013';
+                                window.__CH_ROOT_SESSION_ID = '3i7b6imf3b4u77togg9an3n333';
+        window.__CH_TRACKER = {
+            DEVICE_ID: 'd0ecf834aca83be12d9ae9f0c3550f9469427584',
+            SESSION: 1614989732,
+            BUFFER: [],
+            ROW_COUNTRY: false,
+            COUNTRY: 'United States',
+        };
+
+        // We use Google Auth2 Login in many different places, both from within React and not.
+        // To deal with 3rd party cookie blocking (ie. displaying a better message to users
+        // when these cookies are disabled, we will use this global error message helper.
+        window.__CH_GOOGLE_AUTH2_GLOBAL_ERROR = false;
+        window.__CH_GOOGLE_AUTH2_ERROR_HANDLER = function(err) {
+          window.__CH_GOOGLE_AUTH2_GLOBAL_ERROR = err.details || 'Unknown Google Login error. Please try again later.';
+          if (err.error === 'idpiframe_initialization_failed'
+              && err.details === 'Cookies are not enabled in current environment.') {
+            window.__CH_GOOGLE_AUTH2_GLOBAL_ERROR =
+              'We\'re sorry, you must allow 3rd party cookies in your browser to use Google Login.';
+          }
+        }
+    </script>
+
+    <script>
+    // TODO: js/ gulp project and minify
+function onPageLoadComplete(cb) {
+    if (document.readyState === 'complete') {
+        cb();
+    } else {
+        document.addEventListener('DOMContentLoaded', function () {
+            cb();
+        });
+    }
+}
+
+// An alternative to $.waypoint
+function onScrollDirectionChangeWithElementVisible(element, handler, options) {
+    // If the browser doesn't support IntersectionObserver or Object.assign,
+    // we must wait for the polyfill request to finish.
+    if (!window.IntersectionObserver || !Object.assign) {
+        options = options || {};
+        if (!options.hasRetried) {
+            options.hasRetried = true;
+            window.addEventListener('load', function() {
+                onScrollDirectionChangeWithElementVisible(element, handler, options);
+            });
+        }
+
+        return;
+    }
+
+    options = Object.assign({
+        root: null,
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+    }, options);
+
+    var previousY = 0;
+    var observer = new IntersectionObserver(function (entries) {
+        var entry = entries[0];
+        var direction = previousY < entry.boundingClientRect.y ? 'up' : 'down';
+        previousY = entry.boundingClientRect.y;
+        handler(direction, entry);
+    }, options);
+    observer.observe(element);
+}
+
+function image_error_backup(me, url) {
+    if (url == '') {
+        return false;
+    }
+    if (!me.imageErrorTries) {
+        me.imageErrorTries = 0;
+    }
+    me.imageErrorTries = me.imageErrorTries + 1;
+    if (me.imageErrorTries < 2) {
+        me.src = url;
+    } else {
+        me.src = '/img/reviewer_nothumb.gif';
+        me.alt = '';
+    }
+}
+
+if (!String.prototype.endsWith) {
+    String.prototype.endsWith = function (suffix) {
+        return this.indexOf(suffix, this.length - suffix.length) !== -1;
+    };
+}
+
+var lazyLoadPromises = {};
+
+/**
+ * Prefer this function over 'lazyLoadJs'.
+ * @param { sources: Array<string | { html: string }> } sources
+ */
+function lazyLoadPromise(sources) {
+    if (!window.Promise) throw new Error('lazyLoadJsPromise used before Promise polyfill available');
+
+    sources = lazyLoadGetSources(sources);
+    var allSources = [].concat(sources.js).concat(sources.css);
+    var sourcesToLoad = allSources.filter(function(source) {
+        if (lazyLoadPromises[source]) return false;
+        return true;
+    });
+    var sourcesToLoadPromise = Promise.resolve();
+    if (sourcesToLoad.length > 0) {
+        sourcesToLoadPromise = new Promise(function(resolve) {
+            lazyLoadJs({ sources: sourcesToLoad }, resolve);
+        });
+    }
+
+    var promises = sourcesToLoad.map(function(source) {
+        if (lazyLoadPromises[source]) return lazyLoadPromises[source];
+        lazyLoadPromises[source] = sourcesToLoadPromise;
+        return sourcesToLoadPromise;
+    });
+
+    return Promise.all(promises);
+}
+
+function lazyLoadGetSources(allSources) {
+    var jsSources = [];
+    var cssSources = [];
+    for (var i = 0; i < allSources.length; i++) {
+        var source = allSources[i];
+        if (typeof source === 'object' && source.html) {
+            // webpack_asset_js filter can return multiple scripts. Parse HTML
+            // to extra the srcs.
+            // TODO: Would be better to modify the the filter to return an array of srcs.
+            var div = document.createElement('div');
+            div.innerHTML = source.html;
+            $(div).find('script').each(function() {
+                jsSources.push(this.src);
+            });
+            $(div).find('link').each(function() {
+                cssSources.push(this.href);
+            });
+            div.innerHTML = '';
+        } else if (typeof source === 'string') {
+            if (source.endsWith('.js')) {
+                jsSources.push(source);
+            } else if (source.endsWith('.css')) {
+                cssSources.push(source);
+            }
+        }
+    }
+
+    return {
+        js: jsSources,
+        css: cssSources,
+    };
+}
+
+var lazyLoadState = {};
+// Deprecated: "opts.skipIf" for a group of resources was a bad idea.
+// Newer lazyLoadJsPromise doesn't support it. Might be useful to add it back,
+// but only if the "skipping" works on a per-resource basis, not the entire group.
+// Use 'lazyLoadPromise' instead.
+function lazyLoadJs(opts, cb) {
+    if (opts.skipIf && opts.skipIf()) {
+        cb();
+        return;
+    }
+
+    var sources = lazyLoadGetSources(opts.sources);
+
+    var onerror = function () {
+        throw new Error('could not lazy load: ' + this.src);
+    };
+
+    var addToHead = function (src, onload) {
+        if (src.endsWith('.js')) {
+            var script = document.createElement('script');
+            script.onload = onload;
+            script.onerror = onerror;
+            script.src = src;
+            script.srcRaw = src; // "src" gets mangled, this property won't be
+            document.head.appendChild(script);
+        } else if (src.endsWith('.css')) {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.onload = onload;
+            link.onerror = onerror;
+            link.href = src;
+            link.srcRaw = src; // "href" gets mangled, this property won't be
+            link.media = 'all';
+            document.head.appendChild(link);
+        }
+    };
+
+    // js and css sources should be loaded in order, but they can be loaded in parallel
+    var groupedSources = [sources.js, sources.css];
+    var finishedGroups = 0;
+    groupedSources.forEach(function (sources) {
+        var index = 0;
+
+        var loadNext = function () {
+            if (this.srcRaw) {
+                lazyLoadState[this.srcRaw] = 'done';
+            }
+
+            if (index === sources.length) {
+                finishedGroups += 1;
+                if (finishedGroups === groupedSources.length) {
+                    cb();
+                }
+                return;
+            }
+
+            var nextSource = sources[index];
+            index += 1;
+            if (lazyLoadState[nextSource] === 'done') {
+                loadNext();
+            } else {
+                addToHead(nextSource, loadNext);
+            }
+        };
+
+        // start
+        loadNext();
+    });
+}
+
+// This is a preloader for the Google Tag Manager script
+// The primary purpose of this script is to collect data for tracking pixels
+// Simple variables, JS code, can be written directly in GTM
+// More complex code should go here for a better code review process
+
+(function () {
+    var GTM_DEBUG = false;
+    var MESG_PREFIX = "[GTM-Data]";
+
+    try {
+        // Sets up data for Google Tag Manager
+        GTM_DEBUG_MESG('Creating dataLayer');
+        window.dataLayer = window.dataLayer || [];
+
+        if (window.__CH_PERSON) {
+            dataLayer.push({
+                'User ID': window.__CH_PERSON.id,
+                'Survey Group ID': window.__CH_PERSON.surveyGroupId,
+                'User Email': window.__CH_PERSON.email,
+                'User Name': window.__CH_PERSON.username,
+                'isVerifiedEducator': window.__CH_PERSON.isVerifiedEducator,
+                'isNewlyVerified': window.__CH_PERSON.isNewlyVerified,
+                'isApprovedExpert': window.__CH_PERSON.isApprovedExpert,
+                'approvedExpertType': window.__CH_PERSON.approvedExpertType,
+                'dimension2': window.__CH_PERSON.dimension2,
+                'dimension3': window.__CH_PERSON.dimension3,
+                'dimension4': window.__CH_PERSON.dimension4,
+                'dimension5': window.__CH_PERSON.dimension5
+            });
+        }
+
+        if (window.__CH_RECORD_SESSION) {
+            var triggers = window.__CH_RECORD_SESSION.triggers || [];
+            dataLayer.push({
+                'recordingTriggers': triggers
+            });
+            if (triggers.length) {
+                dataLayer.push({
+                    'event': 'record-session'
+                });
+            }
+        }
+
+        if (window.__CH_WEBSERVER_NAME) {
+            dataLayer.push({
+                'Webserver Name': window.__CH_WEBSERVER_NAME
+            });
+        }
+
+        if (window.__CH_TRACKER) {
+            dataLayer.push({
+                'isRowCountryUser': window.__CH_TRACKER.ROW_COUNTRY,
+                'country': window.__CH_TRACKER.COUNTRY
+            });
+        }
+
+        if (window.__CH_ROOT_SESSION_ID) {
+            dataLayer.push({
+                'Root Session ID': window.__CH_ROOT_SESSION_ID
+            });
+        }
+    } catch (error) {
+        if (typeof (console) !== 'undefined') {
+            console.error(MESG_PREFIX + " ERROR: " + error);
+        }
+    }
+
+    window.attemptSessionRecording = function (triggerName) {
+        if (!window.__CH_RECORD_SESSION || window.__CH_RECORD_SESSION.length === 0) {
+            fetch('/api/v1/sessionTriggers/'+triggerName+'/trigger/', {
+                method: 'POST',
+                credentials: 'same-origin',
+            }).then(function(response) {
+                return response.json();
+            }).then(function(data) {
+                if (data.shouldTrigger.includes('fireTriggerEvent')) {
+                    dataLayer.push({
+                        'event': 'record-session'
+                    });
+
+                    //Tell FullStory the event reason
+                    dataLayer.push({
+                        'recordingTriggers': '["'+triggerName+'"]'
+                    });
+                    window.__CH_RECORD_SESSION = [triggerName];
+                }
+            });
+        }
+    }
+
+    // Helper Functions
+
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
+    //Get cookie item by name
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1);
+            if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+        }
+        return "";
+    }
+
+    //Formatted debug string with a single var to turn off
+    function GTM_DEBUG_MESG(mesg) {
+        if (GTM_DEBUG && typeof (console) !== 'undefined') {
+            console.debug(MESG_PREFIX + " " + mesg);
+        }
+    }
+})();
+
+
+    </script>
+
+
+        <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-DK9F');</script>
+    <!-- Wrapping Google Tag Management event firing code in a try/catch block -->
+    <script>
+        try{
+                    } catch (error){
+            if (typeof(console) !== 'undefined') {
+                console.error("[GTM-EVENT] ERROR: "+error);
+            }
+        }
+    </script>
+    <!-- End Google Tag Manager -->
+            <script type="text/javascript">
+        (function() {
+            var artificialSlowdownConfig = {"fcp_latency_ms":0,"fid_latency_ms":0}
+        
+            var delayFirstInput = function(amount) {
+                var listen = function() {
+                    document.removeEventListener("click", listen)
+                    delay(amount)
+                }
+
+                document.addEventListener("click", listen)
+            }
+
+            var delay = function(amount) {
+                var currentTime = new Date
+                var expireTime = new Date(currentTime.getTime() + amount)
+                while(currentTime < expireTime) {
+                    currentTime = new Date
+                    
+                    //pretend to do DOM manipulation to prevent browsers from rendering
+                    if(document.querySelector("body") !== null) {
+                        document.querySelector("body").style.top = document.querySelector("body").style.top
+                    }
+                }
+            }
+
+            if(artificialSlowdownConfig['fid_latency_ms'] > 0) {
+                delayFirstInput(artificialSlowdownConfig['fid_latency_ms'])
+            }
+
+            if(artificialSlowdownConfig['fcp_latency_ms'] > 0) {
+                delay(artificialSlowdownConfig['fcp_latency_ms'])
+            }
+        })()
+    </script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-DK9F"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    
+    
+        <header id="ch-header" class="SiteHeader translate">
+                                    
+<a href="/" id="ch_headerLogo_action"
+   class=" "
+   data-cha-target-name="ch_logo_link"
+   data-cha-action-type="visit"
+   data-cha-action-target-type="page"
+   data-cha-action-target-id="/">
+    <img alt="Course Hero Logo" class="ch_header_logo " id="ch_header_logo_origin" src="/assets/img/coursehero-logo.svg" width="210" height="40">
+    <img alt="Course Hero Symbol" class="ch_headerMobile_logo " id="ch_header_logo_small" src="/assets/img/coursehero-logotype_white.svg" width="42" height="30">
+</a>
+            <div class="ch_search_wrapper ">
+                                                        <div data-search-widget
+     data-type="old_header_sw"
+     data-user-id=""
+     data-is-educator=""
+     data-tq-search-footer-bucket="1"
+></div>
+
+
+                    </div>
+        <ul class="ch_nav_group isBrowseMenu">
+    
+<li>
+    <button class="ch_nav_action isHamburgerMenu  hideInDesktop" aria-label="Menu"><span class="bar"></span></button>
+    <div class="ch_subNav_panel">
+        <ul class="ch_mobileNav_group">
+            <li class="canHaveChildren">
+                                                    <a href="/study-materials/" data-action-type="Secondary" class=" hasChildren" title="Study Resources">Study Resources</a>
+                                            <ul class="isHidden">
+                            <li class="oneLevelUpAction"><a href="javascript:void(0);"><i class="fa fa-angle-left"></i> Main Menu</a></li>
+                                                            <li>
+                                                                            <a href="/study-materials/" rel="" title="by School" data-action-type="Secondary">by School</a>
+                                                                                                                                            </li>
+                                                            <li>
+                                                                            <a href="/lit/" rel="" title="by Literature Title" data-action-type="Secondary">by Literature Title</a>
+                                                                                                                                                    <div class="ch_mobile_secondaryNav_group">
+                                                                                            <a href="/lit/" data-action-type="Link" rel="" title="Study Guides">Study Guides</a>
+                                                                                            <a href="/infographics/" data-action-type="Link" rel="" title="Infographics">Infographics</a>
+                                                                                    </div>
+                                                                    </li>
+                                                            <li>
+                                                                            <a href="/sg/" rel="" title="by Subject" data-action-type="Secondary">by Subject</a>
+                                                                                                                                            </li>
+                                                    </ul>
+                                                        <a href="/textbook-solutions/" data-action-type="Secondary" class="ch_highlight_badge_new " title="Textbook Solutions">Textbook Solutions</a>
+                                                        <a href="/tutors/homework-help/" data-action-type="Secondary" class="nav-tutors " title="Expert Tutors">Expert Tutors</a>
+                                                        <a href="/free-access/" data-action-type="Secondary" class=" hasChildren" title="Earn">Earn</a>
+                                            <ul class="isHidden">
+                            <li class="oneLevelUpAction"><a href="javascript:void(0);"><i class="fa fa-angle-left"></i> Main Menu</a></li>
+                                                            <li>
+                                                                            <label class="notClickable">Earn Free Access</label>
+                                                                                                                                            </li>
+                                                            <li>
+                                                                            <a href="/upload/" rel="nofollow" title="Upload Documents" data-action-type="Secondary">Upload Documents</a>
+                                                                                                                                            </li>
+                                                            <li>
+                                                                            <a href="/referrals/" rel="nofollow" title="Refer Your Friends" data-action-type="Secondary">Refer Your Friends</a>
+                                                                                                                                            </li>
+                                                            <li>
+                                                                            <label class="notClickable">Earn Money</label>
+                                                                                                                                            </li>
+                                                            <li>
+                                                                            <a href="/become-a-tutor/" rel="" title="Become a Tutor" data-action-type="Secondary">Become a Tutor</a>
+                                                                                                                                            </li>
+                                                            <li>
+                                                                            <a href="/scholarships/" rel="" title="Apply for Scholarship" data-action-type="Secondary">Apply for Scholarship</a>
+                                                                                                                                            </li>
+                                                    </ul>
+                                                </li>
+                            <li class="ch_accountMenuLinks">
+                                            <a href="/educators/" rel="" class=""
+                           title="For Educators" id="ch_areYouTeacher_button"
+                           data-cha-target-name=""
+                           data-cha-location="header_right"
+                           data-cha-action-type="visit"
+                           data-cha-action-target-type="page"
+                           data-action-type="Link"
+                           data-cha-action-target-id="/educators/">
+                            For Educators
+                        </a>
+                                            <a href="/login/?ref=login" rel="nofollow" class="hideInTablet"
+                           title="Login" id="ch_login_button"
+                           data-cha-target-name="login_btn"
+                           data-cha-location="header_right"
+                           data-cha-action-type="visit"
+                           data-cha-action-target-type="page"
+                           data-action-type="Link"
+                           data-cha-action-target-id="/login/?ref=login">
+                            Log in
+                        </a>
+                                            <a href="/register/" rel="nofollow" class="hideInTablet"
+                           title="Header Sign Up" id="ch_signup_button"
+                           data-cha-target-name="sign_up_btn"
+                           data-cha-location="header_right"
+                           data-cha-action-type="visit"
+                           data-cha-action-target-type="page"
+                           data-action-type="Link"
+                           data-cha-action-target-id="/register/">
+                            <span>Sign up
+                        </a>
+                                    </li>
+                        <li class="ch_mobileAppLinks">
+                				                <a href="https://itunes.apple.com/app/apple-store/id922208952?pt=108036802&ct=nav_menu&mt=8" class="ch-external-link" target="_blank" rel="nofollow noreferrer" data-action-type="Secondary">
+                    <img alt="app store button" class="ch_mobilePromotion_button " src="/assets/img/header/appstore.png" width="102" height="30" />
+                </a>
+								                <a href="https://play.google.com/store/apps/details?id=com.coursehero.coursehero&hl=en&utm_campaign=nav_menu" class="ch-external-link" target="_blank" rel="nofollow noreferrer" data-action-type="Secondary">
+                    <img alt="google play button" class="ch_mobilePromotion_button " src="/assets/img/header/googleplay.png" width="102" height="30" />
+                </a>
+				            </li>
+        </ul>
+    </div>
+</li>
+
+            <li>
+            <a class="ch_nav_action "
+               href="/study-materials/"
+               title="Study Resources"
+               id=""
+               rel=""
+               data-cha-target-name="find_study_resources_link"
+               data-cha-location="header"
+               data-cha-action-type="visit"
+               data-action-type="Secondary"
+               data-cha-action-target-type="page"
+               data-cha-action-target-id="/study-materials/">
+                                    <div class="ch_nav_action_label ">
+                                                    <span class="prefixVerb ">Find</span>
+                                                            Study Resources
+                                                                    <i class="fa fa-chevron-down"></i>
+                                                                                                        </div>
+                            </a>
+            <div class="ch_subNav_panel">
+    <ul class="ch_subNav_group ">
+                    <li class="">
+                                    <a href="/study-materials/"
+                       rel=""
+                       title="by School"
+                       id=""
+                       data-cha-target-name="find_doc_by_school_link"
+                       data-cha-location="header"
+                       data-cha-action-type="visit"
+                       data-action-type="Link"
+                       data-cha-action-target-type="page"
+                       data-cha-action-target-id="/study-materials/">
+                        by School
+                    </a>
+                
+                                            </li>
+                    <li class="">
+                                    <a href="/lit/"
+                       rel=""
+                       title="by Literature Title"
+                       id=""
+                       data-cha-target-name="find_doc_by_book_link"
+                       data-cha-location="header"
+                       data-cha-action-type="visit"
+                       data-action-type="Link"
+                       data-cha-action-target-type="page"
+                       data-cha-action-target-id="/lit/">
+                        by Literature Title
+                    </a>
+                
+                                                    <i class="right_arrow fa fa-chevron-right"></i>
+                    <ul class="ch_secondaryNav_group">
+                                                    <li>
+                                <a href="/lit/"
+                                   rel=""
+                                   title="Study Guides"
+                                   id=""
+                                   data-cha-target-name="find_lit_study_guides_link"
+                                   data-cha-location="header"
+                                   data-cha-action-type="visit"
+                                   data-cha-action-target-type="page"
+                                   data-action-type="Link"
+                                   data-cha-action-target-id="/lit/">
+                                    Study Guides
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="/infographics/"
+                                   rel=""
+                                   title="Infographics"
+                                   id=""
+                                   data-cha-target-name="find_infographics_link"
+                                   data-cha-location="header"
+                                   data-cha-action-type="visit"
+                                   data-cha-action-target-type="page"
+                                   data-action-type="Link"
+                                   data-cha-action-target-id="/infographics/">
+                                    Infographics
+                                </a>
+                            </li>
+                                            </ul>
+                            </li>
+                    <li class="">
+                                    <a href="/sg/"
+                       rel=""
+                       title="by Subject"
+                       id=""
+                       data-cha-target-name="find_doc_by_subject_link"
+                       data-cha-location="header"
+                       data-cha-action-type="visit"
+                       data-action-type="Link"
+                       data-cha-action-target-type="page"
+                       data-cha-action-target-id="/sg/">
+                        by Subject
+                    </a>
+                
+                                            </li>
+            </ul>
+</div>
+
+        </li>
+            <li>
+            <a class="ch_nav_action ch_highlight_badge_new"
+               href="/textbook-solutions/"
+               title="Textbook Solutions"
+               id=""
+               rel=""
+               data-cha-target-name="browse_textbooks_link"
+               data-cha-location="header"
+               data-cha-action-type="visit"
+               data-action-type="Secondary"
+               data-cha-action-target-type="page"
+               data-cha-action-target-id="/textbook-solutions/">
+                                    <div class="ch_nav_action_label ">
+                                                    <span class="prefixVerb ">Browse</span>
+                                                            Textbook Solutions
+                                                                                                        </div>
+                            </a>
+            <div class="ch_subNav_panel">
+    <ul class="ch_subNav_group ">
+            </ul>
+</div>
+
+        </li>
+            <li>
+            <a class="ch_nav_action nav-tutors"
+               href="/tutors/homework-help/"
+               title="Expert Tutors"
+               id=""
+               rel=""
+               data-cha-target-name="get_tutoring_help_link"
+               data-cha-location="header"
+               data-cha-action-type="visit"
+               data-action-type="Secondary"
+               data-cha-action-target-type="page"
+               data-cha-action-target-id="/tutors/homework-help/">
+                                    <div class="ch_nav_action_label ask-expert-tutors">
+                                                    <span class="prefixVerb ">Ask</span>
+                                                            Expert Tutors
+                                <div class="bonus-questions"><i class="chi-gift-filled"></i><span class="bonus-questions-timer"></span></div>
+                                <div class="tutor-questions"><i class="chi-ask-a-question-filled"></i><span id="tutor-questions-count"></span></div>
+                                <div id="bonus_question_tooltip" class="hidden">
+                                    <div class="bonus-question-tooltip-content">
+                                        You can ask <span id="bonus-questions-count"></span>!
+                                    </div>
+                                </div>
+                                                                        </div>
+                            </a>
+            <div class="ch_subNav_panel">
+    <ul class="ch_subNav_group ">
+            </ul>
+</div>
+
+        </li>
+    </ul>
+<script type="text/javascript">
+    var bonusQuestionCountMessageMap = {
+        three_hour_daily_bonus: function(data) {
+            return (data.bonusQuestions.earliestExpiringQuestionsCount === 1 ? '1 bonus question' : data.bonusQuestions.earliestExpiringQuestionsCount + ' bonus questions');
+        },
+        one_week_daily_bonus: function(data) {
+            return (data.bonusQuestions.earliestExpiringQuestionsCount === 1 ? 'a daily bonus question' : data.bonusQuestions.earliestExpiringQuestionsCount + ' daily bonus questions');
+        },
+        three_week_weekly_bonus: function(data) {
+            return (data.bonusQuestions.earliestExpiringQuestionsCount === 1 ? 'a weekly bonus question' : data.bonusQuestions.earliestExpiringQuestionsCount + ' weekly bonus questions');
+        },
+    };
+
+    function getBonusQuestionCountMessage(data) {
+        var countMessageGenerator = bonusQuestionCountMessageMap[data.bonusQuestions.rewardType] || bonusQuestionCountMessageMap.three_hour_daily_bonus;
+        return data.bonusQuestions.earliestExpiringQuestionsCount ? countMessageGenerator(data) : '';
+    }
+</script>
+<script type="text/javascript">
+    var isPremierUser = false;
+
+    var WEEK = 604800000;     // 1 week in milliseconds
+    var DAY = 86400000;     // 1 day in milliseconds
+    var HOUR = 3600000;     // 1 hour in milliseconds
+    var MINUTE = 60000;     // 1 minute in milliseconds
+    var SECOND = 1000;     // 1 second in milliseconds
+
+    var bqTimerInterval, tutorExpiringQuestions, questionStatus = '';
+
+    function startBonusQuestionsTimer(timeRemaining) {
+        document.querySelector('.ask-expert-tutors').classList.add('bq');
+        document.querySelector('.tutor-questions').style.display = 'none';
+        document.querySelector('.bonus-questions').style.display = 'flex';
+        if (timeRemaining > DAY) {
+            document.querySelector('.ask-expert-tutors').classList.add('bq-long');
+        }
+
+        // Update the bonus questions countdown timer every 1 second
+        bqTimerInterval = setInterval(function() {
+            timeRemaining = timeRemaining - 1000;
+
+            // If the countdown has expired, display the tutor questions count
+            if (timeRemaining < 0) {
+                cancelBonusQuestionsTimer();
+                displayTutorQuestionsCount();
+                refreshAAQWidgetUserState();
+            } else {
+                // Time calculations for hours, minutes and seconds
+                var days = Math.floor((timeRemaining % WEEK) / DAY);
+                var hours = Math.floor((timeRemaining % DAY) / HOUR);
+                var minutes = Math.floor((timeRemaining % HOUR) / MINUTE);
+                var seconds = Math.floor((timeRemaining % MINUTE) / SECOND);
+
+                // Display the time remaining
+                document.querySelectorAll('.bonus-questions-timer').forEach(function(timerEl) {
+                    timerEl.innerHTML = (days > 0 ? days + 'd ' : '') + hours + ':' + (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+                });
+            }
+        }, 1000);
+
+        questionStatus = 'has bonus questions';
+    }
+
+    function cancelBonusQuestionsTimer() {
+        clearInterval(bqTimerInterval);
+    }
+
+    function displayTutorQuestionsCount(hasTutorQuestions) {
+        // Header
+        if (document.querySelector('.nav-tutors')) {
+            document.querySelector('#bonus_question_tooltip').className = 'hidden';
+            document.querySelector('.ask-expert-tutors').classList.remove('bq');
+            document.querySelector('.bonus-questions').style.display = 'none';
+        }
+
+        var tutorQEl = document.querySelector('.tutor-questions');
+        if (hasTutorQuestions && tutorQEl) {
+            tutorQEl.style.display = 'inline';
+        }
+        questionStatus = (tutorExpiringQuestions === 0 ? 'expires later than 7 days' : 'expires in 7 days or less');
+    }
+
+    function updateBonusQuestionsState(data) {
+        var bonusQCountTooltip = document.querySelector('#bonus_question_tooltip');
+        var bonusQCountEl = document.querySelector('#bonus-questions-count');
+        var tutorQCountEl = document.querySelector('#tutor-questions-count');
+        if (bonusQCountTooltip && bonusQCountEl && tutorQCountEl) {
+            // Set the bonus questions count
+            var bonusQMessage = getBonusQuestionCountMessage(data);
+            bonusQCountEl.innerHTML = bonusQMessage;
+            if (bonusQMessage) {
+              bonusQCountTooltip.className = 'show_tooltip';
+            } else {
+              bonusQCountTooltip.className = 'hidden';
+            }
+
+            // Set the tutor questions count
+            tutorQCountEl.innerHTML = data.tutorQuestions.totalTutorQuestionsCount > 10 ? '10+' : data.tutorQuestions.totalTutorQuestionsCount;
+
+            if (data.bonusQuestions.earliestExpiringQuestionsCount === 0 || data.bonusQuestions.timeRemaining === 0) {
+                // Display the tutor questions count
+                displayTutorQuestionsCount(data.hasTutorQuestions);
+            }
+
+            // Update the widget display
+            refreshAAQWidgetUserState();
+        }
+    }
+
+    function refreshAAQWidgetUserState() {
+        // refresh the AAQ widget user state
+        var refreshAAQWidgetEvent = new CustomEvent('AAQ-WIDGET:REFRESH-USER-STATE', {
+            bubbles: true,
+            cancelable: true,
+        });
+        window.dispatchEvent(refreshAAQWidgetEvent);
+    }
+
+    onPageLoadComplete(function() {
+        if (typeof tracker === 'undefined') {
+            var tracker = new MixpanelEventTracking();
+        }
+
+            });
+
+    function generateQuestionStatus(data) {
+        var questionStatus;
+        if (data.hasBonusQuestions && data.bonusQuestions) {
+            var questionStatusPrefix = 'has bonus questions expiring ';
+            var SECOND = 1000;
+            var MINUTE = SECOND * 60;
+            var HOUR = MINUTE * 60;
+            var DAY = HOUR * 24;
+            if (data.bonusQuestions.timeRemaining < MINUTE * 30) {
+                questionStatus = questionStatusPrefix + 'in less than 30 minutes';
+            } else if (data.bonusQuestions.timeRemaining <= HOUR) {
+                questionStatus = questionStatusPrefix + 'between 30 min and 1 hour';
+            } else if (data.bonusQuestions.timeRemaining <= HOUR * 3) {
+                questionStatus = questionStatusPrefix + 'between 1 hour and 3 hours';
+            } else if (data.bonusQuestions.timeRemaining <= HOUR * 12) {
+                questionStatus = questionStatusPrefix + 'between 3 hours and 12 hours';
+            } else if (data.bonusQuestions.timeRemaining <= DAY) {
+                questionStatus = questionStatusPrefix + 'between 12 hours and 24 hours';
+            } else if (data.bonusQuestions.timeRemaining <= DAY * 3) {
+                questionStatus = questionStatusPrefix + 'in 1-3 days';
+            } else {
+                questionStatus = questionStatusPrefix + 'in more than 3 days';
+            }
+        } else if (data.hasTutorQuestions && data.tutorQuestions) {
+            questionStatus = data.tutorQuestions && data.tutorQuestions.expiringQuestions === 0 ? 'expires later than 7 days' : 'expires in 7 days or less';
+        } else {
+            questionStatus = 'No bonus or tutor questions';
+        }
+        return questionStatus;
+    }
+</script>
+
+
+
+<ul class="ch_nav_group isLoggedOut ">
+            <li class="ch_earn_dropdown_container">
+            <a href="/free-access/" rel="" class="ch_nav_action ch_earn_dropdown"
+                title="Earn" id=""
+                data-cha-target-name="earn_by_contributing_link"
+                data-cha-location="header_right"
+                data-cha-action-type="visit"
+                data-action-type="Secondary"
+                data-cha-action-target-type="page"
+                data-cha-action-target-id="/free-access/">
+                <span class="ch_nav_action_label">Earn <i class="fa fa-chevron-down" style="font-size: 8px;line-height: 12px"></i></span>
+            </a>
+                            <div class="ch_subNav_panel">
+    <ul class="ch_subNav_group ">
+                    <li class="isSeparator">
+                                    Earn Free Access
+                                            <a href="/free-access/"
+                           rel=""
+                           title="Earn Free Access"
+                           id=""
+                           data-cha-target-name="earn_free_access_link"
+                           data-cha-location="header"
+                           data-cha-action-type="visit"
+                           data-cha-action-target-type="page"
+                           data-action-type="Link"
+                           data-cha-action-target-id="/free-access/">
+                            Learn More &gt;
+                        </a>
+                                    
+                                            </li>
+                    <li class="">
+                                    <a href="/upload/"
+                       rel="nofollow"
+                       title="Upload Documents"
+                       id=""
+                       data-cha-target-name="upload_docs_link"
+                       data-cha-location="header"
+                       data-cha-action-type="visit"
+                       data-action-type="Link"
+                       data-cha-action-target-type="page"
+                       data-cha-action-target-id="/upload/">
+                        Upload Documents
+                    </a>
+                
+                                            </li>
+                    <li class="">
+                                    <a href="/referrals/"
+                       rel="nofollow"
+                       title="Refer Your Friends"
+                       id=""
+                       data-cha-target-name="refer_friends_link"
+                       data-cha-location="header"
+                       data-cha-action-type="visit"
+                       data-action-type="Link"
+                       data-cha-action-target-type="page"
+                       data-cha-action-target-id="/referrals/">
+                        Refer Your Friends
+                    </a>
+                
+                                            </li>
+                    <li class="isSeparator">
+                                    Earn Money
+                                    
+                                            </li>
+                    <li class="">
+                                    <a href="/become-a-tutor/"
+                       rel=""
+                       title="Become a Tutor"
+                       id=""
+                       data-cha-target-name="become_tutor_link"
+                       data-cha-location="header"
+                       data-cha-action-type="visit"
+                       data-action-type="Link"
+                       data-cha-action-target-type="page"
+                       data-cha-action-target-id="/become-a-tutor/">
+                        Become a Tutor
+                    </a>
+                
+                                            </li>
+                    <li class="">
+                                    <a href="/scholarships/"
+                       rel=""
+                       title="Apply for Scholarship"
+                       id=""
+                       data-cha-target-name="scholarships_link"
+                       data-cha-location="header"
+                       data-cha-action-type="visit"
+                       data-action-type="Link"
+                       data-cha-action-target-type="page"
+                       data-cha-action-target-id="/scholarships/">
+                        Apply for Scholarship
+                    </a>
+                
+                                            </li>
+            </ul>
+</div>
+
+                    </li>
+            <li class="ch_areYouTeacher_container">
+            <a href="/educators/" rel="" class="ch_nav_action translate"
+                title="For Educators" id=""
+                data-cha-target-name=""
+                data-cha-location="header_right"
+                data-cha-action-type="visit"
+                data-action-type="Secondary"
+                data-cha-action-target-type="page"
+                data-cha-action-target-id="/educators/">
+                For Educators
+            </a>
+                    </li>
+            <li class="">
+            <a href="/login/?ref=login" rel="nofollow" class="ch_nav_action translate"
+                title="Login" id="ch_login_button"
+                data-cha-target-name="login_btn"
+                data-cha-location="header_right"
+                data-cha-action-type="visit"
+                data-action-type="Secondary"
+                data-cha-action-target-type="page"
+                data-cha-action-target-id="/login/?ref=login">
+                Log in
+            </a>
+                    </li>
+            <li class="">
+            <a href="/register/" rel="nofollow" class="ch_nav_action translate"
+                title="Header Sign Up" id="ch_signup_button"
+                data-cha-target-name="sign_up_btn"
+                data-cha-location="header_right"
+                data-cha-action-type="visit"
+                data-action-type="Secondary"
+                data-cha-action-target-type="page"
+                data-cha-action-target-id="/register/">
+                <span>Sign up</span> <i class="fa fa-user"></i>
+            </a>
+                    </li>
+    </ul>
+
+
+            
+                    </header>
+    <div id="ch-body">
+            <div class="lost_banner_wrapper">
+        <div class="lost_banner_background">
+            <div class="lost_banner_stars">
+            </div>
+            <div class="lost_light_container swaying">
+                <img src="/assets/img/lost/light_signal.png" />
+            </div>
+            <div class="lost_body_container">
+                <div class="lost_title_container">
+                                <h1 class="lost_title_heading">Access Denied</h1>
+        <p class="lost_title_caption">This page is not for public access.
+            Don't stress—you can find millions of other helpful study resources on Course Hero.</p>
+        <a href="/" class="lost_title_button">Find Study Resources</a>
+                    </div>
+            </div>
+            <div class="lost_banner_cityscape">
+            </div>
+        </div>
+    </div>
+
+    <section id="lost_browse_section" class="lost_browse_wrapper">
+        <div class="lost_body_container">
+            <h3 class="lost_section_heading"><span>Browse Our Resources</span></h3>
+            <p class="lost_section_caption">Course Hero offers crowdsourced study documents and expert tutors anywhere, anytime.</p>
+            <ul class="ch_stats_bundle">
+    <li>
+        <div class="ch_stats_graph_container">
+            <div class="ch_stats_graph graph_documents">
+                <input id="graph_documents_value" type="text" data-width="84" data-readonly=true data-linecap=round data-fgColor="#ff8500" value="0" data-thickness=.1 data-displayInput=false data-targetValue="73" class="dial">
+            </div>
+            <h3 class="ch_stats_product-count product-count_documents">-</h3>
+            <span class="ch_stats_product-count_text">Study Documents</span>
+        </div>
+        <div class="ch_stats_text">
+            <p>Find the best study resources around, tagged to your specific courses. Share your own to gain free Course Hero access.</p>
+        </div>
+                                <a href="/study-materials/"
+               class="ch_stats_product_cta"
+               data-cha-target-name="offer_browse_documents_btn"
+               data-cha-action-type="visit"
+               data-cha-action-target-type="page"
+               data-cha-action-target-id="/study-materials/">
+                <i class="fa fa-file fa-file_left"></i> Browse Documents</a>
+            </li>
+    <li>
+        <div class="ch_stats_graph_container">
+            <div class="ch_stats_graph graph_qa">
+                <input id="graph_qa_value" type="text" data-width="84" data-readonly=true data-linecap=round data-fgColor="#0aaae7" value="0" data-thickness=.1 data-displayInput=false data-targetValue="55" class="dial">
+            </div>
+            <h3 class="ch_stats_product-count product-count_qa">-</h3>
+            <span class="ch_stats_product-count_text">Question &amp; Answers</span>
+        </div>
+        <div class="ch_stats_text">
+            <p>Get one-on-one homework help from our expert tutors—available online 24/7. Ask your own questions or browse existing Q&amp;A threads. Satisfaction guaranteed!</p>
+        </div>
+                                <a href="/tutors/homework-help/"
+               class="ch_stats_product_cta"
+               id="offer_ask_question_button"
+               onclick="tracker.track('Click - Ask a New Question',{'Location' : 'Why Course Hero'})"
+               data-cha-target-name="offer_ask_question_btn"
+               data-cha-action-type="visit"
+               data-cha-action-target-type="page"
+               data-cha-action-target-id="/tutors/homework-help/"><i class="fa fa-comments fa-comments_left"></i> Ask a Question</a>
+            </li>
+</ul>
+        </div>
+    </section>
+
+        
+    </div>
+                            <footer id="ch-footer" class="SiteFooter ch-wrapper" >
+            <div class="ch-trust-seals">
+    <div class="seal-icon">
+        <a href="https://seal.godaddy.com/verifySeal?sealID=4nGuvXputH0td6HulIlkBzm7gS6p6svB6lie2k8vfnEXuPFO4v3GrpZ2i" rel="nofollow noreferrer" target="_blank" title="Click to verify SSL site seal">
+            <img class="" src="/assets/img/godaddy_siteseal.png" alt="SSL site seal" width="139" height="45">
+        </a>
+    </div>
+    <div class="seal-icon">
+        <a href="https://www.bbb.org/us/ca/redwood-city/profile/internet-service/course-hero-inc-1116-381001/accreditation-information" rel="nofollow noreferrer" target="_blank">
+            <img class="" src="/assets/img/bbb-accredited-business.png" alt="Better Business Bureau accredited business" width="118" height="45">
+        </a>
+    </div>
+    <div class="seal-icon">
+        <a href="//privacy.truste.com/privacy-seal/validation?rid=a50533b3-15e2-472e-a9fc-0fcdc0471ef1" rel="nofollow noreferrer" target="_blank">
+            <img class="" style="border: none" src="//privacy-policy.truste.com/privacy-seal/seal?rid=a50533b3-15e2-472e-a9fc-0fcdc0471ef1" alt="TRUSTe" width="141" height="45" />
+        </a>
+    </div>
+    </div>
+        <div class="ch-footer-links_wrapper">
+                    <ul class="ch-footer-links_container" id="ch-footer-links_container">
+                                <li>
+                    <h6>Company</h6>
+                    <a href="/about-us/" data-cha-target-name="about_us_link" data-cha-action-type = "visit" data-cha-action-target-type = "page" data-cha-action-target-id="/about-us/">
+                        About Us
+                    </a>
+                    <a href="/scholarships/" data-cha-target-name="scholarships_link" data-cha-location="footer" data-cha-action-type = "visit" data-cha-action-target-type = "page" data-cha-action-target-id="/scholarships/">
+                        Scholarships
+                    </a>
+                    <a href="/sitemap/" data-cha-target-name="sitemap_link" data-cha-action-type = "visit" data-cha-action-target-type = "page" data-cha-action-target-id="/sitemap/">
+                        Sitemap
+                    </a>
+                    <a href="/standardized-tests/" data-cha-target-name="standardized_tests_link" data-cha-action-type = "visit" data-cha-action-target-type = "page" data-cha-action-target-id="/standardized-tests/">
+                        Standardized Tests
+                    </a>
+                    <a href="/educators/summit/" data-cha-target-name="education_summit_link" data-cha-action-type = "visit" data-cha-action-target-type = "page" data-cha-action-target-id="/educators/summit/">
+                        Education Summit
+                    </a>
+                    <a href="/educators/resources/" data-cha-target-name="educator_resources_link" data-cha-action-type = "visit" data-cha-action-target-type = "page" data-cha-action-target-id="/educators/resources/">
+                        Educator Resources
+                    </a>
+                </li>
+                <li>
+                    <h6>Get Course Hero</h6>
+                    <a href="https://itunes.apple.com/app/apple-store/id922208952?pt=108036802&ct=footer&mt=8"
+                       target="_blank" rel="nofollow noreferrer" data-cha-target-name="ios_download_link" data-cha-location="footer"
+                       data-cha-action-type="download" data-cha-action-target-type="ios_app">
+                        iOS
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.coursehero.coursehero&referrer=utm_source%3Dcoursehero%26utm_campaign%3Dfooter"
+                       target="_blank" rel="nofollow noreferrer" data-cha-target-name="android_download_link" data-cha-location="footer"
+                       data-cha-action-type="download" data-cha-action-target-type="android_app">
+                        Android
+                    </a>
+                    <a href="/educators/" id="ch_educators_link" data-cha-target-name="educators_link" data-cha-action-type = "visit" data-cha-action-target-type = "page" data-cha-action-target-id="/educators/">
+                        Educators
+                    </a>
+                    <script>
+                        onPageLoadComplete(function() {
+                            $('#ch_educators_link').on('click', function() {
+                                dataLayer.push({
+                                    event: 'User Tracking Event',
+                                    user_tracking_properties: {
+                                        eventName: '[Edu] Homepage Link',
+                                        properties: {
+                                            destination: '/educators/',
+                                            source: 'footer',
+                                        },
+                                    },
+                                })
+                            })
+                        })
+                    </script>
+                </li>
+                <li>
+                    <h6>Careers</h6>
+                    <a href="/leadership/" data-cha-target-name="our_team_link" data-cha-action-type = "visit" data-cha-action-target-type = "page" data-cha-action-target-id="/leadership/">
+                        Leadership
+                    </a>
+                    <a href="/jobs/" data-cha-target-name="jobs_link" data-cha-action-type = "visit" data-cha-action-target-type = "page" data-cha-action-target-id="/jobs/">
+                        Careers
+                    </a>
+                    <a href="https://students.coursehero.com/campus-reps" data-cha-target-name="campus_rep_program_link" data-cha-action-type = "visit" data-cha-action-target-type = "page" data-cha-action-target-id="https://students.coursehero.com/campus-reps">
+                        Campus Rep Program
+                    </a>
+                </li>
+                <li>
+                    <h6>Help</h6>
+                    <a href="https://support.coursehero.com/hc/en-us/#/contact-us" data-cha-target-name="contact_us_link" data-cha-action-type = "visit" data-cha-action-target-type = "page" data-cha-action-target-id="https://support.coursehero.com/hc/en-us/#/contact-us">
+                        Contact Us
+                    </a>
+                    <a href="https://support.coursehero.com" data-cha-target-name="faq_link" data-cha-action-type = "visit" data-cha-action-target-type = "page" data-cha-action-target-id="https://support.coursehero.com">
+                        FAQ
+                    </a>
+                    <a href="/feedback/" data-cha-target-name="feedback_link" data-cha-action-type = "visit" data-cha-action-target-type = "page" data-cha-action-target-id="/feedback/">
+                        Feedback
+                    </a>
+                </li>
+                <li>
+                    <h6>Legal</h6>
+                    <a href="/copyright/" data-cha-target-name="copyright_policy_link" data-cha-action-type = "visit" data-cha-action-target-type = "page" data-cha-action-target-id="/copyright/">
+                        Copyright Policy
+                    </a>
+                    <a href="/academic-integrity-policies/" data-cha-target-name="academic_integrity_policies_link" data-cha-action-type = "visit" data-cha-action-target-type = "page" data-cha-action-target-id="/academic-integrity-policies/">
+                        Academic Integrity
+                    </a>
+                    <a href="/honor-code/" data-cha-target-name="honor_code_link" data-cha-action-type = "visit" data-cha-action-target-type = "page" data-cha-action-target-id="/honor-code/">
+                        Our Honor Code
+                    </a>
+                    <a href="/privacy-policy/" data-cha-target-name="privacy_policy_link" data-cha-action-type = "visit" data-cha-action-target-type = "page" data-cha-action-target-id="/privacy-policy/">
+                        Privacy Policy
+                    </a>
+                    <a href="/terms-of-use/" data-cha-target-name="terms_of_use_link" data-cha-action-type = "visit" data-cha-action-target-type = "page" data-cha-action-target-id="/terms-of-use/">
+                        Terms of Use
+                    </a>
+                </li>
+                <li>
+                    <h6>Connect with Us</h6>
+                    <a href="/college-life/" data-cha-target-name="college_life_link" data-cha-action-type = "visit" data-cha-action-target-type = "page" data-cha-action-target-id="/college-life/">
+                        College Life
+                    </a>
+                    <a href="https://www.facebook.com/coursehero" target="_blank" rel="noreferrer" data-cha-target-name="ch_facebook_link" data-cha-action-type = "visit" data-cha-action-target-type = "page" data-cha-action-target-id="https://www.facebook.com/coursehero">
+                        Facebook
+                    </a>
+                    <a href="https://twitter.com/CourseHero" target="_blank" rel="noreferrer" data-cha-target-name="ch_twitter_link" data-cha-action-type = "visit" data-cha-action-target-type = "page" data-cha-action-target-id="https://twitter.com/CourseHero">
+                        Twitter
+                    </a>
+                    <a href="https://www.linkedin.com/company/coursehero" target="_blank" rel="noreferrer" data-cha-target-name="ch_linkedin_link" data-cha-action-type = "visit" data-cha-action-target-type = "page" data-cha-action-target-id="https://www.linkedin.com/company/coursehero">
+                        LinkedIn
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCt_TSquDx7B-2RX6y3dx3_g" target="_blank" rel="noreferrer" data-cha-target-name="ch_youtube_link" data-cha-action-type = "visit" data-cha-action-target-type = "page" data-cha-action-target-id="https://www.youtube.com/channel/UCt_TSquDx7B-2RX6y3dx3_g">
+                        YouTube
+                    </a>
+                    <a href="https://www.instagram.com/coursehero/" target="_blank" rel="noreferrer" data-cha-target-name="ch_instagram_link" data-cha-action-type = "visit" data-cha-action-target-type = "page" data-cha-action-target-id="https://www.instagram.com/coursehero/">
+                        Instagram
+                    </a>
+                </li>
+            </ul>
+                <div class="ch-copyright_wrapper">
+            <div class="ch-copyright_container">
+                <p class="ch-copyright_info">
+                    Copyright © 2021. Course Hero, Inc.
+                                    </p>
+                <p class="ch-copyright_fyi">Course Hero is not sponsored or endorsed by any college or university.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+            
+            
+    
+    
+
+    <div id="sms-verification-popup"></div>
+
+            
+                        <script src="https://cdn.polyfill.io/v3/polyfill.min.js?flags=gated&features=default%2CArray.prototype.includes%2CArray.prototype.find%2CArray.prototype.findIndex%2Cfetch%2CObject.assign%2CObject.entries%2CObject.values%2CObject.entries%2CNodeList.prototype.forEach%2CIntersectionObserver%2CIntersectionObserverEntry%2CAbortController"></script>
+
+                <script src="/sym-assets/js/bundle-8ed4419-f3d2678.js" type="text/javascript"></script>
+        
+            <script type="text/javascript" src="/sym-assets/js/bundle-3593e6a-32666be.js"></script>
+    <script>
+        window.amplitudeConfig = {
+            runAmplitudeDefaultPageViewed: true,
+        }
+    </script>
+
+
+                    			<script type="text/javascript" src="/sym-assets/js/qa-widget-app-34f68d2-1428471.js"></script>
+	
+<script type="text/javascript">
+	window.askExpertTutorsSources = [];
+	
+		 window.askExpertTutorsSources.push("/sym-assets/js/bundle-8b75b15-3beed89.js"); 	window.askExpertTutorsSources.push({
+		html: "\u003Cscript\u0020\u0020src\u003D\u0027\/assets\/js\/compiled\/qa\/ask\u002Dexpert\u002Dtutors\/chunk.vendors\u007Eqa\/ask\u002Dexpert\u002Dtutors\/app.898ce3ecc00d6a538721.js\u0027\u0020type\u003D\u0027text\/javascript\u0027\u003E\u003C\/script\u003E\u003Cscript\u0020\u0020src\u003D\u0027\/assets\/js\/compiled\/qa\/ask\u002Dexpert\u002Dtutors\/app.06cf6f8008dff94908b9.js\u0027\u0020type\u003D\u0027text\/javascript\u0027\u003E\u003C\/script\u003E"
+	});
+
+				window.askExpertTutorsSources.push("/sym-assets/css/6b23863-8b96323.css");
+		window.askExpertTutorsSources.push({
+		html: "\u003Clink\u0020rel\u003D\u0027stylesheet\u0027\u0020href\u003D\u0027\/assets\/js\/compiled\/qa\/ask\u002Dexpert\u002Dtutors\/app.69830957453091df4330.css\u0027\u0020\u003E"
+	});
+
+		// We want to copy over some overrides from other places in the code.
+	// For eg: Mobile Registration page uses the logoOnly prop
+	// which we want to copy over.
+	window.__apple_login_props = Object.assign(window.__apple_login_props || {}, {
+		clientId: 'com.coursehero.CourseHeroProd',
+		redirectURI: 'https://www.coursehero.com/api/v1/handleAppleLogin/',
+		state: {"session_id":"0139a5b9-90bd-4bcd-9e15-442e09b4d2eb"},
+	})
+	</script>
+
+	<script type="text/javascript" src="/sym-assets/js/bundle-23f2f80-e199f94.js"></script>
+
+        
+                            
+        <script>
+        var appId = 126130834105126;
+        </script>
+
+        <!--[if IE 9]>
+                <script src="/sym-assets/js/bundle-7f36ca4-23ad4ac.js" type="text/javascript"></script>
+                <script>
+            $('input:not([data-ng-model]), textarea:not([data-ng-model])').placeholder();
+        </script>
+        <![endif]-->
+    
+            <script type="text/javascript" src="/sym-assets/js/bundle-a83c591-a1f0bae.js"></script>
+    
+    <script>
+        $("#lost_browse_section").waypoint(function() {
+            activate_stats();
+        }, { offset: '76%' });
+
+        enquire.register("(min-width:767px) and (max-width:990px)", {
+            match: function(){
+                activate_stats();
+            }
+        });
+    </script>
+
+
+            <script type="text/javascript">
+        CHAnalytics.v("initial").pageView()
+    </script>
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"404bf9505f","applicationID":"136461810,151089887","transactionName":"NVFbZUFUC0RTAEcLXQwbekRAQQpaHQBcF0ARUVFUQVo6UVsPVj1eDVVdQVdTOltdAlcGXQFBVFRdQQ==","queueTime":0,"applicationTime":49,"atts":"GRZMEwlOGBsQAhFYSR9J","errorBeacon":"bam-cell.nr-data.net","agent":""}</script><script async type="text/javascript" src="/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=275658665"></script>
+</body>
+</html>

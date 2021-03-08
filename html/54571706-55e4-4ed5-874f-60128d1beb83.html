@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p><img alt="Lab8B: For this part of the lab, you will practice using Linear Search and Binary Search. Please
+review the lecture slides an" src="https://media.cheggcdn.com/media/7ed/7ed8824e-83b8-44ee-bc75-4de63443fe38/phpqyMhEz" style="height:739px;width:810px;"></p>
+<p>please code in java</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <pre>
+<code class="language-java">//import statements
+
+import java.util.Scanner;
+
+// Searching is a very basic problem. given a list of obejct we are required to find the position od the object in that list
+// Eg:- [1,3,4,2,5,6] is a list and we need to find the position of 4. The searching algorithm returns 2 if the list is 0-indexed.
+
+
+//class defination
+public class Searching {
+    // function to perform linear search and print the search indices
+    public void linear_search(int A[], int target) {
+        // in linear search we explore the array elements sequentially and match it with the target element
+        // we do not need the array to be sorted for this search technique.
+        // if a match is found we stop there and return the index where the element was found
+        for (int i = 0; i &lt; A.length; i++) {
+            System.out.print(i + " ");
+            if (target == A[i]) { // checking if the target is equal to the ith element in A
+                break; // since the program does not requre us to return we simppy break out of the loop
+            }
+        }
+        System.out.println();
+    }
+
+    // function to perform binary search and print the search indices
+    public void binary_search(int A[], int target) {
+        // binary search is a divide-and-conquer approach which requires the array to be sorted
+        // we first search the middle of the array.
+        // If the middle element is smaller we are sure that the required element is between middle+1th and last element.
+        // If the middle element is larger we are sure that the required element is between middle-1th and first element.
+        // after every step we discard half of the remaining array elements
+        int lo = 0;
+        int hi = A.length - 1;
+        while (lo &lt;= hi) {
+            int mid = (lo + hi) / 2; // calculate the middle element
+            System.out.print(mid + " ");
+            if (A[mid] == target) {
+                break; // if the middle element is our target then break
+            } else if (A[mid] &lt; target) {
+                lo = mid + 1; // if middle element &lt; target, search only middle+1 to last element
+            } else {
+                hi = mid - 1; // if middle element &gt; target, search only middle-1 to first element
+            }
+        }
+        System.out.println();
+    }
+
+    // driver function to input the values and perform the search operation
+    public static void main(String[] args) {
+
+        System.out.println("SEARCHING : Enter 15 numbers in ascending order");
+        int[] A = new int[15]; // array of size 15
+        Scanner sc = new Scanner(System.in); // scanner class used to take input
+        for (int i = 0; i &lt; 15; i++) { // input 15 integers
+            System.out.print("Enter slot " + i + ": ");
+            A[i] = sc.nextInt();
+        }
+        System.out.print("Enter the target: ");
+        int target = sc.nextInt(); // input the target to be searched
+        for (int i = 0; i &lt; A.length; i++) {
+            System.out.print(A[i] + "|"); // print the sorted array entered
+        }
+        System.out.println();
+        Searching S = new Searching(); // create object of searching class
+        S.linear_search(A, target); // call linear search using the object
+        S.binary_search(A, target); // call binary search using the object
+    }
+}</code></pre>
+
+<p>&nbsp;</p>
+
+<p>I have provided extensive comments within the code to explain the problem at hand and the approach followed by the two algorithms, along with the step-by-step code with comments.&nbsp;It is self-explanatory. Below is the screenshot of the output and input.</p>
+
+<p><img src="https://media.cheggcdn.com/coop/a8b/a8b7d8e0-53cc-41df-8583-63caae2ab50e/1614883322545_image.png" style="height:633px;width:583px" alt="SEARCHING : Enter 15 numbers in ascending order
+Enter slot 0 : 0
+Enter slot 1: 1
+Enter slot 2: 2
+Enter slot 3: 3
+Enter slot 4"></p>
+
+<p>Feel free to reach out through the comment section incase of any doubts or queries regarding the answer.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

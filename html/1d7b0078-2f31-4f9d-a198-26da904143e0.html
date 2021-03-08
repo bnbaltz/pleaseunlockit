@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>This question comes from a coding&nbsp;project, so If there is
+any confusion please let me know.</p>
+<p>I have two points (x1,y1,z1) (x2,y2,z2) which form a line. And I
+have a third point on the line (x3,y3,z3) where a plane across it
+and perpendicular to the line.</p>
+<p>The (x3,y3,z3) calculate by [x1 + ratio * (x2 - x1), y1 + ratio
+* (y2 - y1), z1 + ratio * (z1 - z2)]; where ratio can be any
+number.</p>
+<p>Back on that plane, I need to figure out four points which
+layout like the graph below:&nbsp;</p>
+<p><img alt="pi
+Pz
+E
+6!
+!
+P3
+PA
+P4
+where the line through
+the plane
+" src="https://media.cheggcdn.com/media/8bb/8bb8d084-f7c8-4714-a258-755363cb8ab9/php6PHY06" style="height:213px;width:200px;"></p>
+<p>All the points are 6 units to the right or left and 6 units to
+the up or down.</p>
+<p>And suppose I know the line's&nbsp;rotation degree around the
+x-axis y-axis and z-axis which is given as&nbsp;pitch,&nbsp;roll,
+yall</p>
+<p>How can I solve this?</p>
+<p>&nbsp;</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>This will have infinite solutions with each solution containing groups of four points at a distance <img alt="\sqrt{6^{2}+6^{2}}" src="https://media.cheggcdn.com/media/42d/42d41f83-949d-451d-a419-08d6a57338c9/069e5bcd-d9a5-47d4-8d56-796858ea4703.gif">&nbsp;units from the centre (x3, y3, z3). The reason is that you could rotate the four points about the centre in any angle and still you will have the same figure on the very same plane. So obviously you need to have another fixed variable say fix P1 at a particular point on the plane say (a1, b1, c1) which is at a distance of&nbsp;<img alt="V62 +62
+" src="https://media.cheggcdn.com/media/350/350cb865-7636-44b3-844f-329c0918ac84/51841b95-9ba9-42a2-946b-1c2918cbdbb2.gif">&nbsp;from (x3,y3,z3) and then figure out the rest of the points from the given situation.&nbsp;You can probably run an algorithm where you calculate many possible values of P1 that is at the mentioned distance from the center and calculate rest of the points given that particular P1 and do that for all P1's.</p> <p>&nbsp;If you are positive about the case exactly as you have stated is solvable as it is given or if you need more discussions or doubts then&nbsp;let me know in the comments.</p> <p>So your solution would look like this :-</p> <p>Step 1 - Define variables</p> <p>Yaw (yall?) is represented by&nbsp;<img alt="\alpha" src="https://media.cheggcdn.com/media/92b/92b7bc7e-43a3-4790-8519-7fe966246700/cf2c0134-5e44-4456-8c84-2c4927a520ff.gif"></p> <p>Pitch is represented by&nbsp;<img alt="\beta" src="https://media.cheggcdn.com/media/1e9/1e951763-37e8-4688-a2a1-76aa65f1c2ca/61085217-445d-4d78-b67c-949789e3e073.gif"></p> <p>Roll is represented by&nbsp;<img alt="\gamma" src="https://media.cheggcdn.com/media/0e9/0e985fbe-acff-429f-8864-25488231c4c7/8a47a115-83fd-4db3-9812-9d2c34cb4455.gif"></p> <p><img alt="= cos a
+" src="https://media.cheggcdn.com/media/632/632fe216-2b69-4065-94d3-2ee7c5d95c86/8be28e6f-40a5-4d88-8238-9c82b3856380.gif"></p> <p><img alt="m = COS
+= B
+" src="https://media.cheggcdn.com/media/3c6/3c620d62-49b7-49cf-8605-c522ec7205f6/20009be4-b248-462d-8faa-c64d454bcb82.gif"></p> <p><img alt="n = COS
+" src="https://media.cheggcdn.com/media/3d7/3d7eb034-268b-4535-830e-dada540de5c6/723a2695-eec2-4eee-9dc5-1e16d532c73e.gif"></p> <p>Then define a, b, c such that</p> <p><img alt="\frac{l}{a} = \frac{m}{b} = \frac{n}{c} = k" src="https://media.cheggcdn.com/media/59c/59c7fde1-e2c8-4171-819c-999a8fd23060/dce59194-5847-45ee-a533-f3f8a6292260.gif"></p> <p>Here k can be any ratio preferably one that removes the denominators from a, b and c.</p> <p>Step 2 - Equation of the plane</p> <p><img alt="a(- 13) + bly - y3) + c(2 – 23)
+=
+0
+" src="https://media.cheggcdn.com/media/ed9/ed9444f4-1740-4351-8b17-835551a6b692/77e2c714-2510-4c70-9d83-6e26ed1a39c0.gif">&nbsp;where a, b and c are called direction ratios of a line perpendicular to the plane and (x3, y3, z3) is a point on the plane.</p> <p>Step 3 - Determine the three points from given points P1 and (x3,y3,z3)</p> <p>Draw a dotted line between say P2(a2, b2, c2) and center for clarity.&nbsp;</p> <p>Now using vector algebra this is pretty easy.</p> <p>Dot product of perpendicular lines is 0. Which results in the following equations :-</p> <p><img alt="(41 - 23). (az - .33) = 0
+" src="https://media.cheggcdn.com/media/8f5/8f57a6b7-38a2-4d08-82ca-3d8339c8ff46/bba97a32-21d0-4091-a47d-029c351645b9.gif"></p> <p><img alt="(61 – Y3) (62 - y) = 0
+" src="https://media.cheggcdn.com/media/af5/af550a54-c2c4-4443-b8a2-eae347289f46/9d560a93-b3c3-4992-8b35-c88c4f6b0e97.gif"></p> <p><img alt="(C1 - 43). C2 - Y3) = 0
+" src="https://media.cheggcdn.com/media/047/0476c8f7-ee5e-4e78-b6f6-f6184e8e605d/73cf9909-9bb8-40f3-81a5-f59ba91e165f.gif"></p> <p>You already know three of the variables in each equation and you do the same for all of the points.</p> <p>So the only trick part in your problem statement it seems that there needs to be another fixed point or angle or anything for the problem to have a fixed number of solutions otherwise it could be just any number of points.&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

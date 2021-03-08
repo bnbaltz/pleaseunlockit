@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>A&nbsp;system&nbsp;comprising&nbsp;blocks,&nbsp;a&nbsp;light&nbsp;frictionless&nbsp;pulley,&nbsp;a&nbsp;frictionless&nbsp;incline,&nbsp;and&nbsp;connecting&nbsp;ropes&nbsp;is&nbsp;shown&nbsp;in&nbsp;the&nbsp;figure.&nbsp;The&nbsp;9.0-kg&nbsp;block&nbsp;accelerates&nbsp;downward&nbsp;when&nbsp;the&nbsp;system&nbsp;is&nbsp;released&nbsp;from&nbsp;rest.&nbsp;The&nbsp;tension&nbsp;in&nbsp;the&nbsp;rope&nbsp;connecting&nbsp;the&nbsp;6.0-kg&nbsp;block&nbsp;and&nbsp;the&nbsp;4.0-kg&nbsp;block&nbsp;is&nbsp;closest&nbsp;to..?</p>
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>The way to solve these problems is to identify all the forces on each block and apply newtons second law ( m a = Sum F ) <br>
+ <br>
+The block of 6 kg: <br>
++ two forces in the direction of motion:  <br>
+ 1. gravity along the slope   - m g sin(30) <br>
+ 2. Tension in the rope between the masses on the slope: T1 <br>
+So net force in the direction of motion:  T1 - m g sin(30) <br>
+=&gt;  6 a = T1 - 6 * g * 1/2 <br>
+=&gt; 6 a = T1 - 3 g <br>
+ <br>
+The block of 4 kg: <br>
++ three forces in the directin of motion: <br>
+ 1. gravity along slope   - 4 g sin(30) <br>
+ 2. tension of the rope between the 6 kg block and 4 kg block  -T1 <br>
+ 3 tension of the rope between the 4kg block and the 9 kg block T2 <br>
+ <br>
+So the net force in the direction of motion is T2 - T1 - 4 g sin(30) <br>
+=&gt; 4a = T2 - T1 - 2g <br>
+ <br>
+The block of 9 kg: <br>
++ two forces in the direction of its motion: <br>
+ 1. Tension opposing its motion: -T2 <br>
+ 2. force of gravity: m g <br>
+So the net force in the direction of motion is  9 g - T2 <br>
+=&gt; 9 a = 9 g - T2 <br>
+ <br>
+ <br>
+Now note that we have obtained three equations for the three unknowns a, T1 and T2: <br>
+ <br>
+6a = T1 - 3g <br>
+ <br>
+4a = T2 - T1 - 2g <br>
+ <br>
+9a = 9g - T2 <br>
+ <br>
+In principle we can solve this set of equations for all the unknowns, but for this problem we only need to solve for T1: <br>
+ <br>
+The third equations gives <br>
+ <br>
+T2 = 9 g - 9 a <br>
+ <br>
+substituting that in the second equation gives <br>
+ <br>
+4 a = 9 g - 9 a - T1 - 2 g <br>
+i.e. <br>
+13 a = 7 g - T1 <br>
+ <br>
+So we have reduced the problem to two equations in two unknowns: <br>
+ <br>
+6a = T1 - 3g <br>
+13 a = 7 g - T1 <br>
+ <br>
+or, upon multiplying the first equation with 13 and the second with 6: <br>
+ <br>
+78 a = 13 T1 - 39 g <br>
+78 a =  42 g - 6 T1 <br>
+ <br>
+subtracting the second from the first eliminates a: <br>
+ <br>
+0 = 19 T1 - 81 g <br>
+ <br>
+T1 = 81/19 * g <br>
+ <br>
+With g = 9.8 m/s^2 this gives <br>
+ <br>
+T1 = 41.8 N , so closer to 42 N than to the other alternatives.  </p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

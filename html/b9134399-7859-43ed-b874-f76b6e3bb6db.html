@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p><img alt="Problem 1 [25 marks]
+Let M and N be diffeomorphic differentiable manifolds. Construct the definition of
+the pullback of a mix" src="https://media.cheggcdn.com/media/ed3/ed33930d-8097-4bb0-813a-681ee51359b3/php6G7ygK" style="height:113px;width:694px;"></p>
+<p><strong>(((GENERAL RELATIVITY COURSE)))</strong></p>
+<p>&nbsp;</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>We&nbsp; consider two manifolds M and N, possibly of different dimension, with coordinate systems xµ and yα, respectively. We&nbsp;</p> <p>imagine that we have a map φ : M → N and a function f : N → R.</p> <p><img alt="0, f=foo
+R
+M
+f
+N
+exy
+V
+ya
+m
+n
+R
+R
+" src="https://media.cheggcdn.com/coop/157/1578d637-4db4-4584-a251-e4107a20aa88/1614431779500_IMG_20210227_184748.jpg" style="height:295px;width:500px">It is obvious that we can compose φ with f to construct a map (f ◦ φ) : M → R, which is</p> <p>simply a function on M. Such a construction is sufficiently useful that it gets its own name;</p> <p>we define the pullback of f by φ, denoted φ∗f, by</p> <p>φ∗f = (f ◦ φ) . (5.1)</p> <p>The name makes sense, since we think of φ∗ as “pulling back” the function f from N to M.</p> <p>We can pull functions back, but we cannot push them forward. If we have a function</p> <p>g : M → R, there is no way we can compose g with φ to create a function on N; the arrows</p> <p>don’t fit together correctly. But recall that a vector can be thought of as a derivative operator</p> <p>that maps smooth functions to real numbers. This allows us to define the pushforward of a vector; if V (p) is a vector at a point p on M, we define the pushforward vector φ∗V at the</p> <p>point φ(p) on N by giving its action on functions on N:</p> <p>(φ∗</p> <p>V )(f) = V (φ∗f) . (5.2)</p> <p>So to push forward a vector field we say “the action of φ∗V on any function is simply the</p> <p>action of V on the pullback of that function.”</p> <p>This is a little abstract, and it would be nice to have a more concrete description. We</p> <p>know that a basis for vectors on M is given by the set of partial derivatives ∂µ = ∂</p> <p>∂xµ , and</p> <p>a basis on N is given by the set of partial derivatives ∂α = ∂</p> <p>∂yα . Therefore we would like</p> <p>to relate the components of V = V µ∂µ to those of (φ∗V )=(φ∗V )α∂α. We can find the</p> <p>sought-after relation by applying the pushed-forward vector to a test function and using the</p> <p>chain rule (2.3):</p> <p>(φ∗</p> <p>V )</p> <p>α∂αf = V µ∂µ(φ∗f)</p> <p>= V µ∂µ(f ◦ φ)</p> <p>= V µ ∂yα /∂xµ ∂αf....... . (5.3)&nbsp;</p> <p>This simple formula makes it irresistible to think of the pushforward operation φ∗ as a matrix</p> <p>operator, (φ∗V )α = (φ∗)α</p> <p>µV µ, with the matrix being given by</p> <p>(φ∗ )α µ = ∂yα/ ∂xµ ...... (5.4)&nbsp;</p> <p>The behavior of a vector under a pushforward thus bears an unmistakable resemblance to the</p> <p>vector transformation law under change of coordinates. In fact it is a generalization, since</p> <p>when M and N are the same manifold the constructions are (as we shall discuss) identical;</p> <p>but don’t be fooled, since in general µ and α have different allowed values, and there is no</p> <p>reason for the matrix ∂yα/∂xµ to be invertible.</p> <p>It is a rewarding exercise to convince yourself that, although you can push vectors forward</p> <p>from M to N (given a map φ : M → N), you cannot in general pull them back — just keep</p> <p>trying to invent an appropriate construction until the futility of the attempt becomes clear.</p> <p>Since one-forms are dual to vectors, you should not be surprised to hear that one-forms can</p> <p>be pulled back (but not in general pushed forward). To do this, remember that one-forms</p> <p>are linear maps from vectors to the real numbers. The pullback φ∗ω of a one-form ω on N</p> <p>can therefore be defined by its action on a vector V on M, by equating it with the action of</p> <p>ω itself on the pushforward of V :</p> <p>(φ∗ω)(V ) = ω(φ∗ V ) .......... (5.5)&nbsp;</p> <p>Once again, there is a simple matrix description of the pullback operator on forms, (φ∗ω)µ =</p> <p>(φ∗)µ</p> <p>αωα, which we can derive using the chain rule. It is given by</p> <p>(φ∗)µ α = ∂yα /∂xµ .......(5.6)</p> <p>That is, it is the same matrix as the pushforward (5.4), but of course a different index is</p> <p>contracted when the matrix acts to pull back one-forms.</p> <p>There is a way of thinking about why pullbacks and pushforwards work on some objects</p> <p>but not others, which may or may not be helpful. If we denote the set of smooth functions</p> <p>on M by F(M), then a vector V (p) at a point p on M (i.e., an element of the tangent space</p> <p>TpM) can be thought of as an operator from F(M) to R. But we already know that the</p> <p>pullback operator on functions maps F(N) to F(M) (just as φ itself maps M to N, but</p> <p>in the opposite direction). Therefore we can define the pushforward φ∗ acting on vectors</p> <p>simply by composing maps, as we first defined the pullback of functions:</p> <p><img alt="R
+Q*(V(p)) = V(p) 0 0%
+V(p)
+0
+*
+F(M)
+F(N)
+" src="https://media.cheggcdn.com/coop/064/0648bf81-a3ed-47c1-a375-677a98e3a193/1614433614909_IMG_20210227_185349.jpg" style="height:199px;width:500px">Similarly, if TqN is the tangent space at a point q on N, then a one-form ω at q (i.e., an</p> <p>element of the cotangent space T∗</p> <p>q N) can be thought of as an operator from TqN to R. Since</p> <p>the pushforward φ∗ maps TpM to Tφ(p)N, the pullback φ∗ of a one-form can also be thought</p> <p>of as mere composition of maps:</p> <p><img alt="laps.
+R
+0 (0) =
+= 60
+0
+TPM
+TO(P)N
+" src="https://media.cheggcdn.com/coop/9e6/9e66f1f9-8f08-4f92-b89e-bdff32e9c6c9/1614433667838_IMG_20210227_185401.jpg" style="height:262px;width:500px">If this is not helpful, don’t worry about it. But do keep straight what exists and what</p> <p>doesn’t; the actual concepts are simple, it’s just remembering which map goes what way</p> <p>that leads to confusion.</p> <p>You will recall further that a (0, l) tensor — one with l lower indices and no upper ones</p> <p>— is a linear map from the direct product of l vectors to R. We can therefore pull back</p> <p>not only one-forms, but tensors with an arbitrary number of lower indices. The definition is</p> <p>simply the action of the original tensor on the pushed-forward vectors:</p> <p>(φ∗T)(V (1), V (2),...,V (l) ) = T(φ∗ V (1), φ∗ V(2),...,φ∗ V (l) ) , .....(5.7)</p> <p>where Tα1···αl is a (0, l) tensor on N. We can similarly push forward any (k, 0) tensor Sµ1···µk</p> <p>by acting it on pulled-back one-forms:</p> <p>(φ∗ S)(ω(1), ω(2),...,ω(k)&nbsp;</p> <p>) = S(φ∗ω(1), φ∗ω(2),...,φ∗ω(k) ) . (5.8)&nbsp;</p> <p>Fortunately, the matrix representations of the pushforward (5.4) and pullback (5.6) extend to</p> <p>the higher-rank tensors simply by assigning one matrix to each index; thus, for the pullback</p> <p>of a (0, l) tensor, we have</p> <p>(φ∗T)µ1···µl = ∂yα1 /∂xµ1 ··· ∂yαl/ ∂xµl Tα1···αl , ........(5.9)&nbsp;</p> <p>while for the pushforward of a (k, 0) tensor we have</p> <p>(φ∗ S) α1···αk = ∂yα1 /∂xµ1 ··· ∂yαk/ ∂xµk Sµ1···µk ....... (5.10)&nbsp;</p> <p>Our complete picture is therefore:</p> <p><img alt="(6)
+(6)
+0
+M
+N
+6)
+()
+" src="https://media.cheggcdn.com/coop/4a4/4a40e370-e139-45ed-a058-deeeb65a8133/1614433907608_IMG_20210227_192327.jpg" style="height:226px;width:500px">Note that tensors with both upper and lower indices can generally be neither pushed forward</p> <p>nor pulled back.</p> <p>This machinery becomes somewhat less imposing once we see it at work in a simple</p> <p>example. One common occurrence of a map between two manifolds is when M is actually a</p> <p>submanifold of N; then there is an obvious map from M to N which just takes an element</p> <p>of M to the “same” element of N. Consider our usual example, the two-sphere embedded in</p> <p>R3, as the locus of points a unit distance from the origin. If we put coordinates xµ = (θ, φ)</p> <p>on M = S2 and yα = (x, y, z) on N = R3, the map φ : M → N is given by</p> <p>φ(θ, φ) = (sin θ cos φ,sin θ sin φ, cos θ) . (5.11)</p> <p>In the past we have considered the metric ds2 = dx2 + dy2 + dz2 on R3, and said that it</p> <p>induces a metric dθ2 + sin2 θ dφ2 on S2, just by substituting (5.11) into this flat metric on R3. We didn’t really justify such a statement at the time, but now we can do so. (Of course</p> <p>it would be easier if we worked in spherical coordinates on R3, but doing it the hard way is</p> <p>more illustrative.) The matrix of partial derivatives is given by.</p> <p><img alt="(
+sin o)
+Əach arī laß
+dya cos O cos cos é sin Ø - sin 0
+дхи sin &amp; sin o sin 0 cos o 0
+Oya Oy
+(0*9) mv
+Co sine
+1 0
+0 sin2
+20)
+" src="https://media.cheggcdn.com/coop/f02/f029bc5a-0983-4aae-89a6-e5a159b267b6/1614434140681_IMG_20210227_192557.jpg" style="height:243px;width:500px">The metric on S2 is obtained by simply pulling back the metric from R3,as you can easily check. Once again, the answer is the same as you would get by naive</p> <p>substitution, but now we know why.</p> <p>We have been careful to emphasize that a map φ : M → N can be used to push certain</p> <p>things forward and pull other things back. The reason why it generally doesn’t work both</p> <p>ways can be traced to the fact that φ might not be invertible. If φ is invertible (and both φ</p> <p>and φ−1 are smooth, which we always implicitly assume), then it defines a diffeomorphism</p> <p>between M and N. In this case M and N are the same abstract manifold. The beauty of</p> <p>diffeomorphisms is that we can use both φ and φ−1 to move tensors from M to N; this will</p> <p>allow us to define the pushforward and pullback of arbitrary tensors. Specifically, for a (k,l)</p> <p>tensor field T µ1···µk ν1···µl on M, we define the pushforward by</p> <p>(φ∗</p> <p>T)(ω(1),...,ω(k)</p> <p>, V (1),...,V (l)</p> <p>) = T(φ∗ω(1),...,φ∗ω(k)</p> <p>, [φ−1</p> <p>]</p> <p>∗</p> <p>V (1),..., [φ−1</p> <p>]</p> <p>∗</p> <p>V (l)</p> <p>) ,</p> <p>(5.14)</p> <p>where the ω(i)</p> <p>’s are one-forms on N and the V (i)</p> <p>’s are vectors on N. In components this</p> <p>becomes</p> <p>(φ∗</p> <p>T)</p> <p>α1···αk</p> <p>β1···βl = ∂yα1</p> <p>∂xµ1 ··· ∂yαk</p> <p>∂xµk</p> <p>∂xν1</p> <p>∂yβ1 ··· ∂xνl</p> <p>∂yβl</p> <p>T µ1···µk</p> <p>ν1···νl . (5.15)</p> <p>The appearance of the inverse matrix ∂xν /∂yβ is legitimate because φ is invertible. Note</p> <p>that we could also define the pullback in the obvious way, but there is no need to write</p> <p>separate equations because the pullback φ∗ is the same as the pushforward via the inverse</p> <p>map, [φ−1]</p> <p>∗.</p> <p>We are now in a position to explain the relationship between diffeomorphisms and coordi-</p> <p>nate transformations. The relationship is that they are two different ways of doing precisely</p> <p>the same thing. If you like, diffeomorphisms are “active coordinate transformations”, while</p> <p>traditional coordinate transformations are “passive.” Consider an n-dimensional manifold</p> <p>M with coordinate functions xµ : M → Rn. To change coordinates we can either simply</p> <p>introduce new functions yµ : M → Rn (“keep the manifold fixed, change the coordinate maps”), or we could just as well introduce a diffeomorphism φ : M → M, after which the</p> <p>coordinates would just be the pullbacks (φ∗x)µ : M → Rn (“move the points on the man-</p> <p>ifold, and then evaluate the coordinates of the new points”). In this sense, (5.15) really is</p> <p>the tensor transformation law, just thought of from a different point of view.</p> <p><img alt="xu
+C
+R
+yl
+M
+" src="https://media.cheggcdn.com/coop/98b/98bcc83e-5fab-44c4-8856-3004401439cc/1614434246300_IMG_20210227_192907.jpg" style="height:193px;width:500px">Since a diffeomorphism allows us to pull back and push forward arbitrary tensors, it</p> <p>provides another way of comparing tensors at different points on a manifold. Given a diffeo-</p> <p>morphism φ : M → M and a tensor field T µ1···µk ν1···µl (x), we can form the difference between</p> <p>the value of the tensor at some point p and φ∗[T µ1···µk ν1···µl (φ(p))], its value at φ(p) pulled</p> <p>back to p. This suggests that we could define another kind of derivative operator on tensor</p> <p>fields, one which categorizes the rate of change of the tensor as it changes under the diffeo-</p> <p>morphism. For that, however, a single discrete diffeomorphism is insufficient; we require a</p> <p>one-parameter family of diffeomorphisms, φt. This family can be thought of as a smooth</p> <p>map R × M → M, such that for each t ∈ R φt is a diffeomorphism and φs ◦ φt = φs+t. Note</p> <p>that this last condition implies that φ0 is the identity map.</p> <p>One-parameter families of diffeomorphisms can be thought of as arising from vector fields</p> <p>(and vice-versa). If we consider what happens to the point p under the entire family φt, it is</p> <p>clear that it describes a curve in M; since the same thing will be true of every point on M,</p> <p>these curves fill the manifold (although there can be degeneracies where the diffeomorphisms</p> <p>have fixed points). We can define a vector field V µ(x) to be the set of tangent vectors to</p> <p>each of these curves at every point, evaluated at t = 0. An example on S2 is provided by</p> <p>the diffeomorphism φt(θ, φ)=(θ, φ + t).</p> <p>We can reverse the construction to define a one-parameter family of diffeomorphisms</p> <p>from any vector field. Given a vector field V µ(x), we define the integral curves of the</p> <p>vector field to be those curves xµ(t) which solve</p> <p>dxµ/ dt = V µ . .......(5.16)&nbsp;</p> <p>Note that this familiar-looking equation is now to be interpreted in the opposite sense from</p> <p>our usual way — we are given the vectors, from which we define the curves.&nbsp;</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

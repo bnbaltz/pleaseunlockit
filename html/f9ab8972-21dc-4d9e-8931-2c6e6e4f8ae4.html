@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>In Java - Purpose:<br>
+Understand I/O using Streams and Files</p>
+<p>Description:<br>
+A college keeps records of all professors and students in a file
+"people.txt". Each line starts with a title (Professor/Student)
+followed by first name, last name, and a department for a professor
+or a degree for a student as follows:</p>
+<p>"people.txt":<br>
+Professor Blake Paul Science<br>
+Student Mike Smith Math<br>
+Professor Brian McGinty SocialWork<br>
+Student Rodney James History<br>
+Professor Blaise Pascal Physics<br>
+Student Julia Roberts Masters<br>
+Professor Feida Nyla Philosophy<br>
+Student Kyle Turpin Geology</p>
+<p>Create two classes: Professor and Student with applicable
+fields.<br>
+Write a program that will read from file "people.txt", scan every
+line, create the necessary object (either a student or professor)
+and add it to one of the two arrays ( or lists): students and
+professors.</p>
+<p>Once the lists/arrays are ready:<br>
+- print both to standard output<br>
+- serialize them using object streams into "professors.ser" and
+"students.ser"</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><strong>Code:</strong></p>
+
+<pre>
+<code class="language-java">import java.io.*;
+import java.util.*; 
+
+//class Professor to hold data for professor
+class Professor implements Serializable{
+  public String fname; 
+	public String lname; 
+  public String dept; 
+}
+
+//class Student to hold data for student
+class Student implements Serializable{
+  public String fname; 
+	public String lname; 
+  public String dept; 
+}
+
+class Main {
+  public static void main(String[] args){
+    //define list of professor and student for objects
+    List&lt;Professor&gt; prof =new ArrayList&lt;Professor&gt;();  
+    List&lt;Student&gt; stu =new ArrayList&lt;Student&gt;();
+    
+    try  
+    {  
+      File file=new File("people.txt");    //file instance  
+      FileReader fr=new FileReader(file);       //read  file
+      BufferedReader br=new BufferedReader(fr); //character input stream        
+      String line;     //variable for holding containt of line
+
+      //read file line by line 
+      while((line=br.readLine())!=null)  
+      {  
+        //split line with space
+        String[] data = line.split(" ", 4);   
+
+        //check title and create appropriate object and add to list 
+        if(data[0].equals("Professor")){
+          Professor p = new Professor();
+          p.fname = data[1];
+          p.lname = data[2];
+          p.dept = data[3];
+
+          prof.add(p);
+        }else{
+          Student s = new Student();
+          s.fname = data[1];
+          s.lname = data[2];
+          s.dept = data[3];
+
+          stu.add(s);
+        }
+      } 
+     
+      //close file 
+      fr.close();            
+    }  
+    catch(IOException e)  
+    {  
+      e.printStackTrace();  
+    } 
+
+    //display professor list 
+    System.out.println("Professor List : ");
+    for(Professor p:prof){
+      System.out.println("\t"+p.fname +" "+ p.lname +" "+ p.dept);
+    }
+
+    //display student list 
+    System.out.println("\nStudent List : ");
+    for(Student s:stu){
+      System.out.println("\t"+s.fname +" "+ s.lname +" "+ s.dept);
+    }
+
+    //serialize professor list with name "professors.ser"
+    try
+		{ 
+			FileOutputStream file = new FileOutputStream("professors.ser"); 
+			ObjectOutputStream out = new ObjectOutputStream(file); 
+			
+			//method for serialization of object  
+			out.writeObject(prof); 
+			
+      //close both file
+			out.close(); 
+			file.close(); 
+			
+			System.out.println("\nProfessor has been serialized"); 
+		} 		
+		catch(IOException ex) 
+		{ 
+			System.out.println("IOException is caught in serializing Professor list."); 
+		}
+
+    //serialize professor list with name "students.ser"
+    try
+		{ 
+			FileOutputStream file = new FileOutputStream("students.ser"); 
+			ObjectOutputStream out = new ObjectOutputStream(file); 
+			
+			//method for serialization of object 
+			out.writeObject(stu); 
+			
+      //close both file
+			out.close(); 
+			file.close(); 
+			
+			System.out.println("Student has been serialized"); 
+		} 		
+		catch(IOException ex) 
+		{ 
+			System.out.println("IOException is caught in serializing Student list."); 
+		}
+  }
+}</code></pre>
+
+<p><strong>people.txt:</strong></p>
+
+<pre>
+<code>Professor Blake Paul Science
+Student Mike Smith Math
+Professor Brian McGinty SocialWork
+Student Rodney James History
+Professor Blaise Pascal Physics
+Student Julia Roberts Masters
+Professor Feida Nyla Philosophy
+Student Kyle Turpin Geology</code></pre>
+
+<p><strong>Output:</strong></p>
+
+<p><img alt="Professor List :
+Blake Paul Science
+Brian McGinty SocialWork
+Blaise Pascal Physics
+Feida Nyla Philosophy
+Student List :
+Mike " src="https://media.cheggcdn.com/coop/a04/a042c765-e9b0-473f-8324-54538761687b/1614230713210_image.png" style="height:347px;width:717px"></p>
+
+<p>.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

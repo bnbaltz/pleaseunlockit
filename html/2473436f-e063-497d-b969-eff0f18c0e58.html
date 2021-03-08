@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>In this question you will add Person information (name, surname)
+to the two dimensional (2D) sorted (i.e. in lexicographical order)
+linked list. You will dynamically allocate each node when user
+enters</p>
+<p><strong>'insert '</strong></p>
+<p>or free the corresponding node when user enters</p>
+<p><strong>'delete '</strong></p>
+<p>Names will be first dimension order, if a person with the same
+name added to the linked list, surname will sort the second
+dimension. You can assume all inputs will be valid, there is no
+such 'enter ' cases. You <strong>must</strong> have <strong>2
+pointers in your struct</strong> to be able to link in 2D. You can
+call them <em><strong>next</strong></em> and
+<em><strong>sibling</strong>.</em></p>
+<p><strong>print</strong> command will print the current status of
+the 2D linked list, where each line represents the first dimension,
+and the 2nd dimension elements are separated on the same line using
+arrow, -&gt;.</p>
+<p>#include<br>
+#include<br>
+#include</p>
+<p>typedef struct node {<br>
+&nbsp;&nbsp; char* name;<br>
+&nbsp;&nbsp; char* surname;<br>
+&nbsp;&nbsp; struct node *next;<br>
+&nbsp;&nbsp; struct node *sibling;<br>
+} Node;</p>
+<p>void printList(Node * headNode);<br>
+void insert(Node **sPtr, char name[], char surname[]);<br>
+void freeNode(Node * nd);<br>
+int delete(Node **sPtr, char name[], char surname[]);</p>
+<p>int main() {<br>
+....... &nbsp;&nbsp;<br>
+}<br>
+.......</p>
+<p>You need to complete this code in C language.</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>The solution to this problem as below ..</p> <p>#include &lt;stdio.h&gt;<br /> #include &lt;stdlib.h&gt;<br /> #include &lt;string.h&gt;</p> <p><br /> typedef struct node {<br /> &nbsp; &nbsp;char* name;<br /> &nbsp; &nbsp;char* surname;<br /> &nbsp; &nbsp;struct node *next;<br /> &nbsp; &nbsp;struct node *sibling;<br /> } Node;</p> <p>void printList(Node * headNode);<br /> void insert(Node **sPtr, char name[], char surname[]);<br /> struct node *siblings(Node **sPtr);&nbsp;&nbsp; &nbsp;//for siblings mathing in the 2d array<br /> void freeNode(Node * nd);<br /> struct node *delete(Node **sPtr, char name[], char surname[]);</p> <p>int main() {<br /> &nbsp;&nbsp; &nbsp;int ch;<br /> &nbsp;&nbsp; &nbsp;char name[100],surname[100];<br /> &nbsp;&nbsp; &nbsp;struct node* head=NULL;<br /> &nbsp;&nbsp; &nbsp;while(1){<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;printf(&quot;1)Insert the data \n 2)Delete the data \n 3)Display the data \n 4)Exit&quot;);<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;scanf(&quot;%d&quot;,&amp;ch);<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;switch(ch){<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;case 1:<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;printf(&quot;Enter the name of the person:&quot;);<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;scanf(&quot;%s&quot;,name);<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;printf(&quot;Enter the surname of the person:&quot;);<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;scanf(&quot;%s&quot;,surname);<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;insert(&amp;head,name,surname);<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;break;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;case 2:<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;printf(&quot;Enter the persons name to be deleted :&quot;);<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;scanf(&quot;%s&quot;,name);<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;printf(&quot;Enter the persons surname to be deleted :&quot;);<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;scanf(&quot;%s&quot;,surname);<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;head=delete(&amp;head,name,surname);<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;break;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;case 3:<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;printList(head);<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;break;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;case 4:<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;exit(0);<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br /> &nbsp;&nbsp; &nbsp;}<br /> }</p> <p>void printList(struct node *head){<br /> &nbsp;&nbsp; &nbsp;struct node *temp=head;<br /> &nbsp;&nbsp; &nbsp;while(temp-&gt;next!=NULL){<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;printf(&quot;%s %s &quot;,temp-&gt;name,temp-&gt;surname);<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(temp-&gt;sibling==NULL){<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;printf(&quot;No siblings for this person&quot;);<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;else{<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;printf(&quot;Sibling name of this person is %s&quot;,temp-&gt;sibling-&gt;name);<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;temp=temp-&gt;next;<br /> &nbsp;&nbsp; &nbsp;}<br /> }<br /> void freeNode(struct node *node){<br /> &nbsp;&nbsp; &nbsp;node-&gt;next=NULL;<br /> &nbsp;&nbsp; &nbsp;node-&gt;sibling=NULL;<br /> &nbsp;&nbsp; &nbsp;free(node);<br /> }<br /> struct node * siblings(struct node **head){<br /> &nbsp;&nbsp; &nbsp;struct node *temp=head;<br /> &nbsp;&nbsp; &nbsp;struct node *ttemp=NULL;<br /> &nbsp;&nbsp; &nbsp;int count=0,tcount=0;<br /> &nbsp;&nbsp; &nbsp;while(temp-&gt;next!=NULL){<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;count=0;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(temp-&gt;sibling!=NULL){<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;ttemp=head;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;tcount=0;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;while(ttemp-&gt;next !=NULL &amp;&amp; strcmp(ttemp-&gt;surname,temp-&gt;surname)==0 &amp;&amp; count==tcount){<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;tcount++;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;ttemp=ttemp-&gt;next;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(strcmp(ttemp-&gt;surname,temp-&gt;surname)==0 || ttemp-&gt;next!=NULL)<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;temp-&gt;sibling=ttemp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;count++;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;temp=temp-&gt;next;<br /> &nbsp;&nbsp; &nbsp;}<br /> &nbsp;&nbsp; &nbsp;return head;<br /> }<br /> void insert(struct node **head,char name[],char surname[]){<br /> &nbsp;&nbsp; &nbsp;struct node* temp=NULL;<br /> &nbsp;&nbsp; &nbsp;struct node* prev=NULL;<br /> &nbsp;&nbsp; &nbsp;struct node* nnode = (struct node*)malloc(sizeof(struct node));&nbsp;<br /> &nbsp;&nbsp; &nbsp;nnode-&gt;name=name;<br /> &nbsp;&nbsp; &nbsp;nnode-&gt;surname=surname;<br /> &nbsp;&nbsp; &nbsp;nnode-&gt;next=NULL;<br /> &nbsp;&nbsp; &nbsp;nnode-&gt;sibling=NULL;<br /> &nbsp;&nbsp; &nbsp;if(head==NULL){<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;nnode-&gt;next=(head);<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;(head)=nnode;<br /> &nbsp;&nbsp; &nbsp;}<br /> &nbsp;&nbsp; &nbsp;else if(head!=NULL){<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;prev=temp;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;temp=head;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;while((strcmp(nnode-&gt;name,temp-&gt;name))&gt;0 &amp;&amp; (temp-&gt;next!=NULL)){<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;prev=temp;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;temp=temp-&gt;next;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(strcmp(nnode-&gt;name,temp-&gt;name)==0){<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(strcmp(nnode-&gt;surname,temp-&gt;surname)&lt;0){<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;nnode-&gt;next=temp;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;prev-&gt;next=nnode;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;else{<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;nnode-&gt;next=temp-&gt;next;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;temp-&gt;next=nnode;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(temp-&gt;next!=NULL){<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;nnode-&gt;next=temp;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;prev-&gt;next=nnode;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;else if(temp-&gt;next==NULL){<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;temp-&gt;next=nnode;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;nnode-&gt;next=NULL;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br /> &nbsp;&nbsp; &nbsp;}<br /> &nbsp;&nbsp; &nbsp;//for siblings mathing in the 2d array<br /> &nbsp;&nbsp; &nbsp;head=siblings(&amp;head);<br /> }<br /> struct node *delete(struct node **head,char name[],char surname[]){<br /> &nbsp;&nbsp; &nbsp;struct node *prev=NULL;<br /> &nbsp;&nbsp; &nbsp;struct node * temp=NULL;<br /> &nbsp;&nbsp; &nbsp;if(head==NULL){<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return NULL;<br /> &nbsp;&nbsp; &nbsp;}<br /> &nbsp;&nbsp; &nbsp;prev=temp;<br /> &nbsp;&nbsp; &nbsp;temp=head;<br /> &nbsp;&nbsp; &nbsp;while(temp-&gt;next!=NULL){<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(strcmp(temp-&gt;name,name)==0 &amp;&amp; strcmp(temp-&gt;surname,surname)==0){<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(temp==head){<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;head=temp-&gt;next;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;freeNode(temp);<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return head;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;else if(temp-&gt;next==NULL){<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;prev-&gt;next=NULL;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;freeNode(temp);<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return head;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;else if(temp!=head &amp;&amp; temp-&gt;next!=NULL){<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;prev-&gt;next=temp-&gt;next;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;freeNode(temp);<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return head;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;prev=temp;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;temp=temp-&gt;next;<br /> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br /> &nbsp;&nbsp; &nbsp;}<br /> }<br /> &nbsp;</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

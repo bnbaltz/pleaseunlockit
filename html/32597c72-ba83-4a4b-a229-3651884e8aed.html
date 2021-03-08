@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>When bonds are sold at a premium, if the annual straight-line
+amortization amount is compared to the annual effective interest
+amortization amount over the life of the bond issue, the annual
+amount of the straight-line amortization of premium is:</p>
+<p>Multiple Choice</p>
+<ul>
+<li>Higher than the effective interest amount in the early years
+and less than the effective interest amount in the later
+years.</li>
+<li>Higher than the effective interest amount every year.</li>
+<li>Less than the effective interest amount in the early years and
+more than the effective interest amount in the later years.</li>
+<li>Less than the effective interest amount every year.</li>
+</ul>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>Higher than the effective interest amount in the early years and
+less than the effective interest amount in the later years</p>
+<p>Explanation: As in example you can see the premium amount in
+straight-line amortization method&nbsp;higher than the effective
+interest amount in the early years and less than the effective
+interest amount in the later years.</p>
+<p>&nbsp;</p>
+<table cellspacing="0" style=
+"border-collapse:collapse;border:none;width:665pt;">
+<tbody>
+<tr>
+<td style=
+"height:15pt;vertical-align:bottom;white-space:nowrap;width:118pt;">
+Example&nbsp;</td>
+<td style=
+"height:15pt;vertical-align:bottom;white-space:nowrap;width:55pt;">
+&nbsp;</td>
+<td style=
+"height:15pt;vertical-align:bottom;white-space:nowrap;width:63pt;">
+&nbsp;</td>
+<td style=
+"height:15pt;vertical-align:bottom;white-space:nowrap;width:64pt;">
+&nbsp;</td>
+<td style=
+"height:15pt;vertical-align:bottom;white-space:nowrap;width:60pt;">
+&nbsp;</td>
+<td style=
+"height:15pt;vertical-align:bottom;white-space:nowrap;width:20pt;">
+&nbsp;</td>
+<td style=
+"height:15pt;vertical-align:bottom;white-space:nowrap;width:48pt;">
+&nbsp;</td>
+<td style=
+"height:15pt;vertical-align:bottom;white-space:nowrap;width:55pt;">
+&nbsp;</td>
+<td style=
+"height:15pt;vertical-align:bottom;white-space:nowrap;width:61pt;">
+&nbsp;</td>
+<td style=
+"height:15pt;vertical-align:bottom;white-space:nowrap;width:58pt;">
+&nbsp;</td>
+<td style=
+"height:15pt;vertical-align:bottom;white-space:nowrap;width:63pt;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+Bonds Face Value</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$100,000</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+No. of Periods</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+10</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+Payment of Interest 9%</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$9,000</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+yield to maturity</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+8%</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+Issue Price</td>
+<td colspan="2" style=
+"height:15pt;vertical-align:bottom;white-space:nowrap;">
+$106,710.08,</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+Effective Interest Method</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td colspan="2" style=
+"height:15pt;vertical-align:bottom;white-space:nowrap;">
+Straight-line Method</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:57.75pt;vertical-align:bottom;width:118pt;">
+<strong>Year</strong></td>
+<td style="height:57.75pt;vertical-align:bottom;width:55pt;">
+<strong>Cash Paid</strong></td>
+<td style="height:57.75pt;vertical-align:bottom;width:63pt;">
+<strong>Interest Expense</strong></td>
+<td style="height:57.75pt;vertical-align:bottom;width:64pt;">
+<strong>Premium Amortized</strong></td>
+<td style="height:57.75pt;vertical-align:bottom;width:60pt;">
+<strong>Carrying Amount of Bonds</strong></td>
+<td style=
+"height:57.75pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:57.75pt;vertical-align:bottom;width:48pt;">
+<strong>Year</strong></td>
+<td style="height:57.75pt;vertical-align:bottom;width:55pt;">
+<strong>Cash Paid</strong></td>
+<td style="height:57.75pt;vertical-align:bottom;width:61pt;">
+<strong>Interest Expense</strong></td>
+<td style="height:57.75pt;vertical-align:bottom;width:58pt;">
+<strong>Premium Amortized</strong></td>
+<td style="height:57.75pt;vertical-align:bottom;width:63pt;">
+<strong>Carrying Amount of Bonds</strong></td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+0</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$106,710.08</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+0</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$106,710.08</td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+1</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$9,000.00</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$8,536.81</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$463.19</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$106,246.89</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+1</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$9,000.00</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$8,328.99</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$671.01</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$106,039.07</td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+2</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$9,000.00</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$8,499.75</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$500.25</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$105,746.64</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+2</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$9,000.00</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$8,328.99</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$671.01</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$105,368.06</td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+3</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$9,000.00</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$8,459.73</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$540.27</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$105,206.37</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+3</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$9,000.00</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$8,328.99</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$671.01</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$104,697.06</td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+4</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$9,000.00</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$8,416.51</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$583.49</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$104,622.88</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+4</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$9,000.00</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$8,328.99</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$671.01</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$104,026.05</td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+5</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$9,000.00</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$8,369.83</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$630.17</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$103,992.71</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+5</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$9,000.00</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$8,328.99</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$671.01</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$103,355.04</td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+6</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$9,000.00</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$8,319.42</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$680.58</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$103,312.12</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+6</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$9,000.00</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$8,328.99</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$671.01</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$102,684.03</td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+7</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$9,000.00</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$8,264.97</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$735.03</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$102,577.09</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+7</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$9,000.00</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$8,328.99</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$671.01</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$102,013.02</td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+8</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$9,000.00</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$8,206.17</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$793.83</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$101,783.26</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+8</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$9,000.00</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$8,328.99</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$671.01</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$101,342.02</td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+9</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$9,000.00</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$8,142.66</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$857.34</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$100,925.92</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+9</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$9,000.00</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$8,328.99</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$671.01</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$100,671.01</td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+10</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$9,000.00</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$8,074.07</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$925.93</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$100,000.00</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+10</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$9,000.00</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$8,328.99</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$671.01</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$100,000.00</td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+Cash Paid</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$9,000</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td colspan="2" style=
+"height:15pt;vertical-align:bottom;white-space:nowrap;">Premium
+Amortized</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+($100,000 x 9%)</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td colspan="3" style=
+"height:15pt;vertical-align:bottom;white-space:nowrap;">6,710.08/10
+= $671.008</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+Interest Expense</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+8536.81</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+($106,710.08 x 8%)</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+Premium Amortized</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+$463.19</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+(cash Paid - Int Exp.)</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:15pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

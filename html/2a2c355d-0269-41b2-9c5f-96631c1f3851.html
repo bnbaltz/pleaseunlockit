@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    Sheila&rsquo;s doctor is concerned that she may suffer from gestational diabetes (high blood glucose levels during pregnancy).<br /><br />There is variation both in the actual glucose level and in the blood test that measures the level.<br /><br />A patient is classified as having gestational diabetes if the glucose level is above 140 milligrams per deciliter (mg/dl) one hour after a sugary drink is ingested.<br /><br />Sheila&rsquo;s measured glucose level one hour after ingesting the sugary drink varies according to the Normal distribution with &micro; = 125 mg/dl and s = 10 mg/dl.<br /><br />If a single glucose measurement is made, what is the probability that Sheila is diagnosed as having gestational diabetes?<br />Answer:?<br /><br />If measurements are made instead on 3 separate days (i.e. independently) and the mean result is compared with the criterion 140 mg/dl, what is the probability that Sheila is diagnosed as having gestational diabetes?<br /><br />Answer:?
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>(1) P(X&gt;140) = P(Z&gt;(140-125)/10)</p><p>=P(Z&gt;1.5)</p><p>=0.0668 (check standard normal table)</p><p>-----------------------------------------------------------------------------------------</p><p>(2) P(xbar &gt; 140) = P(Z&gt; (140-125)/(10/sqrt(3)))</p><p>=P(Z&gt;2.6)</p><p>= 0.0047 (check standard normal table)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>1.The weight of potato chip bags marketed as 16-ounce bags
+follows a distribution that has a mean of 17.0 ounces and a
+standard deviation of 1.0 ounces. Suppose a sample of 100 of these
+bags of potato chips has been randomly sampled.</p>
+<p>The mean weight of the 100 bags would be considered a
+____________________ and the mean weight of all bags would be
+considered a __________________.</p>
+<ol style="list-style-type:upper-alpha;">
+<li>statistic; statistic</li>
+<li>parameter; parameter</li>
+<li>parameter; statistic</li>
+<li>statistic; parameter</li>
+</ol>
+<p>2. Suppose we repeatedly sampled from a population and created
+multiple values of a sample statistic. If we were to plot all those
+values on a number line, the resulting "piling up" of the
+statistics would best be described as ________________.&nbsp;</p>
+<p>&nbsp; A. a sampling distribution.</p>
+<p>&nbsp;B. a point estimate.</p>
+<p>&nbsp;C.a parameter&nbsp; a statistic.</p>
+<p>3. The distance that students drive to school is best modeled
+with a skewed right distribution that has a mean of 10 miles and a
+standard deviation of 2 miles. Suppose a sample of 100 students has
+been taken and the sample mean distance for the sample is
+calculated.</p>
+<p>3-1. Describe the shape of the sampling distribution of the
+sample mean.</p>
+<p>A. Skewed to the left</p>
+<p>B. Approximately normal</p>
+<p>C. A Chebyshev distribution</p>
+<p>D. Skewed to the right</p>
+<p>3-2. Find the probability that the sample mean driving distance
+exceeds 8 miles.</p>
+<p>A. Approximately 0</p>
+<p>B. .1587</p>
+<p>C. .8413</p>
+<p>D. Approximately 1</p>
+<p>4..The weight of potato chip bags marketed as 16-ounce bags
+follows a distribution that has a mean of 17.0 ounces and a
+standard deviation of 1.0 ounces. Suppose a sample of 100 of these
+bags of potato chips has been randomly sampled</p>
+<p>Describe the mean and standard deviation for the sampling
+distribution of the sample mean .</p>
+<p>A. mean = 17 ounces, standard deviation = 1.0 ounces</p>
+<p>B. mean = 17 ounces, standard deviation = .10 ounces</p>
+<p>C. mean = 1.7 ounces, standard deviation = 1.0 ounces</p>
+<p>D. mean = 1.7 ounces, standard deviation = .10 ounces</p>
+<p style="margin-left:0px;margin-right:0px;"><strong>5. Parking at
+school can be extremely difficult at times. The university is
+trying to determine the location of a new parking garage. As part
+of their research, officials are interested in estimating the
+average parking time of students from within the various colleges
+on campus. A survey of 338 College of Business (COBA) students
+yields the following descriptive information regarding the length
+of time (in minutes) it took them to find a parking spot. Use it to
+answer the following questions. Note that the “Lo 95%” and “Up 95%”
+refer to the endpoints of the desired confidence
+interval.</strong></p>
+<pre style="margin-left:0px;margin-right:0px;">
+<strong>Variable          N   Lo 95% CI        Mean   Up 95% CI          SD</strong>
+<strong>Parking Time    338      9.1944      10.466      11.738      11.885
+
+</strong></pre>
+<p style="margin-left:0px;margin-right:0px;">5-1. Give a practical
+interpretation for the 95% confidence interval given above.</p>
+<p>A. We are 95% confident that the average parking time of all
+COBA students falls between 9.19 and 11.74 minutes.</p>
+<p>B. 95% of the COBA students had parking times of 10.466
+minutes.</p>
+<p>C. We are 95% confident that the average parking time of the 338
+COBA students surveyed falls between 9.19 and 11.74 minutes.</p>
+<p>D. 95% of the COBA students had parking times that fell between
+9.19 and 11.74 minutes.</p>
+<p style="margin-left:0px;margin-right:0px;">5-2. Explain what the
+phrase “95% confident” means when working with a confidence
+interval.</p>
+<p>A. In repeated sampling, 95% of the sample means will fall
+within the interval created.</p>
+<p>B. 95% of the observations in the population will fall within
+the endpoints of the interval.</p>
+<p>C. In repeated sampling, 95% of the population means will fall
+within the interval created.</p>
+<p>D. In repeated sampling, 95% of the intervals created will
+contain the population mean.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><img alt="I
+statistic
+parameter.
+Sample Mean
+is the
+population Mean is the
+Mean weight of
+Mean weight of all
+bags
+D statistic
+100 bags
+" src="https://media.cheggcdn.com/media/dfe/dfe3341b-2bc2-4bf8-9460-31fb57b59b2b/phpxVO8h9.png" style="height:809px;width:600px;"></p>
+<p>5.1 .the 95% confidence interval means</p>
+<p>We are 95% confident that the average parking time of all COBA
+students fall between 9.19 and 11.74 minutes.</p>
+<p>Option A</p>
+<p>5.2 .&nbsp;</p>
+<p>95% confident means</p>
+<p>In repeated sampling 95% of the intervals created will contain
+the population mean.</p>
+<p>Correct option D .</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    
