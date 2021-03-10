@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Problem 15.15</p>
+<p>Write the expression for&nbsp;<em>K</em><em>c</em>&nbsp;for the
+following reactions. In each case indicate whether the reaction is
+homogeneous or heterogeneous.</p>
+<p><strong>Part A</strong></p>
+<p>3NO(<em>g</em>)⇌N2O(<em>g</em>)+NO2(<em>g</em>)</p>
+<p><em>K</em>c=&nbsp;&nbsp;</p>
+<table>
+<tbody>
+<tr>
+<td>&nbsp;</td>
+<td>[N2O][NO2]3[NO]</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>[NO]3[N2O][NO2]</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>3[NO][N2O][NO2]</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>[N2O][NO2][NO]3</td>
+</tr>
+</tbody>
+</table>
+<p>
+<strong>Submit</strong><strong>My&nbsp;Answers</strong><strong>Give&nbsp;Up</strong></p>
+<p><strong>Part B</strong></p>
+<p>3NO(<em>g</em>)⇌N2O(<em>g</em>)+NO2(<em>g</em>)</p>
+<p>reaction is&nbsp;</p>
+<table>
+<tbody>
+<tr>
+<td>&nbsp;</td>
+<td>homogeneous</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>heterogeneous</td>
+</tr>
+</tbody>
+</table>
+<p>
+<strong>Submit</strong><strong>My&nbsp;Answers</strong><strong>Give&nbsp;Up</strong></p>
+<p><strong>Part C</strong></p>
+<p>
+CH4(<em>g</em>)+2H2S(<em>g</em>)⇌CS2(<em>g</em>)+4H2(<em>g</em>)</p>
+<p><em>K</em>c=&nbsp;&nbsp;</p>
+<table>
+<tbody>
+<tr>
+<td>&nbsp;</td>
+<td>[CH4][H2S]2[CS2][H2]4</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>[CH4][H2S]2[CS2][H2]</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>2[CS2][H2][CH4][H2S]</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>[CS2][H2]4[CH4][H2S]2</td>
+</tr>
+</tbody>
+</table>
+<p>
+<strong>Submit</strong><strong>My&nbsp;Answers</strong><strong>Give&nbsp;Up</strong></p>
+<p><strong>Part D</strong></p>
+<p>
+CH4(<em>g</em>)+2H2S(<em>g</em>)⇌CS2(<em>g</em>)+4H2(<em>g</em>)</p>
+<p>reaction is&nbsp;</p>
+<table>
+<tbody>
+<tr>
+<td>&nbsp;</td>
+<td>homogeneous</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>heterogeneous</td>
+</tr>
+</tbody>
+</table>
+<p>
+<strong>Submit</strong><strong>My&nbsp;Answers</strong><strong>Give&nbsp;Up</strong></p>
+<p><strong>Part E</strong></p>
+<p>Ni(CO)4(<em>g</em>)⇌Ni(<em>s</em>)+4CO(<em>g</em>)</p>
+<p><em>K</em>c=&nbsp;&nbsp;</p>
+<table>
+<tbody>
+<tr>
+<td>&nbsp;</td>
+<td>[Ni(CO)4]4[CO]</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>[Ni(CO)4][CO]4</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>[CO]4[Ni(CO)4]</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>4[CO][Ni(CO)4]</td>
+</tr>
+</tbody>
+</table>
+<p>
+<strong>Submit</strong><strong>My&nbsp;Answers</strong><strong>Give&nbsp;Up</strong></p>
+<p><strong>Part F</strong></p>
+<p>Ni(CO)4(<em>g</em>)⇌Ni(<em>s</em>)+4CO(<em>g</em>)</p>
+<p>reaction is&nbsp;</p>
+<table>
+<tbody>
+<tr>
+<td>&nbsp;</td>
+<td>homogeneous</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>heterogeneous</td>
+</tr>
+</tbody>
+</table>
+<p>
+<strong>Submit</strong><strong>My&nbsp;Answers</strong><strong>Give&nbsp;Up</strong></p>
+<p><strong>Part G</strong></p>
+<p>
+HF(<em>a</em><em>q</em>)⇌H+(<em>a</em><em>q</em>)+F−(<em>a</em><em>q</em>)</p>
+<p><em>K</em>c=&nbsp;&nbsp;</p>
+<table>
+<tbody>
+<tr>
+<td>&nbsp;</td>
+<td>[H+][F−][HF]</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>[HF][H+][F−]</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>[F−][H+][HF]</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>[H+][F−][HF]</td>
+</tr>
+</tbody>
+</table>
+<p>
+<strong>Submit</strong><strong>My&nbsp;Answers</strong><strong>Give&nbsp;Up</strong></p>
+<p><strong>Part H</strong></p>
+<p>
+HF(<em>a</em><em>q</em>)⇌H+(<em>a</em><em>q</em>)+F−(<em>a</em><em>q</em>)</p>
+<p>reaction is&nbsp;</p>
+<table>
+<tbody>
+<tr>
+<td>&nbsp;</td>
+<td>homogeneous</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>heterogeneous</td>
+</tr>
+</tbody>
+</table>
+<p>
+<strong>Submit</strong><strong>My&nbsp;Answers</strong><strong>Give&nbsp;Up</strong></p>
+<p><strong>Part I</strong></p>
+<p>
+2Ag(<em>s</em>)+Zn2+(<em>a</em><em>q</em>)⇌2Ag+(<em>a</em><em>q</em>)+Zn(<em>s</em>)</p>
+<p><em>K</em>c=&nbsp;&nbsp;</p>
+<table>
+<tbody>
+<tr>
+<td>&nbsp;</td>
+<td>[Ag+]2[Zn2+]</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>[Zn2+]2[Ag+]</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>[Zn2+][Ag+]2</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>2[Ag+][Zn2+]</td>
+</tr>
+</tbody>
+</table>
+<p>
+<strong>Submit</strong><strong>My&nbsp;Answers</strong><strong>Give&nbsp;Up</strong></p>
+<p><strong>Part J</strong></p>
+<p>
+2Ag(<em>s</em>)+Zn2+(<em>a</em><em>q</em>)⇌2Ag+(<em>a</em><em>q</em>)+Zn(<em>s</em>)</p>
+<p>reaction is&nbsp;</p>
+<table>
+<tbody>
+<tr>
+<td>&nbsp;</td>
+<td>homogeneous</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>heterogeneous</td>
+</tr>
+</tbody>
+</table>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>part -A</p>
+<p>3NO(<em>g</em>)⇌N2O(<em>g</em>)+NO2(<em>g</em>)</p>
+<p>Kc&nbsp; = [N2O][NO2]/[NO]<sup>3</sup></p>
+<p>part-B</p>
+<p>3NO(<em>g</em>)⇌N2O(<em>g</em>)+NO2(<em>g</em>)</p>
+<p>Reactanta and products are same phase. So it is homogeneous</p>
+<p><strong>Part C</strong></p>
+<p>
+CH4(<em>g</em>)+2H2S(<em>g</em>)⇌CS2(<em>g</em>)+4H2(<em>g</em>)</p>
+<p><em>K</em>c=&nbsp;
+[CS2][H2]<sup>4</sup>/[CH4][H2S]<sup>2</sup></p>
+<p><strong>Part D</strong></p>
+<p>
+CH4(<em>g</em>)+2H2S(<em>g</em>)⇌CS2(<em>g</em>)+4H2(<em>g</em>)</p>
+<p>reaction is homogeneous .Here reactants and products are same
+phase.</p>
+<p><strong>Part E</strong></p>
+<p>Ni(CO)4(<em>g</em>)⇌Ni(<em>s</em>)+4CO(<em>g</em>)</p>
+<p><em>K</em>c=&nbsp; [CO]<sup>4</sup>/[Ni(CO)4]</p>
+<p><strong>Part F</strong></p>
+<p>Ni(CO)4(<em>g</em>)⇌Ni(<em>s</em>)+4CO(<em>g</em>)</p>
+<p>reaction is heterogeneous because of reactants and products are
+different phase.</p>
+<p><strong>Part G</strong></p>
+<p>
+HF(<em>a</em><em>q</em>)⇌H+(<em>a</em><em>q</em>)+F−(<em>a</em><em>q</em>)</p>
+<p><em>K</em>c=&nbsp; [F-][H+]/[HF]</p>
+<p><strong>Part H</strong></p>
+<p>
+HF(<em>a</em><em>q</em>)⇌H+(<em>a</em><em>q</em>)+F−(<em>a</em><em>q</em>)</p>
+<p>reaction is homogeneous</p>
+<p><strong>Part I</strong></p>
+<p>
+2Ag(<em>s</em>)+Zn2+(<em>a</em><em>q</em>)⇌2Ag+(<em>a</em><em>q</em>)+Zn(<em>s</em>)</p>
+<p><em>K</em>c=&nbsp; [Ag+]<sup>2</sup>/[Zn<sup>+2</sup>]</p>
+<p><strong>Part J</strong></p>
+<p>
+2Ag(<em>s</em>)+Zn2+(<em>a</em><em>q</em>)⇌2Ag+(<em>a</em><em>q</em>)+Zn(<em>s</em>)</p>
+<p>reaction is hetreogeneous . Reactants and products are different
+phase</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

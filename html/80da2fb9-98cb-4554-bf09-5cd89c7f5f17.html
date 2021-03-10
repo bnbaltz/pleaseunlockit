@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Your car was in a small accident and you took it to Able
+Autobody first thing on a Monday morning. Able services cars with
+rate λ =1/2 /hour,</p>
+<p>i.e... P(Current Car Finished in [t,t+τ])≈τ/2 for small τ, and
+works 8 hours a day (not including lunch).</p>
+<p>You are third in line including the car being worked on when the
+shop opens.</p>
+<p>Find the probability that your car will not be fixed that
+day.</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>This process is poission process.</p>
+<p>Given that ,λ =1/2 /hour,</p>
+<p>Since poission probability distribution P(X=k)= <strong>(λ
+<sup>k</sup>*exp<sup>(-</sup><sup>λ</sup><sup>)</sup>) /
+k!</strong></p>
+<p>λ= mean value=1/2</p>
+<p>exp= exponantial</p>
+<p>k= random value=3 hour</p>
+<p>k!= factorial of k.</p>
+<p>Thus,</p>
+<p>P(Current Car Finished in X=3)
+=&nbsp;<strong>(1/2&nbsp;<sup>3</sup>&nbsp;*exp<sup>(-3</sup><sup>)</sup>)
+/ 3!&nbsp; =0.001</strong></p>
+<p>P(Current Car not Finished in X=3) = 1-0.001 =
+<strong>0.999</strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

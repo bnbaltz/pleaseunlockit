@@ -1,0 +1,5 @@
+/homework-help/questions-and-answers/c-please-name-last-first-username-4-7-points-write-function-one-input-parameter-vector-str-q45364695:dd454daf-75ed-4d32-b4bf-246062d709fc
+/homework-help/questions-and-answers/c-please-write-function-one-input-parameter-vector-strings-function-count-return-number-st-q45792466:a8ed2b24-bc92-4341-946f-a507a33adbdb
+/homework-help/questions-and-answers/please-write-code-c-write-function-one-input-parameter-vector-strings-function-count-retur-q45796309:76a8c9de-98a9-4230-b08f-0ba3ccee492e
+/homework-help/questions-and-answers/q5-de-14-points-write-function-one-input-parameter-vector-strings-function-count-return-nu-q45795221:6350c3de-f682-482c-8ae8-c3ba5ed7bd22
+/homework-help/questions-and-answers/c-please-help--also-cover-usage-brackets-answer-without-would-great-q1-write-function-one--q45797037:944db4cc-e4e9-4c49-9458-87d297a087a8

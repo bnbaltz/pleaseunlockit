@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <table border="0" cellpadding="0" cellspacing="3" style=
+"width:100%;">
+<tbody>
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="3">
+<tbody>
+<tr>
+<td>
+<p>Question 6. <strong>6.</strong> (TCO D) Which of these is
+<em>not</em> included in an employer's payroll tax expense? (Points
+: 5)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FICA (Social Security)
+taxes<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Federal unemployment
+taxes<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; State unemployment taxes<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Federal income taxes<br />
+&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="3" style=
+"width:100%;">
+<tbody>
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="3">
+<tbody>
+<tr>
+<td>
+<p>Question 7. <strong>7.</strong> (TCO D) Which of the following
+taxes does not represent a payroll deduction a company may incur?
+(Points : 5)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Federal income taxes<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FICA taxes<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; State unemployment taxes<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; State income taxes<br />
+&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="3" style=
+"width:100%;">
+<tbody>
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="3">
+<tbody>
+<tr>
+<td>
+<p>Question 8. <strong>8.</strong> (TCO D) Which of the following
+is not acceptable treatment for the presentation of current
+liabilities? (Points : 5)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Listing current liabilities
+in order of maturity<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Listing current liabilities
+according to amount<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Offsetting current liabilities
+against assets that are to be applied to their liquidation<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Showing current liabilities
+immediately below current assets to obtain a presentation of
+working capital<br />
+&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="3" style=
+"width:100%;">
+<tbody>
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="3">
+<tbody>
+<tr>
+<td>
+<p>Question 9. <strong>9.</strong> (TCO D) On December 31, 2010,
+Irey Co. has $2,000,000 of short-term notes payable due on February
+14, 2011. On January 10, 2011, Irey arranged a line of credit with
+County Bank that allows Irey to borrow up to $1,500,000 at 1% above
+the prime rate for 3 years. On February 2, 2011, Irey borrowed
+$1,200,000 from County Bank and used $500,000 additional cash to
+liquidate $1,700,000 of the short-term notes payable. The amount of
+the short-term notes payable that should be reported as current
+liabilities on the December 31, 2010 balance sheet issued on March
+5, 2011 is (Points : 5)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $0.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $300,000.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $500,000.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $800,000.<br />
+&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="3" style=
+"width:100%;">
+<tbody>
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="3">
+<tbody>
+<tr>
+<td>
+<p>Question 10. <strong>10.</strong> (TCO D) Vargas Company has 35
+employees who work 8-hour days and are paid hourly. On January 1,
+2009, the company began a program of granting its employees 10 days
+of paid vacation each year. Vacation days earned in 2009 may first
+be taken on January 1, 2010. Information relative to these
+employees is as follows:<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Hourly&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Vacation Days Earned&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vacation
+Days Used<br />
+Year&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+by Each
+Employee&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;by Each Employee<br />
+&nbsp;<br />
+2009&nbsp;&nbsp;&nbsp;&nbsp;
+$25.80&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+0<br />
+2010&nbsp;&nbsp;&nbsp;&nbsp;
+27.00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+8<br />
+2011&nbsp;&nbsp;&nbsp;&nbsp;
+28.50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+10<br />
+<br />
+Vargas has chosen to accrue the liability for compensated absences
+at the current rates of pay in effect when the compensated time is
+earned. What is the amount of the accrued liability for compensated
+absences that should be reported at December 31, 2011? (Points :
+5)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $94,920<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $90,720<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $79,800<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $95,760<br />
+&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>Answer 6.6</p>
+<p>Correct answer is <strong>Federal income taxes</strong> are not
+included in an employer's payroll tax expense. Rest all are the
+payroll related expenses which an employer will have to bear appart
+from the payroll.</p>
+<p>Answer 7.7</p>
+<p>Correct answer is <strong>State unemployment taxes</strong> does
+not represent a payroll deduction a company may incur.</p>
+<p>Answer 8.8</p>
+<p>Correct answer is <strong>Offsetting current liabilities against
+assets that are to be applied to their liquidation</strong> is not
+acceptable treatment for the presentation of current
+liabilities.</p>
+<p>Answer 9.9</p>
+<p>Correct answer is $300,000 as the initial amount was 2,000,000
+which is due on Feb 14, 2011. But on feb 2, 2011 $1,200,000 was
+borrowed to liquidate the short term notes payable with additional
+cash of $500,000 making total amount to be liquidated to
+$1,700,000. Rest 300,000 was due on Feb 14 ,2011 but has not been
+paid till March 5th 2011. So the amount of $300,000 remains
+outstanding on the balance sheet and should be reported under
+current liabilites as of March 5, 2011.</p>
+<p>Answer 10.10</p>
+<p>&nbsp;</p>
+<table border="2" cellpadding="0" cellspacing="0" style=
+"width:588px;">
+<tbody>
+<tr>
+<td style="height:68px;width:84px;text-align:center;">Year</td>
+<td style="width:84px;text-align:center;">Hourly wages</td>
+<td style="width:84px;text-align:center;">Vacation Days earned by
+each employee</td>
+<td style="width:84px;text-align:center;">Vacation days used by
+each employees</td>
+<td style="width:84px;text-align:center;">Balance left</td>
+<td style="width:84px;text-align:center;">Cumulative vacation
+unutilized</td>
+<td style="width:84px;text-align:center;">Number of employees</td>
+</tr>
+<tr>
+<td style="height:17px;text-align:center;">2009</td>
+<td style="text-align:center;">25.8</td>
+<td style="text-align:center;">10</td>
+<td style="text-align:center;">0</td>
+<td style="text-align:center;">10</td>
+<td style="text-align:center;">10</td>
+<td style="text-align:center;">35</td>
+</tr>
+<tr>
+<td style="height:17px;text-align:center;">2010</td>
+<td style="text-align:center;">27</td>
+<td style="text-align:center;">10</td>
+<td style="text-align:center;">8</td>
+<td style="text-align:center;">2</td>
+<td style="text-align:center;">12</td>
+<td style="text-align:center;">35</td>
+</tr>
+<tr>
+<td style="height:17px;text-align:center;">2011</td>
+<td style="text-align:center;">28.5</td>
+<td style="text-align:center;">10</td>
+<td style="text-align:center;">10</td>
+<td style="text-align:center;">0</td>
+<td style="text-align:center;">12</td>
+<td style="text-align:center;">35</td>
+</tr>
+</tbody>
+</table>
+<p>At the end of 2011 the cumulative balance of vacation left per
+employee = 12 days</p>
+<p>Number of hours = 8</p>
+<p>Rate per hour = 28.5</p>
+<p>number of employees = 35</p>
+<p><strong>So the total amount of accrued vacation at end of year
+2011 = cumulative balance of vacation left per employee x Number of
+hours x Rate per hour x number of employees = 12 x 8 x 28.5 x 35 =
+$95,760. So the correct answer is $95,760.</strong></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

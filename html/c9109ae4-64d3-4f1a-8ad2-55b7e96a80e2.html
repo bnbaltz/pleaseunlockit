@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p><strong>Download the Applying Excel form and enter formulas in
+all cells that contain question marks.</strong></p>
+<p>For example, in cell D21 enter the formula “= D14”.</p>
+<p>Notes:</p>
+<p>In the text, variances are always displayed as positive numbers.
+To accomplish this, you can use the ABS() function in Excel. For
+example, the formula in cell B25 would be “=ABS(F21−F22)”.</p>
+<ul>
+<li>Cells C25 through C27, C34 through C36, and C43 through C45
+already contain formulas to compute and display whether variances
+are Favorable or Unfavorable. Do not enter data or formulas into
+those cells—if you do, you will overwrite these formulas.</li>
+<li>After entering formulas in all of the cells that contained
+question marks, verify that the amounts match the numbers in the
+example in the text.</li>
+</ul>
+<p>Check your worksheet by changing the direct materials standard
+quantity in cell B6 to 2.9 pounds, the direct labor standard
+quantity in cell B7 to 0.6 hours, and the variable manufacturing
+overhead in cell B8 to 0.6 hours. The materials spending variance
+should now be $1,500 U, the labor spending variance should now be
+$3,720 F, and the variable overhead spending variance should now be
+$60 F. If you do not get these answers, find the errors in your
+worksheet and correct them.</p>
+<p><strong>Save your completed Applying Excel form to your computer
+and then upload it here by clicking “Browse.” Next, click “Save.”
+You will use this worksheet to answer the questions in Part
+2.</strong></p>
+<p><strong>ONLY FORMULAS PLEASE IN THE CELLS</strong></p>
+<p>&nbsp;</p>
+<p><strong><img alt="Chapter_10_Applying_Excel_Student_Form (3).xls (Compatibility Mode] - Excel
+X
+? - o
+Anshika Singh -
+PAGE LAYOUT
+FORMULAS
+DATA" src="https://media.cheggcdn.com/media/7f3/7f30790f-0827-4674-8dfe-db815a26c243/phpSKttoK.png" style="height:852px;"></strong></p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <table cellspacing="0" style=
+"border-collapse:collapse;border:none;width:539pt;">
+<tbody>
+<tr>
+<td style=
+"height:13pt;vertical-align:bottom;white-space:nowrap;width:292pt;">
+Chapter 10</td>
+<td style=
+"height:13pt;vertical-align:bottom;white-space:nowrap;width:51pt;">
+&nbsp;</td>
+<td style=
+"height:13pt;vertical-align:bottom;white-space:nowrap;width:44pt;">
+&nbsp;</td>
+<td style=
+"height:13pt;vertical-align:bottom;white-space:nowrap;width:40pt;">
+&nbsp;</td>
+<td style=
+"height:13pt;vertical-align:bottom;white-space:nowrap;width:56pt;">
+&nbsp;</td>
+<td style=
+"height:13pt;vertical-align:bottom;white-space:nowrap;width:56pt;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Data</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Exhibit 10-1: Standard Cost Card</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Inputs</td>
+<td colspan="2" style=
+"height:13pt;vertical-align:middle;white-space:nowrap;">Standard
+Quantity</td>
+<td colspan="2" style=
+"height:13pt;vertical-align:middle;white-space:nowrap;">Standard
+Price</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Direct materials</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.00</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+pounds</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$&nbsp;&nbsp; 4.00</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per pound</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Direct labor</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.50</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+hours</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$ 22.00</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per hour</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Variable manufacturing overhead</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.50</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+hours</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$&nbsp;&nbsp; 6.00</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per hour</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Actual results:</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Actual output</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+2,000</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+units</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Actual variable manufacturing overhead cost</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+$7,140</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td colspan="2" style=
+"height:13pt;vertical-align:middle;white-space:nowrap;">Actual
+Quantity</td>
+<td colspan="2" style=
+"height:13pt;vertical-align:middle;white-space:nowrap;">Actual
+price</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Actual direct materials cost</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+6,500</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+pounds</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+$3.80</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per pound</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Actual direct labor cost</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+1,050</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+hours</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+$21.60</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per hour</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Enter a formula into each of the cells marked with a ? below</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Main Example: Chapter 10</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Exhibit 10-4: Standard Cost Variance Analysis–Direct Materials</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Standard Quantity Allowed for the Actual Output, at Standard
+Price</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$6,000.00</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+pounds ×</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$&nbsp;&nbsp; 4.00</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per pound =</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$24,000.00</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Actual Quantity of Input, at Standard Price</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+6,500</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+pounds ×</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$&nbsp;&nbsp; 4.00</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per pound =</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$26,000.00</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Actual Quantity of Input, at Actual Price</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+6,500</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+pounds ×</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+$3.80</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per pound =</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$24,700.00</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Direct materials variances:</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Materials quantity variance</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$2,000.00</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+U</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Materials price variance</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$1,300.00</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+F</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Materials spending variance</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$&nbsp;&nbsp; 700.00</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+U</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Exhibit 10-6: Standard Cost Variance Analysis–Direct Labor</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Standard Hours Allowed for the Actual Output, at Standard Rate</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$1,000.00</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+hours ×</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$ 22.00</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per hour =</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$22,000.00</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Actual Hours of Input, at Standard Rate</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+1,050</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+hours ×</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$ 22.00</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per hour =</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$23,100.00</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Actual Hours of Input, at Actual Rate</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+1,050</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+hours ×</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+$21.60</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per hour =</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$22,680.00</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Direct labor variances:</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Labor efficiency variance</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$1,100.00</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+U</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Labor rate variance</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$&nbsp;&nbsp; 420.00</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+F</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Labor spending variance</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$&nbsp;&nbsp; 680.00</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+U</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td colspan="3" style=
+"height:18pt;vertical-align:middle;white-space:nowrap;">Exhibit
+10-8: Standard Cost Variance Analysis–Variable Manufacturing
+Overhead</td>
+<td style="height:18pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:18pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:18pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Standard Hours Allowed for the Actual Output, at Standard Rate</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$1,000.00</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+hours ×</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$&nbsp;&nbsp; 6.00</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per hour =</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$&nbsp; 6,000.00</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Actual Hours of Input, at Standard Rate</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+1,050</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+hours ×</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$&nbsp;&nbsp; 6.00</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per hour =</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$&nbsp; 6,300.00</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Actual Hours of Input, at Actual Rate</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+1,050</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+hours ×</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+6.8</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per hour =</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$&nbsp; 7,140.00</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Variable overhead variances:</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Variable overhead efficiency variance</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$&nbsp;&nbsp; 300.00</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+U</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Variable overhead rate variance</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$&nbsp;&nbsp; 840.00</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+U</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Variable overhead spending variance</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;$1,140.00</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+U</td>
+<td style="height:13pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table cellspacing="0" style=
+"border-collapse:collapse;border:none;width:549pt;">
+<tbody>
+<tr>
+<td style=
+"height:13pt;vertical-align:bottom;white-space:nowrap;width:293pt;">
+Chapter 10</td>
+<td style=
+"height:13pt;vertical-align:bottom;white-space:nowrap;width:64pt;">
+&nbsp;</td>
+<td style=
+"height:13pt;vertical-align:bottom;white-space:nowrap;width:44pt;">
+&nbsp;</td>
+<td style=
+"height:13pt;vertical-align:bottom;white-space:nowrap;width:44pt;">
+&nbsp;</td>
+<td style=
+"height:13pt;vertical-align:bottom;white-space:nowrap;width:57pt;">
+&nbsp;</td>
+<td style=
+"height:13pt;vertical-align:bottom;white-space:nowrap;width:47pt;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Data</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Exhibit 10-1: Standard Cost Card</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Inputs</td>
+<td colspan="2" style=
+"height:13pt;vertical-align:middle;white-space:nowrap;">Standard
+Quantity</td>
+<td colspan="2" style=
+"height:13pt;vertical-align:middle;white-space:nowrap;">Standard
+Price</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Direct materials</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+3</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+pounds</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+4</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per pound</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Direct labor</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+0.5</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+hours</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+22</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per hour</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Variable manufacturing overhead</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+0.5</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+hours</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+6</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per hour</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Actual results:</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Actual output</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+2000</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+units</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Actual variable manufacturing overhead cost</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+7140</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td colspan="2" style=
+"height:13pt;vertical-align:middle;white-space:nowrap;">Actual
+Quantity</td>
+<td colspan="2" style=
+"height:13pt;vertical-align:middle;white-space:nowrap;">Actual
+price</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Actual direct materials cost</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+6500</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+pounds</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+3.8</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per pound</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Actual direct labor cost</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+1050</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+hours</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+21.6</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per hour</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Enter a formula into each of the cells marked with a ? below</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Main Example: Chapter 10</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Exhibit 10-4: Standard Cost Variance Analysis–Direct Materials</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Standard Quantity Allowed for the Actual Output, at Standard
+Price</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=B6*B11</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+pounds ×</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=D6</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per pound =</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=B21*D21</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Actual Quantity of Input, at Standard Price</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=B14</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+pounds ×</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=D6</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per pound =</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=B22*D22</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Actual Quantity of Input, at Actual Price</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=B14</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+pounds ×</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=D14</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per pound =</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=B23*D23</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Direct materials variances:</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Materials quantity variance</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=ABS(F21-F22)</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+U</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Materials price variance</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=ABS(F23-F22)</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+F</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Materials spending variance</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=ABS(F21-F23)</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+U</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Exhibit 10-6: Standard Cost Variance Analysis–Direct Labor</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Standard Hours Allowed for the Actual Output, at Standard Rate</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=B11*B7</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+hours ×</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=D7</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per hour =</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=B30*D30</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Actual Hours of Input, at Standard Rate</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=B15</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+hours ×</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=D7</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per hour =</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=B31*D31</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Actual Hours of Input, at Actual Rate</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=B15</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+hours ×</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=D15</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per hour =</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=B32*D32</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Direct labor variances:</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Labor efficiency variance</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=ABS(F30-F31)</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+U</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Labor rate variance</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=ABS(F32-F31)</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+F</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Labor spending variance</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=ABS(F30-F32)</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+U</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td colspan="3" style=
+"height:18pt;vertical-align:middle;white-space:nowrap;">Exhibit
+10-8: Standard Cost Variance Analysis–Variable Manufacturing
+Overhead</td>
+<td style="height:18pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:18pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:18pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Standard Hours Allowed for the Actual Output, at Standard Rate</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=B11*B8</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+hours ×</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=D8</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per hour =</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=B39*D39</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Actual Hours of Input, at Standard Rate</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=B15</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+hours ×</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=D8</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per hour =</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=B40*D40</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Actual Hours of Input, at Actual Rate</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=B15</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+hours ×</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=F41/B41</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+per hour =</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=B12</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Variable overhead variances:</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Variable overhead efficiency variance</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=ABS(F39-F40)</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+U</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Variable overhead rate variance</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=ABS(F41-F40)</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+U</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+<tr>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+Variable overhead spending variance</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+=ABS(F39-F41)</td>
+<td style="height:13pt;vertical-align:middle;white-space:nowrap;">
+U</td>
+<td style="height:13pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+<td style="height:13pt;vertical-align:bottom;white-space:nowrap;">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

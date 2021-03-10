@@ -1,0 +1,8 @@
+/homework-help/questions-and-answers/use-map-hashmap-hashset-try-use-file-reader-file-io-please-objective-write-java-program-ta-q20649107:2689a6eb-de7e-41fc-9c8f-87ca337e96f1
+/homework-help/questions-and-answers/objective-java-write-program-takes-5x5-array-characters-detects-many-words-2-6-letters-len-q28506039:da60d7f8-09eb-4652-9e5a-b55b3e68d336
+/homework-help/questions-and-answers/use-map-hashmap-hashset-buffered-reader-packages-try-use-file-reader-file-io-please-object-q20650715:bb017a89-e2f7-4b83-a27d-f3f4d6d3e4cf
+/homework-help/questions-and-answers/please-use-map-hashmap-hashset-buffered-reader-packages-try-use-file-reader-file-io-please-q20656393:a2d4d52f-1ecc-4dc6-86b0-6b8e035ce87f
+/homework-help/questions-and-answers/objective-write-program-takes-5x5-array-characters-detects-many-words-2-6-letters-length-f-q37107394:d6bba375-053b-4e0c-8e75-16b7262ea47f
+/homework-help/questions-and-answers/objective-write-java-program-takes-5x5-array-characters-detects-many-words-2-5-letters-len-q20630359:f7076524-e8f5-4b3e-8033-31924cbaaf3a
+/homework-help/questions-and-answers/java-program-objective-write-program-takes-5x5-array-characters-detects-many-words-2-5-let-q25833214:77aa2bd4-10af-42bb-abe7-1bffa4eda451
+/homework-help/questions-and-answers/write-program-takes-5x5-array-characters-detects-many-words-2-5-letters-length-found-lette-q20635075:173802c4-96a0-4963-a09a-ca65c988bc01

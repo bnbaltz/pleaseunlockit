@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div id="mobile-question-style" style="font-family: 'Helvetica Neue',Helvetica,Arial; color:#333333;"><div><br><img src="https://media.cheggcdn.com/study/a1f/a1f0c361-0627-41ef-991c-160a564844d4/image" alt="During December, Far West Services makes a $3,200 credit sale. The state sales tax rate is 6% and the local sales tax rate is"></div></div>
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <table style="border-collapse:collapse;width:375px"> 	<tbody> 		<tr> 			<td style="border-bottom:1px solid black;border-left:1px solid black;border-right:1px solid black;border-top:1px solid black;height:42px;vertical-align:bottom;white-space:nowrap;width:77px"><span style="color:black">Transaction</span></td> 			<td style="border-bottom:1px solid black;border-left:1px solid black;border-right:1px solid black;border-top:1px solid black;vertical-align:bottom;white-space:nowrap;width:145px"><span style="color:black">Particulars</span></td> 			<td style="border-bottom:1px solid black;border-left:1px solid black;border-right:1px solid black;border-top:1px solid black;vertical-align:bottom;white-space:nowrap;width:70px"><span style="color:black">Dr $</span></td> 			<td style="border-bottom:1px solid black;border-left:1px solid black;border-right:1px solid black;border-top:1px solid black;vertical-align:bottom;white-space:nowrap;width:81px"><span style="color:black">Cr $</span></td> 		</tr> 		<tr> 			<td style="border-bottom:1px solid black;border-left:1px solid black;border-right:1px solid black;border-top:1px solid black;height:23px;vertical-align:bottom;white-space:nowrap"><span style="color:black">1</span></td> 			<td style="border-bottom:1px solid black;border-left:1px solid black;border-right:1px solid black;border-top:1px solid black;vertical-align:bottom;white-space:nowrap"><span style="color:black">Accounts receivable</span></td> 			<td style="border-bottom:1px solid black;border-left:1px solid black;border-right:1px solid black;border-top:1px solid black;vertical-align:bottom;white-space:nowrap"><span style="color:black">&nbsp;$&nbsp;&nbsp;&nbsp;&nbsp; 3,472</span></td> 			<td style="border-bottom:1px solid black;border-left:1px solid black;border-right:1px solid black;border-top:1px solid black;vertical-align:bottom;white-space:nowrap"><span style="color:black">&nbsp;</span></td> 		</tr> 		<tr> 			<td style="border-bottom:1px solid black;border-left:1px solid black;border-right:1px solid black;border-top:1px solid black;height:21px;vertical-align:bottom;white-space:nowrap"><span style="color:black">&nbsp;</span></td> 			<td style="border-bottom:1px solid black;border-left:1px solid black;border-right:1px solid black;border-top:1px solid black;vertical-align:bottom;white-space:nowrap"><span style="color:black">Sales</span></td> 			<td style="border-bottom:1px solid black;border-left:1px solid black;border-right:1px solid black;border-top:1px solid black;vertical-align:bottom;white-space:nowrap"><span style="color:black">&nbsp;</span></td> 			<td style="border-bottom:1px solid black;border-left:1px solid black;border-right:1px solid black;border-top:1px solid black;vertical-align:bottom;white-space:nowrap"><span style="color:black">&nbsp;$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3,200</span></td> 		</tr> 		<tr> 			<td style="border-bottom:none;border-left:1px solid black;border-right:1px solid black;border-top:1px solid black;height:21px;vertical-align:bottom;white-space:nowrap"><span style="color:black">&nbsp;</span></td> 			<td style="border-bottom:none;border-left:1px solid black;border-right:1px solid black;border-top:1px solid black;vertical-align:bottom;white-space:nowrap"><span style="color:black">State sales tax payable</span></td> 			<td style="border-bottom:none;border-left:1px solid black;border-right:1px solid black;border-top:1px solid black;vertical-align:bottom;white-space:nowrap"><span style="color:black">&nbsp;</span></td> 			<td style="border-bottom:none;border-left:1px solid black;border-right:1px solid black;border-top:1px solid black;vertical-align:bottom;white-space:nowrap"><span style="color:black">&nbsp;$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 192</span></td> 		</tr> 		<tr> 			<td style="border-bottom:1px solid black;border-left:1px solid black;border-right:1px solid black;border-top:1px solid black;height:18px;vertical-align:bottom;white-space:nowrap"><span style="color:black">&nbsp;</span></td> 			<td style="border-bottom:1px solid black;border-left:1px solid black;border-right:1px solid black;border-top:1px solid black;vertical-align:bottom;white-space:nowrap"><span style="color:black">Local sales tax payable</span></td> 			<td style="border-bottom:1px solid black;border-left:1px solid black;border-right:1px solid black;border-top:1px solid black;vertical-align:bottom;white-space:nowrap"><span style="color:black">&nbsp;</span></td> 			<td style="border-bottom:1px solid black;border-left:1px solid black;border-right:1px solid black;border-top:1px solid black;vertical-align:bottom;white-space:nowrap"><span style="color:black">&nbsp;$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 80</span></td> 		</tr> 	</tbody> </table> <p>&nbsp;</p> <p>&nbsp;</p> <p><em><strong>For any clarification, please comment. Kindly Up Vote!</strong></em></p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

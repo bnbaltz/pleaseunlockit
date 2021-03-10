@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    Question ID: 9780134461991-70410862
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row"> <div class="col"><div class="answer"> <p>a) The given random walk model for short term interest rates is</p> <p> <img src="https://media.cheggcdn.com/study/358/358cc627-94f5-488b-956a-21b17e3871b1/4354-16-2E-i1.png" /></p> <p>Using iterations it can be seen that</p> <p> <img src="https://media.cheggcdn.com/study/c79/c79426e3-195e-42c6-88e4-40f5c875a166/4354-16-2E-i2.png" /></p> <p>Notice that the error builds up as the period increases, this shows the nonstationary property of random walk. Let <i>i</i> an arbitrary period in the future from a current period <i>t</i>, then by the above pattern</p> <p> <img src="https://media.cheggcdn.com/study/1bd/1bd1935b-3c51-42ef-9101-371ef69770cf/4354-16-2E-i3.png" /></p> <p>Then the conditional expectation given the current period <i>t </i>is</p> <p> <img src="https://media.cheggcdn.com/study/662/66207543-c684-4f61-8887-6b27e809621f/4354-16-2E-i4.png" /></p> <p>The error goes away due to conditional mean zero assumption. The given long term interest model for <i>k </i>periods is a simple average of these expectations as below</p> <p> <img src="https://media.cheggcdn.com/study/0db/0dbf0813-1ace-4146-bb84-5ede0df716f7/4354-16-2E-i5.png" /></p> <p>Note that the sum only goes up to <i>k </i>– 1 as current period at <i>t </i>is included. Also most interest rates short or long term are reported in annual rates. </p> </div></div><div class="col"><div class="answer"> <p>b) The random walk model assumes order one integrability <i>I</i>(1), so <img src="https://media.cheggcdn.com/study/728/728fa6dc-3a62-4117-adfc-29f7d25b317d/4354-16-2E-i6.png" /> is order one. Also <img src="https://media.cheggcdn.com/study/3cd/3cdb6847-40a3-4cd3-9b45-a3491cc4a122/4354-16-2E-i7.png" /> is order one as it is just <img src="https://media.cheggcdn.com/study/1e2/1e2a7eae-c9cb-430f-8b12-63da6bf410b2/4354-16-2E-i8.png" /> plus a constant, then the difference is </p> <p> <img src="https://media.cheggcdn.com/study/3a7/3a783cd9-f0bf-4673-884d-28ba71c8e1ab/4354-16-2E-i9.png" /></p> <p>Since <i>e</i><sub>t</sub> is a premium that was assumed to be <i>I</i>(0) so the difference is <i>I</i>(0), </p> <p> <span style="border: 1px solid black;">cointegrated with a coefficient factor of 1</span>. </p> </div></div><div class="col"><div class="answer"> <p>c) Let the first difference of the short term rates be denoted as below</p> <p> <img src="https://media.cheggcdn.com/study/b4e/b4ea9389-4764-41b3-939b-3edfdf90c84f/4354-16-2E-i10.png" /></p> <p>The first difference has the given AR(1) model, at <i>t </i></p> <p> <img src="https://media.cheggcdn.com/study/328/32836024-0742-4bfd-a048-06280619414b/4354-16-2E-i11.png" /></p> <p>Note that the first difference is <i>I</i>(0) since the short term rates are <i>I</i>(1). Using iterations it can be seen that at <i>t </i>+ 1</p> <p> <img src="https://media.cheggcdn.com/study/158/15875485-166d-44bc-b422-83bcd1c4371d/4354-16-2E-i12.png" /></p> <p>For the next period after at <i>t </i>+ 2</p> <p> <img src="https://media.cheggcdn.com/study/a35/a351b288-b67f-4c23-b4d8-5dbbb3bbf462/4354-16-2E-i13.png" /></p> <p>Hence let <i>i </i>be some time in the future after the current then the pattern suggests at time </p> <p> <i>t </i>+ <i>i </i> </p> <p> <img src="https://media.cheggcdn.com/study/d87/d874c6e6-1bc5-4663-9185-c4bd4111ab71/4354-16-2E-i14.png" /></p> <p>Hence, future short term rates no longer follow the formula<img src="https://media.cheggcdn.com/study/af2/af2e2c98-f44d-46b8-a59a-3b805f9f4dc8/4354-16-2E-i15.png" />. Instead it is</p> <p> <img src="https://media.cheggcdn.com/study/f0a/f0a8a981-9cb1-4e39-b602-58054ea4d119/4354-16-2E-i16.png" /></p> <p>Here <i>U</i><sub>i </sub>represents the series </p> <p> <img src="https://media.cheggcdn.com/study/c8c/c8c8d10e-e97b-446e-9795-4f694d1a2f8f/4354-16-2E-i17.png" /></p> <p>The expected value of the above given the interest at <i>t </i>(current period). Similarly the short term interest rate at <i>t </i>+ <i>i </i>– 1 follows the pattern</p> <p> <img src="https://media.cheggcdn.com/study/1fc/1fcc59a8-d1a8-47cf-9a30-087c746a43a4/4354-16-2E-i18.png" /></p> <p>Hence </p> <p> <img src="https://media.cheggcdn.com/study/bb8/bb8246e1-b657-4195-80a1-89b81b915908/4354-16-2E-i19.png" /></p> <p> </p> <p>This the prediction using current period interest will follow the equation</p> <p> <img src="https://media.cheggcdn.com/study/59e/59ea5bf0-0ff2-4a7e-9aa3-0a49b4c38104/4354-16-2E-i20.png" /></p> <p> </p> <p>Notice the geometrical series in the equation converges</p> <p> <img src="https://media.cheggcdn.com/study/f1c/f1cef881-ee5c-40e3-ba35-c5ab7f90ddbc/4354-16-2E-i21.png" /></p> <p>This simplifies the prediction to </p> <p> <img src="https://media.cheggcdn.com/study/d48/d48f9317-865e-4019-a049-22787e14e0f1/4354-16-2E-i22.png" /></p> <p>Taking the conditional expectation given interest at time time <i>t </i>gives</p> <p> <img src="https://media.cheggcdn.com/study/1df/1df96cb6-d428-449e-8389-68ab7cffaf04/4354-16-2E-i23.png" /></p> <p>The <i>U </i>drops from the expectations since they are functions of future <i>u </i>values and conditional mean zero is assumed. </p> <p>Hence the long term interest is now</p> <p> <img src="https://media.cheggcdn.com/study/ec7/ec7bb000-d62a-4ed3-b7d5-c5105b00a488/4354-16-2E-i24.png" /></p> <p>Taking the difference as below</p> <p> <img src="https://media.cheggcdn.com/study/e7b/e7b2fe6d-3dab-4aca-bb57-92d2bc7872cf/4354-16-2E-i25.png" /></p> <p>Notice that <img src="https://media.cheggcdn.com/study/89c/89c9f09a-5db9-4999-9caa-0079cc78e42a/4354-16-2E-i26.png" /> is <i>I</i>(0) since <img src="https://media.cheggcdn.com/study/f72/f728373b-9d81-4359-940a-ecbf5328535d/4354-16-2E-i27.png" /> is <i>I</i>(0) and <img src="https://media.cheggcdn.com/study/c73/c73f1f25-c168-404b-9484-e92949c4a8c0/4354-16-2E-i28.png" /> is a constant, <i>e</i><sub>t </sub>is assumed to be <i>I</i>(0). Hence, the difference is still cointegrated with coefficient 1. </p> </div></div><div class="col"><div class="answer"> <p>d) Now let <i>R</i>1<sub>t</sub> follow an AR(1) model as below</p> <p> <img src="https://media.cheggcdn.com/study/c75/c75532e7-b250-45f4-895b-697f45e4b8b5/4354-16-2E-i29.png" /></p> <p>Then <i>R</i>1<sub>t</sub> is stationary. Let <i>i </i>be some period after the current term <i>t </i>then</p> <p> <img src="https://media.cheggcdn.com/study/558/558a1fbb-e475-4e74-b021-b69aed913c9e/4354-16-2E-i30.png" /></p> <p>Here <i><img src="https://media.cheggcdn.com/study/da5/da5f5448-9835-4031-adbb-30329c7edb0e/4354-16-2E-i31.png" /></i><i> </i>is a function of the present and future errors as in part c. Then the expected value is </p> <p> <img src="https://media.cheggcdn.com/study/1ee/1eea3e1c-730b-4bbd-814b-0d38b7d66501/4354-16-2E-i32.png" /></p> <p>Then the long term rate is estimated as </p> <p> <img src="https://media.cheggcdn.com/study/1dc/1dca3cf8-fb23-4080-88a4-eab45d3332b8/4354-16-2E-i33.png" /></p> <p>The difference is then</p> <p> <img src="https://media.cheggcdn.com/study/1fe/1fe44563-5f4b-476a-9e63-b17b76e88507/4354-16-2E-i34.png" /></p> <p>Since <i>Rk</i> and <i>R</i>1<sub>t</sub> are order one integrated and <i>e</i><sub>t</sub> is order zero, hence they are </p> <p>cointegrated with coefficient <img src="https://media.cheggcdn.com/study/3c3/3c38a61d-9d40-4829-bfdc-5cca14afdbd1/4354-16-2E-i35.png" /></p> <p> </p> <p> </p> <p> </p> <p> </p> <p> <img src="https://media.cheggcdn.com/study/af3/af37b56c-dae0-4b02-be50-ba975631ff74/4354-16-2E-i36.png" /></p> <p> </p></div></div></div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

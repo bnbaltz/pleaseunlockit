@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Use follwoing data to answer questions</p>
+<table border="0" cellpadding="0" cellspacing="0" style=
+"width:937px;">
+<tbody>
+<tr>
+<td style="height:20px;width:176px;">&nbsp;</td>
+<td style="height:20px;width:201px;">&nbsp;</td>
+<td colspan="2" style="height:20px;width:243px;">
+<p>Cost</p>
+</td>
+<td style="height:20px;width:115px;">&nbsp;</td>
+<td style="height:20px;width:110px;">&nbsp;</td>
+<td style="height:20px;width:91px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:20px;width:176px;">
+<p>Component</p>
+</td>
+<td style="height:20px;width:201px;">
+<p>Function</p>
+</td>
+<td style="height:20px;width:120px;">
+<p>Amount</p>
+</td>
+<td style="height:20px;width:122px;">
+<p>Percent</p>
+</td>
+<td style="height:20px;width:115px;">&nbsp;</td>
+<td style="height:20px;width:110px;">&nbsp;</td>
+<td style="height:20px;width:91px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:20px;width:176px;">
+<p>Brew Basket</p>
+</td>
+<td style="height:20px;width:201px;">
+<p>Grinds and filters Coffee</p>
+</td>
+<td style="height:20px;width:120px;">
+<p>9</p>
+</td>
+<td style="height:20px;width:122px;">
+<p>18%</p>
+</td>
+<td style="height:20px;width:115px;">&nbsp;</td>
+<td style="height:20px;width:110px;">&nbsp;</td>
+<td style="height:20px;width:91px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:20px;width:176px;">
+<p>Carafe</p>
+</td>
+<td style="height:20px;width:201px;">
+<p>Holds and keeps coffee warm</p>
+</td>
+<td style="height:20px;width:120px;">
+<p>2</p>
+</td>
+<td style="height:20px;width:122px;">
+<p>4%</p>
+</td>
+<td style="height:20px;width:115px;">&nbsp;</td>
+<td style="height:20px;width:110px;">&nbsp;</td>
+<td style="height:20px;width:91px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:20px;width:176px;">
+<p>Coffee Warmer</p>
+</td>
+<td style="height:20px;width:201px;">
+<p>keeps coffee warm</p>
+</td>
+<td style="height:20px;width:120px;">
+<p>3</p>
+</td>
+<td style="height:20px;width:122px;">
+<p>6%</p>
+</td>
+<td style="height:20px;width:115px;">&nbsp;</td>
+<td style="height:20px;width:110px;">&nbsp;</td>
+<td style="height:20px;width:91px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:20px;width:176px;">
+<p>Body shape and water well</p>
+</td>
+<td style="height:20px;width:201px;">
+<p>holds water and encasement</p>
+</td>
+<td style="height:20px;width:120px;">
+<p>9</p>
+</td>
+<td style="height:20px;width:122px;">
+<p>18%</p>
+</td>
+<td style="height:20px;width:115px;">&nbsp;</td>
+<td style="height:20px;width:110px;">&nbsp;</td>
+<td style="height:20px;width:91px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:20px;width:176px;">
+<p>Heating Element</p>
+</td>
+<td style="height:20px;width:201px;">
+<p>warms water and pushed it</p>
+</td>
+<td style="height:20px;width:120px;">
+<p>4</p>
+</td>
+<td style="height:20px;width:122px;">
+<p>8%</p>
+</td>
+<td style="height:20px;width:115px;">&nbsp;</td>
+<td style="height:20px;width:110px;">&nbsp;</td>
+<td style="height:20px;width:91px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:20px;width:176px;">
+<p>Electronic dsplay panel</p>
+</td>
+<td style="height:20px;width:201px;">
+<p>controls grinder/clock settings</p>
+</td>
+<td style="height:20px;width:120px;">
+<p>23</p>
+</td>
+<td style="height:20px;width:122px;">
+<p>46%</p>
+</td>
+<td style="height:20px;width:115px;">&nbsp;</td>
+<td style="height:20px;width:110px;">&nbsp;</td>
+<td style="height:20px;width:91px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:20px;width:176px;">&nbsp;</td>
+<td style="height:20px;width:201px;">&nbsp;</td>
+<td style="height:20px;width:120px;">
+<p>50</p>
+</td>
+<td style="height:20px;width:122px;">
+<p>1</p>
+</td>
+<td style="height:20px;width:115px;">&nbsp;</td>
+<td style="height:20px;width:110px;">&nbsp;</td>
+<td style="height:20px;width:91px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:20px;width:176px;">&nbsp;</td>
+<td style="height:20px;width:201px;">&nbsp;</td>
+<td style="height:20px;width:120px;">&nbsp;</td>
+<td style="height:20px;width:122px;">&nbsp;</td>
+<td style="height:20px;width:115px;">&nbsp;</td>
+<td style="height:20px;width:110px;">&nbsp;</td>
+<td style="height:20px;width:91px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:20px;width:176px;">&nbsp;</td>
+<td style="height:20px;width:201px;">&nbsp;</td>
+<td style="height:20px;width:120px;">&nbsp;</td>
+<td style="height:20px;width:122px;">&nbsp;</td>
+<td style="height:20px;width:115px;">&nbsp;</td>
+<td style="height:20px;width:110px;">&nbsp;</td>
+<td style="height:20px;width:91px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:21px;width:176px;">&nbsp;</td>
+<td style="height:21px;width:201px;">
+<p>Customer Ranking</p>
+</td>
+<td style="height:21px;width:120px;">
+<p>Relative Ranking</p>
+</td>
+<td style="height:21px;width:122px;">&nbsp;</td>
+<td style="height:21px;width:115px;">&nbsp;</td>
+<td style="height:21px;width:110px;">&nbsp;</td>
+<td style="height:21px;width:91px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:64px;width:176px;">
+<p>Customer Requirement</p>
+</td>
+<td style="height:64px;width:201px;">
+<p>Not Important (1) to Very Important (5)</p>
+</td>
+<td style="height:64px;width:120px;">
+<p>In Percent</p>
+</td>
+<td style="height:64px;width:122px;">&nbsp;</td>
+<td style="height:64px;width:115px;">&nbsp;</td>
+<td style="height:64px;width:110px;">&nbsp;</td>
+<td style="height:64px;width:91px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:22px;width:176px;">
+<p>Taste/Smell Expresso</p>
+</td>
+<td style="height:22px;width:201px;">
+<p>5</p>
+</td>
+<td style="height:22px;width:120px;">
+<p>20%</p>
+</td>
+<td style="height:22px;width:122px;">&nbsp;</td>
+<td style="height:22px;width:115px;">&nbsp;</td>
+<td style="height:22px;width:110px;">&nbsp;</td>
+<td style="height:22px;width:91px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:22px;width:176px;">
+<p>Easy to Clean</p>
+</td>
+<td style="height:22px;width:201px;">
+<p>4</p>
+</td>
+<td style="height:22px;width:120px;">
+<p>16%</p>
+</td>
+<td style="height:22px;width:122px;">&nbsp;</td>
+<td style="height:22px;width:115px;">&nbsp;</td>
+<td style="height:22px;width:110px;">&nbsp;</td>
+<td style="height:22px;width:91px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:22px;width:176px;">
+<p>Looks Nice</p>
+</td>
+<td style="height:22px;width:201px;">
+<p>2</p>
+</td>
+<td style="height:22px;width:120px;">
+<p>8%</p>
+</td>
+<td style="height:22px;width:122px;">&nbsp;</td>
+<td style="height:22px;width:115px;">&nbsp;</td>
+<td style="height:22px;width:110px;">&nbsp;</td>
+<td style="height:22px;width:91px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:22px;width:176px;">
+<p>6+ Cup Capacity</p>
+</td>
+<td style="height:22px;width:201px;">
+<p>3</p>
+</td>
+<td style="height:22px;width:120px;">
+<p>12%</p>
+</td>
+<td style="height:22px;width:122px;">&nbsp;</td>
+<td style="height:22px;width:115px;">&nbsp;</td>
+<td style="height:22px;width:110px;">&nbsp;</td>
+<td style="height:22px;width:91px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:22px;width:176px;">
+<p>Starts Auto on Time</p>
+</td>
+<td style="height:22px;width:201px;">
+<p>4</p>
+</td>
+<td style="height:22px;width:120px;">
+<p>16%</p>
+</td>
+<td style="height:22px;width:122px;">&nbsp;</td>
+<td style="height:22px;width:115px;">&nbsp;</td>
+<td style="height:22px;width:110px;">&nbsp;</td>
+<td style="height:22px;width:91px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:22px;width:176px;">
+<p>Multiple Grinder Settings</p>
+</td>
+<td style="height:22px;width:201px;">
+<p>1</p>
+</td>
+<td style="height:22px;width:120px;">
+<p>4%</p>
+</td>
+<td style="height:22px;width:122px;">&nbsp;</td>
+<td style="height:22px;width:115px;">&nbsp;</td>
+<td style="height:22px;width:110px;">&nbsp;</td>
+<td style="height:22px;width:91px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:22px;width:176px;">
+<p>Keeps Coffee Warn</p>
+</td>
+<td style="height:22px;width:201px;">
+<p>3</p>
+</td>
+<td style="height:22px;width:120px;">
+<p>12%</p>
+</td>
+<td style="height:22px;width:122px;">&nbsp;</td>
+<td style="height:22px;width:115px;">&nbsp;</td>
+<td style="height:22px;width:110px;">&nbsp;</td>
+<td style="height:22px;width:91px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:22px;width:176px;">
+<p>Auto Shutoff</p>
+</td>
+<td style="height:22px;width:201px;">
+<p>3</p>
+</td>
+<td style="height:22px;width:120px;">
+<p>12%</p>
+</td>
+<td style="height:22px;width:122px;">&nbsp;</td>
+<td style="height:22px;width:115px;">&nbsp;</td>
+<td style="height:22px;width:110px;">&nbsp;</td>
+<td style="height:22px;width:91px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:21px;width:176px;">&nbsp;</td>
+<td style="height:21px;width:201px;">&nbsp;</td>
+<td style="height:21px;width:120px;">&nbsp;</td>
+<td style="height:21px;width:122px;">&nbsp;</td>
+<td style="height:21px;width:115px;">&nbsp;</td>
+<td style="height:21px;width:110px;">&nbsp;</td>
+<td style="height:21px;width:91px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:22px;width:176px;">
+<p>Customer Requirement</p>
+</td>
+<td style="height:22px;width:201px;">
+<p>Brew Basket</p>
+</td>
+<td style="height:22px;width:120px;">
+<p>Carafe</p>
+</td>
+<td style="height:22px;width:122px;">
+<p>Coffee Warmer</p>
+</td>
+<td style="height:22px;width:115px;">
+<p>Body/Water Well</p>
+</td>
+<td style="height:22px;width:110px;">
+<p>Heating Element</p>
+</td>
+<td style="height:22px;width:91px;">
+<p>Display Panel</p>
+</td>
+</tr>
+<tr>
+<td style="height:22px;width:176px;">
+<p>Taste/Smell Expresso</p>
+</td>
+<td style="height:22px;width:201px;">
+<p>0.7</p>
+</td>
+<td style="height:22px;width:120px;">&nbsp;</td>
+<td style="height:22px;width:122px;">&nbsp;</td>
+<td style="height:22px;width:115px;">&nbsp;</td>
+<td style="height:22px;width:110px;">
+<p>0.3</p>
+</td>
+<td style="height:22px;width:91px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:22px;width:176px;">
+<p>Easy to Clean</p>
+</td>
+<td style="height:22px;width:201px;">
+<p>0.5</p>
+</td>
+<td style="height:22px;width:120px;">
+<p>0.1</p>
+</td>
+<td style="height:22px;width:122px;">&nbsp;</td>
+<td style="height:22px;width:115px;">
+<p>0.4</p>
+</td>
+<td style="height:22px;width:110px;">&nbsp;</td>
+<td style="height:22px;width:91px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:22px;width:176px;">
+<p>Looks Nice</p>
+</td>
+<td style="height:22px;width:201px;">&nbsp;</td>
+<td style="height:22px;width:120px;">
+<p>0.1</p>
+</td>
+<td style="height:22px;width:122px;">&nbsp;</td>
+<td style="height:22px;width:115px;">
+<p>0.5</p>
+</td>
+<td style="height:22px;width:110px;">&nbsp;</td>
+<td style="height:22px;width:91px;">
+<p>0.4</p>
+</td>
+</tr>
+<tr>
+<td style="height:22px;width:176px;">
+<p>6+ Cup Capacity</p>
+</td>
+<td style="height:22px;width:201px;">&nbsp;</td>
+<td style="height:22px;width:120px;">
+<p>0.5</p>
+</td>
+<td style="height:22px;width:122px;">&nbsp;</td>
+<td style="height:22px;width:115px;">
+<p>0.5</p>
+</td>
+<td style="height:22px;width:110px;">&nbsp;</td>
+<td style="height:22px;width:91px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:22px;width:176px;">
+<p>Starts Auto on Time</p>
+</td>
+<td style="height:22px;width:201px;">&nbsp;</td>
+<td style="height:22px;width:120px;">&nbsp;</td>
+<td style="height:22px;width:122px;">&nbsp;</td>
+<td style="height:22px;width:115px;">&nbsp;</td>
+<td style="height:22px;width:110px;">&nbsp;</td>
+<td style="height:22px;width:91px;">
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td style="height:22px;width:176px;">
+<p>Multiple Grinder Settings</p>
+</td>
+<td style="height:22px;width:201px;">
+<p>0.1</p>
+</td>
+<td style="height:22px;width:120px;">&nbsp;</td>
+<td style="height:22px;width:122px;">&nbsp;</td>
+<td style="height:22px;width:115px;">&nbsp;</td>
+<td style="height:22px;width:110px;">&nbsp;</td>
+<td style="height:22px;width:91px;">
+<p>0.9</p>
+</td>
+</tr>
+<tr>
+<td style="height:22px;width:176px;">
+<p>Keeps Coffee Warm</p>
+</td>
+<td style="height:22px;width:201px;">&nbsp;</td>
+<td style="height:22px;width:120px;">
+<p>0.2</p>
+</td>
+<td style="height:22px;width:122px;">
+<p>0.8</p>
+</td>
+<td style="height:22px;width:115px;">&nbsp;</td>
+<td style="height:22px;width:110px;">&nbsp;</td>
+<td style="height:22px;width:91px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="height:22px;width:176px;">
+<p>Auto Shutoff</p>
+</td>
+<td style="height:22px;width:201px;">&nbsp;</td>
+<td style="height:22px;width:120px;">&nbsp;</td>
+<td style="height:22px;width:122px;">&nbsp;</td>
+<td style="height:22px;width:115px;">&nbsp;</td>
+<td style="height:22px;width:110px;">&nbsp;</td>
+<td style="height:22px;width:91px;">
+<p>1</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Exhibits 9-9 and 8-10 they&nbsp;can be viewed at following link
+since it won't post whith question
+'https://drive.google.com/file/d/0B7DlLcOZwfeKYzh3UThHM2lMUmc/view?usp=sharin</p>
+<p>Prepare an exhibit similar to Exhibit 8-9 showing the percentage
+contribution of each component to customer requirements.</p>
+<p>Prepare a value index similar to Exhibit 8-10. Which components
+are candidates for cost reduction or enhancement?</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>Percentage contribution of each component to customer
+requirements.</p>
+<p>
+Customer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Coffee &nbsp;
+&nbsp;&nbsp;&nbsp; Body&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Heating&nbsp;&nbsp;
+Display&nbsp;&nbsp; Feature</p>
+<p>
+&nbsp;Requirement&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Brew Basket&nbsp; &nbsp; &nbsp;&nbsp; Carafe &nbsp; &nbsp;
+Warmer&nbsp;&nbsp;&nbsp; Water Well&nbsp; &nbsp;&nbsp;
+Element&nbsp;&nbsp; Panel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rank</p>
+<p>
+_____________________________________________________________________________</p>
+<p>Taste/ Expresso&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; 14%&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; NIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp;&nbsp;
+NIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+&nbsp; &nbsp;
+NIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+&nbsp; 6% &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; NIL&nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp;&nbsp; 20% &nbsp; &nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;Easy to Clean&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; 8%
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+&nbsp;&nbsp; 1.6%&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+NIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;
+6.4%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+NIL&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+NIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+16% &nbsp;</p>
+<p>Looks
+Nice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp;
+NIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+0.8%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+NIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; NIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+3.2%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+8%</p>
+<p>6+ Cup Capacity&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp;
+NIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+6%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+&nbsp;&nbsp; &nbsp;
+NIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; 6%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; NIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+&nbsp;&nbsp; NIL&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+12%</p>
+<p>Starts Auto on Time&nbsp; &nbsp; &nbsp;
+NIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp;
+NIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp;
+NIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+&nbsp;&nbsp; NIL&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+NIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+16%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 16%</p>
+<p>Multiple Grinder</p>
+<p>
+Settings&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+0.4%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+&nbsp;&nbsp;
+NIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; NIL
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+NIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+NIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+3.6%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4%</p>
+<p>Keeps Coffee</p>
+<p>
+Warm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+NIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+2.4%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp;
+9.6%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+NIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; NIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+NIL&nbsp;&nbsp; &nbsp; &nbsp; 12%</p>
+<p>Auto
+Shutoff&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;
+NIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+NIL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; NIL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&nbsp; NIL &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; NIL
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; 12%&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; 12%</p>
+<p>
+____________________________________________________________________________</p>
+<p>Coverted ranking&nbsp;&nbsp;&nbsp;&nbsp;
+22.4%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+10.8%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+9.6%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+16.4%&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 6%
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; 34.8%&nbsp;&nbsp;&nbsp;
+100%</p>
+<p>
+__________________________________________________________________________</p>
+<p>&nbsp;</p>
+<p>Explanation:</p>
+<p>Taste/ Expresso&nbsp;</p>
+<p>Brew Basket&nbsp;=20% *0.7=14%&nbsp;&nbsp;</p>
+<p>Heating Element=&nbsp; 20%* 0.3= &nbsp; 6%</p>
+<p>Easy to Clean</p>
+<p>Brew Basket&nbsp; =16%*0.5 =&nbsp; 8%
+&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>Carafe =16%* 0.1=&nbsp; &nbsp;&nbsp; 1.6%&nbsp; &nbsp;</p>
+<p>Body/Water Well = 0.4 *16/100= 6.4%</p>
+<p>Looks Nice:</p>
+<p>Carafe= 0.1&nbsp; * 8/100 =0.8%</p>
+<p>Body/Water Well =0.5 * 8/100=4%</p>
+<p>Display Panel = 0.4 * 8/100=3.2%</p>
+<p>6+ Cup Capacity:</p>
+<p>Carafe = &nbsp; 12% *&nbsp; 0.5=6%</p>
+<p>Body/Water Well= 12% * 0.5=6%</p>
+<p>Starts Auto on Time:</p>
+<p>Display Panel= 1* 16/10=16%</p>
+<p>Multiple Grinder Settings</p>
+<p>Brew Basket=0.1 *4% =0.4%</p>
+<p>Display Panel=&nbsp; 0.9 * 4%=3.6%</p>
+<p>Keeps Coffee Warm</p>
+<p>Carafe=0.2 *&nbsp; 12%=2.4%</p>
+<p>Coffee Warmer = 0.8 *&nbsp; 12%=9.6%</p>
+<p>Auto Shutoff:</p>
+<p>Display Panel= 1 * 12%=12%</p>
+<p>
+_____________________________________________________________________________</p>
+<p>&nbsp;value index</p>
+<p>Component &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Component&nbsp; Cost
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Relative&nbsp; importance
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Value Index &nbsp; &nbsp; &nbsp;
+Action Implied</p>
+<p>Brew
+Basket&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+18%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+22.4%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1.24&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp;Enhanced</p>
+<p>
+Carafe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;
+4%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+10.8%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2.70&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; Enhanced</p>
+<p>Coffee
+Warmer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+6%
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;
+9.6%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1.60&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; Enhanced</p>
+<p>Body/Water Well&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;
+18%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+16.4%&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+0.91&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Reduced Cost</p>
+<p>Heating
+Element&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+8%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+6%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+0.75&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Reduced Cost</p>
+<p>Display
+Panel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;
+46%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+34.8%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+0.76
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp;&nbsp; Reduced Cost</p>
+<p>Value Index Calculation:</p>
+<p>Relative&nbsp; importance&nbsp; /&nbsp; &nbsp;Component&nbsp;
+Cost &nbsp; &nbsp;</p>
+<p>Brew Basket&nbsp;&nbsp; =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+22.4%&nbsp;&nbsp; / 18%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+=1.24</p>
+<p>Carafe&nbsp;&nbsp; = 10.8%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;
+&nbsp; &nbsp; 4%&nbsp;&nbsp;&nbsp;&nbsp; =2.70</p>
+<p>Coffee Warmer= 9.6%&nbsp; /&nbsp; &nbsp;&nbsp; 6%
+&nbsp;&nbsp;&nbsp; =1.60</p>
+<p>Body/Water Well&nbsp; =&nbsp; 16.4%&nbsp; /&nbsp;
+&nbsp;18%&nbsp;&nbsp; =0.91</p>
+<p>Heating Element = 6% /&nbsp; &nbsp;&nbsp;
+8%&nbsp;&nbsp;&nbsp;&nbsp; =0.75</p>
+<p>Display Panel&nbsp; = &nbsp;&nbsp;&nbsp;&nbsp; 34.8% &nbsp;
+/&nbsp; &nbsp;&nbsp; 46% =0.76 &nbsp;&nbsp;</p>
+<p>
+______________________________________________________________________________
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp; &nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

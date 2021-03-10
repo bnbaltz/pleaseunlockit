@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Complete the provided Python program by adding code to the
+function isPalindrome: a5.py</p>
+<p>The function main (in a5.py) continually asks the user for a
+string, and calls isPalindrome to check whether each string is a
+palindrome. A palindrome is a word or sequence that reads the same
+backward as forward, e.g., noon, madam or nurses run. Your function
+must ignore spaces: when the user enters 'nurses run', the function
+returns True, to indicate that it is a palindrome.</p>
+<p>In your code (in isPalindrome) you must use a stack to determine
+whether the input strings are palindromes. The program imports the
+Stack class defined in module 9 (available here: stack.py). Save
+both files (stack.py and a5.py) in the same directory, then modify
+and test a5.py.</p>
+<p>Do not make any changes to main() or to stack.py.</p>
+<p>"""<br />
+File: a5.py<br />
+"""</p>
+<p>from stack import Stack</p>
+<p>def isPalindrome(sentence):<br />
+&nbsp; &nbsp; """Returns True if sentence is a palindrome<br />
+&nbsp; &nbsp; or False otherwise."""<br />
+&nbsp; &nbsp; stk = Stack() # Creates a stack called stk.<br />
+&nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; # *** Write your code here ***<br />
+&nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; return True<br />
+&nbsp; &nbsp;&nbsp;<br />
+# *** Do not modify main() ***<br />
+def main():<br />
+&nbsp; &nbsp; while True:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; sentence = input("Enter some text or
+just hit enter to quit: ")<br />
+&nbsp; &nbsp; &nbsp; &nbsp; if sentence == "":<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break<br />
+&nbsp; &nbsp; &nbsp; &nbsp; elif isPalindrome(sentence):<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; print("It's a
+palindrome.")<br />
+&nbsp; &nbsp; &nbsp; &nbsp; else:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; print("It's not a
+palindrome.")<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+main()</p>
+<p>&nbsp;</p>
+<p>"""<br />
+File: stack.py</p>
+<p>Stack class: Simple implementation of a stack using lists.<br />
+"""</p>
+<p>class Stack:<br />
+&nbsp; &nbsp; def __init__(self):<br />
+&nbsp; &nbsp; &nbsp; &nbsp; self.items = []<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; def isEmpty(self):<br />
+&nbsp; &nbsp; &nbsp; &nbsp; return self.items == []<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; def push(self, item):<br />
+&nbsp; &nbsp; &nbsp; &nbsp; self.items.append(item)<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; def pop(self):<br />
+&nbsp; &nbsp; &nbsp; &nbsp; return self.items.pop()<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; def peek(self):<br />
+&nbsp; &nbsp; &nbsp; &nbsp; return
+self.items[len(self.items)-1]<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; def size(self):<br />
+&nbsp; &nbsp; &nbsp; &nbsp; return len(self.items)</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <html>
+ <head></head> 
+ <body> 
+  <p><em>Please give the thumbs up, If it is helpful for you. Thank you!!</em></p> 
+  <p>&nbsp;</p> 
+  <p><strong>def isPalindrome(sentence):<br> &nbsp; &nbsp; """Returns True if sentence is a palindrome<br> &nbsp; &nbsp; or False otherwise.""" &nbsp; &nbsp;&nbsp;<br> &nbsp; &nbsp; stk = Stack() # Creates a stack called stk. &nbsp;<br> &nbsp; &nbsp; sentence = sentence.casefold() &nbsp;# make it suitable for caseless comparison<br> &nbsp; &nbsp; sentence=sentence.replace(" ", "") #remove spaces &nbsp;<br> &nbsp; &nbsp; stk.push(sentence) #push sentence to stack<br> &nbsp; &nbsp; stk.push(reversed(sentence))# push the reverse of the string to stack<br> &nbsp; &nbsp; # check if the string is equal to its reverse<br> &nbsp; &nbsp; rev_sentence=stk.pop()<br> &nbsp; &nbsp; org_sentence=stk.pop()<br> &nbsp; &nbsp; str1=list(rev_sentence)<br> &nbsp; &nbsp; str2=list(org_sentence)<br> &nbsp; &nbsp; if str1 == str2:<br> &nbsp; &nbsp; &nbsp; &nbsp;return True<br> &nbsp; &nbsp; else:<br> &nbsp; &nbsp; &nbsp; &nbsp;return False</strong><br> &nbsp; &nbsp;&nbsp;</p> 
+  <p><img alt="27 def isPalindrome(sentence):
+28 Returns True if sentence is a palindrome
+29 or False otherwise.
+30 stk Stack() # Creates" src="//d2vlcm61l7u1fs.cloudfront.net/media%2Fabc%2Fabc930e5-7417-4780-80df-ffc205f24748%2FphpCN8lmd.png" style="height:95px;width:121px;"></p> 
+  <p><strong>Output:</strong></p> 
+  <p><img alt="In
+[11]:
+runfile(G:/projects/work/chegg/python/pallindrome-usingclass.py,
+wdír=G:/projects/
+work/chegg/python)
+Enter some " src="//d2vlcm61l7u1fs.cloudfront.net/media%2Ff1b%2Ff1ba69f4-7cb4-451f-83e6-588045793821%2FphpTdZiTy.png" style="height:54px;width:121px;"></p>  
+ </body>
+</html>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

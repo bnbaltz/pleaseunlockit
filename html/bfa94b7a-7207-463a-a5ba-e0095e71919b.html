@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Using the data provided in the Table and calculate the various
+entropies below for:</p>
+<p>2H<sub>2</sub>O<sub>2</sub>(l)&nbsp;<img alt=
+"LaTeX: \longrightarrow" src=
+"https://ufl.instructure.com/equation_images/%255Clongrightarrow" />⟶&nbsp;O<sub>2</sub>(g)
++ 2H<sub>2</sub>O(l).</p>
+<p>Enter your numbers to 1 decimal places.</p>
+<table style="width:339px;">
+<tbody>
+<tr>
+<td>substance or Ion</td>
+<td><img alt="LaTeX: \Delta" src=
+"https://ufl.instructure.com/equation_images/%255CDelta" />ΔH°f
+(kJ/mol)</td>
+<td>S° (J/mol K)</td>
+</tr>
+<tr>
+<td>H<sub>2</sub>O<sub>2</sub>(g)</td>
+<td>-187.8</td>
+<td>110</td>
+</tr>
+<tr>
+<td>O<sub>2</sub>(g)</td>
+<td>0</td>
+<td>205.0</td>
+</tr>
+<tr>
+<td>H<sub>2</sub>O(g)</td>
+<td>-285.840</td>
+<td>69.940</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Calculate
+Δ<em>S<sub>system&nbsp;</sub>&nbsp;(J/K)&nbsp;</em>&nbsp;&nbsp;</li>
+<li>
+Calculate<em>&nbsp;ΔS<sub>surrouding&nbsp;</sub>(J/K)<sub>&nbsp;</sub></em>&nbsp;&nbsp;</li>
+<li>
+Calculate<em>&nbsp;ΔS<sub>univ&nbsp;</sub>(J/K)&nbsp;</em>&nbsp;&nbsp;</li>
+</ol>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>Entropy of the system = Entropy of the products - Entropy of the reactants</p> <p>Thus, <img alt="\Delta" src=https://media.cheggcdn.com/media/3cc/3cc85d30-b1bd-48e5-84b3-689697888539/ce65e537-2300-446d-b83d-b35b83740fea.png />Ssystem = [ 205 + 2*69.940] -[2*110] J/K</p> <p><img alt="\Delta" src=https://media.cheggcdn.com/media/3cc/3cc85d30-b1bd-48e5-84b3-689697888539/ce65e537-2300-446d-b83d-b35b83740fea.png />Ssystem = 344.88 - 220 J/K</p> <p><img alt="\Delta" src=https://media.cheggcdn.com/media/3cc/3cc85d30-b1bd-48e5-84b3-689697888539/ce65e537-2300-446d-b83d-b35b83740fea.png />Ssystem = 124.8 J/K</p> <p>Entropy of surrounding = - Enthalpy of system / Temperature</p> <p>Since, temprature is not specified, we will consider it is 298K.</p> <p>Now,&nbsp;</p> <p>Enthalpy&nbsp;of the system = Enthalpy of the products - Enthalpy of the reactants&nbsp;</p> <p>Thus,&nbsp;<img alt="\Delta" src=https://media.cheggcdn.com/media/3cc/3cc85d30-b1bd-48e5-84b3-689697888539/ce65e537-2300-446d-b83d-b35b83740fea.png />Hsystem = [ 2*-285.84] -[2*-187.8] J</p> <p><img alt="\Delta" src=https://media.cheggcdn.com/media/3cc/3cc85d30-b1bd-48e5-84b3-689697888539/ce65e537-2300-446d-b83d-b35b83740fea.png />Hsystem = -196.08 kJ</p> <p><img alt="\Delta" src=https://media.cheggcdn.com/media/3cc/3cc85d30-b1bd-48e5-84b3-689697888539/ce65e537-2300-446d-b83d-b35b83740fea.png />Ssurrounding = -&nbsp;<img alt="\Delta" src=https://media.cheggcdn.com/media/3cc/3cc85d30-b1bd-48e5-84b3-689697888539/ce65e537-2300-446d-b83d-b35b83740fea.png />Hsystem&nbsp;/T</p> <p>= 196.08 kJ / 298 K</p> <p>=657.98 J/K</p> <p>Entropy of universe = Entropy of system + Entropy of surrounding</p> <p><img alt="\Delta" src=https://media.cheggcdn.com/media/3cc/3cc85d30-b1bd-48e5-84b3-689697888539/ce65e537-2300-446d-b83d-b35b83740fea.png />Suniverse&nbsp;=&nbsp;<img alt="\Delta" src=https://media.cheggcdn.com/media/3cc/3cc85d30-b1bd-48e5-84b3-689697888539/ce65e537-2300-446d-b83d-b35b83740fea.png />Ssystem +&nbsp;<img alt="\Delta" src=https://media.cheggcdn.com/media/3cc/3cc85d30-b1bd-48e5-84b3-689697888539/ce65e537-2300-446d-b83d-b35b83740fea.png />Ssurrounding</p> <p><img alt="\Delta" src=https://media.cheggcdn.com/media/3cc/3cc85d30-b1bd-48e5-84b3-689697888539/ce65e537-2300-446d-b83d-b35b83740fea.png />Suniverse&nbsp;= 124.8 + 657.98 = 782.78 J/K</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

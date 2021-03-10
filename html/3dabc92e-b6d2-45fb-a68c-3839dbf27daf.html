@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p><img alt="Problem 1 k-closest points to the origin
+We have a list of points on the plane. Find the k closest points to the origin, (0,0" src="https://media.cheggcdn.com/media/014/01487740-eb46-4976-9168-7af09e541f0b/phpPZpAna" style="height:941px;"></p>
+<p><img alt="Since V8 < 10, (-2,2) is closer to the origin.
+We only want the closest k = 1 points from the origin, so the answer is just [" src="https://media.cheggcdn.com/media/c0a/c0aaa86e-896e-41d8-87a3-e385cd69be5f/phpBIu9ey" style="height:1024px;width:958px;"></p>
+<p><img alt="1
+Pseudocode and Explanation
+Algorithm 1 Closest Points - k closest points to the origin
+1: def CLOSEST POINTS(S, k):
+Input >" src="https://media.cheggcdn.com/media/d46/d46b1038-17ea-4615-ae7f-febcf7c6437e/phpt4444t" style="height:463px;width:1024px;"></p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <pre>
+<code class="language-cpp">class Solution {
+public:
+    // to calculate the euclidean distance
+    int dist(vector&lt;int&gt; &amp;point) {
+        return point[0]*point[0] + point[1]*point[1];
+    }
+    
+    int partition(vector&lt;vector&lt;int&gt;&gt; &amp;points, int left, int right) {
+        int pivot = dist(points[right]);
+        int pivot_idx = right;
+        while (true) {
+            while (dist(points[left]) &lt; pivot) { // increment until &gt;= pivot
+                ++left;
+            }
+            while (left &lt; right &amp;&amp; dist(points[right]) &gt;= pivot) { // decrement until &lt; pivot
+                --right;
+            }
+            if (left &gt;= right) { // stop the loop until left meets right
+                break;
+            }
+            swap(points[left], points[right]);
+        }
+        swap(points[left], points[pivot_idx]);
+        return left;
+    }
+    
+    void divide_conquer(vector&lt;vector&lt;int&gt;&gt; &amp;points, int i, int j, int K) {
+        if (i &gt;= j) return; // base case
+        // calculating the mid
+        int mid = partition(points, i, j);
+        int left_length = mid-i+1; // left length
+        if (K &lt; left_length) {
+            divide_conquer(points, i, mid-1, K); 
+        }
+        else if (K &gt; left_length) {
+            divide_conquer(points, mid + 1, j, K-left_length);
+        }
+        else {
+            return;
+        }
+    }
+    
+    vector&lt;vector&lt;int&gt;&gt; kClosest(vector&lt;vector&lt;int&gt;&gt;&amp; points, int K) {
+        int n=points.size();
+        // if the value of K is 0 or the points vector is empty we can simply return the empty vector as our ans
+        if (K == 0 || points.size() == 0) {return {};}
+        // or if K equals the points array size then then we can simply return the points vector as our ans because we want K points only.
+        if (K == points.size()) {return points;}
+        divide_conquer(points, 0, n-1, K);
+        vector&lt;vector&lt;int&gt;&gt; result(points.begin(), points.begin()+K); // O(n)
+        return result;
+    }
+};</code></pre>
+
+<p>This is code in C++ for the above question. This is successfully submitted code in leetcode.&nbsp;</p>
+
+<p>And I have also written comments in the code so that it is easy to follow the code.</p>
+
+<p>Hope it helps :)</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

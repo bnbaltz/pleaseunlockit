@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>in PYTHON</p>
+<p><img alt="Python Exercise 5
+Tortoise vs. Hare (60 pts)
+Write a program that simulates the classical race between the tortoise and the h" src="https://media.cheggcdn.com/media/1b5/1b54d5ab-142f-47cf-bbb2-7b8e14933a08/phpDdaEU8"></p>
+<p><img alt="Example: For the tortoise, a random integer in the range 1 num < 5 should result in a fast plod
+(as that movement will occur " src="https://media.cheggcdn.com/media/9cd/9cd58feb-b3c9-4979-811e-e5bb41c5f293/phpLt25oZ" style="height:782px;width:720px;"></p>
+<p><img alt="Sample output
+The output below shows possible outcomes of the race. Your results may vary.
+Output 1: Hare Wins
+ON YOUR MARK.." src="https://media.cheggcdn.com/media/eba/eba5540b-0867-4a66-937e-c30477f61268/phpvFTjjD" style="height:919px;width:587px;"></p>
+<p><img alt="Output 2: Tortoise Wins
+ON YOUR MARK... GET SET...
+GO!!!
+AND THEYRE OFF! !
+III
+TH
+HT
+TH
+т.н
+HT
+нт
+T
+T
+T
+H
+T
+HT
+HT
+н т
+н T
+H
+" src="https://media.cheggcdn.com/media/58a/58ad5577-f1b9-4300-a375-ca1a3640da92/phpHI1Qe1" style="height:874px;width:535px;"></p>
+<p><img alt="Tips:
+• This assignment requires the same pairs as Assignment 4. The person who was the
+navigator for Assignment 4 must be th" src="https://media.cheggcdn.com/media/2d1/2d124587-ce63-4fcd-9b4f-b8e2f15cfd36/phpl0I7SP" style="height:227px;width:522px;"></p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>Here is the implementation of python code :</p>
+
+<p>Code Snippet :</p>
+
+<p><img src="https://media.cheggcdn.com/coop/295/295d5070-a10f-49ec-b353-7aa67e0e215c/1615099837689_image.png" style="height:897px;width:908px" alt="import random
+1.
+2
+3
+4.
+#function to determine current position of hare
+def hare_position(pos):
+next pos = random.choices([s"></p>
+
+<p>&nbsp;</p>
+
+<p><img src="https://media.cheggcdn.com/coop/bb5/bb525c7f-da95-488d-9669-1ad0de0cfb92/1615099960588_image.png" style="height:874px;width:697px" alt="32
+==
+33
+34
+35
+if i curr_hare:
+print(h, end = )
+continue
+if i == curr_tortoise:
+print(T, end = )
+else:
+print( , end"></p>
+
+<p>&nbsp;</p>
+
+<p>Output:</p>
+
+<p><img src="https://media.cheggcdn.com/coop/c53/c53a4c27-a169-4c01-bfe8-80bfe8d35777/1615099976561_image.png" style="height:450px;width:800px" alt="-
+C:\. Command Prompt
+H
+T
+H
+T
+H T
+Н. T
+H T
+H T
+H T
+ΤΗ
+T
+H
+T
+H
+T
+H
+TH
+HT
+T
+H
+T
+H
+T
+Н.
+T
+H
+T
+Н.
+T
+H
+T
+H
+T
+H
+T
+Н.
+H
+т
+H
+T
+H
+T
+H
+"></p>
+
+<p>&nbsp;</p>
+
+<p>Code:</p>
+
+<pre>
+<code class="language-python">import random
+
+#function to determine current position of hare
+def hare_position(pos):
+    next_pos = random.choices(['s','bh','bs','sh','ss'],weights = (0.2,0.2,0.1,0.3,0.2))
+
+    if next_pos == ["s"]:
+        return pos
+    elif next_pos == ["bh"]:
+        return min(pos+7,50)
+    elif next_pos == ["bs"]:
+        return max(1,pos-10)
+    elif next_pos == ["sh"]:
+        return min(pos+1,50)
+    elif next_pos == ["ss"]:
+        return max(pos-2,1)
+
+#function to determine current position of tortoise
+def tortoise_position(pos):
+    next_pos = random.choices(["fp","s","sp"],weights = (0.5,0.2,0.3))
+
+    if next_pos ==["s"]:
+        return max(0,pos-5)
+    elif next_pos == ["fp"]:
+        return min(pos+3,50)
+    elif next_pos == ["sp"]:
+        return min(pos+1,50)
+
+#function to print the race progress
+def display_track(curr_hare,curr_tortoise):
+    for i in range(1,51):
+        if i == curr_hare:
+            print("H",end = "")
+            continue
+        if i == curr_tortoise:
+            print("T",end = "")
+        else:
+            print(" ",end = "")
+
+    print()
+
+def main():
+    #crating the tracks for the hare and tortoise
+    track = [" "]*51
+    time = 0
+    #initalsing the current positions
+    curr_hare = 1
+    curr_tortoise = 1
+
+    while curr_hare &lt; 50 and curr_tortoise &lt; 50:
+        #choosing the current position for hare and tortoise
+        curr_hare = hare_position(curr_hare)
+        curr_tortoise = hare_position(curr_tortoise)
+        time +=1
+        #print the track
+        display_track(curr_hare,curr_tortoise)
+
+    if curr_hare == 50:
+        print("hare wins")
+    elif curr_tortoise == 50:
+        print("tortoise wins.Yay!")
+    print(f"Time of race : {time} seconds")
+
+main()
+</code></pre>
+
+<p>If you have any doubt regarding the solution the ask in the comment box I will always be there to answer you.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

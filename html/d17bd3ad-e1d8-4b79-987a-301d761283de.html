@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    Question ID: 9780073397962-59321066
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row"> <div class="col"><div class="answer"> <p>For five segments, that is four interior nodes, the homogeneous system of equations is given as:</p> <p> <img src="https://media.cheggcdn.com/study/3fb/3fbbc22f-4ef1-4cf0-8baf-8fb2e1d670d8/722820-13-10P-i1.png" /> </p> <p>Now, </p> <p> <img src="https://media.cheggcdn.com/study/38f/38f4fadf-7dec-4a26-9a34-d662886ffe2b/722820-13-10P-i2.png" /> </p> <p>We assume a unit load, <img src="https://media.cheggcdn.com/study/455/455ea182-c786-4fba-b40c-79c002a25aae/722820-13-10P-i3.png" /> </p> <p> <img src="https://media.cheggcdn.com/study/f66/f66191d0-ea6a-4d5f-a322-b95aaef5f323/722820-13-10P-i4.png" /></p> <p>Therefore, the equation becomes</p> <p> <img src="https://media.cheggcdn.com/study/401/401f8c15-5575-4914-bf7e-a151dd37068b/722820-13-10P-i5.png" /> </p> </div></div><div class="col"><div class="answer"> <p>(a)</p> <p>Calculating the eigen values for this system using the MATLAB and polynomial method.</p> <p>In polynomial method, the eigenvalues can be obtained by finding the roots of following equation:</p> <p> <img src="https://media.cheggcdn.com/study/759/7597219a-bf56-4ca6-a7f2-8f32341911ec/722820-13-10P-i6.png" /> </p> <p>In MATLAB we can find the above determinant in symbolic formula and then solve the equation obtained to get the eigen values.</p> <p>Input:</p> <p>% generating the symbolic expression</p> <p>syms x</p> <p> </p> <p>% generating the matrix</p> <p> </p> <p>A = [1.7696-x, -1, 0, 0;</p> <p> -1, 1.7696-x, -1, 0;</p> <p> 0, -1, 1.7696-x, -1;</p> <p> 0, 0, -1, 1.7696-x];</p> <p> </p> <p> % finding the determinant</p> <p> </p> <p> D = det(A);</p> <p> </p> <p> % solving the equation</p> <p> </p> <p> y = double(solve(D))</p> <p>Output:</p> <p> <img src="https://media.cheggcdn.com/study/7e8/7e84bd32-6c7a-4451-b50b-29cfeebe0fc6/722820-13-10P-i7.png" alt="Picture 1" /> </p> <p>Therefore, the eigen values are <img src="https://media.cheggcdn.com/study/d55/d552e874-5e17-48b9-a7da-f4d7a701fb7c/722820-13-10P-i8.png" /></p> </div></div><div class="col"><div class="answer"> <p>(b)</p> <p>MATLAB <i>eig</i> function can be used to determine the eigen values and function as:</p> <p> <i>[V, d] = eig(A)</i> </p> <p>Where V is the eigen vectors, d is the matrix whose diagonal elements represent the eigen values and A is the input matrix.</p> <p> </div></div><div class="col"><div class="answer">Input:</p> <p> % defining the matrix</p> <p> </p> <p> A = [1.7696, -1, 0, 0;</p> <p> -1, 1.7696, -1, 0;</p> <p> 0, -1, 1.7696, -1;</p> <p> 0, 0, -1, 1.7696];</p> <p> </p> <p> [v, d] = eig(A)</p> <p>Output:</p> <p> <img src="https://media.cheggcdn.com/study/42e/42e5c27c-4d08-478a-8fc2-d66d1a3004ac/722820-13-10P-i9.png" alt="Picture 2" /> </p> <p>The eigen values obtain are same as obtained in part (a).</p> </div></div><div class="col"><div class="answer"> <p>(c)</p> <p>In power method we have to do successive iteration form the initial value. Let the initial value be </p> <p> <img src="https://media.cheggcdn.com/study/dd6/dd688d33-3a5d-4105-bc18-fcb45ed1b2ce/722820-13-10P-i10.png" /> </p> <p>Therefore, for First Iteration</p> <p> <img src="https://media.cheggcdn.com/study/226/226431d5-7482-46a8-9199-cd444c010c7e/722820-13-10P-i11.png" /> </p> <p>For Second Iteration:</p> <p> <img src="https://media.cheggcdn.com/study/480/480ecc23-f8c5-4e7f-b701-928cdbc36e65/722820-13-10P-i12.png" /> </p> <p>For Third Iteration:</p> <p> <img src="https://media.cheggcdn.com/study/a38/a3851c74-f893-4717-93a5-5585fdc7db8a/722820-13-10P-i13.png" /> </p> <p>For Fourth Iteration:</p> <p> <img src="https://media.cheggcdn.com/study/f69/f699d8db-d3e4-4955-a187-6379481dac08/722820-13-10P-i14.png" /> </p> <p>We see that from the power method the greatest eigen value is 3.3513. On further iterations it will become 3.38 as obtained from MATLAB.</p></div></div></div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

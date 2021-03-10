@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    Question ID: 9781259727016-60560221
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row"> <div class="col"><div class="answer"> <p> <b>Conventional Analysis V/s ABC Analysis for Make or Buy Decision:</b> </p> <p> <b>Conventional Analysis of Savings:</b> </p> <table border="1" style="border-collapse:collapse;"> <tr> <td> <p> <b>Particulars</b> </p> </td> <td> <p> <b>Cost $</b> </p> </td> </tr> <tr> <td> <p>Direct Material</p> </td> <td> <p>300,000</p> </td> </tr> <tr> <td> <p>Direct Labor</p> </td> <td> <p>180,000</p> </td> </tr> <tr> <td> <p>Variable overheads</p> </td> <td> <p>120,000</p> </td> </tr> <tr> <td> <p>Total Variable costs</p> </td> <td> <p>600,000</p> </td> </tr> <tr> <td> <p>Add: Relevant fixed costs</p> </td> <td /> </tr> <tr> <td> <p>Supervisors Salary</p> </td> <td> <p>80,000</p> </td> </tr> <tr> <td> <p>Machinery Depreciation</p> </td> <td> <p>28,000</p> </td> </tr> <tr> <td> <p> <b>Total costs</b> </p> </td> <td> <p> <b>$708,000</b> </p> </td> </tr> </table> </div></div><div class="col"><div class="answer"> <p>Therefore, the total costs are <b>$708,000</b>.</p> </div></div><div class="col"><div class="answer"> <p>Hence as per the above conventional analysis of costing, the firm stands to save</p> <p>$708,000 if the product is purchased from outside however the purchase cost comes to </p> <p>$760,000 and hence the offer to purchase from outside should be rejected.</p> </div></div><div class="col"><div class="answer"> <p> <b>Calculation of Cost Analysis Based on ABC:</b> </p> <p> <b>Allocation of Variable OHs:</b> </p> <table border="1" style="border-collapse:collapse;"> <tr> <td> <p> <b>Activity Cost Pools</b> </p> </td> <td> <p> <b>Budgeted Costs</b> </p> </td> <td> <p> <b>Pool Rate and Cost Driver</b> </p> </td> <td> <p> <b>Cost Assigned to Canister Dept.</b> </p> </td> </tr> <tr> <td> <p>Plant depreciation</p> </td> <td> <p>$1,650,000</p> </td> <td> <p>-</p> </td> <td> <p>-</p> </td> <td> <p>-</p> </td> </tr> <tr> <td> <p>Product development</p> </td> <td> <p>300,000</p> </td> <td> <p>$600 per product specs</p> </td> <td> <p>$600 ×10</p> </td> <td> <p>$6,000</p> </td> </tr> <tr> <td> <p>Supervisory salary</p> </td> <td> <p>$600,000</p> </td> <td> <p>$40 per supervisory hour</p> </td> <td> <p>$40 × 2,000</p> </td> <td> <p>$80,000</p> </td> </tr> <tr> <td> <p>Material handling</p> </td> <td> <p>$800,000</p> </td> <td> <p>$8 per hour</p> </td> <td> <p>$8 × 6,000</p> </td> <td> <p>$48,000</p> </td> </tr> <tr> <td> <p>Purchasing</p> </td> <td> <p>$250,000</p> </td> <td> <p>$250 per purchase order</p> </td> <td> <p>$250 × 55</p> </td> <td> <p>$13,750</p> </td> </tr> <tr> <td> <p>Inspection</p> </td> <td> <p>$300,000</p> </td> <td> <p>$300 per inspection</p> </td> <td> <p>$300 × 30</p> </td> <td> <p>$9,000</p> </td> </tr> <tr> <td> <p>Set up</p> </td> <td> <p>$400,000</p> </td> <td> <p>$400 per set up</p> </td> <td> <p>$400 × 15</p> </td> <td> <p>$6,000</p> </td> </tr> <tr> <td> <p>Electricity</p> </td> <td> <p>$700,000</p> </td> <td> <p>$1.4 per Machine hours</p> </td> <td> <p>$1.4 × 70,000</p> </td> <td> <p>$98,000</p> </td> </tr> <tr> <td> <p>Lubrication</p> </td> <td> <p>$120,000</p> </td> <td> <p>$0.24 per Machine hours</p> </td> <td> <p>$0.24 × 70,000</p> </td> <td> <p>$16,800</p> </td> </tr> <tr> <td> <p>Equipment Maintenance</p> </td> <td> <p>$180,000</p> </td> <td> <p>$0.36 per Machine hours</p> </td> <td> <p>$0.36 × 70,000</p> </td> <td> <p>$25,200</p> </td> </tr> <tr> <td> <p>Machinery Depreciation</p> </td> <td> <p>$200,000</p> </td> <td> <p>$0.40 per Machine hours</p> </td> <td> <p>$0.40 × 70,000</p> </td> <td> <p>$28,000</p> </td> </tr> <tr> <td> <p> <b>Total Overheads</b> </p> </td> <td> <p> <b>$5,500,000</b> </p> </td> <td /> <td /> <td> <p> <b>$330,750</b> </p> </td> </tr> </table> </div></div><div class="col"><div class="answer"> <p> <b>Cost Saved on Purchasing:</b> </p> <p> <img src="https://media.cheggcdn.com/study/83d/83d09f8f-8c37-4924-8d66-34bbe4090942/8864-14-58P-i1.png" /> </p> </div></div><div class="col"><div class="answer"> <p>The actual cost savings calculated as per ABC costing shows a savings of $810,750 as compared to the purchase price is $760,000. And hence consequently the Decision to purchase should be adopted.</p> </div></div><div class="col"><div class="answer"> <p>The ABC analysis allocated the cost based on appropriate cost drivers. This analysis clearly allocates a substantial amount of overheads based on its level of weighted costs on operational activities rather than considering it traditionally on the basis of a certain percentage of other costs. Hence there is a definite difference in the costs simply based on its proper allocation as per cost drivers.</p></div></div></div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

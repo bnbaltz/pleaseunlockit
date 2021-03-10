@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p><strong>Description</strong></p>
+<p>Computers store positive integers using binary (base 2) format.
+That means instead of 10 numerical digits (called decimal or base
+10 format), computers only used two digits (either 0 or 1) to
+represent a positive integer. For example,
+12<sub>10</sub>&nbsp;will be represented as
+1100<sub>2</sub>&nbsp;in a computer. &nbsp;This assignment requires
+you to write a java program using command line argument to acquire
+any positive integer less than 2<sup>31</sup>&nbsp;-1 and output it
+binary representation. Also acquire any unsigned binary (up to 31
+bits) from the console and output it decimal
+representation.&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Instructions</strong></p>
+<p>For this assignment, you must use String class to store the
+positive decimal and unsigned binary from the command line
+arguments. Create a class&nbsp;Lab04&nbsp;with a&nbsp;main()method,
+and a&nbsp;decimalTobinary()&nbsp;method to convert positive
+decimal to binary, a&nbsp;binaryTodecimal()method to convert
+unsigned binary to positive decimal. In
+the&nbsp;main()&nbsp;method, you need to pass a string to the
+conversion methods, the string stores the command line argument
+(positive decimal and unsigned binary) after complete the
+conversion, both method return a string which contain the unsigned
+binary and positive decimal respectively. &nbsp;</p>
+<p>Write your own implementation of the conversions
+and&nbsp;decimalTobinary() has to be implemented with the shift and
+&amp; or | operators on bits.</p>
+<p>Your&nbsp;main()&nbsp;method then output the result to the
+console. A program template as follow:</p>
+<p>public static void main(String[] args) {</p>
+<p>&nbsp;</p>
+<p>&nbsp; String d_s = new String(); // stores the decimal
+conversion result</p>
+<p>&nbsp; String b_s = new String(); // stores the binary
+conversion result</p>
+<p>&nbsp; . . .</p>
+<p>&nbsp; b_s = decimalTobinary(decimalString); // decimalString
+from command argument</p>
+<p>&nbsp; d_s = binaryTodecimal(binaryString);&nbsp; //
+binaryString from command argument</p>
+<p>&nbsp; . . .</p>
+<p>&nbsp; // your output code here;</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>public static String decimalTobinary(String decimal) {</p>
+<p>&nbsp; . . .</p>
+<p>&nbsp; // your positive decimal to unsigned binary code here</p>
+<p>&nbsp; . . .</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>public static String binaryTodecimal(String binary) {</p>
+<p>&nbsp; . . .</p>
+<p>&nbsp; // your unsigned binary to positive decimal code here</p>
+<p>&nbsp; . . .</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <html>
+ <head></head>
+ <body>
+  <p><br> &nbsp;<br> Given below is the code for the question. YOU HAVE TO PASS 2 COMMAND LINE ARGUMENTS TO THE PROGRAM. I have shown the screen shot of passing command line arguments in eclipse<br> To indent code in eclipse , select code by pressing ctrl+a and then indent using ctrl+i<br> Please do rate the answer if it was helpful. Thank you</p> 
+  <p>&nbsp;</p> 
+  <p><img alt="Run Configurations gurations Name: Lab04 JRE 4 ii. Classpath | E/ Source | bg Environment E common: Main (x-Arguments-. A JRE OG Classpath E source Program arguments: Environment Common 123 110101 Variables... VM arguments: Variables... Use the -XstartOnFirstThread argument when launching with SWT Working directory: Default: (workspace_loc:Car) Other: Workspace File System. Variables Revert Apply Close Run " src="https://media.cheggcdn.com/media%2Fe82%2Fe82be0c2-088f-4b76-aac6-3ef23f357bb3%2FphpqWC3yJ.png" style="height:618px;width:603px;"></p> 
+  <p>public class Lab04 {</p> 
+  <p>&nbsp; &nbsp; public static void main(String[] args) {</p> 
+  <p>&nbsp; &nbsp; &nbsp; &nbsp; String d_s = new String(); // stores the decimal conversion result<br> &nbsp; &nbsp; &nbsp; &nbsp; String b_s = new String(); // stores the binary conversion result</p> 
+  <p>&nbsp; &nbsp; &nbsp; &nbsp; if(args.length != 2){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("Please pass a positive decimal and unsigned binary number as command line arguments");<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("E.g. java Lab04 123 110101");<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return;<br> &nbsp; &nbsp; &nbsp; &nbsp; }</p> 
+  <p>&nbsp; &nbsp; &nbsp; &nbsp; String decimalString = args[0];<br> &nbsp; &nbsp; &nbsp; &nbsp; String binaryString = args[1];<br> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; b_s = decimalTobinary(decimalString); // decimalString from command argument</p> 
+  <p>&nbsp; &nbsp; &nbsp; &nbsp; d_s = binaryTodecimal(binaryString); // binaryString from command argument</p> 
+  <p><br> &nbsp; &nbsp; &nbsp; &nbsp; // your output code here;</p> 
+  <p>&nbsp; &nbsp; &nbsp; &nbsp; System.out.println("Decimal " + decimalString&nbsp; + " = " + b_s + " in binary");<br> &nbsp; &nbsp; &nbsp; &nbsp; System.out.println("Binary " + binaryString + " = " + d_s + " in decimal");<br> &nbsp; &nbsp; &nbsp; &nbsp; }</p> 
+  <p>&nbsp; &nbsp; &nbsp; &nbsp; public static String decimalTobinary(String decimal) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int num = Integer.parseInt(decimal);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; String binary = "";<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; while(num &gt; 0){<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; binary = (num &amp; 1) + binary;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; num = num &gt;&gt; 1;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return binary;<br> &nbsp; &nbsp; &nbsp; &nbsp; }</p> 
+  <p>&nbsp; &nbsp; &nbsp; &nbsp; public static String binaryTodecimal(String binary) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int num = 0;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int power2 = 1;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for(int i = binary.length()-1; i&gt;= 0; i--){ //start from right most end<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(binary.charAt(i) == '1')<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; num += power2;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; power2 = power2 * 2;//get the next power of 2<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return "" + num;<br> &nbsp; &nbsp; &nbsp; &nbsp; }<br> }</p> 
+  <p><br> output<br> =====<br> Decimal 123 = 1111011 in binary<br> Binary 110101 = 53 in decimal</p> 
+ </body>
+</html>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

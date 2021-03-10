@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div id="mobile-question-style" style="font-family: 'Helvetica Neue',Helvetica,Arial; color:#333333;"><div><br><img src="https://media.cheggcdn.com/study/2ab/2ab1b0a2-6011-4636-8279-c0b863f04913/image.png" alt="QUESTIONS
+Young adolescents often find it difficult to curb overwhelming emotions of anger, anxiety, or pleasurable excitemen"></div></div>
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <ol> 	<li style="text-align:justify">The <strong>frontal lobe</strong> is responsible for controlling skill muscle movement, speech, and language, attention and concentration, regulations of emotions and mood, etc. It is located behind the forehead.&nbsp; 	<ul> 		<li><strong>Temporal Lobe</strong> is situated posterior to the frontal lobe and is responsible for primary auditory functions like hearing and holds the primary auditory cortex which is responsible for receiving sensory information from the ears.&nbsp;</li> 		<li><strong>The somatosensory&nbsp;cortex</strong> is a part of the&nbsp;brain which performs&nbsp;the&nbsp;function of receiving and processing sensory information from the body like detecting touch, temperature, etc. through sensory receptors present in the entire body.&nbsp;</li> 		<li><strong>Limbic System</strong> is&nbsp;also&nbsp;a&nbsp;part&nbsp;of the&nbsp;brain&nbsp;which is highly&nbsp;responsible&nbsp;for&nbsp;dealing&nbsp;with&nbsp;emotions, learning, and&nbsp;memory.&nbsp;Amygdala is a part of the&nbsp;limbic system that has a great role in the emotional responses that include feelings of fear, anger, anxiety, pleasure.</li> 		<li>&nbsp;<strong>The pituitary gland</strong> also referred to&nbsp;as the 'master&nbsp;gland' that controls the activity of hormone-secreting&nbsp;glands in the body and also responsible for regulating vital body functions and wellbeing.&nbsp;</li> 	</ul> 	</li> </ol> <p style="text-align:justify">So from this explanation, it is clear that the&nbsp;Limbic system is the one that is responsible for the emotional part of the human.&nbsp;So in the case of a&nbsp;young adolescent who finds difficulties to restrain overwhelming emotions like anger, anxiety, pleasure because frontal lobe maturation lags behind the development of the<span style="color:#e67e22"><strong>&nbsp;</strong></span><span style="color:#3498db"><strong>limbic system.</strong></span></p> <p style="text-align:justify"><strong>2. Characteristics of Parenting Styles </strong></p> <ul> 	<li style="text-align:justify"><u>&nbsp;Authoritarian parents </u> 	<ul> 		<li>are regularly thought of as&nbsp;disciplinarians.&nbsp;</li> 		<li>They&nbsp;utilize&nbsp;a severe order style with little arrangement conceivable.&nbsp;</li> 		<li>Punishment&nbsp;is normal.&nbsp;</li> 		<li>Correspondence&nbsp;is generally one way:&nbsp;from the parent to the kid.&nbsp;</li> 		<li>Rules&nbsp;typically are&nbsp;not clarified.&nbsp;Guardians&nbsp;with this&nbsp;style&nbsp;are normally less&nbsp;nurturing.&nbsp;</li> 		<li>Expectations&nbsp;are&nbsp;high&nbsp;with restricted adaptability.</li> 	</ul> 	</li> 	<li style="text-align:justify"><u>Permissive Parenting</u> 	<ul> 		<li>&nbsp;Permissive or Indulgent parents generally let their kids do what they need and offer restricted direction or course.&nbsp;</li> 		<li>They are more similar to&nbsp;companions&nbsp;than&nbsp;guardians.&nbsp;</li> 		<li>Their discipline style&nbsp;is&nbsp;something&nbsp;contrary&nbsp;to strict.&nbsp;</li> 		<li>They have&nbsp;restricted&nbsp;or no&nbsp;regulations&nbsp;and&nbsp;generally&nbsp;let&nbsp;kids&nbsp;make sense of issues all alone.&nbsp;</li> 		<li>Correspondence is open, however, these guardians let youngsters choose for themselves instead of providing guidance.&nbsp;</li> 		<li>Guardians&nbsp;in this&nbsp;classification&nbsp;will in&nbsp;general&nbsp;be warm and supporting.&nbsp;</li> 		<li>Desires&nbsp;are ordinarily negligible or not set by these&nbsp;guardians.</li> 	</ul> 	</li> 	<li style="text-align:justify"><u>Uninvolved Parenting</u>&nbsp; 	<ul> 		<li>Uninvolved&nbsp;guardians&nbsp;give&nbsp;kids&nbsp;a&nbsp;ton&nbsp;of&nbsp;opportunity&nbsp;and by and stay out of their&nbsp;way.&nbsp;</li> 		<li>A few&nbsp;guardians&nbsp;may&nbsp;settle&nbsp;on a&nbsp;cognizant&nbsp;choice to&nbsp;parent&nbsp;thusly, while others are less keen on child-rearing or uncertain of what to&nbsp;do.&nbsp;</li> 		<li>No specific order style is&nbsp;used.&nbsp;An uninvolved parent lets a youngster generally do what he needs, most likely out of lack of information or care.&nbsp;</li> 		<li>Correspondence&nbsp;is&nbsp;restricted.&nbsp;</li> 		<li>This gathering of guardians offers little&nbsp;nurturing.&nbsp;</li> 		<li>There are not many or no&nbsp;expectations&nbsp;for&nbsp;children.&nbsp;</li> 	</ul> 	</li> 	<li style="text-align:justify"><u>Authoritative Parenting</u> 	<ul> 		<li>Legitimate guardians are sensible&nbsp;and&nbsp;sustaining,&nbsp;and&nbsp;set&nbsp;high, clear desires.</li> 		<li>Kids&nbsp;with&nbsp;guardians&nbsp;who&nbsp;show&nbsp;this&nbsp;style&nbsp;will in general act naturally trained and&nbsp;have&nbsp;an independent perspective.&nbsp;</li> 		<li>This&nbsp;style&nbsp;is&nbsp;believed&nbsp;to be generally useful to&nbsp;youngsters.</li> 		<li>Disciplinary principles are clear, and the explanations for them are clarified.&nbsp;</li> 		<li>Communication&nbsp;is&nbsp;incessant&nbsp;and proper to the&nbsp;kid's&nbsp;degree&nbsp;of&nbsp;comprehension.&nbsp;</li> 		<li>Authoritative parents are&nbsp;supporting&nbsp;and&nbsp;nurturing.&nbsp;</li> 		<li>Desires&nbsp;and&nbsp;objectives&nbsp;are high however expressed&nbsp;plainly.&nbsp;Kids&nbsp;may&nbsp;have&nbsp;a&nbsp;contribution&nbsp;to&nbsp;goals.</li> 	</ul> 	</li> </ul> <p style="text-align:center"><img alt="horitarian
+Authoritative
+Crepe
+Bosses
+Uninvolved
+Pro
+20
+" src="https://media.cheggcdn.com/coop/663/66365dab-6e60-4f51-94ec-27b082e6451d/1599899864393_ParentingStyle.png" style="height:269px;width:359px"></p> <p>&nbsp;</p> <p style="text-align:justify">In case of Roxie as she remember that her parent paid little attention to her when she was a child. It is likely that her parents demonstrated <span style="color:#3498db"><strong>negligent/uninvolved parenting style.</strong></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div><div id="mobile-question-style" style="font-family: 'Helvetica Neue',Helvetica,Arial; color:#333333;">IN C++ :&nbsp;</div></div><div id="mobile-question-style" style="font-family: 'Helvetica Neue',Helvetica,Arial; color:#333333;"><div style="-webkit-text-size-adjust: auto; padding: 0px; border: 0px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial; font-stretch: inherit; line-height: inherit; font-size: 14px; vertical-align: baseline;"><br></div><div style="-webkit-text-size-adjust: auto; padding: 0px; border: 0px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial; font-stretch: inherit; line-height: inherit; font-size: 14px; vertical-align: baseline;">Write a program that shows the following menu options and lets the user to convert from Metric to Imperial system:</div><div style="-webkit-text-size-adjust: auto; padding: 0px; border: 0px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial; font-stretch: inherit; line-height: inherit; font-size: 14px; vertical-align: baseline;"><br></div><div style="-webkit-text-size-adjust: auto; padding: 0px; border: 0px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial; font-stretch: inherit; line-height: inherit; font-size: 14px; vertical-align: baseline;"><br></div><div style="-webkit-text-size-adjust: auto; padding: 0px; border: 0px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial; font-stretch: inherit; line-height: inherit; font-size: 14px; vertical-align: baseline;">Converter Toolkit</div><div style="-webkit-text-size-adjust: auto; padding: 0px; border: 0px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial; font-stretch: inherit; line-height: inherit; font-size: 14px; vertical-align: baseline;"><br></div><div style="-webkit-text-size-adjust: auto; padding: 0px; border: 0px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial; font-stretch: inherit; line-height: inherit; font-size: 14px; vertical-align: baseline;">--------------------</div><div style="-webkit-text-size-adjust: auto; padding: 0px; border: 0px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial; font-stretch: inherit; line-height: inherit; font-size: 14px; vertical-align: baseline;"><br></div><div style="-webkit-text-size-adjust: auto; padding: 0px; border: 0px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial; font-stretch: inherit; line-height: inherit; font-size: 14px; vertical-align: baseline;">1. Temperature Converter</div><div style="-webkit-text-size-adjust: auto; padding: 0px; border: 0px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial; font-stretch: inherit; line-height: inherit; font-size: 14px; vertical-align: baseline;"><br></div><div style="-webkit-text-size-adjust: auto; padding: 0px; border: 0px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial; font-stretch: inherit; line-height: inherit; font-size: 14px; vertical-align: baseline;">2. Distance Converter</div><div style="-webkit-text-size-adjust: auto; padding: 0px; border: 0px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial; font-stretch: inherit; line-height: inherit; font-size: 14px; vertical-align: baseline;"><br></div><div style="-webkit-text-size-adjust: auto; padding: 0px; border: 0px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial; font-stretch: inherit; line-height: inherit; font-size: 14px; vertical-align: baseline;">3. Weight Converter</div><div style="-webkit-text-size-adjust: auto; padding: 0px; border: 0px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial; font-stretch: inherit; line-height: inherit; font-size: 14px; vertical-align: baseline;"><br></div><div style="-webkit-text-size-adjust: auto; padding: 0px; border: 0px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial; font-stretch: inherit; line-height: inherit; font-size: 14px; vertical-align: baseline;">4. Quit</div><div style="-webkit-text-size-adjust: auto; padding: 0px; border: 0px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial; font-stretch: inherit; line-height: inherit; font-size: 14px; vertical-align: baseline;"><br></div><div style="-webkit-text-size-adjust: auto; padding: 0px; border: 0px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial; font-stretch: inherit; line-height: inherit; font-size: 14px; vertical-align: baseline;">PLEASE HELP ASAP NEED HELP&nbsp;</div></div><div><img src="https://media.cheggcdn.com/study/395/39588eed-90db-4541-9b36-356ffc844730/image.png" alt="Project Description
+There are two main systems for measuring distance, weight and
+temperature, the Imperial System of Measure"></div><div><img src="https://media.cheggcdn.com/study/dad/dadeb467-9ef1-462c-895d-40939ece7d83/image.png" alt="Sample Screen Output#2:
+Enter a country name: Russia
+Converter Toolkit
+1. Temperature Converter
+2. Distance Converter
+3. Weig"></div><div><img src="https://media.cheggcdn.com/study/6e0/6e0c9c77-6304-451c-bf42-7660ce67fbd3/image.png" alt="Sample Screen Output #1:
+Enter a country name: United Kingdom
+Converter Toolkit
+1. Temperature Converter
+2. Distance Converte"></div><br><div id="mobile-question-style" style="font-family: 'Helvetica Neue',Helvetica,Arial; color:#333333;"><div><br><img src="https://media.cheggcdn.com/study/2be/2be81f3e-5226-49b2-a2c6-9b0a3bf7af03/image.png" alt="If the user enters 1, the program should ask for the temperature in
+Celsius and convert it to Fahrenheit
+•
+If the user enters"></div></div>
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>&nbsp;</p> <p><span style="background-color:#ffffff"><span style="color:#3498db">/******************************************************************************<br> Your C++ converter program.This is exact program as per requirement</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">*******************************************************************************/<br> #include &lt;stdio.h&gt;<br> #include &lt;iostream&gt;<br> #include &lt;cctype&gt;<br> #include &lt;stdlib.h&gt;<br> using namespace std;</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">const float kilometer_miles = .621371;</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">const float kilo_pounds = 2.20462;</span></span></p> <p><br> <span style="background-color:#ffffff"><span style="color:#3498db">int<br> main ()<br> {<br> &nbsp; float kilograms, celsius, kilometers, pounds, farenheit, miles;<br> &nbsp; int choice;<br> &nbsp; string country;</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; cout &lt;&lt; "Enter a country name:";<br> &nbsp; getline (cin, country);<br> &nbsp; cout &lt;&lt; "Converter Toolkit" &lt;&lt; endl<br> &nbsp; &nbsp; &lt;&lt; "-----------------" &lt;&lt; endl<br> &nbsp; &nbsp; &lt;&lt; "1. Temperature Converter" &lt;&lt; endl<br> &nbsp; &nbsp; &lt;&lt; "2. Distance Converter" &lt;&lt; endl<br> &nbsp; &nbsp; &lt;&lt; "3. Weight Converter" &lt;&lt; endl &lt;&lt; "4. Quit" &lt;&lt; endl;</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; cout &lt;&lt; "Enter your choice(1-4):";</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; cin &gt;&gt; choice;</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; if (choice &lt; 0 || choice &gt; 4)</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; &nbsp; {</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; &nbsp; &nbsp; cout &lt;&lt; "Invalid input: enter a number 1-4" &lt;&lt; endl;</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; &nbsp; &nbsp; return 0;</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; &nbsp; }<br> &nbsp; if (choice == 1)</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; &nbsp; {</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; &nbsp; &nbsp; cout &lt;&lt; "Please enter a Temperature in Celsius:";</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; &nbsp; &nbsp; cin &gt;&gt; celsius;</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; &nbsp; &nbsp; farenheit = celsius * 9 / 5 + 32;</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; &nbsp; &nbsp; cout &lt;&lt; "It is " &lt;&lt; farenheit &lt;&lt; " in farenheit" &lt;&lt; endl;<br> &nbsp; &nbsp; &nbsp; cout &lt;&lt; country &lt;&lt; " sounds fun!" &lt;&lt; endl;<br> &nbsp; &nbsp; &nbsp; return 0;</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; &nbsp; }</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; if (choice == 2)</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; &nbsp; {</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; &nbsp; &nbsp; cout &lt;&lt; "Please enter distance in Kilometers:";</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; &nbsp; &nbsp; cin &gt;&gt; kilometers;</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; &nbsp; &nbsp; if (kilometers &lt; 0)</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp;&nbsp; &nbsp;{</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp;&nbsp; &nbsp; &nbsp;cout &lt;&lt; "!!! Program does not convert negative distance. !!!" &lt;&lt;<br> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;endl;</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp;&nbsp; &nbsp; &nbsp;return 0;</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp;&nbsp; &nbsp;}</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; &nbsp; &nbsp; else</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp;&nbsp; &nbsp;{</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp;&nbsp; &nbsp; &nbsp;miles = kilometers * kilometer_miles;</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp;&nbsp; &nbsp; &nbsp;cout &lt;&lt; "It is " &lt;&lt; miles &lt;&lt; " in miles" &lt;&lt; endl;<br> &nbsp;&nbsp; &nbsp; &nbsp;cout &lt;&lt; country &lt;&lt; " sounds fun!" &lt;&lt; endl;</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp;&nbsp; &nbsp;}</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; &nbsp; }</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; if (choice == 3)<br> &nbsp; &nbsp; {</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; &nbsp; &nbsp; cout &lt;&lt; "Please enter weight in kilograms:";</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; &nbsp; &nbsp; cin &gt;&gt; kilograms;<br> &nbsp; &nbsp; &nbsp; if (kilograms &lt; 0)</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp;&nbsp; &nbsp;{</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp;&nbsp; &nbsp; &nbsp;cout &lt;&lt; "!!! Program does not convert negative weight !!!" &lt;&lt; endl;</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp;&nbsp; &nbsp; &nbsp;return 0;</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp;&nbsp; &nbsp;}</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; &nbsp; &nbsp; else</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp;&nbsp; &nbsp;{</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp;&nbsp; &nbsp; &nbsp;pounds = kilograms * kilo_pounds;</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp;&nbsp; &nbsp; &nbsp;cout &lt;&lt; "it is " &lt;&lt; pounds &lt;&lt; " in pounds" &lt;&lt; endl;<br> &nbsp;&nbsp; &nbsp; &nbsp;cout &lt;&lt; country &lt;&lt; " sounds fun!" &lt;&lt; endl;<br> &nbsp;&nbsp; &nbsp; &nbsp;return 0;</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp;&nbsp; &nbsp;}</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; &nbsp; }</span></span></p> <p><span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; if (choice == 4)<br> &nbsp; &nbsp; {<br> &nbsp; &nbsp; &nbsp; return 0;<br> &nbsp; &nbsp; }</span></span></p> <p><br> <span style="background-color:#ffffff"><span style="color:#3498db">&nbsp; return 0;<br> }</span></span></p> <p><img alt="if (choice == 1)
+cout << Please enter a Temperature in Celsius:;
+cin >> celsius;
+farenheit = celsius * 9/5 + 32;
+55
+cout <<" src="https://media.cheggcdn.com/media/c53/c53b136a-dd81-40ca-be9f-fa699033d43e/1583619833691_Converter_answer_chegg.png" style="height:533px;width:1282px"></p> <p>/*Please provide your rating and comment in the comment section if you have any doubt in this question. Thanks*/</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

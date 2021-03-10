@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>The Dawson Company manufactures small lamps and desk lamps. The
+following shows the activities per product and the total overhead
+information:</p>
+<table border="0" cellpadding="0" cellspacing="0" style=
+"width:500px;">
+<tbody>
+<tr>
+<td style="width:175px;">&nbsp;</td>
+<td style="text-align:center;vertical-align:top;width:75px;">
+<strong>Setups</strong></td>
+<td style="text-align:center;vertical-align:top;width:75px;">
+<strong>Inspections</strong></td>
+<td style="text-align:center;vertical-align:top;width:100px;">
+<strong>Assembly (dlh)</strong></td>
+</tr>
+<tr>
+<td style="width:175px;">Small Lamps - 3,000 units</td>
+<td style="text-align:center;vertical-align:top;width:75px;">
+8,000</td>
+<td style="text-align:center;vertical-align:top;width:75px;">
+9,000</td>
+<td style="text-align:center;vertical-align:top;width:100px;">
+16,000</td>
+</tr>
+<tr>
+<td style="width:175px;">Desk Lamps - 6,000 units</td>
+<td style="text-align:center;vertical-align:top;width:75px;">
+16,000</td>
+<td style="text-align:center;vertical-align:top;width:75px;">
+15,000</td>
+<td style="text-align:center;vertical-align:top;width:100px;">
+12,000</td>
+</tr>
+<tr>
+<td style="width:175px;">&nbsp;</td>
+<td style="text-align:center;vertical-align:top;width:75px;">
+&nbsp;</td>
+<td style="text-align:center;vertical-align:top;width:75px;">
+&nbsp;</td>
+<td style="text-align:center;vertical-align:top;width:100px;">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" style=
+"width:500px;">
+<tbody>
+<tr>
+<td style="width:166.6px;"><strong>Activity Pool</strong></td>
+<td style="text-align:center;vertical-align:top;width:166.6px;">
+<strong>Activity Base</strong></td>
+<td style="text-align:center;vertical-align:top;width:166.6px;">
+<strong>Budgeted Amount</strong></td>
+</tr>
+<tr>
+<td style="width:166.6px;">Setups</td>
+<td style="text-align:right;vertical-align:top;width:166.6px;">
+24,000</td>
+<td style="text-align:right;vertical-align:top;width:166.6px;">
+$60,000</td>
+</tr>
+<tr>
+<td style="width:166.6px;">Inspections</td>
+<td style="text-align:right;vertical-align:top;width:166.6px;">
+24,000</td>
+<td style="text-align:right;vertical-align:top;width:166.6px;">
+$120,000</td>
+</tr>
+<tr>
+<td style="width:166.6px;">Assembly (dlh)</td>
+<td style="text-align:right;vertical-align:top;width:166.6px;">
+28,000</td>
+<td style="text-align:right;vertical-align:top;width:166.6px;">
+$280,000</td>
+</tr>
+</tbody>
+</table>
+<p>Calculate the total factory overhead to be charged to desk
+lamps.</p>
+<p>&nbsp;</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <table border="0" cellpadding="0" cellspacing="0" style=
+"width:534px;">
+<tbody>
+<tr>
+<td colspan="6" style="height:20px;width:536px;">Calculation of
+Activity Rate&nbsp;</td>
+</tr>
+<tr>
+<td colspan="6" style="height:20px;">Under ABC</td>
+</tr>
+<tr>
+<td style="height:40px;">Activity Pool</td>
+<td style="width:81px;">Budgeted Amt.</td>
+<td colspan="2" style="width:165px;">Expected use of Cost Driver
+per Activity</td>
+<td colspan="2" style="width:159px;">Overhead Rates</td>
+</tr>
+<tr>
+<td style="height:20px;">Setups</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp; 60,000.00</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+24,000</td>
+<td>Setups</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2.50</td>
+<td>Per Setup</td>
+</tr>
+<tr>
+<td style="height:20px;">Inspections</td>
+<td>&nbsp;&nbsp; 120,000.00</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+24,000</td>
+<td>Inspections</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+5.00</td>
+<td>Per Inspaction</td>
+</tr>
+<tr>
+<td style="height:20px;">Assembly (dlh)</td>
+<td>&nbsp;&nbsp; 280,000.00</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+28,000</td>
+<td>Lab. Hrs</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10.00</td>
+<td>Per Lab. Hrs</td>
+</tr>
+<tr>
+<td style="height:20px;">&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:20px;">&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td colspan="4" style="height:20px;">Calculation Of Total Overhead
+applied</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:40px;">&nbsp;</td>
+<td style="width:81px;">Small Lamp</td>
+<td style="width:83px;">DesK Lamp</td>
+<td style="width:83px;">Total Overhead</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:20px;">Setups</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+20,000</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+40,000</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+60,000</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:20px;">Inspections</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+45,000</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+75,000</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 120,000</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:20px;">Assembly (dlh)</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 160,000</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 120,000</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 280,000</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="height:20px;">Total&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 225,000</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 235,000</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 460,000</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Assume a Computer design problem having following parameters:
+Main memory: 4KB, Direct mapped cache, Cache size: 32 lines, Block
+size: 8 Bytes. Computer program accesses (in order) memory
+locations: 7, 8, 24, 25, 256, 260, 280, 520, 524, 1024 (i) What is
+the hit ratio? (ii) What are the final cache contents? Assume that
+the first three blocks of RAM are already copied into cache.</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>We are provided with&nbsp;<em>direct mapped cache</em>. In direct mapping, a particular block of memory is mapped to a particular line of cache. The formula to calculate line number is</p> <p><strong>Line number = Block address % number of lines</strong></p> <p><strong>Number of lines ( given ) = 32</strong></p> <p>We will calculate line number for each memory location and then put them in the corresponding line number. If there already exists another block in that line, then it is replaced. A&nbsp;<em>cache hit</em>&nbsp;will occur, if the block to be inserted already exists in the cache, otherwise it is a&nbsp;<em>miss</em>.</p> <p>Calculation of line number for accessed memory locations ( in order ):</p> <p>Line number = Block address % number of lines</p> <p>7 % 32 = 7 ( MISS )</p> <p>8 % 32 = 8 ( MISS )</p> <p>24 % 32 = 24 ( MISS )</p> <p>25 % 32 = 25 ( MISS )</p> <p>256 % 32 = 0 ( MISS )</p> <p>260 % 32 = 4 ( MISS )</p> <p>280 % 32 = 24 ( MISS )</p> <p>520 % 32 = 8 ( MISS )</p> <p>524 % 32 = 12&nbsp;&nbsp;( MISS )</p> <p>1024 % 32 = 0 ( MISS )</p> <p>Number of hits = 0</p> <p><strong>Hit ratio = 0 / 10 = 0</strong>, where 10 is the number of memory locations accessed</p> <p>In this below picture, you can see how the blocks are inserted in different line numbers. I have only shown the line numbers that has blocks in them. As you can see, how 256 was inserted first at Line 0, but then its was replaced by inserting 1024, whose line number is also 0.</p> <p><img alt="Line 0 256 1024
+Line 4 260
+Line 7 7
+Line 8 8 520
+Line 12 524
+Line 24 24 280
+Line 25 25
+" src="https://media.cheggcdn.com/coop/3d5/3d51489a-e181-4fb0-9d29-b2a0ea5263d6/1607350897074_Chegg39.png"></p> <p>The&nbsp;<strong>final cache contents</strong>&nbsp;<strong>are:</strong>&nbsp;<strong>1024, 260, 7, 520, 524, 280</strong>&nbsp;and&nbsp;<strong>25</strong>.</p> <p>___________________________________________________</p> <p>I had provided you with the complete answer. Feel free to ask if in any doubt.</p> <p>Stafe safe and --------------------------<strong>Please Upvote</strong>--------------------------</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

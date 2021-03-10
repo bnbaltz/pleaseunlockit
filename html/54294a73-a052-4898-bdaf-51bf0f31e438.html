@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Hard-code a string of your choice. Print out your string.</p>
+<p>Generate a random key of chars the same length as your string.
+Print out the key.</p>
+<p>Exclusive OR each character in your string with the
+corresponding character in the random key to generate ciphertext.
+Print the ciphertext.</p>
+<p>Exclusive OR each character in the ciphertext with the
+corresponding character in the random key to generate the original
+text. Print out the original text.</p>
+<p>Written in C.</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>Please find the code below:</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>#include &lt;stdio.h&gt;<br>
+#include &lt;stdlib.h&gt;</p>
+<p>int main()<br>
+{<br>
+&nbsp;&nbsp; &nbsp;char secretKey[9];<br>
+&nbsp;&nbsp; &nbsp;char str[9]
+={'a','b','c','d','e','f','g','h'};<br>
+&nbsp;&nbsp; &nbsp;//copy array a into b<br>
+&nbsp;&nbsp; &nbsp;printf("Original string is : %s\n",str);<br>
+&nbsp;&nbsp; &nbsp;char cypher[9]={'\0'};<br>
+&nbsp;&nbsp; &nbsp;int x;<br>
+&nbsp;&nbsp; &nbsp;for(x=0;x&lt;=7;x++){<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;secretKey[x] = rand()%26
++'a';<br>
+&nbsp;&nbsp; &nbsp;}<br>
+&nbsp;&nbsp; &nbsp;for(x=0;x&lt;=7;x++){<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cypher[x] = &nbsp;str[x] ^
+secretKey[x] ;<br>
+&nbsp;&nbsp; &nbsp;}</p>
+<p>&nbsp;&nbsp; &nbsp;printf("Encrypted string is :
+%s\n",cypher);</p>
+<p>&nbsp;&nbsp; &nbsp;char original[9]={'\0'};<br>
+&nbsp;&nbsp; &nbsp;for(x=0;x&lt;=7;x++){<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;original[x] = cypher[x] ^
+secretKey[x];<br>
+&nbsp;&nbsp; &nbsp;}</p>
+<p>&nbsp;&nbsp; &nbsp;printf("New string is : %s\n",original);</p>
+<p><br>
+&nbsp;&nbsp; &nbsp;return 0;</p>
+<p>}</p>
+<p>&nbsp;</p>
+<p><strong>output:</strong></p>
+<p><img alt="(globals)
+Classes
+| K:\WORKSPACE\c_language_workspace\C\encryption using xor.exe
+Original string is : abcdefgh
+Encrypted stri" src="https://media.cheggcdn.com/media/454/45470d67-8a8d-4159-ab62-d220b0828303/phptAO0CL.png" style="height:349px;width:671px;"></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

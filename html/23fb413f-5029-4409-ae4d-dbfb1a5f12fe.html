@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>A particular brand of antacid contains 500 mg of CaCO3 per 2.0 g
+tablet according to the label.</p>
+<p>How many moles of CaCO3 are in one tablet?</p>
+<p>The reaction by which the antacid neutralizes HCl is<br />
+2 HCl(aq) + CaCO3(s) CaCl2(aq) + CO2(g) + H2O(l)</p>
+<p>How many moles of HCl can be neutralized by one tablet?</p>
+<p>50.0 mL of 0.300 M HCl are used to dissolve a 2.00 g tablet. How
+many moles of acid are used to dissolve the tablet?</p>
+<p>The excess acid then requires 53.13 mL of 0.100 M NaOH for the
+back titration. How many moles of excess acid were there in the 50
+mL?</p>
+<p>How many moles of HCl were neutralized by the tablet?</p>
+<p>How many moles of CaCO3 were in the tablet? How many
+mg?&nbsp;</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><strong>1.</strong></p>
+<p>The 2.0 g antacid tablet is labelled to contain 500 mg of
+CaCO<sub>3</sub>.</p>
+<p>Hence, mass of CaCO<sub>3</sub> in 2.00 g of tablet = 500 mg =
+0.500 g</p>
+<p>Molar mass of CaCO<sub>3</sub> = 100.0869 g/mol</p>
+<p>Hence, the number of moles of CaCO<sub>3</sub> present in one
+tablet can be calculated as follows:</p>
+<p><img alt="mass
+moles =
+molar mass
+0.500 g
+100.0869 g/mol
+0.00500 mol
+" src="https://media.cheggcdn.com/media/032/0326ac4a-5576-4c80-9a57-2135df81f02a/b041f799-c641-4f8e-99d3-57619fbe1303.png"></p>
+<p><strong>Hence, there are approximately&nbsp;<img alt="0.00500 mol
+" src="https://media.cheggcdn.com/media/068/068fe232-c23e-450c-9dc7-194244a22779/dc4435de-2530-4431-8275-d28888aded00.png">&nbsp;CaCO<sub>3</sub>
+in one tablet.</strong></p>
+<p>&nbsp;</p>
+<p><strong>2.</strong></p>
+<p>The balanced reaction of neutralization of HCl by
+CaCO<sub>3</sub> can be written as</p>
+<p><img alt="2HCl(aq) + CaCO3(s) +CaCl2(aq) + CO2(g) + H200
+" src="https://media.cheggcdn.com/media/c64/c6409220-07b8-4dfb-8b2e-5b3fcb46592f/e8340e59-94ab-4690-a1d1-6992ce584512.png"></p>
+<p>Hence, 2 moles of HCl react with 1 mol of CaCO<sub>3</sub>.</p>
+<p>Hence, the number of moles of HCl that will be neutralized by
+0.00500 mol of CaCO<sub>3</sub> present in one tablet is&nbsp;</p>
+<p><img alt="2 mol HCI
+- X 0.00500 mol CaCO3 = 0.0100 mol HCI
+1 mol CaCO3
+" src="https://media.cheggcdn.com/media/aa3/aa33cdcc-4357-43e3-8f6e-2f8270d41179/0714ce0a-2315-440a-9d9f-e83e8f07dbc0.png"></p>
+<p>&nbsp;</p>
+<p><strong>Hence, one tablet of the antacid can neutralize 0.0100
+mol of HCl.</strong></p>
+<p>&nbsp;</p>
+<p><strong>3.</strong></p>
+<p>Volume of HCl used to dissolve one tablet = V = 50.0 mL = 0.0500
+L</p>
+<p>Concentration of HCl = 0.300 M = 0.300 mol/L</p>
+<p>Hence, the number of moles of acid HCl used to dissolve can be
+calculated as</p>
+<p><img alt="moles = conc x volume = 0.300-
+0.300 mol
+x 0.0500 L = 0.0150 mol
+" src="https://media.cheggcdn.com/media/98a/98a222fe-a049-43cb-ad73-37f374850a6b/fe9fbc58-f235-4582-8942-2e229268bf19.png"></p>
+<p><strong>Hence, 0.0150 mol of HCl has been used to
+dissolve.</strong></p>
+<p>&nbsp;</p>
+<p><strong>4.</strong></p>
+<p>The excess acid was neutralized by NaOH.</p>
+<p>Volume of NaOH used = 53.13 mL = 0.05313 L</p>
+<p>Concentration of NaOH used = 0.100 M = 0.100 mol/L</p>
+<p>Hence, the number of moles of NaOH used can be calculated as</p>
+<p><img alt="moles = concx volume = 0.100-
+0.100 mol
+x 0.05313 L = 0.005313 mol
+" src="https://media.cheggcdn.com/media/987/987699f2-ab18-49c2-8a28-97992134502d/fed4ab0c-c33c-4500-9499-d36a8ce7214a.png"></p>
+<p>Note that 1 mol of NaOH neutralizes 1 mol of HCl. Hence, the
+number of moles of excess HCl present must be equal to the number
+of moles of NaOH used.</p>
+<p><strong>Hence, the number of moles of excess HCl used to
+dissolve the tablet is 0.005313 mol.</strong></p>
+<p>&nbsp;</p>
+<p><strong>5.</strong></p>
+<p>Now, the number of moles of HCl that was neutralized by the
+tablet is the difference of starting number of moles of HCl used
+and the excess HCl neutralized by NaOH.</p>
+<p>Hence,&nbsp;</p>
+<p>number of moles neutralized by tablet = 0.0150 mol - 0.005313
+mol = 0.009687 mol.</p>
+<p><strong>Hence, 0.009687 mol of HCl was neutralized by the
+tablet.</strong></p>
+<p>&nbsp;</p>
+<p><strong>6.</strong></p>
+<p>We already know that 1 mol of CaCO<sub>3</sub> neutralizes 2
+moles of HCl.</p>
+<p>Hence, the number of moles of CaCO<sub>3</sub> that must be
+present in the tablet that neutralized 0.009687 mol of HCl
+is&nbsp;</p>
+<p><img alt="1 mol CaCO3
+x 0.009687 mol HCI = 0.0048435 mol CaCO3
+2 mol HCI
+" src="https://media.cheggcdn.com/media/1af/1af11ecd-2e03-4f0a-826f-da7421e9e0ad/3780c210-66c6-436f-9261-97a743c3f946.png"></p>
+<p>&nbsp;</p>
+<p><strong>Hence, there were approximately 0.00484 mol of
+CaCO<sub>3</sub> in the tablet.</strong></p>
+<p>Now, we can calculate the mass of CaCO<sub>3</sub> in the tablet
+as follows:</p>
+<p><img alt="mass = moles X molar mass = 0.0048435 mol x 100.0869
+mol
+mass = 0.48477 g 485 mg
+" src="https://media.cheggcdn.com/media/84f/84f07651-8cbc-419f-b49b-a4cab52dde6b/95def63f-8f68-4f33-a3f9-e7ca1e5d363e.png"></p>
+<p>&nbsp;</p>
+<p><strong>Hence, there were approximately&nbsp;485 mg of
+CaCO<sub>3</sub> in the tablet.</strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

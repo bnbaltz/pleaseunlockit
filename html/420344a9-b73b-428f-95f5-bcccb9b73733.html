@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <ol start="3">
+<li>Write a method that uses a 2d array to keep track of the
+position of a piece on a board as it moves. The 2d array should be
+a 9 by 9 matrix with the piece starting in the center of the board.
+The program should begin printing the board showing the piece in
+the middle:</li>
+</ol>
+<p>- - - - - - - - -</p>
+<p>- - - - - - - - -</p>
+<p>- - - - - - - - -</p>
+<p>- - - - - - - - -</p>
+<p>- - - - ■ - - - -</p>
+<p>- - - - - - - - -</p>
+<p>- - - - - - - - -</p>
+<p>- - - - - - - - -</p>
+<p>- - - - - - - - -</p>
+<p>(I used (char)254 for the piece, you can use whatever you want
+to represent it.)</p>
+<p>&nbsp;</p>
+<p>The method should then prompt the user to make any number of
+moves using N, S, E, W and update the position of the piece in the
+2d array. N will move the piece up on the board, S down, E to the
+right, and W to the left.</p>
+<p>&nbsp;</p>
+<p>If the piece would go off of the board, it should appear on the
+other side of the board as if it was ‘wrapping’ around the board.
+So if the piece was at the top and the user types N to go up more,
+it should appear at the bottom in the same column.</p>
+<p>&nbsp;</p>
+<p>You do not need to print out the board between moves. The method
+ends when the user enters Quit, and the board with the new piece
+location is then printed.</p>
+<p>&nbsp;</p>
+<p><strong>***JAVA***</strong></p>
+<p><em>***NOT C, C++, JAVASCRIPT***</em></p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <pre>
+<code class="language-java">import java.util.Scanner;
+
+public class solution {
+
+    static void display(int arr[][]) {
+
+        for (int i = 0; i &lt; arr.length; i++) {
+            for (int j = 0; j &lt; arr[0].length; j++) {
+                if (arr[i][j] == 1)
+                    System.out.print("*");
+                else
+                    System.out.print("-");
+            }
+            System.out.println();
+        }
+    }
+    //It will fill 1 where piece is present in all other location it will be 0
+    static void changePostion(int board[][], int positionX, int positionY) {
+
+        for (int i = 0; i &lt; 9; i++) {
+            for (int j = 0; j &lt; 9; j++) {
+
+                if (i + 1 == positionX &amp;&amp; j + 1 == positionY)
+                    board[i][j] = 1;
+                else
+                    board[i][j] = 0;
+            }
+        }
+
+    }
+
+    public static void main(String[] args) {
+        Scanner scnr = new Scanner(System.in);
+
+        int board[][] = new int[9][9];
+
+        int positionX = 5, positionY = 5;
+
+        changePostion(board, positionX, positionY);
+        display(board);
+
+        while (true) {
+
+            System.out.println("N.Up\nS.Down\nW.Left\nE.righ\nQ.Quite");
+
+            String choice = scnr.next();
+            boolean exit = false;
+
+            switch (choice) {
+
+            case "N":
+                positionX = (positionX - 1);
+                if (positionX &lt;= 0)
+                    positionX = positionX + 9;
+
+                break;
+            case "S":
+                positionX = (positionX + 1);
+                if (positionX &gt; 9)
+                    positionX = positionX - 9;
+
+                break;
+            case "W":
+                positionY = (positionY - 1);
+                if (positionY &lt;= 0)
+                    positionY = positionY + 9;
+
+                break;
+            case "E":
+                positionY = (positionY + 1);
+                if (positionY &gt; 9)
+                    positionY = positionY - 9;
+
+                break;
+            case "Q":
+                exit = true;
+                break;
+            default:
+                System.out.println("Enter Valid Choice");
+                break;
+
+            }
+            if (exit)
+                break;
+            changePostion(board, positionX, positionY);
+            //If you want to display at each move then uncomment this display(board)
+            // display(board);
+        }
+
+        System.out.println("Current position Of piece:" + positionX + " , " + positionY);
+        display(board);
+
+    }
+}</code></pre>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><img alt="gaurav@gaurav-Inspiron-15-3567:--/Programs$ javac solution.java
+gaurav@gaurav-Inspiron-15-3567:-/Programs$ java solution
+N. U" src="https://media.cheggcdn.com/coop/c4a/c4aab6f9-ccf9-434d-ab89-61ed0e46afd1/1615343475836_Screenshotfrom2021-03-1008-00-33.png"></p>
+
+<p>&nbsp;</p>
+
+<p><img alt="N. Up
+S. Down
+W.Left
+E.righ
+Q.Quite
+W
+N. Up
+S.Down
+W.Left
+E.righ
+Q.Quite
+S
+N. Up
+S. Down
+W.Left
+E.righ
+Q. Quite
+E
+N. Up
+S.Dow" src="https://media.cheggcdn.com/coop/bc9/bc94d732-9a30-4572-a36c-1ffb4c0e06b4/1615343515292_Screenshotfrom2021-03-1008-01-43.png" style="height:525px;width:407px"></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

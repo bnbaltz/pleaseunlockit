@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>For the following cases, you have to give the following:</p>
+<p>-Presented symptoms in the case&nbsp;</p>
+<p>-DSM-V Criteria met in the case&nbsp;</p>
+<p>-Your&nbsp;General Diagnosis in the case</p>
+<ul>
+<li>Clara was a 20-year-old college student with an engaging
+personality but not many friends. She was referred due to excessive
+anxiety and general difficulties in controlling her life.
+Everything was a catastrophe for her, though she carried a 3.7 GPA,
+she was convinced that she would fail every test she took. As a
+result, she repeatedly threatened to drop courses after only
+several weeks of classes because she feared that she would not
+understand the material. Although she had an occasional panic
+attack, this was not a major issue to her. As soon as the panic
+subsided, she focused on the next possible catastrophe. Irene was
+also concerned about her health, she had high blood pressure,
+tension headaches, and a “nervous stomach”, with a lot of gas,
+occasional diarrhea, and some abdominal pain.</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li>Hazel had her first attack when she was 25 years old, just a
+few weeks after she came home from the hospital after her
+appendectomy. The surgery had gone well, and she was not in any
+danger, which is why she did not understand what happened. When she
+went to sleep, she woke up a few hours later with a vague feeling
+of apprehension. She felt her heart ponding, her chest hurt and
+felt like she was dying because of a heart attack. During that
+time, she ran to her sister’s room but she still felt like she was
+a puppet or a robot who was under the control of somebody else
+while she was running.</li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li>Kylie was 67 years old and lived in a second-floor walkup
+apartment in a lower-middle-class section of the city. She shared
+that she had not answered the door herself for the past 15 years
+because she was afraid to look into the hallway. She could enter
+her kitchen and go into the areas containing the stove and the
+refrigerator, but for the past 10 years, she had not been to the
+part of the room that overlooked the backyard. Thus, her life for
+the past decade had been confined to her bedroom, her living room,
+and the front half of her kitchen. She relied on her adult daughter
+to bring groceries and visit once a week and her only contact with
+the outside world was through the television and the radio. As long
+as she stayed in her apartment, she was relatively free of
+panic.</li>
+</ul>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>ANSWER:</p> <p><strong>CASE NO. 1 : 20- year old college student Clara</strong></p> <p><strong>A) Symptoms: </strong>excessive anxiety and worry about many aspects especially academic perfromance, panic attacks, difficulty in concentration, inability to control the worry, always expecting another problem, focused on the next catastrophe.</p> <p><strong>B) DSM 5 Criteria :</strong> a) excessive anxiety and worry about a number of events or activities like work or school performance, b) individual finds it difficult to control the worry, c) restlessness, feeling keyed up, being on edge, d)difficulty concentrating, e) the anxiety or worry is causing significant distress or impairment in important areas of functioning.</p> <p><strong>C)&nbsp;Diagnosis: Generalized Anxiety Disorder (GAD) </strong>a type of disorder where a person expresses excessive, chronic and unreasonable anxiety and worry about daily aspects of his/her life.</p> <p><strong>CASE NO.2: Irene</strong></p> <p><strong>Symtoms: </strong>a) high blood pressure, b) tension, headaches, c) abdominal distress (gas, diarrhea)</p> <p><strong>DSM 5 criteria: </strong>no specific symptoms have been mentioned, all the symptoms point to anxiety but not the specific type.</p> <p><strong>Diagnosis: Anxiety</strong></p> <p><strong>CASE NO.3: Hazel</strong></p> <p><strong>Symptoms</strong>: a) feeling of apprehension, b) pounding heart, chest pain, c) feeling of having heart attack, d) while running felt like a puppet or robot being controlled by someone else.</p> <p><strong>DSM 5 criteria</strong>: a)unexpected panic attack (abrupt or intense surge of fear or discomfort that reaches its peak within a minute. b) palpitations, pounding heart, accelrated heart rate c) chest pain/discomfort, d)depersonalization&nbsp;(feeling of being detached from oneself)</p> <p><strong>Diagnosis: Panic attack </strong>( recurrent panic attack will lead to panic disorder)</p> <p><strong>CASE NO.4: 67 year old Kylie</strong></p> <p><strong>Symptoms</strong>:&nbsp; a)afraid to look in the hallway, b)not being able to use particular areas in her own house (area containing stove and refrigerator in the kitchen, part of the room overlooking the backyard), c) not being able to leave the house to buy groceries, d)confined to certain areas of her house (bedroom, living room, front half of kitchen), e)only contact with outside world is through television and radio, f) staying in apartment is the only way to avoid panic attacks.</p> <p><strong>DSM 5 criteria:</strong> excessive anxiety or fear in the following situations,&nbsp;a) being in open spaces (markets, parking spaces, in above case being in the backyard), b)being in enclosed spaces (shops, theatres, in above case part of the kitchen containing stove and refrigerator), c) being outside of home alone, d) above situations provoke fear and anxiety, e) the fear or anxiety is out of proportions to the actual danger posed by the situations or the socio cultural contexts.</p> <p><strong>Diagnosis: Agoraphobia</strong> ( excessive fear or anxiety about being in such places like a crowded marketplace, movie theatre, malls, standing in line, leaving home alone, because such individuals feel that if they suffered from a panic attack or get ill in these places, they might not get any help, or it would be impossible to escape from these places, hence avoiding such places as far as possible.)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

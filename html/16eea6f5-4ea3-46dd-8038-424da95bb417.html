@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>This has four objectives:</p>
+<ol>
+<li>
+<p>to understand the binary representation of unsigned (positive)
+integer</p>
+</li>
+<li>
+<p>to apply command line argument</p>
+</li>
+<li>
+<p>to use String class process the numeric string characters</p>
+</li>
+<li>
+<p>to format the binary from decimal format and output to the
+console</p>
+</li>
+<li>
+<p>to format the decimal from binary format and output to the
+console</p>
+</li>
+</ol>
+<p>Description</p>
+<p>Computers store positive integers using binary (base 2) format.
+That means instead of 10 numerical digits (called decimal or base
+10 format), computers only used two digits (either 0 or 1) to
+represent a positive integer. For example, 1210 will be represented
+as 11002 in a computer. This assignment requires you to write a
+java program using command line argument to acquire any positive
+integer less than 231 -1 and output it binary representation. Also
+acquire any unsigned binary (up to 31 bits) from the console and
+output it decimal representation. Following figure shows how to
+convert an unsigned decimal to its binary format (this conversation
+will be further discussed in the class).</p>
+<p>Note: You need to get the command line arguments as character
+strings (both decimal and binary) validate their format and then
+convert them to binary and decimal strings respectively.</p>
+<p>Instructions</p>
+<p>You must use String class to store the positive decimal and
+unsigned binary from the command line arguments. Create a class
+Lab04 with a main() method, and a decimalTobinary()</p>
+<p>method to convert positive decimal string to binary string, a
+binaryTodecimal()method to convert unsigned binary string to
+positive decimal string. In the main() method, you need to pass a
+string to the conversion methods, the string stores the command
+line argument (positive decimal string and unsigned binary string)
+after complete the conversion, both method return a string which
+contain the unsigned binary string and positive decimal string
+respectively. Your main() method then output the result to the
+console. A program template as follow:</p>
+<pre>
+public static void main(String[] args) {
+</pre>
+<p>String d_s = new String(); // stores the decimal conversion
+result<br>
+String b_s = new String(); // stores the binary conversion
+result<br>
+...<br>
+b_s = decimalTobinary(decimalString); // decimalString from command
+argument d_s = binaryTodecimal(binaryString); // binaryString from
+command argument ...</p>
+<pre>
+  // your output code here;
+}
+</pre>
+<p>public static String decimalTobinary(String decimal) { ...</p>
+<pre>
+  // your positive decimal to unsigned binary code here
+</pre>
+<p>... }</p>
+<p>public static String binaryTodecimal(String binary) { ...</p>
+<pre>
+  // your unsigned binary to positive decimal code here
+</pre>
+<p>... }</p>
+<p>Specifications</p>
+<p>Your program must meet the following specifications:</p>
+<ol>
+<li>
+<p>Work on your own.</p>
+</li>
+<li>
+<p>The name of the source code file must be exactly Lab04.java</p>
+</li>
+<li>
+<p>Name it exactly: upper/lower case letters are important!</p>
+</li>
+<li>
+<p>Comments at the top with your name, e-Name (e-mail), date,
+course number, and short</p>
+<p>description of the program.</p>
+</li>
+<li>
+<p>Your program need to be able to convert unsigned binary up to 31
+bit to positive decimal as well</p>
+<p>as convert positive decimal number up to 231 - 1 to unsigned
+binary.</p>
+</li>
+<li>
+<p>The output format must exactly match the example shown above,
+including blank line, white</p>
+<p>space and capitalization.</p>
+</li>
+</ol>
+<p>Note:</p>
+<ul>
+<li>
+<p> We expect programming assignments to be implemented using Java
+1.8 (the version installed in</p>
+</li>
+</ul>
+<p>the SB 0208, VMware Horizon, and OpenLab SRC 203 and SB Lab).
+Your code will be tested on the</p>
+<p>machines (or machines installed the same Java compiler and JVM)
+in the either SB 0208, VMware</p>
+<p>Horizon, or OpenLab, so make sure your code runs on those
+machines.</p>
+<p>&nbsp;</p>
+<p>Example of testing your program as follows (your submitted
+program name is Lab04.java)</p>
+<pre>
+  javac Lab04.java
+</pre>
+<pre>
+  java Lab04 1492 11111110
+  The conversion of positive decimal number 1492 to unsigned binary is
+  10111010100
+  The conversion of unsigned binary number 11111110 to positive decimal is
+  254
+</pre>
+<pre>
+  Java Lab04 2016 11100010
+  The conversion of positive decimal number 2016 to unsigned binary is
+  11111100000
+  The conversion of unsigned binary number 11100010 to positive integer is
+  226
+</pre>
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><br />
+<strong>ANSWER:-</strong></p>
+<p><strong>CODE:-</strong></p>
+<p>import java.util.*;<br />
+class Lab04{<br />
+&nbsp;&nbsp; public static String decimalTobinary(String
+decimal){<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; String res = "";<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; try{<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; int n =
+Integer.parseInt(decimal);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; while (n &gt; 0)
+{<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; res = String.valueOf(n%2) + res;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; n /= 2;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }catch(Exception e){<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+System.out.println("Please enter in decimal format");<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return res;<br />
+&nbsp;&nbsp; }<br />
+&nbsp;&nbsp; public static String binaryTodecimal(String
+binary){<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; String res = "";<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; for(int i =
+0;i&lt;binary.length();i++){<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; char ch =
+binary.charAt(i);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if(ch!='0'
+&amp;&amp; ch!='1'){<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; System.out.println("Enter valid binary
+number");<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; return res;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; int num = 0, index = 0;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; for(int
+i=binary.length()-1;i&gt;=0;i--){<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+if(binary.charAt(i) == '1'){<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; num += Math.pow(2, index);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; index++;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return String.valueOf(num);<br />
+&nbsp;&nbsp; }<br />
+&nbsp;&nbsp; public static void main(String[] args) {<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; String d_s = new String();<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; String b_s = new String();<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; String decimalString =
+args[0];<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; String binaryString =
+args[1];<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; b_s =
+decimalTobinary(decimalString);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; d_s =
+binaryTodecimal(binaryString);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.println("The conversion
+of positive decimal number "+decimalString+" to unsigned binary is
+"+b_s);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; System.out.println("The conversion
+of unsigned binary number "+binaryString+" to positive decimal is
+"+d_s);<br />
+&nbsp;&nbsp; }<br />
+}</p>
+<p><strong>NOTE:- If you need any modifications in the code,please
+comment below.Please give positive rating.THUMBS UP.</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; THANK
+YOU!!!!</strong></p>
+<p><strong>OUTPUT:-</strong></p>
+<p><img src=
+"data:image/png;base64,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"
+alt="AAAAAElFTkSuQmCC" /></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

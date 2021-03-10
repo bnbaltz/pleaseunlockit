@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Primara Corporation has a standard cost system in which it
+applies overhead to products based on the standard direct
+labor-hours allowed for the actual output of the period. Data
+concerning the most recent year appear below:</p>
+<p>&nbsp;</p>
+<table cellpadding="0" cellspacing="0" style="width:500px;">
+<tbody>
+<tr>
+<td style="text-align:left;vertical-align:middle;">&nbsp;</td>
+<td style="text-align:left;vertical-align:middle;">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:left;vertical-align:middle;">
+&nbsp;&nbsp;Total budgeted fixed overhead cost for the year</td>
+<td style="text-align:right;vertical-align:middle;">$446,400
+&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:left;vertical-align:middle;">
+&nbsp;&nbsp;Actual fixed overhead cost for the year</td>
+<td style="text-align:right;vertical-align:middle;">$440,000
+&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:left;vertical-align:middle;">
+&nbsp;&nbsp;Budgeted standard direct labor-hours (denominator level
+of activity)</td>
+<td style="text-align:right;vertical-align:middle;">62,000
+&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:left;vertical-align:middle;">
+&nbsp;&nbsp;Actual direct labor-hours</td>
+<td style="text-align:right;vertical-align:middle;">63,000
+&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:left;vertical-align:middle;">
+&nbsp;&nbsp;Standard direct labor-hours allowed for the actual
+output</td>
+<td style="text-align:right;vertical-align:middle;">60,000
+&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align:left;vertical-align:middle;">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table cellpadding="0" cellspacing="0" style="width:620px;">
+<tbody>
+<tr>
+<td colspan="2" style="text-align:left;vertical-align:middle;">
+<strong>Required:</strong></td>
+</tr>
+<tr>
+<td style="text-align:left;vertical-align:top;">1.</td>
+<td style="text-align:left;vertical-align:middle;">
+<p>Compute the fixed portion of the predetermined overhead rate for
+the year. <strong>(Round Fixed portion of the predetermined
+overhead rate to 2 decimal places</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table border="1" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td colspan="3" rowspan="1" style=
+"background-color:rgb(137,163,211);">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">Fixed overhead</td>
+<td colspan="1" rowspan="1" style="height:21px;width:98px;">
+&nbsp;</td>
+<td colspan="1" rowspan="1">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1" style="height:23px;">Denominator level
+of activity</td>
+<td colspan="1" rowspan="1" style="height:23px;width:98px;">
+&nbsp;</td>
+<td colspan="1" rowspan="1" style="height:23px;width:98px;">
+&nbsp;</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1" style="height:23px;">Fixed portion of
+the predetermined overhead rate</td>
+<td colspan="1" rowspan="1" style="height:23px;width:98px;">0</td>
+<td colspan="1" rowspan="1" style="height:23px;width:98px;">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table cellpadding="0" cellspacing="0" style="width:620px;">
+<tbody>
+<tr>
+<td style="text-align:left;vertical-align:top;">2.</td>
+<td style="text-align:left;vertical-align:middle;">
+<p>Compute the fixed overhead budget variance and volume variance.
+<strong>(Round Fixed portion of the predetermined overhead rate to
+2 decimal places. Indicate the effect of each variance by selecting
+"F" for favorable, "U" for unfavorable, and "None" for no effect
+(i.e., zero variance.))</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td colspan="1" rowspan="1" style=
+"background-color:rgb(137,163,211);">&nbsp;</td>
+<td colspan="2" rowspan="1" style=
+"background-color:rgb(137,163,211);">Budget Variance</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">Actual fixed overhead cost for the
+year</td>
+<td colspan="1" rowspan="1">&nbsp;</td>
+<td colspan="1" rowspan="1">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">Budgeted fixed overhead cost</td>
+<td colspan="1" rowspan="1">&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1" style="height:23px;">Budget
+variance</td>
+<td colspan="1" rowspan="1" style="height:23px;">$0</td>
+<td colspan="1" rowspan="1" style="height:23px;">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1" style=
+"background-color:rgb(137,163,211);">&nbsp;</td>
+<td colspan="2" rowspan="1" style=
+"background-color:rgb(137,163,211);">Volume Variance</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">Fixed portion of the predetermined
+overhead rate</td>
+<td colspan="1" rowspan="1">&nbsp;</td>
+<td colspan="1" rowspan="1">per DLH</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">Denominator hours</td>
+<td colspan="1" rowspan="1">&nbsp;</td>
+<td colspan="1" rowspan="1">DLHs</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">Standard hours allowed</td>
+<td colspan="1" rowspan="1">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td colspan="1" rowspan="1">
+DLHs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1" style="height:23px;">Volume
+variance</td>
+<td colspan="1" rowspan="1" style="height:23px;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td colspan="1" rowspan="1" style="height:23px;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;please show work</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <table border="0" cellpadding="0" cellspacing="0" style=
+"width:540px;">
+<tbody>
+<tr>
+<td colspan="3" style="width:540px;height:20px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="width:401px;height:20px;">Fixed overhead</td>
+<td>$ 446,400</td>
+<td style="width:64px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="width:401px;height:20px;">Denominator level of
+activity</td>
+<td>62000</td>
+<td style="width:64px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="width:401px;height:20px;">Fixed portion of the
+predetermined overhead rate</td>
+<td style="width:75px;">$ 7.20</td>
+<td style="width:64px;">per DLH</td>
+</tr>
+<tr>
+<td style="height:20px;">&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td style="width:401px;height:20px;">&nbsp;</td>
+<td colspan="2" style="width:139px;">Budget Variance</td>
+</tr>
+<tr>
+<td style="width:401px;height:20px;">Actual fixed overhead cost for
+the year</td>
+<td>$ 440,000</td>
+<td style="width:64px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="width:401px;height:20px;">Budgeted fixed overhead
+cost</td>
+<td>$ 446,400</td>
+<td style="width:64px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="width:401px;height:20px;">Budget variance</td>
+<td style="width:75px;">$ -6,400</td>
+<td style="width:64px;">F</td>
+</tr>
+<tr>
+<td style="width:401px;height:20px;">&nbsp;</td>
+<td colspan="2" style="width:139px;">Volume Variance</td>
+</tr>
+<tr>
+<td style="width:401px;height:20px;">Fixed portion of the
+predetermined overhead rate</td>
+<td style="width:75px;">$ 7.20</td>
+<td style="width:64px;">per DLH</td>
+</tr>
+<tr>
+<td style="width:401px;height:20px;">Denominator hours</td>
+<td style="width:75px;">62000</td>
+<td style="width:64px;">DLHs</td>
+</tr>
+<tr>
+<td style="width:401px;height:34px;">Standard hours allowed</td>
+<td style="width:75px;">60000</td>
+<td style="width:64px;">
+DLHs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td style="width:401px;height:20px;">Volume variance</td>
+<td style="width:75px;">$ 14,400.00</td>
+<td style="width:64px;">U</td>
+</tr>
+<tr>
+<td style="width:401px;height:20px;">(62000-6000)*7.20 = 14400</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

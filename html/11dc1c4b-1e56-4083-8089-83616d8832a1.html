@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Complete the provided Python program by adding code to the
+function&nbsp;<em><strong>isPalindrome</strong></em>:&nbsp;a8.py</p>
+<p>The
+function&nbsp;<strong><em>main</em>&nbsp;</strong>(in<em>&nbsp;a8.py</em>)
+continually asks the user for a string, and
+calls&nbsp;<em>isPalindrome</em>&nbsp;to check whether each string
+is a palindrome.</p>
+<p>A palindrome is a word or sequence that reads the same backward
+as forward,
+e.g.,&nbsp;<em>noon</em>,&nbsp;<em>madam</em>&nbsp;or&nbsp;<em>nurses
+run</em>.&nbsp;</p>
+<p>Your function must ignore spaces: when the user enters
+'<em>nurses run'</em>, the function returns True, to indicate that
+it&nbsp;is a palindrome.</p>
+<p>In your code (in&nbsp;<em>isPalindrome</em>)
+you<strong>&nbsp;must use a stack&nbsp;</strong>to determine
+whether&nbsp;the input strings are palindromes.&nbsp;The program
+imports&nbsp;the&nbsp;<em>Stack&nbsp;</em>class defined in module
+11 (available here:&nbsp;stack.py<img alt="Preview the document"
+src="https://usflearn.instructure.com/images/preview.png" style=
+"height:auto;" />). Save both files
+(<em>stack.py</em>&nbsp;and&nbsp;<em>a8.py)</em>&nbsp;in the same
+directory, then&nbsp;modify and test&nbsp;<em>a8.py</em>.</p>
+<p><strong>Do not make any changes to&nbsp;<em>main()</em>&nbsp;or
+to<em>&nbsp;stack.py</em>.</strong></p>
+<p>&nbsp;</p>
+<p><strong>a8.py:</strong></p>
+<p>"""</p>
+<p>File: a8.py</p>
+<p>"""</p>
+<p>from stack import Stack</p>
+<p>def isPalindrome(sentence): &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;<br />
+&nbsp; &nbsp; """Returns True if sentence is a palindrome<br />
+&nbsp; &nbsp; or False otherwise."""<br />
+&nbsp; &nbsp; stk = Stack() # Creates a stack called stk.</p>
+<p>&nbsp; &nbsp; # <strong>*** Write your code here
+***</strong><br />
+&nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; return True</p>
+<p># <strong>*** Do not modify main() ***</strong><br />
+def main():<br />
+&nbsp; &nbsp; while True:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; sentence = input("Enter some text or
+just hit Enter to quit: ")<br />
+&nbsp; &nbsp; &nbsp; &nbsp; if sentence == "":<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break<br />
+&nbsp; &nbsp; &nbsp; &nbsp; elif isPalindrome(sentence):<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; print("It's a
+palindrome.")<br />
+&nbsp; &nbsp; &nbsp; &nbsp; else:<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; print("It's not a
+palindrome.")</p>
+<p>main()</p>
+<p><strong>stack.py:</strong></p>
+<p>"""<br />
+File: stack.py</p>
+<p>Stack class: Simple implementation of a stack using lists.</p>
+<p>Do not modify stack.py<br />
+"""</p>
+<p>class Stack:<br />
+&nbsp; &nbsp; &nbsp;def __init__(self):<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;self.items = []</p>
+<p>&nbsp; &nbsp; &nbsp;def isEmpty(self):<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return self.items == []</p>
+<p>&nbsp; &nbsp; &nbsp;def push(self, item):<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;self.items.append(item)</p>
+<p>&nbsp; &nbsp; &nbsp;def pop(self):<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return self.items.pop()</p>
+<p>&nbsp; &nbsp; &nbsp;def peek(self):<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return
+self.items[len(self.items)-1]</p>
+<p>&nbsp; &nbsp; &nbsp;def size(self):<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return len(self.items)</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <html>
+ <head></head> 
+ <body> 
+  <p>Please find my implementation:</p> 
+  <p><img alt="4-def isEmpty (self):
+return self.items[
+self.items.append(item)
+return self.items pop ()
+return self.items [len (self.items)" src="https://d2vlcm61l7u1fs.cloudfront.net/media%2F8ff%2F8ffa6320-4d5d-4891-9664-6595716a980c%2Fphptk6OtB.png" style="height:524px;width:733px;"></p> 
+  <p>&nbsp;</p> 
+  <p><strong>Please upvote my answer if it helped you!!</strong></p>  
+ </body>
+</html>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

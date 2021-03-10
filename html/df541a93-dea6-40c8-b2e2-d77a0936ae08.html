@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p><img src=
+"http://session.masteringphysics.com/problemAsset/1383902/3/knight_Figure_19_56.jpg"
+alt="no title provided" /></p>
+<p style=
+"margin:0px 0px .5em;padding:0px;border:0px;font-family:Helvetica, sans-serif;line-height:16px;vertical-align:baseline;color:rgb(51,51,51);background-color:rgb(241,241,241);">
+<span class="c1" style=
+"margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;line-height:inherit;vertical-align:baseline;">
+A heat engine uses a diatomic gas that follows
+the&Atilde;&sbquo;&Acirc;&nbsp;</span><img alt="pV" align="middle"
+src="http://session.masteringphysics.com/render?expr=pV" class=
+"done c2" style=
+"margin:0px;padding:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;line-height:inherit;vertical-align:baseline;" /><span class="c1"
+style=
+"margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;line-height:inherit;vertical-align:baseline;">cycle
+in the figure.</span></p>
+<div class="section part c15" style=
+"margin:0px;padding:0px;border:0px;font-family:Helvetica, sans-serif;line-height:16px;vertical-align:baseline;color:rgb(51,51,51);background-color:rgb(241,241,241);">
+<div class="head c4" style=
+"margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;line-height:inherit;vertical-align:baseline;">
+<span class="autolabel c3" style=
+"margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;line-height:inherit;vertical-align:baseline;">
+Part A</span></div>
+<div class="text edible c5" style=
+"margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;line-height:inherit;vertical-align:baseline;">
+Determine the pressure, volume, and temperature at point 2.</div>
+<div class="text edible c5" style=
+"margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;line-height:inherit;vertical-align:baseline;">
+<span style="background-color:rgb(238,238,238);">Part B: Determine
+Thermal energy, W_s and Q for process 1-&gt;2</span></div>
+<div class="text edible c5" style=
+"margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;line-height:inherit;vertical-align:baseline;">
+<span style="background-color:rgb(238,238,238);">Part C: Determine
+Thermal energy, W_s and Q for process 2-&gt;3</span></div>
+<div class="text edible c5" style=
+"margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;line-height:inherit;vertical-align:baseline;">
+<span style="background-color:rgb(238,238,238);">&Acirc;&nbsp;Part
+D: Determine Thermal energy, W_s and Q for process
+3-&gt;1</span></div>
+<div class="text edible c5" style=
+"margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;line-height:inherit;vertical-align:baseline;">
+<div class="head c16" style=
+"margin:0px;padding:0px;border:0px;vertical-align:baseline;">
+<span class="autolabel c3" style=
+"margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;line-height:inherit;vertical-align:baseline;">
+Part E</span></div>
+<div class="text edible c17" style=
+"margin:0px;padding:0px;border:0px;vertical-align:baseline;">How
+much work does this engine do per cycle?</div>
+<div class="instructions edible c18" style=
+"margin:0px;padding:0px;border:0px;vertical-align:baseline;">
+Express your answer to four significant figures and include the
+appropriate units.</div>
+<div class="instructions edible c18" style=
+"margin:0px;padding:0px;border:0px;vertical-align:baseline;">
+<span class="c19" style=
+"margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;line-height:inherit;vertical-align:baseline;">
+Part F</span></div>
+<div class="instructions edible c18" style=
+"margin:0px;padding:0px;border:0px;vertical-align:baseline;">
+<div class="head c16" style=
+"margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;line-height:inherit;vertical-align:baseline;">
+</div>
+<div class="text edible c20" style=
+"margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;line-height:inherit;vertical-align:baseline;">
+What is its thermal efficiency?</div>
+<div class="instructions edible c21" style=
+"margin:0px;padding:0px;border:0px;font-family:inherit;font-size:inherit;font-style:inherit;font-variant:inherit;line-height:inherit;vertical-align:baseline;">
+Espress your answer using three significant figures.</div>
+</div>
+</div>
+</div>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <html>
+ <head></head> 
+ <body> 
+  <p><img alt="The gas is diatomic. So,
+The volume at point 2 is 1000 cm
+The relation between pressure and volume in an adiabatic process is" src="//d2vlcm61l7u1fs.cloudfront.net/media%2F5de%2F5de5300a-df03-4c97-aac9-0acc5690cb33%2Fphp5WtdKc.png" style="height:669px;width:457px;"></p> 
+  <p><img alt="The number of moles in the gas is,
+RT
+1000 Pa 1000 cm
+1 kPa
+8.314 J/mol K) (300 K)
+400 kPa
+0.160 mol
+The process 1 → 2 is iso" src="//d2vlcm61l7u1fs.cloudfront.net/media%2Ff2e%2Ff2eefd27-2870-4625-b209-f633b7e3bfe0%2Fphpt8YHoF.png" style="height:789px;width:450px;"></p> 
+  <p><img alt="The process 3->1 is adiabatic. Hence the thermal energy is,
+The work done is,
+1000 cm
+4000 cm
+(0.160 mol)(8.314 J/mol K)300 K" src="//d2vlcm61l7u1fs.cloudfront.net/media%2F96c%2F96ce85c6-79f6-48e5-b277-d2b508e1dae9%2Fphp4ecr4Y.png"></p>  
+ </body>
+</html>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Consider a 2D array of integers, so that elements in each row
+are sorted. The elements of each column are sorted as well. Both
+rows and columns are sorted in increasing order. Propose a divide
+and concur approach to find whether a specific value is in the
+array. Analysis the time complexity of your approach.</p>
+<p>Please show step by step. Thanks!</p>
+<p>&nbsp;</p>
+<p>The programming language is C</p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>Here is the answer,&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Code:</strong></p>
+
+<pre>
+<code class="language-cpp">#include &lt;stdio.h&gt;
+
+int searchMatrix(int mat[4][4], int n, int x){
+    if (n == 0){
+        return -1;
+    }
+    int smallest = mat[0][0], largest = mat[n - 1][n - 1];
+    if (x &lt; smallest || x &gt; largest){
+        return -1;
+    }
+
+    int i = 0, j = n - 1; 
+    while (i &lt; n &amp;&amp; j &gt;= 0) {
+        if (mat[i][j] == x) {
+            printf("Found at %d, %d", i, j);
+            return 1;
+        }
+        if (mat[i][j] &gt; x){
+            j--;
+        }
+        else {
+            i++;
+        }
+    }
+    printf("n Element not found");
+}
+
+int main() {
+    int mat[4][4] = {
+        { 11, 21, 31, 41 },
+        { 16, 26, 36, 46 },
+        { 28, 30, 38, 49 },
+        { 33, 34, 40, 51 },
+    };
+    searchMatrix(mat, 4, 38);
+    return 0;
+}</code></pre>
+
+<p>&nbsp;</p>
+
+<p><strong>OUTPUT:</strong></p>
+
+<p><img alt="Found at 2, 2
+Program finished with exit code o
+Press ENTER to exit console.]
+" src="https://media.cheggcdn.com/coop/c38/c3897ef3-72e7-4fa7-8a0b-a5d80ced9211/1615221581315_3.png" style="height:100px;width:355px"></p>
+
+<p>&nbsp;</p>
+
+<p>If you have any doubts then put them in the comments.<strong>&nbsp;<span style="color:#e74c3c">Also, don't forget to upvote the solution.&nbsp;</span></strong></p>
+
+<p>Thank you&nbsp;</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

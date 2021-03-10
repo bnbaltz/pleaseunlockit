@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>19.&nbsp;<span style=
+"background-color:transparent;font-size:small;font-family:'Lucida grande', Arial, Verdana, sans-serif;">Which
+of the following methods is appropriate for a business whose
+inventory consists of a relatively small number of unique,
+high-cost items?</span></p>
+Answer
+<table style=
+"margin:0px;font-family:'Lucida grande', Arial, Verdana, sans-serif;font-size:12px;border-collapse:collapse;color:rgb(0,0,0);background-color:rgb(250,250,250);">
+<tbody style="margin:0px;font-style:inherit;font-family:inherit;">
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+a.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+FIFO</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+b.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+average</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+c.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+LIFO</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+d.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+specific identification</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p><br /></p>
+<p>20.&nbsp;<span style=
+"background-color:transparent;font-size:small;font-family:'Lucida grande', Arial, Verdana, sans-serif;">Sales
+to customers who use bank credit cards such as MasterCard and Visa
+are usually recorded by a</span></p>
+Answer
+<table style=
+"margin:0px;font-family:'Lucida grande', Arial, Verdana, sans-serif;font-size:12px;border-collapse:collapse;color:rgb(0,0,0);background-color:rgb(250,250,250);">
+<tbody style="margin:0px;font-style:inherit;font-family:inherit;">
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+a.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+debit to Bank Credit Card Sales, debit to Credit Card Expense, and
+a credit to Sales</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+b.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+debit to Cash and a credit to Sales</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+c.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+debit to Cash, credit to Credit Card Expense, and a credit to
+Sales</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+d.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+debit to Sales, debit to Credit Card Expense, and a credit to
+Cash</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p><br /></p>
+<p>21.&nbsp;<span style=
+"text-align:justify;background-color:transparent;font-size:small;font-family:'Lucida grande', Arial, Verdana, sans-serif;">The
+collection of an account that had been previously written off under
+the allowance method of accounting for uncollectibles</span></p>
+Answer
+<table style=
+"margin:0px;font-family:'Lucida grande', Arial, Verdana, sans-serif;font-size:12px;border-collapse:collapse;color:rgb(0,0,0);background-color:rgb(250,250,250);">
+<tbody style="margin:0px;font-style:inherit;font-family:inherit;">
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+a.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+requires a correcting entry for the period in which the account was
+written off.</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+b.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+does not affect net income in the period it is collected.</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+c.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+will increase net income in the period it is collected.</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+d.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+will decrease net income in the period it is collected.</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p><br /></p>
+<p>22.&nbsp;<span style=
+"background-color:transparent;font-size:small;font-family:'Lucida grande', Arial, Verdana, sans-serif;">If
+the direct write-off method of accounting for uncollectible
+receivables is used, what general ledger account is credited to
+write off a customer's account as uncollectible?</span></p>
+Answer
+<table style=
+"margin:0px;font-family:'Lucida grande', Arial, Verdana, sans-serif;font-size:12px;border-collapse:collapse;color:rgb(0,0,0);background-color:rgb(250,250,250);">
+<tbody style="margin:0px;font-style:inherit;font-family:inherit;">
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+a.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+Interest Expense</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+b.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+Uncollectible Accounts Expense</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+c.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+Accounts Receivable</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+d.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+Allowance for Doubtful Accounts</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p><br /></p>
+<p>23.&nbsp;<span style=
+"background-color:rgb(250,250,250);font-family:'Lucida grande', Arial, Verdana, sans-serif;">&nbsp;</span></p>
+<div class="vtbegenerated inlineVtbegenerated" style=
+"background-color: rgb(250,250,250); border-bottom-color: rgb(204,204,204); border-bottom-style: dotted; border-bottom-width: 1px; font-family: 'Lucida grande', Arial, Verdana, sans-serif; font-size: small; margin: 0px 0px 12px; padding: 4px 9px 12px">
+Dorman Co. sold merchandise to Smith Co. on account, $18,000, terms
+2/15, net 45.&nbsp; The cost of the merchandise sold is
+$15,500.&nbsp; Dorman Co. issued a credit memo for $1,750 for
+merchandise returned that originally cost $1,400.&nbsp; The Smith
+Co. paid the invoice within the discount period.&nbsp; What is
+amount of<i>net sales&nbsp;</i>from the above transactions?</div>
+Answer
+<table style=
+"margin:0px;font-family:'Lucida grande', Arial, Verdana, sans-serif;font-size:12px;border-collapse:collapse;color:rgb(0,0,0);background-color:rgb(250,250,250);">
+<tbody style="margin:0px;font-style:inherit;font-family:inherit;">
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+a.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+$15,925</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+b.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+$16,250</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+c.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+$13,818</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+d.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+$14,100</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p><br /></p>
+<p>24.&nbsp;<span style=
+"background-color:transparent;font-size:small;font-family:'Lucida grande', Arial, Verdana, sans-serif;">Merchandise
+subject to terms 1/10, n/30, FOB shipping point, is sold on account
+to a customer for $25,000.&nbsp; The seller paid freight costs of
+$2,000 and issued a credit memo for $10,000 prior to payment.&nbsp;
+What is the amount of the cash discount allowable?</span></p>
+Answer
+<table style=
+"margin:0px;font-family:'Lucida grande', Arial, Verdana, sans-serif;font-size:12px;border-collapse:collapse;color:rgb(0,0,0);background-color:rgb(250,250,250);">
+<tbody style="margin:0px;font-style:inherit;font-family:inherit;">
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+a.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+$130</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+b.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+$170</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+c.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+$250</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+d.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+$150</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p><br /></p>
+<p>25.&nbsp;<span style=
+"background-color:transparent;font-size:small;font-family:'Lucida grande', Arial, Verdana, sans-serif;">A
+check drawn by a company for $270 in payment of a liability was
+recorded in the journal as $720. What entry is required in the
+company's accounts?</span></p>
+Answer
+<table style=
+"margin:0px;font-family:'Lucida grande', Arial, Verdana, sans-serif;font-size:12px;border-collapse:collapse;color:rgb(0,0,0);background-color:rgb(250,250,250);">
+<tbody style="margin:0px;font-style:inherit;font-family:inherit;">
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+a.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+debit Cash; credit Accounts Receivable</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+b.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+debit Accounts Receivable; credit Cash</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+c.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+debit Cash; credit Accounts Payable</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+d.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+debit Accounts Payable; credit Cash</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p><br /></p>
+<p>26.&nbsp;<span style=
+"background-color:rgb(250,250,250);font-family:'Lucida grande', Arial, Verdana, sans-serif;">&nbsp;</span></p>
+<div class="vtbegenerated inlineVtbegenerated" style=
+"background-color: rgb(250,250,250); border-bottom-color: rgb(204,204,204); border-bottom-style: dotted; border-bottom-width: 1px; font-family: 'Lucida grande', Arial, Verdana, sans-serif; font-size: small; margin: 0px 0px 12px; padding: 4px 9px 12px">
+On October 1, Black Company receives a 6% interest bearing note
+from Reese Company to settle a $20,000 account receivable.&nbsp;
+The note is due in six months.&nbsp; At December 31, Black should
+record interest revenue of</div>
+Answer
+<table style=
+"margin:0px;font-family:'Lucida grande', Arial, Verdana, sans-serif;font-size:12px;border-collapse:collapse;color:rgb(0,0,0);background-color:rgb(250,250,250);">
+<tbody style="margin:0px;font-style:inherit;font-family:inherit;">
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+a.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+$1,200</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+b.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+$300</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+c.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+$600</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+d.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+$0</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p><br /></p>
+<p>27.&nbsp;</p>
+<p><br /></p>
+<div class="vtbegenerated inlineVtbegenerated" style=
+"background-color: rgb(250,250,250); border-bottom-color: rgb(204,204,204); border-bottom-style: dotted; border-bottom-width: 1px; font-family: 'Lucida grande', Arial, Verdana, sans-serif; font-size: small; margin: 0px 0px 12px; padding: 4px 9px 12px; text-align: justify">
+Two methods of accounting for uncollectible accounts are the</div>
+Answer
+<table style=
+"margin:0px;font-family:'Lucida grande', Arial, Verdana, sans-serif;font-size:12px;border-collapse:collapse;color:rgb(0,0,0);background-color:rgb(250,250,250);">
+<tbody style="margin:0px;font-style:inherit;font-family:inherit;">
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+a.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+allowance method and the net realizable method.</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+b.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+allowance method and the accrual method.</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+c.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+direct write-off method and the allowance method.</div>
+</td>
+</tr>
+<tr style="margin:0px;font-style:inherit;font-family:inherit;">
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+d.</td>
+<td valign="top" style=
+"margin:0px;font-style:inherit;font-family:inherit;text-align:left;">
+<div class="vtbegenerated inlineVtbegenerated" style=
+"font-size:small;padding:0px;margin:0px;background-color:transparent;">
+direct write-off method and the accrual method.</div>
+</td>
+</tr>
+</tbody>
+</table>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p style=
+"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px 0px 10px; border: 0px; font-size: 13px; line-height: 1.3em; vertical-align: baseline; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+19.&nbsp;<span class="c1" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">Which
+of the following methods is appropriate for a business whose
+inventory consists of a relatively small number of unique,
+high-cost items?</span></p>
+<p><span style=
+"color: rgb(51, 51, 51); font-size: 13px; line-height: 16px; background-color: rgb(245, 245, 245);">
+Answer</span><a class="c2" style=
+"margin: 0px; padding: 0px; border: 0px; font-size: 13px; line-height: 16px; vertical-align: baseline; color: rgb(0, 102, 153); outline: none; background-color: rgb(245, 245, 245);"></a></p>
+<table class="c7 mceItemTable" style=
+"margin: 0px; padding: 0px; border: 0px; font-size: 13px; line-height: 16px; vertical-align: baseline; border-collapse: collapse; border-spacing: 0px; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+<tbody class="c6" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<tr class="c5" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+</tr>
+<tr class="c5" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+d.</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<div class="vtbegenerated inlineVtbegenerated c4" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+specific identification</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p style=
+"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px 0px 10px; border: 0px; font-size: 13px; line-height: 1.3em; vertical-align: baseline; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+<br /></p>
+<p style=
+"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px 0px 10px; border: 0px; font-size: 13px; line-height: 1.3em; vertical-align: baseline; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+20.&nbsp;<span class="c1" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">Sales
+to customers who use bank credit cards such as MasterCard and Visa
+are usually recorded by a</span></p>
+<p><span style=
+"color: rgb(51, 51, 51); font-size: 13px; line-height: 16px; background-color: rgb(245, 245, 245);">
+Answer</span><a class="c2" style=
+"margin: 0px; padding: 0px; border: 0px; font-size: 13px; line-height: 16px; vertical-align: baseline; color: rgb(0, 102, 153); outline: none; background-color: rgb(245, 245, 245);"></a><br />
+</p>
+<table class="c7 mceItemTable" style=
+"margin: 0px; padding: 0px; border: 0px; font-size: 13px; line-height: 16px; vertical-align: baseline; border-collapse: collapse; border-spacing: 0px; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+<tbody class="c6" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<tr class="c5" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+b.</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<div class="vtbegenerated inlineVtbegenerated c4" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+debit to Cash and a credit to Sales</div>
+</td>
+</tr>
+<tr class="c5" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+</tr>
+</tbody>
+</table>
+<p style=
+"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px 0px 10px; border: 0px; font-size: 13px; line-height: 1.3em; vertical-align: baseline; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+<br /></p>
+<p style=
+"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px 0px 10px; border: 0px; font-size: 13px; line-height: 1.3em; vertical-align: baseline; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+21.&nbsp;<span class="c8" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">The
+collection of an account that had been previously written off under
+the allowance method of accounting for uncollectibles</span></p>
+<p><span style=
+"color: rgb(51, 51, 51); font-size: 13px; line-height: 16px; background-color: rgb(245, 245, 245);">
+Answer</span><a class="c2" style=
+"margin: 0px; padding: 0px; border: 0px; font-size: 13px; line-height: 16px; vertical-align: baseline; color: rgb(0, 102, 153); outline: none; background-color: rgb(245, 245, 245);"></a></p>
+<table class="c7 mceItemTable" style=
+"margin: 0px; padding: 0px; border: 0px; font-size: 13px; line-height: 16px; vertical-align: baseline; border-collapse: collapse; border-spacing: 0px; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+<tbody class="c6" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<tr class="c5" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+</tr>
+<tr class="c5" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+c.</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<div class="vtbegenerated inlineVtbegenerated c4" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+will increase net income in the period it is collected.</div>
+</td>
+</tr>
+<tr class="c5" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+</tr>
+</tbody>
+</table>
+<p style=
+"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px 0px 10px; border: 0px; font-size: 13px; line-height: 1.3em; vertical-align: baseline; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+<br /></p>
+<p style=
+"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px 0px 10px; border: 0px; font-size: 13px; line-height: 1.3em; vertical-align: baseline; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+22.&nbsp;<span class="c1" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">If
+the direct write-off method of accounting for uncollectible
+receivables is used, what general ledger account is credited to
+write off a customer's account as uncollectible?</span></p>
+<p><span style=
+"color: rgb(51, 51, 51); font-size: 13px; line-height: 16px; background-color: rgb(245, 245, 245);">
+Answer</span><a class="c2" style=
+"margin: 0px; padding: 0px; border: 0px; font-size: 13px; line-height: 16px; vertical-align: baseline; color: rgb(0, 102, 153); outline: none; background-color: rgb(245, 245, 245);"></a></p>
+<table class="c7 mceItemTable" style=
+"margin: 0px; padding: 0px; border: 0px; font-size: 13px; line-height: 16px; vertical-align: baseline; border-collapse: collapse; border-spacing: 0px; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+<tbody class="c6" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<tr class="c5" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+</tr>
+<tr class="c5" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+c.</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<div class="vtbegenerated inlineVtbegenerated c4" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+Accounts Receivable</div>
+</td>
+</tr>
+<tr class="c5" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+</tr>
+</tbody>
+</table>
+<p><br /></p>
+<p style=
+"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px 0px 10px; border: 0px; font-size: 13px; line-height: 1.3em; vertical-align: baseline; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+<br /></p>
+<p style=
+"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px 0px 10px; border: 0px; font-size: 13px; line-height: 1.3em; vertical-align: baseline; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+23.&nbsp;<span class="c9" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">&nbsp;</span></p>
+<div class="vtbegenerated inlineVtbegenerated c10" style=
+"margin: 0px; padding: 0px; border: 0px; font-size: 13px; line-height: 16px; vertical-align: baseline; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+Dorman Co. sold merchandise to Smith Co. on account, $18,000, terms
+2/15, net 45.&nbsp; The cost of the merchandise sold is
+$15,500.&nbsp; Dorman Co. issued a credit memo for $1,750 for
+merchandise returned that originally cost $1,400.&nbsp; The Smith
+Co. paid the invoice within the discount period.&nbsp; What is
+amount of<i style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">net
+sales&nbsp;</i>from the above transactions?</div>
+<p><span style=
+"color: rgb(51, 51, 51); font-size: 13px; line-height: 16px; background-color: rgb(245, 245, 245);">
+Answer</span><a class="c2" style=
+"margin: 0px; padding: 0px; border: 0px; font-size: 13px; line-height: 16px; vertical-align: baseline; color: rgb(0, 102, 153); outline: none; background-color: rgb(245, 245, 245);"></a></p>
+<table class="c7 mceItemTable" style=
+"margin: 0px; padding: 0px; border: 0px; font-size: 13px; line-height: 16px; vertical-align: baseline; border-collapse: collapse; border-spacing: 0px; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+<tbody class="c6" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<tr class="c5" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+</tr>
+<tr class="c5" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+b.</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<div class="vtbegenerated inlineVtbegenerated c4" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+$16,250</div>
+</td>
+</tr>
+<tr class="c5" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+</tr>
+</tbody>
+</table>
+<p><br /></p>
+<p style=
+"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px 0px 10px; border: 0px; font-size: 13px; line-height: 1.3em; vertical-align: baseline; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+<br /></p>
+<p style=
+"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px 0px 10px; border: 0px; font-size: 13px; line-height: 1.3em; vertical-align: baseline; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+24.&nbsp;<span class="c1" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">Merchandise
+subject to terms 1/10, n/30, FOB shipping point, is sold on account
+to a customer for $25,000.&nbsp; The seller paid freight costs of
+$2,000 and issued a credit memo for $10,000 prior to payment.&nbsp;
+What is the amount of the cash discount allowable?</span></p>
+<p><span style=
+"color: rgb(51, 51, 51); font-size: 13px; line-height: 16px; background-color: rgb(245, 245, 245);">
+Answer</span><a class="c2" style=
+"margin: 0px; padding: 0px; border: 0px; font-size: 13px; line-height: 16px; vertical-align: baseline; color: rgb(0, 102, 153); outline: none; background-color: rgb(245, 245, 245);"></a></p>
+<table class="c7 mceItemTable" style=
+"margin: 0px; padding: 0px; border: 0px; font-size: 13px; line-height: 16px; vertical-align: baseline; border-collapse: collapse; border-spacing: 0px; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+<tbody class="c6" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<tr class="c5" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+</tr>
+<tr class="c5" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+c.</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<div class="vtbegenerated inlineVtbegenerated c4" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+$250</div>
+</td>
+</tr>
+<tr class="c5" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+</tr>
+</tbody>
+</table>
+<p style=
+"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px 0px 10px; border: 0px; font-size: 13px; line-height: 1.3em; vertical-align: baseline; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+<br /></p>
+<p style=
+"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px 0px 10px; border: 0px; font-size: 13px; line-height: 1.3em; vertical-align: baseline; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+25.&nbsp;<span class="c1" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">A
+check drawn by a company for $270 in payment of a liability was
+recorded in the journal as $720. What entry is required in the
+company's accounts?</span></p>
+<p><span style=
+"color: rgb(51, 51, 51); font-size: 13px; line-height: 16px; background-color: rgb(245, 245, 245);">
+Answer</span><a class="c2" style=
+"margin: 0px; padding: 0px; border: 0px; font-size: 13px; line-height: 16px; vertical-align: baseline; color: rgb(0, 102, 153); outline: none; background-color: rgb(245, 245, 245);"></a></p>
+<table class="c7 mceItemTable" style=
+"margin: 0px; padding: 0px; border: 0px; font-size: 13px; line-height: 16px; vertical-align: baseline; border-collapse: collapse; border-spacing: 0px; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+<tbody class="c6" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<tr class="c5" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+</tr>
+<tr class="c5" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+c.</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<div class="vtbegenerated inlineVtbegenerated c4" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+debit Cash; credit Accounts Payable</div>
+</td>
+</tr>
+<tr class="c5" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+</tr>
+</tbody>
+</table>
+<p style=
+"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px 0px 10px; border: 0px; font-size: 13px; line-height: 1.3em; vertical-align: baseline; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+26.&nbsp;<span class="c9" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">&nbsp;</span></p>
+<div class="vtbegenerated inlineVtbegenerated c10" style=
+"margin: 0px; padding: 0px; border: 0px; font-size: 13px; line-height: 16px; vertical-align: baseline; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+On October 1, Black Company receives a 6% interest bearing note
+from Reese Company to settle a $20,000 account receivable.&nbsp;
+The note is due in six months.&nbsp; At December 31, Black should
+record interest revenue of</div>
+<p><span style=
+"color: rgb(51, 51, 51); font-size: 13px; line-height: 16px; background-color: rgb(245, 245, 245);">
+Answer</span><a class="c2" style=
+"margin: 0px; padding: 0px; border: 0px; font-size: 13px; line-height: 16px; vertical-align: baseline; color: rgb(0, 102, 153); outline: none; background-color: rgb(245, 245, 245);"></a></p>
+<table class="c7 mceItemTable" style=
+"margin: 0px; padding: 0px; border: 0px; font-size: 13px; line-height: 16px; vertical-align: baseline; border-collapse: collapse; border-spacing: 0px; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+<tbody class="c6" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<tr class="c5" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+</tr>
+<tr class="c5" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+b.</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<div class="vtbegenerated inlineVtbegenerated c4" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+$300</div>
+</td>
+</tr>
+<tr class="c5" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+</tr>
+</tbody>
+</table>
+<p><br /></p>
+<p style=
+"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px 0px 10px; border: 0px; font-size: 13px; line-height: 1.3em; vertical-align: baseline; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+<br /></p>
+<p style=
+"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px 0px 10px; border: 0px; font-size: 13px; line-height: 1.3em; vertical-align: baseline; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+27.&nbsp;</p>
+<p style=
+"margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px 0px 10px; border: 0px; font-size: 13px; line-height: 1.3em; vertical-align: baseline; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+<br /></p>
+<div class="vtbegenerated inlineVtbegenerated c11" style=
+"margin: 0px; padding: 0px; border: 0px; font-size: 13px; line-height: 16px; vertical-align: baseline; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+Two methods of accounting for uncollectible accounts are the</div>
+<p><span style=
+"color: rgb(51, 51, 51); font-size: 13px; line-height: 16px; background-color: rgb(245, 245, 245);">
+Answer</span><a class="c2" style=
+"margin: 0px; padding: 0px; border: 0px; font-size: 13px; line-height: 16px; vertical-align: baseline; color: rgb(0, 102, 153); outline: none; background-color: rgb(245, 245, 245);"></a></p>
+<table class="c7 mceItemTable" style=
+"margin: 0px; padding: 0px; border: 0px; font-size: 13px; line-height: 16px; vertical-align: baseline; border-collapse: collapse; border-spacing: 0px; color: rgb(51, 51, 51); background-color: rgb(245, 245, 245);">
+<tbody class="c6" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<tr class="c5" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<br /></td>
+</tr>
+<tr class="c5" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+c.</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<div class="vtbegenerated inlineVtbegenerated c4" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+direct write-off method and the allowance method.</div>
+</td>
+</tr>
+<tr class="c5" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+</td>
+<td valign="top" class="c3" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+<div class="vtbegenerated inlineVtbegenerated c4" style=
+"margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; line-height: inherit; vertical-align: baseline;">
+.</div>
+<div><br /></div>
+</td>
+</tr>
+</tbody>
+</table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    
