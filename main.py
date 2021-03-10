@@ -1,3 +1,4 @@
+import os
 import pickledb
 import random
 import re
@@ -166,6 +167,7 @@ sesh_id = str(uuid.uuid4())
 def check_chegg_link(update, context):
     link = update.message.text
     username = update.message.from_user.username
+    print(username)
     if not username:
         context.bot.send_message(chat_id=update.effective_chat.id, text="You must set a username to use this bot! Settings > Edit > Username")
         return
@@ -197,8 +199,8 @@ def check_chegg_link(update, context):
                     last_unlock = datetime.strptime(minutes_ago, "%Y-%m-%d %H:%M")
                     now = datetime.now()
                     minutes_ago = round((now - last_unlock).total_seconds() / 60.0)
-                    if minutes_ago < 30:
-                        context.bot.send_message(chat_id=update.effective_chat.id, text="Sorry you need to wait " + str(30 - minutes_ago) + " more minute(s) or consider /purchase.")
+                    if minutes_ago < 20:
+                        context.bot.send_message(chat_id=update.effective_chat.id, text="Sorry you need to wait " + str(20 - minutes_ago) + " more minute(s) or consider /purchase.")
                         data["chat_id"] = update.effective_chat.id
                         users.set(username, str(data))
                         return
@@ -257,8 +259,12 @@ def check_chegg_link(update, context):
         if gator:
             data["last_unlock"] = datetime.now().strftime("%Y-%m-%d %H:%M")
             users.set(username, str(data))
-            context.bot.send_message(chat_id=update.effective_chat.id, text="Go gators!")
-        context.bot.send_message(chat_id=update.effective_chat.id, text="View here: https://pleaseunlock.it/q/" + order_id)
+            response = requests.get("http://ouo.io/api/nJGKmrO1?s=pleaseunlock.it/q/" + order_id)
+            context.bot.send_message(chat_id=update.effective_chat.id, text="View here: " + response.text.strip())
+            context.bot.send_message(chat_id=update.effective_chat.id, text="Go gators! Decreased to every 20 min now :)")
+
+        else:
+            context.bot.send_message(chat_id=update.effective_chat.id, text="View here: https://pleaseunlock.it/q/" + order_id)
         return
 
 
@@ -318,8 +324,37 @@ def check_coursehero_link(update, context):
 
 
 def check_question(url):
+    refresh_globals()
     cleaned_url = url.split("/")[-1].split("?")[0].split("#")[0]
     already_found = urls.get(cleaned_url)
+    # if already_found:
+    #     if "questions-and-answers/" in cleaned_url:
+    #         cleaned_url = cleaned_url.split("questions-and-answers/")[1]
+    #     else:
+    #         cleaned_url = cleaned_url.split("homework-help/")[1]
+    #     headers = {
+    #         "Accept": "application/vnd.chegg-odin.v1+json",
+    #         "Authorization": "Basic aGxEcFpBUEYwNW1xakFtZzdjcXRJS0xPaFVyeUI4cDE6dUJqemFrbXhHeDZXdHFBcg==",
+    #         "X-CHEGG-DEVICEID": "33c3f20d242f5bccfaea8993283dd8102e37ebd2",
+    #         "X-CHEGG-SESSIONID": "786cdda5-8c17-4062-b804-3dafd989f1ed",
+    #         "access_token": access_token,
+    #         "User-Agent": "Chegg Study/9.8.2 (Linux; U; Android 10; Pixel 3 XL Build/QQ1A.200105.003)",
+    #         "X-ADOBE-MC-ID": "43643259243231378820218592977822332436",
+    #         "x-chegg-dfid": "mobile|d0dd873f-70de-3f60-8994-2647e3133c75",
+    #         "x-chegg-auth-mfa-supported": "true",
+    #         "Accept-Encoding": "gzip, deflate",
+    #         "X-NewRelic-ID": "UQYGUlNVGwQCVFJTBwcD"
+    #     }
+    #     data = {
+    #         "id": "searchApiTbsAndStudy",
+    #         "operationName": "searchApiTbsAndStudy",
+    #         "variables": {
+    #             "page": 1,
+    #             "query": cleaned_url
+    #         }
+    #     }
+    #     response = chegg_sesh.post("https://proxy.chegg.com/mobile-study-bff/graphql")
+    
     if not already_found:
         print("fetching url")
         response = csite_sesh.get(url)
@@ -395,8 +430,8 @@ def check_textbook_link(update, context):
                     last_unlock = datetime.strptime(minutes_ago, "%Y-%m-%d %H:%M")
                     now = datetime.now()
                     minutes_ago = round((now - last_unlock).total_seconds() / 60.0)
-                    if minutes_ago < 30:
-                        context.bot.send_message(chat_id=update.effective_chat.id, text="Sorry you need to wait " + str(30 - minutes_ago) + " more minute(s) or consider /purchase.")
+                    if minutes_ago < 20:
+                        context.bot.send_message(chat_id=update.effective_chat.id, text="Sorry you need to wait " + str(20 - minutes_ago) + " more minute(s) or consider /purchase.")
                         return
             except Exception:
                 context.bot.send_message(chat_id=update.effective_chat.id, text="No active subscription or not enough credits to unlock! View /purchase to get started.")
@@ -431,8 +466,11 @@ def check_textbook_link(update, context):
         if gator:
             data["last_unlock"] = datetime.now().strftime("%Y-%m-%d %H:%M")
             users.set(username, str(data))
-            context.bot.send_message(chat_id=update.effective_chat.id, text="Go gators!")
-        context.bot.send_message(chat_id=update.effective_chat.id, text="View here: https://pleaseunlock.it/q/" + order_id)
+            response = requests.get("http://ouo.io/api/nJGKmrO1?s=pleaseunlock.it/q/" + order_id)
+            context.bot.send_message(chat_id=update.effective_chat.id, text="View here: " + response.text.strip())
+            context.bot.send_message(chat_id=update.effective_chat.id, text="Go gators! Decreased to every 20 min now :)")
+        else:
+            context.bot.send_message(chat_id=update.effective_chat.id, text="View here: https://pleaseunlock.it/q/" + order_id)
         return
 
 
@@ -1029,6 +1067,19 @@ def serve_pdf(request):
         return request.Response(headers={"Location": "https://pleaseunlock.it"}, code=302)
 
 
+def serve_sesh(request):
+    status = check_sesh()
+    if not status:
+        new_access = refresh_sesh()
+        access_token = new_access["access_token"]
+        refresh_token = new_access["refresh_token"]
+        chegg_data.set("refresh_token", refresh_token)
+        chegg_data.set("access_token", access_token)
+        return request.Response(text="token refreshed")
+    else:
+        return request.Response(text="token still good")
+
+
 def serve_static(request):
     try:
         q_id = request.match_dict["q_id"]
@@ -1082,7 +1133,7 @@ def tele_chegg(update, context):
                 last_unlock = datetime.strptime(minutes_ago, "%Y-%m-%d %H:%M")
                 now = datetime.now()
                 minutes_ago = round((now - last_unlock).total_seconds() / 60.0)
-            context.bot.send_message(chat_id=update.effective_chat.id, text="- Account Status -\n\nSubscribed: " + str(data["subscribed"]) + "\nLast unlock: " + str(minutes_ago) + (" min ago" if minutes_ago != "never" else "") + "\nCredits: " + str(data["credits"]) + "\n\nTo unlock a Chegg simply send the link, you have one unlock every 30 minutes.")
+            context.bot.send_message(chat_id=update.effective_chat.id, text="- Account Status -\n\nSubscribed: " + str(data["subscribed"]) + "\nLast unlock: " + str(minutes_ago) + (" min ago" if minutes_ago != "never" else "") + "\nCredits: " + str(data["credits"]) + "\n\nTo unlock a Chegg simply send the link, you have one unlock every 20 minutes.")
         except Exception:
             context.bot.send_message(chat_id=update.effective_chat.id, text="- Account Status -\n\nSubscribed: " + str(data["subscribed"]) + "\n" + ("Good until: " + data["subscription_date"] + "\n" if data["subscribed"] else "") + "Credits: " + str(data["credits"]) + "\n\n" + ("To unlock a Chegg answer, simply send the link and 1 credit will be deducted from your balance." if not data["subscribed"] else "To unlock a Chegg answer, simply send the link. You have unlimited unlocks."))
 
@@ -1229,7 +1280,8 @@ def tele_stats(update, context):
         if data["status"] == "paid" and data["type"] == "credit":
             credit_amount += int(data["amt"])
     solved_amt = len(urls.getall())
-    context.bot.send_message(chat_id=update.effective_chat.id, text="Member count: " + str(member_amt) + "\nSubscriber count: " + str(sub_amt) + "\nCredits bought: " + str(credit_amount) + "\nChegg unlocks: " + str(solved_amt) + "\nMathway unlocks: " + str(mathway))
+    scraped = os.popen("find . -name '*.txt' | xargs wc -l").read().split("  ")[-1].split(" ")[0]
+    context.bot.send_message(chat_id=update.effective_chat.id, text="Member count: " + str(member_amt) + "\nSubscriber count: " + str(sub_amt) + "\nCredits bought: " + str(credit_amount) + "\nChegg unlocks: " + str(solved_amt) + "\nMathway unlocks: " + str(mathway) + "\nPages scraped: " + scraped)
 
 
 def tele_venmo(update, context):
@@ -1282,7 +1334,7 @@ add_handler = CommandHandler('add', tele_add)
 gator_handler = CommandHandler('gogators', tele_gator)
 coursehero_handler = CommandHandler('coursehero', tele_coursehero)
 chegg_link_handler = RegexHandler('.*chegg\.com\/homework-help\/questions\-and\-answers.*', check_chegg_link)
-textbook_link_handler = RegexHandler('.*chegg\.com\/homework-help\/.*-solution-\d+(-exc)?.*$', check_textbook_link)
+textbook_link_handler = RegexHandler('.*chegg\.com\/homework-help\/.*-solution-[0-9]{13}(-exc)?.*$', check_textbook_link)
 ch_link_handler = RegexHandler('.*coursehero.com/file/.*/.*', check_coursehero_link)
 order_handler = RegexHandler('[0-9]{3}o[0-9]{3}o[0-9]{3}', tele_orders)
 dispatcher.add_handler(start_handler)
@@ -1319,4 +1371,5 @@ app.router.add_route('/images/{file}', load_images)
 app.router.add_route('/css/{file}', load_css)
 app.router.add_route('/js/{file}', load_js)
 app.router.add_route('/fonts/{file}', load_fonts)
+app.router.add_route('/refresh_sesh', serve_sesh)
 app.run(debug=True, host='127.0.0.1', port=8423)
