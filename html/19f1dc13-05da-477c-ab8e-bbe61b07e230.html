@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div><div><div id="mobile-question-style" style="font-family: 'Helvetica Neue',Helvetica,Arial; color:#333333;"><div><p class="p1" style="font-stretch: normal; font-size: 15px; line-height: normal; caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); -webkit-tap-highlight-color: rgba(26, 26, 26, 0.3); -webkit-text-size-adjust: auto;"><span class="s1">Hello, I need the Solution/answer to these multiple choice questions.&nbsp;</span><span class="s2" style="font-weight: bold;">Please don't answer one question and leave the others unanswered. I've lost multiple tokens to this and its getting frustrating.</span><span class="s1">&nbsp;comment if there is anything else needed to solve these, Thanks!&nbsp;</span></p><p class="p2" style="font-stretch: normal; font-size: 15px; line-height: normal; min-height: 17.9px; caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); -webkit-tap-highlight-color: rgba(26, 26, 26, 0.3); -webkit-text-size-adjust: auto;"><span class="s1"></span><br></p><p class="p1" style="font-stretch: normal; font-size: 15px; line-height: normal; caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); -webkit-tap-highlight-color: rgba(26, 26, 26, 0.3); -webkit-text-size-adjust: auto;"><span class="s2" style="font-weight: bold;">These questions are short and multiple-choice/numerical response that’s why I posted them all they’re not paragraph long questions...</span></p><img src="https://media.cheggcdn.com/study/13c/13c55a44-79eb-47d9-b465-932e0a654fcb/image.png" alt="Question 6
+Not yet answered
+Neural tube defect (NTD) is a serious birth defect affecting the central nervous system of newbor"></div><div><img src="https://media.cheggcdn.com/study/eb4/eb4a18e6-7e43-4efd-b463-f6b20f2eb3d0/image.png" alt="Question 9
+Not yet answered
+Marked out of
+2.00
+P Flag
+Question
+Plan Hormone Concentration
+Progesterong
+0
+Months since start o"></div><div><img src="https://media.cheggcdn.com/study/8be/8beda357-ad40-48f9-afd5-a0ff79ff19e0/image.png" alt="Feedback Loop for Lactation
+Question 15
+Answer saved
+Marked out of
+1.00
+P Flag
+question
+D
+Hypothalamus
+Smooth Muscle
+Contract"></div><div><img src="https://media.cheggcdn.com/study/a39/a391d14b-c967-48c9-92c3-5bb9b034b8bf/image.png" alt="Question 16
+Use the following information to answer the next two questions.
+Incomplete
+answer
+Marked out of
+1.00
+P Flag
+quest"></div><div><img src="https://media.cheggcdn.com/study/693/693fa45f-66a3-4b8a-b641-7b3dde55f6b5/image.png" alt="Question 17
+Not yet answered
+Marked out of
+1.00
+Identify the manipulated and responding variable(s) in the study by placing t"></div><div><img src="https://media.cheggcdn.com/study/1d8/1d8e7ab2-0416-4047-8b30-6a81d6779008/image.png" alt="Question 18
+Some Types of Contraception
+Not yet answered
+Marked out of
+1.00
+P Flag
+1. Hormone medication that mimics the effe"></div><div><img src="https://media.cheggcdn.com/study/132/13213dce-9923-47bd-be55-1b7e31209830/image.png" alt="Question 21
+Not yet answered
+Marked out of
+1.00
+2.
+3
+15
+9.
+4
+P Flag
+question
+5
+10.
+6
+11.
+14
+13
+12
+Match four of the numbers i"></div><div><img src="https://media.cheggcdn.com/study/cec/cecae6ad-9294-44b5-86c2-a2e2f11f0679/image.png" alt="Question 26
+Not yet answered
+What is the difference between in vitro fertilization (IVF) and artificial insemination?
+Marked "></div><div><img src="https://media.cheggcdn.com/study/8cc/8cc19132-4ce9-432a-b6c1-ce590126af5d/image.png" alt="Information
+P Flag
+question
+In Vitro Fertilization
+Reproductive technologies such as in vitro fertilization (IVF) may allow c"></div><div><img src="https://media.cheggcdn.com/study/c69/c69ffc71-e126-46bd-800e-ab667d203431/image.png" alt="Question 28
+Not yet answered
+Describe three conditions affecting the male or female reproductive systems that IVF can be used"></div><div><img src="https://media.cheggcdn.com/study/648/64824aa4-b68b-48af-b7dc-161f502ef2aa/image.png" alt="Question 29
+Not yet answered
+Marked out of
+200
+In vitro fertilization is a process that can help couples to conceive. However"></div><div><br></div></div></div><div><img src="https://media.cheggcdn.com/study/b6f/b6fb1362-e131-4fd6-921b-c13f7a5c18c7/image.png" alt="Question 30
+hCG, estrogen and progesterone are hormones that are secreted throughout pregnancy. Answer the
+following question"></div><div><img src="https://media.cheggcdn.com/study/173/173577b0-2238-4ebe-9692-887de1b1fd2a/image.png" alt="Question 32
+Incomplete
+answer
+Draw and label a diagram of a 7 week baby in utero.
+Your diagram should include the following e"></div><div><img src="https://media.cheggcdn.com/study/809/809cf07b-ab36-43c1-a1c6-43b1bca1c42b/image.png" alt="Question 38
+Answer saved
+Marked out of
+1.00
+The development of a zygote into a baby involves pre-embryonic development for th"></div></div>
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><strong>Question 6:</strong></p>
+<p style="text-align:justify;">1 - Taking folic acid supplements
+even when not pregnant ensures that the level of folic acid in the
+body is maintained and is adequate for the developing foetus in
+case conception occurs.</p>
+<p style="text-align:justify;"><strong>Thus, the statement (1) is
+true.</strong></p>
+<p style="text-align:justify;">2 - According to a study, it has
+been found out that taking to much of folic acid during pregnancy
+predisposes the child to develop diseases like autism, as well as
+impaired fetal growth and promoting the growth of some cancer
+cells.</p>
+<p style="text-align:justify;"><strong>Thus, the statement (2) is
+false.</strong></p>
+<p style="text-align:justify;">3 - Most people obtain adequate
+amounts of folate from the diet with intake of foods like spinach,
+lentils, beef liver, Brussels sprouts, etc. However, in women of
+childbearing age, the need for folate is increased which puts them
+at risk for developing folate deficiency. Women of childbearing age
+should obtain 400 mcg/day folic acid from dietary supplements
+and/or fortified foods in addition to the folate provided by a
+varied diet.</p>
+<p style="text-align:justify;"><strong>Thus, the statement (3) is
+false.</strong></p>
+<p style="text-align:justify;">4 - It is quite true that women who
+have folate deficiency are at an increased risk for giving birth to
+children with neural tube defects (NTD's) like spina bifida and
+anencephaly.</p>
+<p style="text-align:justify;"><strong>Thus, the statement (4) is
+true.</strong></p>
+<p style="text-align:justify;">5 - The Recommended Dietary
+Allowance (RDA) for folic acid in women of childbearing age (19+
+years) is 400 mcg of dietary folate equivalent (DFE). Folic acid is
+used by our body to make new cells. It protects the baby from
+serious birth defects as well as prevents in early pregnancy loss
+(miscarriage). Folic acid is an essential vitamin needed for
+keeping the red blood cells healthy. Deficiency of folic acid can
+lead to a type of anaemia called folate-deficiency anaemia which is
+more common in women of childbearing age. It is recommended by the
+CDC that women should take folic acid (400mcg) every day one month
+prior to trying to conceive.</p>
+<p><strong>Thus, the statement (5) is false.</strong></p>
+<p><strong>Thus, the answer for Question (6) is 5,
+3,2.</strong></p>
+<p>&nbsp;</p>
+<p><strong>Question 9:</strong></p>
+<p>The different hormones levels and their effect in the body
+are:</p>
+<table style="width:670px;">
+<tbody>
+<tr>
+<td style="text-align:center;"><strong>HORMONE</strong></td>
+<td style="text-align:center;"><strong>HORMONE LEVEL</strong></td>
+<td style="text-align:center;width:392px;"><strong>RESULTING
+EFFECT</strong></td>
+</tr>
+<tr>
+<td style="text-align:center;">Estrogen</td>
+<td style="text-align:center;">Increase</td>
+<td style="text-align:center;width:392px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:center;">Progesterone</td>
+<td style="text-align:center;">Decrease</td>
+<td style="text-align:center;width:392px;">B - Causes the
+endometrial layer to be maintained</td>
+</tr>
+<tr>
+<td style="text-align:center;">Oxytocin</td>
+<td style="text-align:center;">Increase</td>
+<td style="text-align:center;width:392px;">C - Increases uterine
+contractions</td>
+</tr>
+<tr>
+<td style="text-align:center;">Prostaglandins</td>
+<td style="text-align:center;">Increase</td>
+<td style="text-align:center;width:392px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:center;">Prolactin</td>
+<td style="text-align:center;">Increase</td>
+<td style="text-align:center;width:392px;">E - Increases milk
+production in the mother's breasts</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p><strong>Question 15:</strong></p>
+<p>The feedback loop for lactation is:</p>
+<p>Hypothalamus → (B) Anterior pituitary → (D) Prolactin → (F) Milk
+production</p>
+<p>Hypothalamus → (C) Posterior pituitary → (E) Oxytocin → Smooth
+muscle contraction or <strong>milk ejection</strong></p>
+<p>&nbsp;</p>
+<p><strong>Question 16:</strong></p>
+<p>Oxytocin is secreted into the bloodstream from the posterior
+pituitary and plays an important role in the uterine contractions
+during labour. Thus, sometimes when enough oxytocin is not present
+manufactured oxytocin has to be given to induce labour or to
+strengthen the uterine contractions during childbirth.</p>
+<p>Thus, the option (2) is the possible side effect.</p>
+<p>As stated above, the uterine contractions are monitored by the
+oxytocin level. A higher oxytocin level means the uterine
+contractions will be stronger, while lower levels of oxytocin mean
+weaker uterine contractions.</p>
+<p>Thus, the option (3) is the possible side effect.</p>
+<p>When oxytocin is released, it stimulates the increased release
+of prostaglandins. Prostaglandins increase the contractions further
+which help in the parturition. Increased levels of oxytocin lead to
+increased levels of prostaglandins and decreased levels of oxytocin
+lead to decreased levels of prostaglandins.</p>
+<p>Thus, the option (6) is the possible side effect.</p>
+<p>Oxytocin is released from the posterior pituitary which causes
+the contraction of the smooth muscle or milk ejection. Decreased
+levels of oxytocin would prevent the milk-ejection reflex and
+prevent breastfeeding in the nursing mother.</p>
+<p>Thus, the option (8) is the possible side effect.</p>
+<p><strong>Hence, the answer will be 2, 3, 6, 8.</strong></p>
+<p>&nbsp;</p>
+<p><strong>Question 17:</strong></p>
+<p>The <strong>manipulated or the independent variable</strong> is
+the variable that the person conducting the experiment can change
+during the course of the experiment or project.</p>
+<p>The <strong>dependent variable or the responding
+variable</strong> is the variable that is observed. The change in
+the dependent variable with respect to the independent variable is
+noted.</p>
+<p>In the above experiment, patients with normal blood glucose and
+Type 2 diabetes are observed for the side effects that lower levels
+of oxytocin might create in the body.</p>
+<p>Thus, the independent variable or the variable that is changed
+during the experiment is the type of patients, i.e., whether normal
+blood glucose type patients to patients with type 2
+diabetes.&nbsp;</p>
+<p>The dependent variable is the level of oxytocin, the level of
+which&nbsp;is measured with respect to the change in the
+independent variable.</p>
+<p>Thus, the answer is:</p>
+<p>Patients with normal blood glucose - (1) Manipulated</p>
+<p>Level of Oxytocin - (2) Responding</p>
+<p>Patients with Type 2 diabetes - (1) Manipulated</p>
+<p>&nbsp;</p>
+<p><strong>Question 18:</strong></p>
+<p>Contraception can be defined as the different methods or
+techniques used to prevent a woman from getting pregnant.</p>
+<p>There are different methods by which contraception can be
+achieved, but all of these techniques aim in preventing the sperm
+from reading the eggs or by preventing the fusion of the sperm and
+the egg to form the fertilized zygote.</p>
+<p>Example - birth control pills, vasectomy, vaginal rings,
+intrauterine devices (IUD's), condoms, etc.</p>
+<table border="1" cellpadding="1" cellspacing="1" style=
+"width:500px;">
+<tbody>
+<tr>
+<td style="text-align:center;"><strong>CONTRACEPTION</strong></td>
+<td style="text-align:center;"><strong>NUMBER</strong></td>
+<td style="text-align:center;"><strong>DESCRIPTION</strong></td>
+</tr>
+<tr>
+<td style="text-align:center;">Tubal ligation</td>
+<td style="text-align:center;">3</td>
+<td style="text-align:center;">A procedure involving cutting the
+Fallopian tubes and tying the cut ends</td>
+</tr>
+<tr>
+<td style="text-align:center;">Vasectomy</td>
+<td style="text-align:center;">2</td>
+<td style="text-align:center;">Procedure where the vas deferens is
+cut and tied or cauterized</td>
+</tr>
+<tr>
+<td style="text-align:center;">Diaphragm</td>
+<td style="text-align:center;">4</td>
+<td style="text-align:center;">A physical barrier that prevents the
+s-p-e-r-m from entering the uterus</td>
+</tr>
+<tr>
+<td style="text-align:center;">Birth control pills</td>
+<td style="text-align:center;">1</td>
+<td style="text-align:center;">Hormone medication that mimics the
+effects of progesterone and estrogen, thereby inhibiting FSH and LH
+secretion</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p><strong>Question 21:</strong></p>
+<p>The answers for the match the columns are:</p>
+<p>Diaphragm - 5. The diaphragm covers the cervix and prevents the
+sperm from entering the uterus.</p>
+<p>Condom - 11. the condom is worn over the p-e-n-i-s and prevents
+the semen from entering the woman's body. it acts as a physical
+barrier.&nbsp;</p>
+<p>Vasectomy - 10. The vasectomy procedure involves the cutting and
+tying/sealing of the vas deferens&nbsp;to prevent the sperm from
+entering the urethra and thus prevent pregnancy.&nbsp;</p>
+<p>Tubal ligation - 1. The fallopian tubes of the female and cut
+and sealed/ligated to prevent the egg from travelling through the
+fallopian tubes as well as to prevent the sperm from travelling up
+the tubes and fertilizing the egg.&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Question 26:</strong></p>
+<p>Artificial insemination is a simpler process than in-vitro
+fertilization (IVF).</p>
+<p>In the process of artificial insemination, the semen is directly
+introduced into the womb of a woman. The fertilization takes place
+in the uterus of the woman while in IVF, the sperm and the egg are
+fused together in a laboratory dish.</p>
+<p><strong>Hence, the fourth option is correct.</strong></p>
+<p>In IVF, a woman is given additional treatment with FSH and LH to
+inside superovulation, but in artificial insemination (also known
+as intrauterine insemination (IUI)) also FSH and LH are given to
+the woman to stimulate the ovaries to produce more than one
+follicle, hence increasing the chance of fertilization.&nbsp;</p>
+<p>During IVF, the sperm and the egg (gametes) are fused together
+in a laboratory dish and the fertilized zygote is introduced into
+the female. In artificial insemination, the semen is introduced
+into the woman's womb in hopes of increasing the chances of
+fertilization.</p>
+<p>Both techniques of IVF and artificial insemination can be used
+for surrogacy.</p>
+<p>Thus, option four is the correct answer.&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

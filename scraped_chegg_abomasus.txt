@@ -1,0 +1,6 @@
+/homework-help/questions-and-answers/python-36-write-function-changepods-ifile-n-take-sorted-list-created-buildpods-ifile-using-q19392392:a71acd4b-f456-4c32-845c-c4dab74c181b
+/homework-help/questions-and-answers/python-36-provide-py-write-function-numpods-ifile-n-call-buildpods-ifile-build-list-take-l-q19392106:b3599e77-4ba3-42be-a69c-44e12668349d
+/homework-help/questions-and-answers/python-36-write-program-buildpods-ifile-take-file-name-apodstxt-create-two-dimensional-lis-q19391982:80f30387-07d5-4429-a0b1-29e2a95f2e8a
+/homework-help/questions-and-answers/python-36-write-function-addpods-ifile-s1-take-sorted-list-created-buildpods-ifile-using-l-q19392674:24f47956-7b05-4b37-bd28-175dacd37a09
+/homework-help/questions-and-answers/implement-class-spellchecker-checks-spelling-words-file-read-word-file-check-whether-conta-q61480406:e28d7257-5bfe-4519-b2e2-8168115c7fe9
+/homework-help/questions-and-answers/help-pig-sheep-duodenum-ph-number-3a-4-thank-pig-sheep-digestive-anatomy-cole-c-meat-lab-g-q29652812:03863132-170b-4545-86ef-d2a752e3d02e

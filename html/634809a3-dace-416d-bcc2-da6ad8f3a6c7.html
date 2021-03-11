@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>PleaseUnlockIT</title>
+    </head>
+    <body>
+        <!-- header-bg -->
+        <style type="text/css">
+            .badge, .badge-timer {
+            background-color: #F6F5F2;
+            border-radius: .2rem;
+            }
+            .crypto-amount {
+            padding: .1rem;
+            border-radius: .3rem;
+            background-color: #F6F5F2;
+            }
+            .qrcode {
+            width: 100%;
+            text-align: center;
+            }
+            canvas {
+            background-color: #fff;
+            border-radius: .3rem;
+            padding: 1rem;
+            }
+            .info {
+            padding: 1rem;
+            background-color: #F6F5F2;
+            border-radius: .4rem;
+            }
+        </style>
+        <div class="wrapper" style="padding-top: 2rem !important">
+            <div class="container-fluid">
+                <!-- START ROW -->
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h4>
+                            <b>QUESTION:</b>
+                            <br>
+                            </h4>
+                            <div class="mb-0" id="info">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p>Answer should be give in Python Idle 3.9.1&nbsp;</p>
+<p>import matplotlib.pyplot as plt</p>
+<p>import numpy as np</p>
+<p>size = int(input("Enter the size: "))</p>
+<p>fname = str(input("Enter output file: "))</p>
+<p>#Initialize Image as white color with value 1 in all the
+pixel</p>
+<p>img = np.ones( (size,size,3) )</p>
+<p>for i in range(1,size,2):</p>
+<p>&nbsp; &nbsp; for j in range(size):</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; img[i][j][1] = 1</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; img[i][j][0] = 0</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; img[i][j][2] = 0</p>
+<p>plt.imsave(fname, img)<br>
+Tried this ..it didn't work,&nbsp;because need the colors in
+"Purple" and "Cyan" , but the answer should be in SAME Format.
+there are other answer available for this same question, but that
+format answer doesn't work.&nbsp;<img alt="Write a program that creates an image of purple and cyan horizontal stripes. Think color not shade: Purple = red and blue onl" src="https://media.cheggcdn.com/media/2cf/2cf7cff4-650f-4197-b314-4f4b6ab04b17/php8rmFKc" style="height:1004px;"></p>
+
+                                </div>
+
+                            </div>
+                            </div>
+                            <div class="mt-3 invoice-card">
+
+                            <div id="details" class="mt-4 info">
+                                <h4>
+                                    <b>ANSWER:</b>
+                                    <br>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <p><strong>Code:</strong></p> <p>import matplotlib.pyplot as plt #imports matplot<br> import numpy as np&nbsp; #imports numpy<br> from PIL import Image #imports Image from PIL to read and open image<br> sizee=int(input("Enter Size:"))&nbsp; #enter the size&nbsp; of the image<br> fname=str(input("Enter File Name:")) #enter the name of the image<br> imgg=np.ones((sizee,sizee,3)) #creates an white pixelled image<br> for i in range(0,sizee-1,2):&nbsp; #row loop runs from 0 to size-1 with step size 2<br> &nbsp;&nbsp;&nbsp; for j in range(0,sizee): #column loop runs from 0 to size of the image<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; imgg[i][j][0]=1 # RGB values of even rows will be set to 101 to create purple<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; imgg[i][j][1]=0<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; imgg[i][j][2]=1<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; imgg[i+1][j][0]=0 #RGB values of odd rows will be set to 011 to create cyone<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; imgg[i+1][j][1]=1<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; imgg[i+1][j][2]=1<br> plt.imsave(fname,imgg) #image will be saved as fname<br> im=Image.open(fname)<br> im.show() #created image will be opened</p> <p>&nbsp;</p> <p><strong>Output;</strong></p> <p><strong><img alt="_
+imgproc.py - C:\Users\GOVIND\Desktop\imgproc.py (3.9.1)
+File
+IDLE Shell 3.9.1
+imp
+impFile Edit Shell Debug Options Window H" src="https://media.cheggcdn.com/coop/849/849a6429-beff-4600-9efa-a6a2b0201c74/1615385374221_Screenshot170.png"></strong></p> <p><strong><img alt src="https://media.cheggcdn.com/coop/a29/a297f03e-5690-4866-8d94-607650d93de6/1615385390909_Screenshot171.png"></strong></p> <p><strong><img alt src="https://media.cheggcdn.com/coop/003/0037f816-3234-42ce-b758-d4b919729d96/1615385405817_Screenshot172.png" style="height:202px;width:206px"></strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- END ROW -->
+
+                <!-- end container-fluid -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+    </body>
+    </html>
+    

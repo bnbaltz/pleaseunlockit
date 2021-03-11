@@ -35,15 +35,26 @@ sesh_id = str(uuid.uuid4())
 chegg_data = pickledb.load('chegg_data.db', True)
 chegg_sesh = requests.Session()
 #data = {'id': 'searchApiTbsAndStudy', 'operationName': 'searchApiTbsAndStudy', 'variables': {'page': 1, 'query': 'query allSchemaTypes {\n    __schema {\n        types {\n            name \n            kind\n            description\n        }\n    }\n}'}}
-bips = [x.strip() for x in open("elements.txt", "r").readlines()]
+bips = [x.strip() for x in open("names.txt", "r").readlines()]
 for bip in bips:
     data = {'id': 'searchApiTbsAndStudy', 'operationName': 'searchApiTbsAndStudy', 'variables': {'page': 1, 'query': bip}}
     page = 1
     while True:
-        chegg_data._loaddb()
-        access_token = chegg_data.get("access_token")
+        # chegg_data._loaddb()
+        # access_token = chegg_data.get("access_token")
         data["variables"]["page"] = page
-        headers = {'Authorization': 'Basic aGxEcFpBUEYwNW1xakFtZzdjcXRJS0xPaFVyeUI4cDE6dUJqemFrbXhHeDZXdHFBcg==', 'X-CHEGG-DEVICEID': '33c3f20d242f5bccfaea8993283dd8102e37ebd2', 'X-CHEGG-SESSIONID': 'ee03efd5-f7ad-4139-8df8-29606ca11379', 'User-Agent': 'Chegg Study/10.0.4 (Linux; U; Android 10; Pixel 3 XL Build/QQ1A.200105.003)', 'X-ADOBE-MC-ID': '43643259243231378820218592977822332436', 'x-chegg-dfid': 'mobile|d0dd873f-70de-3f60-8994-2647e3133c75', 'x-chegg-auth-mfa-supported': 'true', 'Content-Type': 'application/json', 'Connection': 'keep-alive', 'Accept-Encoding': 'gzip, deflate', 'X-NewRelic-ID': 'UQYGUlNVGwQCVFJTBwcD', 'access_token': access_token}
+        headers = {
+            'Authorization': 'Basic aGxEcFpBUEYwNW1xakFtZzdjcXRJS0xPaFVyeUI4cDE6dUJqemFrbXhHeDZXdHFBcg==',
+            'X-CHEGG-DEVICEID': '33c3f20d242f5bccfaea8993283dd8102e37ebd2',
+            'X-CHEGG-SESSIONID': sesh_id, 
+            'User-Agent': 'Chegg Study/10.0.4 (Linux; U; Android 10; Pixel 3 XL Build/QQ1A.200105.003)', 
+            'X-ADOBE-MC-ID': '43643259243231378820218592977822332436', 
+            'x-chegg-dfid': 'mobile|d0dd873f-70de-3f60-8994-2647e3133c75', 
+            'x-chegg-auth-mfa-supported': 'true', 
+            'Content-Type': 'application/json', 
+            'Connection': 'keep-alive', 'Accept-Encoding': 'gzip, deflate', 
+            'X-NewRelic-ID': 'UQYGUlNVGwQCVFJTBwcD', 
+        }
         while True:
             response = chegg_sesh.post("https://proxy.chegg.com/mobile-study-bff/graphql", headers=headers, json=data)
             if "Invalid Access Token" in response.text:
@@ -63,8 +74,8 @@ for bip in bips:
             if page > big:
                 print("finished")
                 break
-            # if big > 10000:
-            #     break
+            if big > 10000:
+                break
             print(str(page) + "/" + str(big))
         except Exception:
             print(response.text)
