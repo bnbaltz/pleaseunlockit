@@ -40,6 +40,10 @@ if not user_id:
     user_id = "ed4d6235-8be4-4db4-b2d2-573acc2014fd"
     chegg_data.set("user_id", user_id)
 chegg_sesh = requests.Session()
+chegg_sesh.trust_env = False
+chegg_sesh.proxies = {
+    "https": "http://takiGUYS:KNNXLyEY@107.180.186.100:34943"
+}
 mathway_sesh = requests.Session()
 mathway_sesh.cookies = requests.utils.cookiejar_from_dict({
     'Mathway.IncomingCulture': 'en-US',
@@ -234,12 +238,6 @@ def check_chegg_link(update, context):
         question_id = check_question(link)
         if not question_id:
             return False
-        if question_id == "no_answer":
-            context.bot.send_message(chat_id=update.effective_chat.id, text="No answer available for this question! Did not burn an unlock.")
-            if credit_used:
-                data["credits"] = int(data["credits"]) + 1
-                users.set(username, str(data))
-            return
         while True:
             try:
                 formatted_html = get_question(question_id)
@@ -251,6 +249,12 @@ def check_chegg_link(update, context):
         if formatted_html == "answer_html":
             i += 1
             continue
+        if formatted_html == "no_answer":
+            context.bot.send_message(chat_id=update.effective_chat.id, text="No answer available for this question! Did not burn an unlock.")
+            if credit_used:
+                data["credits"] = int(data["credits"]) + 1
+                users.set(username, str(data))
+            return
         if not formatted_html or i == 2:
             return False
         order_id = str(uuid.uuid4())
@@ -279,7 +283,16 @@ def check_coursehero_unlocks():
 
 def check_coursehero_link(update, context):
     link = update.message.text
-    _id = re.search('file/(.*?)/', link).group(1)
+    response = csite_sesh.get(link)
+    print(response.text)
+    _type = ""
+    try:
+        _id = re.search("questionId = '(\d+)'", response.text).group(1)
+        _type = "question"
+    except Exception:
+        _id = re.search('dbFilename":(.*?),', response.text).group(1)
+        _type = "document"
+    context.bot.send_message(chat_id=update.effective_chat.id, text="Identified " + _type + " with ID: " + _id)
     username = update.message.from_user.username
     if not username:
         context.bot.send_message(chat_id=update.effective_chat.id, text="You must set a username to use this bot! Settings > Edit > Username")
@@ -305,22 +318,33 @@ def check_coursehero_link(update, context):
     else:
         context.bot.send_message(chat_id=update.effective_chat.id, text="Not enough credits to unlock! View /purchase to get started.")
         return
-    response = ch_sesh.post("https://www.coursehero.com/api/v1/users/unlocks/content/document/id/" + _id + "/")
+    response = ch_sesh.post("https://www.coursehero.com/api/v1/users/unlocks/content/" + _type + "/id/" + _id + "/")
+    print(response.text)
     if response.json()["success"] == "true":
-        response = ch_sesh.get("https://www.coursehero.com/api/v2/documents/" + _id + "/pdf/")
-        pdf = requests.get(response.json()["url"])
-        file_name = str(uuid.uuid4()) + ".pdf"
-        output_file = open("/home/autobuy/html/" + file_name, "wb")
-        output_file.write(pdf.content)
-        output_file.close()
-        ch_db.set(_id, file_name)
+        if _type == "document":
+            response = ch_sesh.get("https://www.coursehero.com/api/v2/documents/" + _id + "/pdf/")
+            pdf = requests.get(response.json()["url"])
+            file_name = str(uuid.uuid4()) + ".pdf"
+            output_file = open("/home/autobuy/html/" + file_name, "wb")
+            output_file.write(pdf.content)
+            output_file.close()
+            ch_db.set(_id, file_name)
+            response = ch_sesh.post("https://www.coursehero.com/api/v1/documents/" + _id + "/like/")
+            context.bot.send_message(chat_id=update.effective_chat.id, text="Download here: https://pleaseunlock.it/ch_doc/" + file_name)
+        else:
+            response = ch_sesh.get("https://www.coursehero.com/api/v1/questions/" + _id + "/")
+            file_name = str(uuid.uuid4())
+            output_file = open("/home/autobuy/html/" + file_name + ".html", "w")
+            output_file.write(response.json()["threads"][1]["display_text"])
+            output_file.close()
+            ch_db.set(file_name, file_name)
+            context.bot.send_message(chat_id=update.effective_chat.id, text="Download here: https://pleaseunlock.it/ch_ans/" + file_name)
     else:
         context.bot.send_message(chat_id=update.effective_chat.id, text="Failed to get your document, please contact @pixxllated. You were not charged.")
+        context.bot.send_message(chat_id=update.effective_chat.id, text="Debug: " + response.text)
         return
-    response = ch_sesh.post("https://www.coursehero.com/api/v1/documents/" + _id + "/like/")
     print(response.text)
     users.set(username, str(data))
-    context.bot.send_message(chat_id=update.effective_chat.id, text="Download here: https://pleaseunlock.it/ch/" + file_name)
 
 
 def check_question(url):
@@ -380,7 +404,7 @@ def check_sesh():
         "X-CHEGG-DEVICEID": "33c3f20d242f5bccfaea8993283dd8102e37ebd2",
         "X-CHEGG-SESSIONID": sesh_id,
         "access_token": access_token,
-        "User-Agent": "Chegg Study/9.8.2 (Linux; U; Android 10; Pixel 3 XL Build/QQ1A.200105.003)",
+        "User-Agent": "Chegg Study/10.0.5 (Linux; U; Android 10; Pixel 3 XL Build/QQ1A.200105.003)",
         "X-ADOBE-MC-ID": "43643259243231378820218592977822332436",
         "x-chegg-dfid": "mobile|d0dd873f-70de-3f60-8994-2647e3133c75",
         "x-chegg-auth-mfa-supported": "true",
@@ -395,7 +419,13 @@ def check_sesh():
         },
         "client": "CS"
     }
-    response = chegg_sesh.post("https://proxy.chegg.com/v1/access/_/has", headers=headers, json=data)
+    while True:
+        try:
+            response = chegg_sesh.post("https://proxy.chegg.com/v1/access/_/has", headers=headers, json=data, timeout=5)
+            break
+        except Exception:
+            print(traceback.format_exc())
+            chegg_sesh.close()
     print(response.text)
     return "ACCOUNT_OK" in response.text
 
@@ -518,7 +548,7 @@ def get_question(_id):
             "X-CHEGG-DEVICEID": "33c3f20d242f5bccfaea8993283dd8102e37ebd2",
             "X-CHEGG-SESSIONID": "786cdda5-8c17-4062-b804-3dafd989f1ed",
             "access_token": access_token,
-            "User-Agent": "Chegg Study/9.8.2 (Linux; U; Android 10; Pixel 3 XL Build/QQ1A.200105.003)",
+            "User-Agent": "Chegg Study/10.0.5 (Linux; U; Android 10; Pixel 3 XL Build/QQ1A.200105.003)",
             "X-ADOBE-MC-ID": "43643259243231378820218592977822332436",
             "x-chegg-dfid": "mobile|d0dd873f-70de-3f60-8994-2647e3133c75",
             "x-chegg-auth-mfa-supported": "true",
@@ -542,7 +572,7 @@ def get_question(_id):
             answer_data = response.json()
             answers.set(_id, answer_data)
         else:
-            return False
+            return "no_answer"
     else:
         question_data = already_found
         answer_data = answers.get(_id)
@@ -556,7 +586,7 @@ def get_question(_id):
                 "X-CHEGG-DEVICEID": "33c3f20d242f5bccfaea8993283dd8102e37ebd2",
                 "X-CHEGG-SESSIONID": "786cdda5-8c17-4062-b804-3dafd989f1ed",
                 "access_token": access_token,
-                "User-Agent": "Chegg Study/9.8.2 (Linux; U; Android 10; Pixel 3 XL Build/QQ1A.200105.003)",
+                "User-Agent": "Chegg Study/10.0.5 (Linux; U; Android 10; Pixel 3 XL Build/QQ1A.200105.003)",
                 "X-ADOBE-MC-ID": "43643259243231378820218592977822332436",
                 "x-chegg-dfid": "mobile|d0dd873f-70de-3f60-8994-2647e3133c75",
                 "x-chegg-auth-mfa-supported": "true",
@@ -580,7 +610,7 @@ def get_question(_id):
                 answer_data = response.json()
                 answers.set(_id, answer_data)
             else:
-                return False
+                return "no_answer"
     question_html = question_data["result"]["content"]["content"]
     print(question_html)
     try:
@@ -679,7 +709,7 @@ def get_question_textbook(_id):
             "X-CHEGG-DEVICEID": "33c3f20d242f5bccfaea8993283dd8102e37ebd2",
             "X-CHEGG-SESSIONID": "786cdda5-8c17-4062-b804-3dafd989f1ed",
             "access_token": access_token,
-            "User-Agent": "Chegg Study/9.8.2 (Linux; U; Android 10; Pixel 3 XL Build/QQ1A.200105.003)",
+            "User-Agent": "Chegg Study/10.0.5 (Linux; U; Android 10; Pixel 3 XL Build/QQ1A.200105.003)",
             "X-ADOBE-MC-ID": "43643259243231378820218592977822332436",
             "x-chegg-dfid": "mobile|d0dd873f-70de-3f60-8994-2647e3133c75",
             "x-chegg-auth-mfa-supported": "true",
@@ -882,23 +912,33 @@ def refresh_sesh():
         "X-PX-ORIGINAL-TOKEN": px_auth,
         "X-CHEGG-DEVICEID": "33c3f20d242f5bccfaea8993283dd8102e37ebd2",
         "X-CHEGG-SESSIONID": sesh_id,
-        "User-Agent": "Chegg Study/9.8.2 (Linux; U; Android 10; Pixel 3 XL Build/QQ1A.200105.003)",
+        "User-Agent": "Chegg Study/10.0.5 (Linux; U; Android 10; Pixel 3 XL Build/QQ1A.200105.003)",
         "X-ADOBE-MC-ID": "43643259243231378820218592977822332436",
         "x-chegg-dfid": "mobile|d0dd873f-70de-3f60-8994-2647e3133c75",
         "x-chegg-auth-mfa-supported": "true",
-        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
         "Accept-Encoding": "gzip, deflate",
         "X-NewRelic-ID": "UQYGUlNVGwQCVFJTBwcD"
     }
     data = {
         "refresh_token": refresh_token,
-        "source_page": "android Study 9.8.2|cs",
+        "source_page": "android Study 10.0.5|cs",
         "grant_type": "refresh_token",
         "source_product": "android|cs"
     }
     response = chegg_sesh.post("https://proxy.chegg.com/oidc/token", headers=headers, data=data)
     print(response.text)
     return response.json()
+
+
+def serve_answer(request):
+    try:
+        q_id = request.match_dict["q_id"]
+        if ".." in q_id or "/" in q_id:
+            return request.Response(headers={"Location": "https://pleaseunlock.it"}, code=302)
+        with open('/home/autobuy/html/' + q_id + '.html', 'r') as page:
+            return request.Response(text=page.read(), mime_type="text/html")
+    except Exception:
+        return request.Response(headers={"Location": "https://pleaseunlock.it"}, code=302)
 
 
 def serve_clicksteps(request):
@@ -1114,6 +1154,9 @@ def tele_add(update, context):
 
 def tele_chegg(update, context):
     username = update.message.from_user.username
+    if not username:
+        context.bot.send_message(chat_id=update.effective_chat.id, text="You must set a username to use this bot! Settings > Edit > Username")
+        return
     data = users.get(username)
     if not data:
         data = {
@@ -1335,7 +1378,7 @@ gator_handler = CommandHandler('gogators', tele_gator)
 coursehero_handler = CommandHandler('coursehero', tele_coursehero)
 chegg_link_handler = RegexHandler('.*chegg\.com\/homework-help\/questions\-and\-answers.*', check_chegg_link)
 textbook_link_handler = RegexHandler('.*chegg\.com\/homework-help\/.*-solution-[0-9]{13}(-exc)?.*$', check_textbook_link)
-ch_link_handler = RegexHandler('.*coursehero.com/file/.*/.*', check_coursehero_link)
+ch_link_handler = RegexHandler('.*coursehero.com/.*', check_coursehero_link)
 order_handler = RegexHandler('[0-9]{3}o[0-9]{3}o[0-9]{3}', tele_orders)
 dispatcher.add_handler(start_handler)
 dispatcher.add_handler(chegg_handler)
@@ -1354,7 +1397,8 @@ dispatcher.add_handler(mathway_handler)
 updater.start_polling()
 app = Application()
 app.router.add_route('/q/{q_id}', serve_static)
-app.router.add_route('/ch/{q_id}', serve_pdf)
+app.router.add_route('/ch_doc/{q_id}', serve_pdf)
+app.router.add_route('/ch_ans/{q_id}', serve_answer)
 app.router.add_route('/mathway', serve_mathway_landing)
 app.router.add_route('/mathway/{kind}', serve_mathway)
 app.router.add_route('/inject.js', serve_inject)
